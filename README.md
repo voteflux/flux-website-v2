@@ -1,10 +1,8 @@
 #Instructions
 
-run npm install
-
-Once npm modules are installed, in terminal first run: $ `jekyll build --watch` then in a new tab run $ `gulp`
-
-Open the browser with the address: `localhost:9000` 
+1. run npm install
+2. First run: $ `jekyll build --watch` 
+3. Then in a new tab run $ `gulp`, which should automagically open the browser at `localhost:9000` 
 
 
 
