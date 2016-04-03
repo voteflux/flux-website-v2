@@ -1,0 +1,25 @@
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+.center-xy {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.height-4 {min-height: 20rem; }
+.height-40vh {min-height: 40vh;}
+.min-height-1 {min-height: 6rem}
+.square-1 {height: 12rem; width: 12rem}
+
+
+.full-bg-img {
+  background: url('../img/front-page-placeholder.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

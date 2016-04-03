@@ -1,0 +1,126 @@
+/*! initcss http://jxnblk.com/initcss */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  line-height: $line-height-4;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  max-height: 100%;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  /*font-weight: 200;*/
+  line-height: $line-height-2;
+  margin-top: $space-1;
+  margin-bottom: $space-1;
+  letter-spacing: 0.1rem;
+}
+
+
+h1 { font-size: $h1; font-weight: 200 }
+h2 { font-size: $h2 }
+h3 { font-size: $h3 }
+h4 { font-size: $h4 }
+h5 { font-size: $h5 }
+h6 { font-size: $h6 }
+
+h1,
+.h1 {
+  font-weight: 200;
+  line-height: 1.25;
+  letter-spacing: 0.175rem;
+}
+
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+ font-weight: 300;
+ letter-spacing: 0.075rem;
+}
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: $space-1;
+  margin-bottom: $space-1;
+}
+
+ol, ul {
+  padding-left: 2.5em;
+}
+
+code,
+samp,
+pre {
+  font-family: Menlo, monospace;
+}
+
+code, samp {
+  font-size: inherit;
+  font-size: 87.5%;
+  padding: .125em;
+}
+
+pre {
+  font-size: inherit;
+  font-size: 87.5%;
+  overflow: auto;
+}
+
+blockquote {
+  font-size: $h3;
+  font-style: italic;
+  margin-left: 0;
+}
+
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0;
+  border-bottom: 1px solid;
+}
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 300;
+  height: 2.5em;
+  margin: 0;
+  padding: .5em 1em;
+  border: 0;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+th,
+td {
+  padding: $space-1 0;
+  line-height: inherit;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+  vertical-align: bottom;
+}
+
+td {
+  vertical-align: top;
+}
+
+dd { margin-left: 0; }

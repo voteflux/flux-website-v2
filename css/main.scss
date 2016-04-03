@@ -1,0 +1,92 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// typography
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif !default;
+$h0: 3rem !default;
+$h1: 2rem !default;
+$h2: 1.5rem !default;
+$h3: 1.25rem !default;
+$h4: 1rem !default;
+$h5: .875rem !default;
+$h6: .75rem !default;
+$line-height-1: 1 !default;
+$line-height-2: 1.125 !default;
+$line-height-3: 1.25 !default;
+$line-height-4: 1.5 !default;
+$letter-spacing: 1 !default;
+$caps-letter-spacing: .2em !default;
+$light-font-weight: 200 !default;
+$regular-font-weight: 400 !default;
+$bold-font-weight: bold !default;
+
+// layout
+$width-1: 24rem !default;
+$width-2: 32rem !default;
+$width-3: 48rem !default;
+$width-4: 64rem !default;
+$breakpoint-xs: '(max-width: 40em)' !default;
+$breakpoint-sm: '(min-width: 40em)' !default;
+$breakpoint-md: '(min-width: 52em)' !default;
+$breakpoint-lg: '(min-width: 64em)' !default;
+$breakpoint-sm-md: '(min-width: 40em) and (max-width: 52em)' !default;
+$breakpoint-md-lg: '(min-width: 52em) and (max-width: 64em)' !default;
+
+// space scale
+$space-1: .5rem !default;
+$space-2: 1rem !default;
+$space-3: 2rem !default;
+$space-4: 4rem !default;
+
+// position
+$z1: 1 !default;
+$z2: 2 !default;
+$z3: 3 !default;
+$z4: 4 !default;
+
+// border 
+$border-width: 1px !default;
+$border-width-thick: 3px !default;
+$border-radius: 3px !default;
+
+// forms
+$form-field-padding-x: .5rem !default;
+$form-field-padding-y: .5rem !default;
+$form-field-height: 2.5rem !default;
+
+// colors
+$black:         #000 !default; 
+$near-black:    #222 !default; 
+$dark-gray:     #333 !default; 
+$mid-gray:      #555 !default; 
+$gray:          #777 !default; 
+$silver:        #999 !default; 
+$light-silver:  #aaa !default; 
+$light-gray:    #eee !default; 
+$near-white:    #f4f4f4 !default; 
+$white:         #fff !default; 
+$accent:        #58B7B3 !default; 
+
+
+        
+@import "normalize";
+@import "init";
+@import "type-scale";
+@import "typography";
+@import "layout";
+@import "align";
+@import "margin";
+@import "responsive-margin";
+@import "responsive-padding";
+@import "padding";
+@import "grid";
+@import "flexbox";
+@import "position";
+@import "border";
+@import "forms";
+@import "utilities";
+@import "colors";
+@import "hide";
+

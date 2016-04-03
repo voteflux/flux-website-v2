@@ -1,0 +1,15 @@
+{
+  "name": "voteflux",
+  "version": "1.0.0",
+  "description": "Flux website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Factor",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.11.2",
+    "gulp": "^3.9.1"
+  }
+}
