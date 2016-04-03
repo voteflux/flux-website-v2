@@ -14,6 +14,12 @@
 
 .h6 { font-size: $h6 }
 
+
+// responsive type
 @media #{$breakpoint-sm} {
+
   .h0 { font-size: $h0 }
+  .sm-h2 { font-size: $h2 }
+  .sm-h3 { font-size: $h3; }
+
 }

@@ -14,6 +14,14 @@
 .height-40vh {min-height: 40vh;}
 .min-height-1 {min-height: 6rem}
 .square-1 {height: 12rem; width: 12rem}
+.square-2 {height:4rem; width:4rem}
+
+
+.shadow {
+  -webkit-box-shadow: 0px 3px 25px 0px rgba(0,0,0,.5);
+  -moz-box-shadow: 0px 3px 25px 0px rgba(0,0,0,.5);
+  box-shadow: 0px 3px 25px 0px rgba(0,0,0,.5);
+}
 
 
 .full-bg-img {
@@ -23,3 +31,20 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
+.texture-bg-img {
+  background: url('../img/texture.png') no-repeat bottom center;
+    -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+
+.texture-1-bg-img {
+  background: url('../img/texture-1.png') no-repeat top center;
+    -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+

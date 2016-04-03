@@ -19,3 +19,9 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+incremental: true
+exclude:
+  - node_modules
+  - README.md
+  - package.json
+  - gulpfile.js
