@@ -48,7 +48,7 @@ textarea {
 /* Basscss Forms */
 
 .label {
-  font-size: .875rem;
+  font-size: $h6;
   font-weight: bold;
   display: block;
   margin-bottom:$form-field-padding-x;
@@ -56,15 +56,24 @@ textarea {
 
 .input {
   font-family: inherit;
-  font-size: inherit;
+  font-size: $h2;
   display: block;
   width: 100%;
   height: $form-field-height;
   padding: $form-field-padding-x;
   margin-bottom: $space-2;
-  border: $border-width solid #ccc;
-  border-radius: $border-radius;
+  border: none;
+  border-bottom: $form-border-width solid ;
+  border-radius: 0;
+  border-color: $light-silver;
+  background-color: $light-gray;
+  &:focus {
+    outline: none;
+    border-color: $accent;
+    background-color: $light-silver;
+  }
 }
+
 
 .select {
   font-family: inherit;
@@ -88,3 +97,4 @@ textarea {
   border: $border-width solid #ccc;
   border-radius: $border-radius;
 }
+
