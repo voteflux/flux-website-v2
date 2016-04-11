@@ -49,12 +49,17 @@ gulp.task("default", ['serve']);
 /**
  * Push build to gh-pages
  */
+// gulp.task('deploy', function () {
+//   return gulp.src("./_site/**/*")
+//     .pipe(deploy())
+// });
+
 gulp.task('deploy', function () {
-  return gulp.src("./_site/**/*")
-    .pipe(deploy())
+    return gulp.src("./_site/**/*")
+        .pipe(deploy({
+            remoteUrl: 'https://github.com/David-Factor/vote-flux-concept.git'
+        }));
 });
-
-
 
 
 

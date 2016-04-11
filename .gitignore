@@ -2,3 +2,5 @@ node_modules
 .sass-cache
 .jekyll-metadata
 npm-debug.log
+.publish
+_site

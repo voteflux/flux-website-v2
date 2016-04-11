@@ -10,7 +10,7 @@ title: Your awesome title
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Flux website refresh...
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/vote-flux-concept" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
