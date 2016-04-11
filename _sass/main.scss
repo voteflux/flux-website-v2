@@ -66,6 +66,22 @@ $light-gray:    #eee !default;
 $near-white:    #f4f4f4 !default;
 $white:         #fff !default;
 $accent:        #58B7B3 !default;
+$warning:       red !default;
+$success:       green !default;
+
+$darken-1: rgba(0, 0, 0, .0625) !default;
+$darken-2: rgba(0, 0, 0, .125) !default;
+$darken-3: rgba(0, 0, 0, .25) !default;
+
+
+$button-font-family: inherit !default;
+$button-font-size: inherit !default;
+$button-font-weight: $regular-font-weight !default;
+$button-line-height: inherit !default;
+$button-padding-y: $space-1 !default;
+$button-padding-x: $space-2 !default;
+$button-color: $white !default;
+$button-background-color: $accent !default;
 
 
 
@@ -76,6 +92,7 @@ $accent:        #58B7B3 !default;
 @import "layout";
 @import "align";
 @import "margin";
+@import "btn";
 @import "padding";
 @import "responsive-margin";
 @import "responsive-padding";
@@ -87,4 +104,5 @@ $accent:        #58B7B3 !default;
 @import "utilities";
 @import "colors";
 @import "hide";
+
 

@@ -1,15 +1,16 @@
 'use strict';
-
+// imports
 var gulp = require("gulp");
 var browserSync = require("browser-sync");
 var sass = require("gulp-sass");
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
+var notify = require('gulp-notify');
 
+//variables
 var autoprefixerOptions = {
   browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
 };
-
 
 gulp.task('serve', ['sass'], function() {
   browserSync.init(null, {
@@ -30,15 +31,17 @@ gulp.watch("**/*.js").on('change', browserSync.reload);
 gulp.task('sass', function() {
     return gulp.src("./_sass/*.scss")
         .pipe(sass())
+        .on('error', notify.onError(function (error) {
+           return 'An error occurred while compiling sass.\nLook in the console for details.\n' + error;
+        }))
         .pipe(autoprefixer(autoprefixerOptions))
-         .pipe(cleanCSS({debug: true}, function(details) {
-            console.log(details.name + ': ' + details.stats.originalSize);
-            console.log(details.name + ': ' + details.stats.minifiedSize);
+        .pipe(cleanCSS({debug: true}, function(details) {
+            console.log("file size before" + details.name + ': ' + details.stats.originalSize);
+            console.log("file size after" + details.name + ': ' + details.stats.minifiedSize);
         }))
         .pipe(gulp.dest("./css"))
         .pipe(browserSync.stream());
 });
-
 
 gulp.task("default", ['serve']);
 

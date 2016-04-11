@@ -1,16 +1,7 @@
 
 // Converted Variables
 
-$border-width: 1px !default;
-$bold-font-weight: bold !default;
-$button-font-family: inherit !default;
-$button-font-size: inherit !default;
-$button-font-weight: $bold-font-weight !default;
-$button-line-height: 1.125rem !default;
-$button-padding-y: .5rem !default;
-$button-padding-x: 1rem !default;
-$darken-2: rgba(0, 0, 0, .125) !default;
-$darken-3: rgba(0, 0, 0, .25) !default;
+
 
 // Custom Media Query Variables
 
@@ -48,4 +39,32 @@ $darken-3: rgba(0, 0, 0, .25) !default;
 ::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+
+
+
+
+
+/* Basscss Btn Primary */
+
+.btn-primary {
+  color: $button-color;
+  background-color: $button-background-color;
+  border-radius: $border-radius;
+}
+
+.btn-primary:hover {
+  box-shadow: inset 0 0 0 20rem $darken-1;
+}
+
+.btn-primary:active {
+  box-shadow: inset 0 0 0 20rem $darken-2,
+    inset 0 3px 4px 0 $darken-3,
+    0 0 1px $darken-2;
+}
+
+.btn-primary:disabled,
+.btn-primary.is-disabled {
+  opacity: .5;
 }
