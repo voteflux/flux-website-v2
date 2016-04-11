@@ -2,6 +2,7 @@
 
 // typography
 $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif !default;
+// $font-family: 'Roboto';
 $h0: 3rem !default;
 $h1: 2rem !default;
 $h2: 1.5rem !default;
@@ -13,11 +14,14 @@ $line-height-1: 1 !default;
 $line-height-2: 1.125 !default;
 $line-height-3: 1.25 !default;
 $line-height-4: 1.5 !default;
-$letter-spacing: 1 !default;
+$letter-spacing-1: 0.175rem !default;
+$letter-spacing-2: 0.075rem !default;
+$letter-spacing-3: 0.025rem !default;
 $caps-letter-spacing: .2em !default;
 $light-font-weight: 200 !default;
+$mid-light-font-weight: 300 !default;
 $regular-font-weight: 400 !default;
-$bold-font-weight: bold !default;
+$bold-font-weight: 500 !default;
 
 // layout
 $width-1: 24rem !default;
@@ -65,7 +69,7 @@ $light-silver:  #ccc !default;
 $light-gray:    #eee !default;
 $near-white:    #f4f4f4 !default;
 $white:         #fff !default;
-$accent:        #58B7B3 !default;
+$accent:        #26dbd7 !default;
 $warning:       red !default;
 $success:       green !default;
 

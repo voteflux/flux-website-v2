@@ -1,9 +1,14 @@
 #Instructions
 
-1. run npm install
+1. run npm install 
 2. To start dev environment run: $ `npm run flux`
 
-## Resources used
+## Don't edit files from _Sites folder 
+
+## _site folder  and it's contents are cleaned on site builds!!
+The contents of `_site` are automatically cleaned, by default, when the site is built. 
+
+The `_site` folder should only be used as a staging area and to copy files from to your web server.
 
 http://ricostacruz.com/til/relative-paths-in-jekyll.html
 

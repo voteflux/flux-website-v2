@@ -4,19 +4,19 @@ layout: default
 
 <main>
 
+  <section class="bg-near-black px3 texture-1-bg-img">
 
-  <section class="bg-near-black px3 pt3 texture-1-bg-img">
-    <header class="mb4 pb4">
-      <div class="flex items-start">
-        <img src="img/flux-mark.svg" alt="" width="64" height="64" class="">
-        <div class="mt1 ml3">
-          <h4 class="h1 gray mt1 m0 light">FLUX <span class="muted">/ PROGRESS ON PROCESS</span> </h4>
+    <header class="py4 px3 pt2 white">
+      <div class="flex items-start flex-auto">
+        <img src="img/flux-mark.svg" alt="" width="80" height="80" class="">
+        <div class="mt2 ml2">
+          <h2 class="h1 gray mt1 m0">FLUX <span class="muted ">/ PROGRESS ON PROCESS</span> </h2>
         </div>
       </div>
     </header>
 
-    <div class="max-width-3 mx-auto silver">
-      <div class="mb4 pb3">
+    <div class="max-width-3 mx-auto silver pb3">
+      <div class="pb3">
         <h1 class="h0 near-white mb4">Let's re-imagine how democracy gets done.</h1>
         <p class="h3">
           We are Australians with a drive to improve democracy. We believe that our structures for decision making and leadership are outdated.
@@ -26,21 +26,18 @@ layout: default
         </p>
 
         <a href="{{baseurl}} {{ base }}/about" class="h3 link-reset inline-block white border-bottom py1 mt3">
-          Find out how  <span class="h4">&nbsp></span>
+          Find out how <span class="h4">&nbsp></span>
         </a>
       </div>
-    </div>
 
-    <div class="right-align py3">
-      <div class="inline-block mr3">
-        <a href="#!" class="link-reset silver m0">share</a>
-      </div>
-      <div class="inline-block">
-        <a href="#!" class="link-reset silver m0">join</a>
-      </div>
     </div>
   </section>
 
+  <div class="bg-black px3 shadow relative z4">
+    <div class="mx-auto">
+      {% include header.html %}
+    </div>
+  </div>
 
   <section class="full-bg-img height-40vh light-gray py4 px3">
     <div class="max-width-3 mx-auto">
@@ -59,7 +56,7 @@ layout: default
             Party Registration Submitted! Over 550 validated members.
           </p>
         </div>
-        <a href="#!" class="h3 link-reset white border-bottom inline-block pb1">
+        <a href="{{base}}/signup" class="h3 link-reset white border-bottom inline-block pb1">
         Join the movement <span class="h4">&nbsp></span>
         </a>
       </div>
@@ -92,10 +89,9 @@ layout: default
   <section class="bg-dark-gray light-gray px3 py4 shadow relative ">
     <div class="max-width-3 mx-auto">
     <div class="mb4">
-    <!-- <h2 class="h1 near-white">
-      More detail?
-      <span class="h1 accent m0 block">&mdash;</span>
-    </h2> -->
+    <h2 class="h1 near-white">
+      How flux works      <span class="h1 accent m0 block">&mdash;</span>
+    </h2>
     <!-- <h4 class="h4">Read the overviews below</h4> -->
 
     </div>
@@ -191,6 +187,11 @@ layout: default
           </p>
         </div>
       </div>
+    </div>
+  </section>
+  <section class="bg-silver dark-gray py4 px3">
+    <div class="max-width-3 mx-auto ">
+    <h1>Meet the members</h1>
     </div>
   </section>
 

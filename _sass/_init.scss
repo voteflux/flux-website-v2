@@ -21,11 +21,9 @@ svg {
 
 h1, h2, h3,
 h4, h5, h6 {
-  /*font-weight: 200;*/
   line-height: $line-height-2;
   margin-top: $space-1;
   margin-bottom: $space-1;
-  letter-spacing: 0.1rem;
 }
 
 
@@ -37,27 +35,28 @@ h5 { font-size: $h5 }
 h6 { font-size: $h6 }
 
 .h0, h1, .h1 {
-  font-weight: 200;
-  line-height: 1.25;
-  letter-spacing: 0.175rem;
+  font-weight: $light-font-weight;
+  line-height: $line-height-3;
+  letter-spacing: $letter-spacing-1;
 }
 
 h2, .h2,
 h3, .h3 {
- font-weight: 300;
- letter-spacing: 0.075rem;
+ font-weight: $mid-light-font-weight;
+ letter-spacing: $letter-spacing-2;
 }
 
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-weight: 400;
-  letter-spacing: 0.05rem;
+  font-weight: $regular-font-weight;
+  letter-spacing: $letter-spacing-3;
 }
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: $space-1;
   margin-bottom: $space-2;
+  letter-spacing: $letter-spacing-3;
 }
 
 ol, ul {
@@ -94,15 +93,17 @@ hr {
   border: 0;
   border-bottom: 1px solid;
 }
+
 button {
   font-family: inherit;
   font-size: inherit;
-  font-weight: 300;
+  font-weight: $mid-light-font-weight;
   height: 2.5em;
   margin: 0;
   padding: .5em 1em;
   border: 0;
 }
+
 table {
   border-collapse: separate;
   border-spacing: 0;
