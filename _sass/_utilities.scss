@@ -20,32 +20,21 @@
 .mnt4 {margin-top: -$space-4}
 
 .shadow {
-  -webkit-box-shadow: 0px 3px 25px 0px rgba(0,0,0,.5);
-  -moz-box-shadow: 0px 3px 25px 0px rgba(0,0,0,.5);
   box-shadow: 0px 3px 25px 0px rgba(0,0,0,.5);
 }
 
 .full-bg-img {
   background: url('../img/front-page-placeholder.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 
 .texture-bg-img {
   background: url('../img/texture.png') no-repeat bottom center;
-    -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
   background-size: contain;
 }
 
 .texture-1-bg-img {
   background: url('../img/texture-1.png') no-repeat top center;
-    -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
   background-size: contain;
 }
 
