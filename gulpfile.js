@@ -6,6 +6,7 @@ var sass = require("gulp-sass");
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 var notify = require('gulp-notify');
+var deploy      = require('gulp-gh-pages');
 
 //variables
 var autoprefixerOptions = {
@@ -45,8 +46,13 @@ gulp.task('sass', function() {
 
 gulp.task("default", ['serve']);
 
-
-
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./_site/**/*")
+    .pipe(deploy())
+});
 
 
 
