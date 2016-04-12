@@ -13,9 +13,10 @@ permalink: /signup/
         <a href="{{site.baseurl}}{{base}}/"><img src="{{site.baseurl}}{{base}}/img/flux-mark.svg" alt="" width="96" height="96" class=""></a>
       </div>
       <div class="mt1 ">
-        <h1 class="white m0 mb2 line-height-1">Become a Flux member!</h1>
+        <h1 class="white m0 mb1 line-height-1">Become a Flux member!</h1>
+        <h2 class="silver mb4 line-height-3">Your gateway to participate directly in Parliament</h2>
 
-        <h2 class="accent"><span class="regular">1466</span> members registered</h2>
+        <h3 class="accent h4"><span class="regular">1466</span> members registered</h3>
 
       </div>
 
@@ -36,17 +37,13 @@ permalink: /signup/
           <div class="mt1">
             <label class="gray" for="first-name">Are you on the Australian Electoral Roll?<span class="warning">*</span></label>
           </div>
-
         </div>
     </section>
 
 
     <section class="px2 sm-px3 py3 bg-near-white">
 
-      <div class="flex mb2">
-        <h4 class="mr2 bold mt2 accent">1. Names</h4>
-        <!-- <hr class="flex-auto"> -->
-      </div>
+      <h4 class="mb2 bold accent">1. Name</h4>
 
       <form action="" class="">
         <div class="">
@@ -77,15 +74,12 @@ permalink: /signup/
 
     <section class="px2 sm-px3 pb3 bg-near-white">
 
-      <div class="flex mb2">
-        <h4 class="mr2 bold mt2 accent">2. Address</h4>
-        <!-- <hr class="flex-auto"> -->
-      </div>
+      <h4 class="mb2 bold accent">2. Address</h4>
 
       <form action="" class="mb2">
         <div class=" ">
           <div class="">
-            <label class="gray" for="middle-name">Street name and number<span class="warning">*</span></label>
+            <label class="gray" for="middle-name">Street Address<span class="warning">*</span></label>
             <div class="relative">
               <input id="middle-name" type="text" class="input transition">
             </div>
@@ -108,14 +102,13 @@ permalink: /signup/
           <div class="">
             <label class="gray" for="last-name">Postcode<span class="warning">*</span></label>
             <div class="relative">
-              <input id="last-name" type="text" class="input transition">
+              <input id="last-name" type="text" pattern="[0-9]*" class="input transition">
             </div>
           </div>
 
 
         </div>
       </form>
-        <!-- <p class="silver m0">We need this information... It's very important your details match those on the electoral roll exactly.</p> -->
 
     </section>
 
@@ -123,48 +116,76 @@ permalink: /signup/
     <section class="px2 sm-px3 pb3 bg-near-white">
 
       <div class="mb2 flex items-baseline">
-        <h4 class="mr2 bold mt2 accent">3. Date of Birth</h4>
+        <h4 class="mr2 bold mt2 accent">4. Date of Birth</h4>
         <p class="mt0 gray">(Required by AEC)</p>
         <!-- <hr class="flex-auto"> -->
       </div>
 
       <form action="" class="">
-        <div class="mb4">
+        <div class="">
 
           <div class="flex mxn1">
             <div class="px1 relative col-3">
               <label class="gray" for="first-name">Day<span class="warning">*</span></label>
-              <input id="first-name" type="text" class="input transition" placeholder="DD">
+              <input id="first-name" type="number" class="input transition" placeholder="DD">
             </div>
 
             <div class="px1 relative col-3">
              <label class="gray" for="first-name">Month<span class="warning">*</span></label>
-              <input id="first-name" type="text" class="input transition" placeholder="MM">
+              <input id="first-name" type="number" class="input transition" placeholder="MM">
             </div>
 
             <div class="px1 relative sm-col-4">
              <label class="gray" for="first-name">Year<span class="warning">*</span></label>
-              <input id="first-name" type="text" class="input transition" placeholder="YYYY">
+              <input id="first-name" type="number" class="input transition" placeholder="YYYY">
             </div>
           </div>
-
-
-
         </div>
-
-        <div class="mb3 h3">
-
-            <a href="{{base}}/signup/step2" class="h3 regular btn btn-primary">Submit <i class="material-icons icon-adjust">chevron_right</i></span>
-            </a>
-
-        </div>
-
-        <p class="silver">
-          <i class="material-icons icon-adjust">lock</i>
-          Don't worry, your details will be kept absolutely confidential and will only be used for party business.</p>
       </form>
     </section>
 
+    <section class="px2 sm-px3 pb3 bg-near-white mb3">
+      <h4 class="mb2 bold accent">4. Contact details</h4>
+
+      <form action="" class="mb2">
+        <div class=" ">
+          <div class="">
+            <label class="gray" for="phone">Phone</label>
+            <div class="relative">
+              <input id="phone" type="tel" class="input transition">
+            </div>
+          </div>
+
+          <div class="">
+            <label class="gray" for="email">Email</label>
+            <div class="relative">
+              <input id="email" type="email" class="input transition">
+            </div>
+          </div>
+
+            <div>
+              <span class="h2 dark-gray pointer align-middle">
+                <i class="material-icons icon-adjust">check_box</i>
+              </span>
+              <label class="gray align-middle" for="first-name">Add me to the Flux mailing list (We promise no spam).</label>
+            </div>
+
+
+        </div>
+      </form>
+
+    </section>
+
+    <section class="px2 sm-px3 pb3 bg-near-white">
+      <div class="mb3 h3">
+        <a href="{{site.baseurl}}{{base}}/signup/step2" class="h3 regular btn btn-primary">Submit <i class="material-icons icon-adjust">chevron_right</i>
+        </a>
+      </div>
+
+      <p class="silver">
+        <i class="material-icons icon-adjust">lock</i>
+        Your details will be kept absolutely confidential and will only be used for party business.</p>
+    </section>
 
   </div>
 

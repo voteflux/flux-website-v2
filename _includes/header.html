@@ -1,4 +1,4 @@
-<header class="py3 silver">
+<nav class="py3 silver">
   <div class="flex">
     <div class="flex-auto">
       <h1>FLUX</h1>
@@ -10,7 +10,9 @@
       <li class="inline-block mr3">link-4</li>
     </ul>
     <div class="px2">
-      <a href="{{site.baseurl}}{{base}}/signup" class="btn btn-outline white">sign-up</a>
+      {% include
+          components/join-btn.html
+          text="Join us" %}
     </div>
   </div>
-</header>
+</nav>
