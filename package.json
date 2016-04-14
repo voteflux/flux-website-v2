@@ -20,5 +20,9 @@
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.2.0",
     "parallelshell": "^2.0.0"
+  },
+  "dependencies": {
+    "formsy-react": "^0.17.0",
+    "react": "^0.14.8"
   }
 }
