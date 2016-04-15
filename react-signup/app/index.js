@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Formsy from 'formsy-react';
+import axios from 'axios';
 
-// var link=document.createElement('link');
-// link.rel='stylesheet';
-// link.href='main.css';
-
-//
-// document.getElementsByTagName('head')[0].appendChild(link);
 
 const MyInput = React.createClass({
   mixins: [Formsy.Mixin],
@@ -35,25 +30,6 @@ const MyInput = React.createClass({
   }
 });
 
-// const CheckBox = React.createClass({
-//   mixins: [Formsy.Mixin],
-//   changeValue: function (event) {
-//     this.setValue(event.currentTarget.value);
-//   },
-//   render: function () {
-//     return (
-//       <div>
-//         <input
-//           type="checkbox"
-
-//           onChange={this.changeValue}
-//           value={this.getValue()}
-//         />
-//         <label htmlFor="{this.props.name}"></label>
-//       </div>
-//     );
-//   }
-// });
 
 const SectionTitle = React.createClass({
   render: function() {
@@ -63,7 +39,7 @@ const SectionTitle = React.createClass({
   }
 });
 
-const App = React.createClass({
+const FormContainer = React.createClass({
   getInitialState() {
     return { canSubmit: false };
   },
@@ -96,7 +72,7 @@ const App = React.createClass({
               <i className="material-icons icon-adjust">check_box</i>
             </div>
             <div className="mt1">
-              <label className="gray" for="first-name">Are you on the Australian Electoral Roll?<span className="warning">*</span></label>
+              <label className="gray" >Are you on the Australian Electoral Roll?<span className="warning">*</span></label>
             </div>
           </div>
         </section>
@@ -216,6 +192,44 @@ const App = React.createClass({
     );
   }
 });
+
+var helpers = {
+  getMembers: function () {
+    return axios.get( "https://api.voteflux.org/getinfo" )
+      .then(function (response) {
+        return response.data
+      })
+      .catch(function (response) {
+        console.log(response);
+      });
+  }
+};
+
+const App = React.createClass({
+  getInitialState: function () {
+    return {
+      isLoading: true,
+      memberCount: {}
+    }
+  },
+  componentDidMount: function () {
+    helpers.getMembers()
+    .then( function (d) {
+      this.setState({
+        isLoading: false,
+        memberCount: d
+      });
+    }.bind(this))
+  },
+  render: function() {
+    return (
+      <div>
+        <h1>members {this.state.memberCount.n_members}</h1>
+        <FormContainer/>
+      </div>
+    )
+  }
+})
 
 ReactDOM.render(<App />, document.getElementById('app'));
 
