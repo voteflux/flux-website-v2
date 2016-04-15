@@ -41,7 +41,8 @@ gulp.task('sass', function() {
             console.log("file size after" + details.name + ': ' + details.stats.minifiedSize);
         }))
         .pipe(gulp.dest("./css"))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream())
+        .pipe(gulp.dest("./react-signup/css"));
 });
 
 gulp.task("default", ['serve']);

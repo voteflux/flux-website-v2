@@ -1,6 +1,7 @@
 var webpack = require('webpack');
-
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// plugins
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
@@ -13,12 +14,13 @@ var definePlugin = new webpack.DefinePlugin({
   __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false'))
 });
 
+
 module.exports = {
   entry: [
     './app/index.js'
   ],
   output: {
-    path: __dirname + '/dist',
+    path: '../_sign-up/',
     filename: "index_bundle.js"
   },
   module: {
@@ -30,4 +32,4 @@ module.exports = {
     ]
   },
   plugins: [HtmlWebpackPluginConfig, definePlugin]
-}
+};
