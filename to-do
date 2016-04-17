@@ -1,0 +1,41 @@
+component list to design
+
+- article cards
+- sign up strip to sit under articles and be used across the site.
+- footer
+- social icons (to sit within articles)
+
+
+feature card 1
+  tags: about flux / introduction
+  heading: "Why Australia needs Flux"
+  sentence:
+  page includes: The problem, what is flux, purpose and vision statue
+  botton section: sign up
+  links at bottom: voting system/benefits
+
+card 2
+  tags: about flux / how
+  heading: voting system and benefits
+  page includes: voting system and benefits
+  otton section: sign up
+  links at bottomL FAQs and common concerns
+
+card 3
+  tags: about flux / who
+  Heading: Who is behind flux
+  page includes: who is behind flux and founders
+  botton section: sign up
+  links at bottom: meet up
+
+card 4
+  tags: about flux / answers
+  Heading: Frequently asked questions
+  page includes: FAQ list, common concerns
+  botton section: sign up
+  links at bottom: other posts
+
+
+
+
+

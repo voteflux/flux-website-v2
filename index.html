@@ -1,104 +1,169 @@
 ---
 layout: default
 ---
-
 <main>
-
-  <section class="bg-near-black px3 texture-1-bg-img">
-
-    <header class="py4 px3 pt2 white">
-      <div class="flex items-start flex-auto">
-        <img src="img/flux-mark.svg" alt="" width="80" height="80" class="">
-        <div class="mt2 ml2">
-          <h2 class="h1 gray mt1 m0">FLUX <span class="muted ">/ PROGRESS ON PROCESS</span> </h2>
-        </div>
+<section class="bg-near-black px3 texture-1-bg-img">
+  <header class="py4 px3 pt2 white">
+    <div class="flex items-start flex-auto">
+      <img src="img/flux-mark.svg" alt="" width="80" height="80" class="">
+      <div class="mt2 ml2">
+        <h2 class="h1 gray mt1 m0">FLUX <span class="muted ">/ PROGRESS ON PROCESS</span> </h2>
       </div>
-    </header>
-
-    <div class="max-width-3 mx-auto silver pb3">
-      <div class="pb3">
-        <h1 class="h0 near-white mb4">Let's re-imagine how democracy gets done.</h1>
+    </div>
+  </header>
+  <div class="max-width-3 mx-auto silver pb3">
+    <div class="pb3">
+      <h1 class="h0 h-font light-gray mb4 line-height-2">Let's re-imagine how democracy gets done.</h1>
+      <div class="mb4">
         <p class="h3">
-          We are Australians with a drive to improve democracy. We believe that our structures for decision making and leadership are outdated.
+          We are Australians with a drive to improve democracy. We are a <span class="light-silver italic">movement</span> that believes our structures for decision making and leadership are outdated.
         </p>
         <p class="h3">
           With the technology now available, we can do better.
         </p>
-
-        <a href="{{site.baseurl}}{{ base }}/about" class="h3 link-reset inline-block white border-bottom py1 mt3 accent border-thick">
-          Find out how <span class="h4">&nbsp></span>
+      </div>
+      <!-- <h4 class="h5 muted">Get Flux into the senate!</h4> -->
+      <div class="mb0">
+        <a href="{{site.baseurl}}{{ base }}/signup" class="h3 link-reset inline-block white border-bottom pb1 border-accent border-thick">
+          Join the movement
+          <i class="material-icons h2 align-middle">chevron_right</i>
         </a>
       </div>
-
     </div>
-  </section>
+    <div class="mb4">
+      <h4 class="silver">1502 members now registered</h4>
+      <h5 class='line-height-3 muted'>Flux is now a federally registered <br>  political party! AEC details</h5>
+    </div>
 
-  <div class="bg-black px3 shadow relative z4">
-    <div class="mx-auto">
-      {% include header.html %}
+  </div>
+</section>
+
+
+
+<div class="bg-light-gray dark-gray px2 sm-px3 py4 shadow relative z3">
+  <div class="max-width-3 mx-auto">
+
+    <div class="border-bottom border-thick bg-accent bg-white px3 py3 mb3">
+      <h5 class="bold"><span class="gray">ABOUT</span> / HOW</h5>
+      <div class="mb2">
+        <a href="#!" class="link-reset h-font bold h1 block py2 min-height-1 line-height-2 chevron">
+          Why Australia needs Flux
+        </a>
+        <p>Our current political system is broken... blah blah blah. Flux is here to save the world.... our purpose is..</p>
+      </div>
+      <div class="muted border-bottom border-muted ">
+        <!-- <h5 class="h5 inline-block m0">2 minute read</h5> -->
+        <!-- <span class="right h4"> > </span> -->
+      </div>
+    </div>
+
+    <div class="sm-flex mxn2">
+      <div class="px2 sm-col-4">
+       {% include components/card.html
+          text="The Flux voting system"
+          sub-text="Plus its key benefits"
+          tag-section="about flux"
+          tag-topic="how"
+          link="about/how" %}
+      </div>
+      <div class="px2 sm-col-4">
+        {% include components/card.html
+           text="Who is behind Flux"
+           sub-text="The people who make Flux"
+           tag-section="about flux"
+           tag-topic="who"
+           link="about/who" %}
+      </div>
+      <div class="px2 sm-col-4">
+       {% include components/card.html
+          text="Frequently asked questions"
+          sub-text="And responses to common concerns"
+          tag-section="about flux"
+          tag-topic="answers"
+          link="about/faq" %}
+      </div>
     </div>
   </div>
+</div>
 
-  <section class="full-bg-img height-40vh light-gray py4 px3">
-    <div class="max-width-3 mx-auto">
 
-      <h2 class="h1 light">
-        Get involved!
-        <span class="h1 accent m0 block">&mdash;</span>
-      </h2>
 
-      <div class="sm-col-4">
-        <div class="mb4">
-          <h4 class="h3 m0">
-            1445 members already registered
+
+<section class="full-bg-img height-40vh py4 px3">
+  <div class="max-width-3 mx-auto">
+    <div class="bg-white dark-gray p4 sm-col-8">
+      {% include components/main-heading.html text="We're annoyed with politics too" font-size="h1" font-weight="regular" %}
+      <p class="h3">Flux will act as a gateway for Australians to participate directly in parliament, making the need for trust in elected officials a thing of the past.</p>
+      <p>Flux is a movement not about ideology, but about progress for process. Flux Party members come from every age bracket and all walks of life, as well as from the left, centre, and right of politics.</p>
+      <p>We’re for uniting all of Australia for a simple cause; better democracy for a brighter future.</p>
+      <p>If you're like us and want to see this country work toward a truly brighter future, join us.</p>
+      <div class="gray">
+        <!-- <div class="mb4">
+          <h4 class="h3 line-height-3">
+          1445 members already registered
           </h4>
           <p class="h5">
             Party Registration Submitted! Over 550 validated members.
           </p>
-        </div>
-
-        <a href="{{site.baseurl}}{{ base }}/signup" class="h3 link-reset white border-bottom inline-block pb1">
-        Join the movement <span class="h4">&nbsp></span>
+        </div> -->
+        <a href="{{site.baseurl}}{{ base }}/signup" class="h3 link-reset border-bottom border-thick bold inline-block pb1 border-accent dark-gray">
+          Sign up<span class="h4">&nbsp></span>
         </a>
       </div>
-
     </div>
-  </section>
-
-
-  <section class="bg-near-black light-silver px3 py4 relative z1">
-    <div class="max-width-3 mx-auto">
-
-      <div class="mb4">
-        <h2 class="h1 light light-gray">
-          So what exactly is FLUX?
-          <span class="h1 accent m0 block">&mdash;</span>
-        </h2>
-        <p class="h3 silver">Flux will act as a gateway for Australians to participate directly in parliament, making the need for trust in elected officials a thing of the past.</p>
-
-        <p class="h3 silver">Flux will take the form of an app you can access right from your computer or smartphone. As a member, you’ll be given a vote on every bill put before Federal Parliament, and can use that vote immediately on the issue at hand.</p>
-
-
-
-      </div>
-      <a href="#!" class="h3 link-reset white border-bottom inline-block pb1">
-        Get more detail <span class="h4">&nbsp></span>
-      </a>
-    </div>
-  </section>
-
-  <section class="bg-dark-gray light-gray px3 py4 shadow relative ">
-    <div class="max-width-3 mx-auto">
+  </div>
+</section>
+<!--   <section class="bg-near-black light-silver px3 py4 relative z1">
+  <div class="max-width-3 mx-auto">
     <div class="mb4">
-    <h2 class="h1 near-white">
-      How flux works      <span class="h1 accent m0 block">&mdash;</span>
-    </h2>
-    <!-- <h4 class="h4">Read the overviews below</h4> -->
+      <h2 class="h1 light light-gray">
+      So what exactly is FLUX?
+      <span class="h1 accent m0 block">&mdash;</span>
+      </h2>
+      <p class="h3 silver">Flux will act as a gateway for Australians to participate directly in parliament, making the need for trust in elected officials a thing of the past.</p>
+      <p class="h3 silver">Flux will take the form of an app you can access right from your computer or smartphone. As a member, you’ll be given a vote on every bill put before Federal Parliament, and can use that vote immediately on the issue at hand.</p>
+    </div>
+    <a href="#!" class="h3 link-reset white border-bottom inline-block pb1">
+      Get more detail <span class="h4">&nbsp></span>
+    </a>
+  </div>
+</section> -->
+<section class="bg-accent dark-gray py4 px3">
+  <div class="max-width-3 mx-auto ">
 
+    <div class="mb3">
+      <h1 class="h-font bold mb1">Upcoming meetups </h1>
+      <div>
+        <span class="border-bottom px2 inline-block border-thick muted"></span>
+      </div>
     </div>
 
-    <div class="sm-flex mxn3">
+    <div class="sm-flex">
+      <div class="sm-col-8">
+        <p>Join party co-founders Nathan Spataro & Max Kaye for a Q&A at the next meetup in your city</p>
+      </div>
 
+      <div class="sm-col-4 sm-col-6 clearfix">
+        <ul class="list-reset sm-col-right h2">
+          <li class="mb2 col-3 border-bottom border-thick border-white col-12">Sydney</li>
+          <li class="mb2 col-3 border-bottom border-thick border-white col-12">Melbourne</li>
+          <li class="mb2 col-3 border-bottom border-thick border-white col-12">Brisbane</li>
+          <li class="mb2 col-3 border-bottom border-thick border-white col-12">Canberra</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="bg-dark-gray light-gray px3 py4 shadow relative ">
+  <div class="max-width-3 mx-auto">
+    <div class="mb4">
+      <h2 class="h1 near-white center">
+      In the news    <span class="h1 accent m0 block">&mdash;</span>
+      </h2>
+      <!-- <h4 class="h4">Read the overviews below</h4> -->
+    </div>
+    <div class="sm-flex mxn3">
       <div class="px3 pb3 mb4 sm-col-4">
         <div class="border-top ">
           <a href="#!" class="link-reset h3 block py2 min-height-1">
@@ -110,7 +175,6 @@ layout: default
           </div>
         </div>
       </div>
-
       <div class="px3 pb3 mb4 sm-col-4">
         <div class="border-top ">
           <a href="#!" class="link-reset h3 block py2 min-height-1">
@@ -122,11 +186,10 @@ layout: default
           </div>
         </div>
       </div>
-
       <div class="px3 pb3 mb4 sm-col-4">
         <div class="border-top ">
           <a href="#!" class="link-reset h3 block py2 min-height-1">
-            How Flux can change the way politics is done today
+            Frequently asked questions
           </a>
           <div class="muted border-bottom border-muted pb2">
             <h5 class="h5 inline-block m0">3 minute read</h5>
@@ -134,33 +197,22 @@ layout: default
           </div>
         </div>
       </div>
-
     </div>
-
-    <a href="#!" class="link-reset inline-block border-bottom">Skip to even more detail</a>
-    </div>
-
-
+    view more articles > Media enquiries: media@voteflux.org
   </section>
-
-
-  <section class="bg-light-gray dark-gray py4 px3">
+  <!--   <section class="bg-light-gray dark-gray py4 px3">
     <div class="max-width-3 mx-auto ">
-      <h2 class="light mb4 h1">Flux Founders
-        <span class="h1 accent m0 block">&mdash;</span>
+      <h2 class="light mb4 h1 center">Get to know us
+      <span class="h1 accent m0 block">&mdash;</span>
       </h2>
-
-
       <div class="sm-flex mxn3 mb4">
         <div class="sm-col-4 px3">
           <div class="overflow-hidden circle square-1 mb3">
             <img src="img/max.jpg" alt="">
           </div>
-
         </div>
         <div class="sm-col-8 px3">
           <h3 class="mt0 bold">Max Kaye</h3>
-
           <p>
             Max is passionate about improving the world. He is a software developer and blockchain consultant. His educational background is in science, mathematics, and information systems, and has a lifelong interest in economics, political philosophy, disruptive startups, and theory of knowledge
           </p>
@@ -169,17 +221,14 @@ layout: default
           </p>
         </div>
       </div>
-
       <div class="sm-flex mxn3">
         <div class="sm-col-4 px3">
           <div class="overflow-hidden circle square-1 mb3">
             <img src="img/nathan.jpg" alt="">
           </div>
-
         </div>
         <div class="sm-col-8 px3">
           <h3 class="mt0 bold">Nathan Spataro</h3>
-
           <p>
             Nathan is an ardent and outspoken proponent of free speech, civil liberties, and human rights. His educational background is in government, international relations, and philosophy. He has campaigned in previous elections for minor parties.
           </p>
@@ -189,63 +238,39 @@ layout: default
         </div>
       </div>
     </div>
-  </section>
-  <section class="bg-silver dark-gray py4 px3">
-    <div class="max-width-3 mx-auto ">
-    <h1>Meet the members</h1>
-    </div>
-  </section>
-
-<!--   <section class="bg-near-white gray py4 px3">
+  </section> -->
+  <!--   <section class="bg-near-white gray py4 px3">
     <div class="max-width-3 mx-auto">
       <h2 class="light mb4 h1">How can I help?
-        <span class="h1 accent m0 block">&mdash;</span>
+      <span class="h1 accent m0 block">&mdash;</span>
       </h2>
     </div>
   </section> -->
-
   <section class="bg-near-white gray py4 px3">
     <div class="max-width-3 mx-auto">
       <h2 class="light mb4 h1">Get in touch
-        <span class="h1 accent m0 block">&mdash;</span>
-      </h2>
-      Currently the best way to get in contact is via email:
-
-      Max: max.kaye@voteflux.org, or flux@xk.io
-      Nathan: nathan.spataro@voteflux.org
-
-      For media enquiries:
-      media@voteflux.org
+      <span class="h1 accent m0 block">&mdash;</span>
+      </h2> Currently the best way to get in contact is via email: Max: max.kaye@voteflux.org, or flux@xk.io Nathan: nathan.spataro@voteflux.org For media enquiries: media@voteflux.org
     </div>
   </section>
-
-
-
-
-
   <footer class="bg-white py4">
     <div class="max-width-3 mx-auto">
       <h2>FAQ</h2>
     </div>
   </footer>
-
   <!-- <section class="bg-dark-gray light-silver px3 py4">
     <div class="max-width-3 mx-auto">
       <div class="clearfix mxn2">
         <div class="px2">
           <h2 class="light m0 near-white">
-            Progress for process!
+          Progress for process!
           </h2>
           <span class="h1 accent">&mdash;</span>
-
           <p>Flux is a movement not about ideology, but about progress for process. Flux Party members come from every age bracket and all walks of life, as well as from the left, centre, and right of politics.</p>
-
           <p>We’re for uniting all of Australia for a simple cause; better democracy for a brighter future.</p>
-
           <p>If you're like us and want to see this country work toward a truly brighter future, join us.</p>
         </div>
       </div>
     </div>
   </section> -->
-
-</main>
+  </main>

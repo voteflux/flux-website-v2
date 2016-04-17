@@ -31,10 +31,13 @@
 
 // border colors
 .border-black { border-color: $black; }
+.border-mid-gray { border-color: $mid-gray; }
+.border-white { border-color: $white; }
 .border-muted { border-color: rgba(255,255,255, 0.1); }
 .border-accent { border-color: $accent; }
 .border-warning { background-color: red;}
 .border-success { background-color: green; }
+
 
 // utility colors
 .muted { opacity: 0.5; }
