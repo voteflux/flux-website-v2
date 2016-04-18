@@ -1,8 +1,12 @@
 <div class="mb3">
-  <h2 class="mb0 {% if include.font-size %}{{include.font-size}} {% else %}h1 {% endif %}{% if include.font-weight %}{{include.font-weight}} {% else %}light {% endif %}"> {{include.text}}
+  <h2 class="mb0 h-font line-height-2 {% if include.font-size %}{{include.font-size}} {% else %}h1 {% endif %}{% if include.font-weight %}{{include.font-weight}} {% else %}light {% endif %}"> {{include.text}}
   </h2>
   {% if include.sub-text %}
   <h3>{{include.sub-text}}</h3>
   {% endif %}
-  <!-- <span class="h1 m0 block bold">&mdash;</span> -->
+  {% if include.line %}
+  <div class="mt2">
+    <span class="border-bottom px2 inline-block border-thick muted"></span>
+  </div>
+  {% endif %}
 </div>

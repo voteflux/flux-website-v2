@@ -1,3 +1,9 @@
+a {
+  color: $accent;
+  text-decoration: none;
+  font-weight: $regular-font-weight;
+}
+
 .link-reset {
   text-decoration: none;
   color: inherit;
@@ -22,6 +28,9 @@
 
 .shadow {
   box-shadow: 0px 3px 25px 0px rgba(0,0,0,.5);
+}
+.shadow-blue {
+  box-shadow: 0 4px 21px 0 hsla(177,100%,18%,.5);
 }
 
 .full-bg-img {

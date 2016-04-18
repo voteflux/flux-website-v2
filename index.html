@@ -3,53 +3,74 @@ layout: default
 ---
 <main>
 <section class="bg-near-black px3 texture-1-bg-img">
-  <header class="py4 px3 pt2 white">
+  <header class="pt3 mb4 white">
+  <!-- <h2 class="h2 silver bold mt1 m0 mb4">FLUX <span class="muted light">/ PROGRESS ON PROCESS</span> </h2> -->
     <div class="flex items-start flex-auto">
       <img src="img/flux-mark.svg" alt="" width="80" height="80" class="">
-      <div class="mt2 ml2">
-        <h2 class="h1 gray mt1 m0">FLUX <span class="muted ">/ PROGRESS ON PROCESS</span> </h2>
+      <div class="mt2 ml2 max-width-3">
+        <h2 class="h2 silver bold mt2 m0">FLUX <span class="muted light">/ <br>PROGRESS <br>ON PROCESS</span> </h2>
       </div>
     </div>
   </header>
-  <div class="max-width-3 mx-auto silver pb3">
-    <div class="pb3">
-      <h1 class="h0 h-font light-gray mb4 line-height-2">Let's re-imagine how democracy gets done.</h1>
-      <div class="mb4">
-        <p class="h3">
-          We are Australians with a drive to improve democracy. We are a <span class="light-silver italic">movement</span> that believes our structures for decision making and leadership are outdated.
-        </p>
-        <p class="h3">
-          With the technology now available, we can do better.
-        </p>
+
+  <div class="max-width-4 mx-auto silver pb3">
+
+    <div class="sm-flex">
+
+
+      <div class="sm-col-8">
+        <h1 class="h0 h-font light-gray mb4 line-height-2">Let's re-imagine how democracy gets done.</h1>
+        <div class="mb3 max-width-2">
+          <p class="h3">
+            We are Australians with a drive to improve democracy. We are a <span class="light-silver italic">movement</span> that believes our structures for decision making and leadership are outdated.
+          </p>
+          <p class="h3">
+            With the technology now available, we can do better.
+          </p>
+        </div>
       </div>
-      <!-- <h4 class="h5 muted">Get Flux into the senate!</h4> -->
-      <div class="mb0">
-        <a href="{{site.baseurl}}{{ base }}/signup" class="h3 link-reset inline-block white border-bottom pb1 border-accent border-thick">
-          Join the movement
-          <i class="material-icons h2 align-middle">chevron_right</i>
-        </a>
-      </div>
+
     </div>
-    <div class="mb4">
-      <h4 class="silver">1502 members now registered</h4>
-      <h5 class='line-height-3 muted'>Flux is now a federally registered <br>  political party! AEC details</h5>
-    </div>
+
+
 
   </div>
 </section>
 
 
+<div class="bg-black dark-gray py3 px3 shadow-blue relative z4">
+  <div class="max-width-4 mx-auto  ">
 
-<div class="bg-light-gray dark-gray px2 sm-px3 py4 shadow relative z3">
-  <div class="max-width-3 mx-auto">
+    <div class="sm-flex mxn2">
 
-    <div class="border-bottom border-thick bg-accent bg-white px3 py3 mb3">
+      <div class="sm-col-8 px2 mb4 sm-mb0 mt1">
+        <a href="{{site.baseurl}}{{ base }}/signup" class="h2 regular link-reset inline-block py1 border-bottom border-thick border-accent white chevron">
+          Join the movement
+         <!--  <i class="material-icons h2 align-middle">chevron_right</i> -->
+        </a>
+      </div>
+
+      <div class="sm-col-4 px2 mt2 silver">
+        <h4 class="bold light-silver">1502 members now registered</h4>
+        <h5 class='line-height-4'>Flux is now a federally registered <br>  political party! AEC details</h5>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="bg-accent-muted dark-gray px2 sm-px3 py4">
+  <div class="max-width-4 mx-auto">
+
+    <div class="border-bottom border-thick bg-accent height-4 px3 py3 mb3">
       <h5 class="bold"><span class="gray">ABOUT</span> / HOW</h5>
       <div class="mb2">
-        <a href="#!" class="link-reset h-font bold h1 block py2 min-height-1 line-height-2 chevron">
+        <a href="#!" class="link-reset h-font bold h1 block py2 min-height-1 line-height-2">
           Why Australia needs Flux
         </a>
-        <p>Our current political system is broken... blah blah blah. Flux is here to save the world.... our purpose is..</p>
+        <p>Our current political system is broken... blah blah blah. Flux is here to save the world.... our purpose is..
+        Our current political system is broken... blah blah blah. Flux is here to save the world.... our purpose is..</p>
       </div>
       <div class="muted border-bottom border-muted ">
         <!-- <h5 class="h5 inline-block m0">2 minute read</h5> -->
@@ -64,7 +85,7 @@ layout: default
           sub-text="Plus its key benefits"
           tag-section="about flux"
           tag-topic="how"
-          link="about/how" %}
+          link="about/how/" %}
       </div>
       <div class="px2 sm-col-4">
         {% include components/card.html
@@ -89,25 +110,20 @@ layout: default
 
 
 
-<section class="full-bg-img height-40vh py4 px3">
-  <div class="max-width-3 mx-auto">
-    <div class="bg-white dark-gray p4 sm-col-8">
-      {% include components/main-heading.html text="We're annoyed with politics too" font-size="h1" font-weight="regular" %}
-      <p class="h3">Flux will act as a gateway for Australians to participate directly in parliament, making the need for trust in elected officials a thing of the past.</p>
-      <p>Flux is a movement not about ideology, but about progress for process. Flux Party members come from every age bracket and all walks of life, as well as from the left, centre, and right of politics.</p>
-      <p>We’re for uniting all of Australia for a simple cause; better democracy for a brighter future.</p>
-      <p>If you're like us and want to see this country work toward a truly brighter future, join us.</p>
+<section class="full-bg-img height-40vh py4 px2 sm-px3">
+  <div class="max-width-4 mx-auto">
+    <div class="bg-white dark-gray p3 sm-p4 sm-col-8">
+      <div class="mb3">
+        {% include components/main-heading.html
+          text="We're fed up with the political process too"
+          font-size="h1"
+          font-weight="regular" %}
+
+        <p>Flux is a movement not about ideology, but about progress for process. Flux Party members come from every age bracket and all walks of life, as well as from the left, centre, and right of politics.</p>
+      </div>
       <div class="gray">
-        <!-- <div class="mb4">
-          <h4 class="h3 line-height-3">
-          1445 members already registered
-          </h4>
-          <p class="h5">
-            Party Registration Submitted! Over 550 validated members.
-          </p>
-        </div> -->
-        <a href="{{site.baseurl}}{{ base }}/signup" class="h3 link-reset border-bottom border-thick bold inline-block pb1 border-accent dark-gray">
-          Sign up<span class="h4">&nbsp></span>
+        <a href="{{site.baseurl}}{{ base }}/signup" class="h3 link-reset border-bottom border-thick bold inline-block pb1 border-accent dark-gray chevron">
+          Become a member
         </a>
       </div>
     </div>
@@ -129,7 +145,7 @@ layout: default
   </div>
 </section> -->
 <section class="bg-accent dark-gray py4 px3">
-  <div class="max-width-3 mx-auto ">
+  <div class="max-width-4 mx-auto ">
 
     <div class="mb3">
       <h1 class="h-font bold mb1">Upcoming meetups </h1>
@@ -156,17 +172,18 @@ layout: default
   </div>
 </section>
 <section class="bg-dark-gray light-gray px3 py4 shadow relative ">
-  <div class="max-width-3 mx-auto">
-    <div class="mb4">
-      <h2 class="h1 near-white center">
-      In the news    <span class="h1 accent m0 block">&mdash;</span>
-      </h2>
-      <!-- <h4 class="h4">Read the overviews below</h4> -->
-    </div>
+  <div class="max-width-4 mx-auto">
+    {% include components/main-heading.html
+        text="In the news"
+        font-size="h1"
+        font-weight="regular"
+        line="true" %}
+
     <div class="sm-flex mxn3">
+
       <div class="px3 pb3 mb4 sm-col-4">
-        <div class="border-top ">
-          <a href="#!" class="link-reset h3 block py2 min-height-1">
+        <div class="border-bottom border-white border-thick ">
+          <a href="#!" class="link-reset h3 h-font block py2 min-height-1">
             The problem Flux wants to solve.
           </a>
           <div class="muted border-bottom border-muted pb2">
@@ -175,6 +192,7 @@ layout: default
           </div>
         </div>
       </div>
+
       <div class="px3 pb3 mb4 sm-col-4">
         <div class="border-top ">
           <a href="#!" class="link-reset h3 block py2 min-height-1">
@@ -253,11 +271,7 @@ layout: default
       </h2> Currently the best way to get in contact is via email: Max: max.kaye@voteflux.org, or flux@xk.io Nathan: nathan.spataro@voteflux.org For media enquiries: media@voteflux.org
     </div>
   </section>
-  <footer class="bg-white py4">
-    <div class="max-width-3 mx-auto">
-      <h2>FAQ</h2>
-    </div>
-  </footer>
+
   <!-- <section class="bg-dark-gray light-silver px3 py4">
     <div class="max-width-3 mx-auto">
       <div class="clearfix mxn2">

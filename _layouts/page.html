@@ -1,14 +1,27 @@
 ---
 layout: default
 ---
-<article class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
 
-  <div class="post-content">
+{% include navbar.html%}
+
+<article class="bg-accent-light py4">
+
+  <h4 class="mb3 mt1 mx-auto max-width-3">
+    <span class="muted">
+      {{ page.tag-section | upcase }}
+    </span>
+    <span>
+      /
+    </span>
+    <span class="bold">
+      {{ page.tag-topic | upcase }}
+    </span>
+  </h4>
+
+  <div class="mx-auto max-width-3 px2 sm-px3">
     {{ content }}
   </div>
 
 </article>
+{% include footer.html%}

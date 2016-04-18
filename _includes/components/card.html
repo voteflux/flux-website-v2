@@ -1,5 +1,8 @@
-<div class="border-bottom border-thick border-accent bg-white dark-gray px2 py2 mb3 sm-mb0 height-3">
-  <h6 class="mb3 mt1">
+<a
+  href="{{base}}{{site.baseurl}}{{ include.link }}"
+  class="link-reset block border-bottom border-thick border-accent bg-white dark-gray px2 py2 mb3 sm-mb0 height-3">
+
+  <h6 class="h5 mb3 mt1">
     <span class="silver">
       {{ include.tag-section | upcase }}
     </span>
@@ -11,9 +14,9 @@
     </span>
   </h6>
   <div class="">
-    <a href="{{base}}{{site.baseurl}}{{ include.link }}" class="h2 h-font line-height-2 link-reset block py2 bold">
+    <span class="h2 h-font line-height-2 link-reset block py2 bold">
       {{ include.text }}
-    </a>
+    </span>
     <p class="gray line-height-3">{{ include.sub-text }}</p>
   </div>
-</div>
+</a>
