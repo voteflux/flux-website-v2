@@ -28,9 +28,10 @@
 .bg-white { background-color: $white; }
 .bg-accent { background-color: $accent; }
 .bg-accent-muted { background-color: $accent-muted}
-.bg-accent-light {background-color: rgba($accent, 0.2)}
+.bg-accent-dark { background-color: $accent-dark}
 .bg-warning { background-color: red;}
 .bg-success { background-color: green; }
+
 
 // border colors
 .border-black { border-color: $black; }

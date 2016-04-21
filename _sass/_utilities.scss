@@ -16,10 +16,11 @@ a {
   top: 50%;
 }
 
-.height-3 {min-height: 18rem; }
+.height-3 {min-height: 14rem; }
 .height-4 {min-height: 20rem; }
 .height-40vh {min-height: 40vh;}
 .vh-100{min-height: 100vh;}
+
 .min-height-1 {min-height: 6rem}
 
 .square-1 {height: 12rem; width: 12rem}
@@ -73,3 +74,6 @@ a {
     color: $accent;
   }
 }
+
+
+.min-height-95vh {min-height: 95vh; }
