@@ -1,5 +1,7 @@
 /* Basscss Type Scale */
 
+.h00 {font-size: $h0 }
+
 .h0 { font-size: $h1 }
 
 .h1 { font-size: $h1 }
@@ -15,10 +17,13 @@
 .h6 { font-size: $h6 }
 
 
+
 // responsive type
 @media #{$breakpoint-sm} {
 
+  .h00 {font-size: $h00}
   .h0 { font-size: $h0 }
+  .sm-h1 { font-size: $h1 }
   .sm-h2 { font-size: $h2 }
   .sm-h3 { font-size: $h3; }
 
