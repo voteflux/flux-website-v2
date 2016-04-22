@@ -134,22 +134,31 @@ meetups:
 <!-- IN THE NEWS -->
 <section class="py4 px3 bg-near-black light-silver min-height-95vh texture-bg-img">
   <div class="max-width-4 mx-auto">
-    {% include components/main-heading.html
-    text="In the news"
-    font-size="h0 line-height-3"
-    font-weight="bold near-white mb4" %}
-    <div class="md-flex flex-wrap mxn3 mb3">
+    <div class="sm-flex items-center">
+      <div class="flex-auto">
+      {% include components/main-heading.html
+        text="In the news"
+        font-size="h0 line-height-3 m0"
+        font-weight="bold" %}
+      </div>
+      <div class="clearfix">
+        <a href="{{base}}{{site.baseurl}}" class="list-reset border-bottom accent mb2 right inline-block">Media queries</a>
+      </div>
+    </div>
+    <div class="sm-flex flex-wrap mxn3 mb3">
       {% for article in site.data.articles %}
         {% if article.type == 'major' %}
-          <div class="md-col-3 px3">
+          <div class="sm-col-6 md-col-4 lg-col-3 px3">
             <div class="mb3">
               <hr class="border-bottom accent-muted mb1 muted">
               <div class="flex flex-column justify-between height-3">
                 <div>
                   {% if article.publishedIn == 'Press Release' %}
-                    <h4 class="h5 mb2 gray">PRESS <span class="white">{{article.publishedIn | upcase }}</span></h4>
+                    <h4 class="h5 mb2 gray">PRESS <span class="white">{{article.publishedIn | upcase }}</span>
+                    </h4>
                   {% else %}
-                    <h4 class="h5 mb2 gray">ARTICLE <span class="white">{{article.publishedIn | upcase }}</span></h4>
+                    <h4 class="h5 mb2 gray">ARTICLE <span class="white">{{article.publishedIn | upcase }}</span>
+                    </h4>
                   {% endif %}
                   <h2 class="h3 sm-h2 h-font light line-height-4">{{article.title}}</h2>
                 </div>
@@ -162,11 +171,10 @@ meetups:
         {% endif %}
       {% endfor %}
     </div>
-
     <div class="right-align">
+
       <a href="" class="list-reset border-bottom accent">All articles</a>
     </div>
-
   </div>
 </section>
 
@@ -177,9 +185,9 @@ meetups:
     <div class="md-flex">
       <div class="md-col-9">
         {% include components/main-heading.html
-        text="Upcoming meetups"
-        font-size="h0 line-height-3"
-        font-weight="bold near-white" %}
+          text="Upcoming meetups"
+          font-size="h0 line-height-3"
+          font-weight="bold near-white" %}
         <p class="h2 sm-h1 light h-font letter-spacing-2 line-height-4 mb4 white muted">
           Join party co-founders <a href="" class="border-bottom link-reset">Nathan Spataro</a> & <a href="" class="border-bottom link-reset">Max Kaye</a> for a Q&A at the next meetup in your city
         </p>
