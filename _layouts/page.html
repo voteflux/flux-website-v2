@@ -5,23 +5,35 @@ layout: default
 
 {% include navbar.html%}
 
-<article class="bg-accent-light py4">
-
-  <h4 class="mb3 mt1 mx-auto max-width-3">
-    <span class="muted">
-      {{ page.tag-section | upcase }}
-    </span>
-    <span>
-      /
-    </span>
-    <span class="bold">
-      {{ page.tag-topic | upcase }}
-    </span>
-  </h4>
-
-  <div class="mx-auto max-width-3 px2 sm-px3">
+<!-- <div class="full-bg-img height-40vh"></div> -->
+<main class="bg-near-white dark-gray py4 px2 sm-px3">
+  <div class="mx-auto max-width-3">
+    <h4 class=" mt1">
+      <span class="muted"> {{ page.tag-section | upcase }} </span>
+      <span> / </span>
+      <span class="bold"> {{ page.tag-topic | upcase }} </span>
+    </h4>
+    <div class="mb4">
+      {% include components/main-heading.html
+        text=page.main-heading
+        font-size="h0"
+        font-weight="bold"
+        line="true" %}
+    </div>
     {{ content }}
+
+<!--     {% if content and page.related %}
+        <h2>Related pages</h2>
+        <ul>
+        {% for page in site.posts %}
+            {% if page.related contains post.title %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %} -->
   </div>
 
-</article>
+</main>
+
 {% include footer.html%}

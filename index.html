@@ -51,11 +51,11 @@ meetups:
   <div class="max-width-4 mx-auto mid-gray">
     <div class="md-flex  mb3">
       <div class="md-col-9">
-        <h5 class="h4"><span class="gray">ABOUT FLUX</span> / <span class="bold">HOW</span></h5>
+        <h5 class="h4"><span class="gray">ABOUT FLUX</span> / <span class="bold">WHY</span></h5>
         <hr class="accent-muted muted border-bottom">
         <h1 class="h0 bold mb3">Why Australia needs Flux</h1>
         <p class="h2 sm-h1 light h-font mb4 gray letter-spacing-2 line-height-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <a href="{{base}}{{site.baseurl}}/#!" class="h3 sm-h2 border-bottom accent inline-block">Learn more</a>
+        <a href="{{base}}{{site.baseurl}}/about/why-flux" class="h3 sm-h2 border-bottom accent inline-block">Learn more</a>
       </div>
     </div>
   </div>
@@ -82,13 +82,29 @@ meetups:
 </section>
 
 
-<section class="bg-white mid-gray px3 pt3 pb4">
+<section class="bg-white mid-gray px3 py4">
   <div class="max-width-4 mx-auto">
     <div class="sm-col-9">
       <h5 class="h4"><span class="gray">
         ABOUT FLUX</span> / <span class="bold">HOW</span>
       </h5>
-      <h1 class="h0 bold">The Flux voting system</h1>
+      <h1 class="h0 bold">The Flux voting system explained</h1>
+      <a href="{{site.baseurl}}{{ base }}/about/how" class="h3 sm-h2 link-reset border-bottom inline-block accent">
+        Learn more
+      </a>
+    </div>
+  </div>
+</section>
+<hr class="accent-muted muted border-bottom m0">
+
+
+<section class="bg-white mid-gray px3 py4">
+  <div class="max-width-4 mx-auto">
+    <div class="sm-col-9">
+      <h5 class="h4"><span class="gray">
+        ABOUT FLUX</span> / <span class="bold">WHO</span>
+      </h5>
+      <h1 class="h0 bold">Who is behind Flux</h1>
       <a href="{{site.baseurl}}{{ base }}/signup" class="h3 sm-h2 link-reset border-bottom inline-block accent">
         Learn more
       </a>
@@ -98,30 +114,14 @@ meetups:
 <hr class="accent-muted muted border-bottom m0">
 
 
-<section class="bg-white mid-gray px3 pt3 pb4">
+
+<section class="bg-white mid-gray px3 py4">
   <div class="max-width-4 mx-auto">
     <div class="sm-col-9">
       <h5 class="h4"><span class="gray">
-        ABOUT FLUX</span> / <span class="bold">HOW</span>
+        ABOUT FLUX</span> / <span class="bold">ANSWERS</span>
       </h5>
-      <h1 class="h0 bold">The Flux voting system</h1>
-      <a href="{{site.baseurl}}{{ base }}/signup" class="h3 sm-h2 link-reset border-bottom inline-block accent">
-        Learn more
-      </a>
-    </div>
-  </div>
-</section>
-<hr class="accent-muted muted border-bottom m0">
-
-
-
-<section class="bg-white mid-gray px3 pt3 pb4">
-  <div class="max-width-4 mx-auto">
-    <div class="sm-col-9">
-      <h5 class="h4"><span class="gray">
-        ABOUT FLUX</span> / <span class="bold">HOW</span>
-      </h5>
-      <h1 class="h0 bold">The Flux voting system</h1>
+      <h1 class="h0 bold">Frequently asked questions</h1>
       <a href="{{site.baseurl}}{{ base }}/signup" class="h3 sm-h2 link-reset border-bottom inline-block accent">
         Learn more
       </a>
@@ -202,6 +202,65 @@ meetups:
     </div>
   </div>
 </section>
+
+
+<!-- <section class="bg-near-white gray py4 px3">
+  <div class="max-width-4 mx-auto">
+    {% include components/main-heading.html
+      text="Get in touch"
+      font-size="h0 line-height-3"
+      font-weight="bold mid-gray" %}
+
+      <div class="sm-flex justify-between">
+        <div class="sm-col-4">
+          </h2> Currently the best way to get in contact is via email: Max: max.kaye@voteflux.org, or flux@xk.io Nathan: nathan.spataro@voteflux.org For media enquiries: media@voteflux.org
+          </h2>
+        </div>
+
+        <div class="sm-col-4">
+          </h2> Currently the best way to get in contact is via email: Max: max.kaye@voteflux.org, or flux@xk.io Nathan: nathan.spataro@voteflux.org For media enquiries: media@voteflux.org
+          </h2>
+        </div>
+      </div>
+
+  </div>
+</section> -->
+
+<section class="bg-near-white mid-gray py4 px3">
+  <div class="max-width-4 mx-auto">
+
+    {% include components/main-heading.html
+      text="Join the conversation"
+      font-size="h0 line-height-3"
+      font-weight="bold mid-gray mb4" %}
+
+      <div class="sm-flex mxn3">
+        <div class="sm-col-4 px3">
+
+          <hr class="accent-muted muted border-bottom m0">
+          <div class="mb3">
+            <h4 class="sm-h3 muted mb0">Flux HQ</h4>
+            <h3 class="sm-h2 bold h-font mt0">flux@xk.io</h3>
+          </div>
+          <hr class="accent-muted muted border-bottom m0">
+          <div class="mb3">
+            <h4 class="sm-h3 muted mb0">Max</h4>
+            <h3 class="sm-h2 bold h-font mt0">max.kaye@voteflux.org</h3>
+          </div>
+          <hr class="accent-muted muted border-bottom m0">
+          <div class="mb3">
+            <h4 class="sm-h3 muted mb0">Nathan</h4>
+            <h3 class="sm-h2 bold h-font mt0">nathan.spataro@voteflux.org</h3>
+          </div>
+
+        </div>
+
+
+      </div>
+  </div>
+</section>
+
+<!-- For media enquiries: media@voteflux.org -->
 
 
 </main>

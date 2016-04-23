@@ -1,12 +1,12 @@
 <div class="mb3">
-  <h2 class="mb0 line-height-2 {% if include.font-size %}{{include.font-size}} {% else %}h1 {% endif %}{% if include.font-weight %}{{include.font-weight}} {% else %}light {% endif %}"> {{include.text}}
+  <h2 id={{include.text | slugify }} class="mb0 line-height-2 {% if include.font-size %}{{include.font-size}} {% else %}h1 {% endif %}{% if include.font-weight %}{{include.font-weight}} {% else %}light {% endif %}"> {{include.text}}
   </h2>
   {% if include.sub-text %}
   <h3>{{include.sub-text}}</h3>
   {% endif %}
   {% if include.line %}
   <div class="mt2">
-    <span class="border-bottom px2 inline-block border-thick muted"></span>
+    <span class="border-bottom px2 inline-block border-thick muted accent"></span>
   </div>
   {% endif %}
 </div>
