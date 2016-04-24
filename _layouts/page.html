@@ -6,34 +6,57 @@ layout: default
 {% include navbar.html%}
 
 <!-- <div class="full-bg-img height-40vh"></div> -->
-<main class="bg-near-white dark-gray py4 px2 sm-px3">
-  <div class="mx-auto max-width-3">
-    <h4 class=" mt1">
+<main class="bg-near-white mid-gray py4 px2 sm-px3">
+<div class="mx-auto max-width-4">
+  <div class="sm-flex mxn3">
+    <div class="sm-col-3 px3">
+      <ul>
+        <li>  <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a></li>
+        <li>LinkedIn</li>
+        <li>Reddit</li>
+        <li>Twitter</li>
+      </ul>
+    </div>
+    <div class="sm-col-9 md-col-7 px3">
+      <h4 class=" mt1">
       <span class="muted"> {{ page.tag-section | upcase }} </span>
       <span> / </span>
       <span class="bold"> {{ page.tag-topic | upcase }} </span>
-    </h4>
-    <div class="mb4">
-      {% include components/main-heading.html
-        text=page.main-heading
+      </h4>
+      <div class="mb4">
+        {% include components/main-heading.html
+        text=page.title
         font-size="h0"
         font-weight="bold"
         line="true" %}
+      </div>
+      {{ content }}
     </div>
-    {{ content }}
-
-<!--     {% if content and page.related %}
-        <h2>Related pages</h2>
-        <ul>
-        {% for page in site.posts %}
-            {% if page.related contains post.title %}
-                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-            {% endif %}
-        {% endfor %}
-        </ul>
-    {% endif %} -->
+    <div class="md-col-1 px3"></div>
   </div>
-
+</div>
 </main>
+
+
+{% for item in site.about %}
+  {% if item.url != page.url %}
+    <section class="bg-white mid-gray px3 py4">
+      <div class="max-width-4 mx-auto">
+        <div class="sm-col-9">
+          <h5 class="h4"><span class="gray">
+            ABOUT FLUX</span> / <span class="bold">{{item.tag-topic | upcase }}</span>
+          </h5>
+          <h1 class="h0 bold">{{item.title}}</h1>
+          <a href="{{base}}{{site.baseurl}}{{item.url}}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
+            Learn more
+          </a>
+        </div>
+      </div>
+    </section>
+    <hr class="accent-muted muted border-bottom m0">
+  {% endif %}
+{% endfor %}
 
 {% include footer.html%}

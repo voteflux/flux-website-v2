@@ -18,7 +18,8 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 collections:
-  - faqs
+  about:
+    output: true
 
 # Build settings
 markdown: kramdown

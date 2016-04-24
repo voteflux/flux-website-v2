@@ -1,0 +1,75 @@
+---
+layout: page
+title: Frequently asked questions
+main-heading: Why Australia needs Flux
+permalink: about/faqs/
+tag-section: about flux
+tag-topic: answers
+
+faqs:
+- question: Is membership free?
+  answer: >
+    Yes. Membership is free forever. We don't believe charging a membership fee is necessary, and are working on other methods of funding to ensure we can provide open access to democracy to as many people as possible.
+
+- question: Does Flux have a platform?
+  answer: >
+    Yes and no. We do have a platform of parliamentary reform, and we deliberately do not have any other platforms. We only seek to change the way decisions are made, not to actually make the decisions ourselves. The vision of Flux is not to be the source of new policy. The vision is to help the best policy be written.
+
+- question: Are membership details confidential?
+  answer: >
+    Yes. Membership details will be exclusively used for party business, and never sold or willfully disclosed. Currently only Nathan and Max have access, though this will expand slightly as Flux proceeds through the registration process.
+
+- question: Why do I need Flux; I already have a representative?
+  answer: >
+    While some representatives are good, none are good enough to represent everyone in their electorate. Too often people's concerns are ignored because their representative has different views to them. Flux believes nobody should be cut off from democracy just because they disagree with their representative.
+
+- question: Can I still sign up if I'm a member of another political party?
+  answer: |
+    Yes! The AEC is specific in their criterion for registration: "at least 500 members who are on the Commonwealth electoral roll and who are not also relied upon by another party for registration purposes."
+
+    This means you're able to support Flux as a founding member if you're a member of any other party with a parliamentarian (so Labor, Liberal, Nationals, Greens, etc are all okay). The only time it is an issue is if you are a member of a party who does not have a parliamentarian, and are used by that party to support their registration.
+
+- question: How many members are required for registration?
+  answer: >
+    We can submit anywhere from 500 to 550 members to the AEC for registration. However, the counter (currently reading 1564) does not reflect how many members have valid details according to the AEC. Often people forget important details like middle names, or suburbs and postcodes on their address. This means we actually need more than 550 submissions of interest. Please keep telling your friends about Flux even if our membership counter exceeds 550, as every new member increases the chance of successful registration.
+
+- question: Where do you provide attribution for creative common licensed works?
+  answer: >
+    Here: <a href="voteflux.org/attribution">voteflux.org/attribution</a>
+
+- question: Is your voting system the same as direct democracy?
+  answer: |
+    No. Although there are similarities, they are philosophically very different.
+    The main practical differences are:
+    <ul>
+        <li>Swapping votes is allowed</li>
+        <li>Sending votes is allowed</li>
+        <li>Saving 'political capital' over time is allowed</li>
+        <li>Some similarities are: conservation of votes and distributing uniformly over the population.</li>
+    </ul>
+
+- question: How are candidates selected?
+  answer: >
+    Please see: <a href="https://github.com/voteflux/voteflux.github.io/blob/master/posts/candidate-selection.md">https://github.com/voteflux/voteflux.github.io/blob/master/posts/candidate-selection.md</a>
+
+- question: Where is the Flux constitution?
+  answer: >
+    Here: <a href="https://github.com/XertroV/flux/blob/master/CONSTITUTION.md">https://github.com/XertroV/flux/blob/master/CONSTITUTION.md</a>
+
+- question: When was party registration finalized?
+  answer: >
+    March 29th 2016; an extremely quick application time of 2 months and 2 days.
+
+- question: How can I revoke my membership?
+  answer: >
+    There is a button on your user details page in red at the bottom. All you need to do is click that. You were emailed a link to your user details when you joined, from the Flux Membership Robot.
+---
+
+
+
+{% for faq in page.faqs  %}
+<div class="mb3">
+  <h3 class="h4 sm-h3 bold">{{faq.question}}</h3>
+  <p>{{faq.answer}}</p>
+</div>
+{% endfor %}
