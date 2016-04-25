@@ -14,12 +14,13 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: ""
 # baseurl: "/site-v2-concept"
 url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+icon_path: /img/social-icons/
 
 collections:
   about:
     output: true
+
+
 
 # Build settings
 markdown: kramdown

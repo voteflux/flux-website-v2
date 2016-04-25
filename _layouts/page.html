@@ -1,6 +1,10 @@
 ---
 layout: default
+
 ---
+
+
+{% capture page_url %}https:/{{site.baseurl}}{{page.url}}{% endcapture %}
 
 
 {% include navbar.html%}
@@ -10,15 +14,33 @@ layout: default
 <div class="mx-auto max-width-4">
   <div class="sm-flex mxn3">
     <div class="sm-col-3 px3">
-      <ul>
-        <li>  <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
-        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-    </a></li>
-        <li>LinkedIn</li>
-        <li>Reddit</li>
-        <li>Twitter</li>
+
+      <ul class="list-reset sm-mt4 sm-fixed xs-flex">
+        <li class="opacity-hover transition mb2 mr2">
+          <a href="http://www.facebook.com/sharer.php?u={{page_url}}" target="_blank">
+            <img width="54" src="{{site.icon_path}}facebook-with-circle.svg" alt="Facebook" />
+          </a>
+        </li>
+        <li class="opacity-hover transition mb2 mr2">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{page_url}}" target="_blank">
+            <img width="54" src="{{site.icon_path}}linkedin-with-circle.svg" alt="LinkedIn" />
+          </a>
+        </li>
+        <li class="opacity-hover transition mb2 mr2">
+          <a href="http://reddit.com/submit?url={{page_url}}&amp;title={{page.title | escape_url}}" target="_blank">
+            <img width="54" src="{{site.icon_path}}reddit-with-circle.svg" alt="Reddit" />
+          </a>
+        </li>
+        <li class="opacity-hover transition mb2 mr2">
+            <a href="https://twitter.com/intent/tweet/?url={{page_url}}&amp;text={{page.title | url_escape }}&amp;hashtags=auspol,voteflux" target="_blank">
+                <img width="54" src="{{site.icon_path}}twitter-with-circle.svg" alt="Twitter" />
+            </a>
+        </li>
       </ul>
+
     </div>
+
+
     <div class="sm-col-9 md-col-7 px3">
       <h4 class=" mt1">
       <span class="muted"> {{ page.tag-section | upcase }} </span>
@@ -42,7 +64,7 @@ layout: default
 
 {% for item in site.about %}
   {% if item.url != page.url %}
-    <section class="bg-white mid-gray px3 py4">
+    <section class="bg-white mid-gray px3 py4 relative z1">
       <div class="max-width-4 mx-auto">
         <div class="sm-col-9">
           <h5 class="h4"><span class="gray">

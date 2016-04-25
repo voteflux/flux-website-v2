@@ -1,4 +1,6 @@
-.flex { display: flex }
+@media #{$breakpoint-xs} {
+  .xs-flex { display: flex }
+}
 
 @media #{$breakpoint-sm} {
   .sm-flex { display: flex }

@@ -77,3 +77,22 @@ a {
 
 
 .min-height-95vh {min-height: 95vh; }
+
+:focus {
+    outline: $accent dotted 2px;}
+
+.transition {
+  transition: all ease 0.2s;
+}
+
+
+.opacity-hover {
+  opacity: .5;
+  &:hover {
+    opacity:.75;
+  }
+  &:active {
+    opacity: 1;
+  }
+}
+

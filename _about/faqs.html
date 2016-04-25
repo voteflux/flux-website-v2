@@ -65,11 +65,18 @@ faqs:
     There is a button on your user details page in red at the bottom. All you need to do is click that. You were emailed a link to your user details when you joined, from the Flux Membership Robot.
 ---
 
-
+<h4>Contents</h4>
+<ul class="sm-h3 list-reset border-left border-accent-muted pl1 sm-pl2 mb4 line-height-3 max-width-1">
+  {% for faq in page.faqs %}
+    <li class="mb2">
+      <a href="#{{faq.question | slugify }}">{{faq.question}}</a>
+    </li>
+  {% endfor %}
+</ul>
 
 {% for faq in page.faqs  %}
 <div class="mb3">
-  <h3 class="h4 sm-h3 bold">{{faq.question}}</h3>
+  <h3 id="{{faq.question | slugify }}" class="h4 sm-h3 bold">{{faq.question}}</h3>
   <p>{{faq.answer}}</p>
 </div>
 {% endfor %}
