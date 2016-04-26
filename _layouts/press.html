@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+{% capture page_date %}
+{{page.date | date: '%B %d, %Y' }}
+{% endcapture %}
+
+{% include navbar.html %}
+<div class="mx-auto max-width-3">
+{% if page.publishedIn == 'Press Release' %}
+  <h4 class="h5 mb2 gray">PRESS / <span class="black">{{page.publishedIn | upcase }}</span>
+  </h4>
+{% else %}
+  <h4 class="h5 mb2 gray">ARTICLE / <span class="black">{{page.publishedIn | upcase }}</span>
+  </h4>
+{% endif %}
+  {% include components/main-heading.html
+    font-size="h0"
+    text=page.title
+    sub-text=page_date
+    line="true" %}
+{% comment %}  <time datetime="{{page.date }}" class="italic gray mb4 block">
+  {{page.date | date: '%B %d, %Y' }}
+  </time>{% endcomment %}
+
+  <h3>Read the <a href="{{page.link}}" target="_blank">full article here</a>
+  </h3>
+
+</div>
+{% include footer.html %}

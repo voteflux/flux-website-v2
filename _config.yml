@@ -32,3 +32,14 @@ exclude:
   - gulpfile.js
   - react-signup
   - docs
+  - npm-debug.log
+  - to-do
+  - index-old.html
+
+
+page_gen-dirs: true # uncomment, if you prefer to generate named folders
+page_gen:
+  - data: 'press'
+    template: 'press'
+    name: 'title'
+    dir: 'press'

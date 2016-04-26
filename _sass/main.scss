@@ -23,7 +23,7 @@ $caps-letter-spacing: .2em !default;
 $light-font-weight: 200 !default;
 $mid-light-font-weight: 300 !default;
 $regular-font-weight: 400 !default;
-$bold-font-weight: 700 !default;
+$bold-font-weight: 900 !default;
 
 // layout
 $width-1: 24rem !default;
@@ -71,9 +71,9 @@ $light-silver:  #ccc !default;
 $light-gray:    #eee !default;
 $near-white:    #f4f4f4 !default;
 $white:         #fff !default;
-$accent:        #003DF9 !default; //#27DCC9
+$accent:        #F36407 !default; //#27DCC9
 $accent-muted:  rgba($accent, .3);
-$accent-dark: #00423C !default;
+$accent-dark: darken($accent, 50%) !default;
 $warning:       red !default;
 $success:       green !default;
 

@@ -11,7 +11,6 @@ meetups:
 
 
 <main>
-
 <section class="bg-near-black px3 py4 relative min-height-95vh texture-bg-img">
   <div class="mx-auto max-width-4">
     <div class="sm-flex mxn4">
@@ -102,7 +101,7 @@ meetups:
 {% endfor %}
 
 <!-- IN THE NEWS -->
-<section class="py4 px3 bg-near-black light-silver min-height-95vh texture-bg-img">
+<section class="py4 px3 bg-near-black light-gray min-height-95vh texture-bg-img">
   <div class="max-width-4 mx-auto">
     <div class="sm-flex items-center">
       <div class="flex-auto">
@@ -116,7 +115,7 @@ meetups:
       </div>
     </div>
     <div class="sm-flex flex-wrap mxn3 mb3">
-      {% for article in site.data.articles %}
+      {% for article in site.data.press %}
         {% if article.type == 'major' %}
           <div class="sm-col-6 md-col-4 lg-col-3 px3">
             <div class="mb3">
@@ -130,7 +129,7 @@ meetups:
                     <h4 class="h5 mb2 gray">ARTICLE <span class="white">{{article.publishedIn | upcase }}</span>
                     </h4>
                   {% endif %}
-                  <h2 class="h3 sm-h2 h-font light line-height-4">{{article.title}}</h2>
+                  <a href="{{ article.title | datapage_url: 'press' }}" class="link-reset"><h2 class="h3 sm-h2 h-font light line-height-4">{{article.title}}</h2></a>
                 </div>
                 <time datetime="{{article.date }}" class="italic gray">
                 {{article.date | date: '%B %d, %Y' }}
@@ -143,7 +142,7 @@ meetups:
     </div>
     <div class="right-align">
 
-      <a href="" class="list-reset border-bottom accent">All articles</a>
+      <a href="{{site.baseurl}}/press" class="list-reset border-bottom accent">All articles</a>
     </div>
   </div>
 </section>
@@ -179,7 +178,7 @@ meetups:
     {% include components/main-heading.html
       text="Get in touch"
       font-size="h0 line-height-3"
-      font-weight="bold mid-gray" %}
+      font-weight="bold dark-gray" %}
 
       <div class="sm-flex justify-between">
         <div class="sm-col-4">
@@ -196,13 +195,13 @@ meetups:
   </div>
 </section> -->
 
-<section class="bg-near-white mid-gray py4 px3">
+<section class="bg-near-white dark-gray py4 px3">
   <div class="max-width-4 mx-auto">
 
     {% include components/main-heading.html
       text="Join the conversation"
       font-size="h0 line-height-3"
-      font-weight="bold mid-gray mb4" %}
+      font-weight="bold dark-gray mb4" %}
 
       <div class="sm-flex mxn3">
         <div class="sm-col-4 px3">
@@ -212,11 +211,13 @@ meetups:
             <h4 class="sm-h3 muted mb0">Flux HQ</h4>
             <h3 class="sm-h2 bold h-font mt0">flux@xk.io</h3>
           </div>
+
           <hr class="accent-muted muted border-bottom m0">
           <div class="mb3">
             <h4 class="sm-h3 muted mb0">Max</h4>
             <h3 class="sm-h2 bold h-font mt0">max.kaye@voteflux.org</h3>
           </div>
+
           <hr class="accent-muted muted border-bottom m0">
           <div class="mb3">
             <h4 class="sm-h3 muted mb0">Nathan</h4>
@@ -234,3 +235,4 @@ meetups:
 
 
 </main>
+{% include footer.html %}
