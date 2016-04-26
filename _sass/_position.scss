@@ -25,3 +25,7 @@
 @media #{$breakpoint-sm} {
  .sm-fixed { position: fixed }
 }
+
+@media #{$breakpoint-md} {
+ .md-lg-fixed { position: fixed }
+}

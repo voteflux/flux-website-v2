@@ -10,57 +10,36 @@ layout: default
 {% include navbar.html%}
 
 <!-- <div class="full-bg-img height-40vh"></div> -->
-<main class="bg-near-white mid-gray py4 px2 sm-px3">
-<div class="mx-auto max-width-4">
-  <div class="sm-flex mxn3">
-    <div class="sm-col-3 px3">
-
-      <ul class="list-reset sm-mt4 sm-fixed xs-flex">
-        <li class="opacity-hover transition mb2 mr2">
-          <a href="http://www.facebook.com/sharer.php?u={{page_url}}" target="_blank">
-            <img width="54" src="{{site.icon_path}}facebook-with-circle.svg" alt="Facebook" />
-          </a>
-        </li>
-        <li class="opacity-hover transition mb2 mr2">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{page_url}}" target="_blank">
-            <img width="54" src="{{site.icon_path}}linkedin-with-circle.svg" alt="LinkedIn" />
-          </a>
-        </li>
-        <li class="opacity-hover transition mb2 mr2">
-          <a href="http://reddit.com/submit?url={{page_url}}&amp;title={{page.title | escape_url}}" target="_blank">
-            <img width="54" src="{{site.icon_path}}reddit-with-circle.svg" alt="Reddit" />
-          </a>
-        </li>
-        <li class="opacity-hover transition mb2 mr2">
-            <a href="https://twitter.com/intent/tweet/?url={{page_url}}&amp;text={{page.title | url_escape }}&amp;hashtags=auspol,voteflux" target="_blank">
-                <img width="54" src="{{site.icon_path}}twitter-with-circle.svg" alt="Twitter" />
-            </a>
-        </li>
-      </ul>
-
-    </div>
-
-
-    <div class="sm-col-9 md-col-7 px3">
-      <h4 class=" mt1">
-      <span class="muted"> {{ page.tag-section | upcase }} </span>
-      <span> / </span>
-      <span class="bold"> {{ page.tag-topic | upcase }} </span>
-      </h4>
-      <div class="mb4">
-        {% include components/main-heading.html
-        text=page.title
-        font-size="h0"
-        font-weight="bold"
-        line="true" %}
+<main class="bg-near-white dark-gray py4 px2 sm-px3">
+  <div class="mx-auto max-width-4">
+    <div class="sm-flex mxn3">
+      <div class="md-col-2 px3">
       </div>
-      {{ content }}
-    </div>
-    <div class="md-col-1 px3"></div>
-  </div>
-</div>
-</main>
+      <div class="sm-col-11 md-col-9 lg-col-7 px3">
+        <h4 class=" mt1">
+          <span class="muted"> {{ page.tag-section | upcase }} </span>
+          <span> / </span>
+          <span class="bold"> {{ page.tag-topic | upcase }} </span>
+        </h4>
+        <div class="mb4">
+          {% include components/main-heading.html
+            text=page.title
+            font-size="h0"
+            font-weight="bold"
+            line="true" %}
+        </div>
+        {{ content }}
 
+        <div class="mt4">
+          {% include components/hr-muted.html %}
+          <h4 class="mt0 mb1 accent">share</h4>
+          {% include social-buttons.html %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
 {% for item in site.about %}
   {% if item.url != page.url %}
@@ -71,7 +50,7 @@ layout: default
             ABOUT FLUX</span> / <span class="bold">{{item.tag-topic | upcase }}</span>
           </h5>
           <h1 class="h0 bold">{{item.title}}</h1>
-          <a href="{{base}}{{site.baseurl}}{{item.url}}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
+          <a href="{{site.baseurl}}{{item.url}}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
             Learn more
           </a>
         </div>

@@ -1,3 +1,5 @@
+.flex { display: flex }
+
 @media #{$breakpoint-xs} {
   .xs-flex { display: flex }
 }

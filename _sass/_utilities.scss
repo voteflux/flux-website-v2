@@ -87,12 +87,11 @@ a {
 
 
 .opacity-hover {
-  opacity: .5;
+  opacity: .65;
   &:hover {
-    opacity:.75;
+    opacity:.85;
   }
   &:active {
     opacity: 1;
   }
 }
-

@@ -48,7 +48,7 @@ meetups:
 
 
 <section class="bg-white py4 px3 min-height-95vh">
-  <div class="max-width-4 mx-auto mid-gray">
+  <div class="max-width-4 mx-auto dark-gray">
     <div class="md-flex  mb3">
       <div class="md-col-9">
         <h5 class="h4"><span class="gray">ABOUT FLUX</span> / <span class="bold">WHY</span></h5>
@@ -82,55 +82,24 @@ meetups:
   </div>
 </section>
 
-
-<section class="bg-white mid-gray px3 py4">
-  <div class="max-width-4 mx-auto">
-    <div class="sm-col-9">
-      <h5 class="h4"><span class="gray">
-        ABOUT FLUX</span> / <span class="bold">HOW</span>
-      </h5>
-      <h1 class="h0 bold">The Flux voting system explained</h1>
-      <a href="{{site.baseurl}}{{ base }}/about/how" class="h3 sm-h2 link-reset border-bottom inline-block accent">
-        Learn more
-      </a>
-    </div>
-  </div>
-</section>
-<hr class="accent-muted muted border-bottom m0">
-
-
-<section class="bg-white mid-gray px3 py4">
-  <div class="max-width-4 mx-auto">
-    <div class="sm-col-9">
-      <h5 class="h4"><span class="gray">
-        ABOUT FLUX</span> / <span class="bold">WHO</span>
-      </h5>
-      <h1 class="h0 bold">Who is behind Flux</h1>
-      <a href="{{site.baseurl}}{{ base }}/signup" class="h3 sm-h2 link-reset border-bottom inline-block accent">
-        Learn more
-      </a>
-    </div>
-  </div>
-</section>
-<hr class="accent-muted muted border-bottom m0">
-
-
-
-<section class="bg-white mid-gray px3 py4">
-  <div class="max-width-4 mx-auto">
-    <div class="sm-col-9">
-      <h5 class="h4"><span class="gray">
-        ABOUT FLUX</span> / <span class="bold">ANSWERS</span>
-      </h5>
-      <h1 class="h0 bold">Frequently asked questions</h1>
-      <a href="{{site.baseurl}}{{ base }}/signup" class="h3 sm-h2 link-reset border-bottom inline-block accent">
-        Learn more
-      </a>
-    </div>
-  </div>
-</section>
-<hr class="accent-muted muted border-bottom m0">
-
+{% for item in site.about %}
+  {% if item.tag-topic != 'why' %}
+    <section class="bg-white dark-gray px3 py4 relative z1">
+      <div class="max-width-4 mx-auto">
+        <div class="sm-col-9">
+          <h5 class="h4"><span class="gray">
+            ABOUT FLUX</span> / <span class="bold">{{item.tag-topic | upcase }}</span>
+          </h5>
+          <h1 class="h0 bold line-height-1">{{item.title}}</h1>
+          <a href="{{site.baseurl}}{{item.url}}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
+            Learn more
+          </a>
+        </div>
+      </div>
+    </section>
+    <hr class="accent-muted muted border-bottom m0">
+  {% endif %}
+{% endfor %}
 
 <!-- IN THE NEWS -->
 <section class="py4 px3 bg-near-black light-silver min-height-95vh texture-bg-img">
