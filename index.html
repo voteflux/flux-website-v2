@@ -25,7 +25,7 @@ meetups:
             <hr class="muted">
 
             <h5 class="muted">Registered Members</h5>
-            <h3><span id="member-count">loading</span></h3>
+            <h3><span id="js-member-count"></span></h3>
 
 
           </div>
@@ -124,8 +124,8 @@ meetups:
       </div>
     </div>
     <div class="sm-flex flex-wrap mxn3 mb3">
-      {% for article in site.data.press %}
-        {% if article.type == 'major' %}
+      {% for article in site.data.press limit:8 %}
+
           <div class="sm-col-6 md-col-4 lg-col-3 px3">
             <div class="mb3">
               <hr class="border-bottom accent-muted mb1 muted">
@@ -146,7 +146,6 @@ meetups:
               </div>
             </div>
           </div>
-        {% endif %}
       {% endfor %}
     </div>
     <div class="right-align">

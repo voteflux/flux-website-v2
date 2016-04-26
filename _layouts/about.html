@@ -28,12 +28,12 @@ layout: default
         </div>
         {{ content }}
 
-        <div class="mt4">
+
           {% include components/hr-muted.html %}
           <h4 class="mt0 mb1 accent">share</h4>
           {% include social-buttons.html %}
 
-        </div>
+
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@ layout: default
 
 {% for item in site.about %}
   {% if item.url != page.url %}
-    <section class="bg-white mid-gray px3 py4 relative z1">
+    <section class="bg-dark-gray near-white px3 py4 relative z1">
       <div class="max-width-4 mx-auto">
         <div class="sm-col-9">
           <h5 class="h4"><span class="gray">
