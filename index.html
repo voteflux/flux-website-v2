@@ -23,6 +23,11 @@ meetups:
               <h2 class="sm-h1 white bold mt2 m0 line-height-3">FLUX <span class="muted gray regular">/ <br>PROGRESS <br>FOR PROCESS</span></h2>
             </div>
             <hr class="muted">
+
+            <h5 class="muted">Registered Members</h5>
+            <h3><span id="member-count">loading</span></h3>
+
+
           </div>
         </div>
       </header>
@@ -81,7 +86,10 @@ meetups:
   </div>
 </section>
 
-{% for item in site.about %}
+
+<!-- ABOUT PAGE LINKS -->
+{% assign items = site.about | sort: 'order '%}
+{% for item in items %}
   {% if item.tag-topic != 'why' %}
     <section class="bg-white dark-gray px3 py4 relative z1">
       <div class="max-width-4 mx-auto">
@@ -99,6 +107,7 @@ meetups:
     <hr class="accent-muted muted border-bottom m0">
   {% endif %}
 {% endfor %}
+
 
 <!-- IN THE NEWS -->
 <section class="py4 px3 bg-near-black light-gray min-height-95vh texture-bg-img">
