@@ -11,8 +11,8 @@ email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Flux website refresh...
 # baseurl: "/vote-flux-concept" # the subpath of your site, e.g. /blog
-# baseurl: ""
-baseurl: "/site-v2-concept"
+baseurl: ""
+# baseurl: "/site-v2-concept"
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 icon_path: /img/social-icons/
 

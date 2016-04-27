@@ -71,9 +71,9 @@ $light-silver:  #ccc !default;
 $light-gray:    #eee !default;
 $near-white:    #f4f4f4 !default;
 $white:         #fff !default;
-$accent:        #F36407 !default; //#27DCC9
+$accent:        #27DCC9 !default; //#F36407
 $accent-muted:  rgba($accent, .3);
-$accent-dark: darken($accent, 50%) !default;
+$accent-dark: darken($accent, 40%) !default;
 $warning:       red !default;
 $success:       green !default;
 

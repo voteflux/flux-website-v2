@@ -92,6 +92,34 @@ $(document).ready(function() {
     },
     type: 'GET'
   })
+
+
+// https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=FluxSydney&sig=3ddb1a95711db994ebba2b2dc0d2e7ffb09e40fa&page=200&fields=&sig_id=96374432&order=time&desc=false&status=upcoming
+
+
+    var isClosed = true;
+    var transitionTime = 250;
+    $("#js-menu-button").on('tap', function() {
+      isClosed = !isClosed;
+      if (!isClosed) {
+        $("#js-menu")
+          .addClass('opacity-1')
+          .removeClass('hide')
+          .removeClass('opacity-0');
+        $('body').addClass('overflow-hidden');
+      } else {
+        $("#js-menu")
+          .addClass('opacity-0')
+          .removeClass('opacity-1');
+        $('body').removeClass('overflow-hidden');
+        setTimeout(function() {
+          $("#js-menu").addClass('hide');
+        }, transitionTime);
+      }
+    })
+
+
+
 });
 
 
