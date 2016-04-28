@@ -40,13 +40,12 @@ card 4
 Changes
   Add logo
   change about page subheadings to accent color
-  make inline signup form stand out - border etc?
-  in faqs add common concerns (add link for the moment - make into page later)
+  [X] make inline signup form stand out - border etc?
+      in faqs add common concerns (add link for the moment - make into page later)
   - media enquiries  add link to page
   - add hover effect to all links - including in the press links
-  - add share buttons under each article
-  - work out
-  - pull down meetups data with api key
+  - remove stubs
+  - (low priority)pull down meetups data with api key
   - link nathan and max to 'who' page
 
 TO DO

@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 // typography
-$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif !default;
+$font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, sans-serif !default;
 $heading-font: 'Roboto Slab' !default;
 $h00: 8rem !default;
 $h0: 4rem !default;
@@ -113,5 +113,3 @@ $button-background-color: $accent !default;
 @import "colors";
 @import "hide";
 @import "hamburger";
-
-

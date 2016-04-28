@@ -148,13 +148,12 @@ var myEfficientFn = debounce(function() {
     } else {
       $("#js-navbar").removeClass('opacity-1');
     }
-    console.log("called")
 }, 15);
 
 
 function checkWidth() {
   var windowsize = $window.width();
-  if (windowsize > 440) {
+  if (windowsize > 640) {
     $window.on('scroll', myEfficientFn );
   } else {
     $window.off('scroll', myEfficientFn );

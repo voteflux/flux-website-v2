@@ -1,5 +1,5 @@
 <div class="mb3">
-  <h2 id={{include.text | slugify }} class="mb0 line-height-2 {% if include.font-size %}{{include.font-size}} {% else %}h1 {% endif %}{% if include.font-weight %}{{include.font-weight}} {% else %} bold {% endif %} {{include.classes}}"> {{include.text}}
+  <h2 id={{include.text | slugify }} class="mb0 {% if include.font-size %}{{include.font-size}} {% else %}h1 {% endif %}{% if include.font-weight %}{{include.font-weight}} {% else %} bold {% endif %} {{include.classes}} line-height-2"> {{include.text}}
   </h2>
   {% if include.sub-text %}
   <h3>{{include.sub-text}}</h3>

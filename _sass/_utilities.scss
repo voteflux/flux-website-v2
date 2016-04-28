@@ -104,10 +104,12 @@ a {
 }
 
 .opacity-0  { opacity: 0}
-.opacity-1  {opacity: 1}
+.opacity-1  {opacity: 1 !important}
 .will-change-opacity {
   will-change: opacity;
 }
+@media #{$breakpoint-sm} {
+  .sm-opacity-0 { opacity: 0}
+}
 
 .navbar-height { height: 4.5rem };
-
