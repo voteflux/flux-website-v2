@@ -16,7 +16,8 @@
 // .secondary {color: #000CFF}
 
 //background colors
-.bg-black { background-color: #111; }
+.bg-black-muted { background-color: rgba($black, 0.95)}
+.bg-black { background-color: $black }
 .bg-near-black { background-color: $near-black; }
 .bg-dark-gray { background-color: $dark-gray; }
 .bg-mid-gray { background-color: $mid-gray; }

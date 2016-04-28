@@ -50,6 +50,7 @@ $z3: 3 !default;
 $z4: 4 !default;
 
 // border
+$border-width-thin: 2px !default;
 $border-width: 4px !default;
 $border-width-thick: 8px !default;
 $border-radius: 3px !default;
@@ -71,7 +72,7 @@ $light-silver:  #ccc !default;
 $light-gray:    #eee !default;
 $near-white:    #f4f4f4 !default;
 $white:         #fff !default;
-$accent:        #27DCC9 !default; //#F36407
+$accent:        #B200FB !default; //#F36407 #27DCC9
 $accent-muted:  rgba($accent, .3);
 $accent-dark: darken($accent, 40%) !default;
 $warning:       red !default;
@@ -80,7 +81,6 @@ $success:       green !default;
 $darken-1: rgba(0, 0, 0, .0625) !default;
 $darken-2: rgba(0, 0, 0, .125) !default;
 $darken-3: rgba(0, 0, 0, .25) !default;
-
 
 $button-font-family: inherit !default;
 $button-font-size: inherit !default;
@@ -95,12 +95,12 @@ $button-background-color: $accent !default;
 
 @import "normalize";
 @import "init";
-@import "type-scale";
-@import "typography";
+@import "btn";
 @import "layout";
 @import "align";
 @import "margin";
-@import "btn";
+@import "type-scale";
+@import "typography";
 @import "padding";
 @import "responsive-margin";
 @import "responsive-padding";
@@ -112,5 +112,6 @@ $button-background-color: $accent !default;
 @import "utilities";
 @import "colors";
 @import "hide";
+@import "hamburger";
 
 

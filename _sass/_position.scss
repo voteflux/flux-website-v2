@@ -22,6 +22,8 @@
 
 .z4 { z-index: $z4 }
 
+.z5 { z-index: 5 }
+
 @media #{$breakpoint-sm} {
  .sm-fixed { position: fixed }
 }

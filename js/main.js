@@ -13,7 +13,7 @@ $(document).ready(function() {
 
     // animate
     $root.animate({
-      scrollTop: $(hash).offset().top
+      scrollTop: $(hash).offset().top - 100
     }, 500, 'swing', function(){
 
        // when done, add hash to url
@@ -21,25 +21,41 @@ $(document).ready(function() {
      });
   });
 
-  // //  offset hash location when arriving from external link
-  // //
-  // // grab target from URL hash (i.e. www.mysite.com/page-a.html#target-name)
-  // var target = window.location.hash;
+  //  offset hash location when arriving from external link
+  //
+  // grab target from URL hash (i.e. www.mysite.com/page-a.html#target-name)
+  var target = window.location.hash;
 
-  // // only try to scroll to offset if target has been set in location hash
-  // if ( target != '' ){
-  //   var $target = $(target);
+  // only try to scroll to offset if target has been set in location hash
+  if ( target != '' ){
+    var $target = $(target);
 
-  //   $root.stop().animate({
-  //     'scrollTop': $target.offset().top
-  //   }, 500,'swing', function () {
-  //     // when done, add hash to url
-  //     window.location.hash = target ;
-  //   });
-  // };
+    $root.stop().animate({
+      'scrollTop': $target.offset().top - 100
+    }, 500,'swing', function () {
+      // when done, add hash to url
+      window.location.hash = target ;
+    });
+  };
 
 
-// get info ajax request
+
+
+  // meetup
+  // $.ajax({
+  //   url: "https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=FluxSydney&sig=3ddb1a95711db994ebba2b2dc0d2e7ffb09e40fa&page=200&fields=&sig_id=96374432&order=time&desc=false&status=upcoming",
+  //   error: function() {
+  //     console.log('error');
+  //   },
+  //   success: function(response) {
+  //     console.log(response);
+  //     var d = response.results[0];
+
+  //   },
+  //   type: 'GET'
+  // })
+
+  // get info ajax request
   $.ajax({
     url: "https://api.voteflux.org/getinfo",
     data: {
@@ -50,76 +66,108 @@ $(document).ready(function() {
     },
     success: function(response) {
       var data = JSON.parse(response);
-      console.log(data);
       var memberCount = data.n_members;
-      document.getElementById("js-member-count").innerHTML = memberCount.toString();
-
-
-
-
-
-
-
-// // var utcSeconds = 1234567890;
-//       // var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
-//       // d.setUTCSeconds(utcSeconds);
-//       // console.log(d)
-
-//       var currentSeconds = new Date().getTime() / 1000;
-//       var lastMember = data.last_member_signup;
-//       // var timeSince =  currentSeconds - lastMember
-//       // console.log(timeSince);
-
-//       function toTime(seconds) {
-//         var d = new Date(0);
-//         d.setUTCSeconds(seconds)
-//         return d;
-//       }
-
-// var now = moment();
-// console.log(lastMember);
-// var a = moment.duration(lastMember, 'ms');
-// var b = moment.duration(now, 'ms');
-// var timeSince = a.subtract(b);
-// // a.subtract(b).hours;
-// console.log(timeSince)
-// // console.log(moment.duration(timeSince, 's'));
-
-
-// console.log(toTime(lastMember))
-
-
+      var el = document.getElementById("js-member-count")
+      if (el) {
+        el.innerHTML = memberCount.toString()
+      }
     },
     type: 'GET'
-  })
+  });
 
+  // menu
+  var isOpen = true;
+  var transitionTime = 250;
 
-// https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=FluxSydney&sig=3ddb1a95711db994ebba2b2dc0d2e7ffb09e40fa&page=200&fields=&sig_id=96374432&order=time&desc=false&status=upcoming
+  $("#js-menu-button").on('tap', function() {
+    toggleMenu();
+  });
+  $("#js-menu a").on('tap', function() {
+    toggleMenu();
+  });
 
-
-    var isClosed = true;
-    var transitionTime = 250;
-    $("#js-menu-button").on('tap', function() {
-      isClosed = !isClosed;
-      if (!isClosed) {
+  function toggleMenu() {
+    isOpen = !isOpen;
+    if (!isOpen) {
+      $("#js-menu")
+        .addClass('opacity-1' + ' ' + 'will-change-opacity')
+        .removeClass('hide')
+        .removeClass('opacity-0');
+      $('.hamburger-inner').addClass('bg-white').removeClass('bg-black');
+      $('body').addClass('overflow-hidden');
+    } else {
+      $("#js-menu")
+        .addClass('opacity-0')
+        .removeClass('opacity-1');
+      $('.hamburger-inner').addClass('bg-black').removeClass('bg-white');
+      $('body').removeClass('overflow-hidden');
+      setTimeout(function() {
         $("#js-menu")
-          .addClass('opacity-1')
-          .removeClass('hide')
-          .removeClass('opacity-0');
-        $('body').addClass('overflow-hidden');
-      } else {
-        $("#js-menu")
-          .addClass('opacity-0')
-          .removeClass('opacity-1');
-        $('body').removeClass('overflow-hidden');
-        setTimeout(function() {
-          $("#js-menu").addClass('hide');
-        }, transitionTime);
-      }
-    })
-
-
+          .addClass('hide')
+          .removeClass('will-change-opacity');
+      }, transitionTime);
+    }
+    // for hamburger animation
+    $("#js-menu-button").toggleClass('is-active');
+  };
 
 });
 
+
+// DEBOUNCE
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+// Optimalisation: Store the references outside the event handler:
+var $window = $(window);
+
+
+var myEfficientFn = debounce(function() {
+
+  var scrollTop = $window.scrollTop();
+  var offset = $("#js-navbar").offset().top;
+
+    if (offset >= 500 ) {
+      $("#js-navbar").addClass('opacity-1');
+    } else {
+      $("#js-navbar").removeClass('opacity-1');
+    }
+    console.log("called")
+}, 15);
+
+
+function checkWidth() {
+  var windowsize = $window.width();
+  if (windowsize > 440) {
+    $window.on('scroll', myEfficientFn );
+  } else {
+    $window.off('scroll', myEfficientFn );
+  }
+}
+
+
+// Execute on load
+checkWidth();
+// Bind event listener
+$(window).resize(checkWidth);
+// $(window).on('resize', checkWidth)
+
+
+// window.addEventListener('resize', myEfficientFn);
 
