@@ -3,28 +3,26 @@
   <div id="js-navbar" class="fixed col-12 z2 top-0 left-0 navbar-height bg-white transition-slow opacity-0 shadow-light"></div>
 
   <div class="fixed col-12 top-0 left-0 z4 px3 py1">
-
-        <div class="flex">
-          <div class="col-6">
-          {% capture site_baseurl %}{{site.baseurl}}/{% endcapture %}
-          {% if page.url != site_baseurl %}
-            <h3><a class="link-reset" href="{{site.baseurl}}/">FLUX</a></h3>
-          {% endif %}
-        </div>
-        <div class="col-6 right-align flex justify-end items-center">
-          <div class="inline-block mr3">
-            <a href="" class="btn btn-primary p1 h5 transition">Join Flux</a>
-          </div>
-          <div class="inline-block mt1">
-            <button id="js-menu-button" class="hamburger hamburger--squeeze white no-focus" type="button">
-            <span class="hamburger-box ">
-              <span class="hamburger-inner bg-black"></span>
-            </span>
-            </button>
-          </div>
-        </div>
+    <div class="flex">
+      <div class="col-6">
+      {% capture site_baseurl %}{{site.baseurl}}/{% endcapture %}
+      {% if page.url != site_baseurl %}
+        <h3><a class="link-reset" href="{{site.baseurl}}/">FLUX</a></h3>
+      {% endif %}
+    </div>
+    <div class="col-6 right-align flex justify-end items-center">
+      <div class="inline-block mr3">
+        <a href="{{site.baseurl}}/signup" class="btn btn-primary p1 h5 transition">Join Flux</a>
       </div>
-
+      <div class="inline-block mt1">
+        <button id="js-menu-button" class="hamburger hamburger--squeeze white no-focus" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner bg-accent"></span>
+        </span>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 </nav>
 
@@ -38,8 +36,8 @@
       <div class="mx-auto max-width-2">
         <ul class="list-reset h3 sm-h2">
           <li class="mb2"><a href="{{site.baseurl}}/#top" class="link-reset">Home</a></li>
-          <li class="mb2"><a href="" class="link-reset py2">In the news</a></li>
-          <li class="mb2"><a href="" class="link-reset py2">Contact</a></li>
+          <li class="mb2"><a href="{{site.baseurl}}/press" class="link-reset py2">In the news</a></li>
+          <li class="mb2"><a href="{{site.baseurl}}/contact" class="link-reset py2">Contact</a></li>
           <hr class="dark-gray border-bottom">
           <h5 class="muted mb1">About Flux</h5>
           {% for item in site.about %}
@@ -48,7 +46,7 @@
             </li>
           {% endfor %}
           <hr class="dark-gray border-bottom">
-          <li class="mb2"><a href="" class="link-reset py2">Join Flux</a></li>
+          <li class="mb2"><a href="{{site.baseurl}}/signup" class="link-reset py2">Join Flux</a></li>
         </ul>
       </div>
     </div>

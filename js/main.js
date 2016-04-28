@@ -93,13 +93,13 @@ $(document).ready(function() {
         .addClass('opacity-1' + ' ' + 'will-change-opacity')
         .removeClass('hide')
         .removeClass('opacity-0');
-      $('.hamburger-inner').addClass('bg-white').removeClass('bg-black');
+      // $('.hamburger-inner').addClass('bg-white').removeClass('bg-black');
       $('body').addClass('overflow-hidden');
     } else {
       $("#js-menu")
         .addClass('opacity-0')
         .removeClass('opacity-1');
-      $('.hamburger-inner').addClass('bg-black').removeClass('bg-white');
+      // $('.hamburger-inner').addClass('bg-black').removeClass('bg-white');
       $('body').removeClass('overflow-hidden');
       setTimeout(function() {
         $("#js-menu")
@@ -170,4 +170,3 @@ $(window).resize(checkWidth);
 
 
 // window.addEventListener('resize', myEfficientFn);
-
