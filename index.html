@@ -1,21 +1,40 @@
 ---
 layout: default
 home: true
+hero-title: Let's re-imagine how democracy gets done.
+hero-copy: >
+  Flux is a new political party that will act as your gateway into parliament.
+  When an issue is before parliament you vote in real time. We call it issue based direct democracy.
+hero-call-to-action: Join the movement
 meetups:
-- Sydney
-- Melbourne
-- Brisbane
-- Canberra
-- Hobart
-- Perth
+  - city: Melbourne
+    location: Melbourne Bitcoin Technology Centre
+    address:  89-91 City Road, South Bank
+    date: Tuesday, May 3, 2016
+    time: 6:00 PM
+    url: http://www.meetup.com/FluxSydney/events/230138091/
+  - city: Melbourne
+    location: Melbourne Bitcoin Technology Centre
+    address:  89-91 City Road, South Bank
+    date: Tuesday, May 3, 2016
+    time: 6:00 PM
+    url: http://www.meetup.com/FluxSydney/events/230138091/
+  - city: Melbourne
+    location: Melbourne Bitcoin Technology Centre
+    address:  89-91 City Road, South Bank
+    date: Tuesday, May 3, 2016
+    time: 6:00 PM
+    url: http://www.meetup.com/FluxSydney/events/230138091/
 ---
 
 {% include navbar.html %}
+
 <main>
 <section class="bg-near-black px3 py4 relative min-height-95vh texture-bg-img">
   <div class="mx-auto max-width-4">
     <div class="sm-flex">
 
+<!-- LOGO -->
       <header class="white sm-col-3 pt2 pr0 sm-pr4">
         <div class="sm-flex flex-column">
           <div class="silver">
@@ -30,18 +49,20 @@ meetups:
         </div>
       </header>
 
-
+<!-- HERO SECTION -->
       <div class="sm-col-9 pb3">
-        <div class="">
-          <div class="">
-            <h1 class="h0 bold line-height-3 letter-spacing-1 mb2 sm-mb4 sm-mt4 sm-pt4 near-white">Let's re-imagine how democracy gets done.</h1>
+        <div>
+            {% include components/main-heading.html
+            text=page.hero-title
+            font-size="h0 line-height-2"
+            font-weight="bold"
+            classes="letter-spacing-1 mb2 sm-mb4 sm-mt4 sm-pt4 near-white" %}
             <p class="h3 sm-h2 h-font light mb4 silver letter-spacing-2 line-height-4">
-              Flux is a new political party that will act as your gateway into parliament. When an issue is before parliament you vote in real time. We call it issue based direct democracy.
+              {{ page.hero-copy }}
             </p>
             <a href="{{site.baseurl}}/signup" class="h2 regular link-reset inline-block border-bottom accent letter-spacing-1">
-              Join the movement
+              {{ page.hero-call-to-action }}
             </a>
-          </div>
         </div>
       </div>
 
@@ -49,7 +70,7 @@ meetups:
   </div>
 </section>
 
-
+<!-- WHY FLUX SECTION -->
 <section class="bg-white py4 px3 min-height-95vh">
   <div class="max-width-4 mx-auto dark-gray">
     <div class="md-flex  mb3">
@@ -64,7 +85,7 @@ meetups:
   </div>
 </section>
 
-
+<!-- SECOND CALLOUT SECTION -->
 <section class="full-bg-img height-40vh py4 px2 sm-px3 min-height-95vh">
   <div class="max-width-4 mx-auto clearfix">
     <div class="bg-near-black light-gray p3 sm-p4 sm-col-right sm-col-9 mt4">
@@ -84,7 +105,6 @@ meetups:
     </div>
   </div>
 </section>
-
 
 <!-- ABOUT PAGE LINKS -->
 {% assign items = site.about | sort: 'order '%}
@@ -106,7 +126,6 @@ meetups:
     <hr class="accent-muted muted border-bottom m0">
   {% endif %}
 {% endfor %}
-
 
 <!-- IN THE NEWS -->
 <section class="py4 px3 bg-near-black light-gray min-height-95vh texture-bg-img">
@@ -148,60 +167,49 @@ meetups:
       {% endfor %}
     </div>
     <div class="right-align">
-
       <a href="{{site.baseurl}}/press" class="list-reset border-bottom accent">All articles</a>
     </div>
   </div>
 </section>
 
-
 <!-- UPCOMING MEETUPS -->
-<section class="py4 px3 bg-accent-dark dark-gray min-height-95vh">
-  <div class="max-width-4 mx-auto ">
-    <div class="md-flex">
-      <div class="md-col-9">
-        {% include components/main-heading.html
-          text="Upcoming meetups"
-          font-size="h0 line-height-1"
-          font-weight="bold near-white" %}
-        <p class="h2 sm-h1 light h-font letter-spacing-2 line-height-4 mb4 white muted">
-          Join party co-founders <a href="" class="border-bottom link-reset">Nathan Spataro</a> & <a href="" class="border-bottom link-reset">Max Kaye</a> for a Q&A at the next meetup in your city
-        </p>
-        <ul class="list-reset h2 accent">
-          {% for city in page.meetups %}
-            <li class="inline-block mr1 mb2">
-              <a href="{{base}}{{site.baseurl}}#!/{{city}}" class="list-reset border-bottom">{{city}}</a>
-            </li>
+<section id="upcoming-meetups" class="py4 px3 bg-dark-gray light-silver min-height-95vh">
+  <div class="max-width-4 mx-auto">
+    <div class="lg-col-9">
+      {% include components/main-heading.html
+        text="Upcoming meetups"
+        font-size="h0 line-height-1"
+        font-weight="bold near-white" %}
+      <p class="h3 sm-h2 light h-font letter-spacing-2 line-height-4 mb4">
+        Join party co-founders <a href="{{site.baseurl}}/about/who#nathan-spataro">Nathan Spataro</a> &amp; <a href="{{site.baseurl}}/about/who#max-kaye">Max Kaye</a> for a Q&amp;A at the next meetup in your city
+      </p>
+      <div class="mxn3">
+        <div class="sm-flex flex-wrap">
+          {% for meetup in page.meetups %}
+            <div class="sm-col-6 md-col-4 px3 mb3">
+              {% include components/hr-muted.html %}
+              <h5 class="gray">Meetup city</h5>
+              <h3 class="white sm-h2 mt0 bold">{{ meetup.city }}</h3>
+              <dl class="link-reset h3 near-white line-height-3 mb3">
+                <dt class="h5 gray mt2">Location</dt>
+                <dd>{{ meetup.location }}</dd>
+                <dd class="h4 silver">{{ meetup.address }}</dd>
+                <dt class="h5 gray mt2">Date</dt>
+                <dd>{{ meetup.date }}</dd>
+                <dd class="h4 silver">{{ meetup.time }}</dd>
+              </dl>
+              <div class="nowrap">
+                <a href="{{ meetup.url }}" target="_blank" class="border-bottom">RSVP</a><i class="material-icons icon-adjust muted">call_made</i>
+              </div>
+            </div>
           {% endfor %}
-        </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- <section class="bg-near-white gray py4 px3">
-  <div class="max-width-4 mx-auto">
-    {% include components/main-heading.html
-      text="Get in touch"
-      font-size="h0 line-height-3"
-      font-weight="bold dark-gray" %}
-
-      <div class="sm-flex justify-between">
-        <div class="sm-col-4">
-          </h2> Currently the best way to get in contact is via email: Max: max.kaye@voteflux.org, or flux@xk.io Nathan: nathan.spataro@voteflux.org For media enquiries: media@voteflux.org
-          </h2>
-        </div>
-
-        <div class="sm-col-4">
-          </h2> Currently the best way to get in contact is via email: Max: max.kaye@voteflux.org, or flux@xk.io Nathan: nathan.spataro@voteflux.org For media enquiries: media@voteflux.org
-          </h2>
-        </div>
-      </div>
-
-  </div>
-</section> -->
-
+<!-- CONTACT SECTION -->
 <section id="contact" class="bg-near-white dark-gray py4 px3">
   <div class="max-width-4 mx-auto">
 
