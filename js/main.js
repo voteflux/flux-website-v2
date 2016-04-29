@@ -111,7 +111,7 @@ $(document).ready(function() {
     $("#js-menu-button").toggleClass('is-active');
   };
 
-});
+
 
 
 // DEBOUNCE
@@ -169,3 +169,5 @@ $(window).resize(checkWidth);
 
 
 // window.addEventListener('resize', myEfficientFn);
+
+});

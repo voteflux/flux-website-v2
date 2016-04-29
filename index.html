@@ -2,6 +2,7 @@
 layout: default
 home: true
 hero-title: Let's re-imagine how democracy gets done.
+
 hero-copy: >
   Flux is a new political party that will act as your gateway into parliament.
   When an issue is before parliament you vote in real time. We call it issue based direct democracy.
@@ -13,18 +14,14 @@ meetups:
     date: Tuesday, May 3, 2016
     time: 6:00 PM
     url: http://www.meetup.com/FluxSydney/events/230138091/
-  - city: Melbourne
-    location: Melbourne Bitcoin Technology Centre
-    address:  89-91 City Road, South Bank
-    date: Tuesday, May 3, 2016
-    time: 6:00 PM
-    url: http://www.meetup.com/FluxSydney/events/230138091/
-  - city: Melbourne
-    location: Melbourne Bitcoin Technology Centre
-    address:  89-91 City Road, South Bank
-    date: Tuesday, May 3, 2016
-    time: 6:00 PM
-    url: http://www.meetup.com/FluxSydney/events/230138091/
+social-media:
+  - name: facebook
+    url: https://facebook.com/voteflux.org
+  - name: twitter
+    url: https://twitter.com/voteflux
+  - name: reddit
+    url: https://www.reddit.com/r/voteflux
+
 ---
 
 {% include navbar.html %}
@@ -43,7 +40,7 @@ meetups:
               <h2 class="sm-h1 white bold mt2 m0 line-height-3">FLUX <span class="muted gray regular">/ <br>PROGRESS <br>FOR PROCESS</span></h2>
             </div>
             <hr class="muted">
-            <h5 class="muted">Registered Members</h5>
+            <h5 class="muted caps">Registered Members</h5>
             <h3><span id="js-member-count">Loading...</span></h3>
           </div>
         </div>
@@ -138,11 +135,12 @@ meetups:
         font-weight="bold" %}
       </div>
       <div class="clearfix">
-        <a href="{{base}}{{site.baseurl}}" class="list-reset border-bottom accent mb2 right inline-block">Media inquiries</a>
+        <h5 class="muted mb0 light">MEDIA ENQUIRIES</h5>
+        <h3 class="white mb2 right inline-block">media@voteflux.org</h3>
       </div>
     </div>
     <div class="sm-flex flex-wrap mxn3 mb3">
-      {% for article in site.data.press limit:8 %}
+      {% for article in site.data.articles limit:8 %}
 
           <div class="sm-col-6 md-col-4 lg-col-3 px3">
             <div class="mb3">
@@ -150,24 +148,29 @@ meetups:
               <div class="flex flex-column justify-between height-3">
                 <div>
                   {% if article.publishedIn == 'Press Release' %}
-                    <h4 class="h5 mb2 gray">PRESS <span class="white">{{article.publishedIn | upcase }}</span>
+                    <h4 class="h5 mb2 gray">PRESS <span class="white">{{ article.publishedIn | upcase }}</span>
                     </h4>
                   {% else %}
-                    <h4 class="h5 mb2 gray">ARTICLE <span class="white">{{article.publishedIn | upcase }}</span>
+                    <h4 class="h5 mb2 gray">ARTICLE <span class="white">{{ article.publishedIn | upcase }}</span>
                     </h4>
                   {% endif %}
-                  <a href="{{ article.title | datapage_url: 'press' }}" class="link-reset"><h2 class="h3 sm-h2 h-font light line-height-4">{{article.title}}</h2></a>
+                  <a href="{{ article.url }}" target="_blank" class="link-reset block">
+                    <h2 class="h3 sm-h2 h-font light line-height-4 accent-on-hover transition-fast inline">
+                      {{ article.title }}<i class="material-icons icon-adjust muted">call_made</i>
+                    </h2>
+                  </a>
                 </div>
-                <time datetime="{{article.date }}" class="italic gray">
-                {{article.date | date: '%B %d, %Y' }}
+                <time datetime="{{ article.date }}" class="italic gray">
+                {{ article.date | date: '%B %d, %Y' }}
                 </time>
               </div>
             </div>
           </div>
+
       {% endfor %}
     </div>
     <div class="right-align">
-      <a href="{{site.baseurl}}/press" class="list-reset border-bottom accent">All articles</a>
+      <a href="{{ site.baseurl }}/press" class="list-reset border-bottom accent">All articles</a>
     </div>
   </div>
 </section>
@@ -181,21 +184,27 @@ meetups:
         font-size="h0 line-height-1"
         font-weight="bold near-white" %}
       <p class="h3 sm-h2 light h-font letter-spacing-2 line-height-4 mb4">
-        Join party co-founders <a href="{{site.baseurl}}/about/who#nathan-spataro">Nathan Spataro</a> &amp; <a href="{{site.baseurl}}/about/who#max-kaye">Max Kaye</a> for a Q&amp;A at the next meetup in your city
+        Join party co-founders <a href="{{site.baseurl}}/about/who#nathan-spataro" class="accent accent-on-hover transition-fast">Nathan Spataro</a> &amp; <a href="{{site.baseurl}}/about/who#max-kaye" class="accent accent-on-hover transition-fast">Max Kaye</a> for a Q&amp;A at the next meetup in your city
       </p>
       <div class="mxn3">
         <div class="sm-flex flex-wrap">
           {% for meetup in page.meetups %}
+          {% if forloop.length == 1 %}
+            <div class="sm-col-6 px3 mb3">
+          {% else %}
             <div class="sm-col-6 md-col-4 px3 mb3">
+          {% endif %}
               {% include components/hr-muted.html %}
-              <h5 class="gray">Meetup city</h5>
+              <h5 class="gray caps">Meetup city</h5>
               <h3 class="white sm-h2 mt0 bold">{{ meetup.city }}</h3>
               <dl class="link-reset h3 near-white line-height-3 mb3">
-                <dt class="h5 gray mt2">Location</dt>
-                <dd>{{ meetup.location }}</dd>
+                <hr class="mid-gray border-bottom my1">
+                <dt class="h5 gray mb1 caps">Location</dt>
+                <dd class="h-font">{{ meetup.location }}</dd>
                 <dd class="h4 silver">{{ meetup.address }}</dd>
-                <dt class="h5 gray mt2">Date</dt>
-                <dd>{{ meetup.date }}</dd>
+                <hr class="mid-gray border-bottom my1">
+                <dt class="h5 gray caps mb1">Date</dt>
+                <dd class="h-font">{{ meetup.date }}</dd>
                 <dd class="h4 silver">{{ meetup.time }}</dd>
               </dl>
               <div class="nowrap">
@@ -206,11 +215,15 @@ meetups:
         </div>
       </div>
     </div>
+    <div class="right-align">
+      <a href="http://www.meetup.com/FluxSydney/" target="_blank" class="border-bottom">Flux meetup page</a><i class="material-icons icon-adjust muted">call_made</i>
+    </div>
+
   </div>
 </section>
 
 <!-- CONTACT SECTION -->
-<section id="contact" class="bg-near-white dark-gray py4 px3">
+<section id="contact" class="bg-near-white mid-gray py4 px3">
   <div class="max-width-4 mx-auto">
 
     {% include components/main-heading.html
@@ -219,29 +232,51 @@ meetups:
       font-weight="bold dark-gray mb4" %}
 
       <div class="sm-flex mxn3">
-        <div class="sm-col-4 px3">
-
-          <hr class="accent-muted muted border-bottom m0">
-          <div class="mb3">
-            <h4 class="sm-h3 muted mb0">Flux HQ</h4>
-            <h3 class="sm-h2 bold h-font mt0">flux@xk.io</h3>
+        <div class="sm-col-4 px3 mb3">
+          {% include components/hr-muted.html %}
+          <h2 class="bold mb3">Email</h2>
+          <h3 class="bold h-font mb3 light line-height-3"> Currently the best way to get in contact is via email:</h3>
+          <hr class="white muted border-bottom m0">
+          <div class="mb2">
+            <h5 class="caps muted">Max</h5>
+            <h3 class="bold h-font mt0">max.kaye@voteflux.org</h3>
+            <h3 class="bold h-font mt0">flux@xk.io</h3>
           </div>
-
-          <hr class="accent-muted muted border-bottom m0">
-          <div class="mb3">
-            <h4 class="sm-h3 muted mb0">Max</h4>
-            <h3 class="sm-h2 bold h-font mt0">max.kaye@voteflux.org</h3>
+          <hr class="white muted border-bottom m0">
+          <div class="mb2">
+            <h5 class="caps muted">Nathan</h5>
+            <h3 class="bold h-font mt0">nathan.spataro@voteflux.org</h3>
           </div>
-
-          <hr class="accent-muted muted border-bottom m0">
-          <div class="mb3">
-            <h4 class="sm-h3 muted mb0">Nathan</h4>
-            <h3 class="sm-h2 bold h-font mt0">nathan.spataro@voteflux.org</h3>
+          <hr class="white muted border-bottom m0">
+          <div class="mb2">
+            <h5 class="caps muted">media enquiries</h5>
+            <h3 class="bold h-font mt0">media@voteflux.org</h3>
           </div>
+        </div>
+        <div class="sm-col-4 px3 mb3">
+          {% include components/hr-muted.html %}
+          <h2 class="bold mb3">Social Media</h2>
+          {% for social in page.social-media %}
+            <hr class="white muted border-bottom m0">
+            <div class="my2 flex">
+              <img src="{{base}}/img/social-icons/{{social.name}}-with-circle.svg" alt="{{social.name}}" width="36" class="mr2" />
 
+              <h3 class="bold h-font inline-block"><a href="{{ social.url }}" class="accent accent-on-hover transition-fast">{{ social.name | capitalize }}</a><i class="material-icons icon-adjust muted">call_made</i></h3>
+            </div>
+          {% endfor %}
         </div>
 
+        <div class="sm-col-4 px3 mb3">
+          {% include components/hr-muted.html %}
+          <h2 class="bold mb3">On Slack</h2>
 
+            <div class="my2">
+              <h3 class="bold h-font mb3 light line-height-3"> If you'd like to chat about technical or campaign details you can find us on our Slack channel</h3>
+              <div class="">
+                <a href="http://slack.voteflux.org/" class="border-bottom">Get your Slack invite</a><i class="material-icons icon-adjust muted">call_made</i>
+              </div>
+            </div>
+        </div>
       </div>
   </div>
 </section>

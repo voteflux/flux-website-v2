@@ -81,17 +81,16 @@ a {
 .min-height-95vh {min-height: 95vh; }
 
 :focus {
-    outline: $accent dotted 2px;}
+    outline: $accent dotted 1px;}
 
 .no-focus {
   &:focus {
     outline: transparent solid 1px;
   }
 }
-.transition {
-  transition: all ease 0.2s;
-}
+.transition { transition: all ease 0.2s; }
 .transition-slow { transition: all ease 0.5s}
+.transition-fast { transition: all ease 0.1s }
 
 .opacity-hover {
   opacity: .65;
@@ -103,11 +102,18 @@ a {
   }
 }
 
+.accent-on-hover {
+  color: inherit;
+  border-bottom: transparent $border-width-thin solid;
+  &:hover {
+    color: $accent;
+    border-bottom: $accent $border-width-thin solid;
+  }
+}
+
 .opacity-0  { opacity: 0}
 .opacity-1  {opacity: 1 !important}
-.will-change-opacity {
-  will-change: opacity;
-}
+.will-change-opacity { will-change: opacity; }
 @media #{$breakpoint-sm} {
   .sm-opacity-0 { opacity: 0}
 }

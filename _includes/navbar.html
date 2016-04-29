@@ -1,7 +1,5 @@
 <nav>
-
-  <div id="js-navbar" class="fixed col-12 z2 top-0 left-0 navbar-height bg-near-white transition-slow sm-opacity-0 shadow-light"></div>
-
+  <div id="js-navbar" class="fixed col-12 z2 top-0 left-0 navbar-height bg-near-white transition-slow sm-opacity-0 shadow-light">{{page.title}}</div>
   <div class="fixed col-12 top-0 left-0 z4 px2 py1">
     <div class="flex">
       <div class="col-6">
@@ -27,24 +25,29 @@
 </nav>
 
 <div id="js-menu" class="transition opacity-0 hide relative z3">
-<div class="py4 px2 bg-black-muted white min-height-100vh fixed col-12 top-0 right-0 left-0 bottom-0">
+<div class="py4 px2 bg-black-muted light-gray min-height-100vh fixed col-12 top-0 right-0 left-0 bottom-0">
   <div class="height-100vh overflow-scroll absolute left-0 top-0 col-12 mt4">
     <div class="px3">
       <div class="mx-auto max-width-2">
-        <ul class="list-reset h3 sm-h2">
-          <li class="mb2"><a href="{{site.baseurl}}/#top" class="link-reset">Home</a></li>
-          <li class="mb2"><a href="{{site.baseurl}}/press" class="link-reset py2">In the news</a></li>
-          <li class="mb2"><a href="{{site.baseurl}}/#contact" class="link-reset py2">Contact</a></li>
-          <hr class="dark-gray border-bottom">
-          <h5 class="muted mb1">About Flux</h5>
+        <dl class="list-reset h3 sm-h2">
+
+          <hr class="dark-gray border-bottom my1">
+          <dt class="h5 muted mb1 caps light">About Flux</dt>
           {% for item in site.about %}
-            <li class="mb2">
-              <a href="{{site.baseurl}}{{item.url}}#top" class="link-reset py2">{{item.title}}</a>
-            </li>
+            <dd class="mb2">
+              <a href="{{ site.baseurl }}{{ item.url }}#top" class="link-reset h-font accent-on-hover transition-fast">{{ item.title }}</a>
+            </dd>
           {% endfor %}
-          <hr class="dark-gray border-bottom">
-          <li class="mb2"><a href="{{site.baseurl}}/signup" class="link-reset py2">Join Flux</a></li>
-        </ul>
+          <hr class="dark-gray border-bottom my1">
+          <dd class="mb2"><a href="{{site.baseurl}}/press" class="link-reset h-font accent-on-hover transition-fast">In the news</a></dd>
+          <dd class="mb2"><a href="{{site.baseurl}}/#upcoming-meetups" class="link-reset h-font accent-on-hover transition-fast">Upcoming Meetups</a></dd>
+          <dd class="mb2"><a href="{{site.baseurl}}/#contact" class="link-reset h-font accent-on-hover transition-fast">Contact</a></dd>
+          <hr class="dark-gray border-bottom my1">
+          <dt class="h5 muted mb1 caps light">Make History</dt>
+          <dd class="mb2 mt2 h4"><a href="{{site.baseurl}}/signup" class="btn btn-primary">Become a Flux member</a></dd>
+
+        </dl>
+        {% include social-buttons.html %}
       </div>
     </div>
   </div>

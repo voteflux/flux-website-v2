@@ -13,27 +13,27 @@ permalink: press/
         text="In the news" %}
     </div>
 
-    {% for article in site.data.press %}
-        <div class="">
-          <div class="mb3">
-            <hr class="border-bottom accent-muted mb1 muted">
-            <div class="flex flex-column justify-between height-2 mb4">
-              <div>
-                {% if article.publishedIn == 'Press Release' %}
-                  <h4 class="h5 mb2 gray">PRESS / <span class="white">{{article.publishedIn | upcase }}</span>
-                  </h4>
-                {% else %}
-                  <h4 class="h5 mb2 gray">ARTICLE / <span class="white">{{article.publishedIn | upcase }}</span>
-                  </h4>
-                {% endif %}
-                <a href="{{article.title | datapage_url: '.' }}" class="link-reset block">
-                <h2 class="h3 sm-h2 h-font light line-height-4">{{article.title}}</h2>
-                </a>
-              </div>
-              <time datetime="{{article.date }}" class="italic gray">
-              {{article.date | date: '%B %d, %Y' }}
-              </time>
+    {% for article in site.data.articles %}
+        <div class="mb3">
+          <hr class="border-bottom accent-muted mb1 muted">
+          <div class="flex flex-column justify-between height-2 mb4">
+            <div>
+              {% if article.publishedIn == 'Press Release' %}
+                <h4 class="h5 mb2 gray">PRESS / <span class="white">{{article.publishedIn | upcase }}</span>
+                </h4>
+              {% else %}
+                <h4 class="h5 mb2 gray">ARTICLE / <span class="white">{{article.publishedIn | upcase }}</span>
+                </h4>
+              {% endif %}
+              <a href="{{ article.url }}" target="_blank" class="link-reset block">
+                <h2 class="h3 sm-h2 h-font light line-height-4 accent-on-hover transition-fast inline">
+                  {{article.title}}<i class="material-icons icon-adjust muted">call_made</i>
+                </h2>
+              </a>
             </div>
+            <time datetime="{{article.date }}" class="italic gray">
+            {{article.date | date: '%B %d, %Y' }}
+            </time>
           </div>
         </div>
     {% endfor %}

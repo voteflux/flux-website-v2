@@ -16,14 +16,14 @@ baseurl: ""
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 icon_path: /img/social-icons/
 
+# Collections
 collections:
   about:
     output: true
 
-
-
 # Build settings
 markdown: kramdown
+permalink: pretty
 incremental: true
 exclude:
   - node_modules
@@ -31,15 +31,4 @@ exclude:
   - package.json
   - gulpfile.js
   - react-signup
-  - docs
-  - npm-debug.log
   - to-do
-  - index-old.html
-
-
-page_gen-dirs: true # uncomment, if you prefer to generate named folders
-page_gen:
-  - data: 'press'
-    template: 'press'
-    name: 'title'
-    dir: 'press'
