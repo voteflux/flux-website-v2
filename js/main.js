@@ -70,8 +70,10 @@ $(document).ready(function() {
       var el = document.getElementById("js-member-count")
       var elMobile = document.getElementById("js-member-count-mobile")
 
-      if (el || elMobile) {
+      if (el) {
         el.innerHTML = memberCount.toString()
+      }
+      if (elMobile) {
         elMobile.innerHTML = memberCount.toString()
       }
     },
@@ -163,7 +165,7 @@ var myEfficientFn = debounce(function() {
 
 function checkWidth() {
   var windowsize = $window.width();
-  if (windowsize > 0) {
+  if (windowsize > 300 ) {
     $window.on('scroll', myEfficientFn );
   } else {
     $window.off('scroll', myEfficientFn );

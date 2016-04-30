@@ -1,22 +1,26 @@
 <ul class="list-reset flex">
   <li class="opacity-hover transition mr2">
     <a href="http://www.facebook.com/sharer.php?u={{page_url}}" target="_blank">
-      <img width="48" src="{{ base }}{{ site.icon_path }}facebook-with-circle.svg" alt="Facebook" />
+      <!-- <img width="48" src="{{ base }}{{ site.icon_path }}facebook-with-circle.svg" alt="Facebook" /> -->
+      {% include svg/facebook-icon.html color="#000" %}
     </a>
   </li>
   <li class="opacity-hover transition mr2">
     <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{page_url}}" target="_blank">
-      <img width="48" src="{{ base }}{{ site.icon_path }}linkedin-with-circle.svg" alt="LinkedIn" />
+      <!-- <img width="48" src="{{ base }}{{ site.icon_path }}linkedin-with-circle.svg" alt="LinkedIn" /> -->
+      {% include svg/linkedin-icon.html color="#000" %}
     </a>
   </li>
   <li class="opacity-hover transition mr2">
     <a href="http://reddit.com/submit?url={{page_url}}&amp;title={{page.title | escape_url}}" target="_blank">
-      <img width="48" src="{{ base }}{{ site.icon_path }}reddit-with-circle.svg" alt="Reddit" />
+      <!-- <img width="48" src="{{ base }}{{ site.icon_path }}reddit-with-circle.svg" alt="Reddit" /> -->
+      {% include svg/reddit-icon.html color="#000" %}
     </a>
   </li>
   <li class="opacity-hover transition mr2">
       <a href="https://twitter.com/intent/tweet/?url={{page_url}}&amp;text={{page.title | url_escape }}&amp;hashtags=auspol,voteflux" target="_blank">
-          <img width="48" src="{{ base }}{{ site.icon_path }}twitter-with-circle.svg" alt="Twitter" />
+          <!-- <img width="48" src="{{ base }}{{ site.icon_path }}twitter-with-circle.svg" alt="Twitter" /> -->
+          {% include svg/twitter-icon.html color="#000" %}
       </a>
   </li>
 </ul>

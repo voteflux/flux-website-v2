@@ -26,7 +26,6 @@ social-media:
     url: https://twitter.com/voteflux
   - name: reddit
     url: https://www.reddit.com/r/voteflux
-
 ---
 
 {% include base.html %}
@@ -34,7 +33,7 @@ social-media:
 
 <main>
 <section class="bg-near-black py4 relative min-height-95vh texture-bg-img">
-  <div class="mx-auto max-width-4 px2">
+  <div class="mx-auto max-width-4 px2 md-px3">
     <div class="md-flex justify-between mxn2">
 
 <!-- LOGO -->
@@ -96,7 +95,7 @@ social-media:
 
 <!-- WHY FLUX SECTION -->
 <section class="bg-white py4 min-height-95vh">
-  <div class="max-width-4 mx-auto dark-gray px2">
+  <div class="max-width-4 mx-auto dark-gray px2 md-px3">
     <div class="md-flex mb3">
       <div class="md-col-9">
         <h5 class="h4"><span class="gray">ABOUT FLUX</span> / <span class="bold">WHY</span></h5>
@@ -110,8 +109,8 @@ social-media:
 </section>
 
 <!-- SECOND CALLOUT SECTION -->
-<section class="full-bg-img height-40vh py4 min-height-95vh">
-  <div class="max-width-4 mx-auto clearfix">
+<section class="full-bg-img height-40vh py2 sm-py4 min-height-95vh">
+  <div class="max-width-4 mx-auto clearfix px1 sm-px2 md-px3">
     <div class="bg-near-black light-gray px2 py4 sm-p4 sm-col-right sm-col-9 mt4">
       <div class="mb3">
         {% include components/main-heading.html
@@ -134,8 +133,8 @@ social-media:
 {% assign items = site.about | sort: 'order '%}
 {% for item in items %}
   {% if item.tag-topic != 'why' %}
-    <section class="bg-white dark-gray px2 sm-px2  py4 relative z1">
-      <div class="max-width-4 mx-auto">
+    <section class="bg-white dark-gray py4 relative z1">
+      <div class="max-width-4 mx-auto px2 md-px3">
         <div class="sm-col-9">
           <h5 class="h4"><span class="gray">
             ABOUT FLUX</span> / <span class="bold">{{item.tag-topic | upcase }}</span>
@@ -153,7 +152,7 @@ social-media:
 
 <!-- IN THE NEWS -->
 <section class="py4 bg-near-black light-gray min-height-95vh texture-bg-img">
-  <div class="max-width-4 mx-auto px2">
+  <div class="max-width-4 mx-auto px2 md-px3">
     <div class="sm-flex items-center">
       <div class="flex-auto">
       {% include components/main-heading.html
@@ -209,7 +208,7 @@ social-media:
 
 <!-- UPCOMING MEETUPS -->
 <section id="upcoming-meetups" class="py4 bg-dark-gray light-silver min-height-95vh">
-  <div class="max-width-4 mx-auto px2">
+  <div class="max-width-4 mx-auto px2 md-px3">
     <div class="lg-col-9">
       {% include components/main-heading.html
         text="Upcoming meetups"
@@ -258,7 +257,7 @@ social-media:
 
 <!-- CONTACT SECTION -->
 <section id="contact" class="bg-near-white mid-gray py4">
-  <div class="max-width-4 mx-auto px2">
+  <div class="max-width-4 mx-auto px2 md-px3">
 
     {% include components/main-heading.html
       text="Join the conversation"
