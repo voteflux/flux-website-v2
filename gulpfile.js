@@ -19,18 +19,18 @@ gulp.task('serve', ['sass'], function() {
       baseDir: './_site'
     },
     port: 9000,
-    notify: false
+    notify: true
   });
 });
 
-gulp.watch("./_sass/*.scss", ['sass']);
-gulp.watch("**/*.html").on('change', browserSync.reload);
+gulp.watch('./_sass/*.scss', ['sass']);
+gulp.watch('**/*.html').on('change', browserSync.reload);
 // gulp.watch("**/*.css").on('change', browserSync.reload);
 // gulp.watch("**/*.js").on('change', browserSync.reload);
 
 
 gulp.task('sass', function() {
-    return gulp.src("./_sass/*.scss")
+    return gulp.src('./_sass/*.scss')
         .pipe(sass())
         .on('error', notify.onError(function (error) {
            return 'An error occurred while compiling sass.\nLook in the console for details.\n' + error;

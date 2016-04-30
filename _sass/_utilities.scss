@@ -55,9 +55,6 @@ a {
   background-size: contain;
 }
 
-.transition {
-  transition: all .25s ease;
-}
 .social-icon-width { width: 3rem }
 .icon-adjust {
   position: relative;
@@ -93,7 +90,7 @@ a {
   }
 }
 .transition { transition: all ease 0.2s; }
-.transition-slow { transition: all ease 0.5s}
+.transition-slow { transition: all ease 0.45s}
 .transition-fast { transition: all ease 0.1s }
 
 .opacity-hover {
@@ -123,3 +120,16 @@ a {
 }
 
 .navbar-height { height: 4.5rem };
+
+
+.hover-show-child {
+  i {
+    opacity: 0;
+    transition: opacity .15s ease;
+  }
+  &:hover {
+    i {
+      opacity: 1;
+    }  
+  }
+}

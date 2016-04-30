@@ -183,10 +183,10 @@ social-media:
                       <h5 class="mb2 gray">ARTICLE <span class="light-silver">{{ article.publishedIn | upcase }}</span>
                       </h5>
                     {% endif %}
-                    <a href="{{ article.url }}" target="_blank" class="link-reset block">
+                    <a href="{{ article.url }}" target="_blank" class="link-reset block hover-show-child">
                       <h3 class="h-font light line-height-4 accent-on-hover transition-fast inline">
                         {{ article.title }}
-                      </h3>
+                      </h3><i class="material-icons icon-adjust muted">call_made</i>
                     </a>
                   </div>
                   <time datetime="{{ article.date }}" class="italic gray">
@@ -240,7 +240,7 @@ social-media:
                 <dd class="h4 h-font light">{{ meetup.time }}</dd>
               </dl>
               <hr class="near-black muted border-bottom my2">
-              <div class="nowrap">
+              <div class="nowrap hover-show-child">
                 <a href="{{ meetup.url }}" target="_blank" class="border-bottom">RSVP</a><i class="material-icons icon-adjust muted">call_made</i>
               </div>
             </div>
@@ -248,7 +248,7 @@ social-media:
         </div>
 
     </div>
-    <div class="right-align mt4 sm-mt0">
+    <div class="right-align mt4 sm-mt0 hover-show-child">
       <a href="http://www.meetup.com/FluxSydney/" target="_blank" class="border-bottom">Flux meetup page</a><i class="material-icons icon-adjust muted">call_made</i>
     </div>
 
@@ -293,8 +293,7 @@ social-media:
             <hr class="white muted border-bottom m0">
             <div class="my2 flex">
               <img src="img/social-icons/{{social.name}}-with-circle.svg" alt="{{social.name}}" width="36" class="mr2" />
-
-              <h3 class="bold h-font inline-block"><a href="{{ social.url }}" class="accent accent-on-hover transition-fast">{{ social.name | capitalize }}</a><i class="material-icons icon-adjust muted">call_made</i></h3>
+              <h3 class="bold h-font inline-block hover-show-child"><a href="{{ social.url }}" class="accent accent-on-hover transition-fast">{{ social.name | capitalize }}</a><i class="material-icons icon-adjust muted">call_made</i></h3>
             </div>
           {% endfor %}
         </div>
@@ -305,7 +304,7 @@ social-media:
 
             <div class="my2">
               <h3 class="bold h-font mb3 light line-height-3"> If you'd like to chat about technical or campaign details you can find us on our Slack channel</h3>
-              <div class="">
+              <div class="hover-show-child">
                 <a href="http://slack.voteflux.org/" class="border-bottom">Get your Slack invite</a><i class="material-icons icon-adjust muted">call_made</i>
               </div>
             </div>

@@ -124,62 +124,31 @@ $(document).ready(function() {
 
 
 
-
-// DEBOUNCE
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
-function debounce(func, wait, immediate) {
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-};
-
-// Optimalisation: Store the references outside the event handler:
-var $window = $(window);
-
-
-var myEfficientFn = debounce(function() {
-
-  var scrollTop = $window.scrollTop();
-  var offset = $("#js-navbar").offset().top;
-
-    if (offset >= 500 ) {
-      $("#js-navbar, #flux-logo-home").addClass('opacity-1');
-      // $("#flux-logo-home").addClass('opacity-1');
-    } else {
-      $("#js-navbar, #flux-logo-home").removeClass('opacity-1');
+  // throttle funciton from https://jsfiddle.net/jonathansampson/m7G64/
+  function throttle (callback, limit) {
+    var wait = false;                  // Initially, we're not waiting
+    return function () {               // We return a throttled function
+      if (!wait) {                   // If we're not waiting
+        callback.call();           // Execute users function
+        wait = true;               // Prevent future invocations
+        setTimeout(function () {   // After a period of time
+            wait = false;
+            callback.call();
+        }, limit);
+      }
     }
-}, 15);
-
-
-function checkWidth() {
-  var windowsize = $window.width();
-  if (windowsize > 300 ) {
-    $window.on('scroll', myEfficientFn );
-  } else {
-    $window.off('scroll', myEfficientFn );
   }
-}
 
+  var $window = $(window);
+  var menuFadefn = throttle(function() {
+    var scrollTop = $window.scrollTop();
+      if ( scrollTop > 100 ) {
+        $("#js-navbar, #flux-logo-home").addClass('opacity-1').removeClass('will-change-opacity');
+      } else {
+        $("#js-navbar, #flux-logo-home").removeClass('opacity-1');
+      }
+  }, 500);
 
-// Execute on load
-checkWidth();
-// Bind event listener
-$(window).resize(checkWidth);
-// $(window).on('resize', checkWidth)
-
-
-// window.addEventListener('resize', myEfficientFn);
+  $window.on('scroll', menuFadefn );
 
 });
