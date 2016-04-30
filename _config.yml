@@ -14,7 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: ""
 # baseurl: "/site-v2-concept"
 url: "http://yourdomain.com" # the base hostname & protocol for your site
-icon_path: /img/social-icons/
+icon_path: img/social-icons/
 
 # Collections
 collections:

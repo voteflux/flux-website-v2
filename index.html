@@ -1,12 +1,15 @@
 ---
 layout: default
 home: true
-hero-title: Let's re-imagine how democracy gets done.
 
+# this is the top section
+hero-title: Let's re-imagine how democracy gets done.
 hero-copy: >
   Flux is a new political party that will act as your gateway into parliament.
   When an issue is before parliament you vote in real time. We call it issue based direct democracy.
 hero-call-to-action: Join the movement
+
+# meetups
 meetups:
   - city: Melbourne
     location: Melbourne Bitcoin Technology Centre
@@ -14,6 +17,8 @@ meetups:
     date: Tuesday, May 3, 2016
     time: 6:00 PM
     url: http://www.meetup.com/FluxSydney/events/230138091/
+
+#make as global variable..
 social-media:
   - name: facebook
     url: https://facebook.com/voteflux.org
@@ -24,10 +29,11 @@ social-media:
 
 ---
 
+{% include base.html %}
 {% include navbar.html %}
 
 <main>
-<section class="bg-near-black px3 py4 relative min-height-95vh texture-bg-img">
+<section class="bg-near-black px2 sm-px3  py4 relative min-height-95vh texture-bg-img">
   <div class="mx-auto max-width-4">
     <div class="sm-flex">
 
@@ -68,7 +74,7 @@ social-media:
 </section>
 
 <!-- WHY FLUX SECTION -->
-<section class="bg-white py4 px3 min-height-95vh">
+<section class="bg-white py4 px2 sm-px3  min-height-95vh">
   <div class="max-width-4 mx-auto dark-gray">
     <div class="md-flex  mb3">
       <div class="md-col-9">
@@ -107,7 +113,7 @@ social-media:
 {% assign items = site.about | sort: 'order '%}
 {% for item in items %}
   {% if item.tag-topic != 'why' %}
-    <section class="bg-white dark-gray px3 py4 relative z1">
+    <section class="bg-white dark-gray px2 sm-px3  py4 relative z1">
       <div class="max-width-4 mx-auto">
         <div class="sm-col-9">
           <h5 class="h4"><span class="gray">
@@ -125,7 +131,7 @@ social-media:
 {% endfor %}
 
 <!-- IN THE NEWS -->
-<section class="py4 px3 bg-near-black light-gray min-height-95vh texture-bg-img">
+<section class="py4 px2 sm-px3  bg-near-black light-gray min-height-95vh texture-bg-img">
   <div class="max-width-4 mx-auto">
     <div class="sm-flex items-center">
       <div class="flex-auto">
@@ -142,22 +148,22 @@ social-media:
     <div class="sm-flex flex-wrap mxn3 mb3">
       {% for article in site.data.articles limit:8 %}
 
-          <div class="sm-col-6 md-col-4 lg-col-3 px3">
+          <div class="sm-col-6 lg-col-4 px3">
             <div class="mb3">
               <hr class="border-bottom accent-muted mb1 muted">
               <div class="flex flex-column justify-between height-3">
                 <div>
                   {% if article.publishedIn == 'Press Release' %}
-                    <h4 class="h5 mb2 gray">PRESS <span class="white">{{ article.publishedIn | upcase }}</span>
-                    </h4>
+                    <h5 class="mb2 gray">PRESS <span class="light-silver">{{ article.publishedIn | upcase }}</span>
+                    </h5>
                   {% else %}
-                    <h4 class="h5 mb2 gray">ARTICLE <span class="white">{{ article.publishedIn | upcase }}</span>
-                    </h4>
+                    <h5 class="mb2 gray">ARTICLE <span class="light-silver">{{ article.publishedIn | upcase }}</span>
+                    </h5>
                   {% endif %}
                   <a href="{{ article.url }}" target="_blank" class="link-reset block">
-                    <h2 class="h3 sm-h2 h-font light line-height-4 accent-on-hover transition-fast inline">
+                    <h4 class="sm-h3 h-font light line-height-4 accent-on-hover transition-fast inline">
                       {{ article.title }}<i class="material-icons icon-adjust muted">call_made</i>
-                    </h2>
+                    </h4>
                   </a>
                 </div>
                 <time datetime="{{ article.date }}" class="italic gray">
@@ -176,7 +182,7 @@ social-media:
 </section>
 
 <!-- UPCOMING MEETUPS -->
-<section id="upcoming-meetups" class="py4 px3 bg-dark-gray light-silver min-height-95vh">
+<section id="upcoming-meetups" class="py4 px2 sm-px3  bg-dark-gray light-silver min-height-95vh">
   <div class="max-width-4 mx-auto">
     <div class="lg-col-9">
       {% include components/main-heading.html
@@ -195,18 +201,19 @@ social-media:
             <div class="sm-col-6 md-col-4 px3 mb3">
           {% endif %}
               {% include components/hr-muted.html %}
-              <h5 class="gray caps">Meetup city</h5>
-              <h3 class="white sm-h2 mt0 bold">{{ meetup.city }}</h3>
-              <dl class="link-reset h3 near-white line-height-3 mb3">
-                <hr class="mid-gray border-bottom my1">
-                <dt class="h5 gray mb1 caps">Location</dt>
-                <dd class="h-font">{{ meetup.location }}</dd>
-                <dd class="h4 silver">{{ meetup.address }}</dd>
-                <hr class="mid-gray border-bottom my1">
-                <dt class="h5 gray caps mb1">Date</dt>
-                <dd class="h-font">{{ meetup.date }}</dd>
-                <dd class="h4 silver">{{ meetup.time }}</dd>
+              <!-- <h5 class="gray caps">Meetup city</h5> -->
+              <h3 class="white h2 mt0 mb3 bold">{{ meetup.city }}</h3>
+              <dl class="link-reset h3 near-white line-height-3 mb2">
+                <hr class="near-black muted border-bottom my2">
+                <dt class="h5 silver mb1 caps">Location</dt>
+                <dd class="h-font mb1">{{ meetup.location }}</dd>
+                <dd class="h4 h-font light">{{ meetup.address }}</dd>
+                <hr class="near-black muted border-bottom my2">
+                <dt class="h5 silver caps mb1">Date</dt>
+                <dd class="h-font mb1">{{ meetup.date }}</dd>
+                <dd class="h4 h-font light">{{ meetup.time }}</dd>
               </dl>
+              <hr class="near-black muted border-bottom my2">
               <div class="nowrap">
                 <a href="{{ meetup.url }}" target="_blank" class="border-bottom">RSVP</a><i class="material-icons icon-adjust muted">call_made</i>
               </div>
@@ -215,7 +222,7 @@ social-media:
         </div>
       </div>
     </div>
-    <div class="right-align">
+    <div class="right-align mt4 sm-mt0">
       <a href="http://www.meetup.com/FluxSydney/" target="_blank" class="border-bottom">Flux meetup page</a><i class="material-icons icon-adjust muted">call_made</i>
     </div>
 
@@ -223,7 +230,7 @@ social-media:
 </section>
 
 <!-- CONTACT SECTION -->
-<section id="contact" class="bg-near-white mid-gray py4 px3">
+<section id="contact" class="bg-near-white mid-gray py4 px2 sm-px3 ">
   <div class="max-width-4 mx-auto">
 
     {% include components/main-heading.html
@@ -259,14 +266,14 @@ social-media:
           {% for social in page.social-media %}
             <hr class="white muted border-bottom m0">
             <div class="my2 flex">
-              <img src="{{base}}/img/social-icons/{{social.name}}-with-circle.svg" alt="{{social.name}}" width="36" class="mr2" />
+              <img src="img/social-icons/{{social.name}}-with-circle.svg" alt="{{social.name}}" width="36" class="mr2" />
 
               <h3 class="bold h-font inline-block"><a href="{{ social.url }}" class="accent accent-on-hover transition-fast">{{ social.name | capitalize }}</a><i class="material-icons icon-adjust muted">call_made</i></h3>
             </div>
           {% endfor %}
         </div>
 
-        <div class="sm-col-4 px3 mb3">
+        <div class="sm-col-4 px2 sm-px3  mb3">
           {% include components/hr-muted.html %}
           <h2 class="bold mb3">On Slack</h2>
 
@@ -280,8 +287,6 @@ social-media:
       </div>
   </div>
 </section>
-
-<!-- For media enquiries: media@voteflux.org -->
 
 
 </main>

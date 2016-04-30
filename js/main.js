@@ -93,6 +93,9 @@ $(document).ready(function() {
         .addClass('opacity-1' + ' ' + 'will-change-opacity')
         .removeClass('hide')
         .removeClass('opacity-0');
+      $("#js-navbar-join-btn").addClass('opacity-0').removeClass('opacity-1');
+      $('.flux-logo-text').css({ fill: "#fff" });
+      $("#flux-logo-home").addClass('opacity-1');
       // $('.hamburger-inner').addClass('bg-white').removeClass('bg-black');
       $('body').addClass('overflow-hidden');
     } else {
@@ -101,6 +104,9 @@ $(document).ready(function() {
         .removeClass('opacity-1');
       // $('.hamburger-inner').addClass('bg-black').removeClass('bg-white');
       $('body').removeClass('overflow-hidden');
+      $("#js-navbar-join-btn").addClass('opacity-1').removeClass('opacity-0');
+      $('.flux-logo-text').css({ fill: "#000" });
+      $("#flux-logo-home").removeClass('opacity-1');
       setTimeout(function() {
         $("#js-menu")
           .addClass('hide')
@@ -144,9 +150,11 @@ var myEfficientFn = debounce(function() {
   var offset = $("#js-navbar").offset().top;
 
     if (offset >= 500 ) {
-      $("#js-navbar").addClass('opacity-1');
+      $("#js-navbar, #flux-logo-home").addClass('opacity-1');
+      // $("#flux-logo-home").addClass('opacity-1');
+
     } else {
-      $("#js-navbar").removeClass('opacity-1');
+      $("#js-navbar, #flux-logo-home").removeClass('opacity-1');
     }
 }, 15);
 

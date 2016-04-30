@@ -60,7 +60,3 @@ gulp.task('deploy-flux', function () {
             remoteUrl: 'https://github.com/voteflux/site-v2-concept.git'
         }));
 });
-
-
-
-

@@ -51,8 +51,8 @@ reasons:
 
 
 
+{% include base.html %}
 <article class="mb4">
-
   <section class="mb4">
     {% for feature in page.features %}
       <div class="mb3">
@@ -91,12 +91,9 @@ reasons:
 
 </article>
 
-
 {% include components/inline-signup.html %}
 
-
 <article class="pt4 mt4 mid-gray">
-
   <div class="mb4">
     {% include components/main-heading.html
       text="Nine reasons why Flux voting system will be great"
@@ -111,7 +108,4 @@ reasons:
       <p>{{reason.copy}}
     </section>
   {% endfor %}
-
-
-
 </article>
