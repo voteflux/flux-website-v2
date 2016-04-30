@@ -62,14 +62,17 @@ $(document).ready(function() {
       format: 'json'
     },
     error: function() {
-      console.log('error');
+      console.log('error')
     },
     success: function(response) {
-      var data = JSON.parse(response);
-      var memberCount = data.n_members;
+      var data = JSON.parse(response)
+      var memberCount = data.n_members
       var el = document.getElementById("js-member-count")
-      if (el) {
+      var elMobile = document.getElementById("js-member-count-mobile")
+
+      if (el || elMobile) {
         el.innerHTML = memberCount.toString()
+        elMobile.innerHTML = memberCount.toString()
       }
     },
     type: 'GET'
@@ -152,7 +155,6 @@ var myEfficientFn = debounce(function() {
     if (offset >= 500 ) {
       $("#js-navbar, #flux-logo-home").addClass('opacity-1');
       // $("#flux-logo-home").addClass('opacity-1');
-
     } else {
       $("#js-navbar, #flux-logo-home").removeClass('opacity-1');
     }
@@ -161,7 +163,7 @@ var myEfficientFn = debounce(function() {
 
 function checkWidth() {
   var windowsize = $window.width();
-  if (windowsize > 640) {
+  if (windowsize > 0) {
     $window.on('scroll', myEfficientFn );
   } else {
     $window.off('scroll', myEfficientFn );

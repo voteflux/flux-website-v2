@@ -1,6 +1,6 @@
 {% capture site_baseurl %}{{site.baseurl}}/{% endcapture %}
 <nav>
-  <div id="js-navbar" class="fixed col-12 z2 top-0 left-0 px2 sm-px3 py1 navbar-height bg-near-white transition-slow sm-opacity-0 shadow-light">
+  <div id="js-navbar" class="fixed col-12 z2 top-0 left-0 px2 sm-px3 py1 navbar-height bg-near-white transition-slow opacity-0 shadow-light">
 
   </div>
   <div class="fixed col-12 top-0 left-0 z4 px2 sm-px3 py1">
@@ -10,11 +10,11 @@
         <a class="link-reset block pt2" href="{{site.baseurl}}/">
           <span class="flux-logo-width block">
             {% include svg/flux-text-logo.html
-              color="#000" %}
+               color="#000" %}
           </span>
         </a>
         {% else %}
-        <a id="flux-logo-home" class="link-reset block pt2 opacity-0 transition-slow" href="{{site.baseurl}}/">
+        <a id="flux-logo-home" class="link-reset block pt2 opacity-0 transition" href="{{site.baseurl}}/">
           <span class="flux-logo-width block">
             {% include svg/flux-text-logo.html
               color="#000" %}
@@ -23,7 +23,7 @@
       {% endif %}
     </div>
     <div class="col-6 right-align flex justify-end items-center">
-      <div class="inline-block mr2">
+      <div class="inline-block mr2 xs-hide">
         <a id="js-navbar-join-btn" href="{{site.baseurl}}/signup" class="btn btn-primary p1 h5 transition">Join Flux</a>
       </div>
       <div class="inline-block mt1">
@@ -41,7 +41,7 @@
 <div id="js-menu" class="transition opacity-0 hide relative z3">
 <div class="py4 px2 bg-black-muted light-gray min-height-100vh fixed col-12 top-0 right-0 left-0 bottom-0">
   <div class="height-100vh overflow-scroll absolute left-0 top-0 col-12 mt4">
-    <div class="px3">
+    <div class="px2">
       <div class="mx-auto max-width-2">
         <dl class="list-reset h3 sm-h2">
 

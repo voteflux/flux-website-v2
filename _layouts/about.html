@@ -7,7 +7,6 @@ layout: default
 
 {% include navbar.html%}
 
-<!-- <div class="full-bg-img height-40vh"></div> -->
 <main class="bg-white mid-gray py4 px2 sm-px3 mt4">
   <div class="mx-auto max-width-4">
     <div class="sm-flex">
@@ -26,7 +25,9 @@ layout: default
             font-weight="bold"
             line="true" %}
         </div>
-        {{ content }}
+        <div class="break-word">
+          {{ content }}
+        </div>
           {% include components/hr-muted.html %}
           <h4 class="mt0 mb1 accent">share</h4>
           {% include social-buttons.html %}

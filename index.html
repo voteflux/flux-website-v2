@@ -33,39 +33,60 @@ social-media:
 {% include navbar.html %}
 
 <main>
-<section class="bg-near-black px2 sm-px3  py4 relative min-height-95vh texture-bg-img">
-  <div class="mx-auto max-width-4">
-    <div class="sm-flex">
+<section class="bg-near-black py4 relative min-height-95vh texture-bg-img">
+  <div class="mx-auto max-width-4 px2">
+    <div class="md-flex justify-between mxn2">
 
 <!-- LOGO -->
-      <header class="white sm-col-3 pt2 pr0 sm-pr4">
-        <div class="sm-flex flex-column">
+      <header class="white md-col-2 px2">
+        <div class="">
           <div class="silver">
-            <img src="img/flux-mark.svg" alt="" width="96" height="96" class="">
-            <div class="mt2">
-              <h2 class="sm-h1 white bold mt2 m0 line-height-3">FLUX <span class="muted gray regular">/ <br>PROGRESS <br>FOR PROCESS</span></h2>
+<div class="xs-flex sm-flex md-block">
+
+
+            <div class="md-mb1">
+              <img src="img/flux-mark.svg" alt="FLUX LOGO" class="flux-logo-width">
             </div>
-            <hr class="muted">
-            <h5 class="muted caps">Registered Members</h5>
-            <h3><span id="js-member-count">Loading...</span></h3>
+            <div class="flex flex-column justify-center pl2 md-p0">
+                <div class="flux-logo-text-width ">
+                  {% include svg/flux-text-logo.html color="white" no-js=true %}
+                </div>
+                <h1 class="hide">FLUX</h1>
+                <h3 class="xs-hide sm-hide muted gray regular mb0">PROGRESS<br>FOR PROCESS</h3>
+            </div>
+
+</div>
+
+            <div class="xs-hide sm-hide">
+              <div class="clearfix">
+                <hr class="muted border-bottom black col-9 left my2">
+              </div>
+              <h5 class="muted caps">Registered <br>   Members</h5>
+              <h3><span id="js-member-count">Loading...</span></h3>
+            </div>
+
           </div>
         </div>
       </header>
 
 <!-- HERO SECTION -->
-      <div class="sm-col-9 pb3">
+      <div class="md-col-9 pb3 px2">
         <div>
             {% include components/main-heading.html
             text=page.hero-title
             font-size="h0 line-height-2"
             font-weight="bold"
-            classes="letter-spacing-1 mb2 sm-mb4 sm-mt4 sm-pt4 near-white" %}
+            classes="letter-spacing-1 mb2 sm-mb4 md-mt4 md-pt4 near-white" %}
             <p class="h3 sm-h2 h-font light mb4 silver letter-spacing-2 line-height-4">
               {{ page.hero-copy }}
             </p>
             <a href="{{site.baseurl}}/signup" class="h2 regular link-reset inline-block border-bottom accent letter-spacing-1">
               {{ page.hero-call-to-action }}
             </a>
+            <div class="md-hide lg-hide silver">
+              <h5 class="muted caps mt3">Registered Members</h5>
+              <h3><span id="js-member-count-mobile">Loading...</span></h3>
+            </div>
         </div>
       </div>
 
@@ -74,9 +95,9 @@ social-media:
 </section>
 
 <!-- WHY FLUX SECTION -->
-<section class="bg-white py4 px2 sm-px3  min-height-95vh">
-  <div class="max-width-4 mx-auto dark-gray">
-    <div class="md-flex  mb3">
+<section class="bg-white py4 min-height-95vh">
+  <div class="max-width-4 mx-auto dark-gray px2">
+    <div class="md-flex mb3">
       <div class="md-col-9">
         <h5 class="h4"><span class="gray">ABOUT FLUX</span> / <span class="bold">WHY</span></h5>
         <hr class="accent-muted muted border-bottom">
@@ -89,9 +110,9 @@ social-media:
 </section>
 
 <!-- SECOND CALLOUT SECTION -->
-<section class="full-bg-img height-40vh py4 px2 sm-px3 min-height-95vh">
+<section class="full-bg-img height-40vh py4 min-height-95vh">
   <div class="max-width-4 mx-auto clearfix">
-    <div class="bg-near-black light-gray p3 sm-p4 sm-col-right sm-col-9 mt4">
+    <div class="bg-near-black light-gray px2 py4 sm-p4 sm-col-right sm-col-9 mt4">
       <div class="mb3">
         {% include components/main-heading.html
         text="We're fed up with the political process too"
@@ -113,7 +134,7 @@ social-media:
 {% assign items = site.about | sort: 'order '%}
 {% for item in items %}
   {% if item.tag-topic != 'why' %}
-    <section class="bg-white dark-gray px2 sm-px3  py4 relative z1">
+    <section class="bg-white dark-gray px2 sm-px2  py4 relative z1">
       <div class="max-width-4 mx-auto">
         <div class="sm-col-9">
           <h5 class="h4"><span class="gray">
@@ -131,8 +152,8 @@ social-media:
 {% endfor %}
 
 <!-- IN THE NEWS -->
-<section class="py4 px2 sm-px3  bg-near-black light-gray min-height-95vh texture-bg-img">
-  <div class="max-width-4 mx-auto">
+<section class="py4 bg-near-black light-gray min-height-95vh texture-bg-img">
+  <div class="max-width-4 mx-auto px2">
     <div class="sm-flex items-center">
       <div class="flex-auto">
       {% include components/main-heading.html
@@ -141,40 +162,45 @@ social-media:
         font-weight="bold" %}
       </div>
       <div class="clearfix">
-        <h5 class="muted mb0 light">MEDIA ENQUIRIES</h5>
-        <h3 class="white mb2 right inline-block">media@voteflux.org</h3>
+        <div class="sm-col-right">
+          <h5 class="muted mb0 light">MEDIA ENQUIRIES</h5>
+          <h3 class="white mb2 inline-block">media@voteflux.org</h3>
+        </div>
       </div>
     </div>
-    <div class="sm-flex flex-wrap mxn3 mb3">
-      {% for article in site.data.articles limit:8 %}
 
-          <div class="sm-col-6 lg-col-4 px3">
-            <div class="mb3">
-              <hr class="border-bottom accent-muted mb1 muted">
-              <div class="flex flex-column justify-between height-3">
-                <div>
-                  {% if article.publishedIn == 'Press Release' %}
-                    <h5 class="mb2 gray">PRESS <span class="light-silver">{{ article.publishedIn | upcase }}</span>
-                    </h5>
-                  {% else %}
-                    <h5 class="mb2 gray">ARTICLE <span class="light-silver">{{ article.publishedIn | upcase }}</span>
-                    </h5>
-                  {% endif %}
-                  <a href="{{ article.url }}" target="_blank" class="link-reset block">
-                    <h4 class="sm-h3 h-font light line-height-4 accent-on-hover transition-fast inline">
-                      {{ article.title }}<i class="material-icons icon-adjust muted">call_made</i>
-                    </h4>
-                  </a>
+
+      <div class="sm-flex flex-wrap mxn2 mb3">
+        {% for article in site.data.articles limit:8 %}
+            <div class="sm-col-6 lg-col-4 px2">
+              <div class="mb3">
+                <hr class="border-bottom accent-muted mb1 muted">
+                <div class="flex flex-column justify-between height-3">
+                  <div>
+                    {% if article.publishedIn == 'Press Release' %}
+                      <h5 class="mb2 gray">PRESS <span class="light-silver">{{ article.publishedIn | upcase }}</span>
+                      </h5>
+                    {% else %}
+                      <h5 class="mb2 gray">ARTICLE <span class="light-silver">{{ article.publishedIn | upcase }}</span>
+                      </h5>
+                    {% endif %}
+                    <a href="{{ article.url }}" target="_blank" class="link-reset block">
+                      <h3 class="h-font light line-height-4 accent-on-hover transition-fast inline">
+                        {{ article.title }}
+                      </h3>
+                    </a>
+                  </div>
+                  <time datetime="{{ article.date }}" class="italic gray">
+                  {{ article.date | date: '%B %d, %Y' }}
+                  </time>
                 </div>
-                <time datetime="{{ article.date }}" class="italic gray">
-                {{ article.date | date: '%B %d, %Y' }}
-                </time>
               </div>
             </div>
-          </div>
 
-      {% endfor %}
-    </div>
+        {% endfor %}
+      </div>
+
+
     <div class="right-align">
       <a href="{{ site.baseurl }}/press" class="list-reset border-bottom accent">All articles</a>
     </div>
@@ -182,8 +208,8 @@ social-media:
 </section>
 
 <!-- UPCOMING MEETUPS -->
-<section id="upcoming-meetups" class="py4 px2 sm-px3  bg-dark-gray light-silver min-height-95vh">
-  <div class="max-width-4 mx-auto">
+<section id="upcoming-meetups" class="py4 bg-dark-gray light-silver min-height-95vh">
+  <div class="max-width-4 mx-auto px2">
     <div class="lg-col-9">
       {% include components/main-heading.html
         text="Upcoming meetups"
@@ -192,13 +218,14 @@ social-media:
       <p class="h3 sm-h2 light h-font letter-spacing-2 line-height-4 mb4">
         Join party co-founders <a href="{{site.baseurl}}/about/who#nathan-spataro" class="accent accent-on-hover transition-fast">Nathan Spataro</a> &amp; <a href="{{site.baseurl}}/about/who#max-kaye" class="accent accent-on-hover transition-fast">Max Kaye</a> for a Q&amp;A at the next meetup in your city
       </p>
-      <div class="mxn3">
-        <div class="sm-flex flex-wrap">
+
+      <div class="sm-flex flex-wrap mxn2">
+
           {% for meetup in page.meetups %}
           {% if forloop.length == 1 %}
-            <div class="sm-col-6 px3 mb3">
+            <div class="sm-col-6 px2 mb3">
           {% else %}
-            <div class="sm-col-6 md-col-4 px3 mb3">
+            <div class="sm-col-6 md-col-4 px2 mb3">
           {% endif %}
               {% include components/hr-muted.html %}
               <!-- <h5 class="gray caps">Meetup city</h5> -->
@@ -220,7 +247,7 @@ social-media:
             </div>
           {% endfor %}
         </div>
-      </div>
+
     </div>
     <div class="right-align mt4 sm-mt0">
       <a href="http://www.meetup.com/FluxSydney/" target="_blank" class="border-bottom">Flux meetup page</a><i class="material-icons icon-adjust muted">call_made</i>
@@ -230,16 +257,16 @@ social-media:
 </section>
 
 <!-- CONTACT SECTION -->
-<section id="contact" class="bg-near-white mid-gray py4 px2 sm-px3 ">
-  <div class="max-width-4 mx-auto">
+<section id="contact" class="bg-near-white mid-gray py4">
+  <div class="max-width-4 mx-auto px2">
 
     {% include components/main-heading.html
       text="Join the conversation"
       font-size="h0 line-height-1"
       font-weight="bold dark-gray mb4" %}
 
-      <div class="sm-flex mxn3">
-        <div class="sm-col-4 px3 mb3">
+      <div class="sm-flex mxn2">
+        <div class="sm-col-4 px2 mb3">
           {% include components/hr-muted.html %}
           <h2 class="bold mb3">Email</h2>
           <h3 class="bold h-font mb3 light line-height-3"> Currently the best way to get in contact is via email:</h3>
@@ -260,7 +287,7 @@ social-media:
             <h3 class="bold h-font mt0">media@voteflux.org</h3>
           </div>
         </div>
-        <div class="sm-col-4 px3 mb3">
+        <div class="sm-col-4 px2 mb3">
           {% include components/hr-muted.html %}
           <h2 class="bold mb3">Social Media</h2>
           {% for social in page.social-media %}
@@ -273,7 +300,7 @@ social-media:
           {% endfor %}
         </div>
 
-        <div class="sm-col-4 px2 sm-px3  mb3">
+        <div class="sm-col-4 px2 mb3">
           {% include components/hr-muted.html %}
           <h2 class="bold mb3">On Slack</h2>
 
