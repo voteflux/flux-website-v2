@@ -2,6 +2,15 @@ a {
   color: $accent;
   text-decoration: none;
   font-weight: $regular-font-weight;
+  opacity: 1;
+  transition: opacity .1s ease;
+  -webkit-tap-highlight-color: transparent;
+  &:hover {
+    opacity: .85;
+  }
+  &:active {
+    opacity: .65;
+  }
 }
 
 .link-reset {

@@ -10,26 +10,27 @@ const MyInput = React.createClass({
     this.setValue(event.currentTarget[this.props.type === 'checkbox' ? 'checked' : 'value']);
   },
   render() {
-
     const className = 'form-group' + (this.props.className || ' ') + (this.showRequired() ? 'required' : this.showError() ? 'error' : "success");
     const errorMessage = this.getErrorMessage();
     return (
       <div className={className}>
         <label htmlFor={this.props.name}>{this.props.title}</label>
         <input
+          required={this.showRequired}
+          id={this.props.name}
           className={this.props.inputClass}
           type={this.props.type || 'text'}
           name={this.props.name}
           onChange={this.changeValue}
           value={this.getValue()}
           checked={this.props.type === 'checkbox' && this.getValue() ? 'checked' : null}
+          autoComplete={this.props.autocomplete}
         />
         { errorMessage && <span className='validation-error'>{errorMessage}</span> }
       </div>
     );
   }
 });
-
 
 const SectionTitle = React.createClass({
   render: function() {
@@ -63,7 +64,9 @@ const FormContainer = React.createClass({
         <section className="px2 sm-px3 py3 bg-light-gray">
           <h3 className="h2 regular mb1">Sign up below, its quick and easy</h3>
           <div className="gray mb3">
-            <p className="">Please make sure your details exactly match those on the electoral roll. You can confirm them on the <a href="#!" target="_blank" className="link-reset border-bottom border-thick accent">AEC website</a>.
+            <p className="">
+              Please make sure your details exactly match those on the electoral roll. You can confirm them on the
+                <a href="#!" target="_blank" className="link-reset border-bottom accent">AEC website</a>.
             </p>
           </div>
 
@@ -81,7 +84,7 @@ const FormContainer = React.createClass({
           inputClass="checkbox"
           type="checkbox"
           name="foo"
-          title="Are you a memeer"
+          title="Are you a member"
           validationError="First name is required"
           required />
 
@@ -89,22 +92,24 @@ const FormContainer = React.createClass({
 
         <MyInput
           inputClass="input"
-          name="first-name"
-          title="Legal first name"
+          name="fname"
+          autocomplete="given-name"
           validations="isAlpha"
           validationError="First name is required"
           required />
 
         <MyInput
           inputClass="input"
-          name="middle-name"
+          name="mname"
+          autocomplete="additional-name"
           title="Legal middle name"
           validations="isAlpha"
           validationError="Is this really your middle name?" />
 
         <MyInput
           inputClass="input"
-          name="last-name"
+          name="lname"
+          autocomplete="family-name"
           title="Legal last name"
           validations="isAlpha"
           validationError="last name is required"
@@ -114,37 +119,41 @@ const FormContainer = React.createClass({
 
         <MyInput
           inputClass="input"
-          name="street-address"
+          name="address"
           title="Street address"
-          validationError="last name is required"
+          validationError="Street address is required"
+          autocomplete="street-address"
           required />
 
         <MyInput
           inputClass="input"
-          name="suburb"
+          name="city"
           title="Suburb"
-          validationError="last name is required"
+          validationError="Suburb is required"
+          autocomplete="adress-line2"
           required />
 
         <MyInput
           inputClass="input"
           name="state"
           title="State"
-          validationError="last name is required"
+          autocomplete="state"
+          validationError="State is required"
           required />
 
         <MyInput
           inputClass="input"
           name="postcode"
           title="Postcode"
-          validationError="last name is required"
+          validationError="Postcode is required"
+          autocomplete="state"
           required />
 
         <MyInput
           inputClass="input"
           name="day"
           title="Day"
-          validationError="last name is required"
+          validationError="Day is required"
           required />
 
         <MyInput
@@ -186,7 +195,7 @@ const FormContainer = React.createClass({
           required />
 
         <div className="buttons">
-          <button type="submit" disabled={!this.state.canSubmit}>Submit</button>
+          <button type="submit" className="btn btn-primary" disabled={!this.state.canSubmit}>Submit</button>
         </div>
       </Formsy.Form>
     );
@@ -232,6 +241,3 @@ const App = React.createClass({
 })
 
 ReactDOM.render(<App />, document.getElementById('app'));
-
-
-

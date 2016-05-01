@@ -97,7 +97,7 @@ $hamburger-types: (
   padding: $hamburger-padding-y $hamburger-padding-x;
   display: inline-block;
   cursor: pointer;
-
+  -webkit-tap-highlight-color: transparent;
   transition-property: opacity, filter;
   transition-duration: $hamburger-hover-transition-duration;
   transition-timing-function: $hamburger-hover-transition-timing-function;
@@ -198,7 +198,7 @@ $hamburger-types: (
           bottom: 0;
           transform: rotate(-90deg);
           transition: bottom 0.1s ease,
-                      transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+          transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
         }
       }
     }
