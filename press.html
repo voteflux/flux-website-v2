@@ -4,6 +4,7 @@ permalink: press/
 ---
 
 {% include navbar.html %}
+<div class="pt4 bg-near-black"></div>
 <div class="bg-near-black light-gray py4 px2 sm-px3">
 <div class="mx-auto max-width-2">
   <div class="mb3">
@@ -25,10 +26,10 @@ permalink: press/
                 <h4 class="h5 mb2 gray">ARTICLE / <span class="white">{{article.publishedIn | upcase }}</span>
                 </h4>
               {% endif %}
-              <a href="{{ article.url }}" target="_blank" class="link-reset block">
+              <a href="{{ article.url }}" target="_blank" class="link-reset block hover-show-child">
                 <h2 class="h3 sm-h2 h-font light line-height-4 accent-on-hover transition-fast inline">
-                  {{article.title}}<i class="material-icons icon-adjust muted">call_made</i>
-                </h2>
+                  {{article.title}}
+                </h2><i class="material-icons icon-adjust muted">call_made</i>
               </a>
             </div>
             <time datetime="{{article.date }}" class="italic gray">

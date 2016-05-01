@@ -4,8 +4,9 @@ title: Who is behind Flux?
 permalink: about/who/
 tag-section: about flux
 tag-topic: who
+menu-order: 3.0
 ---
-
+{% include base.html %}
 
 <div class="h-font h3 sm-h2 light line-height-4"><p>We are Australians with a drive to improve democracy. We believe that our structure for decision making and leadership are outdated, and that with the technology we have available, we can do better. (See below for leadership)</p>
 
@@ -18,16 +19,16 @@ tag-topic: who
 <div class="mb4">{% include components/inline-signup.html %}</div>
 
 
-    {% include components/main-heading.html
-    text="Get to know the founders"
-    font-size="sm-h1 line-height-3"
-    font-weight="bold"
-    line="true" %}
+{% include components/main-heading.html
+  text="Get to know the founders"
+  font-size="sm-h1 line-height-3"
+  font-weight="bold"
+  line="true" %}
 <div class="">
     <div class="sm-flex sm-mxn3 mb4">
       <div class="sm-col-4 sm-px3 order-1">
         <div class="overflow-hidden circle square-1 mb3">
-          <img src="/img/max.jpg" alt="Max Kaye">
+          <img src="{{base}}/img/max.jpg" alt="Max Kaye">
         </div>
       </div>
       <div class="sm-col-8 sm-px3 order-0">
@@ -45,7 +46,7 @@ tag-topic: who
     <div class="sm-flex sm-mxn3">
       <div class="sm-col-4 sm-px3 order-1">
         <div class="overflow-hidden circle square-1 mb3">
-          <img src="/img/nathan.jpg" alt="Nathan Spataro">
+          <img src="{{base}}/img/nathan.jpg" alt="Nathan Spataro">
         </div>
       </div>
       <div class="sm-col-8 sm-px3 order-0">

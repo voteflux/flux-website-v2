@@ -31,7 +31,7 @@ $(document).ready(function() {
     var $target = $(target);
 
     $root.stop().animate({
-      'scrollTop': $target.offset().top - 100
+      'scrollTop': $target.offset().top
     }, 500,'swing', function () {
       // when done, add hash to url
       window.location.hash = target ;
@@ -82,7 +82,7 @@ $(document).ready(function() {
 
   // menu
   var isOpen = true;
-  var transitionTime = 250;
+  var transitionTime = 150;
 
   $("#js-menu-button").on('tap', function() {
     toggleMenu();
@@ -94,23 +94,16 @@ $(document).ready(function() {
   function toggleMenu() {
     isOpen = !isOpen;
     if (!isOpen) {
-      $("#js-menu")
-        .addClass('opacity-1' + ' ' + 'will-change-opacity')
-        .removeClass('hide')
-        .removeClass('opacity-0');
+      $("#js-menu").addClass('opacity-1 will-change-opacity').removeClass('hide').removeClass('opacity-0');
       $("#js-navbar-join-btn").addClass('opacity-0').removeClass('opacity-1');
       $('.flux-logo-text').css({ fill: "#fff" });
       $("#flux-logo-home").addClass('opacity-1');
-      // $('.hamburger-inner').addClass('bg-white').removeClass('bg-black');
       $('body').addClass('overflow-hidden');
     } else {
-      $("#js-menu")
-        .addClass('opacity-0')
-        .removeClass('opacity-1');
-      // $('.hamburger-inner').addClass('bg-black').removeClass('bg-white');
+      $("#js-menu").addClass('opacity-0').removeClass('opacity-1');
       $('body').removeClass('overflow-hidden');
       $("#js-navbar-join-btn").addClass('opacity-1').removeClass('opacity-0');
-      $('.flux-logo-text').css({ fill: "#000" });
+      $('.flux-logo-text').css({ fill: "#222" });
       $("#flux-logo-home").removeClass('opacity-1');
       setTimeout(function() {
         $("#js-menu")
@@ -124,31 +117,31 @@ $(document).ready(function() {
 
 
 
-  // throttle funciton from https://jsfiddle.net/jonathansampson/m7G64/
-  function throttle (callback, limit) {
-    var wait = false;                  // Initially, we're not waiting
-    return function () {               // We return a throttled function
-      if (!wait) {                   // If we're not waiting
-        callback.call();           // Execute users function
-        wait = true;               // Prevent future invocations
-        setTimeout(function () {   // After a period of time
-            wait = false;
-            callback.call();
-        }, limit);
-      }
-    }
-  }
-
-  var $window = $(window);
-  var menuFadefn = throttle(function() {
-    var scrollTop = $window.scrollTop();
-      if ( scrollTop > 100 ) {
-        $("#js-navbar, #flux-logo-home").addClass('opacity-1').removeClass('will-change-opacity');
-      } else {
-        $("#js-navbar, #flux-logo-home").removeClass('opacity-1');
-      }
-  }, 500);
-
-  $window.on('scroll', menuFadefn );
+  // // throttle funciton from https://jsfiddle.net/jonathansampson/m7G64/
+  // function throttle (callback, limit) {
+  //   var wait = false;                  // Initially, we're not waiting
+  //   return function () {               // We return a throttled function
+  //     if (!wait) {                   // If we're not waiting
+  //       callback.call();           // Execute users function
+  //       wait = true;               // Prevent future invocations
+  //       setTimeout(function () {   // After a period of time
+  //           wait = false;
+  //           callback.call();
+  //       }, limit);
+  //     }
+  //   }
+  // }
+  //
+  // var $window = $(window);
+  // var menuFadefn = throttle(function() {
+  //   var scrollTop = $window.scrollTop();
+  //     if ( scrollTop > 100 ) {
+  //       $("#js-navbar, #flux-logo-home").addClass('opacity-1').removeClass('will-change-opacity');
+  //     } else {
+  //       $("#js-navbar, #flux-logo-home").removeClass('opacity-1');
+  //     }
+  // }, 500);
+  //
+  // $window.on('scroll', menuFadefn );
 
 });

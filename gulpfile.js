@@ -19,7 +19,7 @@ gulp.task('serve', ['sass'], function() {
       baseDir: './_site'
     },
     port: 9000,
-    notify: true
+    notify: false
   });
 });
 

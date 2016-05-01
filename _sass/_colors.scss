@@ -42,9 +42,9 @@
 .border-muted { border-color: rgba(255,255,255, 0.1); }
 .border-accent { border-color: $accent; }
 .border-accent-muted { border-color: $accent-muted; }
-.border-warning { background-color: red;}
-.border-success { background-color: green; }
-
+.border-warning { border-color: red;}
+.border-success { border-color: green; }
+.border-near-white { border-color: $near-white}
 
 // utility colors
 .muted { opacity: 0.5; }

@@ -89,7 +89,7 @@ a {
     outline: transparent solid 1px;
   }
 }
-.transition { transition: all ease 0.2s; }
+.transition { transition: all ease 0.15s; }
 .transition-slow { transition: all ease 0.45s}
 .transition-fast { transition: all ease 0.1s }
 
@@ -121,15 +121,16 @@ a {
 
 .navbar-height { height: 4.5rem };
 
-
-.hover-show-child {
-  i {
-    opacity: 0;
-    transition: opacity .15s ease;
-  }
-  &:hover {
+@media #{$breakpoint-sm} {
+  .hover-show-child {
     i {
-      opacity: 1;
-    }  
+      opacity: 0;
+      transition: opacity .15s ease;
+    }
+    &:hover {
+      i {
+        opacity: 1;
+      }
+    }
   }
 }

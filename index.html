@@ -1,15 +1,28 @@
 ---
 layout: default
-home: true
 
-# this is the top section
+# Top hero section
 hero-title: Let's re-imagine how democracy gets done.
 hero-copy: >
-  Flux is a new political party that will act as your gateway into parliament.
-  When an issue is before parliament you vote in real time. We call it issue based direct democracy.
-hero-call-to-action: Join the movement
+  Flux is a new political party that will act as your gateway to participate directly in parliament. When a bill is put forward you can vote in real time. Flux is here to help redistribute political power and empower the Australian people. Politics will never change unless WE change the system!
+hero-action: Join the movement
 
-# meetups
+# Why Austriali needs Flux
+why-flux-title: Why Australia needs Flux
+why-flux-copy: >
+  Australian politics is broken. Traditional politicians say one thing to get elected and then do another. Horse trading and backroom deals have become more important than good policy.
+  Flux is here to help upgrade our democracy, pioneering a real-time voting system which gives you a direct voice into parliament. #takethepowerback
+why-flux-action: Find out more
+
+## Second call out section
+second-callout-title: We're fed up with the political process too
+second-callout-copy: >
+  Feel unrepresented? Fed up with broken promises? Vote to change the system.
+  Flux is a new system, not about ideology, but of progress for process. Elect Flux and make your voice heard. Help us contest the 2016 federal election and change ‪#‎AusPol‬ forever.
+second-callout-action: Become a member
+
+
+# Meetups section
 meetups:
   - city: Melbourne
     location: Melbourne Bitcoin Technology Centre
@@ -18,7 +31,7 @@ meetups:
     time: 6:00 PM
     url: http://www.meetup.com/FluxSydney/events/230138091/
 
-#make as global variable..
+#Make as global variable..
 social-media:
   - name: facebook
     url: https://facebook.com/voteflux.org
@@ -40,30 +53,25 @@ social-media:
       <header class="white md-col-2 px2">
         <div class="">
           <div class="silver">
-<div class="xs-flex sm-flex md-block">
-
-
-            <div class="md-mb1">
-              <img src="img/flux-mark.svg" alt="FLUX LOGO" class="flux-logo-width">
+            <div class="xs-flex sm-flex md-block">
+              <div class="md-mb1">
+                <img src="img/flux-mark.svg" alt="FLUX LOGO" class="flux-logo-width">
+              </div>
+              <div class="flex flex-column justify-center pl2 md-p0">
+                  <div class="flux-logo-text-width ">
+                    {% include svg/flux-text-logo.html color="white" no-js=true %}
+                  </div>
+                  <h1 class="hide">FLUX</h1>
+                  <h3 class="xs-hide sm-hide muted gray regular mb0">PROGRESS<br>FOR PROCESS</h3>
+              </div>
             </div>
-            <div class="flex flex-column justify-center pl2 md-p0">
-                <div class="flux-logo-text-width ">
-                  {% include svg/flux-text-logo.html color="white" no-js=true %}
-                </div>
-                <h1 class="hide">FLUX</h1>
-                <h3 class="xs-hide sm-hide muted gray regular mb0">PROGRESS<br>FOR PROCESS</h3>
-            </div>
-
-</div>
-
             <div class="xs-hide sm-hide">
               <div class="clearfix">
                 <hr class="muted border-bottom black col-9 left my2">
               </div>
-              <h5 class="muted caps">Registered <br>   Members</h5>
+              <h5 class="muted caps">Registered<br>Members</h5>
               <h3><span id="js-member-count">Loading...</span></h3>
             </div>
-
           </div>
         </div>
       </header>
@@ -79,8 +87,8 @@ social-media:
             <p class="h3 sm-h2 h-font light mb4 silver letter-spacing-2 line-height-4">
               {{ page.hero-copy }}
             </p>
-            <a href="{{site.baseurl}}/signup" class="h2 regular link-reset inline-block border-bottom accent letter-spacing-1">
-              {{ page.hero-call-to-action }}
+            <a href="{{site.baseurl}}/signup" class="h2 regular link-reset inline-block border-bottom accent">
+              {{ page.hero-action }}
             </a>
             <div class="md-hide lg-hide silver">
               <h5 class="muted caps mt3">Registered Members</h5>
@@ -88,7 +96,6 @@ social-media:
             </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -100,9 +107,16 @@ social-media:
       <div class="md-col-9">
         <h5 class="h4"><span class="gray">ABOUT FLUX</span> / <span class="bold">WHY</span></h5>
         <hr class="accent-muted muted border-bottom">
-        <h1 class="h0 bold mb3 line-height-2">Why Australia needs Flux</h1>
-        <p class="h3 sm-h2 light h-font mb4 gray letter-spacing-2 line-height-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <a href="{{site.baseurl}}/about/why-flux" class="h3 sm-h2 border-bottom accent inline-block">Learn more</a>
+        <h1 class="h0 bold mb3 line-height-2">
+            {{ page.why-flux-title }}
+        </h1>
+        <p class="h3 sm-h2 light h-font mb4 gray letter-spacing-2 line-height-4">
+          {{ page.why-flux-copy }}
+        </p>
+        <a href="{{ site.baseurl }}/about/why-flux"
+           class="h3 sm-h2 border-bottom accent inline-block">
+          {{page.why-flux-action}}
+        </a>
       </div>
     </div>
   </div>
@@ -111,18 +125,20 @@ social-media:
 <!-- SECOND CALLOUT SECTION -->
 <section class="full-bg-img height-40vh py2 sm-py4 min-height-95vh">
   <div class="max-width-4 mx-auto clearfix px1 sm-px2 md-px3">
-    <div class="bg-near-black light-gray px2 py4 sm-p4 sm-col-right sm-col-9 mt4">
+    <div class="bg-near-black light-gray px2 py4 sm-p4 sm-col-right sm-col-12 md-col-9 mt4">
       <div class="mb3">
         {% include components/main-heading.html
-        text="We're fed up with the political process too"
-        font-size="h0 line-height-2"
-        font-weight="bold" %}
-
-        <p class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 gray">Flux is a movement not about ideology, but about progress for process. Flux Party members come from every age bracket and all walks of life, as well as from the left, centre, and right of politics.</p>
+          text=page.second-callout-title
+          font-size="h0 line-height-2"
+          font-weight="bold" %}
+        <p class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
+          {{ page.second-callout-copy }}
+        </p>
       </div>
       <div class="gray">
-        <a href="{{site.baseurl}}/signup" class="h3 sm-h2 link-reset border-bottom inline-block accent">
-          Become a member
+        <a href="{{site.baseurl}}/signup"
+           class="h3 sm-h2 link-reset border-bottom inline-block accent">
+          {{ page.second-callout-action }}
         </a>
       </div>
     </div>
@@ -130,17 +146,17 @@ social-media:
 </section>
 
 <!-- ABOUT PAGE LINKS -->
-{% assign items = site.about | sort: 'order '%}
+{% assign items = site.about | sort: 'menu-order' %}
 {% for item in items %}
   {% if item.tag-topic != 'why' %}
     <section class="bg-white dark-gray py4 relative z1">
       <div class="max-width-4 mx-auto px2 md-px3">
         <div class="sm-col-9">
           <h5 class="h4"><span class="gray">
-            ABOUT FLUX</span> / <span class="bold">{{item.tag-topic | upcase }}</span>
+            ABOUT FLUX</span> / <span class="bold">{{ item.tag-topic | upcase }}</span>
           </h5>
-          <h1 class="h0 bold line-height-1">{{item.title}}</h1>
-          <a href="{{site.baseurl}}{{item.url}}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
+          <h1 class="h0 bold line-height-1">{{ item.title }}</h1>
+          <a href="{{ site.baseurl }}{{ item.url }}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
             Learn more
           </a>
         </div>
@@ -170,11 +186,11 @@ social-media:
 
 
       <div class="sm-flex flex-wrap mxn2 mb3">
-        {% for article in site.data.articles limit:8 %}
+        {% for article in site.data.articles limit:6 %}
             <div class="sm-col-6 lg-col-4 px2">
               <div class="mb3">
                 <hr class="border-bottom accent-muted mb1 muted">
-                <div class="flex flex-column justify-between height-3">
+                <div class="flex flex-column justify-between height-2">
                   <div>
                     {% if article.publishedIn == 'Press Release' %}
                       <h5 class="mb2 gray">PRESS <span class="light-silver">{{ article.publishedIn | upcase }}</span>
@@ -195,7 +211,6 @@ social-media:
                 </div>
               </div>
             </div>
-
         {% endfor %}
       </div>
 
@@ -248,8 +263,10 @@ social-media:
         </div>
 
     </div>
-    <div class="right-align mt4 sm-mt0 hover-show-child">
-      <a href="http://www.meetup.com/FluxSydney/" target="_blank" class="border-bottom">Flux meetup page</a><i class="material-icons icon-adjust muted">call_made</i>
+    <div class="right-align mt4 sm-mt0">
+      <span class="hover-show-child">
+        <a href="http://www.meetup.com/FluxSydney/" target="_blank" class="border-bottom">Flux meetup page</a><i class="material-icons icon-adjust muted">call_made</i>
+      </span>
     </div>
 
   </div>
