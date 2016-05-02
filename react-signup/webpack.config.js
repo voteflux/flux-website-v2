@@ -20,7 +20,7 @@ module.exports = {
     './app/index.js'
   ],
   output: {
-    path: '../_sign-up/',
+    path: '../sign-up/',
     filename: "index_bundle.js"
   },
   module: {

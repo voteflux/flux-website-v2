@@ -1,26 +1,11 @@
 ---
 layout: default
-hello: hello
 permalink: /sign-up/
+hello: hello
 ---
-<!DOCTYPE html>
-<html>
 
 
-<head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto+Slab:400,300|Roboto:300,400,900" rel="stylesheet" type="text/css">
-  <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
-  <link rel="stylesheet" href="css/main.css">
-</head>
-
-<body>
-
-
+<h1>{{page.hello}}</h1>
     <main class="sm-flex">
 
       <div class="max-width-2 bg-near-white">
@@ -43,5 +28,3 @@ permalink: /sign-up/
 
     </main>
 <script src="index_bundle.js"></script>
-</body>
-</html>

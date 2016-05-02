@@ -75,8 +75,8 @@ $white:         #fff !default;
 $accent:        #ff8200 !default; //#F36407 #27DCC9 // #ff9900
 $accent-muted:  rgba($accent, .3);
 $accent-dark:   darken($accent, 40%) !default;
-$warning:       red !default;
-$success:       green !default;
+// $warning:       red !default;
+// $success:       green !default;
 
 $darken-1: rgba(0, 0, 0, .0625) !default;
 $darken-2: rgba(0, 0, 0, .125) !default;

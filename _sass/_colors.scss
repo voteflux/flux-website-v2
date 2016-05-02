@@ -11,8 +11,8 @@
 .white { color: $white; }
 .accent { color: $accent; }
 .accent-muted { color: rgba($accent, 0.5); }
-.warning { color: red; }
-.success { color: green; }
+// .warning { color: red; }
+// .success { color: green; }
 // .secondary {color: #000CFF}
 
 //background colors
@@ -31,8 +31,8 @@
 .bg-accent { background-color: $accent; }
 .bg-accent-muted { background-color: $accent-muted}
 .bg-accent-dark { background-color: $accent-dark}
-.bg-warning { background-color: red;}
-.bg-success { background-color: green; }
+// .bg-warning { background-color: red;}
+// .bg-success { background-color: green; }
 
 
 // border colors
@@ -42,8 +42,8 @@
 .border-muted { border-color: rgba(255,255,255, 0.1); }
 .border-accent { border-color: $accent; }
 .border-accent-muted { border-color: $accent-muted; }
-.border-warning { border-color: red;}
-.border-success { border-color: green; }
+// .border-warning { border-color: red;}
+// .border-success { border-color: green; }
 .border-near-white { border-color: $near-white}
 
 // utility colors
