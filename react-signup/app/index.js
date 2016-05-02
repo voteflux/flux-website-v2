@@ -13,21 +13,21 @@ const MyInput = React.createClass({
     const className = 'form-group' + (this.props.className || ' ') + (this.showRequired() ? 'required' : this.showError() ? 'error' : "success");
     const errorMessage = this.getErrorMessage();
     return (
-      <div className={className}>
+      <div className={className + " " + "mb2"}>
         <label htmlFor={this.props.name}>{this.props.title}</label>
         <input
-          required={this.showRequired}
           id={this.props.name}
-          className={this.props.inputClass}
+          className={this.props.inputClass + " " + "mb1"}
           type={this.props.type || 'text'}
           name={this.props.name}
           onChange={this.changeValue}
           value={this.getValue()}
           checked={this.props.type === 'checkbox' && this.getValue() ? 'checked' : null}
           autoComplete={this.props.autocomplete}
+
         />
-        { errorMessage && <span className='validation-error'>{errorMessage}</span> }
-      </div>
+      { errorMessage && <h5 className='line-height-2 inline-block mt0 validation-error'>{errorMessage}</h5> }
+    </div>
     );
   }
 });
@@ -35,7 +35,7 @@ const MyInput = React.createClass({
 const SectionTitle = React.createClass({
   render: function() {
     return (
-      <h4 className="mb2 bold accent">{this.props.text}</h4>
+      <h4 className="mt4 mb2 bold accent">{this.props.text}</h4>
     )
   }
 });
@@ -59,9 +59,9 @@ const FormContainer = React.createClass({
         onSubmit={this.submit}
         onValid={this.enableButton}
         onInvalid={this.disableButton}
-        className="login">
+        className="login px2">
 
-        <section className="px2 sm-px3 py3 bg-light-gray">
+        <section className="py3 bg-light-gray">
           <h3 className="h2 regular mb1">Sign up below, its quick and easy</h3>
           <div className="gray mb3">
             <p className="">
@@ -85,8 +85,7 @@ const FormContainer = React.createClass({
           type="checkbox"
           name="foo"
           title="Are you a member"
-          validationError="First name is required"
-          required />
+          validationError="First name is required" />
 
         <SectionTitle text="1. Names"/>
 
@@ -101,10 +100,9 @@ const FormContainer = React.createClass({
         <MyInput
           inputClass="input"
           name="mname"
-          autocomplete="additional-name"
+          autocomplete="false"
           title="Legal middle name"
-          validations="isAlpha"
-          validationError="Is this really your middle name?" />
+          formNoValidate />
 
         <MyInput
           inputClass="input"
@@ -112,7 +110,7 @@ const FormContainer = React.createClass({
           autocomplete="family-name"
           title="Legal last name"
           validations="isAlpha"
-          validationError="last name is required"
+          validationError="last name required"
           required />
 
         <SectionTitle text="2. Address"/>
@@ -122,60 +120,109 @@ const FormContainer = React.createClass({
           name="address"
           title="Street address"
           validationError="Street address is required"
-          autocomplete="street-address"
+          autocomplete="address-line1"
+          validationErrors={{
+            isRequired: 'State required'
+          }}
           required />
 
         <MyInput
           inputClass="input"
           name="city"
           title="Suburb"
-          validationError="Suburb is required"
-          autocomplete="adress-line2"
+          validationError="Suburb required"
+          autocomplete="address-line2"
           required />
 
         <MyInput
           inputClass="input"
           name="state"
           title="State"
-          autocomplete="state"
-          validationError="State is required"
+          validations="isAlpha,maxLength:3"
+          autocomplete="province"
+          validationErrors={{
+            isRequired: 'State required',
+            maxLength: 'Please use abbreviated state code. Eg. NSW'
+          }}
           required />
 
         <MyInput
           inputClass="input"
-          name="postcode"
+          name="postal-code"
           title="Postcode"
-          validationError="Postcode is required"
-          autocomplete="state"
+          validations="isNumeric,isLength:4"
+          validationErrors={{
+            isRequired: 'Postcode required',
+            isNumeric: 'Only numbers allowed',
+            isLength: 'Length needs to be 4 digits'
+          }}
+          autocomplete="postal-code"
           required />
+
+        <SectionTitle text="3. Date of Birth"/>
+        <p class="mt0 gray">(Required by AEC)</p>
+
+        <div className="">
+          <div className="flex mxn1">
+
+            <div className="col-3 px1 relative">
+              <MyInput
+                inputClass="input"
+                name="day"
+                title="Day"
+                validations="isNumeric,isLength:2"
+                validationErrors={{
+                  isRequired: 'Day required',
+                  isNumeric: 'Only numbers allowed',
+                  isLength: 'Length must be 2 digits'
+                }}
+                required />
+            </div>
+
+            <div className="col-3 px1 relative">
+              <MyInput
+                inputClass="input"
+                name="month"
+                title="Month"
+                validations="isNumeric,isLength:2"
+                validationErrors={{
+                  isRequired: 'Month required',
+                  isNumeric: 'Only numbers allowed',
+                  isLength: 'Month must be 2 digits'
+                }}
+                required />
+            </div>
+
+            <div className="col-6 px1 relative">
+              <MyInput
+                inputClass="input"
+                name="year"
+                title="Year"
+                validations="isNumeric,isLength:4"
+                validationErrors={{
+                  isRequired: 'Year required',
+                  isNumeric: 'Only numbers allowed',
+                  isLength: 'Year must be 4 digits'
+                }}
+                required />
+            </div>
+
+          </div>
+        </div>
+
+        <SectionTitle text="4. Contact details"/>
 
         <MyInput
           inputClass="input"
-          name="day"
-          title="Day"
-          validationError="Day is required"
-          required />
-
-        <MyInput
-          inputClass="input"
-          name="month"
-          title="Month"
-          validationError="last name is required"
-          required />
-
-        <MyInput
-          inputClass="input"
-          name="year"
-          title="Year"
-          validationError="last name is required"
-          required />
-
-        <MyInput
-          inputClass="input"
+          type="tel"
           name="phone"
           title="Phone"
-          validations="isEmail"
-          validationError="This is not a valid email"
+          validations="minLength:8"
+          validationErrors={{
+            isRequired: 'Phone number is required',
+            minLength: 'Needs to be at least 8 digits.'
+          }}
+          autocomplete="tel"
           required />
 
         <MyInput
@@ -184,15 +231,15 @@ const FormContainer = React.createClass({
           title="Email"
           validations="isEmail"
           validationError="This is not a valid email"
+          autocomplete="email"
           required />
 
         <MyInput
           inputClass="input"
           type="checkbox"
-          name="foo"
-          title="Are you a memeer"
-          validationError="First name is required"
-          required />
+          name="mailing-list"
+          title="Add me to the Flux mailing list (We promise no spam)."
+           />
 
         <div className="buttons">
           <button type="submit" className="btn btn-primary" disabled={!this.state.canSubmit}>Submit</button>
