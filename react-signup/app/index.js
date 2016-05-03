@@ -66,7 +66,8 @@ const MySelect = React.createClass({
     ));
     return (
       <div className={className}>
-        <label htmlFor={this.props.name}>{this.props.title}</label>
+        <label htmlFor={this.props.name} className="gray">{this.props.title}</label>
+        { this.showRequired() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
         <select required={this.isRequired()} className={this.props.className} name={this.props.name} onChange={this.changeValue} value={this.getValue()} >
           {options}
         </select>
