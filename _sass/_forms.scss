@@ -97,6 +97,10 @@ textarea {
     font-size: $h3;
     padding:($space-1 / 2) 0;
   }
+  option:disabled {
+    color: red;
+    font-weight: 300;
+  }
 
 }
 
@@ -145,6 +149,12 @@ input[type=checkbox]:checked + label:before { letter-spacing: .5rem; } /* allow 
   margin-bottom: $space-2;
   border: $border-width solid #ccc;
   border-radius: $border-radius;
+
+}
+
+select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
 }
 
 .textarea {
@@ -158,17 +168,13 @@ input[type=checkbox]:checked + label:before { letter-spacing: .5rem; } /* allow 
   border-radius: $border-radius;
 }
 
-.required {
-  label {
-    // &:after {
-    //   content: "*";
-    //   color: $error;
-    // }
-  }
+.error-msg-height {
+  height: $space-2;
+  top: 4px;
 }
 
 .success {
-  input {
+  input, select {
     &,
     &:focus {
       border-color: $success;
@@ -177,7 +183,7 @@ input[type=checkbox]:checked + label:before { letter-spacing: .5rem; } /* allow 
 }
 
 .error {
-  input {
+  input, select {
     &,
     &:focus {
       border-color: $error;

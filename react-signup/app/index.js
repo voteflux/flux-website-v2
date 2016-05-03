@@ -26,15 +26,15 @@ const MyInput = React.createClass({
     this.setValue(event.currentTarget[this.props.type === 'checkbox' ? 'checked' : 'value']);
   },
   render() {
-    const className = 'form-group' + (this.props.className || ' ') + (this.showRequired() ? 'required' : this.showError() ? 'error' : this.isPristine() ? " " : "success");
+    const className = 'form-group' + ' ' + (this.props.className || ' ') + (this.showRequired() ? 'required' : this.showError() ? 'error' : this.isPristine() ? " " : "success");
     const errorMessage = this.getErrorMessage();
     return (
-      <div className={ className + " " + "mb2 relative"}>
+      <div className={ className + " " + "mb1 relative"}>
         { this.props.type != 'checkbox' && <label htmlFor={this.props.name} className="gray">{this.props.title}</label> }
         { this.showRequired() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
         <input
           id={this.props.name}
-          className={this.props.inputClass + " " + "mb1"}
+          className={this.props.inputClass + ' ' + 'mb0'}
           type={this.props.type || 'text'}
           name={this.props.name}
           onChange={this.changeValue}
@@ -45,7 +45,11 @@ const MyInput = React.createClass({
           ref={this.props.inputRef}
         />
       { this.props.type === 'checkbox'&& <label htmlFor={this.props.name} className="noselect mid-gray">{ this.props.title }</label> }
-      { errorMessage && <h5 className='line-height-2 inline-block mt0 validation-error'>{errorMessage}</h5> }
+      <div className="relative error-msg-height">
+        {errorMessage
+          &&
+          <h5 className='absolute top-0 left-0 line-height-2 inline-block mt0 validation-error'>{errorMessage}</h5>}
+      </div>
     </div>
     );
   }
@@ -57,7 +61,8 @@ const MySelect = React.createClass({
     this.setValue(event.currentTarget.value);
   },
   render() {
-    const className = 'form-group' + '' + (this.isRequired() ? 'required' : this.showError() ? 'error' : '');
+    const className = 'form-group relative' + ' ' + (this.props.className || ' ') + ( this.showRequired() ? 'required' : this.showError() ? 'error' : this.isPristine() ? " " : "success");
+
     const errorMessage = this.getErrorMessage();
     const options = this.props.options.map((option, i) => (
       <option key={option.title+option.value} value={option.value} disabled={option.value == '' && true} >
@@ -67,11 +72,19 @@ const MySelect = React.createClass({
     return (
       <div className={className}>
         <label htmlFor={this.props.name} className="gray">{this.props.title}</label>
-        { this.showRequired() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
-        <select required={this.isRequired()} className={this.props.className} name={this.props.name} onChange={this.changeValue} value={this.getValue()} >
+        { this.isPristine() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
+        <i className="material-icons absolute right-0 top-0 mt3 pt1 mr1 h1 noselect default">arrow_drop_down</i>
+        <select
+                id={this.props.name}
+                className={this.props.inputClass}
+                name={this.props.name}
+                onChange={this.changeValue}
+                value={this.getValue()} >
           {options}
         </select>
-        <span className='validation-error'>{errorMessage}</span>
+
+        { errorMessage && <h5 className='line-height-2 inline-block mt0 validation-error'>{errorMessage}</h5> }
+
       </div>
     );
   }
@@ -81,7 +94,10 @@ const MySelect = React.createClass({
 const SectionTitle = React.createClass({
   render: function() {
     return (
-      <h4 className="mt4 mb2 bold accent">{this.props.text}</h4>
+      <div>
+        <h4 className="mt3 mb2 bold accent inline-block">{this.props.text}</h4>
+        {this.props.infoText && <p className="ml2 mt0 gray inline-block">{this.props.infoText}</p>}
+      </div>
     )
   }
 });
@@ -107,12 +123,12 @@ const FormContainer = React.createClass({
         onInvalid={this.disableButton}
         className="">
 
-        <div className="py3 px2 bg-light-gray">
+        <div className="py3 px3 bg-light-gray">
           <h3 className="h2 regular mb1">Sign up below, its quick and easy</h3>
           <div className="gray mb3">
-            <p className="">
+            <p className="mb2">
               Please make sure your details exactly match those on the electoral roll. You can confirm them on the
-                <a href="#!" target="_blank" className="link-reset border-bottom accent"> AEC website</a>.
+                <a href="#!" target="_blank" className="link-reset border-bottom accent nowrap"> AEC website</a>.
             </p>
           </div>
 
@@ -125,7 +141,7 @@ const FormContainer = React.createClass({
             value={false} />
         </div>
 
-        <div className="px2">
+        <div className="px3 pb4">
           <SectionTitle text="1. Names"/>
 
           <MyInput
@@ -182,18 +198,20 @@ const FormContainer = React.createClass({
             name="suburb"
             title="Suburb"
             validationError="Suburb required"
-            autocomplete="address-line2"
+            autocomplete="city"
             required />
 
 
           <MySelect
-            className="input"
+            inputClass="input"
             name="state"
             title="State"
             value="hello"
-            required={true}
+            validationErrors={{
+              isRequired: 'State required'
+            }}
             options={[
-              { value:"", title: "" },
+              { value:"", title: "Select your state" },
               { value:"act", title: "Australian Capital Territory" },
               { value:"nsw", title: "New South Wales" },
               { value:"nt", title: "Northern Territory" },
@@ -203,6 +221,7 @@ const FormContainer = React.createClass({
               { value:"vic", title: "Victoria" },
               { value:"wa", title: "Western Australia "}
             ]}
+            required
           />
 
 
@@ -220,8 +239,8 @@ const FormContainer = React.createClass({
             autocomplete="postal-code"
             required />
 
-          <SectionTitle text="3. Date of Birth"/>
-          <p className="mt0 gray">(Required by AEC)</p>
+          <SectionTitle text="3. Date of Birth" infoText="(Required by AEC)"/>
+
 
           <div className="">
             <div className="flex mxn1">
@@ -231,7 +250,7 @@ const FormContainer = React.createClass({
                   inputClass="input"
                   name="day"
                   title="Day"
-                  validations="isNumeric,isLength:2"
+                  validations="isNumeric,isLength:2 "
                   validationErrors={{
                     isRequired: 'Day required',
                     isNumeric: 'Only numbers allowed',
@@ -280,13 +299,11 @@ const FormContainer = React.createClass({
             title="Phone"
             autocomplete="tel"
             validations={{
-              minLength: 8,
-              matchRegexp: /^(?:\+?61|\(?0)[2378]\)?(?:[ -]?[0-9]){8}$/
+              minLength: 8
             }}
             validationErrors={{
               isRequired: 'Phone number is required',
-              minLength: 'Needs to be at least 8 digits.',
-              matchRegexp: 'wrong'
+              minLength: 'Needs to be at least 8 digits.'
             }}
             required />
 
@@ -307,10 +324,16 @@ const FormContainer = React.createClass({
             value={false}
              />
 
-          <div className="buttons">
+           <div className="buttons mt4 mb3">
             <button type="submit" className="h3 btn btn-primary" disabled={!this.state.canSubmit}>Submit</button>
+            {!this.state.canSubmit && <p className='inline-block ml2'>Please fill out all required fields</p> }
           </div>
+
+          <p className="silver">
+            <i className="material-icons icon-adjust">lock</i>
+            Your details will be kept absolutely confidential and will only be used for party business.</p>
         </div>
+
       </Formsy.Form>
     );
   }
