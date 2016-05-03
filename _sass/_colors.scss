@@ -11,9 +11,7 @@
 .white { color: $white; }
 .accent { color: $accent; }
 .accent-muted { color: rgba($accent, 0.5); }
-// .warning { color: red; }
-// .success { color: green; }
-// .secondary {color: #000CFF}
+.error {color: $error}
 
 //background colors
 .bg-black-muted { background-color: rgba($black, 0.9)}

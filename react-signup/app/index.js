@@ -3,6 +3,22 @@ import ReactDOM from 'react-dom';
 import Formsy from 'formsy-react';
 import axios from 'axios';
 
+const FluxHeader = React.createClass({
+  render: function() {
+    return (
+      <header className="bg-near-black light-silver shadow px2 sm-px3 py3 relative">
+        <div className="mb3 mt1">
+          Flux logo here
+        </div>
+        <div className="mt1">
+          <h1 className="white m0 mb1 line-height-1">Become a Flux member!</h1>
+          <h2 className="silver mb3 line-height-3">Your gateway to participate directly in Parliament</h2>
+          <h3 className="accent h4"><span className="regular">{this.props.memberCount}</span> members registered</h3>
+        </div>
+      </header>
+    )
+  }
+});
 
 const MyInput = React.createClass({
   mixins: [Formsy.Mixin],
@@ -13,8 +29,9 @@ const MyInput = React.createClass({
     const className = 'form-group' + (this.props.className || ' ') + (this.showRequired() ? 'required' : this.showError() ? 'error' : this.isPristine() ? " " : "success");
     const errorMessage = this.getErrorMessage();
     return (
-      <div className={className + " " + "mb2"}>
+      <div className={ className + " " + "mb2 relative"}>
         { this.props.type != 'checkbox' && <label htmlFor={this.props.name} className="gray">{this.props.title}</label> }
+        { this.showRequired() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
         <input
           id={this.props.name}
           className={this.props.inputClass + " " + "mb1"}
@@ -22,26 +39,43 @@ const MyInput = React.createClass({
           name={this.props.name}
           onChange={this.changeValue}
           value={this.getValue()}
-          checked={this.props.type === 'checkbox' && this.getValue() ? 'checked' : null}
+          checked={this.props.type === 'checkbox' && this.getValue() ? 'checked' : null  }
           autoComplete={this.props.autocomplete}
           placeholder={this.props.placeholder}
+          ref={this.props.inputRef}
         />
-      { this.props.type === 'checkbox'&& <label htmlFor={this.props.name} className="noselect mid-gray">{this.props.title}</label> }
+      { this.props.type === 'checkbox'&& <label htmlFor={this.props.name} className="noselect mid-gray">{ this.props.title }</label> }
       { errorMessage && <h5 className='line-height-2 inline-block mt0 validation-error'>{errorMessage}</h5> }
     </div>
     );
   }
 });
 
-const Checkbox = React.createClass({
-  render: function() {
+const MySelect = React.createClass({
+  mixins: [Formsy.Mixin],
+  changeValue(event) {
+    this.setValue(event.currentTarget.value);
+  },
+  render() {
+    const className = 'form-group' + '' + (this.isRequired() ? 'required' : this.showError() ? 'error' : '');
+    const errorMessage = this.getErrorMessage();
+    const options = this.props.options.map((option, i) => (
+      <option key={option.title+option.value} value={option.value} disabled={option.value == '' && true} >
+        {option.title}
+      </option>
+    ));
     return (
-      <span>
-        <i className="material-icons icon-adjust">check_box</i>
-      </span>
-    )
+      <div className={className}>
+        <label htmlFor={this.props.name}>{this.props.title}</label>
+        <select required={this.isRequired()} className={this.props.className} name={this.props.name} onChange={this.changeValue} value={this.getValue()} >
+          {options}
+        </select>
+        <span className='validation-error'>{errorMessage}</span>
+      </div>
+    );
   }
-})
+
+});
 
 const SectionTitle = React.createClass({
   render: function() {
@@ -77,16 +111,17 @@ const FormContainer = React.createClass({
           <div className="gray mb3">
             <p className="">
               Please make sure your details exactly match those on the electoral roll. You can confirm them on the
-                <a href="#!" target="_blank" className="link-reset border-bottom accent">AEC website</a>.
+                <a href="#!" target="_blank" className="link-reset border-bottom accent"> AEC website</a>.
             </p>
           </div>
 
           <MyInput
             inputClass="checkbox"
             type="checkbox"
-            name="foo"
+            name="electoral-status"
             title="Are you on the Australian Electoral Roll?"
-            validationError="First name is required" />
+            validationError="First name is required"
+            value={false} />
         </div>
 
         <div className="px2">
@@ -102,18 +137,8 @@ const FormContainer = React.createClass({
               isRequired: 'First name is required',
               isAlpha: 'Only letters please'
             }}
-            required />
-
-          <MyInput
-            inputClass="input"
-            name="mname"
-            autocomplete="false"
-            title="Legal middle name"
-            validations="isAlpha"
-            validationErrors={{
-              isAlpha: 'Only letters please'
-            }}
-            formNoValidate />
+            required
+            inputRef="foo"/>
 
           <MyInput
             inputClass="input"
@@ -126,6 +151,17 @@ const FormContainer = React.createClass({
               isAlpha: 'Only letters please'
             }}
             required />
+
+            <MyInput
+              inputClass="input"
+              name="mname"
+              autocomplete="false"
+              title="Legal middle name"
+              validations="isAlpha"
+              validationErrors={{
+                isAlpha: 'Only letters please'
+              }}
+              formNoValidate />
 
           <SectionTitle text="2. Address"/>
 
@@ -148,17 +184,27 @@ const FormContainer = React.createClass({
             autocomplete="address-line2"
             required />
 
-          <MyInput
-            inputClass="input"
+
+          <MySelect
+            className="input"
             name="state"
             title="State"
-            validations="isAlpha,maxLength:3"
-            autocomplete="state"
-            validationErrors={{
-              isRequired: 'State required',
-              maxLength: 'Please use abbreviated state code. Eg. NSW'
-            }}
-            required />
+            value="hello"
+            required={true}
+            options={[
+              { value:"", title: "" },
+              { value:"act", title: "Australian Capital Territory" },
+              { value:"nsw", title: "New South Wales" },
+              { value:"nt", title: "Northern Territory" },
+              { value:"qld", title: "Queensland" },
+              { value:"sa", title: "South Australia" },
+              { value:"tas", title: "Tasmania" },
+              { value:"vic", title: "Victoria" },
+              { value:"wa", title: "Western Australia "}
+            ]}
+          />
+
+
 
           <MyInput
             inputClass="input"
@@ -174,7 +220,7 @@ const FormContainer = React.createClass({
             required />
 
           <SectionTitle text="3. Date of Birth"/>
-          <p class="mt0 gray">(Required by AEC)</p>
+          <p className="mt0 gray">(Required by AEC)</p>
 
           <div className="">
             <div className="flex mxn1">
@@ -231,12 +277,16 @@ const FormContainer = React.createClass({
             type="tel"
             name="phone"
             title="Phone"
-            validations="minLength:8"
+            autocomplete="tel"
+            validations={{
+              minLength: 8,
+              matchRegexp: /^(?:\+?61|\(?0)[2378]\)?(?:[ -]?[0-9]){8}$/
+            }}
             validationErrors={{
               isRequired: 'Phone number is required',
-              minLength: 'Needs to be at least 8 digits.'
+              minLength: 'Needs to be at least 8 digits.',
+              matchRegexp: 'wrong'
             }}
-            autocomplete="tel"
             required />
 
           <MyInput
@@ -253,6 +303,7 @@ const FormContainer = React.createClass({
             type="checkbox"
             name="mailing-list"
             title="Add me to the Flux mailing list (We promise no spam)."
+            value={false}
              />
 
           <div className="buttons">
@@ -295,8 +346,7 @@ const App = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>members {this.state.memberCount.n_members}</h1>
-
+        <FluxHeader memberCount={this.state.isLoading ? "Loading...": this.state.memberCount.n_members}/>
         <FormContainer/>
       </div>
     )

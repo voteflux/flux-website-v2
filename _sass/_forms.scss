@@ -1,7 +1,3 @@
-$success: #3ed689 !default;
-$error: #ed5d4a !default;
-$info: #05daff !default;
-
 input,
 select,
 textarea,
@@ -79,21 +75,25 @@ textarea {
   }
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $silver;
+    font-weight: 300;
     font-size: $h3;
     padding:($space-1 / 2) 0;
   }
   &::-moz-placeholder { /* Firefox 19+ */
     color: $silver;
+    font-weight: 300;
     font-size: $h3;
     padding:($space-1 / 2) 0;
   }
   &:-ms-input-placeholder { /* IE 10+ */
     color: $silver;
+    font-weight: 300;
     font-size: $h3;
     padding:($space-1 / 2) 0;
   }
   &:-moz-placeholder { /* Firefox 18- */
     color: $silver;
+    font-weight: 300;
     font-size: $h3;
     padding:($space-1 / 2) 0;
   }
@@ -104,7 +104,7 @@ textarea {
     direction: ltr;
     display: inline-block;
     font-family: 'Material Icons';
-    font-size: 24px;
+    // font-size: 24px;
     font-style: normal;
     font-weight: normal;
     letter-spacing: normal;
@@ -160,10 +160,10 @@ input[type=checkbox]:checked + label:before { letter-spacing: .5rem; } /* allow 
 
 .required {
   label {
-    &:after {
-      content: "*";
-      color: red;
-    }
+    // &:after {
+    //   content: "*";
+    //   color: $error;
+    // }
   }
 }
 
