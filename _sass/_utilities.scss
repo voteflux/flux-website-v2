@@ -162,3 +162,7 @@ a {
     }
   }
 }
+
+
+::-moz-selection { background: $accent; color: $black }
+::selection { background: $accent; color:$black }

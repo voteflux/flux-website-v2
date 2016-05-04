@@ -339,7 +339,7 @@ const FormContainer = React.createClass({
   }
 });
 
-var helpers = {
+var httpHelpers = {
   getMembers: function () {
     return axios.get( "https://api.voteflux.org/getinfo" )
       .then(function (response) {
@@ -348,6 +348,15 @@ var helpers = {
       .catch(function (response) {
         console.log(response);
       });
+  },
+  sendForm: function () {
+    return axios.post('')
+      .then(function(response) {
+        console.log(response)
+      })
+      .catch(function(response) {
+        console.log("error", response)
+      })
   }
 };
 
@@ -359,7 +368,7 @@ const App = React.createClass({
     }
   },
   componentDidMount: function () {
-    helpers.getMembers()
+    httpHelpers.getMembers()
     .then( function (d) {
       this.setState({
         isLoading: false,
