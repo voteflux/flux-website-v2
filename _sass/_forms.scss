@@ -113,10 +113,12 @@ textarea {
     font-weight: normal;
     letter-spacing: normal;
     line-height: 1;
+    position: relative;
+    top: -1px;
     text-transform: none;
     white-space: nowrap;
     word-wrap: normal;
-    vertical-align: bottom;
+    vertical-align: middle;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
 }

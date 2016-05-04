@@ -69,7 +69,7 @@ faqs:
 <h4>Contents</h4>
 <ul class="sm-h3 list-reset border-left border-accent-muted pl1 sm-pl2 mb4 line-height-3 max-width-1">
   {% for faq in page.faqs %}
-    <li class="mb2">
+    <li class="mb2 regular">
       <a href="#{{faq.question | slugify }}">{{faq.question}}</a>
     </li>
   {% endfor %}
@@ -83,7 +83,7 @@ faqs:
 {% endfor %}
 
 {% include components/hr-muted.html %}
-<h3 class=" line-height-4">
-  For emails and other responses to various concerns see our:
+<h3 class=" line-height-4 hover-show-child">
+  For emails and other responses to various concerns see our:<br>
   <a href="https://github.com/voteflux/voteflux.github.io/blob/master/responses.md" target="_blank" class="border-bottom">Responses to common concerns</a><i class="material-icons icon-adjust muted">call_made</i>
 </h3>

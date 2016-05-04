@@ -324,13 +324,20 @@ const FormContainer = React.createClass({
             value={false}
              />
 
-           <div className="buttons mt4 mb3">
-            <button type="submit" className="h3 btn btn-primary" disabled={!this.state.canSubmit}>Submit</button>
-            {!this.state.canSubmit && <p className='inline-block ml2'>Please fill out all required fields</p> }
+           <div className="buttons flex items-center mt4 mb3">
+             <div>
+              <button type="submit" className="h3 btn btn-primary" disabled={!this.state.canSubmit}>Submit <i className="material-icons ">chevron_right</i></button>
+             </div>
+            {!this.state.canSubmit
+              &&
+              <div className="ml2 line-height-3 flex col-6 mt1">
+                <span className="h3 error inline-block">*</span>
+                <p className='h5 inline error'>You can't submit until you fill out all required fields</p>
+              </div>}
           </div>
 
           <p className="silver">
-            <i className="material-icons icon-adjust">lock</i>
+            <i className="material-icons ">lock</i>
             Your details will be kept absolutely confidential and will only be used for party business.</p>
         </div>
 

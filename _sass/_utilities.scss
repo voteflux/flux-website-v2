@@ -1,7 +1,7 @@
 a {
   color: $accent;
   text-decoration: none;
-  font-weight: $regular-font-weight;
+  // font-weight: $regular-font-weight;
   opacity: 1;
   transition: opacity .1s ease;
   -webkit-tap-highlight-color: transparent;
@@ -61,7 +61,7 @@ a {
 }
 
 .shadow-inset {
-  box-shadow: inset 0px 46px 45px -53px rgba($black,1);
+  box-shadow:  inset 0 93px 28px -95px rgba($black,.3);
 }
 
 
@@ -166,3 +166,17 @@ a {
 
 ::-moz-selection { background: $accent; color: $black }
 ::selection { background: $accent; color:$black }
+
+@media #{$breakpoint-xs} {
+  .xs-menu-join-button {
+    position: fixed;
+    z-index: $z2;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+    text-align: center;
+    padding: $space-2;
+    font-size: $h3;
+  }
+}

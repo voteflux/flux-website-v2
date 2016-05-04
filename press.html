@@ -1,5 +1,6 @@
 ---
 layout: default
+header-theme: dark
 permalink: press/
 ---
 
@@ -41,4 +42,22 @@ permalink: press/
   </div>
 </div>
 </div>
+{% for item in site.about %}
+  {% if item.url != page.url %}
+   <hr class="black muted border-bottom m0">
+    <section class="bg-dark-gray near-white px3 py4 relative z1">
+      <div class="max-width-4 mx-auto">
+        <div class="sm-col-9">
+          <h5 class="h4"><span class="gray">
+            ABOUT FLUX</span> / <span class="bold">{{item.tag-topic | upcase }}</span>
+          </h5>
+          <h1 class="h0 bold">{{item.title}}</h1>
+          <a href="{{site.baseurl}}{{item.url}}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
+            Learn more
+          </a>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}
 {% include footer.html %}

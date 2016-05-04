@@ -34,20 +34,24 @@
         <div class="px2">
           <div class="mx-auto max-width-2">
             <dl class="list-reset h3 sm-h2">
+
+              <hr class="dark-gray border-bottom my1">
+              <dt class="h5 muted mb1 caps light">Quick links</dt>
+              <dd class="mb2"><a href="{{site.baseurl}}/" class="link-reset h-font accent-on-hover transition-fast">Home</a></dd>
+              <dd class="mb2"><a href="{{site.baseurl}}/press" class="link-reset h-font accent-on-hover transition-fast">In the news</a></dd>
+              <dd class="mb2"><a href="{{site.baseurl}}/#upcoming-meetups" class="link-reset h-font accent-on-hover transition-fast">Upcoming Meetups</a></dd>
+              <dd class="mb2"><a href="{{site.baseurl}}/#contact" class="link-reset h-font accent-on-hover transition-fast">Contact</a></dd>
               <hr class="dark-gray border-bottom my1">
               <dt class="h5 muted mb1 caps light">About Flux</dt>
               {% assign items = site.about | sort: 'menu-order' %}
               {% for item in items %}
                 <dd class="mb2">
-                  <a href="{{ site.baseurl }}{{ item.url }}#top" class="link-reset h-font accent-on-hover transition-fast">{{ item.title }}</a>
+                  <a href="{{ site.baseurl }}{{ item.url }}" class="link-reset h-font accent-on-hover transition-fast">{{ item.title }}</a>
                 </dd>
               {% endfor %}
               <hr class="dark-gray border-bottom my1">
-              <dd class="mb2"><a href="{{site.baseurl}}/press" class="link-reset h-font accent-on-hover transition-fast">In the news</a></dd>
-              <dd class="mb2"><a href="{{site.baseurl}}/#upcoming-meetups" class="link-reset h-font accent-on-hover transition-fast">Upcoming Meetups</a></dd>
-              <dd class="mb2"><a href="{{site.baseurl}}/#contact" class="link-reset h-font accent-on-hover transition-fast">Contact</a></dd>
-              <hr class="dark-gray border-bottom my1">
-              <dd class="mb2 mt3 h4"><a href="{{site.baseurl}}/signup" class="btn btn-primary">Join Flux</a></dd>
+              <dd class="mb2 mt3 h4"><a href="{{site.baseurl}}/signup" class="btn btn-primary h3 xs-menu-join-button">Join Flux</a></dd>
+
             </dl>
             {% include social-buttons.html %}
           </div>
