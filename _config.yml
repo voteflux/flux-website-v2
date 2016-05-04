@@ -16,6 +16,16 @@ baseurl: ""
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 icon_path: img/social-icons/
 
+
+social-media:
+  - name: facebook
+    url: https://facebook.com/voteflux.org
+  - name: twitter
+    url: https://twitter.com/voteflux
+  - name: reddit
+    url: https://www.reddit.com/r/voteflux
+
+
 # Collections
 collections:
   about:

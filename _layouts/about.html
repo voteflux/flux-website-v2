@@ -38,6 +38,7 @@ layout: default
 
 {% for item in site.about %}
   {% if item.url != page.url %}
+   <hr class="black muted border-bottom m0">
     <section class="bg-dark-gray near-white px3 py4 relative z1">
       <div class="max-width-4 mx-auto">
         <div class="sm-col-9">
@@ -51,7 +52,6 @@ layout: default
         </div>
       </div>
     </section>
-    <hr class="accent-muted muted border-bottom m0">
   {% endif %}
 {% endfor %}
 

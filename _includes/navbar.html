@@ -1,11 +1,9 @@
 <nav>
-  <!-- <div id="js-navbar" class="absolute col-12 z2 top-0 left-0 px2 sm-px3 py1 navbar-height bg-near-white transition-slow opacity-0 will-change-opacity shadow-light">
-  </div> -->
-  {% capture home %}{{site.baseurl}}/{% endcapture %}
+<!-- Nav bar -->
   <div class="absolute col-12 top-0 left-0 z4 px2 sm-px3 py2">
     <div class="flex">
       <div class="col-6">
-        <a id="flux-logo-home" class="link-reset block pt2" href="{{site.baseurl}}/">
+        <a id="flux-logo-home" class="link-reset block pt2 no-focus" href="{{site.baseurl}}/">
           <span class="flux-logo-width block">
             {% include svg/flux-text-logo.html
               color="#222" %}
@@ -28,7 +26,7 @@
   </div>
 </div>
 
-
+<!-- Menu  -->
   <div id="js-menu" class="transition opacity-0 hide relative z3">
     <div class="py4 px2 bg-black-muted light-gray min-height-100vh fixed col-12 top-0 right-0 left-0 bottom-0">
       <div class="height-100vh overflow-scroll absolute left-0 top-0 col-12 mt4">

@@ -1,13 +1,81 @@
-<footer class="bg-white py4">
+<footer>
 
- <div class="max-width-4 mx-auto">
- footer here
+  <div class="bg-white mid-gray py3 shadow-inset">
+   <div class="max-width-4 mx-auto">
+      <div class="px2 sm-px3">
+        <div class="sm-flex mxn2">
+          <div class="sm-col-3 md-col-2 flex-auto px2 pt3">
+            <div class="xs-flex justify-around">
+              <a href="{{site.baseurl}}/">
+                <div class="width-8rem mb2">
+                  {% include svg/flux-mark.html %}
+                </div>
+                <div class="width-8rem">
+                  {% include svg/flux-text-logo.html %}
+                </div>
+              </a>
+            </div>
+            <!-- <span class="border-top inline-block flux-logo-width"></span>
+            <div>
+              <h5 class="muted caps">Registered<br>Members</h5>
+              <h3><span id="js-member-count-footer">Loading...</span></h3>
+            </div> -->
+          </div>
+          <div class="sm-col-4 px2">
+            <hr class="near-white border-bottom">
+            <h4 class="h3 bold mb3">About Flux</h4>
+            <ul class="list-reset">
+              {% for item in site.about %}
+                <li class="my1"><a href="{{site.baseurl}}item.url" class="link-reset">{{item.title}}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="sm-col-4 px2">
+            <hr class="near-white border-bottom">
+            <h4 class="h3 bold mb3">Quick links</h4>
+            <ul class="list-reset">
+              <li class="my1"><a href="{{site.baseurl}}/" class="link-reset">Home</a></li>
+              <li class="my1"><a href="{{site.baseurl}}/press" class="link-reset">In the news</a></li>
+              <li class="my1"><a href="{{site.baseurl}}/#upcoming-meetups" class="link-reset">Upcoming Meetups</a></li>
+              <li class="my1"><a href="{{site.baseurl}}/#contact" class="link-reset">Contact</a></li>
+            </ul>
+            <ul class="list-reset">
 
-<!--  {% for about in site.about  %}
- {{about.title}}
- {% endfor %} -->
+            {% for social in site.social-media %}
+              {% capture icon %}svg/{{ social.name }}-icon.html{% endcapture %}
+              <li class="inline-block mr2">
+                <a href="{{ social.url }}" class="block social-icon-width">
+                  {% include {{ icon }} color="#9B9B9B" %}
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <h5>Copyright etc etc</h5>
+      </div>
 
- </div>
+    </div>
 
+  </div>
+
+
+
+  <div class="bg-light-gray dark-gray border-accent-muted rounded py3 mt4">
+    <div class="max-width-4 mx-auto px2 sm-px3">
+
+      <div class="sm-flex justify-end flex-wrap items-center mxn2 center">
+        <div class="px2">
+          <h3 class="h-font mb3 sm-m0">Be part of something great</h3>
+        </div>
+        <div class="px2 self">
+          <a href="{{site.baseurl}}{{ base }}/signup" class="h3 btn btn-primary letter-spacing-1">
+            Join Flux today
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
 </footer>
-

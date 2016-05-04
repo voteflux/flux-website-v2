@@ -37,6 +37,7 @@ a {
 
 .flux-logo-text-width { width: 6rem}
 .flux-logo-width { width: 6rem }
+.width-8rem {width: 8rem;}
 
 
 .height-3 {min-height: 14rem; }
@@ -58,6 +59,11 @@ a {
 .shadow-light {
   box-shadow: 0px 3px 10px 0px rgba($black,.25);
 }
+
+.shadow-inset {
+  box-shadow: inset 0px 46px 45px -53px rgba($black,1);
+}
+
 
 .full-bg-img {
   background: url('../img/front-page-placeholder.jpg') no-repeat center center fixed;
