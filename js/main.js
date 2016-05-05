@@ -58,7 +58,7 @@ $(document).ready(function() {
 
   // get info ajax request
   $.ajax({
-    url: "https://api.voteflux.org/getinfo",
+    url: "https://api.voteflux.org/api/v0/getinfo",
     data: {
       format: 'json'
     },
@@ -87,7 +87,6 @@ $(document).ready(function() {
 	var intYear = dteNow.getFullYear();
   var elemYear = document.getElementById("js-footer-year");
 	elemYear.innerHTML = intYear
-
 
 
   // menu

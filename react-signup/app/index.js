@@ -107,7 +107,9 @@ const FormContainer = React.createClass({
     return { canSubmit: false };
   },
   submit(data) {
+    data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00'
     console.log(JSON.stringify(data, null, 4));
+    httpHelpers.sendForm(JSON.stringify(data, null, 4));
   },
   enableButton() {
     this.setState({ canSubmit: true });
@@ -135,7 +137,7 @@ const FormContainer = React.createClass({
           <MyInput
             inputClass="checkbox"
             type="checkbox"
-            name="electoral-status"
+            name="onAECRoll"
             title="Are you on the Australian Electoral Roll?"
             validationError="First name is required"
             value={false} />
@@ -184,7 +186,7 @@ const FormContainer = React.createClass({
 
           <MyInput
             inputClass="input"
-            name="address"
+            name="addr_street"
             title="Street address"
             validationError="Street address is required"
             autocomplete="address-line1"
@@ -195,14 +197,14 @@ const FormContainer = React.createClass({
 
           <MyInput
             inputClass="input"
-            name="suburb"
+            name="addr_suburb"
             title="Suburb"
             validationError="Suburb required"
             autocomplete="city"
             required />
 
 
-          <MySelect
+          {/*<MySelect
             inputClass="input"
             name="state"
             title="State"
@@ -222,13 +224,13 @@ const FormContainer = React.createClass({
               { value:"wa", title: "Western Australia "}
             ]}
             required
-          />
+          /> */}
 
 
 
           <MyInput
             inputClass="input"
-            name="postal-code"
+            name="addr_postcode"
             title="Postcode"
             validations="isNumeric,isLength:4"
             validationErrors={{
@@ -248,7 +250,7 @@ const FormContainer = React.createClass({
               <div className="col-3 px1 relative">
                 <MyInput
                   inputClass="input"
-                  name="day"
+                  name="dobDay"
                   title="Day"
                   validations="isNumeric,isLength:2 "
                   validationErrors={{
@@ -262,7 +264,7 @@ const FormContainer = React.createClass({
               <div className="col-3 px1 relative">
                 <MyInput
                   inputClass="input"
-                  name="month"
+                  name="dobMonth"
                   title="Month"
                   validations="isNumeric,isLength:2"
                   validationErrors={{
@@ -276,7 +278,7 @@ const FormContainer = React.createClass({
               <div className="col-6 px1 relative">
                 <MyInput
                   inputClass="input"
-                  name="year"
+                  name="dobYear"
                   title="Year"
                   validations="isNumeric,isLength:4"
                   validationErrors={{
@@ -295,7 +297,7 @@ const FormContainer = React.createClass({
           <MyInput
             inputClass="input"
             type="tel"
-            name="phone"
+            name="contact_number"
             title="Phone"
             autocomplete="tel"
             validations={{
@@ -320,8 +322,8 @@ const FormContainer = React.createClass({
             inputClass="input"
             type="checkbox"
             name="mailing-list"
-            title="Add me to the Flux mailing list (We promise no spam)."
-            value={false}
+            title="Send me Flux news and important updates."
+            value={true}
              />
 
            <div className="buttons flex items-center mt4 mb3">
@@ -346,7 +348,10 @@ const FormContainer = React.createClass({
   }
 });
 
+var postDev = 'https://flux-api-dev.herokuapp.com'
+
 var httpHelpers = {
+
   getMembers: function () {
     return axios.get( "https://api.voteflux.org/getinfo" )
       .then(function (response) {
@@ -356,8 +361,8 @@ var httpHelpers = {
         console.log(response);
       });
   },
-  sendForm: function () {
-    return axios.post('')
+  sendForm: function (data) {
+    return axios.post( postDev + '/api/v0/register/all_at_once', JSON.parse(data))
       .then(function(response) {
         console.log(response)
       })
