@@ -107,15 +107,19 @@ $(document).ready(function() {
       $("#js-menu").addClass('opacity-1 will-change-opacity').removeClass('hide').removeClass('opacity-0');
       $("#js-navbar-join-btn").addClass('opacity-0 will-change-opacity').removeClass('opacity-1').addClass('hide');
       $('.flux-logo-text').css({ fill: "#fff" });
-      $("#flux-logo-home").addClass('opacity-1');
+      $("#js-flux-logo-home-light").addClass('opacity-1');
       // $('body').addClass('overflow-hidden');
+
+        $("#js-flux-logo-home-dark").removeClass('opacity-0');
     } else {
+
       $("#js-navbar").removeClass('fixed').addClass('absolute');
       $("#js-menu").addClass('opacity-0').removeClass('opacity-1');
       // $('body').removeClass('overflow-hidden');
       $("#js-navbar-join-btn").addClass('opacity-1').removeClass('opacity-0, hide');
       $('.flux-logo-text').css({ fill: "#222" });
-      $("#flux-logo-home").removeClass('opacity-1');
+      $("#js-flux-logo-home-light").removeClass('opacity-1');
+        $("#js-flux-logo-home-dark").addClass('opacity-0');
       setTimeout(function() {
         $("#js-menu")
           .addClass('hide')

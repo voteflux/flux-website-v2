@@ -3,17 +3,26 @@
   <div id="js-navbar" class="absolute col-12 top-0 left-0 z4 px2 sm-px3 py2">
     <div class="flex">
       <div class="col-6">
-        <a id="flux-logo-home" class="link-reset block pt2 no-focus" href="{{site.baseurl}}/">
-          <span class="flux-logo-width block">
-            {% include svg/flux-text-logo.html
-              color="#222" %}
-          </span>
-        </a>
+        {% if page.dark-theme %}
+          <a id="js-flux-logo-home-dark" class="link-reset block pt2 no-focus opacity-0" href="{{site.baseurl}}/">
+            <span class="flux-logo-width block">
+              {% include svg/flux-text-logo.html
+                color="#222" %}
+            </span>
+          </a>
+        {% else %}
+          <a id="js-flux-logo-home-light" class="link-reset block pt2 no-focus" href="{{site.baseurl}}/">
+            <span class="flux-logo-width block">
+              {% include svg/flux-text-logo.html
+                color="#222" %}
+            </span>
+          </a>
+        {% endif %}
     </div>
     <hr>
     <div class="col-6 right-align flex justify-end items-center">
       <div class="inline-block mr3 xs-hide">
-        <a id="js-navbar-join-btn" href="{{site.baseurl}}/signup" class="btn btn-primary p1 h5 transition">Join Flux</a>
+        <a id="js-navbar-join-btn" href="{{site.baseurl}}/signup" class="btn btn-outline accent p1 h5 transition">Join Flux</a>
       </div>
       <div class="inline-block mt1">
         <button id="js-menu-button" class="hamburger hamburger--squeeze white no-focus" type="button">

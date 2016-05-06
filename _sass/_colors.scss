@@ -15,6 +15,7 @@
 
 //background colors
 .bg-black-muted { background-color: rgba($black, 0.9)}
+.bg-darken-1 {background: rgba($black, 0.1)}
 .bg-black { background-color: $black }
 .bg-near-black { background-color: $near-black; }
 // .bg-near-black-muted { background-color: rgba($near-black, 0.95)}
@@ -28,11 +29,12 @@
 .bg-white { background-color: $white; }
 .bg-accent { background-color: $accent; }
 .bg-accent-muted { background-color: $accent-muted}
+.bg-accent-light { background-color: lighten($accent, 10%)}
 .bg-accent-dark { background-color: $accent-dark}
 // .bg-warning { background-color: red;}
 // .bg-success { background-color: green; }
 
-
+.accent-light { color: lighten($accent, 40%)}
 // border colors
 .border-black { border-color: $black; }
 .border-mid-gray { border-color: $mid-gray; }

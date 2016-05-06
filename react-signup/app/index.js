@@ -49,6 +49,7 @@ const MyInput = React.createClass({
         {errorMessage
           &&
           <h5 className='absolute top-0 left-0 line-height-2 inline-block mt0 validation-error'>{errorMessage}</h5>}
+            <h1>{this.getErrorMessage()}</h1>
       </div>
     </div>
     );
@@ -65,7 +66,7 @@ const MySelect = React.createClass({
 
     const errorMessage = this.getErrorMessage();
     const options = this.props.options.map((option, i) => (
-      <option key={option.title+option.value} value={option.value} disabled={option.value == '' && true} >
+      <option key={option.title+option.value} value={option.value} disabled={option.value === '' && true} >
         {option.title}
       </option>
     ));
@@ -75,11 +76,11 @@ const MySelect = React.createClass({
         { this.isPristine() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
         <i className="material-icons absolute right-0 top-0 mt3 pt1 mr1 h1 noselect default">arrow_drop_down</i>
         <select
-                id={this.props.name}
-                className={this.props.inputClass}
-                name={this.props.name}
-                onChange={this.changeValue}
-                value={this.getValue()} >
+          id={this.props.name}
+          className={this.props.inputClass}
+          name={this.props.name}
+          onChange={this.changeValue}
+          value={this.getValue()} >
           {options}
         </select>
 
@@ -104,10 +105,14 @@ const SectionTitle = React.createClass({
 
 const FormContainer = React.createClass({
   getInitialState() {
-    return { canSubmit: false };
+    return {
+      canSubmit: false,
+      validationErrors: {}
+    };
   },
   submit(data) {
     data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00'
+    data.address = data.addr_street + ', ' + data.addr_suburb + ', ' + data.addr_postcode
     console.log(JSON.stringify(data, null, 4));
     httpHelpers.sendForm(JSON.stringify(data, null, 4));
   },
@@ -115,7 +120,23 @@ const FormContainer = React.createClass({
     this.setState({ canSubmit: true });
   },
   disableButton() {
-    this.setState({ canSubmit: false });
+    this.setState({ canSubmit: true }); // false
+  },
+  someFunction: function () {
+    this.refs.form.updateInputsWithError({
+      email: 'This email is taken',
+      'field[10]': 'Some error!'
+    });
+  },
+  notifyFormError: function(myObject, d, invalidateForm) {
+    console.log("test", myObject);
+    for (var key in myObject.options) {
+      // check also if property is not inherited from prototype
+      if (myObject.options.hasOwnProperty(key)) {
+        var value = myObject.options[key];
+      }
+    }
+    // invalidateForm({ foo: "foo"})
   },
   render() {
     return (
@@ -123,6 +144,8 @@ const FormContainer = React.createClass({
         onSubmit={this.submit}
         onValid={this.enableButton}
         onInvalid={this.disableButton}
+        onInvalidSubmit={this.notifyFormError}
+        onChange={this.validateForm}
         className="">
 
         <div className="py3 px3 bg-light-gray">
@@ -130,7 +153,7 @@ const FormContainer = React.createClass({
           <div className="gray mb3">
             <p className="mb2">
               Please make sure your details exactly match those on the electoral roll. You can confirm them on the
-                <a href="#!" target="_blank" className="link-reset border-bottom accent nowrap"> AEC website</a>.
+              <a href="#!" target="_blank" className="link-reset border-bottom accent nowrap"> AEC website</a>.
             </p>
           </div>
 
