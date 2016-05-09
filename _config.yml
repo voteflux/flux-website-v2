@@ -30,6 +30,8 @@ social-media:
 collections:
   about:
     output: true
+  candidates:
+    output: true
 
 # Build settings
 markdown: kramdown
