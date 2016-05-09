@@ -72,7 +72,7 @@ $light-silver:  #ccc !default;
 $light-gray:    #eee !default;
 $near-white:    #f4f4f4 !default;
 $white:         #fff !default;
-$accent:        #ff8200 !default; //#F36407 #27DCC9 // #ff9900
+$accent:        #ff4500 !default; //#F36407 #27DCC9 // #ff9900 //#ff8200
 $accent-muted:  rgba($accent, .3);
 $accent-dark:   darken($accent, 40%) !default;
 $error: #ff2f5b !default;
@@ -115,3 +115,4 @@ $button-background-color: $accent !default;
 @import "colors";
 @import "hide";
 @import "hamburger";
+@import "slick";

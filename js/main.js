@@ -1,5 +1,91 @@
 $(document).ready(function() {
 
+if ( $('#js-candidates').length != 0 ) {
+  // init slick carousel
+  $('#js-candidates').slick({
+    autoplay: false,
+    speed: 700,
+    arrows: false,
+    focusOnSelect: false,
+    cssEase: 'ease',
+    responsive: [
+      {
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+           arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  })
+}
+//
+//   $('.responsive').slick({
+//   dots: true,
+//   infinite: false,
+//   speed: 300,
+//   slidesToShow: 4,
+//   slidesToScroll: 4,
+//   responsive: [
+//     {
+//       breakpoint: 1024,
+//       settings: {
+//         slidesToShow: 3,
+//         slidesToScroll: 3,
+//         infinite: true,
+//         dots: true
+//       }
+//     },
+//     {
+//       breakpoint: 600,
+//       settings: {
+//         slidesToShow: 2,
+//         slidesToScroll: 2
+//       }
+//     },
+//     {
+//       breakpoint: 480,
+//       settings: {
+//         slidesToShow: 1,
+//         slidesToScroll: 1
+//       }
+//     }
+//     // You can unslick at a given breakpoint now by adding:
+//     // settings: "unslick"
+//     // instead of a settings object
+//   ]
+// });
+
+
 
   var $root = $('html, body');
 
@@ -103,7 +189,7 @@ $(document).ready(function() {
   function toggleMenu() {
     isOpen = !isOpen;
     if (!isOpen) {
-      $("#js-navbar").addClass('fixed').removeClass('absolute');
+      // $("#js-navbar").addClass('fixed').removeClass('absolute');
       $("#js-menu").addClass('opacity-1 will-change-opacity').removeClass('hide').removeClass('opacity-0');
       $("#js-navbar-join-btn").addClass('opacity-0 will-change-opacity').removeClass('opacity-1').addClass('hide');
       $('.flux-logo-text').css({ fill: "#fff" });
@@ -113,7 +199,7 @@ $(document).ready(function() {
         $("#js-flux-logo-home-dark").removeClass('opacity-0');
     } else {
 
-      $("#js-navbar").removeClass('fixed').addClass('absolute');
+      // $("#js-navbar").removeClass('fixed').addClass('absolute');
       $("#js-menu").addClass('opacity-0').removeClass('opacity-1');
       // $('body').removeClass('overflow-hidden');
       $("#js-navbar-join-btn").addClass('opacity-1').removeClass('opacity-0, hide');
