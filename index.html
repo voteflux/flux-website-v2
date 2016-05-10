@@ -30,6 +30,7 @@ second-callout-action: Become a member
 
 
 # Meetups section
+show-meetups: true
 meetups:
   - city: Melbourne
     location: Melbourne Bitcoin Technology Centre
@@ -286,6 +287,7 @@ social-media:
 </section>
 
 <!-- UPCOMING MEETUPS -->
+{% if page.show-meetups %}
 <section id="upcoming-meetups" class="py4 bg-dark-gray light-silver">
   <div class="max-width-4 mx-auto px2 md-px3">
     <div class="lg-col-9">
@@ -335,6 +337,8 @@ social-media:
 
   </div>
 </section>
+{% endif %}
+
 
 <!-- CONTACT SECTION -->
 <section id="contact" class="bg-light-gray mid-gray py4">

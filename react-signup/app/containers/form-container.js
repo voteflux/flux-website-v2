@@ -76,7 +76,7 @@ const FormContainer = React.createClass({
           <div className="gray mb3">
             <p className="mb2">
               Please make sure your details exactly match those on the electoral roll. You can confirm them on the
-              <a href="#!" target="_blank" className="link-reset border-bottom accent nowrap"> AEC website</a>.
+              <a href="https://oevf.aec.gov.au/" target="_blank" className="link-reset border-bottom accent nowrap"> AEC website</a>.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ const FormContainer = React.createClass({
             name="onAECRoll"
             title="Are you on the Australian Electoral Roll?"
             validationError="First name is required"
-            value={false} />
+            value={true} />
         </div>
 
         <div className="px3 pb4">
@@ -167,11 +167,18 @@ const FormContainer = React.createClass({
                 inputClass="input"
                 name="dobDay"
                 title="Day"
-                validations="isNumeric,isLength:2 "
+                placeholder="DD"
+                validations={{
+                  isNumeric: true,
+                  isLength: 2,
+                  matchRegexp: /(0[1-9]|[12]\d|3[01])/
+                }}
                 validationErrors={{
                   isRequired: 'Day required',
                   isNumeric: 'Only numbers allowed',
-                  isLength: 'Length must be 2 digits'
+                  isLength: 'Length must be 2 digits',
+                  matchRegexp: 'Invalid date range'
+
                 }}
                 required />
             </div>
@@ -181,11 +188,17 @@ const FormContainer = React.createClass({
                 inputClass="input"
                 name="dobMonth"
                 title="Month"
-                validations="isNumeric,isLength:2"
+                placeholder="MM"
+                validations={{
+                  isNumeric: true,
+                  isLength: 2,
+                  matchRegexp: /^(0[1-9]|1[0-2])$/
+                }}
                 validationErrors={{
                   isRequired: 'Month required',
                   isNumeric: 'Only numbers allowed',
-                  isLength: 'Month must be 2 digits'
+                  isLength: 'Month must be 2 digits',
+                  matchRegexp: 'Invalid date range'
                 }}
                 required />
             </div>
@@ -195,11 +208,17 @@ const FormContainer = React.createClass({
                 inputClass="input"
                 name="dobYear"
                 title="Year"
-                validations="isNumeric,isLength:4"
+                placeholder="YYYY"
+                validations={{
+                  isNumeric: true,
+                  isLength: 4,
+                  matchRegexp: /^(190[0-9]|19[5-9]\d|200\d|201[0-6])$/
+                }}
                 validationErrors={{
                   isRequired: 'Year required',
                   isNumeric: 'Only numbers allowed',
-                  isLength: 'Year must be 4 digits'
+                  isLength: 'Year must be 4 digits',
+                  matchRegexp: 'Invalid date range'
                 }}
                 required />
             </div>
