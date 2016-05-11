@@ -44,3 +44,5 @@ exclude:
   - gulpfile.js
   - react-signup
   - to-do
+  - signup.html
+  - npm-debug.log

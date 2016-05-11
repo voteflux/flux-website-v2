@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // plugins
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -15,13 +16,22 @@ var definePlugin = new webpack.DefinePlugin({
   'process.env': {NODE_ENV: '"production"'}
 });
 
+var entryPath = './app/'
+var outputPath = '../signup/'
+var CopyWebpackPluginConfig = new CopyWebpackPlugin([
+  { from:  './css', to: outputPath + 'css' },
+  { from: './img', to: outputPath + 'img' }
+]);
+
 
 module.exports = {
+  // context: path.join(__dirname, 'app'),
+
   entry: [
     './app/index.js'
   ],
   output: {
-    path: '../sign-up/',
+    path: outputPath,
     filename: "index_bundle.js"
   },
   module: {
@@ -32,5 +42,9 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig, definePlugin]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    definePlugin,
+    CopyWebpackPluginConfig
+  ]
 };
