@@ -26,6 +26,11 @@ var CopyWebpackPluginConfig = new CopyWebpackPlugin([
 
 module.exports = {
   // context: path.join(__dirname, 'app'),
+  // devServer: {
+  //     // This is required for webpack-dev-server. The path should
+  //     // be an absolute path to your build destination.
+  //     outputPath: path.join(__dirname, outputPath)
+  // },
 
   entry: [
     './app/index.js'
@@ -44,7 +49,8 @@ module.exports = {
   },
   plugins: [
     HtmlWebpackPluginConfig,
-    definePlugin,
-    CopyWebpackPluginConfig
+    CopyWebpackPluginConfig,
+    definePlugin
+
   ]
 };

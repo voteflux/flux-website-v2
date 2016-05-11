@@ -74,6 +74,7 @@ $near-white:    #f4f4f4 !default;
 $white:         #fff !default;
 $accent:        #ff4500 !default; //#F36407 #27DCC9 // #ff9900 //#ff8200
 $accent-muted:  rgba($accent, .3);
+$accent-light:  lighten($accent, 30%) !default;
 $accent-dark:   darken($accent, 40%) !default;
 $error: #ff2f5b !default;
 $info: #05bcff !default;

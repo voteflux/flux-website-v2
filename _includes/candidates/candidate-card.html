@@ -1,6 +1,12 @@
+{% if page.home %}
+  {% assign path = './' %}
+{% else %}
+   {% assign path = './../' %}
+{% endif %}
+
 <div class="px2 mb3 sm-col-6 md-col-4">
   <div class="height-3 overflow-hidden bg-gray mb2"
-       style="background: url(./../img/candidates/donald-trump.jpg) no-repeat center center; background-size: cover" >
+       style="background: url({{path}}img/candidates/donald-trump.jpg) no-repeat center center; background-size: cover" >
   </div>
   <h5 class="h4"><span class="gray">{{include.state}}</span> / <span class="bold">{{include.house}}</span></h5>
   <h2 class="sm-h1 bold">{{include.title}}</h2>

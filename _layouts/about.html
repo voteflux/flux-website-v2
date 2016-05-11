@@ -8,6 +8,7 @@ header-theme: light
 
 {% include navbar.html%}
 
+<div class="full-bg-img height-30vh"></div>
 <main class="bg-white mid-gray pb4 pt5 px2 sm-px3">
   <div class="mx-auto max-width-3">
 
@@ -24,9 +25,14 @@ header-theme: light
             font-weight="bold"
             line="true" %}
         </div>
+
         <div class="break-word">
           {{ content }}
         </div>
+        <div class="mb4">
+          {% include components/inline-signup.html %}
+        </div>
+
           {% include components/hr-muted.html %}
           <h4 class="mt0 mb1 accent">share</h4>
           {% include social-buttons.html %}
@@ -35,23 +41,31 @@ header-theme: light
   </div>
 </main>
 
-{% for item in site.about %}
-  {% if item.url != page.url %}
-   <hr class="black muted border-bottom m0">
-    <section class="bg-dark-gray near-white px3 py4 relative z1">
-      <div class="max-width-4 mx-auto">
-        <div class="sm-col-9">
-          <h5 class="h4"><span class="gray">
-            ABOUT FLUX</span> / <span class="bold">{{item.tag-topic | upcase }}</span>
-          </h5>
-          <h1 class="h0 bold">{{item.title}}</h1>
-          <a href="{{site.baseurl}}{{item.url}}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
-            Learn more
-          </a>
+{% comment %}
+{% if page.tag-topic == 'why' %}
+{% assign items = site.about | where: 'tag-topic', 'what' %}
+{% endif %}
+{% endcomment %}
+
+{% assign items = site.about | sort: 'menu-order' %}
+
+  {% for item in items %}
+    {% if item.url != page.url %}
+     <hr class="black muted border-bottom m0">
+      <section class="bg-dark-gray near-white px3 py4 relative z1">
+        <div class="max-width-4 mx-auto">
+          <div class="sm-col-9">
+            <h5 class="h4"><span class="gray">
+              ABOUT FLUX</span> / <span class="bold">{{item.tag-topic | upcase }}</span>
+            </h5>
+            <h1 class="h0 bold">{{item.title}}</h1>
+            <a href="{{site.baseurl}}{{item.url}}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
+              Learn more
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-  {% endif %}
-{% endfor %}
+      </section>
+    {% endif %}
+  {% endfor %}
 
 {% include footer.html%}

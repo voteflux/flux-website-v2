@@ -5,9 +5,30 @@ permalink: about/what-is-flux/
 tag-section: about flux
 tag-topic: what
 menu-order: 0.0
+page-content:
+  - subheading: More a celebration of democracy than a party.
+    body: >
+      Really why you’re the brains of this operation. Flux is the tool Australians can use to directly participate in parliament.  Flux is a party come election time but once we have elected MP’s and senators that’s where the difference begins. Your Flux representatives give up their autonomy and vote according to the people. They cast their votes in line with the outcomes produced by the Flux ecosystem comprised of ordinary Aussies like you.
+
+  - subheading: It’s still democracy, it’s just Governance 2.0
+    body: >
+      Flux will operate in the form of an app you can access right from your computer or smartphone. You’ll be given a vote on every bill put before Federal Parliament, and can use that vote immediately on the issue at hand, give it to a trusted third party to cast on your behalf, or save it for an issue you care more passionately about later.
+  - subheading: It won’t matter where politicians stand when the floor is yours.
+    body: >
+      Flux as a party is a vehicle for driving this systemic political change, with no policy platform beyond parliamentary reform. Flux is a tool for changing how policy is shaped. It will allow more voices to join the conversation, empower specialists to become politically involved in their fields, and grant Australians direct access to producing better policy for a better Australia.
+
 ---
 
 
+{% for content in page.page-content %}
+  <div class="mb3">
+    <h3 class="mid">{{ content.subheading }}</h3>
+    <p class="mid-silver">{{ content.body }}</p>
+  </div>
+{% endfor %}
+
+
+{% comment %}
 <p>
   Flux is a gateway Australians can use, to participate directly in parliament, making the need for trust in elected officials a thing of the past. Elected Flux MP’s and Senators give up their autonomy and use their votes in line with the outcomes produced by the Flux ecosystem; an ecosystem comprised of ordinary Aussies like you.
 </p>
@@ -19,3 +40,4 @@ menu-order: 0.0
 <p>
   Flux as a party is a vehicle for driving this systemic political change, with no policy platform beyond parliamentary reform. Flux as a system, is a tool for changing how policy is shaped. It will allow more voices to join the conversation, empower specialists to become politically involved in their fields, and grant Australians direct access to producing better policy for a better Australia.
 </p>
+{% endcomment %}

@@ -42,6 +42,7 @@ a {
 .height-3 {min-height: 14rem; }
 .height-4 {min-height: 20rem; }
 .height-40vh {min-height: 40vh;}
+.height-30vh {min-height: 30vh;}
 .min-height-100vh { min-height: 100vh}
 .height-100vh {height: 100vh}
 .min-height-1 {min-height: 6rem}
@@ -162,8 +163,8 @@ a {
 }
 
 
-::-moz-selection { background: $accent; color: $black }
-::selection { background: $accent; color:$black }
+::-moz-selection { background: $accent-light; color: $black }
+::selection { background: $accent-light; color:$black }
 
 @media #{$breakpoint-xs} {
   .xs-menu-join-button {

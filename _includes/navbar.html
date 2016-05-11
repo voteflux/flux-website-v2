@@ -22,7 +22,10 @@
     <hr>
     <div class="col-6 right-align flex justify-end items-center fixed right-0 top-0 mr2 sm-mr3 mt2">
       <div class="inline-block mr3 xs-hide">
-        <a id="js-navbar-join-btn" href="{{site.baseurl}}/signup" class="btn btn-outline accent p1 h5 transition">Join Flux</a>
+        {% if include.no-button %}
+        {% else %}
+        <a id="js-navbar-join-btn" href="{{site.baseurl}}/signup" class="btn btn-primary p1 h5 transition">Join Flux</a>
+         {% endif %}
       </div>
       <div class="inline-block mt1">
         <button id="js-menu-button" class="hamburger hamburger--squeeze white no-focus" type="button">
@@ -58,9 +61,11 @@
                   <a href="{{ site.baseurl }}{{ item.url }}" class="link-reset h-font accent-on-hover transition-fast">{{ item.title }}</a>
                 </dd>
               {% endfor %}
+              {% if include.no-button %}
+              {% else %}
               <hr class="dark-gray border-bottom my1">
               <dd class="mb2 mt3 h4"><a href="{{site.baseurl}}/signup" class="btn btn-primary h3 xs-menu-join-button">Join Flux</a></dd>
-
+               {% endif %}
             </dl>
 
           </div>

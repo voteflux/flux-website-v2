@@ -6,7 +6,7 @@ import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
 
 
-const redirectUrl = "http://www.w3schools.com"
+const redirectUrl = window.location.href + 'step2'
 
 const FormContainer = React.createClass({
   getInitialState() {
@@ -36,7 +36,7 @@ const FormContainer = React.createClass({
         });
         setTimeout(function() {
           window.location.assign(redirectUrl)
-        }, 2000)
+        }, 1500)
       } else if (response.statusText === "Conflict") {
         this.setState({
           isLoading: false,
@@ -280,7 +280,7 @@ const FormContainer = React.createClass({
              {this.state.isLoading
               ?
               <div className="ml2 line-height-3 flex col-6 mt1">
-                <p className='h5 inline'>Loading...</p>
+                <p className='h5 inline'>Sending...</p>
               </div>
               : this.state.serverSuccessMsg
               ?

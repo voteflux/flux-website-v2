@@ -5,9 +5,30 @@ permalink: about/why-flux/
 tag-section: about flux
 tag-topic: why
 menu-order: 1.0
+page-content:
+  - subheading: Our politics is MIA. It’s DOA. Even worse, it’s DOS.
+    body: >
+      Our politicians say one thing to get elected and then do another. Horse trading and back room deals have become more important than good policy, and the will of the people. Powerful lobby groups, and international corporations wield enormous political power, while ordinary Australians have little meaningful say in their country.
+  - subheading: You wouldn’t use the same operating system for 400 years would you?
+    body: >
+      Democracy is no different. Parliament is a 19th century power structure that no longer works in the modern age. The system needs to process more information every day than one could read in a lifetime. The demands for governmental specialisation and decentralisation have never been higher. Yet the gridlocks of lobbyists, party politics and hesitation block up the system.  That’s why it’s time for an upgrade.
+  - subheading: Flux is the redesign for our system so you can participate directly in parliament.
+    body: >
+      Business as usual just won’t do. Through clever technology, Flux will divert political power and efficiency away from the gridlocked system and back to the people and the experts.
+
+
 ---
 
+{% for content in page.page-content %}
+  <div class="mb3">
+    <h3 class="mid">{{ content.subheading }}</h3>
+    <p class="mid-silver">{{ content.body }}</p>
+  </div>
+{% endfor %}
 
+
+
+{% comment %}
 <h2 class="sm-h2 bold accent letter-spacing-2">What’s wrong with government today?</h2>
 <p class="">Australian politics is broken. Traditional politicians say one thing to get elected and then do another. Horse trading and back room deals have become more important than good policy, and the will of the people. Powerful lobby groups, and international corporations wield enormous political power, while ordinary Australians have little meaningful say in their country.</p>
 <p>Our parliament is based on the exclusivity of a nineteenth century power structure that doesn't work for the information age. When it comes to the challenges of a modern world, it's just not up to the task. As more information is produced every day than one could read in a lifetime, the demands for governmental specialisation and decentralisation have never been higher. Using some clever technology, Flux will put political power into the hands of those best suited to use it.</p>
@@ -33,3 +54,4 @@ menu-order: 1.0
 <p>We value people, not some people, but all people, and recognise our differences as strengths, not weaknesses.</p>
 <p>We believe in a free and open society, characterised by freedom of speech, freedom of association, and the free flow of political ideas.</p>
 <p>We are excited about a democracy for the information age. One which fosters constructive criticism, encourages innovation, and empowers our best and brightest.</p>
+{% endcomment %}
