@@ -5,7 +5,9 @@ const FluxHeader = React.createClass({
     return (
       <header className="bg-near-black light-silver shadow px2 sm-px3 py3 relative">
         <div className="mb3 mt1 width-8rem">
-          <img src="img/flux-mark.svg" alt="FLUX LOGO"/>
+          <a href="https://voteflux.org">
+            <img src="img/flux-mark.svg" alt="FLUX LOGO"/>
+          </a>
         </div>
         <div className="mt1">
           <h1 className="white m0 mb1 line-height-1">Become a Flux member!</h1>

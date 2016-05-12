@@ -86,7 +86,7 @@ if ( $('#js-candidates').length != 0 ) {
     var $target = $(target);
 
     $root.stop().animate({
-      'scrollTop': $target.offset().top
+      'scrollTop': $target.length && $target.offset().top
     }, 500,'swing', function () {
       // when done, add hash to url
       window.location.hash = target ;

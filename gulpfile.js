@@ -54,9 +54,17 @@ gulp.task('deploy', function () {
         }));
 });
 
-gulp.task('deploy-flux', function () {
+gulp.task('deploy', function () {
     return gulp.src("./_site/**/*")
         .pipe(deploy({
-            remoteUrl: 'https://github.com/voteflux/site-v2-concept.git'
+            remoteUrl: 'https://github.com/David-Factor/vote-flux-concept.git'
+        }));
+});
+
+gulp.task('deploy-test', function () {
+    return gulp.src("./_site/**/*")
+        .pipe(deploy({
+            remoteUrl: 'https://github.com/voteflux/voteflux.github.io.git',
+            branch: "v3"
         }));
 });

@@ -1,7 +1,8 @@
 ---
 layout: default
 carousel: true
-video: true
+candidates: false
+video: false
 dark-theme: true
 home: true
 
@@ -31,7 +32,7 @@ second-callout-action: Become a member
 
 
 # Meetups section
-show-meetups: true
+show-meetups: false
 meetups:
   - city: Melbourne
     location: Melbourne Bitcoin Technology Centre
@@ -109,6 +110,7 @@ social-media:
   </div>
 </section>
 
+{% if page.video %}
 <!-- VIDEO here -->
 <section class="py2 bg-black light-gray">
   <div class="max-width-4 mx-auto px2 md-px3">
@@ -140,7 +142,10 @@ social-media:
 
   </div>
 </section>
+{% endif %}
 
+
+{% if page.candidates %}
 <!-- CANDIDATES -->
 <section class="bg-near-white dark-gray pt4 pb3">
   <div class="max-width-4 mx-auto px2 md-px3">
@@ -164,7 +169,7 @@ social-media:
       </div>
   </div>
 </section>
-
+{% endif %}
 
 <!-- WHY FLUX SECTION -->
 <section class="bg-white py4">
@@ -402,7 +407,5 @@ social-media:
       </div>
   </div>
 </section>
-
-
 </main>
 {% include footer.html %}

@@ -24,12 +24,12 @@ const FormContainer = React.createClass({
     this.setState({isLoading: true})
     HttpHelpers.sendForm( JSON.stringify(data, null, 4), function(response){
 
-      __DEV__ && console.log(response), console.log(data);
+      if (__DEV__) {
+        console.log(response), console.log(data);
+      }
 
 
-
-      if (response.statusText === "OK") {
-
+      if (response.statusText === "OK" || response.status === 200 || response.data.success === true) {
         this.setState({
           isLoading: false,
           serverSuccessMsg: "Success"
@@ -37,20 +37,20 @@ const FormContainer = React.createClass({
         setTimeout(function() {
           window.location.assign(redirectUrl)
         }, 1500)
-      } else if (response.statusText === "Conflict") {
+      } else if (response.statusText === "Conflict" || response.status === 409 || response.data === "Email already exists. Please update details instead of re-registering.") {
         this.setState({
           isLoading: false,
           serverErrorMsg: "Error. Email already exists"
         });
-      } else if (response.data.error_args) {
-        this.setState({
-          isLoading: false,
-          serverErrorMsg: "Date error. Please try a valid date"
-        });
+      // } else if (response.data.error_args) {
+      //   this.setState({
+      //     isLoading: false,
+      //     serverErrorMsg: "Date error. Please try a valid date"
+      //   });
       } else {
         this.setState({
           isLoading: false,
-          serverErrorMsg: "Server error, " + statusText
+          serverErrorMsg: "Server error, " + response.statusText ? response.statusText : null
         });
       }
     }.bind(this))
