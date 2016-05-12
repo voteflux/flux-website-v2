@@ -47,21 +47,21 @@ gulp.task('sass', function() {
 
 gulp.task("default", ['serve']);
 
-gulp.task('deploy', function () {
-    return gulp.src("./_site/**/*")
-        .pipe(deploy({
-            remoteUrl: 'https://github.com/David-Factor/vote-flux-concept.git'
-        }));
-});
+// gulp.task('deploy', function () {
+//     return gulp.src("./_site/**/*")
+//         .pipe(deploy({
+//             remoteUrl: 'https://github.com/David-Factor/vote-flux-concept.git'
+//         }));
+// });
+//
+// gulp.task('deploy', function () {
+//     return gulp.src("./_site/**/*")
+//         .pipe(deploy({
+//             remoteUrl: 'https://github.com/David-Factor/vote-flux-concept.git'
+//         }));
+// });
 
 gulp.task('deploy', function () {
-    return gulp.src("./_site/**/*")
-        .pipe(deploy({
-            remoteUrl: 'https://github.com/David-Factor/vote-flux-concept.git'
-        }));
-});
-
-gulp.task('deploy-test', function () {
     return gulp.src("./_site/**/*")
         .pipe(deploy({
             remoteUrl: 'https://github.com/voteflux/voteflux.github.io.git',
