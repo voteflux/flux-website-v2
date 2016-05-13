@@ -1,18 +1,38 @@
 <nav>
 <!-- Nav bar -->
-  <div id="js-navbar" class="absolute col-12 top-0 left-0 z4 px2 sm-px3 py2">
+  <div id="js-fading" style="opacity: 0" class="fixed z4 col-12 py3 bg-white left-0 top-0 navbar-height border-bottom border-near-white">
+  {% if page.home %}
+  <div class="absolute top-0 left-0 mt1 z1 ml2 sm-ml3">
+      <a class="link-reset block no-focus flex relative z2" href="{{site.baseurl}}/">
+        <span class="width-3rem block mr2">
+          {% include svg/flux-mark.html %}
+        </span>
+        <span class="width-5rem block mt2">
+          {% include svg/flux-text-logo.html
+            color="#222" %}
+        </span>
+      </a>
+      </div>
+  {% endif %}
+  </div>
+  <div class="fixed col-12 top-0 left-0 z5 px2 sm-px3 py1">
     <div class="flex">
       <div id="js-flux-logo-text" class="col-6">
-        {% if page.dark-theme %}
-          <a id="js-flux-logo-home-dark" class="link-reset block pt2 no-focus opacity-0" href="{{site.baseurl}}/">
+        {% if !page.home %}
+        {% comment %}
+          <!-- <a id="js-flux-logo-home-dark" class="link-reset block  no-focus opacity-0" href="{{site.baseurl}}/">
             <span class="flux-logo-width block">
               {% include svg/flux-text-logo.html
                 color="#222" %}
             </span>
-          </a>
+          </a> -->
+          {% endcomment %}
         {% else %}
-          <a id="js-flux-logo-home-light" class="link-reset block pt2 no-focus" href="{{site.baseurl}}/">
-            <span class="flux-logo-width block">
+          <a id="js-nav-logos" class="link-reset block no-focus flex" href="{{site.baseurl}}/">
+            <span class="width-3rem block mr2">
+              {% include svg/flux-mark.html %}
+            </span>
+            <span class="width-5rem  block mt2">
               {% include svg/flux-text-logo.html
                 color="#222" %}
             </span>
@@ -20,7 +40,7 @@
         {% endif %}
     </div>
     <hr>
-    <div class="col-6 right-align flex justify-end items-center fixed right-0 top-0 mr2 sm-mr3 mt2">
+    <div class="col-6 right-align flex justify-end items-center absolute right-0 top-0 mr2 sm-mr3 mt1">
       <div class="inline-block mr3 xs-hide">
         {% if include.no-button %}
         {% else %}

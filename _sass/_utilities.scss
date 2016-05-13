@@ -38,7 +38,8 @@ a {
 .flux-logo-text-width { width: 6rem}
 .flux-logo-width { width: 6rem }
 .width-8rem {width: 8rem;}
-
+.width-3rem {width: 3rem};
+.width-5rem {width: 5rem};
 .height-3 {min-height: 14rem; }
 .height-4 {min-height: 20rem; }
 .height-40vh {min-height: 40vh;}
@@ -116,6 +117,7 @@ a {
     outline: transparent solid 1px;
   }
 }
+
 .transition { transition: all ease 0.15s; }
 .transition-slow { transition: all ease 0.45s}
 .transition-fast { transition: all ease 0.1s }
@@ -147,6 +149,11 @@ a {
 }
 
 .navbar-height { height: 4.5rem };
+@media #{$breakpoint-sm} {
+.navbar-height { height: 4.5rem };
+}
+
+
 
 @media #{$breakpoint-sm} {
   .hover-show-child {
@@ -162,6 +169,11 @@ a {
   }
 }
 
+.all-transparent {
+  background: transparent !important;
+  color: transparent !important;
+  border: transparent !important;
+}
 
 ::-moz-selection { background: $accent-light; color: $black }
 ::selection { background: $accent-light; color:$black }
