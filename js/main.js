@@ -123,30 +123,35 @@ if ( $('#js-candidates').length != 0 ) {
   // })
 
   // get info ajax request
-  $.ajax({
-    url: "https://api.voteflux.org/api/v0/getinfo",
-    data: {
-      format: 'json'
-    },
-    error: function() {
-      console.log('error')
-    },
-    success: function(response) {
-      var data = JSON.parse(response)
-      var memberCount = data.n_members
-      var el = document.getElementById("js-member-count")
-      var elMobile = document.getElementById("js-member-count-mobile")
+  var getMembers = function() {
+    $.ajax({
+      url: "https://api.voteflux.org/api/v0/getinfo",
+      data: {
+        format: 'json'
+      },
+      error: function() {
+        console.log('error')
+      },
+      success: function(response) {
+        var data = JSON.parse(response)
+        var memberCount = data.n_members
+        var el = document.getElementById("js-member-count")
+        var elMobile = document.getElementById("js-member-count-mobile")
 
-      if (el) {
-        el.innerHTML = memberCount.toString()
-      }
-      if (elMobile) {
-        elMobile.innerHTML = memberCount.toString()
-      }
-    },
-    type: 'GET'
-  });
-
+        if (el) {
+          el.innerHTML = memberCount.toString()
+        }
+        if (elMobile) {
+          elMobile.innerHTML = memberCount.toString()
+        }
+      },
+      type: 'GET'
+    });
+  }
+  var mins = 2
+  var interval = 1000 * 60 * mins
+  getMembers();
+  setInterval(getMembers, interval);
 
 
 	var dteNow = new Date();
