@@ -28,7 +28,6 @@ const FormContainer = React.createClass({
         console.log(response), console.log(data);
       }
 
-
       if (response.statusText === "OK" || response.status === 200 || response.data.success === true) {
         this.setState({
           isLoading: false,
@@ -42,11 +41,6 @@ const FormContainer = React.createClass({
           isLoading: false,
           serverErrorMsg: "Error. Email already exists"
         });
-      // } else if (response.data.error_args) {
-      //   this.setState({
-      //     isLoading: false,
-      //     serverErrorMsg: "Date error. Please try a valid date"
-      //   });
       } else {
         this.setState({
           isLoading: false,
@@ -250,6 +244,23 @@ const FormContainer = React.createClass({
             autocomplete="email"
             required />
 
+
+
+          { this.props.onReferrer
+            ?
+            <MyInput
+              inputClass="input hide"
+              name="referred_by"
+              value={this.props.onReferrer} />
+             :
+             <div>
+                <SectionTitle text="5. Get Involved"/>
+                <MyInput
+                  inputClass="input"
+                  name="referred_by"
+                  title="How did you hear about Flux?" />
+            </div>}
+
           <MyInput
             inputClass="input"
             type="checkbox"
@@ -265,6 +276,8 @@ const FormContainer = React.createClass({
              title="I'm interested in volunteering"
              value={false}
               />
+
+
 
            <div className="buttons flex items-center mt4 mb3">
              <div>

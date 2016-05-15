@@ -1,4 +1,49 @@
+var checkReferrer = (function() {
+  return {
+    addTestParam: function (val) {
+      if (location.href.indexOf("?") === -1) {
+          window.location = location.href += "?" + val + "=testParam";
+      }
+    },
+    getParam: function(val) {
+      // http://stackoverflow.com/questions/5448545/how-to-retrieve-get-parameters-from-javascript
+      var result = undefined
+      var tmp = []
+      location.search
+          //.replace ( "?", "" )
+          // this is better, there might be a question mark inside
+          .substr(1)
+          .split("&")
+          .forEach(function (item) {
+              tmp = item.split("=");
+              if (tmp[0] === val) result = decodeURIComponent(tmp[1]);
+          });
+      return result;
+    }
+  }
+}());
+
+
 $(document).ready(function() {
+  if(window.location.hostname === 'localhost') {
+    checkReferrer.addTestParam('r')
+  }
+  var referrer = checkReferrer.getParam('r');
+
+  if(referrer){
+    localStorage.setItem("signup_referral", referrer);
+  }
+
+  // if(referrer === undefined){
+  //     utmSource = checkReferrer.getParam('utm_source');
+  //     utmCampaign = checkReferrer.getParam('utm_campaign');
+  //     if(utmSource != undefined && utmCampaign != undefined){
+  //         referrer = utmSource + "-" + utmCampaign;
+  //     }
+  // }
+
+
+
 
 if ( $('#js-candidates').length != 0 ) {
   // init slick carousel
@@ -57,20 +102,15 @@ if ( $('#js-candidates').length != 0 ) {
 
 // animate scroll behaviour on side menu
   $("a[href^='#']").on('click', function(e) {
-
-    // prevent default anchor click behavior
     e.preventDefault();
-       // store hash
-    var hash = this.hash;
 
+    var hash = this.hash;
     // animate
     $root.animate({
       scrollTop: $(hash).offset().top
-    }, 500, 'swing', function(){
-
-       // when done, add hash to url
-       window.location.hash = hash;
-     });
+    }, 500, 'swing', function() {
+      window.location.hash = hash;
+    });
   });
 
   //  offset hash location when arriving from external link
@@ -91,12 +131,13 @@ if ( $('#js-candidates').length != 0 ) {
   };
 
 
-  var fadeStart = 0 // 100px scroll or less will equiv to 1 opacity
-  var fadeUntil = 400 // 200px scroll or more will equiv to 0 opacity
+  var fadeStart = 0
+  var fadeUntil = 150
   var $fading = $('#js-fading')
+  var $document = $(document)
 
   $(window).bind('scroll', function(){
-      var offset = $(document).scrollTop()
+      var offset = $document.scrollTop()
       var opacity = 0
       if ( offset >= fadeStart && offset <= fadeUntil ) {
           opacity = 0.001 + offset/fadeUntil;
@@ -148,7 +189,7 @@ if ( $('#js-candidates').length != 0 ) {
       type: 'GET'
     });
   }
-  var mins = 2
+  var mins = 1
   var interval = 1000 * 60 * mins
   getMembers();
   setInterval(getMembers, interval);
@@ -164,10 +205,10 @@ if ( $('#js-candidates').length != 0 ) {
   var isOpen = true;
   var transitionTime = 150;
 
-  $("#js-menu-button").on('tap', function() {
+  $("#js-menu-button").on('click', function() {
     toggleMenu();
   });
-  $("#js-menu a").on('tap', function() {
+  $("#js-menu a").on('click', function() {
     toggleMenu();
   });
 

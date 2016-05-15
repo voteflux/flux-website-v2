@@ -2,8 +2,15 @@ import React from 'react'
 import axios from 'axios'
 import FormContainer from '../containers/form-container'
 
-var devTest = 'https://flux-api-dev.herokuapp.com';
-var prodUrl = 'https://api.voteflux.org';
+
+if (window.location.hostname === 'localhost') {
+  console.log("Form being set to dev server")
+  var postUrl = 'https://flux-api-dev.herokuapp.com';
+} else {
+  var postUrl = 'https://api.voteflux.org';
+}
+
+
 
 var HttpHelpers = {
   getMembers: function () {
@@ -16,7 +23,7 @@ var HttpHelpers = {
       });
   },
   sendForm: function (data, callback) {
-    return axios.post( prodUrl + '/api/v0/register/all_at_once', JSON.parse(data))
+    return axios.post( postUrl + '/api/v0/register/all_at_once', JSON.parse(data))
       .then(function(response) {
         callback(response)
       })

@@ -7,13 +7,17 @@ import FormContainer from './containers/form-container'
 
 
 const App = React.createClass({
-  getInitialState: function () {
+  getInitialState: function() {
     return {
       isLoading: true,
-      memberCount: {}
+      memberCount: {},
+      checkReferrer: false
     }
   },
-  componentDidMount: function () {
+  componentWillMount() {
+    this.checkReferrer();
+  },
+  componentDidMount: function() {
     HttpHelpers.getMembers()
     .then( function (d) {
       this.setState({
@@ -22,11 +26,16 @@ const App = React.createClass({
       });
     }.bind(this))
   },
+  checkReferrer: function() {
+    this.setState({
+      checkReferrer: localStorage.getItem("signup_referral")
+    })
+  },
   render: function() {
     return (
       <div>
         <FluxHeader memberCount={this.state.isLoading ? "Loading...": this.state.memberCount.n_members}/>
-        <FormContainer/>
+        <FormContainer onReferrer={this.state.checkReferrer} />
       </div>
     )
   }
