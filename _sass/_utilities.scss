@@ -191,3 +191,16 @@ a {
     font-size: $h3;
   }
 }
+
+
+// Sumone custimisation
+.sumome-share-client-wrapper {
+  opacity: .9;
+}
+.sumome-share-client-wrapper div.sumome-share-client .sumome-share-client-share img {
+  opacity: 0.6;
+}
+.sumome-share-client-wrapper div.sumome-share-client .sumome-share-client-share {
+  border: solid 1px $light-silver;
+  margin-bottom: -1px;
+}

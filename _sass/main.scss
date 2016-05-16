@@ -62,23 +62,33 @@ $form-field-padding-y: .5rem !default;
 $form-field-height: 3.5rem !default;
 
 // colors
-$black:         #000 !default;
-$near-black:    #222 !default;
-$dark-gray:     #333 !default;
-$mid-gray:      #444 !default;
-$gray:          #777 !default;
-$silver:        #999 !default;
-$light-silver:  #ccc !default;
-$light-gray:    #eee !default;
-$near-white:    #f4f4f4 !default;
-$white:         #fff !default;
+$base:         hsla(240, 10%, 5%, 1) !default;
+$black:         $base !default;
+// $near-black:    #222 !default;
+$near-black: lighten($base, 10%) !default;
+// $dark-gray:     #333 !default;
+$dark-gray: lighten($base, 20%) !default;
+// $mid-gray:      #444 !default;
+$mid-gray:      lighten($base, 25%) !default;
+// $gray:          #777 !default;
+$gray:     lighten($base, 40%) !default;
+// $silver:        #999 !default;
+$silver:        lighten($base, 60%) !default;
+// $light-silver:  #ccc !default;
+$light-silver:  lighten($base, 80%) !default;
+// $light-gray:    #eee !default;
+$light-gray:    lighten($base, 92.5%) !default;
+// $near-white:    #f4f4f4 !default;
+$near-white:    lighten($base, 95%) !default;
+$white:         lighten($base, 100%) !default;
+
 $accent:        #ff4500 !default; //#F36407 #27DCC9 // #ff9900 //#ff8200
 $accent-muted:  rgba($accent, .3);
 $accent-light:  lighten($accent, 30%) !default;
 $accent-dark:   darken($accent, 40%) !default;
 $error: #ff2f5b !default;
 $info: #05bcff !default;
-$success: #00e973 !default;
+$success: #00da6c !default;
 
 
 $darken-1: rgba(0, 0, 0, .0625) !default;
