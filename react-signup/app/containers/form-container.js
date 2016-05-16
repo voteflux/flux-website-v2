@@ -78,9 +78,9 @@ const FormContainer = React.createClass({
             inputClass="checkbox"
             type="checkbox"
             name="onAECRoll"
-            title="Are you on the Australian Electoral Roll?"
+            title="I am on the Australian Electoral Roll."
             validationError="First name is required"
-            value={true} />
+            value={false} />
         </div>
 
         <div className="px3 pb4">
