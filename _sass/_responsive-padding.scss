@@ -42,6 +42,8 @@
   .sm-px4 { padding-left:   $space-4; padding-right:  $space-4 }
   .sm-py4 { padding-top:    $space-4; padding-bottom: $space-4 }
 
+  .sm-pt5 { padding-top:   ($space-4 * 2)}
+
 }
 
 @media #{$breakpoint-md} {

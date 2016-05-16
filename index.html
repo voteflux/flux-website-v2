@@ -2,7 +2,7 @@
 layout: default
 carousel: true
 candidates: false
-video: false
+video: true
 dark-theme: true
 home: true
 
@@ -98,9 +98,12 @@ social-media:
             <p class="h3 sm-h2 h-font light mb4 silver letter-spacing-2 line-height-4">
               {{ page.hero-copy }}
             </p>
-            <a href="{{site.baseurl}}/signup" class="h2 regular link-reset inline-block border-bottom accent">
-              {{ page.hero-action }}
-            </a>
+            <div class="inline-block">
+              <a href="{{site.baseurl}}/signup" class="h2 letter-spacing-1 accent border-bottom inline-block">
+                {{ page.hero-action }}
+              </a>
+              <!-- <span class="black h4 block center caps mt1">become a Flux member now</span> -->
+            </div>
             <div class="md-hide lg-hide silver">
               <h5 class="muted caps mt3">Registered Members</h5>
               <h3><span id="js-member-count-mobile">Loading...</span></h3>
