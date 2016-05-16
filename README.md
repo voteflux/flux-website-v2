@@ -1,12 +1,12 @@
 #Instructions
 
 ####Development options
-To run dev environment for the jekyll site at the project root run `$ npm run flux`
-To run dev environment for `react-signup` at the root of `react-signup` run `$ npm run flux`
-To build the complete site including `react-signup` at the root level run `$ npm run build` this will clean and build jekyll after compiling sass and the react app into the `_site folder`
+- To run dev environment for the jekyll site at the project root run `$ npm run flux`
+- To run dev environment for `react-signup` at the root of `react-signup` run `$ npm run flux`
+- To build the complete site including `react-signup` at the root level run `$ npm run build` this  will clean and build jekyll after compiling sass and the react app into the `_site folder`
 
 ####Deployment
-Simply push to `master` `git@github.com:voteflux/vote-flux-v2.git` this will use a webhook to trigger a build by netlify
+- Simply push to `master` of the `vote-flux-v2` repo: https://github.com/voteflux/vote-flux-v2 this will use a webhook to trigger a build by netlify
 
 
 
