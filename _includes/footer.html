@@ -1,6 +1,6 @@
 <footer>
 
-  <div class="bg-white mid-gray py3 shadow-inset">
+  <div class="bg-white mid-gray py3 sm-pr4 shadow-inset">
    <div class="max-width-4 mx-auto">
       <div class="px2 sm-px3">
         <div class="sm-flex mxn2">
@@ -36,7 +36,9 @@
             <ul class="list-reset">
               <li class="my1"><a href="{{site.baseurl}}/" class="link-reset">Home</a></li>
               <li class="my1"><a href="{{site.baseurl}}/press" class="link-reset">In the news</a></li>
+              {% if site.meetups %}
               <li class="my1"><a href="{{site.baseurl}}/#upcoming-meetups" class="link-reset">Upcoming Meetups</a></li>
+              {% endif %}
               <li class="my1"><a href="{{site.baseurl}}/#contact" class="link-reset">Contact</a></li>
             </ul>
             <ul class="list-reset">
@@ -45,7 +47,7 @@
               {% capture icon %}svg/{{ social.name }}-icon.html{% endcapture %}
               <li class="inline-block mr2">
                 <a href="{{ social.url }}" class="block social-icon-width">
-                  {% include {{ icon }} color="#9B9B9B" %}
+                  {% include {{ icon }} color="{{site.base-color}}" %}
                 </a>
               </li>
             {% endfor %}
@@ -63,16 +65,16 @@
   <div class="bg-light-gray dark-gray border-accent-muted rounded py3">
     <div class="max-width-4 mx-auto px2 sm-px3">
 
-      <div class="sm-flex justify-end flex-wrap items-center mxn2 center">
+      <div class="sm-flex justify-around flex-wrap items-baseline mxn2 center">
         <div class="px2">
-          <h3 class="h-font mb3 sm-m0">Be part of something great</h3>
+          <h3 class="h-font mb3 md-m0">Join the movement | <span class='gray light'>Modernise our democratic system</span></h3>
         </div>
-        <div class="px2 self">
-          <a href="{{site.baseurl}}{{ base }}/signup" class="h3 btn btn-primary letter-spacing-1">
-            Join Flux today
+        <div class="px2">
+          <a href="{{site.baseurl}}{{ base }}/signup" class="btn btn-primary letter-spacing-1">
+            On July 2 &mdash; Vote Flux
           </a>
+          <h5 class="caps">Become a member today</h5>
         </div>
-
 
       </div>
     </div>

@@ -16,6 +16,8 @@ baseurl: ""
 url: "https://voteflux.org" # the base hostname & protocol for your site
 icon_path: img/social-icons/
 accent-color: "#ff4500"
+base-color: "#0b0b0e"
+meetups: false
 
 social-media:
   - name: facebook
@@ -25,6 +27,19 @@ social-media:
   - name: reddit
     url: https://www.reddit.com/r/voteflux
 
+navigation:
+  - url: /
+    title: Home
+  - url: /about
+    title: Flux explained
+  # - url: /candidates
+  #   title: Candidates
+  - url: /help-us
+    title: Help Flux
+  - url: /press
+    title: Press
+  - url: /#contact
+    title: Contact Us
 
 
 # Collections

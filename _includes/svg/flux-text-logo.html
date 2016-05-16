@@ -1,4 +1,4 @@
-<svg {% if page.header-theme == 'dark' %} fill="#fff" {% elsif include.no-js %} {% else %} class="flux-logo-text" {% endif %} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.64 43.85" fill="{{include.color}}" >
+<svg {% if page.dark-theme and include.no-js %}  {% elsif page.dark-theme %} class="js-flux-text-darktheme" {% else %} class="flux-logo-text" {% endif %} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.64 43.85" fill="{{include.color}}" >
   <title>FLUX</title>
   <path class="cls-1" d="M230,418h-6.27V374.59h25.9v6.27H230V393.1h17.39v6.34H230V418Z" transform="translate(-223.69 -374.59)" />
   <path class="cls-1" d="M270.33,411.73h20.43V418h-26.7V374.59h6.27v37.14Z" transform="translate(-223.69 -374.59)" />

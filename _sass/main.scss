@@ -62,7 +62,7 @@ $form-field-padding-y: .5rem !default;
 $form-field-height: 3.5rem !default;
 
 // colors
-$base:         hsla(240, 10%, 5%, 1) !default;
+$base:         #0b0b0e !default;
 $black:         $base !default;
 // $near-black:    #222 !default;
 $near-black: lighten($base, 10%) !default;
@@ -77,9 +77,9 @@ $silver:        lighten($base, 60%) !default;
 // $light-silver:  #ccc !default;
 $light-silver:  lighten($base, 80%) !default;
 // $light-gray:    #eee !default;
-$light-gray:    lighten($base, 92.5%) !default;
+$light-gray:    lighten($base, 87%) !default;
 // $near-white:    #f4f4f4 !default;
-$near-white:    lighten($base, 95%) !default;
+$near-white:    lighten($base, 92%) !default;
 $white:         lighten($base, 100%) !default;
 
 $accent:        #ff4500 !default; //#F36407 #27DCC9 // #ff9900 //#ff8200

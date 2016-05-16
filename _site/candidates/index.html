@@ -18,19 +18,19 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="msapplication-TileColor" content="#ff4500">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -78,9 +78,9 @@
   </div>
   <div class="fixed col-12 top-0 left-0 z5 px2 sm-px3 py1">
     <div class="flex">
-      <div id="js-flux-logo-text" class="col-6">
+      <div  class="col-6">
         
-          <a id="js-nav-logos" class="link-reset block no-focus flex" href="/">
+          <a class="js-menu-hide link-reset block no-focus flex" href="/">
             <span class="width-3rem block mr2">
               <svg id="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338.14 390.36">
   <title>flux-mark</title>
@@ -133,7 +133,7 @@
 </svg>
 
             </span>
-            <span class="width-5rem  block mt2">
+            <span class="width-3rem  block mt2">
               <svg  class="flux-logo-text"  data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.64 43.85" fill="#222" >
   <title>FLUX</title>
   <path class="cls-1" d="M230,418h-6.27V374.59h25.9v6.27H230V393.1h17.39v6.34H230V418Z" transform="translate(-223.69 -374.59)" />
@@ -150,7 +150,7 @@
     <div class="col-6 right-align flex justify-end items-center absolute right-0 top-0 mr2 sm-mr3 mt1">
       <div class="inline-block mr3 xs-hide">
         
-        <a id="js-navbar-join-btn" href="/signup" class="btn btn-primary p1 h5 transition">Join Flux</a>
+        <a href="/signup" class="js-menu-hide btn btn-primary p1 h5 transition">Join Flux</a>
          
       </div>
       <div class="inline-block mt1">
@@ -169,45 +169,102 @@
     <div class="py4 px2 bg-black-muted min-height-100vh fixed col-12 top-0 right-0 left-0 bottom-0 z1">
     </div>
       <div class="height-100vh fixed overflow-scroll light-gray left-0 top-0 col-12 mt4 z2">
-        <div class="px2">
-          <div class="mx-auto max-width-2 pb5">
-            <dl class="list-reset h3 sm-h2">
+        <div class="px3 sm-px4">
+          <div class="max-width-2 pb5">
 
-              <hr class="dark-gray border-bottom my1">
-              <dt class="h5 muted mb1 caps light">Quick links</dt>
-              <dd class="mb2"><a href="/" class="link-reset h-font accent-on-hover transition-fast">Home</a></dd>
-              <dd class="mb2"><a href="/press" class="link-reset h-font accent-on-hover transition-fast">In the news</a></dd>
-              <dd class="mb2"><a href="/#upcoming-meetups" class="link-reset h-font accent-on-hover transition-fast">Upcoming Meetups</a></dd>
-              <dd class="mb2"><a href="/#contact" class="link-reset h-font accent-on-hover transition-fast">Contact</a></dd>
-              <hr class="dark-gray border-bottom my1">
-              <dt class="h5 muted mb1 caps light">About Flux</dt>
+            <a class="link-reset block no-focus flex items-center" href="/">
+              <span class="width-5rem block mr2">
+                <svg id="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338.14 390.36">
+  <title>flux-mark</title>
+  <g id="layer1">
+    <g id="g6824">
+      <path id="path4175" d="M112.56,32.44L56.14,65l56.55,32.65V32.36l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #d9d06c"/>
+      <path id="path4187" d="M281.47,130L225,162.53l56.55,32.65v-65.3l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #0894c2"/>
+      <path id="path4191" d="M112.56,162.46L56.14,195l56.55,32.65v-65.3l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #67539c"/>
+      <path id="path4177" d="M168.87-.07L112.44,32.51,169,65.15V-0.14l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #88c27e"/>
+      <path id="path4181" d="M225.17,32.44L168.74,65l56.55,32.65V32.36l-0.07,0Z" transform="translate(0.16 0.14)" style="fill: #65b3b0"/>
+      <path id="path4185" d="M281.47,64.94L225,97.52l56.55,32.65V64.87l-0.07,0Z" transform="translate(0.16 0.14)" style="fill: #584865"/>
+      <path id="path4209" d="M281.47,195L225,227.54l56.55,32.65V194.89l-0.07,0Z" transform="translate(0.16 0.14)" style="fill: #67539c"/>
+      <path id="path4211" d="M337.77,97.45L281.35,130l56.55,32.65V97.38l-0.07,0Z" transform="translate(0.16 0.14)" style="fill: #67539c"/>
+      <path id="path4213" d="M337.77,162.46L281.35,195l56.55,32.65v-65.3l-0.07,0Z" transform="translate(0.16 0.14)" style="fill: #64b2b1"/>
+      <path id="path4215" d="M337.77,227.47L281.35,260l56.55,32.65V227.4l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #f24d6e"/>
+      <path id="path4217" d="M281.47,260L225,292.55l56.55,32.65V259.9l-0.07,0Z" transform="translate(0.16 0.14)" style="fill: #f24d6e"/>
+      <path id="path4219" d="M225.17,292.48l-56.42,32.58,56.55,32.65v-65.3l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #dfd88e"/>
+      <path id="path4221" d="M168.87,325l-56.42,32.58L169,390.21v-65.3l-0.07,0Z" transform="translate(0.16 0.14)" style="fill: #67539c"/>
+      <path id="path4223" d="M112.56,292.48L56.14,325.06l56.55,32.65v-65.3l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #00a5b0"/>
+      <path id="path4207" d="M56.26,260L-0.16,292.55,56.38,325.2V259.9l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #5db35c"/>
+      <path id="path4195" d="M225.17,227.47L168.74,260l56.55,32.65V227.4l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #d4a569"/>
+      <path id="path4197" d="M56.26,64.94L-0.16,97.52l56.55,32.65V64.87l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #dc3037"/>
+      <path id="path4199" d="M56.26,130L-0.16,162.53l56.55,32.65v-65.3l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #cb8e47"/>
+      <path id="path4201" d="M56.26,195L-0.16,227.54l56.55,32.65V194.89l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #dace6b"/>
+      <path id="path4203" d="M112.56,227.47L56.14,260l56.55,32.65V227.4l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #619abe"/>
+      <path id="path4227" d="M112.56,97.45L56.14,130l56.55,32.65V97.38l-0.07,0-0.05,0h0Z" transform="translate(0.16 0.14)" style="fill: #1e447b"/>
+      <path id="path4229" d="M168.83,0V65.15l56.55-32.65L168.83-.14V0h0Z" transform="translate(0.16 0.14)" style="fill: #0a8974"/>
+      <path id="path4231" d="M225.13,32.51V97.66L281.67,65,225.13,32.36v0.14h0Z" transform="translate(0.16 0.14)" style="fill: #274b7f"/>
+      <path id="path4233" d="M281.43,65v65.15L338,97.52,281.43,64.87V65h0Z" transform="translate(0.16 0.14)" style="fill: #836f8b"/>
+      <path id="path4235" d="M281.43,130v65.15L338,162.53l-56.55-32.65V130h0Z" transform="translate(0.16 0.14)" style="fill: #36beb2"/>
+      <path id="path4237" d="M281.43,195v65.15L338,227.54l-56.55-32.65V195h0Z" transform="translate(0.16 0.14)" style="fill: #765989"/>
+      <path id="path4239" d="M281.43,260V325.2L338,292.55,281.43,259.9V260h0Z" transform="translate(0.16 0.14)" style="fill: #b53672"/>
+      <path id="path4247" d="M225.13,292.55v65.15l56.55-32.65-56.55-32.65v0.14h0Z" transform="translate(0.16 0.14)" style="fill: #b83c71"/>
+      <path id="path4255" d="M168.83,260V325.2l56.55-32.65L168.83,259.9V260h0Z" transform="translate(0.16 0.14)" style="fill: #dace6b"/>
+      <path id="path4287" d="M56.22,260q0,32.58,0,65.15l56.55-32.65L56.22,259.9V260h0Z" transform="translate(0.16 0.14)" style="fill: #1e447b"/>
+      <path id="path4271" d="M168.83,325.06v65.15l56.55-32.65-56.55-32.65v0.14h0Z" transform="translate(0.16 0.14)" style="fill: #5db35c"/>
+      <path id="path4249" d="M225.13,227.54v65.15L281.67,260,225.13,227.4v0.14h0Z" transform="translate(0.16 0.14)" style="fill: #36beb2"/>
+      <path id="path4273" d="M56.22,195q0,32.58,0,65.15l56.55-32.65L56.22,194.89V195h0Z" transform="translate(0.16 0.14)" style="fill: #36beb2"/>
+      <path id="path4514" d="M112.52,32.51v325.2L169,325.11v-65l56.38-32.55L169,195V130.16l56.22,32.46L281.67,130,112.52,32.36v0.14Z" transform="translate(0.16 0.14)" style="fill: #fff"/>
+      <path id="path4281" d="M-0.08,227.54v65.15L56.47,260-0.08,227.4v0.14h0Z" transform="translate(0.16 0.14)" style="fill: #dfd88e"/>
+      <path id="path4251" d="M225.13,162.53v65.15L281.67,195l-56.55-32.65v0.14h0Z" transform="translate(0.16 0.14)" style="fill: #1e447b"/>
+      <path id="path4512" d="M168.83,130v65.15l56.55-32.65-56.55-32.65V130h0Z" transform="translate(0.16 0.14)" style="fill: #584865"/>
+      <path id="path4275" d="M56.22,130q0,32.58,0,65.15l56.55-32.65L56.22,129.88V130h0Z" transform="translate(0.16 0.14)" style="fill: #0894c2"/>
+      <path id="path4283" d="M-0.08,162.53v65.15L56.47,195-0.08,162.39v0.14h0Z" transform="translate(0.16 0.14)" style="fill: #d4a569"/>
+      <path id="path4277" d="M56.22,65q0,32.58,0,65.15l56.55-32.65L56.22,64.87V65h0Z" transform="translate(0.16 0.14)" style="fill: #d3a466"/>
+      <path id="path4322" d="M-0.08,97.52q0,32.58,0,65.15L56.47,130-0.08,97.38v0.14h0Z" transform="translate(0.16 0.14)" style="fill: #e66a5f"/>
+      <path id="path4171" d="M225.17,162.46L168.74,195l56.55,32.65v-65.3l-0.07,0Z" transform="translate(0.16 0.14)" style="fill: #67539c"/>
+    </g>
+  </g>
+</svg>
+
+              </span>
+              <span class="width-5rem block">
+                <svg  class="flux-logo-text"  data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.64 43.85" fill="#fff" >
+  <title>FLUX</title>
+  <path class="cls-1" d="M230,418h-6.27V374.59h25.9v6.27H230V393.1h17.39v6.34H230V418Z" transform="translate(-223.69 -374.59)" />
+  <path class="cls-1" d="M270.33,411.73h20.43V418h-26.7V374.59h6.27v37.14Z" transform="translate(-223.69 -374.59)" />
+  <path class="cls-1" d="M304.05,405V374.59h6.33V405c0,4.78,5.16,7.14,9.75,7.14s9.69-2.42,9.69-7.2V374.59h6.33V405c0,8.82-8.57,13.41-16,13.41C312.5,418.44,304.05,413.84,304.05,405Z" transform="translate(-223.69 -374.59)" />
+  <path class="cls-1" d="M362.68,382.39l-5.66-7.8h-7.7L365,396.2c-4.66,6.4-11.74,16.27-15.71,21.8H357l11.8-16.27L380.69,418h7.64Zm12.09,10.85c4.45-6.1,10-13.71,13.56-18.65h-7.64L371,387.94Z" transform="translate(-223.69 -374.59)" />
+</svg>
+
+              </span>
+            </a>
+
+            <hr class="dark-gray border-bottom my2">
+            <ul class='white list-reset h2 sm-h1'>
+            
+            
+                <li class=" mb2 sm-mb3"><a href="/" class="link-reset h-font accent-on-hover transition-fast">Home</a></li>
+            
+            
+                <li class=" mb2 sm-mb3"><a href="/about" class="link-reset h-font accent-on-hover transition-fast">Flux explained</a></li>
+            
+            
+                <li class=" mb2 sm-mb3"><a href="/help-us" class="link-reset h-font accent-on-hover transition-fast">Help Flux</a></li>
+            
+            
+                <li class=" mb2 sm-mb3"><a href="/press" class="link-reset h-font accent-on-hover transition-fast">Press</a></li>
+            
+            
+                <li class=" mb2 sm-mb3"><a href="/#contact" class="link-reset h-font accent-on-hover transition-fast">Contact Us</a></li>
+            
+
               
-              
-                <dd class="mb2">
-                  <a href="/about/what-is-flux/" class="link-reset h-font accent-on-hover transition-fast">What is Flux?</a>
-                </dd>
-              
-                <dd class="mb2">
-                  <a href="/about/why-flux/" class="link-reset h-font accent-on-hover transition-fast">Why Australia needs Flux</a>
-                </dd>
-              
-                <dd class="mb2">
-                  <a href="/about/how/" class="link-reset h-font accent-on-hover transition-fast">The Flux voting system explained</a>
-                </dd>
-              
-                <dd class="mb2">
-                  <a href="/about/who/" class="link-reset h-font accent-on-hover transition-fast">Who is behind Flux?</a>
-                </dd>
-              
-                <dd class="mb2">
-                  <a href="/about/faqs/" class="link-reset h-font accent-on-hover transition-fast">Frequently asked questions</a>
-                </dd>
-              
-              
-              <hr class="dark-gray border-bottom my1">
-              <dd class="mb2 mt3 h4"><a href="/signup" class="btn btn-primary h3 xs-menu-join-button">Join Flux</a></dd>
+                <hr class="dark-gray border-bottom my1">
+                <li class="mb2 mt3 h4"><a href="/signup" class="btn btn-primary h3 xs-menu-join-button">Join Flux</a></li>
                
-            </dl>
+            </ul>
+
+
+
+          
 
           </div>
         </div>
@@ -309,7 +366,7 @@
 </main>
 <footer>
 
-  <div class="bg-white mid-gray py3 shadow-inset">
+  <div class="bg-white mid-gray py3 sm-pr4 shadow-inset">
    <div class="max-width-4 mx-auto">
       <div class="px2 sm-px3">
         <div class="sm-flex mxn2">
@@ -409,7 +466,7 @@
             <ul class="list-reset">
               <li class="my1"><a href="/" class="link-reset">Home</a></li>
               <li class="my1"><a href="/press" class="link-reset">In the news</a></li>
-              <li class="my1"><a href="/#upcoming-meetups" class="link-reset">Upcoming Meetups</a></li>
+              
               <li class="my1"><a href="/#contact" class="link-reset">Contact</a></li>
             </ul>
             <ul class="list-reset">
@@ -418,7 +475,7 @@
               
               <li class="inline-block mr2">
                 <a href="https://facebook.com/voteflux.org" class="block social-icon-width">
-                  <svg version="1.1" class="social-icon-width" fill="#9B9B9B" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  <svg version="1.1" class="social-icon-width" fill="{{site.base-color}}" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	 x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
 <path d="M10,0.4c-5.302,0-9.6,4.298-9.6,9.6s4.298,9.6,9.6,9.6s9.6-4.298,9.6-9.6S15.302,0.4,10,0.4z M12.274,7.034h-1.443
 	c-0.171,0-0.361,0.225-0.361,0.524V8.6h1.805l-0.273,1.486H10.47v4.461H8.767v-4.461H7.222V8.6h1.545V7.726
@@ -431,7 +488,7 @@
               
               <li class="inline-block mr2">
                 <a href="https://twitter.com/voteflux" class="block social-icon-width">
-                  <svg fill=#9B9B9B class="social-icon-width" version="1.1" id="Twitter_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  <svg fill={{site.base-color}} class="social-icon-width" version="1.1" id="Twitter_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	 x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
 <path d="M10,0.4c-5.302,0-9.6,4.298-9.6,9.6s4.298,9.6,9.6,9.6s9.6-4.298,9.6-9.6S15.302,0.4,10,0.4z M13.905,8.264
 	c0.004,0.082,0.005,0.164,0.005,0.244c0,2.5-1.901,5.381-5.379,5.381c-1.068,0-2.062-0.312-2.898-0.85
@@ -450,7 +507,7 @@
               <li class="inline-block mr2">
                 <a href="https://www.reddit.com/r/voteflux" class="block social-icon-width">
                   
-<svg fill=#9B9B9B class="social-icon-width" version="1.1" id="Reddit_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg fill={{site.base-color}} class="social-icon-width" version="1.1" id="Reddit_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
 <g>
 	<g>
@@ -547,16 +604,16 @@
   <div class="bg-light-gray dark-gray border-accent-muted rounded py3">
     <div class="max-width-4 mx-auto px2 sm-px3">
 
-      <div class="sm-flex justify-end flex-wrap items-center mxn2 center">
+      <div class="sm-flex justify-around flex-wrap items-baseline mxn2 center">
         <div class="px2">
-          <h3 class="h-font mb3 sm-m0">Be part of something great</h3>
+          <h3 class="h-font mb3 md-m0">Join the movement | <span class='gray light'>Modernise our democratic system</span></h3>
         </div>
-        <div class="px2 self">
-          <a href="/signup" class="h3 btn btn-primary letter-spacing-1">
-            Join Flux today
+        <div class="px2">
+          <a href="/signup" class="btn btn-primary letter-spacing-1">
+            On July 2 &mdash; Vote Flux
           </a>
+          <h5 class="caps">Become a member today</h5>
         </div>
-
 
       </div>
     </div>

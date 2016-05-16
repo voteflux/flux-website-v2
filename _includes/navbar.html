@@ -3,11 +3,11 @@
   <div id="js-fading" style="opacity: 0" class="fixed z4 col-12 py3 bg-white left-0 top-0 navbar-height border-bottom border-near-white">
   {% if page.home %}
   <div class="absolute top-0 left-0 mt1 z1 ml2 sm-ml3">
-      <a class="link-reset block no-focus flex relative z2" href="{{site.baseurl}}/">
+      <a class="js-menu-hide link-reset block no-focus flex relative z2" href="{{site.baseurl}}/">
         <span class="width-3rem block mr2">
           {% include svg/flux-mark.html %}
         </span>
-        <span class="width-5rem block mt2">
+        <span class="width-4rem block mt2">
           {% include svg/flux-text-logo.html
             color="#222" %}
         </span>
@@ -17,7 +17,7 @@
   </div>
   <div class="fixed col-12 top-0 left-0 z5 px2 sm-px3 py1">
     <div class="flex">
-      <div id="js-flux-logo-text" class="col-6">
+      <div  class="col-6">
         {% if !page.home %}
         {% comment %}
           <!-- <a id="js-flux-logo-home-dark" class="link-reset block  no-focus opacity-0" href="{{site.baseurl}}/">
@@ -27,12 +27,23 @@
             </span>
           </a> -->
           {% endcomment %}
-        {% else %}
-          <a id="js-nav-logos" class="link-reset block no-focus flex" href="{{site.baseurl}}/">
+
+        {% elsif page.dark-theme %}
+          <a class="js-menu-hide link-reset block no-focus flex" href="{{site.baseurl}}/">
             <span class="width-3rem block mr2">
               {% include svg/flux-mark.html %}
             </span>
-            <span class="width-5rem  block mt2">
+            <span class="width-4rem block mt2">
+              {% include svg/flux-text-logo.html
+                color="#fff" %}
+            </span>
+          </a>
+        {% else %}
+          <a class="js-menu-hide link-reset block no-focus flex" href="{{site.baseurl}}/">
+            <span class="width-3rem block mr2">
+              {% include svg/flux-mark.html %}
+            </span>
+            <span class="width-3rem  block mt2">
               {% include svg/flux-text-logo.html
                 color="#222" %}
             </span>
@@ -44,7 +55,7 @@
       <div class="inline-block mr3 xs-hide">
         {% if include.no-button %}
         {% else %}
-        <a id="js-navbar-join-btn" href="{{site.baseurl}}/signup" class="btn btn-primary p1 h5 transition">Join Flux</a>
+        <a href="{{site.baseurl}}/signup" class="js-menu-hide btn btn-primary p1 h5 transition">Join Flux</a>
          {% endif %}
       </div>
       <div class="inline-block mt1">
@@ -63,11 +74,60 @@
     <div class="py4 px2 bg-black-muted min-height-100vh fixed col-12 top-0 right-0 left-0 bottom-0 z1">
     </div>
       <div class="height-100vh fixed overflow-scroll light-gray left-0 top-0 col-12 mt4 z2">
-        <div class="px2">
-          <div class="mx-auto max-width-2 pb5">
+        <div class="px3 sm-px4">
+          <div class="max-width-2 pb5">
+
+            <a class="link-reset block no-focus flex items-center" href="{{site.baseurl}}/">
+              <span class="width-5rem block mr2">
+                {% include svg/flux-mark.html %}
+              </span>
+              <span class="width-5rem block">
+                {% include svg/flux-text-logo.html
+                  color="#fff"
+                  no-js="true" %}
+              </span>
+            </a>
+
+            <hr class="dark-gray border-bottom my2">
+            <ul class='white list-reset h2 sm-h1'>
+            {% for item in site.navigation %}
+            {% comment %}
+                {% assign class = nil %}
+                {% if page.url contains item.url %}
+                    {% assign class = "gray" %}
+                {% else %}
+                    {% assign class = "normal" %}
+                {% endif %}
+                {% endcomment %}
+                <li class="{{ class }} mb2 sm-mb3"><a href="{{ item.url }}" class="link-reset h-font accent-on-hover transition-fast">{{ item.title }}</a></li>
+            {% endfor %}
+
+              {% if include.no-button %}
+              {% else %}
+                <hr class="dark-gray border-bottom my1">
+                <li class="mb2 mt3 h4"><a href="{{site.baseurl}}/signup" class="btn btn-primary h3 xs-menu-join-button">Join Flux</a></li>
+               {% endif %}
+            </ul>
+
+{% comment %}
+            <nav>
+              {% for item in site.navigation %}
+                  {% assign class = nil %}
+                  {% if page.url contains item.url %}
+                      {% assign class = 'active' %}
+                  {% endif %}
+                  <a href="{{ item.url }}" class="{{ class }}">
+                      {{ item.title }}
+                  </a>
+              {% endfor %}
+            </nav>
+{% endcomment %}
+
+          {% comment %}
             <dl class="list-reset h3 sm-h2">
 
               <hr class="dark-gray border-bottom my1">
+
               <dt class="h5 muted mb1 caps light">Quick links</dt>
               <dd class="mb2"><a href="{{site.baseurl}}/" class="link-reset h-font accent-on-hover transition-fast">Home</a></dd>
               <dd class="mb2"><a href="{{site.baseurl}}/press" class="link-reset h-font accent-on-hover transition-fast">In the news</a></dd>
@@ -75,6 +135,7 @@
               <dd class="mb2"><a href="{{site.baseurl}}/#contact" class="link-reset h-font accent-on-hover transition-fast">Contact</a></dd>
               <hr class="dark-gray border-bottom my1">
               <dt class="h5 muted mb1 caps light">About Flux</dt>
+
               {% assign items = site.about | sort: 'menu-order' %}
               {% for item in items %}
                 <dd class="mb2">
@@ -83,10 +144,13 @@
               {% endfor %}
               {% if include.no-button %}
               {% else %}
+
               <hr class="dark-gray border-bottom my1">
               <dd class="mb2 mt3 h4"><a href="{{site.baseurl}}/signup" class="btn btn-primary h3 xs-menu-join-button">Join Flux</a></dd>
                {% endif %}
             </dl>
+
+              {% endcomment %}
 
           </div>
         </div>
