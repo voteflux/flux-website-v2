@@ -3,5 +3,4 @@ node_modules
 .jekyll-metadata
 npm-debug.log
 .publish
-_site
 react-signup/node_modules
