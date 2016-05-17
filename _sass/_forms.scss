@@ -8,7 +8,9 @@ fieldset {
   margin-top: 0;
   margin-bottom: 0;
 }
-
+textarea {
+  height: auto !important;
+}
 label {
   vertical-align: middle;
 }

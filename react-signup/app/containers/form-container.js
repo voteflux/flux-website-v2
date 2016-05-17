@@ -2,6 +2,7 @@ import React from 'react'
 import Formsy from 'formsy-react'
 import FluxHeader from '../components/flux-header'
 import MyInput from '../components/my-input'
+import MyTextarea from '../components/my-textarea'
 import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
 
@@ -33,9 +34,9 @@ const FormContainer = React.createClass({
           isLoading: false,
           serverSuccessMsg: "Success"
         });
-        setTimeout(function() {
-          window.location.assign(redirectUrl)
-        }, 1500)
+        // setTimeout(function() {
+        //   window.location.assign(redirectUrl)
+        // }, 1500)
       } else if (response.statusText === "Conflict" || response.status === 409 || response.data === "Email already exists. Please update details instead of re-registering.") {
         this.setState({
           isLoading: false,
@@ -65,7 +66,7 @@ const FormContainer = React.createClass({
         onInvalid={this.disableButton}
         onChange={this.validateForm}>
 
-        <div className="py3 px3 bg-light-gray">
+        <div className="py3 px2 bg-light-gray">
           <h3 className="h2 regular mb1">Sign up below, it's quick and easy</h3>
           <div className="gray mb3">
             <p className="mb2">
@@ -83,7 +84,7 @@ const FormContainer = React.createClass({
             value={false} />
         </div>
 
-        <div className="px3 pb4">
+        <div className="px2 pb4">
           <SectionTitle text="1. Names"/>
 
           <MyInput
@@ -245,6 +246,7 @@ const FormContainer = React.createClass({
             required />
 
 
+          <SectionTitle text="5. Get Involved"/>
 
           { this.props.onReferrer
             ?
@@ -254,7 +256,7 @@ const FormContainer = React.createClass({
               value={this.props.onReferrer} />
              :
              <div>
-                <SectionTitle text="5. Get Involved"/>
+
                 <MyInput
                   inputClass="input"
                   name="referred_by"
@@ -268,6 +270,13 @@ const FormContainer = React.createClass({
             title="Send me Flux news and important updates."
             value={true}
              />*/}
+
+         <MyTextarea
+             rows="3"
+             inputClass="input"
+             name="member_comment"
+             title="Comments / Notes"
+             subtext="(Optional, Anything you'd like to add, about yourself, us, or anything, really.)" />
 
            <MyInput
              inputClass="input"

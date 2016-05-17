@@ -1,16 +1,20 @@
 ---
 layout: default
+dark-theme: true
 ---
 
 {% include navbar.html %}
 {% include base.html %}
-<main class="py4 pt5 bg-near-white dark-gray px1">
+<main class="bg-near-white dark-gray px1">
   {% comment %}
   <div class="mx-auto max-width-3 mb3">
     <i class="material-icons mr1">arrow_back</i><a href="{{site.baseurl}}/candidates" class="inline-block">Back to candidates</a>
   </div>
   {% endcomment %}
-  <div class="mx-auto max-width-3 px2 sm-px3 py4 bg-white">
+  <div class="bg-near-black height-40vh absolute z1 left-0 top-0 col-12 texture-bg-img">
+
+  </div>
+  <div class="mx-auto max-width-3 px2 sm-px3 py4 bg-white relative mt5 z2">
     <h5 class="h4"><span class="gray">{{page.state}}</span> / <span class="bold">{{page.house}}</span></h5>
 
     {% include components/main-heading.html
@@ -19,7 +23,7 @@ layout: default
       font-weight="bold"
       line="true" %}
 
-      <div class="flex flex-wrap mb4">
+      <div class="flex flex-wrap mb3">
         <div class="square-1 overflow-hidden circle overflow-hidden bg-gray mb2 bg-black mr3"
              style="background: url({{base}}/img/candidates/small/{{page.title | slugify }}.jpg) no-repeat center center; background-size: cover" >
         </div>
@@ -47,7 +51,7 @@ layout: default
     </div>
     <i class="material-icons mr1">arrow_back</i><a href="{{site.baseurl}}/candidates" class="inline-block">Back to candidates</a>
   </div>
-  <div class="mx-auto max-width-3">
+  <div class="mx-auto max-width-3 pb4">
     {% include components/inline-signup.html %}
   </div>
 

@@ -1,5 +1,6 @@
 ---
 layout: default
+dark-theme: true
 permalink: /help-us/
 
 help:
@@ -19,28 +20,32 @@ help:
 ---
 
 {% include navbar.html %}
-<div class="bg-near-white dark-gray py4 pt5">
-  <div class="max-width-3 mx-auto px2 sm-px3 pt4 pb3 bg-white">
+<div class="bg-near-white dark-gray py4 ">
+  <div class="bg-near-black height-40vh absolute z1 left-0 top-0 col-12 texture-bg-img">
+
+  </div>
+  <div class="mx-auto max-width-3 px2 sm-px3 pt4 pb3 bg-white relative mt5 z2">
+  <!-- <div class="max-width-3 mx-auto px2 sm-px3 pt4 pb3 bg-white"> -->
     {% include components/main-heading.html
       text="How can I help?"
       font-size="h0"
       font-weight="bold"
       line="true" %}
 
-{% for help in page.help %}
-<div class="mb3">
-  <h3 class="bold">{{forloop.index}}. {{help.title}}</h3>
-  <p class="mid-gray">
-    {{help.copy}}
-  </p>
-</div>
-{% endfor %}
-
-
-
+    {% for help in page.help %}
+    <div class="mb3">
+      <h3 class="bold">{{forloop.index}}. {{help.title}}</h3>
+      <p class="mid-gray">
+        {{help.copy}}
+      </p>
+    </div>
+    {% endfor %}
   </div>
   <div class="max-width-3 mx-auto">
     {% include components/inline-signup.html %}
-  </div>
+    <div class="mt4">
+        <i class="material-icons mr1">arrow_back</i><a href="{{site.baseurl}}/" class="inline-block">Back to home page</a>
+        </div>
+    </div>
 </div>
 {% include footer.html %}

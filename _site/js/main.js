@@ -187,7 +187,7 @@ if ( $('#js-candidates').length != 0 ) {
   }
   var mins = 1
   var interval = 1000 * 60 * mins
-  getMembers();
+  getMembers(); //init
   setInterval(getMembers, interval);
 
 
@@ -216,12 +216,8 @@ if ( $('#js-candidates').length != 0 ) {
       $('#js-fading').addClass('all-transparent')
     } else {
       $('#js-fading').removeClass('all-transparent')
-      // $("#js-flux-logo-text").addClass('absolute').removeClass('fixed');
       $("#js-menu").addClass('opacity-0').removeClass('opacity-1');
       $(".js-menu-hide").addClass('opacity-1').removeClass('opacity-0, hide');
-      // $('.flux-logo-text').css({ fill: "#222" });
-      // $("#js-flux-logo-home-light").removeClass('opacity-1');
-      // $("#js-flux-logo-home-dark").addClass('opacity-0');
       setTimeout(function() {
         $("#js-menu")
           .addClass('hide')
@@ -250,8 +246,8 @@ if ( $('#js-candidates').length != 0 ) {
           opacity = 1
           faded = true
       }
-
-      if (faded) {
+// for logo text on dark background
+      if (opacity >= 0.1) {
         $('.js-flux-text-darktheme').css({ fill: "#222" })
       } else {
         $('.js-flux-text-darktheme').css({ fill: "#fff" })
