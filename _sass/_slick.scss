@@ -10,16 +10,17 @@
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: "Roboto" !default;
 $slick-loader-path: "./" !default;
-$slick-arrow-color: white !default;
+$slick-arrow-color: $mid-gray !default;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
-$slick-prev-character: "\2190" !default;
-$slick-next-character: "\2192" !default;
+$slick-prev-character: "keyboard_arrow_left" !default;
+$slick-next-character: "keyboard_arrow_right" !default;
 $slick-dot-character: "\2022" !default;
 $slick-dot-size: 6px !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
+$slick-arrow-size: 3rem !default;
 
 @function slick-image-url($url) {
     @if function-exists(image-url) {
@@ -140,7 +141,69 @@ $slick-opacity-not-active: 0.25 !default;
     display: none;
 }
 
+// Arrows
 
+.slick-prev,
+.slick-next {
+    opacity: .4;
+    z-index: 1;
+    position: absolute;
+    display: block;
+    // height: 20px;
+    // width: 20px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 20%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    &:hover, &:focus {
+        outline: none;
+        background: transparent;
+        color: transparent;
+        &:before {
+            opacity: $slick-opacity-on-hover;
+        }
+    }
+    &.slick-disabled:before {
+        opacity: $slick-opacity-not-active;
+    }
+    &:before {
+        font-family: 'Material Icons', 'Roboto';
+        font-size: $slick-arrow-size;
+        line-height: 1;
+        color: $slick-arrow-color;
+        opacity: $slick-opacity-default;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.slick-prev {
+    left: $space-1;
+    @media #{$breakpoint-xl} {
+      left: -$space-3;
+    }
+    &:before {
+        content: $slick-prev-character;
+    }
+}
+
+.slick-next {
+    right: $space-1;
+    @media #{$breakpoint-xl} {
+      right: -$space-3;
+    }
+    &:before {
+        content: $slick-next-character;
+    }
+}
 
 
 // DOTS

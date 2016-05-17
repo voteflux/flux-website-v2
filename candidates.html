@@ -1,10 +1,11 @@
 ---
 layout: default
 permalink: /candidates/
+dark-theme: true
 ---
 
 {% include navbar.html %}
-<main class="py4 dark-gray bg-near-white">
+<section class="py4 bg-near-black texture-bg-img near-white">
   <div class="mx-auto max-width-4">
     <div class="px2 sm-px3 mt4">
 
@@ -14,20 +15,32 @@ permalink: /candidates/
         font-weight="bold"
         line="true" %}
 
-      <p class="h3 sm-h2 h-font light md-col-9 mb4">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <div class="h-font light sm-col-8 light-silver ">
+        <p class="h3 sm-h2 letter-spacing-2">Flux Senators serve to protect the integrity of Flux. </p>
 
-      <div class="sm-flex flex-wrap mxn2">
+        <p class="h4 light sm-h3 letter-spacing-3 silver">Being a Flux Senator is not like being any other Senator. Flux Senators respect Flux as a method for decision making more than they respect their own opinions. If elected, this may mean casting a vote in the Senate contrary to their personal beliefs.</p>
+
+        <p class="h4 light sm-h3 letter-spacing-3 silver">All our Flux candidates have made a public declaration stating that they will act as a proxy for the Flux system and that they won't use their status for personal gain (including personal policy agenda).</p>
+      </div>
+    </div>
+  <div>
+</section>
+
+<div class="bg-near-white py3">
+  <div class="mx-auto max-width-4 px2">
+
+      <div class="sm-flex flex-wrap mxn2 sm-pr4 dark-gray">
         {% for candidate in site.candidates %}
+          {% capture snippet %} {{ candidate.bio | first | truncate: 250 }} {% endcapture %}
           {% include candidates/candidate-card.html
              state=candidate.state
              house=candidate.house
              url=candidate.url
-             title=candidate.title %}
+             title=candidate.title
+             bio=snippet   %}
         {% endfor %}
       </div>
     </div>
   </div>
-</main>
+</div>
 {% include footer.html %}

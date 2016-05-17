@@ -66,7 +66,7 @@ const FormContainer = React.createClass({
         onChange={this.validateForm}>
 
         <div className="py3 px3 bg-light-gray">
-          <h3 className="h2 regular mb1">Sign up below, its quick and easy</h3>
+          <h3 className="h2 regular mb1">Sign up below, it's quick and easy</h3>
           <div className="gray mb3">
             <p className="mb2">
               Please make sure your details exactly match those on the electoral roll. You can confirm them on the
@@ -261,13 +261,13 @@ const FormContainer = React.createClass({
                   title="How did you hear about Flux?" />
             </div>}
 
-          <MyInput
+          {/*<MyInput
             inputClass="input"
             type="checkbox"
             name="mailing-list"
             title="Send me Flux news and important updates."
             value={true}
-             />
+             />*/}
 
            <MyInput
              inputClass="input"

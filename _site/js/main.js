@@ -49,14 +49,19 @@ if ( $('#js-candidates').length != 0 ) {
   // init slick carousel
   $('#js-candidates').slick({
     autoplay: false,
+    accessibility: true,
+    pauseOnHover: true,
     speed: 700,
-    arrows: false,
+    arrows: true,
     focusOnSelect: false,
     cssEase: 'ease',
     responsive: [
       {
         breakpoint: 2000,
         settings: {
+          autoplay: true,
+          autoplaySpeed: 4000,
+          speed: 1000,
           slidesToShow: 3,
           slidesToScroll: 3,
           dots: true
@@ -65,6 +70,9 @@ if ( $('#js-candidates').length != 0 ) {
       {
         breakpoint: 1024,
         settings: {
+          autoplay: true,
+          autoplaySpeed: 4000,
+          speed: 1000,
           slidesToShow: 2,
           slidesToScroll: 2,
           dots: true
@@ -73,6 +81,9 @@ if ( $('#js-candidates').length != 0 ) {
       {
         breakpoint: 768,
         settings: {
+          autoplay: true,
+          autoplaySpeed: 4000,
+          speed: 1000,
           slidesToShow: 1,
           slidesToScroll: 2,
           dots: true
@@ -81,7 +92,6 @@ if ( $('#js-candidates').length != 0 ) {
       {
         breakpoint: 480,
         settings: {
-           arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: false

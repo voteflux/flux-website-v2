@@ -57,7 +57,7 @@ h6, .h6 {
 p, dl, ol, ul, pre, blockquote {
   margin-top: $space-1;
   margin-bottom: $space-2;
-  font-weight: 400;
+  font-weight: inherit;
   // letter-spacing: $letter-spacing-3;
 }
 

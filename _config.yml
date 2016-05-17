@@ -18,6 +18,7 @@ icon_path: img/social-icons/
 accent-color: "#ff4500"
 base-color: "#0b0b0e"
 meetups: false
+candidates: true
 
 social-media:
   - name: facebook
@@ -27,13 +28,14 @@ social-media:
   - name: reddit
     url: https://www.reddit.com/r/voteflux
 
+# for navbar items
 navigation:
   - url: /
     title: Home
   - url: /about
     title: Flux explained
-  # - url: /candidates
-  #   title: Candidates
+  - url: /candidates
+    title: Candidates
   - url: /help-us
     title: Help Flux
   - url: /press
@@ -41,13 +43,13 @@ navigation:
   - url: /#contact
     title: Contact Us
 
-
 # Collections
 collections:
   about:
     output: true
   candidates:
     output: true
+    permalink: /candidates/:path/
 
 # Build settings
 markdown: kramdown

@@ -1,8 +1,7 @@
 ---
 layout: default
 carousel: true
-candidates: false
-video: false
+video: true
 dark-theme: true
 home: true
 
@@ -148,24 +147,29 @@ social-media:
 {% endif %}
 
 
-{% if page.candidates %}
+{% if site.candidates %}
 <!-- CANDIDATES -->
-<section class="bg-near-white dark-gray pt4 pb3">
-  <div class="max-width-4 mx-auto px2 md-px3">
+<section class="bg-near-white dark-gray pt4 pb3 sm-pr4">
+  <div class="max-width-4 mx-auto px2 sm-px3">
     {% include components/main-heading.html
       text="Meet the candidates"
       font-size="h0 line-height-2"
       font-weight="bold" %}
-      {% include components/hr-muted.html classes="mb3"%}
 
-      <div id="js-candidates" class="mxn2 mb3">
+    {% include components/hr-muted.html classes="mb3"%}
+
+      <div class="mb3 mxn2">
+        <div id="js-candidates">
           {% for candidate in site.candidates %}
+            {% capture snippet %} {{ candidate.bio | first | truncate: 250 }} {% endcapture %}
             {% include candidates/candidate-card.html
                state=candidate.state
                house=candidate.house
                url=candidate.url
-               title=candidate.title %}
+               title=candidate.title
+               bio=snippet   %}
           {% endfor %}
+        </div>
       </div>
       <div class="right-align mt2">
         <a href="{{site.baseurl}}/candidates" class="accent accent-on-hover">See all candidates</a>

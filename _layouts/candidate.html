@@ -1,18 +1,60 @@
 ---
 layout: default
 ---
+
 {% include navbar.html %}
-<main class="py4 bg-light-silver">
-  <div class="mx-auto max-width-3">
-    {{ content }}
+{% include base.html %}
+<main class="py4 pt5 bg-near-white dark-gray px1">
+  {% comment %}
+  <div class="mx-auto max-width-3 mb3">
+    <i class="material-icons mr1">arrow_back</i><a href="{{site.baseurl}}/candidates" class="inline-block">Back to candidates</a>
   </div>
+  {% endcomment %}
+  <div class="mx-auto max-width-3 px2 sm-px3 py4 bg-white">
+    <h5 class="h4"><span class="gray">{{page.state}}</span> / <span class="bold">{{page.house}}</span></h5>
+
+    {% include components/main-heading.html
+      text=page.title
+      font-size="h0 line-height-2"
+      font-weight="bold"
+      line="true" %}
+
+      <div class="flex flex-wrap mb4">
+        <div class="square-1 overflow-hidden circle overflow-hidden bg-gray mb2 bg-black mr3"
+             style="background: url({{base}}/img/candidates/small/{{page.title | slugify }}.jpg) no-repeat center center; background-size: cover" >
+        </div>
+        <div class="flex-auto self-center">
+          <hr class="border-bottom light-gray">
+          <ul class="list-reset m0 gray">
+            <li class="mb2"><i class="material-icons mr1">email</i> {{page.email}}</li>
+            {% if page.twitter %}
+              <li class="inline-block mr1 hover-show-child"><a class="link-reset accent-on-hover" href="{{page.twitter}}" target="_blank">Twitter</a><i class="material-icons icon-adjust muted">call_made</i></li>
+            {% endif %}
+            {% if page.facebook %}
+              <li class="inline-block mr1 hover-show-child"><a class="link-reset accent-on-hover" href="{{page.facebook}}" target="_blank">Facebook</a><i class="material-icons icon-adjust muted">call_made</i></li>
+            {% endif %}
+            {% if page.linkedin %}
+              <li class="inline-block mr1 hover-show-child"><a class="link-reset accent-on-hover" href="{{page.linkedin}}" target="_blank">Linkedin</a><i class="material-icons icon-adjust muted">call_made</i></li>
+            {% endif %}
+          </ul>
+          <hr class="border-bottom light-gray">
+        </div>
+      </div>
+    <div class="mb4">
+        {% for bio in page.bio  %}
+          <p class="mid-gray">{{bio}}</p>
+        {% endfor %}
+    </div>
+    <i class="material-icons mr1">arrow_back</i><a href="{{site.baseurl}}/candidates" class="inline-block">Back to candidates</a>
+  </div>
+  <div class="mx-auto max-width-3">
+    {% include components/inline-signup.html %}
+  </div>
+
+
 </main>
 
-<!-- {% for item in site.candidates %}
-  {% if item.url != page.url %}
-   <h4>{{item.title}}</h4>
-  {% endif %}
-{% endfor %} -->
+
 
 
 {% include footer.html %}

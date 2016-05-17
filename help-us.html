@@ -20,7 +20,7 @@ help:
 
 {% include navbar.html %}
 <div class="bg-near-white dark-gray py4 pt5">
-  <div class="max-width-3 mx-auto px2 sm-px3">
+  <div class="max-width-3 mx-auto px2 sm-px3 pt4 pb3 bg-white">
     {% include components/main-heading.html
       text="How can I help?"
       font-size="h0"
@@ -35,9 +35,12 @@ help:
   </p>
 </div>
 {% endfor %}
-{% include components/inline-signup.html %}
 
 
+
+  </div>
+  <div class="max-width-3 mx-auto">
+    {% include components/inline-signup.html %}
   </div>
 </div>
 {% include footer.html %}
