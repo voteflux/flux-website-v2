@@ -18,7 +18,7 @@ icon_path: img/social-icons/
 accent-color: "#ff4500"
 base-color: "#0b0b0e"
 meetups: false
-candidates: true
+candidates: false
 
 social-media:
   - name: facebook
@@ -34,8 +34,8 @@ navigation:
     title: Home
   - url: /about
     title: Flux explained
-  - url: /candidates
-    title: Candidates
+  # - url: /candidates
+  #   title: Candidates
   - url: /help-us
     title: Help Flux
   - url: /press
@@ -47,15 +47,16 @@ navigation:
 collections:
   about:
     output: true
-  candidates:
-    output: true
-    permalink: /candidates/:path/
+  # candidates:
+  #   output: true
+  #   permalink: /candidates/:path/
 
 # Build settings
 markdown: kramdown
 permalink: pretty
 incremental: true
 exclude:
+  - candidates.html
   - node_modules
   - README.md
   - package.json
