@@ -21,7 +21,8 @@ const FormContainer = React.createClass({
   },
   submit(data) {
     data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00'
-    data.address = data.addr_street + ', ' + data.addr_suburb + ', ' + data.addr_postcode
+    data.address = data.addr_street + '; ' + data.addr_suburb + '; ' + data.addr_postcode
+    data.name = data.fname + " " + data.mnames + " " + data.lname
     this.setState({isLoading: true})
     HttpHelpers.sendForm( JSON.stringify(data, null, 4), function(response){
 
@@ -113,13 +114,9 @@ const FormContainer = React.createClass({
 
             <MyInput
               inputClass="input"
-              name="mname"
+              name="mnames"
               autocomplete="false"
               title="Legal middle name"
-              validations="isAlpha"
-              validationErrors={{
-                isAlpha: 'Only letters please'
-              }}
               formNoValidate />
 
           <SectionTitle text="2. Address"/>
