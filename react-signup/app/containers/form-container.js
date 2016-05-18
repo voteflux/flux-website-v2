@@ -39,9 +39,9 @@ const FormContainer = React.createClass({
           isLoading: false,
           serverSuccessMsg: "Success"
         });
-        // setTimeout(function() {
-        //   window.location.assign(redirectUrl)
-        // }, 1500)
+        setTimeout(function() {
+          window.location.assign(redirectUrl)
+        }, 1500)
       } else if (response.statusText === "Conflict" || response.status === 409 || response.data === "Email already exists. Please update details instead of re-registering.") {
         this.setState({
           isLoading: false,
