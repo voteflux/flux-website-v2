@@ -29,6 +29,11 @@ var HttpHelpers = {
       })
       .catch(function(response) {
         callback(response)
+        var errorArr = []
+        errorArr.push(data)
+        errorArr.push(response)
+        axios.post( postUrl + '/api/v0/error/all_at_once', errorArr)
+        console.log("Error sent to server --->", errorArr)
       })
   }
 };

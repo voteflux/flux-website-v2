@@ -97,10 +97,8 @@ const FormContainer = React.createClass({
             name="fname"
             title="Legal first name"
             autocomplete="given-name"
-            validations="isAlpha"
             validationErrors={{
-              isRequired: 'First name is required',
-              isAlpha: 'Only letters please'
+              isRequired: 'First name is required'
             }}
             required />
 
@@ -109,10 +107,8 @@ const FormContainer = React.createClass({
             name="lname"
             autocomplete="family-name"
             title="Legal last name"
-            validations="isAlpha"
             validationErrors={{
-              isRequired: 'First name is required',
-              isAlpha: 'Only letters please'
+              isRequired: 'First name is required'
             }}
             required />
 
@@ -121,7 +117,9 @@ const FormContainer = React.createClass({
               name="mnames"
               autocomplete="false"
               title="Legal middle name"
-              value=""
+              validationErrors={{
+                isSpecialWords: 'Only letters please'
+              }}
               formNoValidate />
 
           <SectionTitle text="2. Address"/>
@@ -175,7 +173,6 @@ const FormContainer = React.createClass({
                   isNumeric: 'Only numbers allowed',
                   isLength: 'Length must be 2 digits',
                   matchRegexp: 'Invalid date range'
-
                 }}
                 required />
             </div>
