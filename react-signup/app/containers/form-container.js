@@ -206,7 +206,7 @@ const FormContainer = React.createClass({
                 validations={{
                   isNumeric: true,
                   isLength: 4,
-                  matchRegexp: /^(190[0-9]|19[5-9]\d|200\d|201[0-6])$/
+                  matchRegexp: /^(190[0-9]|19[1-9]\d|200\d|201[0-6])$/
                 }}
                 validationErrors={{
                   isRequired: 'Year required',
