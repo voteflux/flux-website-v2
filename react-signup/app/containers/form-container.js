@@ -20,9 +20,13 @@ const FormContainer = React.createClass({
     };
   },
   submit(data) {
+    if (data.mnames === undefined) { data.mnames = ""}
+    if (data.referred_by === undefined) { data.referred_by = ""}
+    if (data.member_comment === undefined) { data.member_comment = ""}
     data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00'
     data.address = data.addr_street + '; ' + data.addr_suburb + '; ' + data.addr_postcode
     data.name = data.fname + " " + data.mnames + " " + data.lname
+
     this.setState({isLoading: true})
     HttpHelpers.sendForm( JSON.stringify(data, null, 4), function(response){
 
@@ -117,6 +121,7 @@ const FormContainer = React.createClass({
               name="mnames"
               autocomplete="false"
               title="Legal middle name"
+              value=""
               formNoValidate />
 
           <SectionTitle text="2. Address"/>
