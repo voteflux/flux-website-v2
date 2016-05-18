@@ -263,36 +263,34 @@ social-media:
     </div>
 
 
-      <div class="sm-flex flex-wrap mxn2 mb3">
-        {% for article in site.data.articles limit:6 %}
-            <div class="sm-col-6 lg-col-4 px2">
-              <div class="mb3">
-                <hr class="border-bottom accent-muted mb1 muted">
-                <div class="flex flex-column justify-between height-2">
-                  <div>
-                    {% if article.publishedIn == 'Press Release' %}
-                      <h5 class="mb2 gray">PRESS <span class="light-silver">{{ article.publishedIn | upcase }}</span>
-                      </h5>
-                    {% else %}
-                      <h5 class="mb2 gray">ARTICLE <span class="light-silver">{{ article.publishedIn | upcase }}</span>
-                      </h5>
-                    {% endif %}
-                    <a href="{{ article.url }}" target="_blank" class="link-reset block hover-show-child">
-                      <h3 class="h-font light line-height-4 accent-on-hover transition-fast inline">
-                        {{ article.title }}
-                      </h3><i class="material-icons icon-adjust muted">call_made</i>
-                    </a>
-                  </div>
-                  <time datetime="{{ article.date }}" class="italic gray">
-                  {{ article.date | date: '%B %d, %Y' }}
-                  </time>
+    <div class="sm-flex flex-wrap mxn2 mb3">
+      {% for article in site.data.articles limit:6 %}
+          <div class="sm-col-6 lg-col-4 px2">
+            <div class="mb3">
+              <hr class="border-bottom accent-muted mb1 muted">
+              <div class="flex flex-column justify-between height-2">
+                <div>
+                  {% if article.publishedIn == 'Press Release' %}
+                    <h5 class="mb2 gray">PRESS <span class="light-silver">{{ article.publishedIn | upcase }}</span>
+                    </h5>
+                  {% else %}
+                    <h5 class="mb2 gray">ARTICLE <span class="light-silver">{{ article.publishedIn | upcase }}</span>
+                    </h5>
+                  {% endif %}
+                  <a href="{{ article.url }}" target="_blank" class="link-reset block hover-show-child">
+                    <h3 class="h-font light line-height-4 accent-on-hover transition-fast inline">
+                      {{ article.title }}
+                    </h3><i class="material-icons icon-adjust muted">call_made</i>
+                  </a>
                 </div>
+                <time datetime="{{ article.date }}" class="italic gray">
+                {{ article.date | date: '%B %d, %Y' }}
+                </time>
               </div>
             </div>
-        {% endfor %}
-      </div>
-
-
+          </div>
+      {% endfor %}
+    </div>
     <div class="right-align">
       <a href="{{ site.baseurl }}/press" class="list-reset border-bottom accent">All articles</a>
     </div>
