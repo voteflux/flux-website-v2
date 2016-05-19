@@ -5,6 +5,7 @@ var path = require('path');
 // plugins
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   hash: true,
+  cache: false,
   template: __dirname + '/app/index.html',
   filename: 'index.html',
   inject: 'body'

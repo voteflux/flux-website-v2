@@ -7,7 +7,7 @@ import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
 
 
-const redirectUrl = window.location.href + 'step2'
+var redirectUrl = window.location.href + '/step2'
 
 const FormContainer = React.createClass({
   getInitialState() {
