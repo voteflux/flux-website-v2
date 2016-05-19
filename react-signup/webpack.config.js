@@ -4,6 +4,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 // plugins
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  hash: true,
   template: __dirname + '/app/index.html',
   filename: 'index.html',
   inject: 'body'
