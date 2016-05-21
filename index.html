@@ -271,13 +271,8 @@ social-media:
               <hr class="border-bottom accent-muted mb1 muted">
               <div class="flex flex-column justify-between height-2">
                 <div>
-                  {% if article.publishedIn == 'Press Release' %}
-                    <h5 class="mb2 gray">PRESS <span class="light-silver">{{ article.publishedIn | upcase }}</span>
-                    </h5>
-                  {% else %}
-                    <h5 class="mb2 gray">ARTICLE <span class="light-silver">{{ article.publishedIn | upcase }}</span>
-                    </h5>
-                  {% endif %}
+                  <h5 class="mb2 gray">{{ article.type | upcase }} / <span class="light-silver">{{ article.publishedIn | upcase }}</span>
+                  </h5>
                   <a href="{{ article.url }}" target="_blank" class="link-reset block hover-show-child">
                     <h3 class="h-font light line-height-4 accent-on-hover transition-fast inline">
                       {{ article.title }}
