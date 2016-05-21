@@ -21,7 +21,7 @@
     author: ""
     publishedIn: "The Mandarin"
     major: false
-    type: "print"
+    type: "article"
   -
     title: "Angry Voters wreak revenge on app-less politicians"
     url: "http://www.smh.com.au/comment/angry-voters-wreak-revenge-on-appless-politicians-20160516-gownx3.html"
@@ -29,7 +29,7 @@
     author: "Alan Stokes"
     publishedIn: "SMH"
     major: false
-    type: "print"
+    type: "article"
   -
     title: "Tech political party chasing members"
     url: "http://www.themercury.com.au/news/breaking-news/voteflux-eyes-membership-to-rival-greens/news-story/75cfae6d35028f6ca86e54b4905a66fc"
@@ -37,7 +37,7 @@
     author: "Andrew Drummond, AAP"
     publishedIn: "The Mercury"
     major: false
-    type: "print"
+    type: "article"
   -
     title: "Blockchain Imaginarium Ep04 - Vote for Flux"
     url: "https://soundcloud.com/cryptogoss/blockchain-imaginarium-episode-5-flux"
@@ -85,7 +85,7 @@
     author: "Flux"
     publishedIn: "Press Release"
     major: false
-    type: "print"
+    type: "press release"
   -
     title: "OPINION: Crowdsourcing democracy for the disenchanted"
     url: "http://www.begadistrictnews.com.au/story/3842657/crowdsourcing-democracy-for-the-fed-up/"
@@ -93,7 +93,7 @@
     author: "Alasdair McDonald"
     publishedIn: "Bega District News"
     major: false
-    type: "print"
+    type: "article"
   -
     title: "Flux: Australia’s new smart political party, where you matter"
     url: "http://thebigsmoke.com.au/2016/04/11/flux-australias-new-smart-political-party-vote-counts/"
@@ -101,7 +101,7 @@
     author: "Rob Idol"
     publishedIn: "The Big Smoke"
     major: true
-    type: "print"
+    type: "article"
   -
     title: "INNOVATION INSIGHTS: 14 Australian entrepreneurs share what innovation means to them"
     url: "http://www.businessinsider.com.au/innovation-insights-14-australian-entrepreneurs-share-what-innovation-means-to-them-2016-3"
@@ -109,7 +109,7 @@
     author: "Sarah Kimmorley, Josh Nicholas"
     publishedIn: "Business Insider Australia"
     major: false
-    type: "print"
+    type: "article"
   -
     title: "Is Australia's politics in a state of Flux?"
     url: "http://www.2ser.com/component/k2/item/21245-does-australia-s-preferential-voting-system-need-a-overhaul"
@@ -125,7 +125,7 @@
     author: "Angela Lavoipierre"
     publishedIn: "Triple J's Hack"
     major: true
-    type: "major"
+    type: "audio"
   -
     title: "Governments Around the World Are Warming Up to Bitcoin and the Blockchain"
     url: "http://www.nasdaq.com/article/governments-around-the-world-are-warming-up-to-bitcoin-and-the-blockchain-cm586766"
@@ -133,7 +133,7 @@
     author: "Prableen Bajpai"
     publishedIn: "Nasdaq"
     major: false
-    type: "minor"
+    type: "article"
   -
     title: "A party for voters to 'like'"
     url: "http://www.dailyexaminer.com.au/news/party-voters/2941736/"
@@ -141,7 +141,7 @@
     author: "Bill North"
     publishedIn: "The Daily Examiner"
     major: false
-    type: "minor"
+    type: "article"
   -
     title: "Bitcoin consultants form Flux political party in Australia"
     url: "http://www.neowin.net/news/bitcoin-consultants-form-flux-political-party-in-australia"
@@ -149,7 +149,7 @@
     author: "Boyd Chan"
     publishedIn: "Neowin"
     major: false
-    type: "minor"
+    type: "article"
   -
     title: "New political party Flux says it wants to change Australia’s political system by focusing on policy"
     url: "http://www.news.com.au/finance/work/leaders/new-political-party-flux-says-it-wants-to-change-australias-political-system-by-focusing-on-policy/news-story/984c7d181d564cb35e0f004c02e8e023"
@@ -157,7 +157,7 @@
     author: "Emily Moulton"
     publishedIn: "news.com.au"
     major: true
-    type: "major"
+    type: "article"
   -
     title: "Australian Political Party Aims to Reinvent Democracy with Blockchain Tech"
     url: "http://themerkle.com/news/australian-political-party-aims-to-reinvent-democracy-with-blockchain-tech/"
@@ -165,7 +165,7 @@
     author: "Traderman"
     publishedIn: "The Merkle"
     major: false
-    type: "minor"
+    type: "article"
   -
     title: "New Australian Political Party Seeks to Popularize Blockchain Voting"
     url: "http://www.coindesk.com/australian-political-party-blockchain-voting/"
@@ -173,7 +173,7 @@
     author: "Daniel Palmer"
     publishedIn: "Coindesk"
     major: false
-    type: "minor"
+    type: "article"
   -
     title: "Flux Party seeks to be the bitcoin of Australian politics"
     url: "http://www.reuters.com/article/us-australia-politics-tech-idUSKCN0VP2TJ"
@@ -181,7 +181,7 @@
     author: "Matt Siegel"
     publishedIn: "Reuters"
     major: true
-    type: "major"
+    type: "article"
   -
     title: "The Bitcoin of politics: Flux Party offers radical new model for democracy"
     url: "http://www.smh.com.au/federal-politics/political-news/the-bitcoin-of-politics-flux-party-offers-radical-new-model-for-democracy-20160205-gmn066.html"
@@ -189,7 +189,7 @@
     author: "Heath Aston"
     publishedIn: "SMH"
     major: true
-    type: "major"
+    type: "article"
   -
     title: "New political party 'Flux' set to register"
     url: "http://www.news.com.au/national/breaking-news/new-political-party-flux-set-to-register/news-story/dce5d1c926cc4a417025d4ffc1eb081f"
@@ -197,4 +197,4 @@
     author: "AAP"
     publishedIn: "news.com.au"
     major: true
-    type: "major"
+    type: "article"
