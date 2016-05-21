@@ -20,13 +20,8 @@ permalink: press/
           <hr class="border-bottom accent-muted mb1 muted">
           <div class="flex flex-column justify-between height-2 mb4">
             <div>
-              {% if article.publishedIn == 'Press Release' %}
-                <h4 class="h5 mb2 gray">PRESS / <span class="white">{{article.publishedIn | upcase }}</span>
-                </h4>
-              {% else %}
-                <h4 class="h5 mb2 gray">ARTICLE / <span class="white">{{article.publishedIn | upcase }}</span>
-                </h4>
-              {% endif %}
+              <h4 class="h5 mb2 gray">{{article.type | upcase}} / <span class="white">{{article.publishedIn | upcase }}</span>
+              </h4>
               <a href="{{ article.url }}" target="_blank" class="link-reset block hover-show-child">
                 <h2 class="h3 sm-h2 h-font light line-height-4 accent-on-hover transition-fast inline">
                   {{article.title}}
