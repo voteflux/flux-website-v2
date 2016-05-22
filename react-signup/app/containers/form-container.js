@@ -41,7 +41,12 @@ const FormContainer = React.createClass({
         });
         setTimeout(function() {
           window.location.assign(redirectUrl)
-        }, 1500)
+        }, 1500);
+
+        ga('send', {hitType: 'event', eventCategory: 'Membership Form', eventAction: 'Submission'});
+        fbq('track', 'Complete Registration');
+        fbq('track', 'NewMember');  // a different pixel thing to the above, keep both.
+
       } else if (response.statusText === "Conflict" || response.status === 409 || response.data === "Email already exists. Please update details instead of re-registering.") {
         this.setState({
           isLoading: false,
