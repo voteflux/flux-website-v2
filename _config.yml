@@ -30,18 +30,18 @@ social-media:
 
 # for navbar items
 navigation:
-  - url: /
-    title: Home
+  # - url: /
+  #   title: Home
   - url: /about
-    title: Flux explained
+    title: About
   - url: /candidates
     title: Candidates
   - url: /help-us
-    title: Help Flux
+    title: Help
   - url: /press
     title: Press
   - url: /#contact
-    title: Contact Us
+    title: Contact
 
 # Collections
 collections:

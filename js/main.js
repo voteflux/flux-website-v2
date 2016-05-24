@@ -113,10 +113,10 @@ if ( $('#js-candidates').length != 0 ) {
 // animate scroll behaviour on side menu
   $("a[href^='#']").on('click', function(e) {
     e.preventDefault();
-
+console.log("link-clicked")
     var hash = this.hash;
     // animate
-    $root.animate({
+    $('body').animate({
       scrollTop: $(hash).offset().top
     }, 500, 'swing', function() {
       window.location.hash = hash;
@@ -234,7 +234,9 @@ if ( $('#js-candidates').length != 0 ) {
   var $fading = $('#js-fading')
   var $document = $(document)
   var faded = false
-
+  // var contactHeight = $('#contact').outerHeight()
+  // var contactPos = $('#contact').offset().top
+    //  console.log(contactPos, contactHeight)
   $(window).bind('scroll', function(){
       var offset = $document.scrollTop()
       var opacity = 0
@@ -246,11 +248,15 @@ if ( $('#js-candidates').length != 0 ) {
           opacity = 1
           faded = true
       }
-// for logo text on dark background
+
+
+      // for logo text on dark background
       if (opacity >= 0.1) {
         $('.js-flux-text-darktheme').css({ fill: "#222" })
+        $("#js-nav-links").removeClass('white');
       } else {
         $('.js-flux-text-darktheme').css({ fill: "#fff" })
+        $("#js-nav-links").addClass('white');
       }
       $fading.css('opacity',opacity);
   });

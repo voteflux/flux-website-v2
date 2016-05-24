@@ -6,10 +6,10 @@ a {
   transition: opacity .1s ease;
   -webkit-tap-highlight-color: transparent;
   &:hover {
-    opacity: .85;
+    opacity: .7;
   }
   &:active {
-    opacity: .65;
+    opacity: .5;
   }
 }
 

@@ -51,13 +51,12 @@ social-media:
 ---
 
 {% include base.html %}
-{% include navbar.html %}
 
+  {% include navbar.html %}
 <main>
 <section class="bg-near-black py3 sm-pr4 relative texture-bg-img">
   <div class="mx-auto max-width-4 px2 md-px3">
     <div class="md-flex justify-between mxn2">
-
 <!-- LOGO -->
       <header class="white md-col-2 px2 mt2 pt1">
           <div class="silver">
@@ -69,8 +68,6 @@ social-media:
                   <div class="width-8rem">
                     {% include svg/flux-text-logo.html color="white" no-js=true %}
                   </div>
-                  <!-- <h1 class="hide">FLUX</h1> -->
-                  <!-- <h3 class="xs-hide sm-hide muted gray regular mb0">PROGRESS<br>FOR PROCESS</h3> -->
               </div>
             </div>
             <div class="xs-hide sm-hide">
@@ -169,7 +166,7 @@ social-media:
         </div>
       </div>
       <div class="right-align mt2">
-        <a href="{{site.baseurl}}/candidates" class="accent accent-on-hover">See all candidates</a>
+        <a href="{{site.baseurl}}/candidates" class="h3 border-bottom">See all candidates</a>
       </div>
   </div>
 </section>
@@ -351,57 +348,7 @@ social-media:
       font-size="h0 line-height-1"
       font-weight="bold dark-gray mb4" %}
 
-      <div class="sm-flex mxn2">
-        <div class="sm-col-4 px2 mb3">
-          {% include components/hr-muted.html %}
-          <h2 class="bold mb3">Email</h2>
-          <h3 class="bold h-font mb3 light line-height-3"> Currently the best way to get in contact is via email:</h3>
-          <hr class="white muted border-bottom m0">
-          <div class="mb2">
-            <h5 class="caps">Media Enquiries</h5>
-            <h3 class="bold h-font mt0">media@voteflux.org</h3>
-            <h3 class="bold h-font mt0">media.tas@voteflux.org</h3>
-          </div>
-          <hr class="white muted border-bottom m0">
-          <div class="mb2">
-            <h5 class="caps">The Leadership</h5>
-            <h3 class="bold h-font mt0">leadership@voteflux.org</h3>
-          </div>
-          <hr class="white muted border-bottom m0">
-          <div class="mb2">
-            <h5 class="caps">Nathan Spataro (Leader)</h5>
-            <h3 class="bold h-font mt0">nathan.spataro@voteflux.org</h3>
-          </div>
-          <hr class="white muted border-bottom m0">
-          <div class="mb2">
-            <h5 class="caps">Max Kaye (Deputy Leader)</h5>
-            <h3 class="bold h-font mt0">max.kaye@voteflux.org</h3>
-          </div>
-        </div>
-        <div class="sm-col-4 px2 mb3">
-          {% include components/hr-muted.html %}
-          <h2 class="bold mb3">Social Media</h2>
-          {% for social in page.social-media %}
-            <hr class="white muted border-bottom m0">
-            <div class="my2 flex">
-              <img src="img/social-icons/{{social.name}}-with-circle.svg" alt="{{social.name}}" width="36" class="mr2" />
-              <h3 class="bold h-font inline-block hover-show-child"><a href="{{ social.url }}" class="accent accent-on-hover transition-fast">{{ social.name | capitalize }}</a><i class="material-icons icon-adjust muted">call_made</i></h3>
-            </div>
-          {% endfor %}
-        </div>
-
-        <div class="sm-col-4 px2 mb3">
-          {% include components/hr-muted.html %}
-          <h2 class="bold mb3">Community Forum</h2>
-
-            <div class="my2">
-              <h3 class="bold h-font mb3 light line-height-3"> If you'd like to chat about technical or campaign details you can find us on our Community Forum</h3>
-              <div class="hover-show-child">
-                <a href="https://community.voteflux.org/" class="border-bottom">Join the discussion!</a><i class="material-icons icon-adjust muted">call_made</i>
-              </div>
-            </div>
-        </div>
-      </div>
+    {% include contact.html %}
   </div>
 </section>
 </main>

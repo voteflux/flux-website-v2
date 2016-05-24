@@ -1,0 +1,51 @@
+<div class="md-flex mxn2">
+  <div class="md-col-4 px2 mb3">
+    {% include components/hr-muted.html %}
+    <h2 class="bold mb3">Email</h2>
+    <p class="h3 bold h-font mb3 light line-height-3"> Currently the best way to get in contact is via email:</p>
+    <hr class="white muted border-bottom m0">
+    <div class="mb3">
+      <h5 class="caps">Media Enquiries</h5>
+      <h3 class="bold h-font mt0">media@voteflux.org</h3>
+      <h3 class="bold h-font mt0">media.tas@voteflux.org</h3>
+    </div>
+    <hr class="white muted border-bottom m0">
+    <div class="mb3">
+      <h5 class="caps">The Leadership</h5>
+      <h3 class="bold h-font mt0">leadership@voteflux.org</h3>
+    </div>
+    <hr class="white muted border-bottom m0">
+    <div class="mb3">
+      <h5 class="caps">Nathan Spataro (Leader)</h5>
+      <h3 class="bold h-font mt0">nathan.spataro@voteflux.org</h3>
+    </div>
+    <hr class="white muted border-bottom m0">
+    <div class="mb3">
+      <h5 class="caps">Max Kaye (Deputy Leader)</h5>
+      <h3 class="bold h-font mt0">max.kaye@voteflux.org</h3>
+    </div>
+  </div>
+  <div class="md-col-4 px2 mb3">
+    {% include components/hr-muted.html %}
+    <h2 class="bold mb3">Social Media</h2>
+    {% for social in site.social-media %}
+      <hr class="white muted border-bottom m0">
+      <div class="my2 flex">
+        <img src="{{site.baseurl}}/img/social-icons/{{social.name}}-with-circle.svg" alt="{{social.name}}" width="36" class="mr2" />
+        <h3 class="bold h-font inline-block hover-show-child"><a href="{{ social.url }}" class="accent accent-on-hover transition-fast">{{ social.name | capitalize }}</a><i class="material-icons icon-adjust muted">call_made</i></h3>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="md-col-4 px2 mb3">
+    {% include components/hr-muted.html %}
+    <h2 class="bold mb3">Community Forum</h2>
+
+      <div class="my2">
+        <p class="h3 bold h-font mb3 light line-height-3"> If you'd like to chat about technical or campaign details you can find us on our Community Forum</p>
+        <div class="hover-show-child">
+          <a href="https://community.voteflux.org/" class="h3 border-bottom">Join the discussion!</a><i class="material-icons icon-adjust muted">call_made</i>
+        </div>
+      </div>
+  </div>
+</div>
