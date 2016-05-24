@@ -197,7 +197,7 @@ console.log("link-clicked")
 	elemYear.innerHTML = intYear
 
 
-  // menu
+  //  menu
   var isOpen = true;
   var transitionTime = 150;
 
