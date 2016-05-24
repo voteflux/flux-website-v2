@@ -60,7 +60,6 @@ social-media:
 
 <!-- LOGO -->
       <header class="white md-col-2 px2 mt2 pt1">
-        <div class="">
           <div class="silver">
             <div class="xs-flex sm-flex md-block">
               <div class="md-mb1">
@@ -82,30 +81,27 @@ social-media:
               <h3><span id="js-member-count">Loading...</span></h3>
             </div>
           </div>
-        </div>
       </header>
 
 <!-- HERO SECTION -->
       <div class="md-col-9 pb3 px2 mt3">
-        <div>
-            {% include components/main-heading.html
-            text=page.hero-title
-            font-size="h0 line-height-2"
-            font-weight="bold"
-            classes="letter-spacing-1 mb2 sm-mb4 md-mt4 md-pt4 near-white" %}
-            <p class="h3 sm-h2 h-font light mb4 silver letter-spacing-2 line-height-4">
-              {{ page.hero-copy }}
-            </p>
-            <div class="inline-block">
-              <a href="{{site.baseurl}}/signup" class="h2 letter-spacing-1 accent border-bottom inline-block">
-                {{ page.hero-action }}
-              </a>
-              <span class="gray h3 block caps mt1 letter-spacing-1">become a member now</span>
-            </div>
-            <div class="md-hide lg-hide silver">
-              <h5 class="muted caps mt3">Registered Members</h5>
-              <h3><span id="js-member-count-mobile">Loading...</span></h3>
-            </div>
+        {% include components/main-heading.html
+        text=page.hero-title
+        font-size="h0 line-height-2"
+        font-weight="bold"
+        classes="letter-spacing-1 mb2 sm-mb4 md-mt4 md-pt4 near-white" %}
+        <p class="h3 sm-h2 h-font light mb4 silver letter-spacing-2 line-height-4">
+          {{ page.hero-copy }}
+        </p>
+        <div class="inline-block">
+          <a href="{{site.baseurl}}/signup" class="h2 letter-spacing-1 accent border-bottom inline-block">
+            {{ page.hero-action }}
+          </a>
+          <span class="gray h3 block caps mt1 letter-spacing-1">become a member now</span>
+        </div>
+        <div class="md-hide lg-hide silver">
+          <h5 class="muted caps mt3">Registered Members</h5>
+          <h3><span id="js-member-count-mobile">Loading...</span></h3>
         </div>
       </div>
     </div>
@@ -113,7 +109,7 @@ social-media:
 </section>
 
 {% if page.video %}
-<!-- VIDEO here -->
+<!-- VIDEO section here -->
 <section class="py4 bg-black light-gray">
   <div class="max-width-4 mx-auto px2 md-px3">
     <div class="lg-flex mxn2">
@@ -138,7 +134,8 @@ social-media:
 
       <div class="lg-col-8 px2 lg-px3">
         <a href=" https://www.youtube.com/watch?v=i7MCxADcrwE" data-lity class="relative block">
-          <i class="material-icons absolute center-xy z2 black h00">play_circle_filled</i>
+          <i class="material-icons absolute center-xy z3 white h0">play_arrow</i>
+          <i class="material-icons absolute center-xy z2 black muted h00">lens</i>
           <img class="col-12" src="https://img.youtube.com/vi/i7MCxADcrwE/sddefault.jpg" alt="preview 0">
         </a>
         <!-- <h5 class="muted right-align">Caption goes here</h5> -->
@@ -148,22 +145,20 @@ social-media:
 </section>
 {% endif %}
 
-
-{% if site.candidates %}
 <!-- CANDIDATES -->
+{% if site.candidates %}
 <section class="bg-near-white dark-gray pt4 pb3 sm-pr4 col-12 overflow-hidden">
   <div class="max-width-4 mx-auto px2 sm-px3">
     {% include components/main-heading.html
-      text="Meet the candidates"
+      text="Meet the lead candidates"
       font-size="h0 line-height-2"
       font-weight="bold" %}
-
     {% include components/hr-muted.html classes="mb3"%}
-
       <div class="mb3 mxn2">
         <div id="js-candidates">
-          {% for candidate in site.candidates %}
-            {% capture snippet %} {{ candidate.bio | first | truncate: 250 }} {% endcapture %}
+          {% assign candidates =  site.candidates |  where: "lead", true %}
+          {% for candidate in candidates %}
+            {% capture snippet %} {{ candidate.bio | first | truncatewords: 55 }} {% endcapture %}
             {% include candidates/candidate-card.html
                state=candidate.state
                house=candidate.house
