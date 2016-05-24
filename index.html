@@ -158,7 +158,7 @@ social-media:
         <div id="js-candidates">
           {% assign candidates =  site.candidates |  where: "lead", true %}
           {% for candidate in candidates %}
-            {% capture snippet %} {{ candidate.bio | first | truncatewords: 55 }} {% endcapture %}
+            {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
             {% include candidates/candidate-card.html
                state=candidate.state
                house=candidate.house
