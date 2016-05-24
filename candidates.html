@@ -35,7 +35,7 @@ dark-theme: true
       <div class="sm-flex flex-wrap mxn2">
         {% assign lead_candidates = site.candidates |  where: "lead", true %}
         {% for candidate in lead_candidates %}
-          {% capture snippet %} {{ candidate.bio | first | truncatewords: 55 }} {% endcapture %}
+          {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
           {% include candidates/candidate-card.html
              state=candidate.state
              house=candidate.house
@@ -54,7 +54,7 @@ dark-theme: true
       {% assign candidates =  site.candidates |  where: "lead", nil %}
       {% for candidate in candidates %}
         {% if candidate.hide == nil  %}
-          {% capture snippet %} {{ candidate.bio | first | truncatewords: 55 }} {% endcapture %}
+          {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
           {% include candidates/candidate-card.html
              state=candidate.state
              house=candidate.house
