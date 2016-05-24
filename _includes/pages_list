@@ -1,0 +1,24 @@
+
+{% for node in pages_list %}
+  {% if group == null or group == node.group %}
+    {% if include.mobile == true %}
+
+      {% if page.url == node.url %}
+        <li class="mb2 pb1"><a href="{{node.url}}" class="border-bottom border-accent pb1 link-reset">{{node.nav-title}}</a></li>
+      {% else %}
+        <li class="mb2"><a href="{{node.url}}" class="link-reset">{{node.nav-title}}</a></li>
+      {% endif %}
+
+    {% else %}
+
+      {% if page.url == node.url %}
+        <li class="active"><a href="{{node.url}}" class="border-bottom border-accent pb1 link-reset mr2 ml1 letter-spacing-2">{{node.nav-title}}</a></li>
+      {% else %}
+        <li><a href="{{node.url}}" class="link-reset mr2 ml1 letter-spacing-2">{{node.nav-title}}</a></li>
+      {% endif %}
+
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign pages_list = nil %}
+{% assign group = nil %}
