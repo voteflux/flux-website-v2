@@ -42,9 +42,6 @@ $(document).ready(function() {
   //     }
   // }
 
-
-
-
 if ( $('#js-candidates').length != 0 ) {
   // init slick carousel
   $('#js-candidates').slick({
@@ -55,6 +52,7 @@ if ( $('#js-candidates').length != 0 ) {
     arrows: true,
     focusOnSelect: false,
     cssEase: 'ease',
+    dots: true,
     responsive: [
       {
         breakpoint: 2000,
@@ -63,8 +61,7 @@ if ( $('#js-candidates').length != 0 ) {
           autoplaySpeed: 4000,
           speed: 1000,
           slidesToShow: 3,
-          slidesToScroll: 3,
-          dots: true
+          slidesToScroll: 3
         }
       },
       {
@@ -74,8 +71,7 @@ if ( $('#js-candidates').length != 0 ) {
           autoplaySpeed: 4000,
           speed: 1000,
           slidesToShow: 2,
-          slidesToScroll: 2,
-          dots: true
+          slidesToScroll: 2
         }
       },
       {
@@ -85,8 +81,7 @@ if ( $('#js-candidates').length != 0 ) {
           autoplaySpeed: 4000,
           speed: 1000,
           slidesToShow: 1,
-          slidesToScroll: 2,
-          dots: true
+          slidesToScroll: 2
         }
       },
       {
@@ -107,13 +102,12 @@ if ( $('#js-candidates').length != 0 ) {
 
 
 
-
   var $root = $('html, body');
 
 // animate scroll behaviour on side menu
   $("a[href^='#']").on('click', function(e) {
     e.preventDefault();
-console.log("link-clicked")
+      console.log("link-clicked")
     var hash = this.hash;
     // animate
     $('body').animate({

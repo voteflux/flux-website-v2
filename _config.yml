@@ -28,21 +28,6 @@ social-media:
   - name: reddit
     url: https://www.reddit.com/r/voteflux
 
-# for navbar items
-navigation:
-  # - url: /
-  #   title: Home
-  - url: /about
-    title: About
-  - url: /candidates
-    title: Candidates
-  - url: /help-us
-    title: Help
-  - url: /press
-    title: Press
-  - url: /#contact
-    title: Contact
-
 # Collections
 collections:
   about:
