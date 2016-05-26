@@ -42,9 +42,6 @@ $(document).ready(function() {
   //     }
   // }
 
-
-
-
 if ( $('#js-candidates').length != 0 ) {
   // init slick carousel
   $('#js-candidates').slick({
@@ -55,6 +52,7 @@ if ( $('#js-candidates').length != 0 ) {
     arrows: true,
     focusOnSelect: false,
     cssEase: 'ease',
+    dots: true,
     responsive: [
       {
         breakpoint: 2000,
@@ -63,8 +61,7 @@ if ( $('#js-candidates').length != 0 ) {
           autoplaySpeed: 4000,
           speed: 1000,
           slidesToShow: 3,
-          slidesToScroll: 3,
-          dots: true
+          slidesToScroll: 3
         }
       },
       {
@@ -74,8 +71,7 @@ if ( $('#js-candidates').length != 0 ) {
           autoplaySpeed: 4000,
           speed: 1000,
           slidesToShow: 2,
-          slidesToScroll: 2,
-          dots: true
+          slidesToScroll: 2
         }
       },
       {
@@ -85,8 +81,7 @@ if ( $('#js-candidates').length != 0 ) {
           autoplaySpeed: 4000,
           speed: 1000,
           slidesToShow: 1,
-          slidesToScroll: 2,
-          dots: true
+          slidesToScroll: 2
         }
       },
       {
@@ -107,16 +102,15 @@ if ( $('#js-candidates').length != 0 ) {
 
 
 
-
   var $root = $('html, body');
 
 // animate scroll behaviour on side menu
   $("a[href^='#']").on('click', function(e) {
     e.preventDefault();
-
+      console.log("link-clicked")
     var hash = this.hash;
     // animate
-    $root.animate({
+    $('body').animate({
       scrollTop: $(hash).offset().top
     }, 500, 'swing', function() {
       window.location.hash = hash;
@@ -197,7 +191,7 @@ if ( $('#js-candidates').length != 0 ) {
 	elemYear.innerHTML = intYear
 
 
-  // menu
+  //  menu
   var isOpen = true;
   var transitionTime = 150;
 
@@ -234,7 +228,9 @@ if ( $('#js-candidates').length != 0 ) {
   var $fading = $('#js-fading')
   var $document = $(document)
   var faded = false
-
+  // var contactHeight = $('#contact').outerHeight()
+  // var contactPos = $('#contact').offset().top
+    //  console.log(contactPos, contactHeight)
   $(window).bind('scroll', function(){
       var offset = $document.scrollTop()
       var opacity = 0
@@ -246,11 +242,15 @@ if ( $('#js-candidates').length != 0 ) {
           opacity = 1
           faded = true
       }
-// for logo text on dark background
+
+
+      // for logo text on dark background
       if (opacity >= 0.1) {
         $('.js-flux-text-darktheme').css({ fill: "#222" })
+        $("#js-nav-links").removeClass('white');
       } else {
         $('.js-flux-text-darktheme').css({ fill: "#fff" })
+        $("#js-nav-links").addClass('white');
       }
       $fading.css('opacity',opacity);
   });

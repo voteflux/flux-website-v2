@@ -5,10 +5,9 @@ header-theme: light
 
 {% include base.html %}
 {% capture page_url %}https:/{{site.baseurl}}{{page.url}}{% endcapture %}
-
 {% include navbar.html%}
-
-<div class="full-bg-img height-30vh"></div>
+<div class="full-bg-img height-30vh">
+</div>
 <main class="bg-white mid-gray pb4 pt3 sm-pt5 px2 sm-px3">
   <div class="mx-auto max-width-3">
 
@@ -39,12 +38,6 @@ header-theme: light
 
   </div>
 </main>
-
-{% comment %}
-{% if page.tag-topic == 'why' %}
-{% assign items = site.about | where: 'tag-topic', 'what' %}
-{% endif %}
-{% endcomment %}
 
 {% assign items = site.about | sort: 'menu-order' %}
 

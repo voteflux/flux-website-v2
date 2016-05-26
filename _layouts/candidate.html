@@ -3,20 +3,14 @@ layout: default
 dark-theme: true
 ---
 
-{% include navbar.html %}
-{% include base.html %}
-<main class="bg-near-white dark-gray px1">
-  {% comment %}
-  <div class="mx-auto max-width-3 mb3">
-    <i class="material-icons mr1">arrow_back</i><a href="{{site.baseurl}}/candidates" class="inline-block">Back to candidates</a>
-  </div>
-  {% endcomment %}
-  <div class="bg-near-black height-40vh absolute z1 left-0 top-0 col-12 texture-bg-img">
 
+{% include base.html %}
+{% include navbar.html %}
+<main class="bg-near-white dark-gray px1">
+  <div class="bg-near-black height-40vh absolute z1 left-0 top-0 col-12 texture-bg-img">
   </div>
   <div class="mx-auto max-width-3 px2 py3 sm-px4 sm-py4 bg-white relative mt5 z2">
     <h5 class="h4"><span class="gray">{{page.state}}</span> / <span class="bold">{{page.house}}</span></h5>
-
     {% include components/main-heading.html
       text=page.title
       font-size="h0 line-height-2"
@@ -32,13 +26,13 @@ dark-theme: true
           <ul class="list-reset m0 gray">
             <li class="mb2"><i class="material-icons mr1">email</i> {{page.email}}</li>
             {% if page.twitter %}
-              <li class="inline-block mr1 hover-show-child"><a class="link-reset accent-on-hover" href="{{page.twitter}}" target="_blank">Twitter</a><i class="material-icons icon-adjust muted">call_made</i></li>
+              <li class="inline-block mr1 hover-show-child"><a class="border-bottom accent" href="{{page.twitter}}" target="_blank">Twitter</a><i class="material-icons icon-adjust muted">call_made</i></li>
             {% endif %}
             {% if page.facebook %}
-              <li class="inline-block mr1 hover-show-child"><a class="link-reset accent-on-hover" href="{{page.facebook}}" target="_blank">Facebook</a><i class="material-icons icon-adjust muted">call_made</i></li>
+              <li class="inline-block mr1 hover-show-child"><a class="border-bottom accent" href="{{page.facebook}}" target="_blank">Facebook</a><i class="material-icons icon-adjust muted">call_made</i></li>
             {% endif %}
             {% if page.linkedin %}
-              <li class="inline-block mr1 hover-show-child"><a class="link-reset accent-on-hover" href="{{page.linkedin}}" target="_blank">Linkedin</a><i class="material-icons icon-adjust muted">call_made</i></li>
+              <li class="inline-block mr1 hover-show-child"><a class="border-bottom accent" href="{{page.linkedin}}" target="_blank">Linkedin</a><i class="material-icons icon-adjust muted">call_made</i></li>
             {% endif %}
           </ul>
           <hr class="border-bottom light-gray">

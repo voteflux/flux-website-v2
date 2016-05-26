@@ -2,11 +2,15 @@
 layout: default
 permalink: /candidates/
 dark-theme: true
+group: navigation
+nav-title: Candidates
+nav-order: 20
+title: Flux candidates
 ---
 
 {% include navbar.html %}
-<section class="py4 bg-near-black texture-bg-img near-white">
-  <div class="mx-auto max-width-4 px2 ">
+<section class="py4 pt5 bg-near-black texture-bg-img near-white">
+  <div class="mx-auto max-width-4 px2 sm-px3">
     <div class=" mt4">
 
       {% include components/main-heading.html
@@ -21,14 +25,20 @@ dark-theme: true
         <p class="h4 light sm-h3 letter-spacing-3 silver">All our Flux candidates have made a public declaration stating that they will act as a proxy for the Flux system and that they won't use their status for personal gain (including personal policy agenda).</p>
       </div>
     </div>
-  <div>
+  </div>
 </section>
 
-<div class="bg-near-white py3">
-  <div class="mx-auto max-width-4 px2">
-
-      <div class="sm-flex flex-wrap mxn2 sm-pr4 dark-gray">
-        {% for candidate in site.candidates %}
+<div class="bg-light-gray py4">
+  <div class="mx-auto max-width-4 px2 sm-px3">
+    <div class="sm-pr4 dark-gray">
+      {% include components/main-heading.html
+        text="Lead candidates"
+        font-size="h1 line-height-2"
+        font-weight="bold" %}
+      {% include components/hr-muted.html classes="mb3"%}
+      <div class="sm-flex flex-wrap mxn2">
+        {% assign lead_candidates = site.candidates |  where: "lead", true %}
+        {% for candidate in lead_candidates %}
           {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
           {% include candidates/candidate-card.html
              state=candidate.state
@@ -38,6 +48,25 @@ dark-theme: true
              bio=snippet   %}
         {% endfor %}
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white py4">
+  <div class="mx-auto max-width-4 px2">
+    <div class="sm-flex flex-wrap mxn2 sm-pr4 dark-gray">
+      {% assign candidates =  site.candidates |  where: "lead", nil %}
+      {% for candidate in candidates %}
+        {% if candidate.hide == nil  %}
+          {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
+          {% include candidates/candidate-card.html
+             state=candidate.state
+             house=candidate.house
+             url=candidate.url
+             title=candidate.title
+             bio=snippet   %}
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>

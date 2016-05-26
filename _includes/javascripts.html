@@ -1,7 +1,9 @@
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{site.baseurl}}/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 <script src="{{site.baseurl}}/js/plugins.js"></script>
-<script src="{{site.baseurl}}/js/main.js"></script>
+<!-- <script src="{{site.baseurl}}/js/main.js?ver=1"></script> -->
+<script>document.write('<script src="{{site.baseurl}}/js/main.js?ver=' + Math.floor(Math.random() * 10000) + '"\><\/script>');</script>
+
 {% if page.carousel %}
 <script type="text/javascript" src="{{site.baseurl}}/js/slick.min.js"></script>
 {% endif %}
