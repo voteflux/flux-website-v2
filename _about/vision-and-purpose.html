@@ -1,0 +1,40 @@
+---
+layout: about
+title: Vision and Purpose
+permalink: about/vision-and-purpose/
+tag-section: about flux
+tag-topic: vision-and-purpose
+menu-order: 0.5
+page-content:
+  - subheading: We believe in democracy.
+    body: >
+      <p>Our mission is the distribution of real political power to include all Australians. <p>
+      <p>We are a movement of political expression, not political ideology. We value the contribution of every Australian, no matter how great or small. We believe in a system which promotes autonomy, purpose, and expertise, as means to deliver excellent policy.</p>
+      <p>We seek to dismantle political apathy, by empowering the disenfranchised, and motivating a new generation of innovative Australians to take responsibility for their society.</p>
+      <p><strong>We value people, not some people, but all people, and recognise our differences as strengths, not weaknesses.</strong></p>
+      <p>We believe in a free and open society, characterised by freedom of speech, freedom of association, and the free flow of political ideas.</p>
+      <p>We are excited about a democracy for the information age. One which fosters constructive criticism, encourages innovation, and empowers our best and brightest.</p>
+---
+
+
+{% for content in page.page-content %}
+  <div class="mb3">
+    <h3 class="mid">{{ content.subheading }}</h3>
+    <p class="mid-silver">{{ content.body }}</p>
+  </div>
+{% endfor %}
+
+
+{% comment %}
+<p>
+  Flux is a gateway Australians can use, to participate directly in parliament, making the need for trust in elected officials a thing of the past. Elected Flux MP’s and Senators give up their autonomy and use their votes in line with the outcomes produced by the Flux ecosystem; an ecosystem comprised of ordinary Aussies like you.
+</p>
+
+<p>
+  When Flux is implemented, it will take the form of an app you can access right from your computer or smartphone. You’ll be given a vote on every bill put before Federal Parliament, and can use that vote immediately on the issue at hand, give it to a trusted third party to cast on your behalf, or save it for an issue you care more passionately about later.
+</p>
+
+<p>
+  Flux as a party is a vehicle for driving this systemic political change, with no policy platform beyond parliamentary reform. Flux as a system, is a tool for changing how policy is shaped. It will allow more voices to join the conversation, empower specialists to become politically involved in their fields, and grant Australians direct access to producing better policy for a better Australia.
+</p>
+{% endcomment %}
