@@ -49,10 +49,10 @@ $(document).ready(function() {
 
     $('#clock').countdown(nextYear.toDate(), function(event) {
        $(this).html(event.strftime(''
-          + '<div class="inline-block px1"> <h3 class="m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
-          + '<div class="inline-block px1"> <h3 class="m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
-          + '<div class="inline-block px1"> <h3 class="m0 bold">%M</h3> <h6 class="m0 muted">Minute%!M</h6> </div>'
-          + '<div class="inline-block px1"> <h3 class="m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>'));
+          + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
+          + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
+          + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%M</h3> <h6 class="m0 muted">Minute%!M</h6> </div>'
+          + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>'));
     })
     .on('finish.countdown', function(event){
       $(this).html('THE BIG ANNOUNCEMENT!');
