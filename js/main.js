@@ -42,62 +42,82 @@ $(document).ready(function() {
   //     }
   // }
 
-if ( $('#js-candidates').length != 0 ) {
-  // init slick carousel
-  $('#js-candidates').slick({
-    autoplay: false,
-    accessibility: true,
-    pauseOnHover: true,
-    speed: 700,
-    arrows: true,
-    focusOnSelect: false,
-    cssEase: 'ease',
-    dots: true,
-    responsive: [
-      {
-        breakpoint: 2000,
-        settings: {
-          autoplay: true,
-          autoplaySpeed: 4000,
-          speed: 1000,
-          slidesToShow: 3,
-          slidesToScroll: 3
+
+  // countdown
+  if( $('#clock').length ) {
+    var nextYear = moment.tz("2016-06-29 11:05", "UTC");
+
+    $('#clock').countdown(nextYear.toDate(), function(event) {
+       $(this).html(event.strftime(''
+          + '<div class="inline-block px1"> <h3 class="m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
+          + '<div class="inline-block px1"> <h3 class="m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
+          + '<div class="inline-block px1"> <h3 class="m0 bold">%M</h3> <h6 class="m0 muted">Minute%!M</h6> </div>'
+          + '<div class="inline-block px1"> <h3 class="m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>'));
+    })
+    .on('finish.countdown', function(event){
+      $(this).html('THE BIG ANNOUNCEMENT!');
+    });
+
+    var countDownHeight = $("#countdown-wrapper").outerHeight(true);
+    $('footer').css({'margin-bottom': countDownHeight + 'px'})
+  }
+
+  if ( $('#js-candidates').length != 0 ) {
+    // init slick carousel
+    $('#js-candidates').slick({
+      autoplay: false,
+      accessibility: true,
+      pauseOnHover: true,
+      speed: 700,
+      arrows: true,
+      focusOnSelect: false,
+      cssEase: 'ease',
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 2000,
+          settings: {
+            autoplay: true,
+            autoplaySpeed: 4000,
+            speed: 1000,
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            autoplay: true,
+            autoplaySpeed: 4000,
+            speed: 1000,
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            autoplay: true,
+            autoplaySpeed: 4000,
+            speed: 1000,
+            slidesToShow: 1,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: false
+          }
         }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          autoplay: true,
-          autoplaySpeed: 4000,
-          speed: 1000,
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          autoplay: true,
-          autoplaySpeed: 4000,
-          speed: 1000,
-          slidesToShow: 1,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: false
-        }
-      }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
-  })
-};
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    })
+  };
 
 
 
@@ -169,10 +189,10 @@ if ( $('#js-candidates').length != 0 ) {
         var el = document.getElementById("js-member-count")
         var elMobile = document.getElementById("js-member-count-mobile")
 
-        if (el) {
+        if (Boolean(el)) {
           el.innerHTML = memberCount.toString()
         }
-        if (elMobile) {
+        if (Boolean(elMobile)) {
           elMobile.innerHTML = memberCount.toString()
         }
       },
