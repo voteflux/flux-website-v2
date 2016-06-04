@@ -1,0 +1,32 @@
+---
+layout: about
+title: Ways to Help
+permalink: about/ways-to-help/
+tag-section: about flux
+tag-topic: ways to help
+menu-order: 4.9
+page-content:
+  - subheading: Join Our Thunderclap
+    showbefore: 2016-07-01
+    body: >
+      <iframe frameborder='0' height='540px' src='https://www.thunderclap.it/projects/42541-flux-the-system/embed' width='250px'></iframe>
+  - subheading: Become a Volunteer
+    body: >
+      <p>You can sign up to the volunteer mailing list by marking the checkbox on your member details page, or adding your email <a href="https://api.voteflux.org/static/html/member_volunteer.html">here</a>.</p>
+      <p>Also feel free to join our <a href="https://community.voteflux.org/">Community Forums</a> and our <a href="http://volunteer-slack.voteflux.org">Volunteer Slack Team</a>.</p>
+---
+
+
+{% for content in page.page-content %}
+  <div class="mb3">
+    {% if (content.showbefore && site.date < content.showbefore) %}
+      <h3 class="mid">{{ content.subheading }}</h3>
+      <p class="mid-silver">{{ content.body }}</p>
+    {% else %}
+      {% unless content.showbefore %}
+        <h3 class="mid">{{ content.subheading }}</h3>
+        <p class="mid-silver">{{ content.body }}</p>
+      {% endunless %}
+    {% endif %}
+  </div>
+{% endfor %}

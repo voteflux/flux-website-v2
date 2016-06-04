@@ -7,6 +7,14 @@
     major: true
     type: "video"
   -
+    title: "PRESS RELEASE: The West Australian"
+    url: ""
+    date: "2016-06-02"
+    author: "Flux Media"
+    publishedIn: "Internal"
+    major: true
+    type: "press release"
+  -
     title: "Streetbeat interviews Nathan Spataro Senate candidate for Flux Party reform democracy"
     url: "https://www.mixcloud.com/StreetbeatHHH/streetbeat-interviews-nathan-spataro-senate-candidate-for-flux-party-reform-democracy/"
     date: "2016-05-20"
