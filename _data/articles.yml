@@ -15,6 +15,14 @@
     major: true
     type: "press release"
   -
+    title: "Press Release: Flux Robot Candidates Announced"
+    url: "https://github.com/voteflux/vote-flux-v2/raw/master/press-releases/20160524-PR-Flux-Robot-Candidates-Announced.pdf"
+    date: "2016-05-24"
+    author: "Flux"
+    publishedIn: "Press Release"
+    major: true
+    type: "press release"
+  -
     title: "Streetbeat interviews Nathan Spataro Senate candidate for Flux Party reform democracy"
     url: "https://www.mixcloud.com/StreetbeatHHH/streetbeat-interviews-nathan-spataro-senate-candidate-for-flux-party-reform-democracy/"
     date: "2016-05-20"
