@@ -1,6 +1,6 @@
-<nav class="">
+<nav class="fixed col-12 top-0 left-0 z5">
 <!-- Nav bar -->
-  <div id="js-fading" style="opacity: 0" class="fixed z4 col-12 py3 bg-white left-0 top-0 navbar-height border-bottom border-near-white">
+  <div id="js-fading" style="opacity: 0" class="absolute z4 col-12 py3 bg-white left-0 top-0 navbar-height border-bottom border-near-white">
   {% if page.home %}
     <div class="absolute top-0 left-0 mt1 z1 ml2 sm-ml3">
       <a class="js-menu-hide link-reset block no-focus flex relative z2" href="{{site.baseurl}}/">
@@ -17,7 +17,7 @@
   </div>
 
 
-  <div class="fixed col-12 top-0 left-0 z5 px2 sm-px3 py1">
+  <div class="absolute col-12 top-0 left-0 z5 px2 sm-px3 py1">
     <div class="flex">
 
         {% if page.home %}
@@ -42,9 +42,6 @@
             </span>
           </a>
         {% endif %}
-
-
-
 
     <div class="flex-auto right-align flex justify-end items-center absolute right-0 top-0 mr2 sm-mr3 mt1">
 
@@ -77,7 +74,6 @@
     <div class="height-100vh fixed overflow-scroll light-gray left-0 top-0 col-12 pt3 z2">
       <div class="px3 sm-px4">
         <div class="max-width-2 pb5">
-
           <a class="link-reset block no-focus flex items-center" href="{{site.baseurl}}/">
             <span class="width-5rem block mr2">
               {% include svg/flux-mark.html %}
@@ -88,9 +84,7 @@
                 no-js="true" %}
             </span>
           </a>
-
           <hr class="dark-gray border-bottom my2">
-
           <ul class='white list-reset h2 sm-h1'>
             {% assign pages_list = site.pages | sort: "nav-order" %}
             {% assign group = 'navigation' %}

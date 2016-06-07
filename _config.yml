@@ -19,6 +19,7 @@ accent-color: "#ff4500"
 base-color: "#0b0b0e"
 meetups: false
 candidates: false
+countdown: true
 
 social-media:
   - name: facebook
