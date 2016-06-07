@@ -48,7 +48,7 @@ $(document).ready(function() {
     var countdownTo = new Date(1465862400*1000);  // June 14th 10am
 
     $('#clock').countdown(countdownTo, function(event) {
-       $(this).html(event.strftime('<div class="inline-block"><h3 class="sm-h2 m0 bold">Announcement In:</h3> <h6 class="sm-h6 m0 muted">&nbsp;</h6></div> '
+       $(this).html(event.strftime('<div class="inline-block"><h4 class="sm-h3 m0 bold">Announcement:</h4> <h6 class="sm-h6 m0 muted">&nbsp;</h6></div> '
           + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
           + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
           + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%M</h3> <h6 class="m0 muted">Minute%!M</h6> </div>'
