@@ -45,9 +45,9 @@ $(document).ready(function() {
 
   // countdown
   if( $('#clock').length ) {
-    var nextYear = moment.tz("2016-06-29 11:05", "UTC");
+    var countdownTo = new Date(1465862400*1000);
 
-    $('#clock').countdown(nextYear.toDate(), function(event) {
+    $('#clock').countdown(countdownTo, function(event) {
        $(this).html(event.strftime(''
           + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
           + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
