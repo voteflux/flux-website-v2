@@ -49,10 +49,10 @@ $(document).ready(function() {
 
     $('#clock').countdown(countdownTo, function(event) {
        $(this).html(event.strftime('<div class="inline-block"><h4 class="sm-h3 m0 bold">Announcement:</h4> <h6 class="sm-h6 m0 muted">&nbsp;</h6></div> '
-          + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
-          + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
-          + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%M</h3> <h6 class="m0 muted">Minute%!M</h6> </div>'
-          + '<div class="inline-block px1"> <h3 class="sm-h2 m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>'));
+          + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
+          + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
+          + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%M</h3> <h6 class="m0 muted">Minute%!M</h6> </div>'
+          + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>'));
     })
     .on('finish.countdown', function(event){
       $(this).html('THE BIG ANNOUNCEMENT!');
