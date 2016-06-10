@@ -184,16 +184,20 @@ $(document).ready(function() {
         console.log('error')
       },
       success: function(response) {
-        var data = JSON.parse(response)
-        var memberCount = data.n_members
-        var el = document.getElementById("js-member-count")
-        var elMobile = document.getElementById("js-member-count-mobile")
+        var data = JSON.parse(response);
+        var memberCount = data.n_members;
+        var el = document.getElementById("js-member-count");
+        var elMobile = document.getElementById("js-member-count-mobile");
+        var volCountEl = document.getElementById("js-volunteer-count");
+        var volCountElMobile = document.getElementById("js-volunteer-count-mobile");
 
         if (Boolean(el)) {
-          el.innerHTML = memberCount.toString()
+          el.innerHTML = memberCount.toString();
+          volCountEl.innerHTML = data.n_volunteers;
         }
         if (Boolean(elMobile)) {
-          elMobile.innerHTML = memberCount.toString()
+          elMobile.innerHTML = memberCount.toString();
+          volCountElMobile.innerHTML = data.n_volunteers;
         }
       },
       type: 'GET'
