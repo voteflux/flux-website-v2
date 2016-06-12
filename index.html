@@ -51,8 +51,7 @@ social-media:
 ---
 
 {% include base.html %}
-
-  {% include navbar.html %}
+{% include navbar.html %}
 <main>
 <section class="bg-near-black py3 sm-pr4 relative texture-bg-img">
   <div class="mx-auto max-width-4 px2 md-px3">
@@ -75,9 +74,9 @@ social-media:
                 <hr class="muted border-bottom black width-8rem left my2">
               </div>
               <h5 class="muted caps">Registered<br>Members</h5>
-              <h3><span id="js-member-count">Loading...</span></h3>
+              <h3> <span id="js-member-count">Loading...</span> </h3>
               <h5 class="muted caps">Volunteers</h5>
-              <h3><span id="js-volunteer-count">Loading...</span></h3>
+              <h3> <span id="js-volunteer-count">Loading...</span> </h3>
             </div>
           </div>
       </header>
@@ -109,13 +108,32 @@ social-media:
   </div>
 </section>
 
+
+<!-- ANNOUNCEMENT SECTION -->
+<section id="js-announcement-home" class="hide py4 sm-pr4 bg-white dark-gray">
+  <div class="max-width-4 mx-auto px2 md-px3">
+    <div class="mb4">
+      <!-- <div class="inline-block"><img src="{{site.baseurl}}/img/megaphone-black.svg"/></div> -->
+
+      <h1 class="h0 mb3">Flux announces Lorem ipsum dolor sit amet, consectetur adipisicing elite</h1>
+      <p class="h3 sm-h2 h-font light mb4 gray letter-spacing-2 line-height-4">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <a href="#!" class="h2 letter-spacing-1 accent border-bottom inline-block">
+      Read the announcement
+    </a>
+  </div>
+</section>
+
+
 {% if page.video %}
 <!-- VIDEO section here -->
-<section class="py4 bg-black light-gray">
-  <div class="max-width-4 mx-auto px2 md-px3">
+<section class="py4 bg-black light-gray px2 md-px3">
+  <div class="max-width-4 mx-auto">
     <div class="lg-flex mxn2">
 
-      <div class="lg-col-4 px2 lg-px3 ">
+      <div class="lg-col-4 px2">
         {% include components/main-heading.html
           text="Flux in a nutshell"
           sub-text="01:56"
@@ -133,7 +151,7 @@ social-media:
           </div>
       </div>
 
-      <div class="lg-col-8 px2 lg-px3">
+      <div class="lg-col-8 px2">
         <a href=" https://www.youtube.com/watch?v=i7MCxADcrwE&rel=0" data-lity class="relative block">
           <i class="material-icons absolute center-xy z3 white h0">play_arrow</i>
           <i class="material-icons absolute center-xy z2 near-black muted h00">lens</i>
@@ -147,11 +165,8 @@ social-media:
 {% endif %}
 
 <!-- PUNT  -->
-<section class="height-40vh py2 sm-py4 relative bg-dark-gray">
-  <!-- <div class="punt-full-bg-img height-40vh absolute col-12 top-0 left-0 right-0 bottom-0 z1">
-  </div> -->
-
-  <div class="max-width-4 mx-auto sm-px2 md-px3 relative z2 px2 sm-pr4">
+<section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
+  <div class="max-width-4 mx-auto relative z2sm-pr4">
     <div class="lg-flex mxn2">
       <div class="lg-col-6 px2">
         <div class="bg-near-black light-gray px3 py4 sm-p4 mb3">
@@ -176,11 +191,11 @@ social-media:
       </div>
       <div class="lg-col-6 px2">
         <img src="/img/punt.jpg" alt="" class="block mb3 col-12"/>
-        <div class="sm-flex">
-          <div class="sm-col-8 lg-mr2">
+        <div class="flex">
+          <div class="col-8 lg-mr2">
               <img src="/img/punt-2.jpg" alt="" class='col-12'/>
           </div>
-          <div class="sm-col-4 relative z1">
+          <div class="col-4 relative z1">
                 <img src="/img/punt-3.jpg" alt="" class="rotate-right deep-shadow col-12"/>
           </div>
         </div>
@@ -222,8 +237,8 @@ social-media:
 {% endif %}
 
 <!-- WHY FLUX SECTION -->
-<section class="bg-white py4">
-  <div class="max-width-4 mx-auto dark-gray px2 md-px3">
+<section class="bg-white py4 px2 md-px3">
+  <div class="max-width-4 mx-auto dark-gray">
     <div class="md-flex mb3">
       <div class="md-col-9">
         <h5 class="h4"><span class="gray">ABOUT FLUX</span> / <span class="bold">WHY</span></h5>
@@ -270,8 +285,8 @@ social-media:
 {% assign items = site.about | sort: 'menu-order' %}
 {% for item in items %}
   {% if item.tag-topic != 'why' %}
-    <section class="bg-white dark-gray py4 relative z1">
-      <div class="max-width-4 mx-auto px2 md-px3">
+    <section class="bg-white dark-gray py4 relative z1 px2 md-px3">
+      <div class="max-width-4 mx-auto">
         <div class="sm-col-9">
           <h5 class="h4"><span class="gray">
             ABOUT FLUX</span> / <span class="bold">{{ item.tag-topic | upcase }}</span>
@@ -288,8 +303,8 @@ social-media:
 {% endfor %}
 
 <!-- IN THE NEWS -->
-<section class="py4 bg-near-black light-gray texture-bg-img sm-pr4">
-  <div class="max-width-4 mx-auto px2 md-px3">
+<section class="py4 bg-near-black light-gray texture-bg-img sm-pr4 px2 md-px3">
+  <div class="max-width-4 mx-auto">
     <div class="sm-flex items-center">
       <div class="flex-auto">
       {% include components/main-heading.html

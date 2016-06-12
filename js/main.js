@@ -24,12 +24,36 @@ checkReferrer = (function() {
 }());
 
 
+fluxAnnounce = (function() {
+  return {
+    closeModal: function () {
+      $('#js-modal').fadeOut('fast');
+    },
+    showModal: function() {
+      $('#js-modal').fadeIn('fast');
+    },
+    showSection: function() {
+      $('#js-announcement-home').removeClass('hide')
+    },
+    removeCounter: function() {
+      $("#countdown-wrapper").addClass('hide')
+    }
+  }
+}());
+
+
 $(document).ready(function() {
+
+  // close ANNOUNCEMENT modal
+  $('#js-modal-close').on('click', function() {
+    fluxAnnounce.closeModal();
+  })
+
+  //referrer
   if(window.location.hostname === 'localhost') {
     // checkReferrer.addTestParam('r')
   }
   var referrer = checkReferrer.getParam('r');
-
   if(referrer){
     localStorage.setItem("signup_referral", referrer);
   }
@@ -45,8 +69,8 @@ $(document).ready(function() {
 
   // countdown
   if( $('#clock').length ) {
-    var countdownTo = new Date(1465948800*1000);  // June 15th 10am
-
+    // var countdownTo = new Date(1465948800*1000);  // June 15th 10am
+    var countdownTo = new Date('Sun Jun 12 2016 23:40:33 GMT+1000 (AEST) (Standard)')
     $('#clock').countdown(countdownTo, function(event) {
        $(this).html(event.strftime(
             '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
@@ -55,13 +79,16 @@ $(document).ready(function() {
           + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>' + '</div>'));
     })
     .on('finish.countdown', function(event){
-      $(this).html('THE BIG ANNOUNCEMENT!');
+      fluxAnnounce.showModal();
+      fluxAnnounce.showSection();
+      fluxAnnounce.removeCounter();
     });
 
     var countDownHeight = $("#countdown-wrapper").outerHeight(true);
     $('footer').css({'margin-bottom': countDownHeight + 'px'})
   }
 
+  // candidates slider
   if ( $('#js-candidates').length != 0 ) {
     // init slick carousel
     $('#js-candidates').slick({
@@ -120,8 +147,6 @@ $(document).ready(function() {
   };
 
 
-
-
   var $root = $('html, body');
 
 // animate scroll behaviour on side menu
@@ -155,25 +180,7 @@ $(document).ready(function() {
   };
 
 
-
-
-
-
-  // meetup
-  // $.ajax({
-  //   url: "https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=FluxSydney&sig=3ddb1a95711db994ebba2b2dc0d2e7ffb09e40fa&page=200&fields=&sig_id=96374432&order=time&desc=false&status=upcoming",
-  //   error: function() {
-  //     console.log('error');
-  //   },
-  //   success: function(response) {
-  //     console.log(response);
-  //     var d = response.results[0];
-
-  //   },
-  //   type: 'GET'
-  // })
-
-  // get info ajax request
+  // get member and volenteer info ajax request
   var getMembers = function() {
     $.ajax({
       url: "https://api.voteflux.org/api/v0/getinfo",
@@ -209,13 +216,14 @@ $(document).ready(function() {
   setInterval(getMembers, interval);
 
 
+  // footer date
 	var dteNow = new Date();
 	var intYear = dteNow.getFullYear();
   var elemYear = document.getElementById("js-footer-year");
 	elemYear.innerHTML = intYear
 
 
-  //  menu
+  // nav menu
   var isOpen = true;
   var transitionTime = 150;
 
@@ -245,7 +253,6 @@ $(document).ready(function() {
     // for hamburger animation
     $("#js-menu-button").toggleClass('is-active');
   };
-
 
   var fadeStart = 0
   var fadeUntil = 150
