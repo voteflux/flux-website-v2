@@ -45,7 +45,7 @@ $(document).ready(function() {
 
   // countdown
   if( $('#clock').length ) {
-    var countdownTo = new Date(1465862400*1000);  // June 14th 10am
+    var countdownTo = new Date(1465948800*1000);  // June 15th 10am
 
     $('#clock').countdown(countdownTo, function(event) {
        $(this).html(event.strftime(
