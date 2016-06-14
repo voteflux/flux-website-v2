@@ -23,7 +23,6 @@ checkReferrer = (function() {
   }
 }());
 
-
 fluxAnnounce = (function() {
   return {
     closeModal: function () {
@@ -33,14 +32,61 @@ fluxAnnounce = (function() {
       $('#js-modal').fadeIn('fast');
     },
     showSection: function() {
-      $('#js-announcement-home').removeClass('hide')
+      $('#js-announcement-home').removeClass('hide');
     },
     removeCounter: function() {
-      $("#countdown-wrapper").addClass('hide')
+      $("#countdown-wrapper").addClass('hide');
+    },
+    showModalContent: function() {
+      $('#js-modal-content').removeClass('hide');
+      $('#js-modal-loading').addClass('hide');
+    },
+    showAnnouncementContent: function() {
+      $('#js-announcement-content').removeClass('hide');
+      $('#js-announcement-loading').addClass('hide');
+    },
+    getAnnouncement: function() {
+      var $modal = {
+        wrapper: $("#js-modal"),
+        heading: $("#js-modal-heading"),
+        body: $("#js-modal-body"),
+        link: $("#js-modal-link")
+      };
+      var $announcement = {
+        wrapper: $("#js-announcement-home"),
+        heading: $("#js-callout-heading"),
+        body: $("#js-callout-body"),
+        link: $("#js-callout-link")
+      }
+      $.ajax({
+        // url: "http://flux-api-dev.herokuapp.com/api/v0/announcement",
+        url: "https://api.voteflux.org/api/v0/announcement",
+        type: 'GET',
+        error: function() {
+          console.log('error');
+          setTimeout( function() {
+            this.getAnnouncement();
+          }, 1000);
+        },
+        success: function(response) {
+
+          if (Boolean($modal.wrapper)) {
+            $modal.heading.html(response.heading);
+            $modal.body.html(response.body);
+            $modal.link.prop("href", response.link)
+          }
+          if (Boolean($announcement.wrapper)) {
+            $announcement.heading.html(response.heading);
+            $announcement.body.html(response.body);
+            $announcement.link.prop("href", response.link)
+          }
+          fluxAnnounce.showModalContent();
+          fluxAnnounce.showAnnouncementContent();
+        }
+      });
     }
   }
 }());
-
 
 $(document).ready(function() {
 
@@ -69,8 +115,8 @@ $(document).ready(function() {
 
   // countdown
   if( $('#clock').length ) {
-    // var countdownTo = new Date(1465948800*1000);  // June 15th 10am
-    var countdownTo = new Date('Sun Jun 12 2016 23:40:33 GMT+1000 (AEST) (Standard)')
+    var countdownTo = new Date(1465948800*1000);  // June 15th 10am
+    // var countdownTo = new Date('Tue Jun 14 2016 14:59:34 GMT+1000 (AEST) (Standard)')
     $('#clock').countdown(countdownTo, function(event) {
        $(this).html(event.strftime(
             '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
@@ -79,6 +125,7 @@ $(document).ready(function() {
           + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>' + '</div>'));
     })
     .on('finish.countdown', function(event){
+      fluxAnnounce.getAnnouncement();
       fluxAnnounce.showModal();
       fluxAnnounce.showSection();
       fluxAnnounce.removeCounter();

@@ -1,16 +1,22 @@
-<div id="js-modal" class="display-none fixed left-0 right-0 top-0 bottom-0 bg-darken-4 z6">
+<div id="js-modal" class="display-none fixed left-0 right-0 top-0 bottom-0 bg-darken-4 z6 height-40vh">
  <div class="absolute center-xy col-11 sm-col-9 md-col-8 bg-white dark-gray shadow rounded p3 py4 md-p4">
   <span id="js-modal-close" class="absolute right-0 top-0 p2 pointer"><i class="material-icons">close</i></span>
-  <div class="mb4">
-    <div class="mb2">
-        <div class="inline-block mr2"><img src="{{site.baseurl}}/img/megaphone-black.svg"/></div>
-        <!-- <h4 class="inline-block align-top">ANNOUNCEMENT</h4> -->
+
+  <div id="js-modal-content" class="hide">
+    <div class="mb4">
+      <div class="mb2">
+          <div class="inline-block mr2"><img src="{{site.baseurl}}/img/megaphone-black.svg"/></div>
+      </div>
+      <h2 id="js-modal-heading" class="sm-h1 bold line-height-3 mb3"></h2>
+      <p id="js-modal-body" class="sm-h3 gray"></p>
     </div>
-    <h2 class="sm-h1 bold line-height-3 mb3">Flux announces Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-    <p class="sm-h3 gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-   <a href="!#" class="h3 sm-h2 letter-spacing-1 accent border-bottom">
+    <a id="js-modal-link" href="!#" class="h3 sm-h2 letter-spacing-1 accent border-bottom">
      Read the announcement
-   </a>
+    </a>
+  </div>
+
+  <div id="js-modal-loading" class="">
+      Loading...
+  </div>
  </div>
 </div>

@@ -110,19 +110,21 @@ social-media:
 
 
 <!-- ANNOUNCEMENT SECTION -->
-<section id="js-announcement-home" class="hide py4 sm-pr4 bg-white dark-gray">
+<section id="js-announcement-home" class="hide py4 sm-pr4 bg-white dark-gray height-30vh">
   <div class="max-width-4 mx-auto px2 md-px3">
-    <div class="mb4">
-      <!-- <div class="inline-block"><img src="{{site.baseurl}}/img/megaphone-black.svg"/></div> -->
-
-      <h1 class="h0 mb3">Flux announces Lorem ipsum dolor sit amet, consectetur adipisicing elite</h1>
-      <p class="h3 sm-h2 h-font light mb4 gray letter-spacing-2 line-height-4">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
+    <div id="js-announcement-content" class="hide">
+      <div class="mb4">
+        <h1 id="js-callout-heading" class="h0 mb3"></h1>
+        <p id="js-callout-body" class="h3 sm-h2 h-font light mb4 gray letter-spacing-2 line-height-4">
+        </p>
+      </div>
+      <a id="js-callout-link" href="#!" class="h2 letter-spacing-1 accent border-bottom inline-block">
+        Read the announcement
+      </a>
     </div>
-    <a href="#!" class="h2 letter-spacing-1 accent border-bottom inline-block">
-      Read the announcement
-    </a>
+    <div id="js-announcement-loading" class="center">
+      Loading...
+    </div>
   </div>
 </section>
 
