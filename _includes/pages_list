@@ -1,4 +1,3 @@
-
 {% for node in pages_list %}
   {% if group == null or group == node.group %}
     {% if include.mobile == true %}

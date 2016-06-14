@@ -1,0 +1,52 @@
+---
+layout: default
+permalink: /blog/
+dark-theme: true
+title: Blog
+nav-title: Blog
+group: navigation
+nav-order: 10
+---
+
+{% include navbar.html %}
+<div class="bg-near-black texture-bg-img height-30vh py4">
+	<div class="max-width-4 mx-auto px2 sm-px3 pt5">
+	  {% include components/main-heading.html
+	    text="Lorem ipsum dolor sit amet"
+	    font-size="h0"
+	    font-weight="bold"
+	    line="true"
+	    classes="white" %}
+	</div>
+</div>
+
+
+
+	<!--<ul>
+		{% for post in site.posts %}
+			<li>
+				<a">{{ post.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>-->
+	{% for post in site.posts %}
+		<article class="py4 bg-black light-gray inline-block col-6 left">
+			<a href="{{ post.url }}" class="max-width-4 mx-auto px2 md-px3">
+				<div class="lg-flex mxn2">
+					<div class="lg-col-12 px2 lg-px3 ">
+						<h2 class="mb0 h0 line-height-2 bold  white line-height-2">{{ post.title }}</h2>
+						<p class="h-font h3 sm-h2 light silver mb3">Excerpt here</p>
+					</div>
+					
+					<div class="lg-col-8 px2 lg-px3">
+						
+					</div>
+				</div>
+			</a>
+		</article>
+	{% endfor %}
+	
+
+{% include footer.html %}
+
+
