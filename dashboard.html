@@ -86,7 +86,7 @@ menu-order: 3.0
       Plotly.newPlot('memberStateChart', plotData3, {title: 'Member States'});
 
       // members over last 30 days
-      var nDays = 30;
+      var nDays = 60;
       var _now = Date.now();
       var recent_tss = _.filter(data.data['signup_times'], function(timestamp){ return timestamp*1000 > (_now - 1000 * 60 * 60 * 24 * (nDays + 1)); });
 
@@ -114,7 +114,7 @@ menu-order: 3.0
       var plotData4 = [{x: dates4, y: newMembers, type: 'bar'}];
 
       Plotly.newPlot('memberSignupDaysAgo', plotData4, {
-        title: 'Member Signup for Last 30 Days',
+        title: 'Member Signup for Last ' + nDays.toString() + ' Days',
         xaxis: {title: 'Days Ago'}, yaxis: {title: '# Signups'}
       });
 
