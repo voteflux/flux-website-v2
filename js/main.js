@@ -112,38 +112,38 @@ $(document).ready(function() {
   //     }
   // }
 
-
-  // countdown
-  if( $('#clock').length ) {
-    var countdownTo = new Date((1465948800) * 1000);  // June 15th 10am
-    var now = new Date();
-
-    var countdownOver = function (event) {
-      fluxAnnounce.getAnnouncement();
-      fluxAnnounce.showSection();
-      fluxAnnounce.removeCounter();
-    };
-    var countdownFinished = function(event){
-      countdownOver(event);
-      fluxAnnounce.showModal();
-    };
-
-    if (countdownTo > now) {
-      $('#clock').countdown(countdownTo, function (event) {
-        $(this).html(event.strftime(
-          '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
-          + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
-          + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%M</h3> <h6 class="m0 muted">Minute%!M</h6> </div>'
-          + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>' + '</div>'));
-      })
-        .on('finish.countdown', countdownFinished);
-    } else {
-      countdownOver();
-    }
-
-    var countDownHeight = $("#countdown-wrapper").outerHeight(true);
-    $('footer').css({'margin-bottom': countDownHeight + 'px'})
-  }
+  //
+  // // countdown
+  // if( $('#clock').length ) {
+  //   var countdownTo = new Date((1465948800) * 1000);  // June 15th 10am
+  //   var now = new Date();
+  //
+  //   var countdownOver = function (event) {
+  //     fluxAnnounce.getAnnouncement();
+  //     fluxAnnounce.showSection();
+  //     fluxAnnounce.removeCounter();
+  //   };
+  //   var countdownFinished = function(event){
+  //     countdownOver(event);
+  //     fluxAnnounce.showModal();
+  //   };
+  //
+  //   if (countdownTo > now) {
+  //     $('#clock').countdown(countdownTo, function (event) {
+  //       $(this).html(event.strftime(
+  //         '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
+  //         + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
+  //         + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%M</h3> <h6 class="m0 muted">Minute%!M</h6> </div>'
+  //         + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>' + '</div>'));
+  //     })
+  //       .on('finish.countdown', countdownFinished);
+  //   } else {
+  //     countdownOver();
+  //   }
+  //
+  //   var countDownHeight = $("#countdown-wrapper").outerHeight(true);
+  //   $('footer').css({'margin-bottom': countDownHeight + 'px'})
+  // }
 
   // candidates slider
   if ( $('#js-candidates').length != 0 ) {
