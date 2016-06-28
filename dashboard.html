@@ -20,6 +20,7 @@ nav-title: Dashboard
           <div class="h-font light lg-col-10 mid-gray sm-pr4 mx" style="max-width: 600px;">
 
             <h1>Live Membership Stats</h1>
+            <h3 ng-repeat="days in flux.growthDays track by $index">Membership growth over last {{'days' | angular}} days: {{'flux.growthStat(days) * 100' | angular}}%</h3>
             <div id="membershipChart" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
             <div id="memberDobYearChart" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
             <div id="memberStateChart" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
@@ -39,7 +40,7 @@ nav-title: Dashboard
     <script>
       var fluxApp = angular.module('fluxApp', []);
 
-      // NOTE: This is just for index.html; and is separate to the FluxController in members.html and membership-ng.js
+      // NOTE: This is just for dashboard.html; and is separate to the FluxController in members.html and membership-ng.js, etc
       fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) {
         $rootScope._ = _;
 
@@ -47,6 +48,8 @@ nav-title: Dashboard
         flux.membershipError = '';
         $scope._showExtraGraphs = false;
         flux.signupVolunteer = false;
+        flux.growthDays = [];  // note: set later on to trigger redraw
+        flux.nameTempVar = "Dashboard";
 
         if (document.location.hostname == 'localhost') {
           flux.debug = true;
@@ -62,6 +65,10 @@ nav-title: Dashboard
             return "http://localhost:5000/api/v0/" + path;
           }
           return "https://api.voteflux.org/api/v0/" + path;
+        };
+
+        flux.growthStat = function(d){
+          return 0;
         };
 
         // generate graphs from public stats
@@ -161,6 +168,17 @@ nav-title: Dashboard
             Plotly.newPlot('stateSignupTimes', plotStateSignupTimes, {title: 'Members v Time by State'});
           };
           drawStateSignupTimes();
+
+          flux.growthStat = function(d){
+            var ts_now = Date.now();
+            var ts_ago = new Date(ts_now - (d * 24 * 60 * 60 * 1000));
+            var tss_before = _.filter(tss, function(_ts){ return _ts < ts_ago; });
+            var tss_after =  _.filter(tss, function(_ts){ return _ts >= ts_ago; });
+            console.log('tss_before len : ' + tss_before.length + ' tss_after len ' + tss_after.length);
+            console.log(ts_now);
+            return Math.round(tss_after.length / tss_before.length * 1000) / 1000;
+          };
+          flux.growthDays = [30, 7, 2, 1];
 
           $log.log('Drew Charts');
         }, flux.handleError)

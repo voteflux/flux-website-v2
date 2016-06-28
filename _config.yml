@@ -50,3 +50,6 @@ exclude:
   - to-do
   - signup.html
   - npm-debug.log
+
+gems:
+  - jekyll-angular
