@@ -1,0 +1,91 @@
+---
+layout: default
+dark-theme: true
+title: Election Calendar
+permalink: /election-calendar/
+tag-section: flux election calendar
+tag-topic: election calendar
+nav-title: Election Calendar
+
+elections:
+  - title: Aus Federal Elections
+    date: 2016-07-02
+    link: http://www.aec.gov.au/
+
+  - title: NSW Local Elections
+    date: 2016-09-10
+    link: http://www.votensw.info/
+
+  - title: ACT Elections
+    date: 2016-10-15
+    link: http://www.elections.act.gov.au/elections_and_voting/2016_legislative_assembly_election
+
+  - title: VIC Local Elections
+    date: 2016-10-22
+    link: https://www.vec.vic.gov.au/Voting/LocalCouncilElections.html
+
+  - title: WA State Elections
+    date: 2016-03-11
+    link: https://www.elections.wa.gov.au/elections/state
+
+  - title: TAS Legislative Council Elections
+    date: 2017-05-06
+    link: http://www.tec.tas.gov.au/index.html
+
+  - title: WA Local Elections
+    date: 2017-10-17
+    link: https://www.elections.wa.gov.au/elections/local
+
+  - title: QLD State Elections
+    date: 2018-01-01
+    link:
+
+  - title: TAS House of Assembly Elections
+    date: 2018-01-01
+    link:
+
+  - title: SA State Elections
+    date: 2018-03-17
+    link: http://www.ecsa.sa.gov.au/elections/state-elections
+
+  - title: SA Local Elections
+    date: 2018-03-17
+    link: http://www.lga.sa.gov.au/councilelections
+
+  - title: VIC State Elections
+    date: 2018-11-24
+    link: https://www.vec.vic.gov.au/
+
+  - title: NSW State Elections
+    date: 2019-01-01
+    link: http://www.elections.nsw.gov.au/
+
+  - title: QLD Local Elections
+    date: 2020-01-01
+    link:
+---
+
+{% include navbar.html %}
+<div class="bg-near-white dark-gray py4 ">
+  <div class="bg-near-black height-40vh absolute z1 left-0 top-0 col-12 texture-bg-img">
+  </div>
+  <div class="mx-auto max-width-3 px2 sm-px4 pt4 pb3 bg-white relative mt5 z2">
+    <section class="">
+      <h1>Election Calendar</h1>
+
+      {% for election in page.elections %}
+        <div>
+          <h2>{{election.date}}: <a href="{{election.link}}">{{election.title}}</a></h2>
+        </div>
+      {% endfor %}
+
+    </section>
+  </div>
+  <div class="max-width-3 mx-auto">
+    {% include components/inline-signup.html %}
+    <div class="mt4">
+      <i class="material-icons mr1">arrow_back</i><a href="{{site.baseurl}}/" class="inline-block">Back to home page</a>
+    </div>
+  </div>
+</div>
+{% include footer.html %}
