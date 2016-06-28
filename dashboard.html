@@ -20,7 +20,7 @@ nav-title: Dashboard
           <div class="h-font light lg-col-10 mid-gray sm-pr4 mx" style="max-width: 600px;">
 
             <h1>Live Membership Stats</h1>
-            <h3 ng-repeat="days in flux.growthDays track by $index">Membership growth over last {{'days' | angular}} days: {{'flux.growthStat(days) * 100' | angular}}%</h3>
+            <h3 ng-repeat="days in flux.growthDays track by $index">Membership growth over last {{'days' | angular}} days: {{'(flux.growthStat(days) * 100).toString().slice(0,4)' | angular}}%</h3>
             <div id="membershipChart" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
             <div id="memberDobYearChart" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
             <div id="memberStateChart" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
