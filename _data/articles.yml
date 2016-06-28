@@ -1,4 +1,12 @@
   -
+    title: "Election 2016: Flux and Nick Xenophon Team among newcomers in WA Senate race"
+    url: "http://www.abc.net.au/news/2016-06-27/look-at-two-flux-and-xenophon-political-parties-in-wa-senate-ra/7547262"
+    date: "2016-06-27"
+    author: "David Weber"
+    publishedIn: "ABC News"
+    major: false
+    type: "article"
+  -
     title: "Blockchain Democracy Party on Ballot in Australian Election"
     url: "http://bitcoinist.net/blockchain-party-australian-election/"
     date: "2016-06-26"
@@ -11,7 +19,7 @@
     url: "http://www.smh.com.au/federal-politics/federal-election-2016/election-2016-meet-michael-hay-flux-party-act-senate-candidate-20160621-gpomgo.html"
     date: "2016-06-24"
     author: "Clare Colley"
-    publishdedIn: "SMH"
+    publishedIn: "SMH"
     major: true
     type: "article"
   -
