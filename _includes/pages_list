@@ -1,4 +1,4 @@
-{% for node in pages_list %}
+{% for node in all_pages %}
   {% if group == null or group == node.group %}
     {% if include.mobile == true %}
 
@@ -19,5 +19,5 @@
     {% endif %}
   {% endif %}
 {% endfor %}
-{% assign pages_list = nil %}
+{% assign all_pages = nil %}
 {% assign group = nil %}

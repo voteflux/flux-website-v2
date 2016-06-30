@@ -47,7 +47,7 @@
 
     <!-- DESKTOP NAV LINKS  -->
       <ul id="js-nav-links" class='flex justify-between mt2 mr3 list-reset h4 xs-hide sm-hide white'>
-            {% assign pages_list = site.pages | sort: "nav-order" %}
+            {% assign all_pages = site.pages | sort: "nav-order" %}
             {% assign group = 'navigation' %}
             {% include pages_list %}
       </ul>
