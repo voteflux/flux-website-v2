@@ -49,9 +49,9 @@ htvs:
           }
         </script>
 
-        <button class="p1 rounded bg-accent-light border border-accent bold dark-gray" onclick="showAll()">All States</button>
+        <button class="p1 rounded bg-accent white" onclick="showAll()">All States</button>
         {% for state in page.htvs %}
-          <button class="p1 rounded bg-accent-light border border-accent bold dark-gray" onclick="showState('{{state}}');">{{state | upcase}}</button>
+          <button class="p1 rounded bg-accent white" onclick="showState('{{state}}');">{{state | upcase}}</button>
         {% endfor %}
       </div>
 
