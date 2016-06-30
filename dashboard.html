@@ -127,6 +127,7 @@ nav-title: Dashboard
           _.map(recent_tss, function(ts){
             var ts_date = new Date(ts*1000);
             var local_y_m_d = toJSONLocal(ts_date);
+            console.log(local_y_m_d);
             timestamp_counter[local_y_m_d] += 1;
             if(ts*1000 > _7_days_ago){
               timestamp_counter_for_hours[local_y_m_d + '-' + ts_date.getHours().toString()] += 1;
@@ -140,7 +141,6 @@ nav-title: Dashboard
           datesSignupsHourly.pop();
           var newMembers = _.map(dates4, function(d){ return results[d]; });
           var hourlySignups = _.map(datesSignupsHourly, function(d){ return timestamp_counter_for_hours[d]; });
-          // newMembers.pop();  // account for the one day added when generating recent_tss;
           var plotData4 = [{x: dates4, y: newMembers, type: 'bar'}];
           var plotDataSignupsHourly = [{type: 'scatter', line: {shape: 'spline'}, x: datesSignupsHourly, y: hourlySignups}];
 
