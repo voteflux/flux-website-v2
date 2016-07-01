@@ -36,6 +36,7 @@ nav-title: Dashboard
                 <tr><th>Month</th><th>Growth %</th></tr>
                 <tr ng-repeat="month in flux.monthlyGrowth track by $index"><td>{{'month.name' | angular}}</td><td>{{'month.rate' | angular}}%</td></tr>
               </table>
+              <h4>Average monthly growth {{ 'flux.averageMonthlyGrowth' | angular }}</h4>
             </div>
 
           </div>
@@ -59,6 +60,7 @@ nav-title: Dashboard
         flux.signupVolunteer = false;
         flux.growthDays = [];  // note: set later on to trigger redraw
         flux.nameTempVar = "Dashboard";
+        flux.averageMonthlyGrowth = 0;
 
         if (document.location.hostname == 'localhost') {
           flux.debug = true;
@@ -224,13 +226,16 @@ nav-title: Dashboard
             console.log(cumulative);
             console.log(members_per_month);
             flux.monthlyGrowth = [];
+            var rates = [];
             _.map(_.range(2, months.length), function(_i){
+              var _rate = members_per_month[_i] / cumulative[months[_i-1]] * 100;
               flux.monthlyGrowth.push({
                 name: months[_i],
-                rate: (members_per_month[_i] / cumulative[months[_i-1]] * 100).toString().slice(0, 5)
-              })
+                rate: (_rate).toString().slice(0, 5)
+              });
+              rates.push(_rate);
             });
-            console.log(flux.monthlyGrowth);
+            flux.averageMonthlyGrowth = _.sum(rates)/rates.length;
           };
           flux.calcMonthlyGrowth(tss);
 
