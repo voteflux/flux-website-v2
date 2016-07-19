@@ -36,7 +36,7 @@ nav-title: Dashboard
                 <tr><th>Month</th><th>Growth %</th></tr>
                 <tr ng-repeat="month in flux.monthlyGrowth track by $index"><td>{{'month.name' | angular}}</td><td>{{'month.rate' | angular}}%</td></tr>
               </table>
-              <h4>Average monthly growth {{ 'flux.averageMonthlyGrowth' | angular }}</h4>
+              <h4>Average monthly growth: {{ 'flux.averageMonthlyGrowth' | angular }}%</h4>
             </div>
 
           </div>
@@ -235,7 +235,7 @@ nav-title: Dashboard
               });
               rates.push(_rate);
             });
-            flux.averageMonthlyGrowth = _.sum(rates)/rates.length;
+            flux.averageMonthlyGrowth = (_.sum(rates)/rates.length).toString().slice(0,4);
           };
           flux.calcMonthlyGrowth(tss);
 
