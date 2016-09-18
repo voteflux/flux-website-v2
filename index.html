@@ -217,7 +217,7 @@ social-media:
       <div class="lg-flex mxn2">
         <div class="lg-col-12 px2">
           <div class="bg-near-black light-gray px3 py4 sm-p4 mb3">
-            <div class="mb3">
+            <div class="mb3" id="blog">
               {% include components/main-heading.html
               text="Recent Posts"
               font-size="h0 line-height-2"
@@ -225,10 +225,10 @@ social-media:
 
               {% for post in site.posts %}
               <div class="post">
-                <h1 class="h1 bold mb3 line-height-2"><a class="underline" href="{{ post.url }}">{{ post.title }}</a></h1>
-                <p class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
+                <h1 class="h1 bold underline"><a class="underline" href="{{ post.url }}">{{ post.title }}</a></h1>
+                <div class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
                   {{ post.excerpt }}
-                </p>
+                </div>
               </div>
               {% endfor %}
             </div>
