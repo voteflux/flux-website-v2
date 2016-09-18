@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "flux": "jekyll 'clean' && parallelshell 'gulp' 'jekyll build --watch --config _config.yml'",
+    "flux-no-react": "bundle exec jekyll serve --watch --config _config.yml",
     "deploy-stage": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build && gulp 'deploy' && exit",
     "build": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1"

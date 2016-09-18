@@ -13,7 +13,7 @@ hero-copy: >
   directly through technology. Let’s break up the party politics, end the gridlock and
   return the power to where it belongs - you.
 
-hero-action: On July 2 &mdash; Vote Flux
+hero-action: Become a Member
 
 # Why Austrialia needs Flux
 why-flux-title: Why Australia needs Flux
@@ -96,7 +96,7 @@ social-media:
           <a href="{{site.baseurl}}/signup" class="h2 letter-spacing-1 accent border-bottom inline-block">
             {{ page.hero-action }}
           </a>
-          <span class="gray h3 block caps mt1 letter-spacing-1">become a member now</span>
+          <span class="gray h3 block caps mt1 letter-spacing-1">Membership is free for life</span>
         </div>
         <div class="md-hide lg-hide silver">
           <h5 class="muted caps mt3">Registered Members</h5>
@@ -167,6 +167,7 @@ social-media:
 {% endif %}
 
 <!-- PUNT  -->
+  {% if false %}
 <section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
   <div class="max-width-4 mx-auto relative z2sm-pr4">
     <div class="lg-flex mxn2">
@@ -206,6 +207,36 @@ social-media:
     </div>
   </div>
 </section>
+  {% endif %}
+
+
+
+  <!-- Posts -->
+  <section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
+    <div class="max-width-4 mx-auto relative z2sm-pr4">
+      <div class="lg-flex mxn2">
+        <div class="lg-col-12 px2">
+          <div class="bg-near-black light-gray px3 py4 sm-p4 mb3">
+            <div class="mb3">
+              {% include components/main-heading.html
+              text="Recent Posts"
+              font-size="h0 line-height-2"
+              font-weight="bold" %}
+
+              {% for post in site.posts %}
+              <div class="post">
+                <h1 class="h1 bold mb3 line-height-2"><a class="underline" href="{{ post.url }}">{{ post.title }}</a></h1>
+                <p class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
+                  {{ post.excerpt }}
+                </p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 

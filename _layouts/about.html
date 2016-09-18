@@ -12,9 +12,11 @@ header-theme: light
   <div class="mx-auto max-width-3">
 
         <h4 class=" mt1">
+          {% if page.tag-section %}
           <span class="muted"> {{ page.tag-section | upcase }} </span>
           <span> / </span>
           <span class="bold"> {{ page.tag-topic | upcase }} </span>
+          {% endif %}
         </h4>
         <div class="sm-mb4 mb3">
           {% include components/main-heading.html
@@ -22,6 +24,9 @@ header-theme: light
             font-size="h0"
             font-weight="bold"
             line="true" %}
+          {% if page.author %}
+            <div class="muted">Author: {{ page.author }}</div>
+          {% endif %}
         </div>
 
         <div class="break-word">
