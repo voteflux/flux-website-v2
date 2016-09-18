@@ -39,5 +39,5 @@ The default participants will be the Leader, Deputy Leader, Leadership, and offi
 
 Other members may be invited in as necessary, but the emphasis will be on a succinct meeting, and discussion is expected to occur outside the meeting proper, in advance.
 
-This document might be updated over time, and you cna find the history of this page [here](https://github.com/voteflux/vote-flux-v2/commits/master/_posts/2016-09-18-public-meetings-v1.md).
+This document might be updated over time, and you can find the history of this page [here](https://github.com/voteflux/vote-flux-v2/commits/master/_posts/2016-09-18-public-meetings-v1.md).
 
