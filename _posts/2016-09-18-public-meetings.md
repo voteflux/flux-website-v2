@@ -25,6 +25,7 @@ Meetings will follow an agenda, and usually be chaired by the Leader.
 Minutes and action items etc, will be collated using a slack channel for convenience.
 
 If you’d like to raise something at the meeting,  you’ll need a well prepared message to post in #livestream-motion. Any motion raised here will need 2 ‘thumbs up’ from other members (3 including the posters) in order for it to be discussed at the meeting.
+
 If there's external documentation it should be linked, and any sizable body of text has to be provided in advance so everyone has a chance to prepare.
 Such text can be posted in #livestream-prep, and anything posted at least 24hrs before a meeting can be cited in the meeting.
 
