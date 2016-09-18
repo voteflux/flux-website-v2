@@ -13,7 +13,7 @@ If you're just looking to watch you'll find the livestream over on our YouTube c
 If you're looking to participate you'll need the following things open:
 
 * A video of the livestream, available on our [channel](https://www.youtube.com/c/FluxParty)
-* The Slack channels #livestream-chat, #livestream-motion, and #livestream-prep. (see https://voteflux.org/slack for details on our slack channel)
+* The Slack channels #livestream-chat, #livestream-motion, and #livestream-prep. (see [https://voteflux.org/slack](https://voteflux.org/slack) for details on our slack channel)
 
 Additionally if you're invited to speak you'll need to be able to join a hangout on demand; you won't have time to download and install the plugin, so do this first and test it. 
 See [this Google support page](https://support.google.com/hangouts/answer/2944865?co=GENIE.Platform%3DDesktop&hl=en).
