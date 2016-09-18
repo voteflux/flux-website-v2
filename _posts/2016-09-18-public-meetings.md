@@ -1,6 +1,6 @@
 ---
 layout: about
-title:  "Public Meetings &mdash; v1"
+title:  "Public Meetings &mdash;"
 date:   2016-09-18
 author: Max Kaye
 ---
