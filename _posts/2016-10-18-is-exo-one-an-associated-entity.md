@@ -2,7 +2,7 @@
 title: Is ExO One an Associated Entity?
 author: Max Kaye
 date: 2016-10-18
-layout: default
+layout: about
 ---
 
 As financial disclosure time is upon us the necessary question "Is ExO One an associated entity of The Flux Party?" Indeed, the AEC have asked us as much, so I thought I'd take the time to publically respond.
