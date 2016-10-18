@@ -53,7 +53,7 @@ Currently only the leadership has voting rights in The Flux Party. That is, of c
 
 ### Conclusion
 
-It is now clear that ExO One satisfies none of the six possible defining features of an associated entity. We've also seen the changes that would need to take place before it would 
+It is now clear that ExO One satisfies none of the six possible defining features of an associated entity. We've also seen the changes that would need to take place before it would. In doing so we've laid out the explanation around exactly why ExO One is not an associated entity, setting the groundwork for any future investigation into exactly what the nature of the relationship between ExO One and The Flux Party is.
 
 #### Final Notes
 
