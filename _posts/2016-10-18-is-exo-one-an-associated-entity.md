@@ -58,3 +58,5 @@ It is now clear that ExO One satisfies none of the six possible defining feature
 #### Final Notes
 
 It is worth noting that the Electoral Act does not list 'significant extent' in the list of interpretations.
+
+Also, I am not a lawyer, so this and all legal interpretations should come with a grain of salt.
