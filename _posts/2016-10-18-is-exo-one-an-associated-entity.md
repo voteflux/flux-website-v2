@@ -5,7 +5,7 @@ date: 2016-10-18
 layout: about
 ---
 
-As financial disclosure time is upon us the necessary question "Is ExO One an associated entity of The Flux Party?" Indeed, the AEC have asked us as much, so I thought I'd take the time to publicly respond.
+As financial disclosure time is upon us the necessary question "Is ExO One an associated entity of The Flux Party?" must be asked. Indeed, the AEC have asked us as much, so I thought I'd take the time to publicly respond.
 
 This is certainly a legitimate question, especially as ExO One used to be named The Flux Startup.
 
