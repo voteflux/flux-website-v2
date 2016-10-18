@@ -9,7 +9,7 @@ As financial disclosure time is upon us the necessary question "Is ExO One an as
 
 This is certainly a legitimate question, especially as ExO One used to be named The Flux Startup.
 
-The AEC advises that an "associated entity under the Commonwealth Electoral Act 1918 (s287) means an entity:"
+The [AEC advises](http://www.aec.gov.au/parties_and_representatives/financial_disclosure/guides/associated-entities/index.htm) that an "associated entity under the Commonwealth Electoral Act 1918 (s287) means an entity:"
 
 1. that is controlled by one or more registered political parties; or
 2. that operates wholly or to a significant extent for the benefit of one or more registered political parties; or
