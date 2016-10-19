@@ -53,3 +53,5 @@ exclude:
 
 gems:
   - jekyll-angular
+
+redirects: yes
