@@ -250,7 +250,9 @@ $(document).ready(function() {
       success: function(response) {
         var data = JSON.parse(response);
         var memberCount = data.n_members;
+        var waMemberCount = data.n_members_state.wa;
         var el = document.getElementById("js-member-count");
+        var wa = document.getElementById("js-wamember-count");
         var elMobile = document.getElementById("js-member-count-mobile");
         var volCountEl = document.getElementById("js-volunteer-count");
         var volCountElMobile = document.getElementById("js-volunteer-count-mobile");
@@ -258,6 +260,9 @@ $(document).ready(function() {
         if (Boolean(el)) {
           el.innerHTML = memberCount.toString();
           volCountEl.innerHTML = data.n_volunteers;
+        }
+        if (Boolean(wa)) {
+          wa.innerHTML = waMemberCount.toString();
         }
         if (Boolean(elMobile)) {
           elMobile.innerHTML = memberCount.toString();
