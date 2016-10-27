@@ -7,12 +7,14 @@
     "flux": "jekyll 'clean' && parallelshell 'gulp' 'bundle exec jekyll build --watch --config _config.yml'",
     "flux-no-react": "bundle exec jekyll serve --watch --config _config.yml",
     "deploy-stage": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build && gulp 'deploy' && exit",
-    "build": "bundle exec jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && bundle exec jekyll build",
+    "build": "bundle install && bundle exec jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && bundle exec jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "David Factor",
   "license": "ISC",
   "devDependencies": {
+  },
+  "dependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.11.2",
     "concurrently": "^2.0.0",
@@ -22,9 +24,7 @@
     "gulp-gh-pages": "^0.5.4",
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.2.0",
-    "parallelshell": "^2.0.0"
-  },
-  "dependencies": {
+    "parallelshell": "^2.0.0",
     "axios": "^0.15.2",
     "babel": "^6.5.2",
     "babel-cli": "^6.18.0",
