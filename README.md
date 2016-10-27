@@ -2,7 +2,11 @@
 
 ## Dependencies
 
-* Install `node`, `npm`, `ruby` first: `brew install ruby node npm`
+We presume your environment is OSX.
+
+* Install `node`, `npm`, `ruby` first
+ * macOS: `brew install ruby node npm`
+ * ubuntu: `sudo apt install ruby nodejs` (aside: does this include `npm`?)
 * Install dependencies: `gem install bundle` then `bundle install` then `npm install`
 
 ## Development
