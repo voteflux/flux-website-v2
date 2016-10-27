@@ -34,7 +34,6 @@
     "babel-preset-react": "^6.16.0",
     "copy-webpack-plugin": "^4.0.0",
     "formsy-react": "^0.18.0",
-    "fsevents": "^1.0.14",
     "html-webpack-plugin": "^2.24.0",
     "jquery-touch-events": "^1.0.3",
     "lodash.throttle": "^4.0.1",
