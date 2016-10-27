@@ -52,6 +52,5 @@ module.exports = {
     HtmlWebpackPluginConfig,
     CopyWebpackPluginConfig, // comment this out when in dev-mode
     definePlugin
-
   ]
 };

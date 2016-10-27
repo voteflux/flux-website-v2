@@ -4,15 +4,17 @@
   "description": "Flux website",
   "main": "index.js",
   "scripts": {
-    "flux": "jekyll 'clean' && parallelshell 'gulp' 'bundle exec jekyll build --watch --config _config.yml'",
+    "flux": "bundle exec jekyll 'clean' && parallelshell 'gulp' 'bundle exec jekyll build --watch --config _config.yml'",
     "flux-no-react": "bundle exec jekyll serve --watch --config _config.yml",
     "deploy-stage": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build && gulp 'deploy' && exit",
-    "build": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build",
+    "build": "bundle install && bundle exec jekyll clean && gulp sass && cd 'react-signup/' && webpack -p && cd '../' && bundle exec jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "David Factor",
   "license": "ISC",
   "devDependencies": {
+  },
+  "dependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.11.2",
     "concurrently": "^2.0.0",
@@ -22,13 +24,22 @@
     "gulp-gh-pages": "^0.5.4",
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.2.0",
-    "parallelshell": "^2.0.0"
-  },
-  "dependencies": {
-    "formsy-react": "^0.17.0",
+    "parallelshell": "^2.0.0",
+    "axios": "^0.15.2",
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.6",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "copy-webpack-plugin": "^4.0.0",
+    "formsy-react": "^0.18.0",
+    "html-webpack-plugin": "^2.24.0",
     "jquery-touch-events": "^1.0.3",
     "lodash.throttle": "^4.0.1",
     "moment": "^2.13.0",
-    "react": "^0.14.8"
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "webpack": "^1.13.3"
   }
 }
