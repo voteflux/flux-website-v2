@@ -38,7 +38,7 @@
     "jquery-touch-events": "^1.0.3",
     "lodash.throttle": "^4.0.1",
     "moment": "^2.13.0",
-    "react": "^0.14.8",
+    "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "webpack": "^1.13.3"
   }
