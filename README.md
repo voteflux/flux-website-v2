@@ -34,6 +34,10 @@ https://docs.shopify.com/themes/liquid/tags/control-flow-tags -->
 
 #### Hints and Tips
 
+`brew install ruby` for ruby
+
+`gem install bundle` for bundle
+
 `bundle install` to install dependencies
 
 `bundle exec jekyll serve --watch` to run a dev server for just jekyll stuff.
