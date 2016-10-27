@@ -14,6 +14,10 @@ var autoprefixerOptions = {
 };
 
 gulp.task('serve', ['sass'], function() {
+  gulp.watch('./_sass/*.scss', ['sass']);
+  gulp.watch('**/*.html').on('change', browserSync.reload);
+  gulp.watch("css/*.css").on('change', browserSync.reload);
+  gulp.watch("js/*.js").on('change', browserSync.reload);
   browserSync.init(null, {
     reloadDelay: 500,
     server: {
@@ -23,12 +27,6 @@ gulp.task('serve', ['sass'], function() {
     notify: false
   });
 });
-
-gulp.watch('./_sass/*.scss', ['sass']);
-gulp.watch('**/*.html').on('change', browserSync.reload);
-//gulp.watch("**/*.css").on('change', browserSync.reload);
-//gulp.watch("**/*.js").on('change', browserSync.reload);
-
 
 gulp.task('sass', function() {
     return gulp.src('./_sass/*.scss')
@@ -70,9 +68,10 @@ gulp.task('deploy', function () {
         }));
 });
 
+/*
 gulp.on('stop', function () {
   process.nextTick(function () {
     process.exit(0);
   });
 });
-
+*/
