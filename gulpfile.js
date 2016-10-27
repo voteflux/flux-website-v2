@@ -15,6 +15,7 @@ var autoprefixerOptions = {
 
 gulp.task('serve', ['sass'], function() {
   browserSync.init(null, {
+    reloadDelay: 500,
     server: {
       baseDir: './_site'
     },
