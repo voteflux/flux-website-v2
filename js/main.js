@@ -249,25 +249,22 @@ $(document).ready(function() {
       },
       success: function(response) {
         var data = JSON.parse(response);
-        var memberCount = data.n_members;
-        var waMemberCount = data.n_members_state.wa;
         var el = document.getElementById("js-member-count");
         var wa = document.getElementById("js-wamember-count");
         var elMobile = document.getElementById("js-member-count-mobile");
         var volCountEl = document.getElementById("js-volunteer-count");
         var volCountElMobile = document.getElementById("js-volunteer-count-mobile");
 
-        if (Boolean(el)) {
-          el.innerHTML = memberCount.toString();
-          volCountEl.innerHTML = data.n_volunteers;
+        var set_contents = function(e, to_set){
+          if(Boolean(e))
+            e.innerHTML = to_set;
         }
-        if (Boolean(wa)) {
-          wa.innerHTML = waMemberCount.toString();
-        }
-        if (Boolean(elMobile)) {
-          elMobile.innerHTML = memberCount.toString();
-          volCountElMobile.innerHTML = data.n_volunteers;
-        }
+
+        set_contents(el, data.n_members);
+        set_contents(volCountEl, data.n_volunteers);
+        set_contents(wa, data.n_members_state.wa);
+        set_contents(elMobile, data.n_members);
+        set_contents(volCountElMobile, data.n_volunteers);
       },
       type: 'GET'
     });
