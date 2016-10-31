@@ -1,3 +1,10 @@
+setRefLocalStorage = function(newVal) {
+  localStorage.setItem('signup_referral', newVal);
+}
+getRefLocalStorage = function(){
+  return localStorage.getItem('signup_referral');
+}
+
 checkReferrer = (function() {
   return {
     addTestParam: function (val) {
@@ -101,8 +108,14 @@ $(document).ready(function() {
   }
   var referrer = checkReferrer.getParam('r');
   if(referrer){
-    localStorage.setItem("signup_referral", referrer);
+    setRefLocalStorage(referrer);
   }
+  var isWAPage = location.pathname.indexOf('/flux-wa') !== -1;
+  if(isWAPage && referrer === undefined){
+    console.log('On WA page');
+    setRefLocalStorage('wa-landing-page + maybe r:' + document.referrer);
+  }
+  console.log("Local storage ref: " + getRefLocalStorage());
 
   // if(referrer === undefined){
   //     utmSource = checkReferrer.getParam('utm_source');
