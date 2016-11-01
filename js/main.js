@@ -262,22 +262,30 @@ $(document).ready(function() {
       },
       success: function(response) {
         var data = JSON.parse(response);
-        var el = document.getElementById("js-member-count");
-        var wa = document.getElementById("js-wamember-count");
-        var elMobile = document.getElementById("js-member-count-mobile");
-        var volCountEl = document.getElementById("js-volunteer-count");
-        var volCountElMobile = document.getElementById("js-volunteer-count-mobile");
+        var dataArray = {
+          "js-member-count": data.n_members,
+          "js-wamember-count": data.n_members_state.wa,
+          "js-volunteer-count": data.n_volunteers,
+          // TS: No need to differentiate between mobile and non-mobile here for now
+          // "js-member-count-mobile": data.n_members,
+          // "js-volunteer-count-mobile": data.n_volunteers
+        };
 
         var set_contents = function(e, to_set){
           if(Boolean(e))
             e.innerHTML = to_set;
         }
 
-        set_contents(el, data.n_members);
-        set_contents(volCountEl, data.n_volunteers);
-        set_contents(wa, data.n_members_state.wa);
-        set_contents(elMobile, data.n_members);
-        set_contents(volCountElMobile, data.n_volunteers);
+        for (var key in dataArray) {
+          var value = dataArray[key];
+          var ref = document.getElementsByClassName(key);
+          // Some pages have more than one member counter
+          for (var i = 0, len = ref.length; i < len; i++) {
+            var element = ref[i];
+            set_contents(element, value);
+          }
+        }
+
       },
       type: 'GET'
     });
