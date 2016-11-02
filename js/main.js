@@ -262,7 +262,7 @@ $(document).ready(function() {
       },
       success: function(response) {
         var data = JSON.parse(response);
-        var dataArray = {
+        var classValueMap = {
           "js-member-count": data.n_members,
           "js-wamember-count": data.n_members_state.wa,
           "js-volunteer-count": data.n_volunteers,
@@ -272,19 +272,26 @@ $(document).ready(function() {
         };
 
         var set_contents = function(e, to_set){
-          if(Boolean(e))
+          if(Boolean(e)) {
             e.innerHTML = to_set;
-        }
-
-        for (var key in dataArray) {
-          var value = dataArray[key];
-          var ref = document.getElementsByClassName(key);
-          // Some pages have more than one member counter
-          for (var i = 0, len = ref.length; i < len; i++) {
-            var element = ref[i];
-            set_contents(element, value);
+            console.log("Setting", e, "to", to_set);
           }
-        }
+        };
+
+        _.map(classValueMap, function(val, className){
+          _.map(document.getElementsByClassName(className), function(elem){
+            set_contents(elem, val);
+          });
+        });
+        //for (var key in classValueMap) {
+        //  var value = classValueMap[key];
+        //  var ref = document.getElementsByClassName(key);
+        //  // Some pages have more than one member counter
+        //  for (var i = 0, len = ref.length; i < len; i++) {
+        //    var element = ref[i];
+        //    set_contents(element, value);
+        //  }
+        //}
 
       },
       type: 'GET'
