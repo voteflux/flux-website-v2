@@ -250,6 +250,16 @@ $(document).ready(function() {
   };
 
 
+  // Returns number of days until a given date. Used for election countdowns
+  function getDaysTo(endDate) {
+    var today = new Date();
+    var distance = endDate - today;
+    if (distance < 0)
+      return 0;
+    return Math.ceil(distance / 86400000); // 86400000 ms in 1 day
+  }
+
+
   // get member and volenteer info ajax request
   var getMembers = function() {
     $.ajax({
@@ -269,6 +279,8 @@ $(document).ready(function() {
           // TS: No need to differentiate between mobile and non-mobile here for now
           // "js-member-count-mobile": data.n_members,
           // "js-volunteer-count-mobile": data.n_volunteers
+          // WA State Election Countdown - Remove After 11 March 2017
+          "js-waelection-countdown": getDaysTo(new Date('03/11/2017')), // Use US Date Format MM/DD/YYYY
         };
 
         var set_contents = function(e, to_set){
