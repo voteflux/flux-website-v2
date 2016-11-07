@@ -1,3 +1,10 @@
+setRefLocalStorage = function(newVal) {
+  localStorage.setItem('signup_referral', newVal);
+}
+getRefLocalStorage = function(){
+  return localStorage.getItem('signup_referral');
+}
+
 checkReferrer = (function() {
   return {
     addTestParam: function (val) {
@@ -101,8 +108,14 @@ $(document).ready(function() {
   }
   var referrer = checkReferrer.getParam('r');
   if(referrer){
-    localStorage.setItem("signup_referral", referrer);
+    setRefLocalStorage(referrer);
   }
+  var isWAPage = location.pathname.indexOf('/flux-wa') !== -1;
+  if(isWAPage && referrer === undefined){
+    console.log('On WA page');
+    setRefLocalStorage('wa-landing-page + maybe r:' + document.referrer);
+  }
+  console.log("Local storage ref: " + getRefLocalStorage());
 
   // if(referrer === undefined){
   //     utmSource = checkReferrer.getParam('utm_source');
@@ -237,6 +250,16 @@ $(document).ready(function() {
   };
 
 
+  // Returns number of days until a given date. Used for election countdowns
+  function getDaysTo(endDate) {
+    var today = new Date();
+    var distance = endDate - today;
+    if (distance < 0)
+      return 0;
+    return Math.ceil(distance / 86400000); // 86400000 ms in 1 day
+  }
+
+
   // get member and volenteer info ajax request
   var getMembers = function() {
     $.ajax({
@@ -249,22 +272,39 @@ $(document).ready(function() {
       },
       success: function(response) {
         var data = JSON.parse(response);
-        var el = document.getElementById("js-member-count");
-        var wa = document.getElementById("js-wamember-count");
-        var elMobile = document.getElementById("js-member-count-mobile");
-        var volCountEl = document.getElementById("js-volunteer-count");
-        var volCountElMobile = document.getElementById("js-volunteer-count-mobile");
+        var classValueMap = {
+          "js-member-count": data.n_members,
+          "js-wamember-count": data.n_members_state.wa,
+          "js-volunteer-count": data.n_volunteers,
+          // TS: No need to differentiate between mobile and non-mobile here for now
+          // "js-member-count-mobile": data.n_members,
+          // "js-volunteer-count-mobile": data.n_volunteers
+          // WA State Election Countdown - Remove After 11 March 2017
+          "js-waelection-countdown": getDaysTo(new Date('03/11/2017')), // Use US Date Format MM/DD/YYYY
+        };
 
         var set_contents = function(e, to_set){
-          if(Boolean(e))
+          if(Boolean(e)) {
             e.innerHTML = to_set;
-        }
+            console.log("Setting", e, "to", to_set);
+          }
+        };
 
-        set_contents(el, data.n_members);
-        set_contents(volCountEl, data.n_volunteers);
-        set_contents(wa, data.n_members_state.wa);
-        set_contents(elMobile, data.n_members);
-        set_contents(volCountElMobile, data.n_volunteers);
+        _.map(classValueMap, function(val, className){
+          _.map(document.getElementsByClassName(className), function(elem){
+            set_contents(elem, val);
+          });
+        });
+        //for (var key in classValueMap) {
+        //  var value = classValueMap[key];
+        //  var ref = document.getElementsByClassName(key);
+        //  // Some pages have more than one member counter
+        //  for (var i = 0, len = ref.length; i < len; i++) {
+        //    var element = ref[i];
+        //    set_contents(element, value);
+        //  }
+        //}
+
       },
       type: 'GET'
     });
