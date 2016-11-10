@@ -274,7 +274,7 @@ $(document).ready(function() {
         var data = JSON.parse(response);
         var classValueMap = {
           "js-member-count": data.n_members,
-          "js-wamember-count": data.n_members_state.wa,
+          "js-wamember-count": data.n_members_validated_state.wa,
           "js-volunteer-count": data.n_volunteers,
           // TS: No need to differentiate between mobile and non-mobile here for now
           // "js-member-count-mobile": data.n_members,
