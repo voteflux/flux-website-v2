@@ -29,14 +29,17 @@ const FormContainer = React.createClass({
     data.name = data.fname + " " + data.mnames + " " + data.lname;
 
     this.setState({isLoading: true, showSubmissionModal: true});
-    HttpHelpers.sendForm( JSON.stringify(data, null, 4), function(response){
+    HttpHelpers.sendForm(data, function(response){
 
       if (__DEV__) {
         console.log(response);
         console.log(data);
       }
 
-      if (response.statusText === "OK" && response.status === 200 && response.data.success === true) {
+      console.log(response);
+      console.log('response ----A')
+
+      if (response.ok && response.status === 200 && response.body.success === true) {
         this.setState({
           isLoading: false,
           serverSuccessMsg: "Success"
@@ -50,6 +53,7 @@ const FormContainer = React.createClass({
         fbq('track', 'NewMember');  // a different pixel thing to the above, keep both.
 
       } else if (response.status === 409) {
+        console.log('Duplicate email detected');
         this.setState({
           isLoading: false,
           serverErrorMsg: "Error. Email already exists. Please update details instead of re-registering."
@@ -350,7 +354,7 @@ const FormContainer = React.createClass({
                 ?
                 <div className="ml2 line-height-3 flex col-6 mt1">
                   <div className="center-xy">
-                    <p className='h0 center error'>{this.state.serverErrorMsg}<br />
+                    <p className='h2 center error'>{this.state.serverErrorMsg}<br />
                     <button className="btn btn-primary mx-auto h1" onClick={this.closeModal}>Close</button>
                     </p>
                   </div>
