@@ -1,13 +1,14 @@
 import React from 'react'
 import Formsy from 'formsy-react'
-import FluxHeader from '../components/flux-header'
+import Modal from 'react-modal';
 import MyInput from '../components/my-input'
 import MyTextarea from '../components/my-textarea'
 import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
 
 
-var redirectUrl = window.location.href + '/step2'
+const redirectUrl = window.location.href.split("/\?", 2)[0] + '/step2';
+const randomEmail = Math.random().toString(36).substr(2,10);
 
 const FormContainer = React.createClass({
   getInitialState() {
@@ -16,22 +17,24 @@ const FormContainer = React.createClass({
       isLoading: false,
       validationErrors: {},
       serverErrorMsg: false,
-      serverSuccessMsg: false
+      serverSuccessMsg: false,
+      showSubmissionModal: false
     };
   },
   submit(data) {
     if (data.mnames === undefined) { data.mnames = ""}
     if (data.referred_by === undefined) { data.referred_by = ""}
     if (data.member_comment === undefined) { data.member_comment = ""}
-    data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00'
-    data.address = data.addr_street + '; ' + data.addr_suburb + '; ' + data.addr_postcode
-    data.name = data.fname + " " + data.mnames + " " + data.lname
+    data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00';
+    data.address = data.addr_street + '; ' + data.addr_suburb + '; ' + data.addr_postcode;
+    data.name = data.fname + " " + data.mnames + " " + data.lname;
 
-    this.setState({isLoading: true})
+    this.setState({isLoading: true, showSubmissionModal: true});
     HttpHelpers.sendForm( JSON.stringify(data, null, 4), function(response){
 
       if (__DEV__) {
-        console.log(response), console.log(data);
+        console.log(response);
+        console.log(data);
       }
 
       if (response.statusText === "OK" || response.status === 200 || response.data.success === true) {
@@ -65,6 +68,9 @@ const FormContainer = React.createClass({
   },
   disableButton() {
     this.setState({ canSubmit: false });
+  },
+  closeModal() {
+    this.setState({ showSubmissionModal: false });
   },
 
 
@@ -102,6 +108,7 @@ const FormContainer = React.createClass({
             name="fname"
             title="Legal first name"
             autocomplete="given-name"
+            value={__DEV__ ? "asdf" : ""}
             validationErrors={{
               isRequired: 'First name is required'
             }}
@@ -112,6 +119,7 @@ const FormContainer = React.createClass({
             name="lname"
             autocomplete="family-name"
             title="Legal last name"
+            value={__DEV__ ? "asdf" : ""}
             validationErrors={{
               isRequired: 'First name is required'
             }}
@@ -122,6 +130,7 @@ const FormContainer = React.createClass({
               name="mnames"
               autocomplete="false"
               title="Legal middle name"
+              value={__DEV__ ? "asdf" : ""}
               validationErrors={{
                 isSpecialWords: 'Only letters please'
               }}
@@ -134,6 +143,7 @@ const FormContainer = React.createClass({
             title="Street address"
             validationError="Street address is required"
             autocomplete="address-line1"
+            value={__DEV__ ? "asdf" : ""}
             validationErrors={{
               isRequired: 'Street address required'
             }}
@@ -145,6 +155,7 @@ const FormContainer = React.createClass({
             title="Suburb"
             validationError="Suburb required"
             autocomplete="city"
+            value={__DEV__ ? "asdf" : ""}
             required />
 
           <MyInput
@@ -152,6 +163,7 @@ const FormContainer = React.createClass({
             name="addr_postcode"
             title="Postcode"
             validations="isNumeric,isLength:4"
+            value={__DEV__ ? "1337" : ""}
             validationErrors={{
               isRequired: 'Postcode required',
               isNumeric: 'Only numbers allowed',
@@ -168,6 +180,7 @@ const FormContainer = React.createClass({
                 name="dobDay"
                 title="Day"
                 placeholder="DD"
+                value={__DEV__ ? "01" : ""}
                 validations={{
                   isNumeric: true,
                   isLength: 2,
@@ -188,6 +201,7 @@ const FormContainer = React.createClass({
                 name="dobMonth"
                 title="Month"
                 placeholder="MM"
+                value={__DEV__ ? "01" : ""}
                 validations={{
                   isNumeric: true,
                   isLength: 2,
@@ -208,6 +222,7 @@ const FormContainer = React.createClass({
                 name="dobYear"
                 title="Year"
                 placeholder="YYYY"
+                value={__DEV__ ? "2000" : ""}
                 validations={{
                   isNumeric: true,
                   isLength: 4,
@@ -231,6 +246,7 @@ const FormContainer = React.createClass({
             name="contact_number"
             title="Phone"
             autocomplete="tel"
+            value={__DEV__ ? "1234567890" : ""}
             validations={{
               minLength: 8
             }}
@@ -244,6 +260,7 @@ const FormContainer = React.createClass({
             inputClass="input"
             name="email"
             title="Email"
+            value={__DEV__ ? randomEmail + "@xk.io" : ""}
             validations="isEmail"
             validationError="This is not a valid email"
             autocomplete="email"
@@ -280,6 +297,7 @@ const FormContainer = React.createClass({
              inputClass="input"
              name="member_comment"
              title="Comments / Notes"
+             value={__DEV__ ? "DEV SUBMISSION - PLEASE DELETE" : ""}
              subtext="(Optional, Anything you'd like to add, about yourself, us, or anything, really.)" />
 
            <MyInput
@@ -303,29 +321,50 @@ const FormContainer = React.createClass({
                 <p className='h5 inline error'>You can't submit until you fill out all required fields</p>
               </div>}
 
-             {this.state.isLoading
-              ?
-              <div className="ml2 line-height-3 flex col-6 mt1">
-                <p className='h5 inline'>Sending...</p>
-              </div>
-              : this.state.serverSuccessMsg
-              ?
-              <div className="ml2 line-height-3 flex col-6 mt1">
-                <p className='h5 inline success-color'>{this.state.serverSuccessMsg}</p>
-              </div>
-              : this.state.serverErrorMsg && !this.state.serverSuccessMsg
-              ?
-              <div className="ml2 line-height-3 flex col-6 mt1">
-                <span className="h3 error inline-block">*</span>
-                <p className='h5 inline error'>{this.state.serverErrorMsg}</p>
-              </div>
-              : null}
+             <Modal
+              isOpen={this.state.showSubmissionModal}
+              contentLabel="Processing Registration"
+              onRequestClose={this.closeModal}
+              style={{
+                overlay: {
+                  backgroundColor: "rgba(20, 20, 20, 0.5)",
+                },
+                content: {
+
+                }
+              }}
+             >
+               {this.state.isLoading
+                ?
+                <div className="ml2 line-height-3 flex col-6 mt1">
+                  <p className='h0 center-xy inline'>Registering...</p>
+                </div>
+                : this.state.serverSuccessMsg
+                ?
+                <div className="ml2 line-height-3 flex col-6 mt1">
+                  <p className='h0 center-xy inline success-color'>{this.state.serverSuccessMsg}
+                    <br />
+                    Redirecting...
+                  </p>
+                </div>
+                : this.state.serverErrorMsg && !this.state.serverSuccessMsg
+                ?
+                <div className="ml2 line-height-3 flex col-6 mt1">
+                  <div className="center-xy">
+                    <p className='h0 center error'>{this.state.serverErrorMsg}<br />
+                    <button className="btn btn-primary mx-auto h1" onClick={this.closeModal}>Close</button>
+                    </p>
+                  </div>
+                </div>
+                : null}
+             </Modal>
 
           </div>
 
           <p className="silver">
             <i className="material-icons ">lock</i>
-            Your details will be kept absolutely confidential and will only be used for party business.</p>
+            Your details will be kept absolutely confidential and will only be used for party business.
+          </p>
         </div>
 
       </Formsy.Form>
