@@ -7,9 +7,7 @@ import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
 
 const redirectUrl = (window.location.href.split("/\?", 2)[0] + '/step2').replace("//step2", "/step2");
-console.log(redirectUrl);
 const randomEmail = Math.random().toString(36).substr(2,10);
-console.log(randomEmail);
 
 const FormContainer = React.createClass({
   getInitialState() {
