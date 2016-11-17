@@ -49,10 +49,10 @@ const FormContainer = React.createClass({
         fbq('track', 'Complete Registration');
         fbq('track', 'NewMember');  // a different pixel thing to the above, keep both.
 
-      } else if (response.statusText === "Conflict" || response.status === 409 || response.data === "Email already exists. Please update details instead of re-registering.") {
+      } else if (response.status === 409) {
         this.setState({
           isLoading: false,
-          serverErrorMsg: "Error. Email already exists"
+          serverErrorMsg: "Error. Email already exists. Please update details instead of re-registering."
         });
       } else {
         this.setState({
