@@ -5,8 +5,7 @@ date: 2016-11-17
 author: Nathan Spataro
 ---
 
-# Victorian State Party organisation meetup to be held on Wednesday the 24th in Melbourne.
-
+Victorian State Party organisation meetup to be held on Wednesday the 24th in Melbourne.
 
 The purpose of the meeting is to make introductions between Flux Party members in Victoria, as well as establish key goals and outcomes for the creation of both a Victorian Flux Party, and a Victorian National Party Branch.
 
