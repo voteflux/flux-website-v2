@@ -25,6 +25,7 @@
     "browser-sync": "^2.11.2",
     "concurrently": "^2.0.0",
     "copy-webpack-plugin": "^4.0.0",
+    "es6-promise": "^4.0.5",
     "formsy-react": "^0.18.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
