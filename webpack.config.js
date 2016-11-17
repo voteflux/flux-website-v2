@@ -6,7 +6,7 @@ var path = require('path');
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   hash: true,
   cache: false,
-  template: __dirname + '/app/index.html',
+  template: __dirname + '/react-signup/app/index.html',
   filename: 'index.html',
   inject: 'body'
 });
@@ -18,11 +18,11 @@ var definePlugin = new webpack.DefinePlugin({
   'process.env': {NODE_ENV: '"production"'}
 });
 
-var entryPath = './app/'
-var outputPath = '../signup/'
+var entryPath = './react-signup/app/';
+var outputPath = './signup/';
 var CopyWebpackPluginConfig = new CopyWebpackPlugin([
-  { from:  './css', to: outputPath + 'css' },
-  { from: './img', to: outputPath + 'img' }
+  { from:  './react-signup/css', to: outputPath + 'css' },
+  { from: './react-signup/img', to: outputPath + 'img' }
 ]);
 
 
@@ -34,7 +34,7 @@ module.exports = {
       outputPath: path.join(__dirname, outputPath)
   },
   entry: [
-    './app/index.js'
+    './react-signup/app/index.js'
   ],
   output: {
     path: outputPath,
