@@ -346,7 +346,7 @@ const FormContainer = React.createClass({
                     Redirecting...
                   </p>
                 </div>
-                : this.state.serverErrorMsg && !this.state.serverSuccessMsg
+                : this.state.serverErrorMsg
                 ?
                 <div className="ml2 line-height-3 flex col-6 mt1">
                   <div className="center-xy">
