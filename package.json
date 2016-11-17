@@ -4,7 +4,7 @@
   "description": "Flux website",
   "main": "index.js",
   "scripts": {
-    "flux": "bundle exec jekyll 'clean' && parallelshell 'gulp' 'bundle exec jekyll build --watch --config _config.yml' 'webpack -w'",
+    "flux": "bundle exec jekyll 'clean' && BUILD_DEV=true parallelshell 'gulp' 'bundle exec jekyll build --watch --config _config.yml' 'webpack -w'",
     "flux-no-react": "bundle exec jekyll serve --watch --config _config.yml",
     "deploy-stage": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build && gulp 'deploy' && exit",
     "build": "bundle install && bundle exec jekyll clean && gulp sass && webpack -p && bundle exec jekyll build",
