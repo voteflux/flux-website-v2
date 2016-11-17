@@ -36,7 +36,7 @@ const FormContainer = React.createClass({
         console.log(data);
       }
 
-      if (response.statusText === "OK" || response.status === 200 || response.data.success === true) {
+      if (response.statusText === "OK" && response.status === 200 && response.data.success === true) {
         this.setState({
           isLoading: false,
           serverSuccessMsg: "Success"
