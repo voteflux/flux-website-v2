@@ -6,23 +6,23 @@ var path = require('path');
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   hash: true,
   cache: false,
-  template: __dirname + '/app/index.html',
+  template: __dirname + '/react-signup/app/index.html',
   filename: 'index.html',
   inject: 'body'
 });
 
 // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
 var definePlugin = new webpack.DefinePlugin({
-  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
+  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false')),
   __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false')),
   'process.env': {NODE_ENV: '"production"'}
 });
 
-var entryPath = './app/'
-var outputPath = '../signup/'
+var entryPath = './react-signup/app/';
+var outputPath = './signup/';
 var CopyWebpackPluginConfig = new CopyWebpackPlugin([
-  { from:  './css', to: outputPath + 'css' },
-  { from: './img', to: outputPath + 'img' }
+  { from:  './react-signup/css', to: outputPath + 'css' },
+  { from: './react-signup/img', to: outputPath + 'img' }
 ]);
 
 
@@ -34,7 +34,7 @@ module.exports = {
       outputPath: path.join(__dirname, outputPath)
   },
   entry: [
-    './app/index.js'
+    './react-signup/app/index.js'
   ],
   output: {
     path: outputPath,

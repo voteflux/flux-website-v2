@@ -6,8 +6,7 @@ import MyTextarea from '../components/my-textarea'
 import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
 
-
-const redirectUrl = window.location.href.split("/\?", 2)[0] + '/step2';
+const redirectUrl = (window.location.href.split("/\?", 2)[0] + '/step2').replace("//step2", "/step2");
 const randomEmail = Math.random().toString(36).substr(2,10);
 
 const FormContainer = React.createClass({
@@ -30,14 +29,17 @@ const FormContainer = React.createClass({
     data.name = data.fname + " " + data.mnames + " " + data.lname;
 
     this.setState({isLoading: true, showSubmissionModal: true});
-    HttpHelpers.sendForm( JSON.stringify(data, null, 4), function(response){
+    HttpHelpers.sendForm(data, function(response){
 
       if (__DEV__) {
         console.log(response);
         console.log(data);
       }
 
-      if (response.statusText === "OK" || response.status === 200 || response.data.success === true) {
+      console.log(response);
+      console.log('response ----A')
+
+      if (response.ok && response.status === 200 && response.body.success === true) {
         this.setState({
           isLoading: false,
           serverSuccessMsg: "Success"
@@ -50,10 +52,11 @@ const FormContainer = React.createClass({
         fbq('track', 'Complete Registration');
         fbq('track', 'NewMember');  // a different pixel thing to the above, keep both.
 
-      } else if (response.statusText === "Conflict" || response.status === 409 || response.data === "Email already exists. Please update details instead of re-registering.") {
+      } else if (response.status === 409) {
+        console.log('Duplicate email detected');
         this.setState({
           isLoading: false,
-          serverErrorMsg: "Error. Email already exists"
+          serverErrorMsg: "Error. Email already exists. Please update details instead of re-registering."
         });
       } else {
         this.setState({
@@ -347,11 +350,11 @@ const FormContainer = React.createClass({
                     Redirecting...
                   </p>
                 </div>
-                : this.state.serverErrorMsg && !this.state.serverSuccessMsg
+                : this.state.serverErrorMsg
                 ?
                 <div className="ml2 line-height-3 flex col-6 mt1">
                   <div className="center-xy">
-                    <p className='h0 center error'>{this.state.serverErrorMsg}<br />
+                    <p className='h2 center error'>{this.state.serverErrorMsg}<br />
                     <button className="btn btn-primary mx-auto h1" onClick={this.closeModal}>Close</button>
                     </p>
                   </div>
