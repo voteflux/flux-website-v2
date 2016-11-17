@@ -1,6 +1,6 @@
+require('es6-promise/auto');
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Formsy from 'formsy-react'
 import FluxHeader from './components/flux-header'
 import HttpHelpers from './utils/http-helpers'
 import FormContainer from './containers/form-container'
@@ -58,6 +58,6 @@ const App = React.createClass({
       </div>
     )
   }
-})
+});
 
 ReactDOM.render(<App />, document.getElementById('app'));
