@@ -353,11 +353,11 @@ $(document).ready(function() {
     $("#js-menu-button").toggleClass('is-active');
   };
 
-  var fadeStart = 0
-  var fadeUntil = 150
-  var $fading = $('#js-fading')
-  var $document = $(document)
-  var faded = false
+  var fadeStart = 0;
+  var fadeUntil = 150;
+  var $fading = $('#js-fading');
+  var $document = $(document);
+  var faded = false;
   // var contactHeight = $('#contact').outerHeight()
   // var contactPos = $('#contact').offset().top
     //  console.log(contactPos, contactHeight)
@@ -376,10 +376,10 @@ $(document).ready(function() {
 
       // for logo text on dark background
       if (opacity >= 0.1) {
-        $('.js-flux-text-darktheme').css({ fill: "#222" })
+        $('.js-flux-text-darktheme').css({ fill: "#222" });
         $("#js-nav-links").removeClass('white');
       } else {
-        $('.js-flux-text-darktheme').css({ fill: "#fff" })
+        $('.js-flux-text-darktheme').css({ fill: "#fff" });
         $("#js-nav-links").addClass('white');
       }
       $fading.css('opacity',opacity);
