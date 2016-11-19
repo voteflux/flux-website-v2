@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import superagent from 'superagent';
+var _ = require('lodash');
 import FormContainer from '../containers/form-container'
 
 
-if (window.location.hostname === 'localhost') {
+if (window.location.hostname === 'localhost' || _.includes(location.hostname, "deploy-preview")) {
   console.log("Using dev server for signup submissions");
   var postUrl = 'https://flux-api-dev.herokuapp.com';
 } else {
