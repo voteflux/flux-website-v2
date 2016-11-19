@@ -2,6 +2,7 @@ import React from 'react'
 import Formsy from 'formsy-react'
 import Modal from 'react-modal';
 import MyInput from '../components/my-input'
+import MySelect from '../components/my-select'
 import MyTextarea from '../components/my-textarea'
 import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
@@ -17,7 +18,14 @@ const FormContainer = React.createClass({
       validationErrors: {},
       serverErrorMsg: false,
       serverSuccessMsg: false,
-      showSubmissionModal: false
+      showSubmissionModal: false,
+      loading: {
+        'street': false,
+        'suburb': false,
+      },
+      suburbs: ['Enter Postcode...'],
+      streets: ['Choose Suburb...'],
+      postcode: '0000',
     };
   },
   submit(data) {
@@ -25,8 +33,8 @@ const FormContainer = React.createClass({
     if (data.referred_by === undefined) { data.referred_by = ""}
     if (data.member_comment === undefined) { data.member_comment = ""}
     data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00';
-    data.address = data.addr_street + '; ' + data.addr_suburb + '; ' + data.addr_postcode;
-    data.name = data.fname + " " + data.mnames + " " + data.lname;
+    data.address = _.join([data.addr_street_no, data.addr_street, data.addr_suburb, data.addr_postcode], "; ");
+    data.name = _.join([data.fname, data.mnames, data.lname], ", ");
 
     this.setState({isLoading: true, showSubmissionModal: true});
     HttpHelpers.sendForm(data, function(response){
@@ -76,6 +84,49 @@ const FormContainer = React.createClass({
     this.setState({ showSubmissionModal: false });
   },
 
+  checkPC(evt) {
+    const pcTest = /\d{4}/;
+    const pc = evt.currentTarget.value;
+    console.log(pc);
+    if (pcTest.test(pc)) {
+      this.updateSuburbs(pc);
+    }
+  },
+
+  checkSuburb(evt) {
+    const suburb = evt.currentTarget.value;
+    this.updateStreets(suburb);
+  },
+
+  updateSuburbs(pc){
+    this.setState({loading: { suburb: true }, suburbs: ['Loading...'], postcode: pc});
+    const outer = this;
+    HttpHelpers.getSuburbs(pc, function(err, resp){
+      if (err) {
+        console.log(err);
+        outer.setState({suburbs: ["Unknown Postcode"]});
+      } else {
+        console.log(resp);
+        outer.setState({suburbs: _.concat(["Choose Suburb..."], resp.body.suburbs)});
+        outer.updateStreets(resp.body.suburbs[0]);
+      }
+    });
+  },
+
+  updateStreets(suburb){
+    const outer = this;
+    this.setState({loading: { street: true }, streets:["Loading..."], suburb: suburb});
+    HttpHelpers.getStreets(this.state.postcode, suburb, function(err, resp){
+      if(err){
+        console.log(err);
+        outer.setState({streets:["Unknown Suburb"]});
+      } else {
+        console.log(resp);
+        outer.setState({streets: _.concat(["Choose Street..."], resp.body.streets)});
+      }
+    })
+  },
+
 
   render() {
     return (
@@ -104,24 +155,13 @@ const FormContainer = React.createClass({
         </div>
 
         <div className="px2 pb4">
-          <SectionTitle text="1. Names"/>
+          <SectionTitle text="1. Name"/>
 
           <MyInput
             inputClass="input"
             name="fname"
             title="Legal first name"
             autocomplete="given-name"
-            value={__DEV__ ? "asdf" : ""}
-            validationErrors={{
-              isRequired: 'First name is required'
-            }}
-            required />
-
-          <MyInput
-            inputClass="input"
-            name="lname"
-            autocomplete="family-name"
-            title="Legal last name"
             value={__DEV__ ? "asdf" : ""}
             validationErrors={{
               isRequired: 'First name is required'
@@ -139,41 +179,87 @@ const FormContainer = React.createClass({
               }}
               formNoValidate />
 
-          <SectionTitle text="2. Address"/>
           <MyInput
             inputClass="input"
-            name="addr_street"
-            title="Street address"
-            validationError="Street address is required"
-            autocomplete="address-line1"
+            name="lname"
+            autocomplete="family-name"
+            title="Legal last name"
             value={__DEV__ ? "asdf" : ""}
             validationErrors={{
-              isRequired: 'Street address required'
+              isRequired: 'First name is required'
             }}
             required />
 
-          <MyInput
+          <SectionTitle text="2. Address"/>
+
+          <MySelect
             inputClass="input"
-            name="addr_suburb"
-            title="Suburb"
-            validationError="Suburb required"
-            autocomplete="city"
-            value={__DEV__ ? "asdf" : ""}
-            required />
+            name="addr_country"
+            title="Country"
+            validationError="Country Required"
+            options={[{title: 'Australia', value: 'au'}]}
+            />
 
           <MyInput
             inputClass="input"
             name="addr_postcode"
             title="Postcode"
             validations="isNumeric,isLength:4"
-            value={__DEV__ ? "1337" : ""}
+            value={__DEV__ ? "2000" : ""}
             validationErrors={{
               isRequired: 'Postcode required',
               isNumeric: 'Only numbers allowed',
               isLength: 'Length needs to be 4 digits'
             }}
             autocomplete="postal-code"
+            onChange={this.checkPC}
             required />
+
+          <MySelect
+            inputClass="input"
+            name="addr_suburb"
+            title="Suburb"
+            validationError="Suburb required"
+            options={this.state.suburbs}
+            value={__DEV__ ? "HAYMARKET (NSW)" : ""}
+            onChange={this.checkSuburb}
+            validations={{
+              notDefault: function(values, value){
+                console.log(values)
+                console.log(value)
+                console.log(_.includes(value, '...'))
+                console.log('done')
+                return !_.includes(value, '...') ? true : "Must choose a suburb";
+              }
+            }}
+            required />
+
+          <div className="flex mxn1">
+            <MyInput
+              inputClass="input"
+              className="col-4 inline-block px1 relative"
+              name="addr_street_no"
+              title="Unit / Street No."
+              validationError="Unit and Street Number required"
+              placeholder="eg: u32 / 117"
+              value={__DEV__ ? "13 / 37" : ""}
+              required
+              />
+
+            <MySelect
+              className="col-8 mx-auto inline-block px1 relative"
+              inputClass="input"
+              name="addr_street"
+              title="Street"
+              validationError="Street address is required"
+              autocomplete="address-line1"
+              value={__DEV__ ? "asdf" : ""}
+              validationErrors={{
+                isRequired: 'Street address required'
+              }}
+              options={this.state.streets}
+              required />
+          </div>
 
           <SectionTitle text="3. Date of Birth" infoText="(Required by AEC)"/>
           <div className="flex mxn1">

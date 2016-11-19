@@ -13,7 +13,7 @@ if (window.location.hostname === 'localhost') {
 
 var HttpHelpers = {
   getMembers: function () {
-    return axios.get( "https://api.voteflux.org/getinfo" )
+    return axios.get( "https://api.voteflux.org/api/v0/getinfo" )
       .then(function (response) {
         return response.data
       })
@@ -35,6 +35,12 @@ var HttpHelpers = {
           console.log("Error sent to server --->", errorArr)
         }
       })
+  },
+  getSuburbs: function(pc, callback) {
+    return superagent.get(postUrl + '/api/v0/get_suburbs/au/' + pc).end(callback);
+  },
+  getStreets: function(pc, suburb, callback) {
+    return superagent.get(postUrl + '/api/v0/get_streets/au/' + pc + '/' + suburb).end(callback);
   }
 };
 

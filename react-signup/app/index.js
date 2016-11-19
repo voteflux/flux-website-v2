@@ -11,7 +11,7 @@ const App = React.createClass({
     return {
       isLoading: true,
       memberCount: {},
-      checkReferrer: false
+      checkReferrer: false,
     }
   },
   componentWillMount() {
