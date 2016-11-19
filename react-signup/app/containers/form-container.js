@@ -44,9 +44,6 @@ const FormContainer = React.createClass({
         console.log(data);
       }
 
-      console.log(response);
-      console.log('response ----A')
-
       if (response.ok && response.status === 200 && response.body.success === true) {
         this.setState({
           isLoading: false,
@@ -101,14 +98,19 @@ const FormContainer = React.createClass({
   updateSuburbs(pc){
     this.setState({loading: { suburb: true }, suburbs: ['Loading...'], postcode: pc});
     const outer = this;
+    const setStateUnk = function() { outer.setState({suburbs: ["Unknown Postcode"]}); };
     HttpHelpers.getSuburbs(pc, function(err, resp){
       if (err) {
         console.log(err);
-        outer.setState({suburbs: ["Unknown Postcode"]});
+        setStateUnk();
       } else {
         console.log(resp);
-        outer.setState({suburbs: _.concat(["Choose Suburb..."], resp.body.suburbs)});
-        outer.updateStreets(resp.body.suburbs[0]);
+        if (resp.body.suburbs.length == 0)
+          setStateUnk();
+        else {
+          outer.setState({suburbs: _.concat(["Choose Suburb..."], resp.body.suburbs)});
+          outer.updateStreets(resp.body.suburbs[0]);
+        }
       }
     });
   },
@@ -225,10 +227,6 @@ const FormContainer = React.createClass({
             onChange={this.checkSuburb}
             validations={{
               notDefault: function(values, value){
-                console.log(values)
-                console.log(value)
-                console.log(_.includes(value, '...'))
-                console.log('done')
                 return !_.includes(value, '...') ? true : "Must choose a suburb";
               }
             }}
