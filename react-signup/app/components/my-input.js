@@ -14,7 +14,8 @@ const MyInput = React.createClass({
     const errorMessage = this.getErrorMessage();
     return (
       <div className={ className + " " + "mb1 relative"}>
-        { this.props.type != 'checkbox' && <label htmlFor={this.props.name} className="gray">{this.props.title}</label> }
+        { this.props.type != 'checkbox' && <label htmlFor={this.props.name} className="gray block">{this.props.title}</label> }
+        { this.props.subtext && <h5 className="h5 line-height-2 muted mt0 inline-block">{this.props.subtext}</h5> }
         { this.showRequired() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
         <input
           id={this.props.name}

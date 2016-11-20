@@ -32,8 +32,9 @@ const MySelect = React.createClass({
           className={this.props.inputClass}
           name={this.props.name}
           onChange={this.changeValue}
+          disabled={this.props.disabled || false}
           value={this.getValue()} >
-          {options}
+            {options}
         </select>
 
         { errorMessage && <h5 className='line-height-2 inline-block mt0 validation-error'>{errorMessage}</h5> }
