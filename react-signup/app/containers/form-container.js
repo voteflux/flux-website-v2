@@ -244,10 +244,10 @@ const FormContainer = React.createClass({
             }}
             required />
 
-          <div className="flex mxn1">
+          <div className="flex mxn1 relative">
             <MyInput
               inputClass="input"
-              className="col-4 inline-block px1 relative"
+              className="col-4 inline-block px1"
               name="addr_street_no"
               title="Unit / Street No."
               validationError="Unit and Street Number required"
@@ -257,7 +257,7 @@ const FormContainer = React.createClass({
               />
 
             <MySelect
-              className="col-8 mx-auto inline-block px1 relative"
+              className="col-8 mx-auto inline-block px1 absolute bottom-0 right-0 pb1"
               inputClass="input"
               name="addr_street"
               title="Street"
