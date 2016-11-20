@@ -383,7 +383,8 @@ const FormContainer = React.createClass({
                 <MyInput
                   inputClass="input"
                   name="referred_by"
-                  title="How did you hear about Flux?" />
+                  title="How did you hear about Flux?"
+                  subtext="(optional)" />
             </div>}
 
           {/*<MyInput
