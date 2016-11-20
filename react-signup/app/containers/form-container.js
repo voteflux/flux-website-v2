@@ -36,7 +36,7 @@ const FormContainer = React.createClass({
     if (data.member_comment === undefined) { data.member_comment = ""}
     data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00';
     data.address = _.join([data.addr_street_no, data.addr_street, data.addr_suburb, data.addr_postcode], "; ");
-    data.name = _.join([data.fname, data.mnames, data.lname], ", ");
+    data.name = _.join([data.fname, data.mnames, data.sname], " ");
 
     this.setState({isLoading: true, showSubmissionModal: true});
     HttpHelpers.sendForm(data, function(response){
@@ -193,7 +193,7 @@ const FormContainer = React.createClass({
 
           <MyInput
             inputClass="input"
-            name="lname"
+            name="sname"
             autocomplete="family-name"
             title="Legal last name"
             value={__DEV__ ? "asdf" : ""}
