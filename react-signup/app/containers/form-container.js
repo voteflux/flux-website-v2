@@ -257,7 +257,7 @@ const FormContainer = React.createClass({
               />
 
             <MySelect
-              className="col-8 mx-auto inline-block px1 absolute bottom-0 right-0 mb1"
+              className="col-8 mx-auto inline-block px1 absolute bottom-0 right-0 mb1 "
               inputClass="input"
               name="addr_street"
               title="Street"
