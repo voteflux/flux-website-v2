@@ -213,7 +213,6 @@ const FormContainer = React.createClass({
               isNumeric: 'Only numbers allowed',
               isLength: 'Length needs to be 4 digits'
             }}
-            autocomplete="postal-code"
             onChange={this.checkPC}
             required />
 
@@ -250,7 +249,6 @@ const FormContainer = React.createClass({
               name="addr_street"
               title="Street"
               validationError="Street address is required"
-              autocomplete="address-line1"
               value={__DEV__ ? "asdf" : ""}
               validationErrors={{
                 isRequired: 'Street address required'
@@ -331,8 +329,8 @@ const FormContainer = React.createClass({
             inputClass="input"
             type="tel"
             name="contact_number"
+            pattern="\d*"
             title="Phone"
-            autocomplete="tel"
             value={__DEV__ ? "1234567890" : ""}
             validations={{
               minLength: 8
