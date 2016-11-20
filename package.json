@@ -35,6 +35,7 @@
     "gulp-sass": "^2.2.0",
     "html-webpack-plugin": "^2.24.0",
     "jquery-touch-events": "^1.0.3",
+    "lodash": "^4.17.2",
     "lodash.throttle": "^4.0.1",
     "moment": "^2.13.0",
     "parallelshell": "^2.0.0",

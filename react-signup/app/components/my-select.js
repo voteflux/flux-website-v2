@@ -9,7 +9,7 @@ const MySelect = React.createClass({
       this.props.onChange(event);
   },
   render() {
-    const className = 'form-group relative' + ' ' + (this.props.className || ' ') + ( this.showRequired() ? 'required' : this.showError() ? 'error' : this.isPristine() ? " " : "success");
+    const className = 'form-group relative' + ' ' + (this.props.className || ' ') + ' ' + ( this.showRequired() ? 'required' : this.showError() ? 'error' : this.isPristine() ? " " : "success");
 
     const errorMessage = this.getErrorMessage();
     const options = this.props.options.map((option, i) => {
