@@ -1,11 +1,11 @@
 ---
 layout: about
-title: Victorian State Party Agenda 2016-11-24
+title: Victorian State Party Agenda 23rd November
 date: 2016-11-17
 author: Nathan Spataro
 ---
 
-Victorian State Party organisation meetup to be held on Wednesday the 23rd in Melbourne.
+Victorian State Party organisation meetup to be held on Wednesday the 23rd of November in Melbourne.
 
 The purpose of the meeting is to make introductions between Flux Party members in Victoria, as well as establish key goals and outcomes for the creation of both a Victorian Flux Party, and a Victorian National Party Branch.
 
