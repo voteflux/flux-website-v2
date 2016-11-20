@@ -27,6 +27,7 @@ const MyInput = React.createClass({
           autoComplete={this.props.autocomplete}
           placeholder={this.props.placeholder}
           ref={this.props.inputRef}
+          pattern={this.props.pattern || ""}
         />
       { this.props.type === 'checkbox'&& <label htmlFor={this.props.name} className="noselect mid-gray">{ this.props.title }</label> }
       <div className="relative error-msg-height">
