@@ -55,6 +55,9 @@ const App = React.createClass({
       <div>
         <FluxHeader memberCount={this.state.isLoading ? "Loading...": this.state.memberCount.n_members}/>
         <FormContainer onReferrer={this.state.checkReferrer} />
+        <div style={{height: "160px"}}>
+
+        </div>
       </div>
     )
   }
