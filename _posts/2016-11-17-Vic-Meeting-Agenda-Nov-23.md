@@ -14,6 +14,8 @@ Members attending should be prepared to make a degree of commitment toward achie
 
 This meeting is for current party members, and it is assumed that attendants understand and support the Flux System of issue based direct democracy.
 
+**Location and time details can be found on the [meetup page](https://www.meetup.com/FluxSydney/events/235309793/).** 
+
 # Agenda
 
 * __Welcome and introductions__ - _Each attendee introduces themselves to the group, why they’ve come along and what lead them to join the movement - Important to note here that this not an educational meetup and those seeking information should visit the website or stay posted for later social meetups._
