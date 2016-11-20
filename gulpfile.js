@@ -40,8 +40,8 @@ gulp.task('sass', function() {
             console.log("file size after" + details.name + ': ' + details.stats.minifiedSize);
         }))
         .pipe(gulp.dest("./css"))
-        .pipe(browserSync.stream())
-        .pipe(gulp.dest("./react-signup/css"));
+        .pipe(gulp.dest("./react-signup/css"))
+        .pipe(browserSync.stream());
 });
 
 gulp.task("default", ['serve']);

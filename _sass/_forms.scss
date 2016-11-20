@@ -13,6 +13,11 @@ textarea {
   height : auto !important;
 }
 
+.no-pointer-events {
+  pointer-events: none;
+}
+
+
 label {
   vertical-align : middle;
 }
