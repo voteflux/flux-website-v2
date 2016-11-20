@@ -26,7 +26,7 @@ const MySelect = React.createClass({
       <div className={className}>
         <label htmlFor={this.props.name} className="gray">{this.props.title}</label>
         { this.isPristine() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
-        <i className="material-icons absolute right-0 top-0 mt3 pt1 mr1 h1 noselect default no-pointer-events">arrow_drop_down</i>
+        <i className="material-icons absolute right-0 top-0 mt3 pt1 mr1 h1 noselect default" style={{pointerEvents: "none"}} >arrow_drop_down</i>
         <select
           id={this.props.name}
           className={this.props.inputClass}
