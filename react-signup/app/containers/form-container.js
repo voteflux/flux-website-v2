@@ -235,6 +235,7 @@ const FormContainer = React.createClass({
             validationError="Suburb required"
             options={this.state.suburbs}
             value={__DEV__ ? "HAYMARKET (NSW)" : ""}
+            disabled={this.state.suburbs[0] == 'Loading...'}
             onChange={this.checkSuburb}
             validations={{
               notDefault: function(values, value){
@@ -262,6 +263,7 @@ const FormContainer = React.createClass({
               title="Street"
               validationError="Street address is required"
               value={__DEV__ ? "asdf" : ""}
+              disabled={this.state.streets[0] == 'Loading...'}
               validationErrors={{
                 isRequired: 'Street address required'
               }}
