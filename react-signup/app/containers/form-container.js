@@ -27,6 +27,7 @@ const FormContainer = React.createClass({
       suburbs: ['Enter Postcode...'],
       streets: ['Choose Suburb...'],
       postcode: '0000',
+      country: 'au',
     };
   },
   submit(data) {
