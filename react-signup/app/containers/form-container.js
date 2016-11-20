@@ -6,6 +6,7 @@ import MySelect from '../components/my-select'
 import MyTextarea from '../components/my-textarea'
 import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
+var _ = require('lodash');
 
 const redirectUrl = (window.location.href.split("/\?", 2)[0] + '/step2').replace("//step2", "/step2");
 const randomEmail = Math.random().toString(36).substr(2,10);
@@ -129,6 +130,14 @@ const FormContainer = React.createClass({
     })
   },
 
+  writeToState(_key){
+    return function(evt){
+      let newState = {};
+      newState[_key] = evt.currentTarget.value;
+      this.setState(newState);
+    }
+  },
+
 
   render() {
     return (
@@ -200,13 +209,15 @@ const FormContainer = React.createClass({
             title="Country"
             validationError="Country Required"
             options={[{title: 'Australia', value: 'au'}]}
+            onChange={this.writeToState('country')}
             />
 
           <MyInput
             inputClass="input"
             name="addr_postcode"
             title="Postcode"
-            validations="isNumeric,isLength:4"
+            validations={_.includes(['au'], this.state.country) ? "isNumeric,isLength:4" : null}
+            pattern={_.includes(['au'], this.state.country) ? "\\d*" : ""}
             value={__DEV__ ? "2000" : ""}
             validationErrors={{
               isRequired: 'Postcode required',
@@ -265,6 +276,7 @@ const FormContainer = React.createClass({
                 name="dobDay"
                 title="Day"
                 placeholder="DD"
+                pattern="\d*"
                 value={__DEV__ ? "01" : ""}
                 validations={{
                   isNumeric: true,
@@ -286,6 +298,7 @@ const FormContainer = React.createClass({
                 name="dobMonth"
                 title="Month"
                 placeholder="MM"
+                pattern="\d*"
                 value={__DEV__ ? "01" : ""}
                 validations={{
                   isNumeric: true,
@@ -307,6 +320,7 @@ const FormContainer = React.createClass({
                 name="dobYear"
                 title="Year"
                 placeholder="YYYY"
+                pattern="\d*"
                 value={__DEV__ ? "2000" : ""}
                 validations={{
                   isNumeric: true,
