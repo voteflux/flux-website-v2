@@ -139,6 +139,16 @@ const FormContainer = React.createClass({
     }
   },
 
+  form: {
+    inputs: []
+  },
+
+  validationHints(){
+    const vhs = _.map(_.filter(this.form.inputs, (i) => !i.isValid()), (i) => i.props.title);
+    console.log(vhs);
+    return vhs;
+  },
+
 
   render() {
     return (
@@ -146,7 +156,8 @@ const FormContainer = React.createClass({
         onSubmit={this.submit}
         onValid={this.enableButton}
         onInvalid={this.disableButton}
-        onChange={this.validateForm}>
+        onChange={this.validateForm}
+        ref={(form) => this.form = form} >
 
         <div className="py3 px2 bg-light-gray">
           <h3 className="h2 regular mb1">Sign up below, it's quick and easy</h3>
@@ -423,7 +434,11 @@ const FormContainer = React.createClass({
               &&
               <div className="ml2 line-height-3 flex col-6 mt1">
                 <span className="h3 error inline-block">*</span>
-                <p className='h5 inline error'>You can't submit until you fill out all required fields</p>
+                <p className='h5 inline error'>You can't submit until you fill out all required fields. Check these:
+                  <ul>
+                    { this.validationHints().map(i => <li>{ i }</li>) }
+                  </ul>
+                </p>
               </div>}
 
              <Modal
