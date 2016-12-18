@@ -152,8 +152,8 @@ const FormContainer = React.createClass({
           <h3 className="h2 regular mb1">Sign up below, it's quick and easy</h3>
           <div className="gray mb3">
             <p className="mb2">
-              Please make sure your details exactly match those on the electoral roll. You can confirm them on the
-              <a href="https://oevf.aec.gov.au/" target="_blank" className="link-reset border-bottom accent nowrap"> AEC website</a>.
+              Please make sure your details exactly match those on the electoral roll. You can confirm them on the 
+              <a href="https://check.aec.gov.au/" target="_blank" className="link-reset border-bottom accent nowrap">AEC website</a>.
             </p>
           </div>
 
