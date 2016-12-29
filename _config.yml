@@ -18,6 +18,7 @@ icon_path: img/social-icons/
 accent-color: "#ff4500"
 base-color: "#0b0b0e"
 meetups: false
+future: true
 candidates: false
 countdown: true
 
