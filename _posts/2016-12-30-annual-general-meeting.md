@@ -12,7 +12,7 @@ They should both be a nice and quick affair, the agendas read:
 Federal:
 
 * Open Meeting
-* Leader's report
+* [Leader's report](https://github.com/voteflux/vote-flux-v2/raw/master/pdf/2016-leaders-report.pdf)
 * [Secretary's report](https://github.com/voteflux/vote-flux-v2/raw/master/pdf/2016-secretary-report.pdf)
 * Close Meeting
 
