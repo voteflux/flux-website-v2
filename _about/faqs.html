@@ -48,7 +48,6 @@ faqs:
     The main practical differences are:
     <ul>
         <li>Swapping votes is allowed</li>
-        <li>Sending votes is allowed</li>
         <li>Saving 'political capital' over time is allowed</li>
         <li>Some similarities are: conservation of votes and distributing uniformly over the population. <small>'Conservation of votes' is said in the same way we'd talk about 'conservation of energy' => they cannot be created or destroyed, so the number of votes before trading is always equal to the number of votes after trading, regardless of what went on in the middle.</small></li>
     </ul>
@@ -105,7 +104,8 @@ faqs:
 
 {% for faq in page.faqs  %}
 <div class="mb3">
-  <h3 id="{{faq.question | slugify }}" class="h4 sm-h3 bold">{{faq.question}}</h3>
+  <span id="{{faq.question | slugify }}" class="anchor"></span>
+  <h3 class="h4 sm-h3 bold">{{faq.question}}</h3>
   <p>{{faq.answer}}</p>
 </div>
 {% endfor %}
