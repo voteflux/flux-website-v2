@@ -2,7 +2,7 @@
 layout: default
 permalink: /wa-team/
 dark-theme: true
-title: Flux candidates
+title: Flux WA Team
 ---
 
 {% include navbar.html %}
@@ -16,6 +16,7 @@ title: Flux candidates
         font-weight="bold"
         line="true" %}
 
+      <!-- TODO: Update Text -->
       <div class="h-font light lg-col-10 light-silver sm-pr4">
         <h3 class="h3 sm-h2 letter-spacing-2 line-height-3 mb2">Flux Senators serve to protect the integrity of Flux. </h3>
         <p class="h4 light sm-h3 letter-spacing-3 silver">Being a Flux Senator is not like being any other Senator. Flux Senators respect Flux as a method for decision making more than they respect their own opinions. If elected, this may mean casting a vote in the Senate contrary to their personal beliefs.</p>
@@ -29,19 +30,17 @@ title: Flux candidates
   <div class="mx-auto max-width-4 px2 sm-px3">
     <div class="sm-pr4 dark-gray">
       {% include components/main-heading.html
-        text="Flux Team WA"
+        text="Flux WA Team"
         font-size="h1 line-height-2"
         font-weight="bold" %}
       {% include components/hr-muted.html classes="mb3"%}
       <div class="sm-flex flex-wrap mxn2">
         {% for candidate in site.wa-team %}
-          {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
           {% include candidates/team-card.html
-             state=candidate.state
-             house=candidate.house
-             url=candidate.url
-             title=candidate.title
-             bio=snippet   %}
+             position=candidate.position
+             email=candidate.email
+             image=candidate.image
+             title=candidate.title   %}
         {% endfor %}
       </div>
     </div>

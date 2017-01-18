@@ -5,10 +5,10 @@
 {% endif %}
 
 <div class="px2 mb4 sm-col-6 md-col-4">
-  <a href="{{include.url}}" class="height-4 overflow-hidden bg-gray mb2 block"
-       style="background: url({{path}}img/wa-team/{{include.title | slugify }}.jpg) no-repeat center center; background-size: cover" >
-  </a>
+  <div class="height-4 overflow-hidden bg-gray mb2 block"
+       style="background: url({{path}}img/wa-team/{{include.image}}) no-repeat center center; background-size: cover" >
+  </div>
   <h2 class="sm-h1 bold">{{include.title}}</h2>
-  <p class="mid-gray">{{include.bio}}</p>
-  <a href="{{include.url}}" class="accent border-bottom">Full bio</a>
+  <h5 class="h4"><span class="gray">{{include.position}}</span></h5>
+  <h5 class="h4"><span class="gray"><i class="material-icons mr1">email</i> {{include.email}}</span></h5>
 </div>
