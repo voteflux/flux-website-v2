@@ -5,6 +5,7 @@
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/non-sass.css">
+  <meta name="viewport" content="initial-scale=1.0">
 
   <style>
     body {
@@ -77,7 +78,9 @@
   <path class="fluxTriZoom" fill="#5DB35C"
         d="M168.826 325.059v65.155c18.847-10.885 37.697-21.766 56.545-32.649-18.848-10.884-37.697-21.765-56.545-32.648V325.059z"/>
   <path class="fluxTriZoom" fill="#36BEB2"
-        d="M225.127 227.542v65.153c18.848-10.884 37.698-21.765 56.547-32.648-18.85-10.883-37.7-21.763-56.547-32.647V227.542zM56.222 195.036v65.153c18.848-10.884 37.697-21.764 56.545-32.647-18.847-10.884-37.697-21.765-56.545-32.648V195.036z"/>
+        d="M225.127 227.542v65.153c18.848-10.884 37.698-21.765 56.547-32.648-18.85-10.883-37.7-21.763-56.547-32.647V227.542z"/>
+  <path class="fluxTriZoom" fill="#36BEB2"
+        d="M56.222 195.036v65.153c18.848-10.884 37.697-21.764 56.545-32.647-18.847-10.884-37.697-21.765-56.545-32.648V195.036z"/>
   <path class="fluxTriZoom" fill="#FFF"
         d="M112.523 32.507v325.2l56.464-32.6v-65.012l56.384-32.554c-18.795-10.85-37.59-21.7-56.384-32.553v-64.824l56.221 32.46c18.821-10.868 37.643-21.734 56.466-32.6-56.383-32.555-112.768-65.105-169.15-97.66V32.507z"/>
   <path class="fluxTriZoom" fill="#DFD88E"
@@ -102,17 +105,27 @@
 
 <script src="/js/jquery-1.12.0.min.js"></script>
 <script type="text/javascript">
+  var cssWHString = function(w, h){
+    return (w).toString() + 'px ' + (h).toString() + 'px';
+  }
   var runme = function() {
     $(".fluxTriZoom").each(function (i, e) {
       $(e).css("opacity", '0');
+      var wwc = $(window).width()/2;
+      var whc = $(window).height()/2;
+      var pos = $(e).offset();
+      var w = wwc - pos.left;
+      var h = whc - pos.top;
+      //$(e).css("transform-origin", cssWHString(w, h));
+      $(e).css("transform-origin", "50% 50%");
+      $(e).css("animation", '');
       setTimeout(function () {
         //$(e).css('opacity', '1');
-        $(e).css("animation", "fadeInHoldFadeOut 5s cubic-bezier(.09,.66,.51,.99)");
-      }, Math.random() * 1200);
-      console.log(e)
-      console.log($(e).css('animation'))
+        $(e).css("animation", "fadeInHoldFadeOut 3s linear");
+      }, Math.random() * 600);
     })
-    console.log('stuff')
+    setTimeout(runme, 7000);
+    console.log('done')
   }
   setTimeout(runme, 500);
 </script>
