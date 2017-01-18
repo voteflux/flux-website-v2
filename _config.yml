@@ -37,6 +37,8 @@ collections:
   candidates:
     output: true
     permalink: /candidates/:path/
+  wa-team:
+    output: true
 
 # Build settings
 markdown: kramdown
