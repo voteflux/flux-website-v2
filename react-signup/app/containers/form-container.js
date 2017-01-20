@@ -6,7 +6,7 @@ import MySelect from '../components/my-select'
 import MyTextarea from '../components/my-textarea'
 import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
-var _ = require('lodash');
+const _ = require('lodash');
 
 const redirectUrl = (window.location.href.split("/\?", 2)[0] + '/step2').replace("//step2", "/step2");
 const randomEmail = Math.random().toString(36).substr(2,10);
@@ -35,8 +35,9 @@ const FormContainer = React.createClass({
     if (data.referred_by === undefined) { data.referred_by = ""}
     if (data.member_comment === undefined) { data.member_comment = ""}
     data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00';
-    data.address = _.join([data.addr_street_no, data.addr_street, data.addr_suburb, data.addr_postcode], "; ");
+    data.address = _.join([data.addr_street_no, data.addr_street, data.addr_suburb, data.addr_postcode, data.addr_country], "; ");
     data.name = _.join([data.fname, data.mnames, data.sname], " ");
+    data.addr_version = 1.0;
 
     this.setState({isLoading: true, showSubmissionModal: true});
     HttpHelpers.sendForm(data, function(response){
@@ -210,6 +211,7 @@ const FormContainer = React.createClass({
             validationError="Country Required"
             options={[{title: 'Australia', value: 'au'}]}
             onChange={this.writeToState('country')}
+            value="au"
             />
 
           <MyInput
