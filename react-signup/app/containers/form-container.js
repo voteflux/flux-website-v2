@@ -35,7 +35,7 @@ const FormContainer = React.createClass({
     if (data.referred_by === undefined) { data.referred_by = ""}
     if (data.member_comment === undefined) { data.member_comment = ""}
     data.dob = data.dobYear + '-' + data.dobMonth + '-' + data.dobDay + 'T12:00:00';
-    data.address = _.join([data.addr_street_no, data.addr_street, data.addr_suburb, data.addr_postcode, data.addr_country], "; ");
+    data.address = _.join([data.addr_street_no, data.addr_street, data.addr_suburb, data.addr_postcode, data.addr_country.toUpperCase()], "; ");
     data.name = _.join([data.fname, data.mnames, data.sname], " ");
     data.addr_version = 1.0;
 
