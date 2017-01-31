@@ -11,7 +11,7 @@ hero-copy: >
   When did our politics become so broken? Things must change. Flux is your way to
   participate directly in parliament. Empowering people in government decisions directly
   through technology. Let’s break up the party politics, end the gridlock and return the power
-  to where it belongs - you. 
+  to where it belongs - you.
 
 hero-action: Become a Member
 
@@ -104,7 +104,7 @@ social-media:
           {{ page.hero-copy }}
         </p>
         <div class="inline-block">
-          <a href="{{site.baseurl}}/signup" class="h2 letter-spacing-1 accent border-bottom inline-block">
+          <a href="{{site.baseurl}}/signup" class="btn btn-primary h2 letter-spacing-1 border-bottom inline-block">
             {{ page.hero-action }}
           </a>
           <span class="gray h3 block caps mt1 letter-spacing-1">Membership is free for life</span>
@@ -173,6 +173,9 @@ social-media:
           <div class="mb3">
             <a data-sumome-share-id="b6279140-56da-424e-9e95-54d26518c49d"></a>
           </div>
+        <a href="{{site.baseurl}}/signup" class="btn btn-primary h2">
+          Join Now!
+        </a>
       </div>
 
       <div class="lg-col-8 px2">
@@ -189,7 +192,7 @@ social-media:
 {% endif %}
 
 <!-- PUNT  -->
-  {% if false %}
+  {% if false %}  <!-- Change this to true to show PUNT -->
 <section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
   <div class="max-width-4 mx-auto relative z2sm-pr4">
     <div class="lg-flex mxn2">
@@ -245,14 +248,16 @@ social-media:
               font-size="h0 line-height-2"
               font-weight="bold" %}
 
-              {% for post in site.posts %}
-              <div class="post">
-                <h1 class="h1 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
-                <div class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
-                  {{ post.excerpt }}
+              <div id="recent-posts-section">
+                {% for post in site.posts %}
+                <div class="post">
+                  <h1 class="h1 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
+                  <div class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
+                    {{ post.excerpt }}
+                  </div>
                 </div>
+                {% endfor %}
               </div>
-              {% endfor %}
             </div>
           </div>
         </div>
