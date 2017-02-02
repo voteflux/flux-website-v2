@@ -1,7 +1,7 @@
 ---
 title: Is ExO One an Associated Entity?
+date: 2016-10-18 00:00:00 Z
 author: Max Kaye
-date: 2016-10-18
 layout: about
 ---
 

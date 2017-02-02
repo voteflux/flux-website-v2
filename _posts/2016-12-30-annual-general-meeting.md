@@ -1,7 +1,7 @@
 ---
-layout: about
 title: Flux Aus and Flux ACT AGM
-date: 2016-12-30
+date: 2016-12-30 00:00:00 Z
+layout: about
 author: Max Kaye
 ---
 

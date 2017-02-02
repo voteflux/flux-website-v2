@@ -1,9 +1,9 @@
 ---
-layout: about
 title: Victorian State Party Agenda 23rd November
-date: 2016-11-17
+date: 2016-11-17 00:00:00 Z
+permalink: "/2016/11/17/vic-meeting-agenda/"
+layout: about
 author: Nathan Spataro
-permalink: /2016/11/17/vic-meeting-agenda/
 ---
 
 Victorian State Party organisation meetup to be held on Wednesday the 23rd of November in Melbourne.

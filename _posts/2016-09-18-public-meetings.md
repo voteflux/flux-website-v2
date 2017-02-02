@@ -1,9 +1,10 @@
 ---
+title: Public Meetings
+date: 2016-09-18 00:00:00 Z
 layout: about
-title:  "Public Meetings"
-date:   2016-09-18
 author: Max Kaye
 ---
+
 This post explains how to watch or get involved in The Flux Party's public meetings, and outlines meeting conduct.
 
 # Watch

@@ -1,19 +1,30 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
+---
 title: Flux – Upgrade Democracy
+timezone: UTC
+collections:
+  about:
+    title: About
+    output: true
+  candidates:
+    title: Candidates
+    output: true
+    permalink: "/candidates/:path/"
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+  wa-team:
+    title: Wa Team
+    output: true
 email: your-email@domain.com
-description: >
-  Flux is a new political party designed to connect Australians directly to Parliament and change politics forever!
-# baseurl: "/vote-flux-concept" # the subpath of your site, e.g. /blog
-baseurl: ""
-# baseurl: "/site-v2-concept"
-url: "https://voteflux.org" # the base hostname & protocol for your site
+description: 'Flux is a new political party designed to connect Australians directly
+  to Parliament and change politics forever!
+
+'
+baseurl: ''
+url: https://voteflux.org
 icon_path: img/social-icons/
 accent-color: "#ff4500"
 base-color: "#0b0b0e"
@@ -21,40 +32,25 @@ meetups: false
 future: true
 candidates: false
 countdown: true
-
 social-media:
-  - name: facebook
-    url: https://facebook.com/voteflux.org
-  - name: twitter
-    url: https://twitter.com/voteflux
-  - name: reddit
-    url: https://www.reddit.com/r/voteflux
-
-# Collections
-collections:
-  about:
-    output: true
-  candidates:
-    output: true
-    permalink: /candidates/:path/
-  wa-team:
-    output: true
-
-# Build settings
+- name: facebook
+  url: https://facebook.com/voteflux.org
+- name: twitter
+  url: https://twitter.com/voteflux
+- name: reddit
+  url: https://www.reddit.com/r/voteflux
 markdown: kramdown
 permalink: pretty
 incremental: true
 exclude:
-  - node_modules
-  - README.md
-  - package.json
-  - gulpfile.js
-  - react-signup
-  - to-do
-  - signup.html
-  - npm-debug.log
-
+- node_modules
+- README.md
+- package.json
+- gulpfile.js
+- react-signup
+- to-do
+- signup.html
+- npm-debug.log
 gems:
-  - jekyll-angular
-
-redirects: yes
+- jekyll-angular
+redirects: true
