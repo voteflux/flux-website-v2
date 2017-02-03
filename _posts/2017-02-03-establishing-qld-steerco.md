@@ -61,18 +61,16 @@ Changing a registered officer necessitates a formal application, signed by the
 secretary, to change the register. Registered officers are the commission’s
 first point of contact for matters related to a party’s registration, other
 than those concerning disclosure and funding.
-
 It is the registered officer who:_
-
-* _nominates the party’s endorsed candidates at State and local government elections;_
-* _makes application to change the party’s registration details other than
-a change of registered officer;_
-* _gives quarterly reports about the party’s constitution;_
-* _notifies the commission in connection with, and keeps documents relating
-to, preselection ballots;_
-* _gives the commission documents requested for an audit or investigation
-of preselection ballots; and can request that the commission cancel the party’s
-registration._
+  * _nominates the party’s endorsed candidates at State and local government elections;_
+  * _makes application to change the party’s registration details other than
+  a change of registered officer;_
+  * _gives quarterly reports about the party’s constitution;_
+  * _notifies the commission in connection with, and keeps documents relating
+  to, preselection ballots;_
+  * _gives the commission documents requested for an audit or investigation
+  of preselection ballots; and can request that the commission cancel the party’s
+  registration._
 
 _Registered officers cannot resign; they must be replaced on the application of
 the party secretary_
