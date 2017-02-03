@@ -95,7 +95,7 @@ an application to change the register._
 The Party Agent will also serve as the Party’s treasurer and be the first
 point of contact for all financial matters. Applicants for this position
 should be numbers orientated, and ideally have some background in financial
-accounts management.The ECQ defines the Agent’s role as follows:
+accounts management. The ECQ defines the Agent’s role as follows:
 
 * _Registered political parties must appoint an agent whose details are
 entered into the commission’s Register of Agents. An agent is responsible
