@@ -119,5 +119,5 @@ Coordinator is responsible for, among other things:
 Applicants for this position should be highly personable and charismatic,
 and during the election campaign be prepared to speak to many members daily.
 
-Please use [this application form](https://voteflux.org) to apply for a
+Please use [this application form](https://goo.gl/forms/eTjT6xhgt73NtYVn1) to apply for a
 position on the Flux Queensland Steering Committee.
