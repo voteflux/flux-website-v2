@@ -6,7 +6,9 @@ author: Nathan Spataro
 permalink: /2017/02/03/establishing-qld-steerco/
 ---
 
-_**Link to application form is found below. Please read this document before submitting your application.**_
+We are now taking applications to form the Flux Queensland Steering Committee. Please read this document before submitting your application.
+
+_**Link to the application form is found below.**_
 
 In the absence of the Flux Queensland’s formal leadership (comprised of the Leader and Deputy Leader of the federal Flux Party), the Party’s ordinary governance and decision making will be conducted by a Steering Committee of 5 initial party members. 
  
