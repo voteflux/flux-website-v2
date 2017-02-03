@@ -1,5 +1,5 @@
 ---
-title: Establishing the Flux Queensland Steering Committee
+title: "Establishing the Flux Queensland Steering Committee"
 date: 2017-02-03
 layout: about
 author: Nathan Spataro
@@ -122,5 +122,5 @@ Coordinator is responsible for, among other things:
 Applicants for this position should be highly personable and charismatic,
 and during the election campaign be prepared to speak to many members daily.
 
-Please use **[this application form](https://voteflux.org)** to apply for a
+Please use [this application form](https://voteflux.org) to apply for a
 position on the Flux Queensland Steering Committee.
