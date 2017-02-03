@@ -1,9 +1,8 @@
 ---
-layout: about
 title: Establishing the Flux Queensland Steering Committee
 date: 2017-02-03
+layout: about
 author: Nathan Spataro
-permalink: /2017/02/03/establishing-qld-steerco/
 ---
 
 We are now taking applications to form the Flux Queensland Steering Committee. Please read this document before submitting your application.
@@ -22,7 +21,7 @@ The roles required to form the Steering Committee are as follows:
 
 The Party's Secretary is the Party’s formal liaison with the Electoral Commission of Queensland (ECQ). Flux QLD’s Party Secretary will be the Chairperson of Steering Committee meetings, maintain a Party action register, and play a key role in the overall day to day running of the Party. Applicants for this position on the Steering Committee should ideally have organisational management experience, and are expected to take a senior role amongst the Party’s leadership team. The ECQ defines the role of the Secretary as follows:
 
-  * _Party secretaries are responsible for the party’s administration and external correspondence. An application to include a party in the register must be made by the secretary. An application to change the party’s registered officer must also be made by the secretary. Secretaries may also notify the commission of an agent’s appointment. The commission may ask for documentary evidence of a secretary being appointed in accordance within the party’s constitution._
+* _Party secretaries are responsible for the party’s administration and external correspondence. An application to include a party in the register must be made by the secretary. An application to change the party’s registered officer must also be made by the secretary. Secretaries may also notify the commission of an agent’s appointment. The commission may ask for documentary evidence of a secretary being appointed in accordance within the party’s constitution._
 
 ## __Registered Officer__
 
@@ -63,4 +62,4 @@ The Party’s Membership Coordinator holds no formal ECQ role, but plays a vital
 
 Applicants for this position should be highly personable and charismatic, and during the election campaign be prepared to speak to many members daily. 
 
-Please use **[this application form](Flux Queensland Steering Committee)** to Apply for a position on the Flux Queensland Steering Committee.
+Please use **[this application form](https://voteflux.org)** to Apply for a position on the Flux Queensland Steering Committee.
