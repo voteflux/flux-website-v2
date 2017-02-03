@@ -239,18 +239,22 @@ social-media:
           <div class="bg-near-black light-gray px3 py4 sm-p4 mb3">
             <div class="mb3" id="blog">
               {% include components/main-heading.html
-              text="Recent Posts"
+              text="Announcements"
               font-size="h0 line-height-2"
               font-weight="bold" %}
 
               <div id="recent-posts-section">
-                {% for post in site.posts %}
+                {% for post in site.posts limit:1 %}
                 <div class="post">
                   <h1 class="h1 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
                   <div class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
                     {{ post.excerpt }}
                   </div>
                 </div>
+                {% endfor %}
+                <h1 class="h1 regular">Older Announcements</h2>
+                  {% for post in site.posts offset:1 %}
+                  <h2 class="h2 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
                 {% endfor %}
               </div>
             </div>
