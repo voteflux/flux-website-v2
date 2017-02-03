@@ -3,7 +3,7 @@ layout: about
 title: Establishing the Flux Queensland Steering Committee
 date: 2017-02-03
 author: Nathan Spataro
-permalink: /2016/11/17/establishing-qld-steerco/
+permalink: /2017/02/03/establishing-qld-steerco/
 ---
 
 _**Link to application form is found below. Please read this document before submitting your application.**_
