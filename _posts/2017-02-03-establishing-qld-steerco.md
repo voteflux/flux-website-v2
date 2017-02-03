@@ -104,7 +104,6 @@ entered into the commission’s Register of Agents. An agent is responsible
 for giving financial disclosure reports for the party and making election
 funding claims for the party. Agents are the commission’s first point of
 contact on all funding and disclosure matters.
-
 In the event that an agent’s appointment is no longer in effect the
 obligations of an agent rest on each member the party’s executive committee._
 
