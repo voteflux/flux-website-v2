@@ -7,6 +7,11 @@ group: navigation
 nav-title: State Parties
 nav-order: 22
 branches:
+- state: wa
+  registration: Complete
+  status: Campaigning for the 2017 March 11 State Election<br>  To
+    volunteer on the campaign, let us know how you''d like to help <a href="https://goo.gl/forms/gADZIbSAWVCrvKGF2">here.</a>
+  name: <a href="https://voteflux.org/wa/team">The Flux Party - WA</a>
 - state: act
   registration: Submitted 2016-06-29
   status: Registering
@@ -23,7 +28,7 @@ branches:
   howToLink: http://www.electoral.tas.gov.au/pages/ElectoralInformation/Approvals/PDF/S44(1)%20-%20F44(1).pdf
   name: Name TBD
 - state: qld
-  registration: Lots of time
+  registration: Should submit by mid 2017
   status: Need 500 members to confirm membership in writing
   howToLink: https://www.ecq.qld.gov.au/candidates-and-parties/registering-a-political-party
   name: Name TBD
@@ -32,14 +37,6 @@ branches:
   status: Need 500 members, other requirements ambiguous
   howToLink: https://www.vec.vic.gov.au/CandidatesAndParties/RegisteringAPoliticalParty.html
   name: Name TBD
-- state: wa
-  registration: Imminent
-  status: 'Now accepting nominations for candidacy <a href="https://goo.gl/forms/j02Kwa7pkmzcIqCx2">here.</a><br>  To
-    volunteer on the campaign, let us know how you''d like to help <a href="https://goo.gl/forms/gADZIbSAWVCrvKGF2">here.</a><br>
-
-'
-  howToLink: https://www.elections.wa.gov.au/candidates-and-parties/registered-political-parties-wa
-  name: The Flux Party - WA
 - state: nt
   registration: Before 8th August 2016 if possible, otherwise before mid 2017
   status: Need 200 members
@@ -81,7 +78,7 @@ branches:
           <h2>{{branch.state | upcase}} Branch: {{ branch.name }}</h2>
           <h4>Status: {{branch.status}}</h4>
           <h4>Registration: {{branch.registration}}</h4>
-          <h4><a href="{{branch.howToLink}}">How To Link</a></h4>
+          <!-- <h4><a href="{{branch.howToLink}}">How To Link</a></h4> -->
         </div>
       {% endfor %}
     </div>
