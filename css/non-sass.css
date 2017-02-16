@@ -17,6 +17,15 @@
 }
 
 
+.smallHero {
+  font-weight: 300;
+}
+
+.smallHeroBold {
+  font-weight: 800;
+}
+
+
 @keyframes fadeInHoldFadeOut {
   0% {
     opacity: 0;
