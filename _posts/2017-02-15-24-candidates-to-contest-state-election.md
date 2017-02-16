@@ -91,6 +91,8 @@ Dawesville - Liam Spence
 
 Bunbury - Anthony Shannon
 
+![Flux Candidates](/img/wa-candidates.jpg)
+
 **_About Flux_**
 
 _The Flux Party was formed in late 2015 as a new concept in democracy with the stated aim of returning democratic power to individual voters. Under the Flux model, elected Flux representatives will vote on legislation before them only as they are directed by a majority vote of Flux participants, using the secure Flux app. Voting on the Flux app will be open to any West Australian who is eligible to vote._
