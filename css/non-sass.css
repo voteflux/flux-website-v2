@@ -18,12 +18,13 @@
 
 
 .smallHero {
-  font-weight: 300;
+  font-weight: 500;
 }
 
-.smallHeroBold {
-  font-weight: 800;
-  font-style: italic;
+.smallHeroEmphasis {
+  /*font-weight: 800;*/
+  /*font-style: italic;*/
+  color: #E3580D;
 }
 
 
