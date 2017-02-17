@@ -17,6 +17,17 @@
 }
 
 
+.smallHero {
+  font-weight: 500;
+}
+
+.smallHeroEmphasis {
+  /*font-weight: 800;*/
+  /*font-style: italic;*/
+  color: #E3580D;
+}
+
+
 @keyframes fadeInHoldFadeOut {
   0% {
     opacity: 0;
