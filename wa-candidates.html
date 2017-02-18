@@ -1,0 +1,71 @@
+---
+title: 2017 WA State Election Candidates
+permalink: "/wa/candidates/"
+layout: default
+dark-theme: true
+---
+
+{% include navbar.html %}
+<section class="py4 pt5 bg-near-black texture-bg-img near-white">
+  <div class="mx-auto max-width-4 px2 sm-px3">
+    <div class=" mt4">
+
+      {% include components/main-heading.html
+        text="2017 WA State Election Candidates"
+        font-size="h0 line-height-2"
+        font-weight="bold"
+        line="true" %}
+
+      <div class="h-font light lg-col-10 light-silver sm-pr4">
+        <h3 class="h3 sm-h2 letter-spacing-2 line-height-3 mb2">Flux Senators serve to protect the integrity of Flux. </h3>
+        <p class="h4 light sm-h3 letter-spacing-3 silver">Being a Flux Senator is not like being any other Senator. Flux Senators respect Flux as a method for decision making more than they respect their own opinions. If elected, this may mean casting a vote in the Senate contrary to their personal beliefs.</p>
+        <p class="h4 light sm-h3 letter-spacing-3 silver">All our Flux candidates have made a public declaration stating that they will act as a proxy for the Flux system and that they won't use their status for personal gain (including personal policy agenda).</p>
+        <p class="h4 light sm-h4 letter-spacing-3">N.B. Candidates for the 2017 WA State Election have not yet been selected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bg-light-gray py4">
+  <div class="mx-auto max-width-4 px2 sm-px3">
+    <div class="sm-pr4 dark-gray">
+      {% include components/main-heading.html
+        text="Lead candidates"
+        font-size="h1 line-height-2"
+        font-weight="bold" %}
+      {% include components/hr-muted.html classes="mb3"%}
+      <div class="sm-flex flex-wrap mxn2">
+        {% assign lead_candidates = site.wa-candidates |  where: "lead", true %}
+        {% for candidate in lead_candidates %}
+          {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
+          {% include candidates/candidate-card.html
+             region=candidate.region
+             house=candidate.house
+             url=candidate.url
+             title=candidate.title
+             bio=snippet   %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white py4">
+  <div class="mx-auto max-width-4 px2">
+    <div class="sm-flex flex-wrap mxn2 sm-pr4 dark-gray">
+      {% assign candidates =  site.wa-candidates |  where: "lead", nil %}
+      {% for candidate in candidates %}
+        {% if candidate.hide == nil  %}
+          {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
+          {% include candidates/candidate-card.html
+             region=candidate.region
+             house=candidate.house
+             url=candidate.url
+             title=candidate.title
+             bio=snippet   %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% include footer.html %}
