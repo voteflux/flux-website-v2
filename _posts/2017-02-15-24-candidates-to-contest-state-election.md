@@ -69,7 +69,7 @@ Kalgoorlie - James Erwin
 
 North Metro 1 - Josh Van Ross
 
-North Metro 2 - Owen Merryman
+North Metro 2 - Owen Merriman
 
 Perth - Ben Ballingall
 
