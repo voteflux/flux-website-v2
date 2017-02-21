@@ -1,42 +1,39 @@
 ---
-permalink: "/flux-wa"
+permalink: "/wa/"
 layout: default
 carousel: true
 video: true
 dark-theme: true
+redirects:
+- "/flux-wa/"
 home: true
-hero-title: Join Australia's fastest growing political movement
-hero-copy: 'Australian politics is broken. Politicians serve themselves and their
-  factions, not the people. With a state election looming, help us to register a Western
-  Australian branch of The Flux Party by becoming a member. Together, we''ll put the
-  power back where it belongs - in your hands.
-
+hero-title: On Election day &mdash; March 11<br><small class="smallHero">Vote &#35;1 <span class="smallHeroEmphasis">Flux The System!</span></small>
+hero-copy: 'Flux is the only party at this election that truly represents the whole community. Because Flux is the whole community, you decide how we vote - not corporate donors or party lines.
+<br><br>
+Together, we can break the party politics, end the gridlock and return the power to where it belongs - you, the people of WA.
 '
-hero-action: Launch Flux In WA By Becoming A Member
-why-flux-title: Why Australia needs Flux
-why-flux-copy: 'Australian politics is broken. Traditional politicians say one thing
-  to get elected and then do another. Horse trading and backroom deals have become
-  more important than good policy. Flux is here to help upgrade our democracy, pioneering
-  a real-time voting system which gives you a direct voice into parliament. #takethepowerback
-
-'
-why-flux-action: Find out more
-second-callout-title: We're fed up with the political process too
-second-callout-copy: 'Feel unrepresented? Fed up with broken promises? Vote to change
-  the system. Flux is a new system, not about ideology, but of progress for process.
-  Elect Flux and make your voice heard. Help us contest the 2016 federal election
-  and change ‪#‎AusPol‬ forever.
-
-'
+hero-action: Become a Member
 second-callout-action: Become a member
-show-meetups: false
+show-meetups: true
 meetups:
-- city: Melbourne
-  location: Melbourne Bitcoin Technology Centre
-  address: 89-91 City Road, South Bank
-  date: Tuesday, May 3, 2016
-  time: 6:00 PM
-  url: http://www.meetup.com/FluxSydney/events/230138091/
+- city: North Metro
+  location: Cranked
+  address: 5/106 Oxford St, Leederville
+  date: Saturday, March 4, 2017
+  time: 10:00 AM
+  url: 
+- city: East Metro
+  location: The Guildford Hotel
+  address: 159 James St, Guildford
+  date: Saturday, March 4, 2017
+  time: 10:00 AM
+  url: 
+- city: South Metro
+  location: Dôme Café
+  address: 817 Beeliar Drive, Cockburn
+  date: Saturday, March 4, 2017
+  time: 10:00 AM
+  url: 
 social-media:
 - name: facebook
   url: https://facebook.com/voteflux.org
@@ -66,22 +63,15 @@ social-media:
               </div>
             </div>
             <div class="xs-hide sm-hide">
-              <div class="clearfix">
-                <hr class="muted border-bottom black width-8rem left my2">
-              </div>
-              <h5 class="muted caps">Registered<br>Members</h5>
-              <h3> <span class="js-member-count">Loading...</span> </h3>
-              <h5 class="muted caps">Volunteers</h5>
-              <h3> <span class="js-volunteer-count">Loading...</span> </h3>
 
               <!-- WA State Election Countdown - Remove After 11 March 2017 -->
               <div class="clearfix">
-                <hr class="border-bottom accent width-8rem left my1">
+                <hr class="muted border-bottom black width-8rem left my2">
               </div>
-              <h5 class="light-silver caps">Days until WA<br>State Election</h5>
-              <h3 class="light-silver"> <span class="js-waelection-countdown">Loading...</span> </h3>
-              <h5 class="light-silver caps">WA Registered<br>Members</h5>
-              <h3 class="light-silver"> <span class="js-wamember-count">Loading...</span> </h3>
+              <h5 class=" caps">Days until WA<br>State Election</h5>
+              <h3> <span class="js-waelection-countdown">Loading...</span> </h3>
+              <h5 class=" caps">WA Registered<br>Members</h5>
+              <h3> <span class="js-wamember-count">Loading...</span></h3>
               <!-- WA State Election Countdown - Remove After 11 March 2017 -->
 
               <h5 class="muted caps"> <a href="/dashboard">Graphs</a> </h5>
@@ -100,7 +90,7 @@ social-media:
           {{ page.hero-copy }}
         </p>
         <div class="inline-block">
-          <a href="{{site.baseurl}}/signup" class="h2 letter-spacing-1 accent border-bottom inline-block">
+          <a href="{{site.baseurl}}/signup" class="btn btn-primary h2 letter-spacing-1 border-bottom inline-block">
             {{ page.hero-action }}
           </a>
           <span class="gray h3 block caps mt1 letter-spacing-1">Membership is free for life</span>
@@ -128,27 +118,8 @@ social-media:
   </div>
 </section>
 
-
-<!-- ANNOUNCEMENT SECTION -->
-<!--<section id="js-announcement-home" class="py4 sm-pr4 bg-white dark-gray height-30vh">-->
-<!--  <div class="max-width-4 mx-auto px2 md-px3">-->
-<!--    <div id="js-announcement-content" class="">-->
-<!--      <div class="mb4">-->
-<!--        <h1 id="js-callout-heading" class="h0 mb3">Announcing: The Flux Startup</h1>-->
-<!--        <p id="js-callout-body" class="h3 sm-h2 h-font light mb4 gray letter-spacing-2 line-height-4">-->
-<!--          We're excited to announce a major development for the Flux movement:-->
-<!--          a startup that will drive the Flux system globally and usher in a new era of democracy.-->
-<!--        </p>-->
-<!--      </div>-->
-<!--      <a id="js-callout-link" href="http://www.thefluxstartup.com" class="h2 letter-spacing-1 accent border-bottom inline-block">-->
-<!--        Read the announcement-->
-<!--      </a>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
-
 {% if page.video %}
-<!-- VIDEO section here -->
+<!-- VIDEO SECTION -->
 <section class="py4 bg-black light-gray px2 md-px3">
   <div class="max-width-4 mx-auto">
     <div class="lg-flex mxn2">
@@ -162,13 +133,16 @@ social-media:
           classes="white"
           line="true" %}
           <p class="h-font h3 sm-h2 light silver mb3">
-            This is us in a nutshell. We're fed up with the political process too!
+            Watch our video. We're fed up with the political process too!
             Flux is your answer for a real democratic voice in parliament.
           </p>
           <p class="h-font h3 sm-h2 light silver"> Help us get the word out! #share </p>
           <div class="mb3">
             <a data-sumome-share-id="b6279140-56da-424e-9e95-54d26518c49d"></a>
           </div>
+        <a href="{{site.baseurl}}/signup" class="btn btn-primary h2">
+          Join Now!
+        </a>
       </div>
 
       <div class="lg-col-8 px2">
@@ -184,226 +158,55 @@ social-media:
 </section>
 {% endif %}
 
-<!-- PUNT  -->
-  {% if false %}
+<!-- ANNOUCEMENTS SECTION -->
+{% if site.wa-posts.size > 0 %}
 <section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
   <div class="max-width-4 mx-auto relative z2sm-pr4">
     <div class="lg-flex mxn2">
-      <div class="lg-col-6 px2">
+      <div class="lg-col-12 px2">
         <div class="bg-near-black light-gray px3 py4 sm-p4 mb3">
-          <div class="mb3">
+          <div class="mb3" id="blog">
             {% include components/main-heading.html
-              text="PUNT Podcast - Behind The Scenes"
-              font-size="h0 line-height-2"
-              font-weight="bold" %}
-            <p class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
-              PUNT is a behind the scenes look at what it’s like to start a political party.
-              It's the true story of The Flux Party. Recording for PUNT started in January, that's 4.5 months of audio!
-            </p>
-          </div>
-          <div class="gray">
-            <a href="http://www.puntpodcast.com/"
-               target="_blank"
-               class="h3 sm-h2 link-reset border-bottom inline-block accent">
-              Listen now
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="lg-col-6 px2">
-        <img src="/img/punt.jpg" alt="" class="block mb3 col-12"/>
-        <div class="flex">
-          <div class="col-8 lg-mr2">
-              <img src="/img/punt-2.jpg" alt="" class='col-12'/>
-          </div>
-          <div class="col-4 relative z1">
-                <img src="/img/punt-3.jpg" alt="" class="rotate-right deep-shadow col-12"/>
-          </div>
-        </div>
-        <h5 class="silver lg-mt2">Photos by Adam Bird</h5>
-      </div>
-    </div>
-  </div>
-</section>
-  {% endif %}
+            text="Announcements"
+            font-size="h0 line-height-2"
+            font-weight="bold" %}
 
-
-
-  <!-- Posts -->
-  <section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
-    <div class="max-width-4 mx-auto relative z2sm-pr4">
-      <div class="lg-flex mxn2">
-        <div class="lg-col-12 px2">
-          <div class="bg-near-black light-gray px3 py4 sm-p4 mb3">
-            <div class="mb3" id="blog">
-              {% include components/main-heading.html
-              text="Recent Posts"
-              font-size="h0 line-height-2"
-              font-weight="bold" %}
-
-              {% for post in site.posts %}
+            <div id="recent-posts-section">
+              {% for post in site.wa-posts limit:1 %}
               <div class="post">
-                <h1 class="h1"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
+                <h1 class="h1 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
                 <div class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
                   {{ post.excerpt }}
                 </div>
               </div>
               {% endfor %}
+              {% if site.wa-posts.size > 1 %}
+              <h1 class="h1 regular">Older Announcements</h1>
+              {% for post in site.wa-posts offset:1 %}
+              <h2 class="h2 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h2>
+              {% endfor %}
+              {% endif %}
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-
-
-<!-- WHY FLUX SECTION -->
-<section class="bg-white py4 px2 md-px3">
-  <div class="max-width-4 mx-auto dark-gray">
-    <div class="md-flex mb3">
-      <div class="md-col-9">
-        <h5 class="h4"><span class="gray">ABOUT FLUX</span> / <span class="bold">WHY</span></h5>
-        <hr class="accent-muted muted border-bottom">
-        <h1 class="h0 bold mb3 line-height-2">
-            {{ page.why-flux-title }}
-        </h1>
-        <p class="h3 sm-h2 light h-font mb4 gray letter-spacing-2 line-height-4">
-          {{ page.why-flux-copy }}
-        </p>
-        <a href="{{ site.baseurl }}/about/why-flux"
-           class="h3 sm-h2 border-bottom accent inline-block">
-          {{page.why-flux-action}}
-        </a>
-      </div>
-    </div>
   </div>
 </section>
+{% endif %} 
 
-<!-- SECOND CALLOUT SECTION -->
-<section class="full-bg-img height-40vh py2 sm-py4">
+
+<!-- EVENTS SECTION -->
+{% if page.meetups.size > 0 %}
+<section id="upcoming-meetups" class="full-bg-img height-40vh py2 sm-py4">
   <div class="max-width-4 mx-auto clearfix sm-px2 md-px3">
     <div class="bg-near-black light-gray px2 py4 sm-p4 sm-col-right sm-col-12 md-col-9 mt4">
       <div class="mb3">
         {% include components/main-heading.html
-          text=page.second-callout-title
+          text="Events"
           font-size="h0 line-height-2"
           font-weight="bold" %}
-        <p class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
-          {{ page.second-callout-copy }}
-        </p>
-      </div>
-      <div class="gray">
-        <a href="{{site.baseurl}}/signup"
-           class="h3 sm-h2 link-reset border-bottom inline-block accent">
-          {{ page.second-callout-action }}
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT PAGE LINKS -->
-{% assign items = site.about | sort: 'menu-order' %}
-{% for item in items %}
-  {% if item.tag-topic != 'why' %}
-    <section class="bg-white dark-gray py4 relative z1 px2 md-px3">
-      <div class="max-width-4 mx-auto">
-        {% if item.video-id %}
-          <div class="sm-col-8 inline-block align-top pb3">
-            <h5 class="h4"><span class="gray">
-              ABOUT FLUX</span> / <span class="bold">{{ item.tag-topic | upcase }}</span>
-            </h5>
-            <h1 class="h0 bold line-height-1">{{ item.title }}</h1>
-            <a href="{{ site.baseurl }}{{ item.url }}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
-              Learn more
-            </a>
-          </div>
-          <div class="sm-col-3 inline-block">
-            <a href=" https://www.youtube.com/watch?v={{ item.video-id }}&rel=0" data-lity class="relative block">
-              <i class="material-icons absolute center-xy z3 white h0">play_arrow</i>
-              <i class="material-icons absolute center-xy z2 near-black muted h00">lens</i>
-              <img class="col-12" src="https://img.youtube.com/vi/{{ item.video-id }}/sddefault.jpg" alt="Video">
-            </a>
-          </div>
-        {% else %}
-          <div class="sm-col-9">
-            <h5 class="h4"><span class="gray">
-              ABOUT FLUX</span> / <span class="bold">{{ item.tag-topic | upcase }}</span>
-            </h5>
-            <h1 class="h0 bold line-height-1">{{ item.title }}</h1>
-            <a href="{{ site.baseurl }}{{ item.url }}" class="h3 sm-h2 link-reset border-bottom inline-block accent">
-              Learn more
-            </a>
-          </div>
-        {% endif %}
-      </div>
-    </section>
-    <hr class="accent-light border-bottom m0">
-  {% endif %}
-{% endfor %}
-
-<!-- IN THE NEWS -->
-<section class="py4 bg-near-black light-gray texture-bg-img sm-pr4 px2 md-px3">
-  <div class="max-width-4 mx-auto">
-    <div class="sm-flex items-center">
-      <div class="flex-auto">
-      {% include components/main-heading.html
-        text="In the news"
-        font-size="h0 line-height-1 m0"
-        font-weight="bold" %}
-      </div>
-      <div class="clearfix">
-        <div class="sm-col-right">
-          <h5 class="muted mb0 light">MEDIA ENQUIRIES</h5>
-          <h3 class="white mb2 inline-block">media@voteflux.org</h3>
-        </div>
-      </div>
-    </div>
-
-    <div class="sm-flex flex-wrap mxn2 mb3">
-      {% for article in site.data.articles limit:6 %}
-          <div class="sm-col-6 lg-col-4 px2">
-            <div class="mb3">
-              <hr class="border-bottom accent-muted mb1 muted">
-              <div class="flex flex-column justify-between height-2">
-                <div>
-                  <h5 class="mb2 gray">{{ article.type | upcase }} / <span class="light-silver">{{ article.publishedIn | upcase }}</span>
-                  </h5>
-                  <a href="{{ article.url }}" target="_blank" class="link-reset block hover-show-child">
-                    <h3 class="h-font light line-height-4 accent-on-hover transition-fast inline">
-                      {{ article.title }}
-                    </h3><i class="material-icons icon-adjust muted">call_made</i>
-                  </a>
-                </div>
-                <time datetime="{{ article.date }}" class="italic gray">
-                {{ article.date | date: '%B %d, %Y' }}
-                </time>
-              </div>
-            </div>
-          </div>
-      {% endfor %}
-    </div>
-    <div class="right-align">
-      <a href="{{ site.baseurl }}/press" class="list-reset border-bottom accent">All articles</a>
-    </div>
-  </div>
-</section>
-
-<!-- UPCOMING MEETUPS -->
-{% if page.show-meetups %}
-<section id="upcoming-meetups" class="py4 bg-dark-gray light-silver">
-  <div class="max-width-4 mx-auto px2 md-px3">
-    <div class="lg-col-9">
-      {% include components/main-heading.html
-        text="Upcoming meetups"
-        font-size="h0 line-height-1"
-        font-weight="bold near-white" %}
-      <p class="h3 sm-h2 light h-font letter-spacing-2 line-height-4 mb4">
-        Join party co-founders <a href="{{site.baseurl}}/about/who#nathan-spataro" class="accent accent-on-hover transition-fast">Nathan Spataro</a> &amp; <a href="{{site.baseurl}}/about/who#max-kaye" class="accent accent-on-hover transition-fast">Max Kaye</a> for a Q&amp;A at the next meetup in your city
-      </p>
-
-      <div class="sm-flex flex-wrap mxn2">
+        <div class="sm-flex flex-wrap mxn2">
 
           {% for meetup in page.meetups %}
           {% if forloop.length == 1 %}
@@ -412,8 +215,6 @@ social-media:
             <div class="sm-col-6 md-col-4 px2 mb3">
           {% endif %}
               {% include components/hr-muted.html %}
-              <!-- <h5 class="gray caps">Meetup city</h5> -->
-              <h3 class="white h2 mt0 mb3 bold">{{ meetup.city }}</h3>
               <dl class="link-reset h3 near-white line-height-3 mb2">
                 <hr class="near-black muted border-bottom my2">
                 <dt class="h5 silver mb1 caps">Location</dt>
@@ -431,18 +232,95 @@ social-media:
             </div>
           {% endfor %}
         </div>
-
-    </div>
-    <div class="right-align mt4 sm-mt0">
-      <span class="hover-show-child">
-        <a href="http://www.meetup.com/FluxSydney/" target="_blank" class="border-bottom">Flux meetup page</a><i class="material-icons icon-adjust muted">call_made</i>
-      </span>
-    </div>
-
+      </div>
     </div>
   </div>
 </section>
 {% endif %}
+
+
+<!-- LEADERSHIP TEAM SECTION -->
+<section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
+  <div class="max-width-4 mx-auto relative z2sm-pr4">
+    <div class="lg-flex mxn2">
+      <div class="lg-col-12 px2">
+        <div class="bg-near-black light-gray px3 py4 sm-p4 mb3">
+          <div class="mb3" id="blog">
+            {% include components/main-heading.html
+            text="Leadership Team"
+            font-size="h0 line-height-2"
+            font-weight="bold" %}
+
+            <div class="sm-flex flex-wrap mxn2">
+              {% for candidate in site.wa-team %}
+                {% include candidates/team-card.html
+                   position=candidate.position
+                   email=candidate.email
+                   image=candidate.image
+                   title=candidate.title   %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CANDIDATES SECTION -->
+{% if site.candidates %}
+<section class="bg-near-white dark-gray pt4 pb3 sm-pr4 col-12 overflow-hidden">
+  <div class="max-width-4 mx-auto px2 sm-px3">
+    {% include components/main-heading.html
+      text="Meet the lead candidates"
+      font-size="h0 line-height-2"
+      font-weight="bold" %}
+    {% include components/hr-muted.html classes="mb3"%}
+      <div class="mb3 mxn2">
+        <div id="js-candidates">
+          {% assign candidates =  site.wa-candidates |  where: "lead", true %}
+          {% for candidate in candidates %}
+            {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
+            {% include candidates/candidate-card.html
+               region=candidate.region
+               house=candidate.house
+               url=candidate.url
+               title=candidate.title
+               bio=snippet   %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="right-align mt2">
+        <a href="{{site.baseurl}}/wa/candidates" class="h3 border-bottom">See all candidates</a>
+      </div>
+  </div>
+</section>
+{% endif %}
+
+
+<!-- HOW TO HELP SECTION -->
+
+
+<!-- SOCIAL MEDIA SECTION -->
+<section id="social-media" class="bg-orange mid-gray py3">
+  <div class="max-width-4 mx-auto px2 sm-px3">
+    {% include components/main-heading.html
+      text="Social Media"
+      font-size="h0 line-height-2"
+      font-weight="bold" %}
+    <hr class="muted border-bottom">
+    <div class="md-flex flex-wrap">
+      <div class="mb3 px1 mx-auto sm-col-12 md-col-6" style="max-width: 500px;">
+        <div class="fb-page" data-href="https://www.facebook.com/fluxwa" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" width="500" height="800"><blockquote cite="https://www.facebook.com/fluxwa" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fluxwa">Flux WA - Flux The System</a></blockquote>
+        </div>
+      </div>
+      <div class="px1 mx-auto sm-col-12 md-col-6" style="max-width: 500px;">
+        <a class="twitter-timeline" data-height="800" href="https://twitter.com/fluxwa">Tweets by fluxwa</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- CONTACT SECTION -->
@@ -459,3 +337,4 @@ social-media:
 </section>
 </main>
 {% include footer.html %}
+
