@@ -14,30 +14,27 @@ hero-copy: 'When did our politics become so broken? Things must change. Flux is 
   and return the power to where it belongs - you.
 '
 hero-action: Become a Member
-why-flux-title: Why Australia needs Flux
-why-flux-copy: 'Australian politics is broken. Traditional politicians say one thing
-  to get elected and then do another. Horse trading and backroom deals have become
-  more important than good policy. Flux is here to help upgrade our democracy, pioneering
-  a real-time voting system which gives you a direct voice into parliament. #takethepowerback
-
-'
-why-flux-action: Find out more
-second-callout-title: We're fed up with the political process too
-second-callout-copy: 'Feel unrepresented? Fed up with broken promises? Vote to change
-  the system. Flux is a new system, not about ideology, but of progress for process.
-  Elect Flux and make your voice heard. Help us contest the 2016 federal election
-  and change ‪#‎AusPol‬ forever.
-
-'
 second-callout-action: Become a member
-show-meetups: false
+show-meetups: true
 meetups:
-- city: Melbourne
-  location: Melbourne Bitcoin Technology Centre
-  address: 89-91 City Road, South Bank
-  date: Tuesday, May 3, 2016
-  time: 6:00 PM
-  url: http://www.meetup.com/FluxSydney/events/230138091/
+- city: North Metro
+  location: Cranked
+  address: 5/106 Oxford St, Leederville
+  date: Saturday, March 4, 2017
+  time: 10:00 AM
+  url: 
+- city: East Metro
+  location: The Guildford Hotel
+  address: 159 James St, Guildford
+  date: Saturday, March 4, 2017
+  time: 10:00 AM
+  url: 
+- city: South Metro
+  location: Dôme Café
+  address: 817 Beeliar Drive, Cockburn
+  date: Saturday, March 4, 2017
+  time: 10:00 AM
+  url: 
 social-media:
 - name: facebook
   url: https://facebook.com/voteflux.org
@@ -163,6 +160,7 @@ social-media:
 {% endif %}
 
 <!-- ANNOUCEMENTS SECTION -->
+{% if site.wa-posts.size > 0 %}
 <section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
   <div class="max-width-4 mx-auto relative z2sm-pr4">
     <div class="lg-flex mxn2">
@@ -183,10 +181,12 @@ social-media:
                 </div>
               </div>
               {% endfor %}
-              <h1 class="h1 regular">Older Announcements</h2>
-                {% for post in site.wa-posts offset:1 %}
-                <h2 class="h2 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
+              {% if site.wa-posts.size > 1 %}
+              <h1 class="h1 regular">Older Announcements</h1>
+              {% for post in site.wa-posts offset:1 %}
+              <h2 class="h2 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h2>
               {% endfor %}
+              {% endif %}
             </div>
           </div>
         </div>
@@ -194,8 +194,11 @@ social-media:
     </div>
   </div>
 </section>
+{% endif %} 
+
 
 <!-- EVENTS SECTION -->
+{% if page.meetups.size > 0 %}
 <section id="upcoming-meetups" class="full-bg-img height-40vh py2 sm-py4">
   <div class="max-width-4 mx-auto clearfix sm-px2 md-px3">
     <div class="bg-near-black light-gray px2 py4 sm-p4 sm-col-right sm-col-12 md-col-9 mt4">
@@ -230,15 +233,11 @@ social-media:
             </div>
           {% endfor %}
         </div>
-        <div class="right-align mt4 sm-mt0">
-          <span class="hover-show-child">
-            <a href="http://www.meetup.com/FluxSydney/" target="_blank" class="border-bottom">Flux meetup page</a><i class="material-icons icon-adjust muted">call_made</i>
-          </span>
-        </div>
       </div>
     </div>
   </div>
 </section>
+{% endif %}
 
 
 <!-- LEADERSHIP TEAM SECTION -->
