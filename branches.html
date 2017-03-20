@@ -78,7 +78,9 @@ branches:
           <h2>{{branch.state | upcase}} Branch: {{ branch.name }}</h2>
           <h4>Status: {{branch.status}}</h4>
           <h4>Registration: {{branch.registration}}</h4>
+          {% if branch.howToLink %}
           <h5><a href="{{branch.howToLink}}">Registration Guide</a></h5>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
