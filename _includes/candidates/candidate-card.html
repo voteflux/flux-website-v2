@@ -6,9 +6,10 @@
 
 <div class="px2 mb4 sm-col-6 md-col-4">
   <a href="{{include.url}}" class="height-4 overflow-hidden bg-gray mb2 block"
-       style="background: url(/img/candidates/small/{{include.title | slugify }}.jpg) no-repeat center center; background-size: cover" >
+       style="background: url(/img/candidates/small/{{include.title | slugify }}.jpg) no-repeat top center; background-size: cover" >
   </a>
-  <h5 class="h4"><span class="gray">{{include.state}}</span> / <span class="bold">{{include.house}}</span></h5>
+  <!-- TODO: merge state and region? -->
+  <h5 class="h4"><span class="gray">{{include.state}}{{include.region}}</span> / <span class="bold">{{include.house}}</span></h5>
   <h2 class="sm-h1 bold">{{include.title}}</h2>
   <p class="mid-gray">{{include.bio}}</p>
   <a href="{{include.url}}" class="accent border-bottom">Full bio</a>

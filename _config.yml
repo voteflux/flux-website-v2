@@ -16,7 +16,13 @@ collections:
     title: Uploads
     output: true
   wa-team:
-    title: Wa Team
+    title: WA Team
+    output: true
+  wa-posts:
+    title: Posts
+    output: true
+  wa-candidates:
+    title: WA Candidates
     output: true
 email: website@voteflux.org
 description: 'Flux is a new political party designed to connect Australians directly

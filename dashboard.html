@@ -39,6 +39,24 @@ nav-title: Dashboard
               <h4>Average monthly growth: {{ 'flux.averageMonthlyGrowth' | angular }}%</h4>
             </div>
 
+            <div id="member-state-breakdown" class="py3">
+              <h3>Member Breakdown by State</h3>
+              <table>
+                <tr>
+                  <th class="p2">State</th>
+                  <th class="p2">Members</th>
+                  <th class="p2">Valid Members</th>
+                  <th class="p2">Members Awaiting Validation</th>
+                </tr>
+                <tr ng-repeat="(state, blah) in flux.getinfo.n_members_state">
+                  <td>{{ 'state' | angular }}</td>
+                  <td>{{ 'flux.getinfo.n_members_state[state]' | angular }}</td>
+                  <td>{{ 'flux.getinfo.n_members_validated_state[state]' | angular }}</td>
+                  <td>{{ 'flux.getinfo.validation_queue_state[state]' | angular}}</td>
+                </tr>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
@@ -61,7 +79,9 @@ nav-title: Dashboard
         flux.growthDays = [];  // note: set later on to trigger redraw
         flux.nameTempVar = "Dashboard";
         flux.averageMonthlyGrowth = 0;
+        flux.getinfo = {n_members_state: {}, n_members_validated_state: {}, validation_queue_state: {}};
 
+        flux.debug = false;
         if (document.location.hostname == 'localhost') {
           flux.debug = true;
         }
@@ -81,6 +101,11 @@ nav-title: Dashboard
         flux.growthStat = function(d){
           return 0;
         };
+
+        $http.get(flux.api('getinfo')).then(function(data){
+            flux.getinfo = data.data;
+            console.log("Got getinfo: ", flux.getinfo);
+        }, flux.handleError);
 
         // generate graphs from public stats
         $http.get(flux.api('public_stats')).then(function(data){

@@ -6,3 +6,5 @@ npm-debug.log
 .publish
 react-signup/node_modules
 *.DS_Store
+react-signup/main.css
+css/main.css
