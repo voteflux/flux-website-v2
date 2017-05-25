@@ -2,6 +2,7 @@
 title: An Overview of Flux and IBDD
 date: 2017-05-26
 author: Max Kaye
+layout: about
 ---
 
 I recently wrote the following in a correspondence with a colleague. It was too good not to post, so I hope the following helps you gain a grasp of why Flux and IBDD exist, and their founding philosophy.
