@@ -35,7 +35,7 @@ We enable this dynamism by treating policy as an ecosystem (as opposed to each p
 
 An additional side effect is that **both Arrow's Impossibility Theorem and Balinski and Young's apportionment paradox** are avoided entirely. We don't 'solve' the problems (after all they are mathematical theorems) but avoid them by constructing democracy differently.
 
-These discoveries are what has spurred Nathan and I into creating The Flux Movement. Put another way: we see the action of holding on to this information and not doing our best to instantiate IBDD **as a grave crime against all current and future people**, and thus we have a moral duty to bring this to bear as fast as possible (provided we don't destroy any methods of correcting mistakes).
+These discoveries are what has spurred Nathan and me into creating The Flux Movement. Put another way: we see the action of holding on to this information and not doing our best to instantiate IBDD **as a grave crime against all current and future people**, and thus we have a moral duty to bring this to bear as fast as possible (provided we don't destroy any methods of correcting mistakes).
 
 As a final note: The Beginning of Infinity teaches us that a key property of knowledge is _persistence_, which is to say that knowledge instantiated in reality (by say, building a device) should _persist_. Thus IBDD's ability to persist is indicative of whether it actually is better suited to solving the problems we face as a society. We predict that once we start using IBDD _anywhere_ (provided it's suitable) it should rapidly and virally expand since the benefits of IBDD (producing new knowledge in policy efficiently) is associated with increasing the prosperity of the population that adopts it.
 
