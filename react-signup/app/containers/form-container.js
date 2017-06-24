@@ -406,13 +406,21 @@ const FormContainer = React.createClass({
              value={__DEV__ ? "DEV SUBMISSION - PLEASE DELETE" : ""}
              subtext="(Optional, Anything you'd like to add, about yourself, us, or anything, really.)" />
 
-           <MyInput
-             inputClass="input"
-             type="checkbox"
-             name="volunteer"
-             title="I'm interested in volunteering"
-             value={false}
-              />
+          <MyInput
+            inputClass="input"
+            type="checkbox"
+            name="volunteer"
+            title="I'm interested in volunteering"
+            value={false}
+          />
+
+          <MyInput
+            inputClass="input"
+            type="checkbox"
+            name="do_not_email_updates"
+            title="I wish to OPT OUT of membership updates"
+            value={false}
+          />
 
 
 
