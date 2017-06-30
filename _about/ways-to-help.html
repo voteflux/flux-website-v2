@@ -22,7 +22,7 @@ page-content:
 
 {% for content in page.page-content %}
   <div class="mb3">
-    {% if (content.showbefore && site.date < content.showbefore) %}
+    {% if content.showbefore and site.date < content.showbefore %}
       <h3 class="mid">{{ content.subheading }}</h3>
       <p class="mid-silver">{{ content.body }}</p>
     {% else %}

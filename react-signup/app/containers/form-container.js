@@ -56,6 +56,8 @@ const FormContainer = React.createClass({
           window.location.assign(redirectUrl)
         }, 1500);
 
+        window.localStorage.setItem('s', response.body.s);
+
         ga('send', {hitType: 'event', eventCategory: 'Membership Form', eventAction: 'Submission'});
         fbq('track', 'Complete Registration');
         fbq('track', 'NewMember');  // a different pixel thing to the above, keep both.
