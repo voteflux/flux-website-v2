@@ -6,30 +6,74 @@ tag-section: about flux
 tag-topic: ways to help
 menu-order: 4.9
 page-content:
-- subheading: Join Our Thunderclap
-  showbefore: 2016-07-01 00:00:00 Z
-  body: "<iframe frameborder='0' height='540px' src='https://www.thunderclap.it/projects/42541-flux-the-system/embed'
-    width='250px'></iframe>\n"
-- subheading: Become a Volunteer
-  body: '<p>You can sign up to the volunteer mailing list by marking the checkbox
-    on your member details page, or adding your email <a href="https://api.voteflux.org/static/html/member_volunteer.html">here</a>.</p>
-    <p>Also feel free to join our <a href="https://community.voteflux.org/">Community
-    Forums</a> and our <a href="http://volunteer-slack.voteflux.org">Volunteer Slack
-    Team</a>.</p>
-
-'
+- subheading: General
+  body: '
+    <p>Our number one goal right now is get someone elected to a position of power who is commited to using the Flux System of Issue Based Direct Democracy. The fastest way to do that in most representative democracies is to get enough votes in an election to win a seat in parliament. Anything you can do to help us reach this goal will be most appreciated.</p>
+    <p>Things you can do to get started:</p>
+    <ol>
+      <li>
+        Like our Facebook Page - <a href="https://facebook.com/voteflux.org">Flux Facebook Page</a>
+      </li>
+      <li>
+        Follow us on Twitter - <a href="https://twitter.com/voteflux">Flux Twitter</a>
+      </li>
+      <li>
+        Sign up as a member (if you live in Australia) - <a href="https://voteflux.org/signup/">Signup Here</a>
+      </li>
+      <li>
+         or join our mailing list - <a href="https://voteflux.org/contact/">Join Mailing List</a>
+      </li>
+      <li>
+        Join our Slack Team, which is what we use to coordinate our Flux efforts globally - <a href="https://voteflux.org/slack/">Join Slack</a>
+      </li>
+      <li>
+        Share our What is Flux video - <a href="https://www.facebook.com/voteflux.org/videos/1907981112748612/">Facebook Video</a> or <a href="https://www.youtube.com/watch?v=i7MCxADcrwE">YouTube Video</a>
+      </li>
+      <li>
+        Talk to people about Flux. Friends, Family, or maybe you know somebody famous. Think about people you might know with a lot of connections. We need to reach as many people as possible!
+      </li>
+      <li>
+        Attend Flux meetups and Flux events. You should find out about all Flux events from our Facebook Page and our mailing list. If there are no Flux events in your local area then start your own :) 
+      </li>
+      <li>
+        Make a donation, running elections ain’t cheap - <a href="https://voteflux.org/donate/">Donate to Flux</a>
+      </li>
+    </ol>
+    <p>If you have any of the following skills then get in touch with us on Facebook or at <a href="mailto:leadership@voteflux.org?Subject=Volunteer" target="_top">leadership@voteflux.org</a></p>
+    <ul>
+      <li>Development, Web Dev, App Dev etc.</li>
+      <li>Graphic design</li>
+      <li>Marketing, Social Media</li>
+      <li>Journalism, Communication, Media</li>
+      <li>Politics, Campaigning, Holding office</li>
+      <li>Leadership, People Management, Organising volunteers</li>
+      <li>Event Management</li>
+      <li>Fundraising</li>
+    </ul>
+  '
+- subheading: Australia
+  body: '
+    <p>We are planning to run in every State and Federal election from here on out, as well as some local elections. To do this we need solid leadership teams in each state and strong communities in all major cities. So take intiative and start a meetup group in your local commuinty. We can help cover the costs and even advertise your group from our main Facebook Page.</p>
+  '
+- subheading: International
+  body: '
+    <ol>
+      <li>
+        Check if a Flux group already exists in your country. We currently have groups starting in Australia, The U.K., The U.S. and Brazil.
+      </li>
+      <li>
+        If not then the first thing you want to do is try and build up a new Flux community in your country. You would be surprised how quickly people are willing to jump on board and help out once a community has been started.
+      </li>
+      <li>
+        To do this we would recommend creating a Facebook Group, or you can use any other community tools that might be popular in your country. If you need assets and images you can access them here - <a href="https://drive.google.com/drive/folders/0B-n2lUvRACHUVW0tWlFRaVpDRlE">Public Assets</a>
+      </li>
+    </ol>
+  '
 ---
 
 {% for content in page.page-content %}
   <div class="mb3">
-    {% if (content.showbefore && site.date < content.showbefore) %}
-      <h3 class="mid">{{ content.subheading }}</h3>
-      <p class="mid-silver">{{ content.body }}</p>
-    {% else %}
-      {% unless content.showbefore %}
-        <h3 class="mid">{{ content.subheading }}</h3>
-        <p class="mid-silver">{{ content.body }}</p>
-      {% endunless %}
-    {% endif %}
+    <h3 class="mid">{{ content.subheading }}</h3>
+    <p class="mid-silver">{{ content.body }}</p>
   </div>
 {% endfor %}
