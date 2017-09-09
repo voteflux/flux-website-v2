@@ -18,20 +18,23 @@ var definePlugin = new webpack.DefinePlugin({
   'process.env': {NODE_ENV: '"production"'}
 });
 
-var entryPath = './react-signup/app/';
-var outputPath = __dirname + '/signup/';
+var outputPath = path.join(__dirname, "signup");
 var CopyWebpackPluginConfig = new CopyWebpackPlugin([
   { from:  './react-signup/css', to: outputPath + 'css' },
   { from: './react-signup/img', to: outputPath + 'img' }
 ]);
 
 
+var elmSource = __dirname + '/elmSrc/';
+
+
 module.exports = {
   // context: path.join(__dirname, 'app'),
   devServer: {
-      // This is required for webpack-dev-server. The path should
-      // be an absolute path to your build destination.
-      outputPath: path.join(__dirname, outputPath)
+    publicPath: '_site',
+    contentBase: path.join(__dirname, "_site"),
+    compress: true,
+    port: 9000
   },
   entry: [
     './react-signup/app/index.js'
@@ -45,6 +48,16 @@ module.exports = {
       { test:/\.js$/,
         exclude: /node_modules/,
         use: [{loader: "babel-loader"}]
+      },
+      {
+        test: /\.elm$/,
+        exclude: [/elm-stuff/, /node_modules/],
+        use: {
+          loader: 'elm-webpack-loader',
+          options: {
+            'cwd': elmSource,
+          }
+        }
       }
     ]
   },

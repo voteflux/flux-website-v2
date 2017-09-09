@@ -1,12 +1,13 @@
 'use strict';
 // imports
 var gulp = require("gulp");
-var server = require('gulp-server-livereload');
+var refresh = require('gulp-refresh');
 var sass = require("gulp-sass");
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 var notify = require('gulp-notify');
 var deploy = require('gulp-gh-pages');
+var browserSync = require('browser-sync').create();
 
 
 var autoprefixerOptions = {
@@ -14,22 +15,18 @@ var autoprefixerOptions = {
 };
 
 gulp.task('serve', ['sass'], function() {
-  // gulp.watch('./_sass/*.scss', ['sass']);
-  // gulp.watch('**/*.html').on('change', livereload.reload);
-  // gulp.watch("css/*.css").on('change', livereload.reload);
-  // gulp.watch("js/*.js").on('change', livereload.reload);
-  // livereload.listen({
-  //   basePath: './_site',
-  //   port: 9000,
-  //   start: true,
-  // });
-  gulp.src('_site')
-    .pipe(server({
-      livereload: true,
-      // directoryListing: true,
-      open: true,
-      port: 9000
-    }));
+  gulp.watch('./_sass/*.scss', ['sass']);
+  gulp.watch('**/*.html').on('change', browserSync.reload);
+  gulp.watch("css/*.css").on('change', browserSync.reload);
+  gulp.watch("js/*.js").on('change', browserSync.reload);
+  // refresh.listen({basePath: './_site', start: true, port: 8000});
+  browserSync.init({
+    server: {
+      baseDir: "./_site",
+      port: 9000,
+    }
+  });
+  gulp.watch('./_sass/*.scss', ['sass']);
 });
 
 gulp.task('sass', function() {
@@ -45,7 +42,7 @@ gulp.task('sass', function() {
         }))
         .pipe(gulp.dest("./css"))
         .pipe(gulp.dest("./react-signup/css"))
-        // .pipe(livereload());
+        .pipe(browserSync.stream());
 });
 
 gulp.task("default", ['serve']);
