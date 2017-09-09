@@ -19,7 +19,7 @@ var definePlugin = new webpack.DefinePlugin({
 });
 
 var entryPath = './react-signup/app/';
-var outputPath = './signup/';
+var outputPath = __dirname + '/signup/';
 var CopyWebpackPluginConfig = new CopyWebpackPlugin([
   { from:  './react-signup/css', to: outputPath + 'css' },
   { from: './react-signup/img', to: outputPath + 'img' }
@@ -41,10 +41,10 @@ module.exports = {
     filename: "index_bundle.js"
   },
   module: {
-    loaders: [
+    rules: [
       { test:/\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        use: [{loader: "babel-loader"}]
       }
     ]
   },
