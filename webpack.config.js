@@ -3,13 +3,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 // plugins
-var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  hash: true,
-  cache: false,
-  template: __dirname + '/react-signup/app/index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
+// var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+//   hash: true,
+//   cache: false,
+//   template: __dirname + '/react-signup/app/index.html',
+//   filename: 'index.html',
+//   inject: 'body'
+// });
 
 // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
 var definePlugin = new webpack.DefinePlugin({
@@ -18,14 +18,19 @@ var definePlugin = new webpack.DefinePlugin({
   'process.env': {NODE_ENV: '"production"'}
 });
 
-var outputPath = path.join(__dirname, "signup");
+var reactOutputPath = path.join(__dirname, "signup");
 var CopyWebpackPluginConfig = new CopyWebpackPlugin([
-  { from:  './react-signup/css', to: outputPath + 'css' },
-  { from: './react-signup/img', to: outputPath + 'img' }
+  { from: './react-signup/html', to: reactOutputPath },
+  { from: './react-signup/css', to: reactOutputPath + 'css' },
+  { from: './react-signup/img', to: reactOutputPath + 'img' }
 ]);
 
 
+var localElmSrc = './elmSrc/';
 var elmSource = __dirname + '/elmSrc/';
+
+
+// TODO - WEBPACK (or other) must handle building sass
 
 
 module.exports = {
@@ -34,19 +39,21 @@ module.exports = {
     publicPath: '_site',
     contentBase: path.join(__dirname, "_site"),
     compress: true,
-    port: 9000
+    port: 9000,
+    inline: true
   },
-  entry: [
-    './react-signup/app/index.js'
-  ],
+  entry: {
+    reactSignup: ['./react-signup/app/index.js'],
+    donationWidget: [localElmSrc + 'DonationWidget/index.js']
+  },
   output: {
-    path: outputPath,
-    filename: "index_bundle.js"
+    path: __dirname + "/js",
+    filename: "bundle-[name].js"
   },
   module: {
     rules: [
       { test:/\.js$/,
-        exclude: /node_modules/,
+        exclude: [/elm-stuff/, /node_modules/],
         use: [{loader: "babel-loader"}]
       },
       {
@@ -55,14 +62,14 @@ module.exports = {
         use: {
           loader: 'elm-webpack-loader',
           options: {
-            'cwd': elmSource,
+            // cwd: elmSource
           }
         }
       }
     ]
   },
   plugins: [
-    HtmlWebpackPluginConfig,
+    // HtmlWebpackPluginConfig,
     CopyWebpackPluginConfig, // comment this out when in dev-mode
     definePlugin
   ]

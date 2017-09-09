@@ -11,9 +11,9 @@ redirects:
 ---
 
 {% include navbar.html %}
-<header  class="bg-near-black texture-bg-img white pb3 pt5 sm-pr4">
+<header class="bg-near-black texture-bg-img white pb3 pt5 sm-pr4">
   <div class="max-width-4 mx-auto px2 md-px3 mt4">
-  {% include components/main-heading.html
+    {% include components/main-heading.html
     text="Donate Now"
     font-size="h0 line-height-1"
     font-weight="bold" %}
@@ -21,30 +21,40 @@ redirects:
 </header>
 <section id="contact" class="bg-light-gray mid-gray py4 sm-pr4">
   <div class="max-width-4 mx-auto px2 md-px3">
-  <h2 class="mb3">Email contact for donations: <a href="mailto:donations@voteflux.org">donations@voteflux.org</a></h2>
+    <div id="donationWidgetElm"></div>
+    <script src="/js/bundle-donationWidget.js"></script>
 
-  <hr>
+    <hr>
+
+    <h2 class="mb3">Email contact for donations: <a href="mailto:donations@voteflux.org">donations@voteflux.org</a></h2>
+
+    <hr>
 
     <h2>Donations</h2>
 
-    <strong>Please note:</strong> If you donate more than $13,000 total in one year we are <strong>required by law</strong> to disclose your name and address to the AEC. We will not be able to accept such donations if we don't have those details. Please email us if you'd like to make a large donation.
+    <strong>Please note:</strong> If you donate more than $13,000 total in one year we are <strong>required by
+    law</strong> to disclose your name and address to the AEC. We will not be able to accept such donations if we don't
+    have those details. Please email us if you'd like to make a large donation.
 
     <p>
       NB: The first $1500 of the donation are tax deductable.
     </p>
 
     <p>
-    All donations need to come with a name and address (unfortunately) due to reporting laws. Basically we need to ensure any single person doesn't donate more than $13,000 per year.
+      All donations need to come with a name and address (unfortunately) due to reporting laws. Basically we need to
+      ensure any single person doesn't donate more than $13,000 per year.
     </p>
 
     <p>
-      Please let us know via email if you would like public attribution on our <a href="https://flux.wiki/index.php/Finance/Australia">Finances</a> page.
+      Please let us know via email if you would like public attribution on our <a
+      href="https://flux.wiki/index.php/Finance/Australia">Finances</a> page.
     </p>
 
     Flux currently accepts donations via three methods:
     <ul>
       <li>
-        Paypal: go to <a href="https://paypal.me/voteflux">https://paypal.me/voteflux</a> to donate quickly and easily. Good for small amounts.
+        Paypal: go to <a href="https://paypal.me/voteflux">https://paypal.me/voteflux</a> to donate quickly and easily.
+        Good for small amounts.
       </li>
       <li>
         Bank Transfer: our bank details are:<br>
@@ -55,7 +65,9 @@ redirects:
       </li>
       <li>
         Bitcoin: our current donation address is 1EDGSgTW5iGHGesyYACSXYUNbwB6BPEDan<br>
-        Please keep in mind the above restrictions around disclosure limits still apply, and you'll still need to email us your name and address. Unless we're holding a fundraiser for something specific we'll hold Bitcoin <em>as BTC</em> until we need to spend it, and will spend AUD before BTC.
+        Please keep in mind the above restrictions around disclosure limits still apply, and you'll still need to email
+        us your name and address. Unless we're holding a fundraiser for something specific we'll hold Bitcoin <em>as
+        BTC</em> until we need to spend it, and will spend AUD before BTC.
       </li>
     </ul>
 

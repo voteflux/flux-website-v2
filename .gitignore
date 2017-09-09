@@ -9,3 +9,6 @@ react-signup/node_modules
 *.DS_Store
 react-signup/main.css
 css/main.css
+js/donationWidget.js
+js/reactSignup.js
+js/bundle-*

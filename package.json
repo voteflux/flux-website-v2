@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "elm-mk-do-not-use": "elm-make elmSrc/DonationWidget/Main.elm --output js/elm/donationWidget.js",
-    "flux": "bundle exec jekyll 'clean' && BUILD_DEV=true parallelshell 'bundle exec jekyll build --watch --config _config.yml' 'webpack-dev-server --open'",
+    "flux": "bundle exec jekyll 'clean' && BUILD_DEV=true parallelshell 'bundle exec jekyll build --watch --config _config.yml' 'webpack -w' 'webpack-dev-server --open --hot'",
     "flux-no-react-deprecated": "bundle exec jekyll serve --watch --config _config.yml",
     "deploy-stage": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build && gulp 'deploy' && exit",
-    "build": "npm run elm-mk && bundle install && bundle exec jekyll clean && gulp sass && webpack -p && bundle exec jekyll build",
+    "build": "bundle install && bundle exec jekyll clean && gulp sass && webpack -p && bundle exec jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "David Factor, Max Kaye",
