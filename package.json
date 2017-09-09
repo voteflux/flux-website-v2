@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "flux": "bundle exec jekyll 'clean' && BUILD_DEV=true parallelshell 'gulp' 'bundle exec jekyll build --watch --config _config.yml' 'webpack -w'",
-    "flux-no-react": "bundle exec jekyll serve --watch --config _config.yml",
+    "flux-no-react-deprecated": "bundle exec jekyll serve --watch --config _config.yml",
     "deploy-stage": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build && gulp 'deploy' && exit",
     "build": "bundle install && bundle exec jekyll clean && gulp sass && webpack -p && bundle exec jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,6 +26,7 @@
     "bufferutil": "1",
     "concurrently": "^2.0.0",
     "copy-webpack-plugin": "^4.0.0",
+    "elm": "^0.18.0",
     "es6-promise": "^4.0.5",
     "formsy-react": "^0.18.0",
     "gulp": "^3.9.1",
