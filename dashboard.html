@@ -19,22 +19,38 @@ nav-title: Dashboard
 
           <div class="h-font light lg-col-10 mid-gray sm-pr4 mx" style="max-width: 600px;">
 
-            <h1>Live Membership Stats</h1>
-            <h1 ng-show="false">Loading... Please be patient.</h1>
+            <h1 ng-show="false" class="h0">Loading... Please be patient.</h1>
+            <h1>Live Flux Stats</h1>
+
+            <ul>
+              <li><a href="#membership">Membership Stats</a></li>
+              <li><a href="#donations">Donation Stats</a></li>
+              <li><a href="#membership-tables">Membership Stats (in tables)</a></li>
+            </ul>
+
+            <h1 id='membership'>Membership</h1>
             <h3 ng-repeat="days in flux.growthDays track by $index">Membership growth over last {{'days' | angular}}
               days: {{'(flux.growthStat(days) * 100).toString().slice(0,4)' | angular}}%</h3>
-            <div id="membershipChart" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="memberDobYearChart" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="memberStateChart" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="memberSignupDaysAgo" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="memberSignupHoursAgo" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="memberDayPopularity" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="memberHourPopularity" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="stateSignupTimes" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="donationGraphCumulativeDiv" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="donationGraphCumulativeStateDiv" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="donationGraphTotalDiv" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
-            <div id="donationGraphByJuriDiv" style="height: 370px; max-width: 600px;" class="col-sm-12"></div>
+
+            <div id="membershipChart" class="col-sm-12 graph-div"></div>
+            <div id="memberDobYearChart" class="col-sm-12 graph-div"></div>
+            <div id="memberStateChart" class="col-sm-12 graph-div"></div>
+            <div id="memberSignupDaysAgo" class="col-sm-12 graph-div"></div>
+            <div id="memberSignupHoursAgo" class="col-sm-12 graph-div"></div>
+            <div id="memberDayPopularity" class="col-sm-12 graph-div"></div>
+            <div id="memberHourPopularity" class="col-sm-12 graph-div"></div>
+            <div id="stateSignupTimes" class="col-sm-12 graph-div"></div>
+
+            <h1 id="donations">Donations</h1>
+
+            <h3>You can view a log of donations on our <a href="/donate">Donate</a> page.</h3>
+
+            <div id="donationGraphCumulativeDiv" class="col-sm-12 graph-div"></div>
+            <div id="donationGraphCumulativeStateDiv" class="col-sm-12 graph-div"></div>
+            <div id="donationGraphTotalDiv" class="col-sm-12 graph-div"></div>
+            <div id="donationGraphByJuriDiv" class="col-sm-12 graph-div"></div>
+
+            <h1 id="membership-tables">Membership Stats (Tables)</h1>
 
             <div id="monthly-growth">
               <h3>Monthly Growth Rates</h3>
