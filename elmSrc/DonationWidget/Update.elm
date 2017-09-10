@@ -9,6 +9,7 @@ import Random
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     let
+        -- log out any updates to the console
         debugTemp =
             Debug.log (toString msg) ""
     in
