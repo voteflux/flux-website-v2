@@ -81,20 +81,13 @@ module.exports = {
           }, {
             loader: "sass-loader",
             options: {
-              includePaths: [__dirname + "/_sass"]
+              includePaths: [__dirname + "/_sass", 'node_modules']
             }
           }],
           // use style-loader in development
           fallback: "style-loader"
         })
       },
-      // {
-      //   test: /\.(png|jpeg|ttf|svg)$/,
-      //   use: [
-      //     { loader: 'url-loader', options: { limit: 8192 } }
-      //     // limit => file.size =< 8192 bytes ? DataURI : File
-      //   ]
-      // }
     ]
   },
   plugins: [

@@ -15,6 +15,7 @@
   "license": "",
   "devDependencies": {},
   "dependencies": {
+    "ace-css": "^1.1.0",
     "and": "^0.0.0",
     "autoprefixer": "^6.3.6",
     "axios": "^0.15.2",
@@ -23,6 +24,9 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "basscss-color-forms": "^3.0.2",
+    "basscss-forms": "^1.0.0",
+    "basscss-sass": "^4.0.0",
     "browser-sync": "2.9.0",
     "bufferutil": "1",
     "concurrently": "^2.0.0",

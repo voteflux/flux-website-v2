@@ -1,11 +1,13 @@
 <nav class="fixed col-12 top-0 left-0 z5">
 
   <div id="notification" class="center flex flex-center">
-      <a href="http://m.me/voteflux.org" target="_blank" id="notification_link"><strong>Got Questions? <img src="/img/facebook-messenger.svg" id="messenger-icon"> Chat to us now! </strong></a>
+    <a href="http://m.me/voteflux.org" target="_blank" id="notification_link"><strong>Got Questions? <img
+      src="/img/facebook-messenger.svg" id="messenger-icon"> Chat to us now! </strong></a>
   </div>
-<!-- Nav bar -->
-  <div id="js-fading" style="opacity: 0" class="absolute z4 col-12 py3 bg-white left-0 top-0 navbar-height border-bottom border-near-white">
-  {% if page.home %}
+  <!-- Nav bar -->
+  <div id="js-fading" style="opacity: 0"
+       class="absolute z4 col-12 py3 bg-white left-0 top-0 navbar-height border-bottom border-near-white">
+    {% if page.home %}
     <div class="absolute top-0 left-0 mt1 z1 ml2 sm-ml3">
       <a class="js-menu-hide link-reset block no-focus flex relative z2" href="{{site.baseurl}}/">
         <span class="width-3rem block mr2">
@@ -17,61 +19,63 @@
         </span>
       </a>
     </div>
-  {% endif %}
+    {% endif %}
   </div>
 
 
   <div id="nav-bar" class="absolute col-12 top-0 left-0 z5 px2 sm-px3 py1">
     <div class="flex">
 
-        {% if page.home %}
-        {% elsif page.dark-theme %}
-          <a class="js-menu-hide link-reset block no-focus flex" href="{{site.baseurl}}/">
+      {% if page.home %}
+      {% elsif page.dark-theme %}
+      <a class="js-menu-hide link-reset block no-focus flex" href="{{site.baseurl}}/">
             <span class="width-3rem block mr2">
               {% include svg/flux-mark.html %}
             </span>
-            <span class="width-4rem block mt2">
+        <span class="width-4rem block mt2">
               {% include svg/flux-text-logo.html
                 color="#fff" %}
             </span>
-          </a>
-        {% else %}
-          <a class="js-menu-hide link-reset block no-focus flex" href="{{site.baseurl}}/">
+      </a>
+      {% else %}
+      <a class="js-menu-hide link-reset block no-focus flex" href="{{site.baseurl}}/">
             <span class="width-3rem block mr2">
               {% include svg/flux-mark.html %}
             </span>
-            <span class="width-3rem  block mt2">
+        <span class="width-3rem  block mt2">
               {% include svg/flux-text-logo.html
                 color="#222" %}
             </span>
-          </a>
-        {% endif %}
+      </a>
+      {% endif %}
 
-    <div class="flex-auto right-align flex justify-end items-center absolute right-0 top-0 mr2 sm-mr3 mt1">
+      <div class="flex-auto right-align flex justify-end items-center absolute right-0 top-0 mr2 sm-mr3 mt1">
 
-    <!-- DESKTOP NAV LINKS  -->
-      <ul id="js-nav-links" class='flex justify-between mt2 mr3 list-reset h4 xs-hide sm-hide white'>
+        <!-- DESKTOP NAV LINKS  -->
+        <div class="md-show">
+          <ul id="js-nav-links" class='flex justify-between mt2 mr3 list-reset h4 white'>
             {% assign all_pages = site.pages | sort: "nav-order" %}
             {% assign group = 'navigation' %}
             {% include pages_list %}
-      </ul>
-      <div class="xs-hide inline-block mr3 md-mr0">
-        {% if include.no-button == nil %}
-        <a href="{{site.baseurl}}/signup" class="js-menu-hide btn btn-primary p1 h5 transition">Join Flux</a>
-         {% endif %}
-      </div>
-      <div class="inline-block mt1 md-hide lg-hide xl-hide">
-        <button id="js-menu-button" class="hamburger hamburger--squeeze white no-focus" type="button">
+          </ul>
+        </div>
+        <div class="xs-hide inline-block mr3 md-mr0">
+          {% if include.no-button == nil %}
+          <a href="{{site.baseurl}}/signup" class="js-menu-hide btn btn-primary p1 h5 transition">Join Flux</a>
+          {% endif %}
+        </div>
+        <div class="inline-block mt1 md-hide lg-hide xl-hide">
+          <button id="js-menu-button" class="hamburger hamburger--squeeze white no-focus" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner bg-accent"></span>
         </span>
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Mobile Menu  -->
+  <!-- Mobile Menu  -->
   <div id="js-menu" class="md-hide lg-hide xl-hide transition opacity-0 hide relative z3">
     <div class="py4 px2 bg-black-muted min-height-100vh fixed col-12 top-0 right-0 left-0 bottom-0 z1">
     </div>
@@ -93,9 +97,10 @@
             {% assign all_pages = site.pages | sort: "nav-order" %}
             {% assign group = 'navigation' %}
             {% include pages_list mobile=true %}
-            {% if include.no-button  == nil %}
-              <hr class="dark-gray border-bottom my1">
-              <li class="mb2 mt3 h4"><a href="{{site.baseurl}}/signup" class="btn btn-primary h3 xs-menu-join-button">Join Flux</a></li>
+            {% if include.no-button == nil %}
+            <hr class="dark-gray border-bottom my1">
+            <li class="mb2 mt3 h4"><a href="{{site.baseurl}}/signup" class="btn btn-primary h3 xs-menu-join-button">Join
+              Flux</a></li>
             {% endif %}
           </ul>
         </div>
