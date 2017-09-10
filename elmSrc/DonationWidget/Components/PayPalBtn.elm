@@ -5,7 +5,7 @@ import DonationWidget.Models exposing (Model)
 import DonationWidget.Msgs exposing (Msg(UpdateInput))
 import DonationWidget.Views.Utils exposing (fmtFloat, spanText)
 import Flux.Jurisdictions as Juris
-import Html exposing (Html, a, br, div, form, h1, h2, h3, h4, img, input, p, pre, span, text)
+import Html exposing (Html, a, br, div, form, h1, h2, h3, h4, img, input, label, p, pre, span, text)
 import Html.Attributes exposing (action, alt, class, height, id, method, name, src, step, type_, value, width)
 import Html.Events exposing (onClick, onInput)
 import Maybe.Extra exposing ((?))
@@ -88,10 +88,11 @@ paypalCutCalc model =
             UpdateInput dShowKey toggleShow
 
         toggleShowCls =
-            if toggleShowBool then
-                ""
-            else
-                "display-none"
+            class <|
+                if toggleShowBool then
+                    ""
+                else
+                    "hide"
 
         toggleButtonTxt =
             if toggleShowBool then
@@ -102,27 +103,25 @@ paypalCutCalc model =
         toggleBtn =
             a
                 [ onClick toggleShowMsg
-                , class "bold btn btn-outline p1"
+                , class "bold small pointer"
                 ]
-                [ text "+" ]
+                [ text "(click)" ]
     in
     div [ class "" ]
-        -- todo: make sure the onclick is working
         [ h3 []
             [ text "Interested in the fees PayPal takes? "
             , toggleBtn
             ]
-        , div [ class toggleShowCls ]
-            [ spanText <| "Donation Amount: "
+        , div [ toggleShowCls ]
+            [ label [] [ text "Donation Amount ($): " ]
             , input
                 [ type_ "number"
                 , step "0.01"
-                , class "block field"
+                , class "block field py0"
                 , value prevInput
                 , onInput <| UpdateInput dKey
                 ]
                 []
-            , br [] []
             , spanText <| "Paypal's Cut: $" ++ fmtFloat ppCut ++ " (" ++ ppCutProp ++ "%)"
             ]
         ]

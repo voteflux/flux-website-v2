@@ -1,6 +1,6 @@
 {
-    "version": "1.0.0",
-    "summary": "helpful summary of your project, less than 80 characters",
+    "version": "0.1.0",
+    "summary": "support UI elements for Flux site",
     "repository": "https://github.com/user/project.git",
     "license": "BSD3",
     "source-directories": [
