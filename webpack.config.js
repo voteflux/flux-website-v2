@@ -52,6 +52,7 @@ module.exports = {
   entry: {
     reactSignup: ['./react-signup/app/index.js'],
     donationWidget: [localElmSrc + 'DonationWidget/index.js'],
+    donationLog: [localElmSrc + 'DonationLog/index.js'],
     main: ['./_sass/main.scss']
   },
   output: {

@@ -39,7 +39,7 @@ debugInfo model =
 paypalBtn : Model -> Html Msg
 paypalBtn model =
     div [ id "paypal-button" ]
-        [ h2 [] [ text "The easiest way to donate is via PayPal" ]
+        [ h1 [] [ text "The easiest way to donate is via PayPal" ]
         , div [ class "" ]
             [ h3 [ class "inline-block" ] [ text "Choose a branch: " ]
             , p [ class "inline-block px1" ] [ text "Flux Australia" ]
