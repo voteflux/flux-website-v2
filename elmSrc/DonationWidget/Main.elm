@@ -3,11 +3,11 @@ module DonationWidget.Main exposing (..)
 --import Components.PayPalBtn exposing (paypalBtn)
 
 import Dict
-import DonationWidget.Flux.Jurisdictions exposing (Jurisdiction(AUS))
 import DonationWidget.Models exposing (Model)
 import DonationWidget.Msgs exposing (Msg(OnLocationChange, SetPaymentIdInit))
 import DonationWidget.Update exposing (randomCmd, update)
 import DonationWidget.Views.BtnView exposing (btnView)
+import Flux.Jurisdictions exposing (Jurisdiction(AUS))
 import Html exposing (Html, div)
 import Navigation exposing (Location)
 import Random

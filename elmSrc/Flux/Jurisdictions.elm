@@ -1,4 +1,8 @@
-module DonationWidget.Flux.Jurisdictions exposing (..)
+module Flux.Jurisdictions exposing (..)
+
+-- Usually I'd implement Jurisdiction as a string; but this serves to
+-- make our code cleaner, typecheck jurisdictions, and demonstrate that
+-- this is an option at all.
 
 
 type Jurisdiction

@@ -1,14 +1,27 @@
 module DonationWidget.Components.PayPalBtn exposing (..)
 
 import Dict
-import DonationWidget.Flux.Jurisdictions as Juris
 import DonationWidget.Models exposing (Model)
 import DonationWidget.Msgs exposing (Msg(UpdateInput))
 import DonationWidget.Views.Utils exposing (fmtFloat, spanText)
+import Flux.Jurisdictions as Juris
 import Html exposing (Html, a, br, div, form, h1, h2, h3, h4, img, input, p, pre, span, text)
 import Html.Attributes exposing (action, alt, class, height, id, method, name, src, step, type_, value, width)
 import Html.Events exposing (onClick, onInput)
 import Maybe.Extra exposing ((?))
+
+
+paypalButtonForm : Model -> Html Msg
+paypalButtonForm model =
+    form [ class "", action "https://www.paypal.com/cgi-bin/webscr", method "post" ]
+        [ input [ type_ "hidden", name "cmd", value "_s-xclick" ] []
+        , input [ type_ "hidden", name "hosted_button_id", value "TZXYFG3Q3NJ4U" ] []
+        , input [ type_ "image", src "https://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif", name "submit", alt "PayPal – The safer, easier way to pay online!" ] []
+        , input [ type_ "hidden", name "on0", value "Branch" ] []
+        , input [ type_ "hidden", name "os0", value <| Juris.toString model.jurisdiction ] []
+        , input [ type_ "hidden", name "on1", value "Donation Session" ] []
+        , input [ type_ "hidden", name "os1", value <| toString model.paymentId ] []
+        ]
 
 
 paypalBtn : Model -> Html Msg
@@ -27,15 +40,7 @@ paypalBtn model =
                     ]
                 ]
             ]
-        , form [ class "", action "https://www.paypal.com/cgi-bin/webscr", method "post" ]
-            [ input [ type_ "hidden", name "cmd", value "_s-xclick" ] []
-            , input [ type_ "hidden", name "hosted_button_id", value "TZXYFG3Q3NJ4U" ] []
-            , input [ type_ "image", src "https://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif", name "submit", alt "PayPal – The safer, easier way to pay online!" ] []
-            , input [ type_ "hidden", name "on0", value "Branch" ] []
-            , input [ type_ "hidden", name "os0", value <| Juris.toString model.jurisdiction ] []
-            , input [ type_ "hidden", name "on1", value "Donation Session" ] []
-            , input [ type_ "hidden", name "os1", value <| toString model.paymentId ] []
-            ]
+        , paypalButtonForm model
         , paypalCutCalc model
         ]
 
@@ -50,6 +55,8 @@ paypalCutCalc model =
             "paypal-cut-calc-show"
 
         prevInput =
+            -- `?` : Maybe a -> a -> a
+            -- turns a Maybe Val into a Val with a default
             Dict.get dKey model.input ? ""
 
         ppTotal =
@@ -85,10 +92,26 @@ paypalCutCalc model =
                 ""
             else
                 "display-none"
+
+        toggleButtonTxt =
+            if toggleShowBool then
+                "+"
+            else
+                "-"
+
+        toggleBtn =
+            a
+                [ onClick toggleShowMsg
+                , class "bold btn btn-outline p1"
+                ]
+                [ text "+" ]
     in
     div [ class "" ]
         -- todo: make sure the onclick is working
-        [ h3 [] [ text "PayPal Fee Calculator. ", a [ onClick toggleShowMsg, class "bold" ] [ text "+" ] ]
+        [ h3 []
+            [ text "Interested in the fees PayPal takes? "
+            , toggleBtn
+            ]
         , div [ class toggleShowCls ]
             [ spanText <| "Donation Amount: "
             , input

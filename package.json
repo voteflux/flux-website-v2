@@ -28,6 +28,7 @@
     "concurrently": "^2.0.0",
     "copy-webpack-plugin": "^4.0.0",
     "elm": "^0.18.0",
+    "elm-hot-loader": "^0.5.4",
     "elm-webpack-loader": "^4.3.1",
     "es6-promise": "^4.0.5",
     "formsy-react": "^0.18.0",

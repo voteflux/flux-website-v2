@@ -1,7 +1,7 @@
 module DonationWidget.Models exposing (..)
 
 import Dict exposing (Dict)
-import DonationWidget.Flux.Jurisdictions exposing (Jurisdiction)
+import Flux.Jurisdictions exposing (Jurisdiction)
 
 
 type alias Model =
