@@ -24,24 +24,31 @@ paypalButtonForm model =
         ]
 
 
+debugInfo : Model -> Html Msg
+debugInfo model =
+    div [ class "p2 border" ]
+        [ h4 [] [ text "debug" ]
+        , p []
+            [ text <| Juris.toString model.jurisdiction
+            , text " - "
+            , text <| toString model.paymentId
+            ]
+        ]
+
+
 paypalBtn : Model -> Html Msg
 paypalBtn model =
     div [ id "paypal-button" ]
         [ h2 [] [ text "The easiest way to donate is via PayPal" ]
         , div [ class "" ]
             [ h3 [ class "inline-block" ] [ text "Choose a branch: " ]
-            , p [ class "inline-block" ] [ text "Flux Australia" ]
-            , div [ class "p2 border" ]
-                [ h4 [] [ text "debug" ]
-                , p []
-                    [ text <| Juris.toString model.jurisdiction
-                    , text " - "
-                    , text <| toString model.paymentId
-                    ]
-                ]
+            , p [ class "inline-block px1" ] [ text "Flux Australia" ]
+
+            {- , debugInfo model -}
             ]
         , paypalButtonForm model
         , paypalCutCalc model
+        , p [ class "small" ] [ span [ class "bold" ] [ text "Note: " ], text "currently you're only able to donate to Flux Australia, but we'll have donations to individual branches soon." ]
         ]
 
 
