@@ -5,7 +5,7 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
-  filename: "[name].[contenthash].css",
+  filename: "../css/[name].bundle.css",
   disable: process.env.NODE_ENV === "development"
 });
 
@@ -27,9 +27,9 @@ const definePlugin = new webpack.DefinePlugin({
 
 const reactOutputPath = path.join(__dirname, "signup");
 const CopyWebpackPluginConfig = new CopyWebpackPlugin([
-  { from: './react-signup/html', to: reactOutputPath },
-  { from: './react-signup/css', to: reactOutputPath + '/css' },
-  { from: './react-signup/img', to: reactOutputPath + '/img' }
+  {from: './react-signup/html', to: reactOutputPath},
+  {from: './react-signup/css', to: reactOutputPath + '/css'},
+  {from: './react-signup/img', to: reactOutputPath + '/img'}
 ]);
 
 
@@ -52,7 +52,7 @@ module.exports = {
   entry: {
     reactSignup: ['./react-signup/app/index.js'],
     donationWidget: [localElmSrc + 'DonationWidget/index.js'],
-    // sass: ['./_sass']
+    main: ['./_sass/main.scss']
   },
   output: {
     path: __dirname + "/js",
@@ -60,7 +60,8 @@ module.exports = {
   },
   module: {
     rules: [
-      { test:/\.js$/,
+      {
+        test: /\.js$/,
         exclude: [/elm-stuff/, /node_modules/],
         use: [{loader: "babel-loader"}]
       },
@@ -71,22 +72,34 @@ module.exports = {
           loader: 'elm-webpack-loader'
         }]
       },
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+          use: [{
+            loader: "css-loader",
+            options: { url: false }
+          }, {
+            loader: "sass-loader",
+            options: {
+              includePaths: [__dirname + "/_sass"]
+            }
+          }],
+          // use style-loader in development
+          fallback: "style-loader"
+        })
+      },
       // {
-      //   test: /\.scss$/,
-      //   use: extractSass.extract({
-      //     use: [{
-      //       loader: "css-loader"
-      //     }, {
-      //       loader: "sass-loader"
-      //     }],
-      //     // use style-loader in development
-      //     fallback: "style-loader"
-      //   })
+      //   test: /\.(png|jpeg|ttf|svg)$/,
+      //   use: [
+      //     { loader: 'url-loader', options: { limit: 8192 } }
+      //     // limit => file.size =< 8192 bytes ? DataURI : File
+      //   ]
       // }
     ]
   },
   plugins: [
     // HtmlWebpackPluginConfig,
+    extractSass,
     CopyWebpackPluginConfig, // comment this out when in dev-mode
     definePlugin
   ]
