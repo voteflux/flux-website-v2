@@ -30,3 +30,4 @@ donationDecoder =
     decode Donation
         |> required "ts" Decode.int
         |> required "amount" Decode.string
+        |> required "branch" Decode.string
