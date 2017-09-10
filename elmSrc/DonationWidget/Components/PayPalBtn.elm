@@ -16,7 +16,7 @@ paypalButtonForm model =
     form [ class "", action "https://www.paypal.com/cgi-bin/webscr", method "post" ]
         [ input [ type_ "hidden", name "cmd", value "_s-xclick" ] []
         , input [ type_ "hidden", name "hosted_button_id", value "TZXYFG3Q3NJ4U" ] []
-        , input [ type_ "image", src "https://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif", name "submit", alt "PayPal – The safer, easier way to pay online!" ] []
+        , input [ type_ "image", src "/img/btn_donate_LG.gif", name "submit", alt "PayPal – The safer, easier way to pay online!" ] []
         , input [ type_ "hidden", name "on0", value "Branch" ] []
         , input [ type_ "hidden", name "os0", value <| Juris.toString model.jurisdiction ] []
         , input [ type_ "hidden", name "on1", value "Donation Session" ] []
