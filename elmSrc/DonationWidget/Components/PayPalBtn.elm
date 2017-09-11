@@ -16,13 +16,13 @@ paypalBranchSelector : Model -> Html Msg
 paypalBranchSelector model =
     let
         brOpt { state } =
-            option [ value <| Juris.toString state ] [ Juris.toName state ]
+            option [ value <| Juris.toString state ] [ text <| Juris.toName state ]
             
     in
             
     form [] 
         [ select [] <| []
-            ++ map brOpt model.jurisdiction
+            ++ map brOpt Juris.listJurisdictions
         ]
 
 
