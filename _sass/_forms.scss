@@ -45,10 +45,10 @@ select {
   padding : $form-field-padding-y  $form-field-padding-x;
 }
 
-select:not([multiple]) {
-  height         : $form-field-height;
-  vertical-align : middle;
-}
+//select:not([multiple]) {
+//  height         : $form-field-height;
+//  vertical-align : middle;
+//}
 
 textarea {
   padding : $form-field-padding-y  $form-field-padding-x;
@@ -226,15 +226,13 @@ select {
 
 
 .field {
-  border-style: solid;
-  border-width: var(--border-width);
-  border-color: var(--border-color);
-  border-radius: var(--border-radius);
+  border: $border-width-thin solid $border-color;
+  border-radius: $border-radius;
 }
 
 .field:focus,
 .field.is-focused {
-  outline: none;
+  //outline: none;
   border-color: var(--field-focus-color);
   box-shadow: 0 0 0 2px color(var(--field-focus-color) a(.5));
 }

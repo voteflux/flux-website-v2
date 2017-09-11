@@ -2,28 +2,25 @@ module DonationWidget.Components.PayPalBtn exposing (..)
 
 import Dict
 import DonationWidget.Models exposing (Model)
-import DonationWidget.Msgs exposing (Msg(UpdateInput))
+import DonationWidget.Msgs exposing (Msg(SetJuri, UpdateInput))
 import DonationWidget.Views.Utils exposing (fmtFloat, spanText)
 import Flux.Jurisdictions as Juris
-import Html exposing (Html, a, br, div, form, h1, h2, h3, h4, img, input, select, option, label, p, pre, span, text)
+import Html exposing (Html, a, br, div, form, h1, h2, h3, h4, img, input, label, option, p, pre, select, span, text)
 import Html.Attributes exposing (action, alt, class, height, id, method, name, src, step, type_, value, width)
 import Html.Events exposing (onClick, onInput)
 import List exposing (map)
 import Maybe.Extra exposing ((?))
+import Tuple exposing (first)
 
 
 paypalBranchSelector : Model -> Html Msg
 paypalBranchSelector model =
     let
-        brOpt { state } =
+        brOpt ( state, _, _ ) =
             option [ value <| Juris.toString state ] [ text <| Juris.toName state ]
-            
     in
-            
-    form [] 
-        [ select [] <| []
-            ++ map brOpt Juris.listJurisdictions
-        ]
+    select [ class "ml1 py1 inline-block field", onInput <| SetJuri << Juris.fromString ] <|
+        map brOpt Juris.ausJuris
 
 
 paypalButtonForm : Model -> Html Msg
@@ -58,13 +55,14 @@ paypalBtn model =
         , div [ class "" ]
             [ h3 [ class "inline-block" ] [ text "Choose a branch: " ]
             , paypalBranchSelector model
-            --, p [ class "inline-block px1" ] [ text "Flux Australia" ]
 
-            {- , debugInfo model -}
+            --, p [ class "inline-block px1" ] [ text "Flux Australia" ]
+            --, debugInfo model
             ]
         , paypalButtonForm model
         , paypalCutCalc model
-        , p [ class "small" ] [ span [ class "bold" ] [ text "Note: " ], text "currently you're only able to donate to Flux Australia, but we'll have donations to individual branches soon." ]
+
+        -- , p [ class "small" ] [ span [ class "bold" ] [ text "Note: " ], text "currently you're only able to donate to Flux Australia, but we'll have donations to individual branches soon." ]
         ]
 
 
