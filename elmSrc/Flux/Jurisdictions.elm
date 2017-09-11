@@ -16,6 +16,21 @@ type Jurisdiction
     | SA
     | WA
 
+-- [TS] I don't think there is anyway to iteratte over Union Types
+-- See https://stackoverflow.com/questions/38132338/is-it-possible-to-iterate-over-union-type-in-elm
+-- And https://groups.google.com/forum/#!topic/elm-discuss/lwBoQC8X5QI
+listJurisdictions : List { state : Jurisdiction }
+listJurisdictions =
+    [ { state = AUS }
+    , { state = NSW }
+    , { state = VIC }
+    , { state = QLD }
+    , { state = TAS }
+    , { state = ACT }
+    , { state = NT }
+    , { state = SA }
+    , { state = WA } ]
+
 
 toString : Jurisdiction -> String
 toString juri =
