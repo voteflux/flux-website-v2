@@ -23,7 +23,7 @@ const pushCoords = (d, data, filter = () => true) => {
 
 
 const pushCoordsCumulative = (d, data, filter = () => true) => {
-  const last = R.tail(data.y) || 0.0;
+  const last = R.last(data.y) || 0.0;
   pushCoords({...d, amount: last + d.amount}, data, filter);
 }
 
@@ -57,7 +57,7 @@ const processDonationGraphs = function (data) {
     if (donationDataCumulativeStateObj[d.branch] === undefined) {
       donationDataCumulativeStateObj[d.branch] = R.clone({x: [], y: [], type: 'scatter'});
     }
-    pushCoordsCumulative(d, donationDataByJuriObj[d.branch], isThisFY);
+    pushCoords(d, donationDataByJuriObj[d.branch], isThisFY);
     pushCoordsCumulative(d, donationDataCumulativeStateObj[d.branch])
   }, donationLog);
 
