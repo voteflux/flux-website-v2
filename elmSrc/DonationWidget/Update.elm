@@ -23,6 +23,9 @@ update msg model =
         UpdateInput k v ->
             ( { model | input = Dict.insert k v model.input }, Cmd.none )
 
+        SetJuri j ->
+            ( { model | jurisdiction = j }, Cmd.none )
+
 
 randomCmd : Cmd Msg
 randomCmd =
