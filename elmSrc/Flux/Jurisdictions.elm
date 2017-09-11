@@ -46,3 +46,34 @@ toString juri =
 
         WA ->
             "/AUS/WA"
+
+
+toName : Jurisdiction -> String
+toName juri =
+    case juri of
+        AUS ->
+            "Flux Australia"
+
+        NSW ->
+            "Flux NSW"
+
+        VIC ->
+            "Flux VIC"
+
+        QLD ->
+            "Flux QLD"
+
+        TAS ->
+            "Flux TAS"
+
+        ACT ->
+            "Flux ACT"
+
+        NT ->
+            "Flux NT"
+
+        SA ->
+            "Flux SA"
+
+        WA ->
+            "Flux WA"
