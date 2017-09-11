@@ -5,10 +5,25 @@ import DonationWidget.Models exposing (Model)
 import DonationWidget.Msgs exposing (Msg(UpdateInput))
 import DonationWidget.Views.Utils exposing (fmtFloat, spanText)
 import Flux.Jurisdictions as Juris
-import Html exposing (Html, a, br, div, form, h1, h2, h3, h4, img, input, label, p, pre, span, text)
+import Html exposing (Html, a, br, div, form, h1, h2, h3, h4, img, input, select, option, label, p, pre, span, text)
 import Html.Attributes exposing (action, alt, class, height, id, method, name, src, step, type_, value, width)
 import Html.Events exposing (onClick, onInput)
+import List exposing (map)
 import Maybe.Extra exposing ((?))
+
+
+paypalBranchSelector : Model -> Html Msg
+paypalBranchSelector model =
+    let
+        brOpt { state } =
+            option [ value <| Juris.toString state ] [ Juris.toName state ]
+            
+    in
+            
+    form [] 
+        [ select [] <| []
+            ++ map brOpt model.jurisdiction
+        ]
 
 
 paypalButtonForm : Model -> Html Msg
@@ -42,7 +57,8 @@ paypalBtn model =
         [ h1 [] [ text "The easiest way to donate is via PayPal" ]
         , div [ class "" ]
             [ h3 [ class "inline-block" ] [ text "Choose a branch: " ]
-            , p [ class "inline-block px1" ] [ text "Flux Australia" ]
+            , paypalBranchSelector model
+            --, p [ class "inline-block px1" ] [ text "Flux Australia" ]
 
             {- , debugInfo model -}
             ]
