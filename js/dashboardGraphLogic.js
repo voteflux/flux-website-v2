@@ -57,7 +57,7 @@ const processDonationGraphs = function (data) {
     if (donationDataCumulativeStateObj[d.branch] === undefined) {
       donationDataCumulativeStateObj[d.branch] = R.clone({x: [], y: [], type: 'scatter'});
     }
-    pushCoords(d, donationDataByJuriObj[d.branch], isThisFY);
+    pushCoordsCumulative(d, donationDataByJuriObj[d.branch], isThisFY);
     pushCoordsCumulative(d, donationDataCumulativeStateObj[d.branch])
   }, donationLog);
 
