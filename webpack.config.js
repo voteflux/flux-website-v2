@@ -60,6 +60,9 @@ module.exports = {
     path: __dirname + "/js",
     filename: "bundle-[name].js"
   },
+  resolve: {
+    extensions: ['.ts', '.js', '.json']
+  },
   module: {
     rules: [
       {
