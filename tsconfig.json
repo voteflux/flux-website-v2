@@ -5,6 +5,6 @@
     "sourceMap": true
   },
   "exclude": [
-    "node_modules", "elmStuff"
+    "node_modules", "elmStuff", "_site"
   ]
 }

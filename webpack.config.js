@@ -69,13 +69,14 @@ module.exports = {
       },
       {
         test: /\.elm$/,
-        exclude: [/elm-stuff/, /node_modules/],
+        exclude: [/elm-stuff/, /node_modules/, /_site/],
         use: [{loader: 'elm-hot-loader'}, {
           loader: 'elm-webpack-loader'
         }]
       },
       {
         test: /\.tsx?$/,
+        exclude: [/_site/],
         loader: 'ts-loader'
       },
       {
