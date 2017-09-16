@@ -53,7 +53,8 @@ module.exports = {
     reactSignup: ['./react-signup/app/index.js'],
     donationWidget: [localElmSrc + 'DonationWidget/index.js'],
     donationLog: [localElmSrc + 'DonationLog/index.js'],
-    main: ['./_sass/main.scss']
+    main: ['./_sass/main.scss'],
+    memberUI: [localElmSrc + 'Flux/MemberUI/index.ts'],
   },
   output: {
     path: __dirname + "/js",
@@ -69,9 +70,13 @@ module.exports = {
       {
         test: /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
-        use: [{
+        use: [{loader: 'elm-hot-loader'}, {
           loader: 'elm-webpack-loader'
         }]
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
       },
       {
         test: /\.scss$/,

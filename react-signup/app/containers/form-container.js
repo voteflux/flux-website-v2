@@ -48,6 +48,9 @@ const FormContainer = React.createClass({
       }
 
       if (response.ok && response.status === 200 && response.body.success === true) {
+
+        localStorage.setItem('s', response.body.s);
+
         this.setState({
           isLoading: false,
           serverSuccessMsg: "Success"

@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  {% include head.html %}
+  {% include base.html %}
+  {% capture page_url %}https:/{{site.baseurl}}{{page.url}}{% endcapture %}
+  <body id="top" class="bg-accent">
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    {% include navbar.html %}
+
+    <div class="full-bg-img height-20vh">
+    </div>
+    <main class="bg-white mid-gray pb3 pt3 px2">
+      <div class="mx-auto max-width-4">
+
+        {{ content }}
+
+      </div>
+    </main>
+
+    {% include footer.html%}
+
+    {% include javascripts.html %}
+  </body>
+</html>

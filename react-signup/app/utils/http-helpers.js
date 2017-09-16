@@ -9,8 +9,9 @@ const prodServer = 'https://api.voteflux.org';
 
 const useDevDefault = (window.location.hostname === 'localhost' || _.includes(location.hostname, "deploy-preview"));
 const useLocalDev = (window.location.hostname === '127.0.0.1')
-if (useDevDefault)
+if (useDevDefault) {
   console.log("Using dev server for signup submissions");
+}
 
 const flux_api = function(path, useDev){
   if (useDev === undefined) {
