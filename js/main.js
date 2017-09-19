@@ -361,29 +361,33 @@ $(document).ready(function() {
   // var contactHeight = $('#contact').outerHeight()
   // var contactPos = $('#contact').offset().top
     //  console.log(contactPos, contactHeight)
-  $(window).bind('scroll', function(){
-      var offset = $document.scrollTop()
-      var opacity = 0
-      faded = false
-      if ( offset >= fadeStart && offset <= fadeUntil ) {
-          opacity = 0.001 + offset/fadeUntil;
+  var onScrollUpdateMenu = function(){
+    var offset = $document.scrollTop()
+    var opacity = 0
+    faded = false
+    if ( offset >= fadeStart && offset <= fadeUntil ) {
+      opacity = 0.001 + offset/fadeUntil;
 
-      } else if ( offset >= fadeUntil ) {
-          opacity = 1
-          faded = true
-      }
+    } else if ( offset >= fadeUntil ) {
+      opacity = 1
+      faded = true
+    }
 
 
-      // for logo text on dark background
-      if (opacity >= 0.1) {
-        $('.js-flux-text-darktheme').css({ fill: "#222" });
-        $("#js-nav-links").removeClass('white');
-      } else {
-        $('.js-flux-text-darktheme').css({ fill: "#fff" });
-        $("#js-nav-links").addClass('white');
-      }
-      $fading.css('opacity',opacity);
-  });
+    // for logo text on dark background
+    if (opacity >= 0.1) {
+      $('.js-flux-text-darktheme').css({ fill: "#222" });
+      $("#js-nav-links").removeClass('white');
+    } else {
+      $('.js-flux-text-darktheme').css({ fill: "#fff" });
+      $("#js-nav-links").addClass('white');
+    }
+    $fading.css('opacity',opacity);
+  }
 
+  $(window).bind('scroll', onScrollUpdateMenu);
+
+  // also do the scroll thing on load in case we're reloading halfway down the page
+  onScrollUpdateMenu();
 
 });
