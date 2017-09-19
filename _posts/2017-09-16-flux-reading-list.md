@@ -7,6 +7,12 @@ date: 2017-09-16 10:00
 permalink: /reading-list/
 ---
 
+## Economics
+
+IBDD involves a bit of economics, so here is a refresher or introduction if you need:
+
+* [Everyday Economics by MRU](https://www.youtube.com/watch?v=t9FSnvtcEbg&list=PL24Y3okv-Y98kCV9cSeS9-E4rjj_GwYhn) (~30 minutes, 7x YouTube videos)
+
 ## On Flux / IBDD
 
 * [An overview of Flux and IBDD](https://voteflux.org/2017/05/26/an-overview-of-flux-and-ibdd/) (~1000 words, Blog Post)

@@ -6,6 +6,7 @@ import Flux.MemberUI.Routing exposing (parseRoute)
 import Flux.Update
 import Helpers.Location exposing (fixLocationQuery)
 import Helpers.Msgs exposing (HelperMsg(..))
+import Material
 import Navigation exposing (newUrl)
 
 
@@ -17,13 +18,22 @@ update msg model =
                 ( modelF, cmd ) =
                     Flux.Update.updateAuth fMsg model.flux
             in
-            ( { model | flux = modelF }, Cmd.map FMsg cmd )
+            { model | flux = modelF } ! [ Cmd.map FMsg cmd ]
 
         HMsg hMsg ->
             updateHelpers hMsg model
 
         SetPage page ->
-            ( { model | page = page }, Cmd.none )
+            { model | page = page } ! []
+
+        Mdl msg_ ->
+            Material.update Mdl msg_ model
+
+        NOP ->
+            model ! []
+
+        SelectTab int ->
+            { model | selectedTab = int } ! []
 
 
 updateHelpers : HelperMsg Msg -> Model -> ( Model, Cmd Msg )
