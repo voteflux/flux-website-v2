@@ -56,7 +56,7 @@ viewBody model =
             case model.selectedTab of
                 0 ->
                     div []
-                        [ h1 "Test heading thing -- just demo content" ]
+                        [ h1 [] [ text "Test heading thing -- just demo content" ] ]
 
                 _ ->
                     notFoundView model
