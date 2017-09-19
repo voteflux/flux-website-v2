@@ -7,16 +7,71 @@ import Flux.MemberUI.Models exposing (Model, Page(..))
 import Flux.MemberUI.Msgs exposing (Msg(..))
 import Flux.MemberUI.Views.Generic exposing (notFoundView)
 import Helpers.Msgs exposing (HelperMsg(NewUrl))
-import Html exposing (Html, div, h2, img, li, span, text, ul)
-import Html.Attributes exposing (class, id, src, width)
+import Html exposing (Html, div, h1, h2, img, li, span, text, ul)
+import Html.Attributes exposing (class, id, src, style, width)
 import Html.Events exposing (onClick)
 import List exposing (length, map)
+import Material.Button as Button
+import Material.Color as Color exposing (Hue(DeepOrange, DeepPurple))
+import Material.Layout as Layout
+import Material.Options as Options exposing (css)
+import Material.Scheme
 import Maybe.Extra exposing ((?), isJust)
 import Navigation exposing (newUrl)
 
 
-rootView : Model -> Html Msg
-rootView model =
+mdlRootView : Model -> Html Msg
+mdlRootView model =
+    let
+        a =
+            1
+    in
+    Material.Scheme.topWithScheme DeepPurple DeepOrange <|
+        Layout.render Mdl
+            model.mdl
+            [ Layout.fixedHeader
+            , Layout.onSelectTab SelectTab
+            , Layout.selectedTab model.selectedTab
+            ]
+            { header = [ branding ]
+            , drawer = []
+            , tabs =
+                ( [ text "Your Details"
+                  , text "Volunteer"
+                  , text "Admin"
+                  ]
+                , [ Color.background (Color.color Color.DeepPurple Color.S400) ]
+                )
+            , main = [ viewBody model ]
+            }
+
+
+viewBody : Model -> Html Msg
+viewBody model =
+    let
+        isAuthed =
+            True
+
+        whenAuthed =
+            case model.selectedTab of
+                0 ->
+                    div []
+                        []
+
+                _ ->
+                    notFoundView model
+
+        whenNotAuthed =
+            text "pls login"
+    in
+    if isAuthed then
+        whenAuthed
+    else
+        whenNotAuthed
+
+
+rootViewOld : Model -> Html Msg
+rootViewOld model =
     let
         ( title, view ) =
             case model.page of
@@ -24,7 +79,7 @@ rootView model =
                     ( "Not Found :(", notFoundView model )
 
                 Home ->
-                    ( "Dashboard", homeView model )
+                    ( "Dashboard", homeViewOld model )
 
                 MembershipForms ->
                     ( "Membership Forms", div [] [] )
@@ -36,16 +91,16 @@ rootView model =
                     ( "Admin Panel", div [] [] )
     in
     div []
-        [ navBar model
-        , div [ class "pa3d" ]
+        [ navBarOld model
+        , div [ class "pa3" ]
             [ heading "" 2 title
             , view
             ]
         ]
 
 
-homeView : Model -> Html Msg
-homeView model =
+homeViewOld : Model -> Html Msg
+homeViewOld model =
     let
         authenticatedPrelim =
             isJust model.flux.auth
@@ -62,16 +117,17 @@ homeView model =
         div [] [ text "You need to auth!" ]
 
 
-navBar : Model -> Html Msg
-navBar model =
-    let
-        branding =
-            div []
-                [ img [ src "/img/flux-mark.svg", class "v-mid dib pr3 w2" ] []
-                , img [ src "/img/flux-text-logo.svg", class "v-mid dib pr3 w3" ] []
-                , heading "dib" 3 "Members"
-                ]
+branding : Html Msg
+branding =
+    div []
+        [ img [ src "/img/flux-mark.svg", class "v-mid dib ma3 w2-5" ] []
+        , img [ src "/img/flux-text-logo-white.svg", class "v-mid dib pr3 w3" ] []
+        ]
 
+
+navBarOld : Model -> Html Msg
+navBarOld model =
+    let
         navbarTabLabel ( label, page ) =
             let
                 extraCs =

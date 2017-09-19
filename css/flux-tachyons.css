@@ -5,6 +5,8 @@ written just with tachyons (not basscss)
 :root {
   --accent-color: #e3580d;
   --border-radius: 3px;
+  --primary-c: #7b1fa2;
+  --secondary-c: #e3580d;
 }
 
 
@@ -39,4 +41,9 @@ body {
 
 .b--accent {
   border-color: var(--accent-color);
+}
+
+
+.w2-5 {
+  width: 3rem;
 }
