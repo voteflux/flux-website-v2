@@ -47,7 +47,8 @@ module.exports = {
     contentBase: path.join(__dirname, "_site"),
     compress: true,
     port: 9000,
-    inline: true
+    inline: true,
+    hot: true,
   },
   entry: {
     reactSignup: ['./react-signup/app/index.js'],
