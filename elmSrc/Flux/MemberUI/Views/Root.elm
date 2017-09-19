@@ -30,6 +30,7 @@ mdlRootView model =
         Layout.render Mdl
             model.mdl
             [ Layout.fixedHeader
+            , Layout.fixedDrawer
             , Layout.onSelectTab SelectTab
             , Layout.selectedTab model.selectedTab
             ]
@@ -44,6 +45,15 @@ mdlRootView model =
                 )
             , main = [ viewBody model ]
             }
+
+
+rootDrawer : Model -> List (Html Msg)
+rootDrawer model =
+    [ Layout.title [] [ branding ]
+    , Layout.navigation []
+        [ Layout.link [] []
+        ]
+    ]
 
 
 viewBody : Model -> Html Msg
@@ -121,7 +131,7 @@ branding : Html Msg
 branding =
     div []
         [ img [ src "/img/flux-mark.svg", class "v-mid dib ma3 w2-5" ] []
-        , img [ src "/img/flux-text-logo-white.svg", class "v-mid dib pr3 w3" ] []
+        , img [ src "/img/flux-text-logo-white.svg", class "v-mid dib pr3 w3-5" ] []
         ]
 
 
