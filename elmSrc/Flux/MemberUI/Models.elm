@@ -1,7 +1,10 @@
 module Flux.MemberUI.Models exposing (..)
 
-import Flux.Models exposing (AuthModel, FModel)
+import DefaultDict exposing (DefaultDict)
+import Dict exposing (Dict)
+import Flux.Models exposing (AuthModel, FModel, initFluxModel)
 import Material
+import Material.Snackbar as Snack
 import Navigation exposing (Location)
 
 
@@ -13,6 +16,9 @@ type alias Model =
     , page : Page
     , mdl : Material.Model
     , selectedTab : Int
+    , inputs : Dict Int String
+    , disabled : DefaultDict Int Bool
+    , snack : Snack.Model Int
     }
 
 
@@ -25,6 +31,18 @@ type alias User =
 type Page
     = PageNotFound
     | Home
-    | Admin
-    | MembershipForms
-    | MembershipDetails
+    | Admin AdminPage
+    | Membership MbrPage
+    | AuthLogin (Maybe String)
+
+
+type MbrPage
+    = MDetails
+    | MVolunteer
+    | MForms
+
+
+type AdminPage
+    = AMain
+    | ASearchMbrs
+    | APartyMatters

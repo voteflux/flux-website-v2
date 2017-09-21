@@ -10,7 +10,7 @@
     "deploy-stage": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build && gulp 'deploy' && exit",
     "build": "bundle install && bundle exec jekyll clean && webpack -p && bundle exec jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "memberui": "parallelshell 'elm-live --host=localhost --port=8755 -- elmSrc/Flux/MemberUI/Main.elm --output=temp.elm.js' 'bash -c \"sleep 1.5 && open http://localhost:8755/elmSrc/Flux/MemberUI/index.html\"'"
+    "memberui": "parallelshell 'elm-live --host=localhost --port=8755 -- elmSrc/Flux/MemberUI/Main.elm --output=temp.elm.js --debug' 'bash -c \"sleep 1.5 && open http://localhost:8755/elmSrc/Flux/MemberUI/index.html\"'"
   },
   "author": "David Factor, Max Kaye",
   "license": "",

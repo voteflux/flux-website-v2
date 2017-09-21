@@ -29,7 +29,7 @@ description: 'Flux is a new political party designed to connect Australians dire
   to Parliament and change politics forever!
 
 '
-baseurl: 
+baseurl:
 url: https://voteflux.org
 icon_path: img/social-icons/
 accent-color: "#E3580D"
@@ -57,6 +57,8 @@ exclude:
 - to-do
 - signup.html
 - npm-debug.log
+- elm-stuff
+- elmSrc
 gems:
 - jekyll-angular
 redirects: true

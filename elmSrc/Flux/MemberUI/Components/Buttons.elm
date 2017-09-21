@@ -1,48 +1,38 @@
 module Flux.MemberUI.Components.Buttons exposing (..)
 
-import Flux.MemberUI.Msgs exposing (Msg)
+import DefaultDict
+import Flux.MemberUI.Models exposing (Model)
+import Flux.MemberUI.Msgs exposing (Msg(..))
 import Html exposing (Attribute, Html, a, div, h1, span, text)
 import Html.Attributes exposing (class, href)
 import Html.Events exposing (keyCode, on, onClick)
 import Json.Decode as Decode
+import Material.Button as MButton
+import Material.Color as Color
+import Material.Options as Opts
 
 
-type BtnMod
-    = PriLink String
-    | PriAction Msg
-    | SecLink String
-    | SecAction Msg
-
-
-onKeyDown : (Int -> msg) -> Attribute msg
-onKeyDown tagger =
-    on "keydown" (Decode.map tagger keyCode)
-
-
-btn : String -> BtnMod -> Html Msg
-btn label mod =
+btn : Int -> Model -> Msg -> List (Html Msg) -> Html Msg
+btn id model msg elems =
     let
-        classes =
-            "dim link ba br2 ph3 pv2 b--white dib ma1 "
+        disabled =
+            DefaultDict.get id model.disabled
 
-        priClasses =
-            classes ++ "bg-accent white"
-
-        secClasses =
-            classes ++ "bg-light-silver near-black"
-
-        attrs =
-            case mod of
-                PriLink link ->
-                    [ href link, class priClasses ]
-
-                SecLink link ->
-                    [ href link, class secClasses ]
-
-                PriAction msg ->
-                    [ onClick msg, class priClasses ]
-
-                SecAction msg ->
-                    [ onClick msg, class secClasses ]
+        extraProps =
+            if disabled then
+                [ MButton.disabled ]
+            else
+                []
     in
-    a attrs [ span [ class "" ] [ text label ] ]
+    MButton.render Mdl
+        [ id ]
+        model.mdl
+        ([ MButton.ripple
+         , MButton.accent
+         , MButton.raised
+         , Opts.onClick msg
+         , Color.text Color.white
+         ]
+            ++ extraProps
+        )
+        elems
