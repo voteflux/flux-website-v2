@@ -56,6 +56,7 @@ module.exports = {
     donationLog: [localElmSrc + 'DonationLog/index.js'],
     main: ['./_sass/main.scss'],
     memberUI: [localElmSrc + 'Flux/MemberUI/index.ts'],
+    fluxScripts: [localElmSrc + 'Flux/MemberUI/scripts.ts'],
   },
   output: {
     path: __dirname + "/js",
