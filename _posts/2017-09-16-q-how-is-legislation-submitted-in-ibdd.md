@@ -36,9 +36,9 @@ You also use LTs to bid on those legislation slots I mentioned earlier.
 
 This means that we set up an _opportunity cost_ between issues. Each voter has to think "Do I _really_ want to spend my political capital in this issue? Is there another issue I'd rather have _more_ of a say on?" These sorts of questions help people self-organise, and move into the political areas they most care about.
 
-All without authority; without someone saying "you do this" or "you do that". That's really important. Democracy today has an election, and then the successful candidate gets to be the guy that says "this is what we're all going to do". That's bad. If there's someone who _has the unique privelidge_ of decideing what's good and bad, then that's bad too.
+All without authority; without someone saying "you do this" or "you do that". That's really important. Democracy today has an election, and then the successful candidate gets to be the guy that says "this is what we're all going to do". That's bad. If there's someone who _has the unique privilege_ of decideing what's good and bad, then that's bad too.
 
-If we want a good political system, we need to get rid of this idea of _privelidged_ participation. If we really believe people should be equal in a democracy, then why are some people more equal than others?
+If we want a good political system, we need to get rid of this idea of _privileged_ participation. If we really believe people should be equal in a democracy, then why are some people more equal than others?
 
 Getting back to LTs: another reason we have them (and the legislation slots) is that they allow us to keep going back to issues. Sometimes we make mistakes, or think of better ideas (which is just noticing a mistake we didn't notice before). When that happens we need a way to correct it.
 
@@ -61,6 +61,6 @@ Check out our [reading list](/reading-list/).
 
 ### Footnotes
 
-[1] : s170 (3) - Electoral Act 1918 - http://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/cth/consol_act/cea1918233/s170.html
+[1] : s170 (3) - Electoral Act 1918 - [http://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/cth/consol_act/cea1918233/s170.html](http://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/cth/consol_act/cea1918233/s170.html)
 
-[2] : https://docs.google.com/document/d/11IYSbfmmymfBmB9GOcKoA0FYXdUtYR48EQi4IHkBOk0
+[2] : [https://docs.google.com/document/d/11IYSbfmmymfBmB9GOcKoA0FYXdUtYR48EQi4IHkBOk0](https://docs.google.com/document/d/11IYSbfmmymfBmB9GOcKoA0FYXdUtYR48EQi4IHkBOk0)
