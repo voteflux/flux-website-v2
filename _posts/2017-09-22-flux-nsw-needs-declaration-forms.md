@@ -16,7 +16,7 @@ Pen? By Hand? Trust us, we are groaning as much as you. WE all know it's 2017, b
 
 What we need from you to clear this hurdle is:
 
-1. Print out and fill in [this form]({{site.baseurl}}/img/nsw-dec-form.pdf) by hand - _(200 seconds)_
+1. Print out and fill in [this form]({{site.baseurl}}/img/nsw-dec-form.pdf){:target="_blank"} by hand - _(200 seconds)_
 2. In the party name section, write **"Flux Party NSW"**
 3. Scan it or take a photo from your phone - _(60 seconds)_
 4. Send it to [leadership.nsw@voteflux.org](mailto:leadership.nsw@voteflux.org) - _(10 seconds)_
