@@ -1,6 +1,6 @@
 ---
 title: Flux Party NSW needs 750 Declaration of Membership Forms
-summary: We need your help! In order to register Flux in NSW, The NSW Elecotral Commission requires parties to collect 750 hand signed Declaration of Membership forms from their members.
+summary: We need your help! In order to register Flux in NSW, The NSW Electoral Commission requires parties to collect 750 hand signed Declaration of Membership forms from their members.
 author: Thomas Sesselmann
 layout: about
 date: 2017-09-22 16:00
