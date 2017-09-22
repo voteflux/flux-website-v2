@@ -261,7 +261,7 @@ social-media:
                 {% endfor %}
                 <h1 class="h1 regular">Older Announcements</h2>
                   {% for post in site.posts offset:1 %}
-                  <h2 class="h2 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
+                  <h3 class="h3 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
                 {% endfor %}
               </div>
             </div>
