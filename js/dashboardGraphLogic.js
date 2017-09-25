@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 const startOfFYGen = () => {
   const now = new Date();
   const month = now.getMonth();
