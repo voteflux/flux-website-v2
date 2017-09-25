@@ -57,6 +57,7 @@ module.exports = {
     main: ['./_sass/main.scss'],
     memberUI: [localElmSrc + 'Flux/MemberUI/index.ts'],
     fluxScripts: [localElmSrc + 'Flux/MemberUI/scripts.ts'],
+    graphs: ['./js/graphs-ng.js'],
   },
   output: {
     path: __dirname + "/js",
@@ -70,7 +71,10 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/elm-stuff/, /node_modules/],
-        use: [{loader: "babel-loader"}]
+        use: [{loader: "babel-loader",
+          query: {
+            presets:[ 'es2015', 'react', 'stage-2' ]
+          }}]
       },
       {
         test: /\.elm$/,
