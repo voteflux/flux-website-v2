@@ -9,12 +9,18 @@ nav-title: Dashboard
 ---
 
 {% include navbar.html %}
+
+<script src="/js/angular.min.js"></script>
+<script src="/js/lodash.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="/js/bundle-graphs.js"></script>
+
 <div class="bg-near-white dark-gray py4 ">
   <div class="bg-near-black height-40vh absolute z1 left-0 top-0 col-12 texture-bg-img">
   </div>
   <div class="mx-auto max-width-3 px2 sm-px4 pt4 pb3 bg-white relative mt5 z2">
     <section class="" ng-app='fluxApp'>
-      <div class="mx-auto max-width-3" ng-controller='FluxController as flux'>
+      <div class="mx-auto max-width-3" ng-controller='GraphsController as flux'>
         <div class="">
 
           <div class="h-font light lg-col-10 mid-gray sm-pr4 mx" style="max-width: 600px;">
@@ -91,10 +97,6 @@ nav-title: Dashboard
       </div>
     </section>
 
-    <script src="/js/angular.min.js"></script>
-    <script src="/js/lodash.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="/js/bundle-graphs.js"></script>
   </div>
   <div class="max-width-3 mx-auto">
     {% include components/inline-signup.html %}
