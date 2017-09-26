@@ -4,7 +4,7 @@ import {processDonationGraphs} from "./dashboardGraphLogic";
 var fluxApp = angular.module('fluxApp', []);
 
 // NOTE: This is just for dashboard.html; and is separate to the FluxController in members.html and membership-ng.js, etc
-fluxApp.controller('GraphsController', function ($scope, $log, $rootScope, $http) {
+fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http', function ($scope, $log, $rootScope, $http) {
   $rootScope._ = _;
 
   var flux = this;
@@ -256,4 +256,4 @@ fluxApp.controller('GraphsController', function ($scope, $log, $rootScope, $http
 
     $log.log('Init\'d charts');
   }, flux.handleError)
-});
+}]);
