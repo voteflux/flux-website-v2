@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import './dashboardGraphLogic';
+import {processDonationGraphs} from "./dashboardGraphLogic";
 
 var fluxApp = angular.module('fluxApp', []);
 
@@ -96,7 +96,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     var timestamp_counter_for_hours = {};
 
     _.map(_.range(_n_days_ago, _now + 1000 * 60 * 60, 1000 * 60 * 60), function (ts) {
-      ts_date = new Date(ts);
+      var ts_date = new Date(ts);
       var y_m_d = toJSONLocal(ts_date);
       timestamp_counter[y_m_d] = 0;
       if (ts > _7_days_ago)

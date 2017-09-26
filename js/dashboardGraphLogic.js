@@ -13,7 +13,7 @@ const startOfFY = startOfFYGen();
 console.log('Start of FY', startOfFY);
 
 
-const isThisFY = x => x >= startOfFY;
+const isThisFY = x => (x >= startOfFY);
 
 
 const pushCoords = (d, data, filter = () => true) => {
@@ -30,7 +30,7 @@ const pushCoordsCumulative = (d, data, filter = () => true) => {
 }
 
 
-const processDonationGraphs = function (data) {
+export const processDonationGraphs = function (data) {
   const donationLog = R.pipe(
     R.reverse,
     R.map((obj) => ({...obj, ts: tsToDate(obj.ts), amount: parseFloat(obj.amount)}))
