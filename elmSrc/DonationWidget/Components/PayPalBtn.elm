@@ -5,7 +5,7 @@ import DonationWidget.Models exposing (Model)
 import DonationWidget.Msgs exposing (Msg(SetJuri, UpdateInput))
 import DonationWidget.Views.Utils exposing (fmtFloat, spanText)
 import Flux.Jurisdictions as Juris
-import Html exposing (Html, a, br, div, form, h1, h2, h3, h4, img, input, label, option, p, pre, select, span, text)
+import Html exposing (Html, a, br, div, em, form, h1, h2, h3, h4, img, input, label, option, p, pre, select, span, text)
 import Html.Attributes exposing (action, alt, class, height, id, method, name, src, step, type_, value, width)
 import Html.Events exposing (onClick, onInput)
 import List exposing (map)
@@ -52,6 +52,7 @@ paypalBtn : Model -> Html Msg
 paypalBtn model =
     div [ id "paypal-button" ]
         [ h1 [] [ text "The easiest way to donate is via PayPal" ]
+        , h3 [] [ text "You ", em [ class "bold" ] [ text "must" ], text " share your address with us for your donation to be accepted." ]
         , div [ class "" ]
             [ h3 [ class "inline-block" ] [ text "Choose a branch: " ]
             , paypalBranchSelector model
