@@ -96,7 +96,7 @@ fluxApp.controller('GraphsController', function ($scope, $log, $rootScope, $http
     var timestamp_counter_for_hours = {};
 
     _.map(_.range(_n_days_ago, _now + 1000 * 60 * 60, 1000 * 60 * 60), function (ts) {
-      var ts_date = new Date(ts);
+      let ts_date = new Date(ts);
       var y_m_d = toJSONLocal(ts_date);
       timestamp_counter[y_m_d] = 0;
       if (ts > _7_days_ago)
@@ -104,7 +104,7 @@ fluxApp.controller('GraphsController', function ($scope, $log, $rootScope, $http
     });  // hourly increments set default.
 
     _.map(recent_tss, function (ts) {
-      var ts_date = new Date(ts * 1000);
+      let ts_date = new Date(ts * 1000);
       var local_y_m_d = toJSONLocal(ts_date);
       timestamp_counter[local_y_m_d] += 1;
       if (ts * 1000 > _7_days_ago) {
