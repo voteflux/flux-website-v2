@@ -27,6 +27,7 @@ paypalButtonForm : Model -> Html Msg
 paypalButtonForm model =
     form [ class "", action "https://www.paypal.com/cgi-bin/webscr", method "post" ]
         [ input [ type_ "hidden", name "cmd", value "_s-xclick" ] []
+        , input [ type_ "hidden", name "no_shipping", value "2" ] []
         , input [ type_ "hidden", name "hosted_button_id", value "TZXYFG3Q3NJ4U" ] []
         , input [ type_ "image", src "/img/vendor/btn_donate_LG.gif", name "submit", alt "PayPal – The safer, easier way to pay online!" ] []
         , input [ type_ "hidden", name "on0", value "Branch" ] []
