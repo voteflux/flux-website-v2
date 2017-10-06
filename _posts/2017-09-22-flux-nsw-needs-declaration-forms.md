@@ -4,6 +4,8 @@ summary: We need your help! In order to register Flux in NSW, The NSW Electoral 
 author: Thomas Sesselmann
 layout: about
 date: 2017-09-22 16:00
+redirects:
+- "/nswform"
 ---
 
 Desperate times call for desperate measures.
