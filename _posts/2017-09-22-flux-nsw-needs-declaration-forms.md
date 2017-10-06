@@ -5,7 +5,7 @@ author: Thomas Sesselmann
 layout: about
 date: 2017-09-22 16:00
 redirects:
-- "/nswform"
+- "/nswrego"
 ---
 
 Desperate times call for desperate measures.
