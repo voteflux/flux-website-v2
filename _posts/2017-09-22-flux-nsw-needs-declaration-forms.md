@@ -29,7 +29,7 @@ Note, to be eligible you must be registered on the electoral roll in NSW.
 
 If you do not have access to a printer, get in touch with us and we can send you a form in the mail.
 
-If we can get 750 signatures before the end of October then we will be on the ballot for the next state election in 2019 where we will have a real chance at winning a seat! NSW is a strongest state in terms of membership and we came within 200 votes of winning a seat in WA in March.
+If we can get 750 signatures before the end of November then we will be on the ballot for the next state election in 2019 where we will have a real chance at winning a seat! NSW is a strongest state in terms of membership and we came within 200 votes of winning a seat in WA in March.
 
 <div class="center my3"><a href="{{site.baseurl}}/img/nsw-dec-form.pdf" target="_blank" class="btn btn-primary h3 letter-spacing-1">I'm ready to sign!</a></div>
 
