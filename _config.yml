@@ -59,6 +59,6 @@ exclude:
 - npm-debug.log
 - elm-stuff
 - elmSrc
-gems:
+plugins:
 - jekyll-angular
 redirects: true

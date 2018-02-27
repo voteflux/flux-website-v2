@@ -17,7 +17,7 @@ We presume your environment is OSX.
 
 ## Deployment
 
-* Deployments atomatically happen via the `master` branch.
+* Deployments automatically happen via the `master` branch.
 * All merges require a PR.
 
 
