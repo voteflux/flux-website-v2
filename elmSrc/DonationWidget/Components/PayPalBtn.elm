@@ -126,14 +126,13 @@ paypalCutCalc model =
         toggleBtn =
             a
                 [ onClick toggleShowMsg
-                , class "bold small pointer"
+                , class "small pointer"
                 ]
-                [ text "(click)" ]
+                [ text "Interested in the fees PayPal takes?" ]
     in
     div [ class "" ]
-        [ h3 []
-            [ text "Interested in the fees PayPal takes? "
-            , toggleBtn
+        [ h4 []
+            [ toggleBtn
             ]
         , div [ toggleShowCls ]
             [ label [] [ text "Donation Amount ($): " ]
