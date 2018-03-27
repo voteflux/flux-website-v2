@@ -62,3 +62,4 @@ exclude:
 plugins:
 - jekyll-angular
 redirects: true
+strict_front_matter: true
