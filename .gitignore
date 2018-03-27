@@ -1,5 +1,5 @@
 node_modules
-elm-stuff
+elm_stuff
 _site/*
 .sass-cache
 .jekyll-metadata
