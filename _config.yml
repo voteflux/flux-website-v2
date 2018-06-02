@@ -59,6 +59,8 @@ exclude:
 - npm-debug.log
 - elm-stuff
 - elmSrc
+include:
+  - _record_login_param.html
 plugins:
 - jekyll-angular
 redirects: true
