@@ -20,7 +20,7 @@
 
         <form ng-submit="flux.resendEmail()">
             <input class="block field m2 mx-auto" type="email" ng-model="flux.email" placeholder="Enter your email">
-            <submit class="btn btn-primary rounded m1" ng-click="flux.resendEmail()">Send me the link!</submit>
+            <submit class="btn btn-primary m1" ng-click="flux.resendEmail()">Send me the link!</submit>
         </form>
 
         <div ng-cloak ng-show="flux.errorMsg">
@@ -31,8 +31,11 @@
             <h4>{{flux.msg}}</h4>
         </div>
 
-        <p class="m2">Not a member yet? <br/><a href="/signup/">Sign up now!</a></p>
+        <!-- make button othewise can be hard to see on mobile -->
+        <p class="m2">Not a member yet? <br/><a href="/signup/" class="btn btn-primary mt2">Sign up now!</a></p>
 
+        <!-- bit of space for phones due to trianges footer -->
+        <div class="m2" style="height: 200px">&nbsp;</div>
     </div>
     <div class="footer-img">
         <img src="/img/flux-triangles-footer.svg"/>
