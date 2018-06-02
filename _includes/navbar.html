@@ -85,11 +85,11 @@
 
   <!-- Mobile Menu  -->
   <div id="js-menu" class="md-hide lg-hide xl-hide transition opacity-0 hide relative z3">
-    <div class="py4 px2 bg-black-muted min-height-100vh fixed col-12 top-0 right-0 left-0 bottom-0 z1">
+    <div class="bg-black-muted min-height-100vh fixed col-12 top-0 right-0 left-0 bottom-0 z1">
     </div>
     <div class="height-100vh fixed overflow-scroll light-gray left-0 top-0 col-12 pt3 z2">
-      <div class="px3 sm-px4">
-        <div class="max-width-2 pb5">
+      <div class="mx3">
+        <div class="">
           <a class="link-reset block no-focus flex items-center" href="{{site.baseurl}}/">
             <span class="width-5rem block mr2">
               {% include svg/flux-mark.html %}
@@ -107,7 +107,7 @@
             {% include pages_list mobile=true %}
             {% if include.no-button == nil %}
             <hr class="dark-gray border-bottom my1">
-            <li class="mb2 mt3 h4">
+            <li class="mb2 mt3 h4 xs-menu-join-button-container">
               <!-- <a href="{{site.baseurl}}/members" class="btn bg-white accent h3 xs-menu-join-button">Members</a> -->
               <a href="https://api.voteflux.org/static/html/login.html" class="btn bg-white accent h3 xs-menu-join-button">Members</a>
               <br>
