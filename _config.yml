@@ -61,6 +61,7 @@ exclude:
 - elmSrc
 include:
   - _record_login_param.html
+  - _redirects
 plugins:
 - jekyll-angular
 redirects: true
