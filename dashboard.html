@@ -92,6 +92,15 @@ nav-title: Dashboard
               </table>
             </div>
 
+            <hr>
+
+            <h2>Backend</h2>
+
+            <div id="queue-length">
+              Email Queue Length: {{ 'queueData.email_queue_length' | angular }} <br>
+              SMS Queue Length: {{ 'queueData.sms_queue_length' | angular }}
+            </div>
+
           </div>
         </div>
       </div>

@@ -16,6 +16,8 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
   flux.averageMonthlyGrowth = 0;
   flux.getinfo = {n_members_state: {}, n_members_validated_state: {}, validation_queue_state: {}};
 
+  $scope.queueData = {email_queue_length: 0, sms_queue_length: 0}
+
   flux.debug = false;
   if (document.location.hostname === 'localhost') {
     flux.debug = true;
@@ -36,6 +38,12 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
   flux.growthStat = function (d) {
     return 0;
   };
+
+  $http.get(flux.api('queue_stats')).then(data => {
+    $scope.queueData = data.data
+    console.log("got queue data", $scope.queueData)
+  }, flux.handleError)
+
 
   $http.get(flux.api('getinfo')).then(function (data) {
     flux.getinfo = data.data;
