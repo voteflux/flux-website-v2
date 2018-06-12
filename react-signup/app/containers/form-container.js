@@ -49,7 +49,13 @@ const FormContainer = React.createClass({
 
       if (response.ok && response.status === 200 && response.body.success === true) {
 
-        localStorage.setItem('s', response.body.s);
+        try {
+          saveFluxSecret(response.body.s);
+        } catch (e) {
+          console.error("Error saving secret:", e)
+          localStorage.setItem('s', response.body.s)
+        }
+        saveMemberSecretOnFluxDomains();
 
         this.setState({
           isLoading: false,

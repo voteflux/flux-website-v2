@@ -7,8 +7,20 @@ import FormContainer from '../containers/form-container'
 
 const prodServer = 'https://api.voteflux.org';
 
-const useDevDefault = (window.location.hostname === 'localhost' || _.includes(location.hostname, "deploy-preview"));
-const useLocalDev = (window.location.hostname === '127.0.0.1')
+let useDevDefault = (window.location.hostname === 'localhost' || _.includes(location.hostname, "deploy-preview"));
+let useLocalDev = (window.location.hostname === '127.0.0.1')
+let useProdOverride = false;
+
+try {
+    useProdOverride = window.location.search.includes("useProd")
+} catch (e) {}
+
+if (useProdOverride) {
+  console.log("using production override (?useProd in get params / search string)")
+  useDevDefault = false
+  useLocalDev = false
+}
+
 if (useDevDefault) {
   console.log("Using dev server for signup submissions");
 }

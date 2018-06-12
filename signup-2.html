@@ -16,9 +16,9 @@ dark-theme: true
         font-weight="bold"
         line="true" %}
 
-    <h2 class="sm-h1 h-font line-height-4">You are now a valuable member of the Flux Community.</h2>
+    <h2 class="sm-h1 h-font line-height-4 pb3">You are now a valuable member of the Flux Community.</h2>
 
-    <h3 class="sm-h2 h-font line-height-3">We've sent you an email to confirm your membership - after you click the link you'll become a full member. &#x1f603;</h3>
+    <h3 class="sm-h2 h-font line-height-3 pb2">We've sent you an email to confirm your membership - after you click the link you'll become a full member. &#x1f603;</h3>
 
       <div class="center pt2">
         <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fvoteflux.org&width=132&layout=button_count&action=like&show_faces=true&share=true&height=46&appId=226933950707805" width="152" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
@@ -43,6 +43,10 @@ dark-theme: true
         }(document, "script", "twitter-wjs"));</script>
       </div>
 
+    <h4 class="sm-h3 h-font line-height-2 pt2">
+      What's next? Check out your <a href="https://members.flux.party">Membership Dashboard</a>
+    </h4>
+
     <section id="contact" class="py4">
       <div class="bg-near-white shadow dark-gray p2 sm-p4 rounded">
         {% include components/main-heading.html
@@ -51,7 +55,7 @@ dark-theme: true
           font-weight="bold mb3" %}
 
           <div class="sm-flex mxn2">
-            <div class="sm-col-6 px2 mb3">
+            <div class="sm-col-12 px2 mb3">
               {% include components/hr-muted.html %}
               <h2 class="bold mb3">Social Media</h2>
               {% for social in site.social-media %}
@@ -63,7 +67,8 @@ dark-theme: true
               {% endfor %}
             </div>
 
-            <div class="sm-col-6 px2 mb3">
+            <!-- comment this as forum is down :/ -->
+            {% comment %} <div class="sm-col-6 px2 mb3">
               {% include components/hr-muted.html %}
               <h2 class="bold mb3">Community Forum</h2>
 
@@ -73,14 +78,18 @@ dark-theme: true
                     <a href="https://community.voteflux.org/" class="border-bottom">Join the discussion!</a><i class="material-icons icon-adjust muted">call_made</i>
                   </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
           </div>
       </div>
     </section>
 
-</div>
+    </div>
   </div>
 </main>
+
+<!-- this will set the secret on our other domains by default -->
+<script src="https://members.flux.party/js/common.js"></script>
+
 {% include footer.html %}
 
 <!-- - add here
