@@ -60,7 +60,9 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
     var tss = _.map(data.data.signup_times, function (ts) {
       return new Date(ts * 1000);
     });
-    tss.reverse();
+    if (_.first(tss) > _.last(tss)) {
+      tss.reverse();
+    }
     var ns = _.range(1, tss.length + 1);
     var plotData = [{x: tss, y: ns, type: 'scatter'}];
     Plotly.newPlot('membershipChart', plotData, {title: 'Members v Time'});
