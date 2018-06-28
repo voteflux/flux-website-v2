@@ -98,7 +98,12 @@ nav-title: Dashboard
 
             <div id="queue-length">
               Email Queue Length: {{ 'queueData.email_queue_length' | angular }} <br>
-              SMS Queue Length: {{ 'queueData.sms_queue_length' | angular }}
+              SMS Queue Length: {{ 'queueData.sms_queue_length' | angular }} <br>
+              <span ng-repeat="(qName, qLen) in queueData">
+                <span ng-if="qName !== 'email_queue_length' && qName !== 'sms_queue_length'">
+                  {{ 'qName' | angular }} Queue Length: {{ 'qLen' | angular }}
+                </span>
+              </span>
             </div>
 
           </div>

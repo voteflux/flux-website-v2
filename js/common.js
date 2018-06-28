@@ -58,7 +58,7 @@ function flux_api(path) {
   if (!getParam('prod') && (getParam('debug') || window.location.hostname == 'localhost' /* || window.location.hostname == '127.0.0.1' */)) {
     return "http://localhost:5000/" + path;
   }
-  if (window.location.hostname == "flux-api-dev.herokuapp.com" && !getParam('prod')) {
+  if ((window.location.hostname == "flux-api-dev.herokuapp.com" && !getParam('prod')) || getParam('useDev')) {
     return "http://flux-api-dev.herokuapp.com/" + path;
   }
   return "https://api.voteflux.org/" + path;
