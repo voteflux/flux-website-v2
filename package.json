@@ -70,7 +70,7 @@
     "sass-loader": "^6.0.6",
     "socket.io": "^2.0.3",
     "style-loader": "^0.18.2",
-    "superagent": "^2.3.0",
+    "superagent": "^3.8.3",
     "ts-loader": "^2.3.7",
     "typescript": "^2.5.2",
     "webpack": "^3.5.6",
