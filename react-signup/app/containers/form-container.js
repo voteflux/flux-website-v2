@@ -48,6 +48,15 @@ const FormContainer = React.createClass({
       }
 
       if (response.ok && response.status === 200 && response.body.success === true) {
+
+        try {
+          saveFluxSecret(response.body.s);
+        } catch (e) {
+          console.error("Error saving secret:", e)
+          localStorage.setItem('s', response.body.s)
+        }
+        saveMemberSecretOnFluxDomains();
+
         this.setState({
           isLoading: false,
           serverSuccessMsg: "Success"
@@ -406,13 +415,21 @@ const FormContainer = React.createClass({
              value={__DEV__ ? "DEV SUBMISSION - PLEASE DELETE" : ""}
              subtext="(Optional, Anything you'd like to add, about yourself, us, or anything, really.)" />
 
-           <MyInput
-             inputClass="input"
-             type="checkbox"
-             name="volunteer"
-             title="I'm interested in volunteering"
-             value={false}
-              />
+          <MyInput
+            inputClass="input"
+            type="checkbox"
+            name="volunteer"
+            title="I'm interested in volunteering"
+            value={false}
+          />
+
+          <MyInput
+            inputClass="input"
+            type="checkbox"
+            name="do_not_email_updates"
+            title="I wish to OPT OUT of membership updates"
+            value={false}
+          />
 
 
 

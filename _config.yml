@@ -16,14 +16,20 @@ collections:
     title: Uploads
     output: true
   wa-team:
-    title: Wa Team
+    title: WA Team
+    output: true
+  wa-posts:
+    title: Posts
+    output: true
+  wa-candidates:
+    title: WA Candidates
     output: true
 email: website@voteflux.org
 description: 'Flux is a new political party designed to connect Australians directly
   to Parliament and change politics forever!
 
 '
-baseurl: 
+baseurl:
 url: https://voteflux.org
 icon_path: img/social-icons/
 accent-color: "#E3580D"
@@ -51,6 +57,12 @@ exclude:
 - to-do
 - signup.html
 - npm-debug.log
-gems:
+- elm-stuff
+- elmSrc
+include:
+  - _record_login_param.html
+  - _redirects
+plugins:
 - jekyll-angular
 redirects: true
+strict_front_matter: true

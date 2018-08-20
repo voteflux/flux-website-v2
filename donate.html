@@ -11,9 +11,9 @@ redirects:
 ---
 
 {% include navbar.html %}
-<header  class="bg-near-black texture-bg-img white pb3 pt5 sm-pr4">
+<header class="bg-near-black texture-bg-img white pb3 pt5 sm-pr4">
   <div class="max-width-4 mx-auto px2 md-px3 mt4">
-  {% include components/main-heading.html
+    {% include components/main-heading.html
     text="Donate Now"
     font-size="h0 line-height-1"
     font-weight="bold" %}
@@ -21,102 +21,93 @@ redirects:
 </header>
 <section id="contact" class="bg-light-gray mid-gray py4 sm-pr4">
   <div class="max-width-4 mx-auto px2 md-px3">
-  <h2>Email contact for donations: <a href="mailto:donations@voteflux.org">donations@voteflux.org</a></h2>
 
-  <hr>
+    <!-- elm donation widget -->
+    <div id="donationWidgetElm"></div>
+    <script src="/js/bundle-donationWidget.js"></script>
+    <hr>
+    <!-- /elm donation widget -->
 
-  <h2>Current Fundraiser</h2>
 
-  <p>
-    We're looking to back <a href="https://www.kickstarter.com/projects/1713701812/rise-up-the-game-of-people-and-power">this kickstarter campaign</a> at the $2,500 (USD) or $5,000 (USD) level. That's $3,300 AUD and $6,600 AUD respectivley, plus a little extra for shipping.
-  </p>
+    <h1>Donations</h1>
 
-  <p>
-    It's a new "cooperative board game about building people power and taking on oppressive systems to create change".
-  </p>
-
-  <p>
-    To help facilitate this, we're happy to announce a <strong>$2 match for every $1 donated</strong> during the month of October, up to $2,300 of donations (for a total of $6,900 for Flux). That means that if you donate $100 Flux will receive $300! There's never been a better time to donate :)
-  </p>
-
-  <p>
-    We'll log all donations over on the <a href="https://flux.wiki/index.php/Finance/Australia">finance</a> page on our wiki. (All donations are anonymous by default, though please let us know if you'd like attribution)
-  </p>
-
-  <h3>What We'll Do With The Rewards</h3>
-
-    <p>
-      The star prise is a custom expansion pack for the game centered around The Flux Movement. We think it'll be a great chance to let the world know about Flux, and to reach out to other people and organisations that might be really keen to support us or adopt our system.
-    </p>
-
-    <p>
-      We also get a few passive benefits like being listed on the site and in the game manual (woo-hoo) and some educational resources from TESA (the organisers) customised for us!
-    </p>
-
-    <p>
-      We also recieve 65 (!) copies of the game. We think it'd be great to distribute these to all the local Flux groups around Australia. Instead of just going to the pub and chatting over some drinks, having occasional games nights centered around our cause will be a great way to bring people in to the movement, train us up at the same time, and keep us entertained.
-      <br>
-      <br>
-      Additionally, we can give some of these out to members who donate over $65. A little extra incentive 😉.
-    </p>
-
-  <h3>Sub-Reward</h3>
-
-  <p>
-    If we manage to reach the $5,000 tier reward for the kickstarter we'll be able to distribute up to 65 copies of the game around Australia. That's quite a lot, so for those who donate $65 or more, and if we reach the $5,000 (USD) tier, we'd like to offer you one of the copies of the game.
-  </p>
-
-  <hr>
-
-    <h2>Donations</h2>
-
-    <strong>Please note:</strong> If you donate more than $13,000 total in one year we are <strong>required by law</strong> to disclose your name and address to the AEC. We will not be able to accept such donations if we don't have those details. Please email us if you'd like to make a large donation.
+    <strong>Please note:</strong> If you donate more than $13,000 total in one year we are <strong>required by
+    law</strong> to disclose your name and address to the AEC. We will not be able to accept such donations if we don't
+    have those details. Please email us if you'd like to make a large donation.
 
     <p>
       NB: The first $1500 of the donation are tax deductable.
     </p>
 
     <p>
-    All donations need to come with a name and address (unfortunately) due to reporting laws. Basically we need to ensure any single person doesn't donate more than $13,000 per year.
+      All donations need to come with a name and address (unfortunately) due to reporting laws. Basically we need to
+      ensure any single person doesn't donate more than $13,000 per year.
     </p>
 
     <p>
-      Please let us know via email if you would like public attribution on our <a href="https://flux.wiki/index.php/Finance/Australia">Finances</a> page.
+      Please let us know via email if you would like public attribution. 
+      <!-- [commenting b/c the wiki hasn't been up for a while] 
+           on our <a href="https://flux.wiki/index.php/Finance/Australia">Finances</a> page. -->
     </p>
 
     Flux currently accepts donations via three methods:
     <ul>
       <li>
-        Paypal: go to <a href="https://paypal.me/voteflux">https://paypal.me/voteflux</a> to donate quickly and easily. Good for small amounts.
+        Paypal: (See Above)
       </li>
       <li>
-        Bank Transfer: our bank details are:<br>
-        Name: Max Kaye <br>
-        BSB: 06 2948 <br>
-        Acct: 1382 4716 <br>
-        Please email us after making a bank transfer with your name and address.
+        Bank Transfer: <br>
+        <br>
+        Name (for all accounts): The Flux Foundation Limited<br>
+        <br>
+        National Branch:<br>
+        BSB: 062247<br>
+        Acct: 1031 6002<br>
+        <br>
+        NSW Branch:<br>
+        BSB: 062140<br>
+        Acct: 1141 5520<br>
+        <br>
+        QLD Branch:<br>
+        BSB: 062140<br>
+        Acct: 1141 5539<br>
+        <br>
+        VIC Branch:<br>
+        BSB: 062140<br>
+        Acct: 1141 5547<br>
+        <br>
+        <strong>Node: You MUST email us after making a bank transfer with your name and address (donations@voteflux.org). Otherwise we cannot accept the donation.</strong>
       </li>
       <li>
-        Bitcoin: our current donation address is 1EDGSgTW5iGHGesyYACSXYUNbwB6BPEDan<br>
-        Please keep in mind the above restrictions around disclosure limits still apply, and you'll still need to email us your name and address. Unless we're holding a fundraiser for something specific we'll hold Bitcoin <em>as BTC</em> until we need to spend it, and will spend AUD before BTC.
+        Bitcoin: 1EDGSgTW5iGHGesyYACSXYUNbwB6BPEDan<br>
+        Ether: 0xa3371FA3A533e862782D373DCF8Eb42aE5c33931<br>
+        Please keep in mind the above restrictions around disclosure limits still apply, and you'll still need to email
+        us your name and address. Unless we're holding a fundraiser for something specific we'll hold Bitcoin/Ether <em>as
+        BTC or ETH</em> until we need to spend it, and will spend AUD before crypto.
       </li>
     </ul>
 
     <hr>
 
-    <h3>$2 for $1 match details</h3>
+    <h2 class="mb3">Email contact for donations: <a href="mailto:donations@voteflux.org">donations@voteflux.org</a></h2>
 
+    <h4><strong>Note:</strong> our PayPal email for donations is <strong>foundation.paypal@voteflux.org</strong> - finance@voteflux.org is deprecated.</h4>
+
+    <hr>
+
+    <h1>Donation Log</h1>
+    
     <p>
-    For the period of October, and for the purpose of funding the above mentioned kickstarter, two parties will match donations dollar for dollar.
+      <em>
+        Note: This log only shows PayPal donations where the address was provided at the time of donation. 
+        We're working on integrating bank transfers and PayPal donations where the address was omitted.
+        (Feel free to get in touch if you'd like to help)
+      </em>
     </p>
 
-    <p>
-    ExO One Pty Ltd will match $1 for every $1 donated up to $2,300 AUD.
-    </p>
+    <div id="donationLogElm"></div>
+    <script src="/js/bundle-donationLog.js"></script>
 
-    <p>
-    Max Kaye will match $1 for every $1 donated up to $2,300 AUD.
-    </p>
   </div>
 </section>
 {% include footer.html %}

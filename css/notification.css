@@ -1,0 +1,27 @@
+#notification {
+    background-color: #E3580D;
+    max-height: 4rem;
+    height: 4rem;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+}
+
+#notification_link {
+    color: #F6F6F8;
+    display: block;
+    font-size: 1.5rem;
+    opacity: 1;
+}
+
+#js-fading {
+	top:4rem;
+}
+
+#nav-bar {
+	top:4rem;
+}
+
+#messenger-icon {
+	width:0.8em;
+}

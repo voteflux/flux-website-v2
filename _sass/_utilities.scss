@@ -45,6 +45,8 @@ a {
 .height-4 {min-height: 20rem; }
 .height-40vh {min-height: 40vh;}
 .height-30vh {min-height: 30vh;}
+.height-20vh {min-height: 20vh;}
+.height-10vh {min-height: 10vh;}
 .min-height-100vh { min-height: 100vh}
 .height-100vh {height: 100vh}
 .min-height-1 {min-height: 6rem}
@@ -190,12 +192,15 @@ a {
 ::selection { background: $accent-light; color:$black }
 
 @media #{$breakpoint-xs} {
-  .xs-menu-join-button {
+  .xs-menu-join-button-contianer {
     position: fixed;
     z-index: $z2;
     width: 100%;
     left: 0;
     bottom: 0;
+  }
+  .xs-menu-join-button {
+    width: 100%;
     border-radius: 0;
     text-align: center;
     padding: $space-2;
@@ -219,4 +224,3 @@ a {
   border: solid 1px $light-silver;
   margin-bottom: -1px;
 }
-

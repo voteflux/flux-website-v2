@@ -34,11 +34,17 @@
   <meta name="theme-color" content="{{site.base-color}}">
 
 
-  <link rel="stylesheet" href="{{site.baseurl}}/css/main.css">
+  <!-- link tachyons before other styles; some colliding names -->
+  <!--<link rel="stylesheet" href="{{site.baseurl}}/css/tachyons.min.css">-->
+
+  <link rel="stylesheet" href="{{site.baseurl}}/css/main.bundle.css">
+  <!--<link rel="stylesheet" href="{{site.baseurl}}/css/notification.css">-->
   <link rel="stylesheet" href="{{site.baseurl}}/css/non-sass.css">
   {% if page.video %} <link rel="stylesheet" href="{{site.baseurl}}/css/lity.min.css"> {% endif %}
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <script src="{{site.baseurl}}/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="{{site.baseurl}}/js/vendor/ramda.min.js"></script>
+  <script src="{{site.baseurl}}/js/common.js"></script>
 
 
   <!-- Facebook Pixel Code -->

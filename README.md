@@ -4,19 +4,20 @@
 
 We presume your environment is OSX.
 
-* Install `node`, `npm`, `ruby` first
- * macOS: `brew install ruby node npm`
+* Install `node`, `npm`, `ruby`, `yarn` first
+ * macOS: `brew install ruby node npm yarn`
  * ubuntu: `sudo apt install ruby nodejs` (aside: does this include `npm`?)
-* Install dependencies: `gem install bundle` then `bundle install` then `npm install`
+ * Ubuntu: Note: you'll need to install yarn yourself
+* Install dependencies: `gem install bundle` then `bundle install` then `yarn install`
 
 ## Development
 
-* To run a development copy for everything run `npm run flux`
-* To simulate a build run `npm run build`
+* To run a development copy for everything run `yarn flux`
+* To simulate a build run `yarn build`
 
 ## Deployment
 
-* Deployments atomatically happen via the `master` branch.
+* Deployments automatically happen via the `master` branch.
 * All merges require a PR.
 
 

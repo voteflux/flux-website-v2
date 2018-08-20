@@ -1,0 +1,57 @@
+/* This css file is the base css layer for pages
+written just with tachyons (not basscss)
+*/
+
+:root {
+  --accent-color: #e3580d;
+  --border-radius: 3px;
+  --primary-c: #7b1fa2;
+  --secondary-c: #e3580d;
+}
+
+
+body {
+  font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+
+.mva {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+/*#navbar ul li:hover {*/
+  /*background-color: var(--accent-color);*/
+  /*color: white;*/
+  /*border-radius: var(--border-radius);*/
+/*}*/
+
+
+.tula {  /* text underline accent */
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+}
+
+
+.b--accent {
+  border-color: var(--accent-color);
+}
+
+
+.w2-5 {
+  width: 3rem;
+}
+
+.w3-5 {
+  width: 6rem;
+}
+
+.h4-5 {
+  height: 12rem;
+}

@@ -1,8 +1,16 @@
 node_modules
-_site
+elm_stuff
+_site/*
 .sass-cache
 .jekyll-metadata
 npm-debug.log
 .publish
 react-signup/node_modules
 *.DS_Store
+react-signup/main.css
+css/main.css
+js/donationWidget.js
+js/reactSignup.js
+js/bundle-*
+signup/
+temp.elm.js

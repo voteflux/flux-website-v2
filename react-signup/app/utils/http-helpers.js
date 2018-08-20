@@ -7,13 +7,29 @@ import FormContainer from '../containers/form-container'
 
 const prodServer = 'https://api.voteflux.org';
 
-const useDevDefault = (window.location.hostname === 'localhost' || _.includes(location.hostname, "deploy-preview"));
-if (useDevDefault)
+let useDevDefault = (window.location.hostname === 'localhost' || _.includes(location.hostname, "deploy-preview"));
+let useLocalDev = (window.location.hostname === '127.0.0.1')
+let useProdOverride = false;
+
+try {
+    useProdOverride = window.location.search.includes("useProd")
+} catch (e) {}
+
+if (useProdOverride) {
+  console.log("using production override (?useProd in get params / search string)")
+  useDevDefault = false
+  useLocalDev = false
+}
+
+if (useDevDefault) {
   console.log("Using dev server for signup submissions");
+}
 
 const flux_api = function(path, useDev){
   if (useDev === undefined) {
     return flux_api(path, useDevDefault);
+  } else if (useLocalDev === true) {
+    return 'http://localhost:5000/api/v0/' + path;
   } else if (useDev === true) {
     return 'https://flux-api-dev.herokuapp.com/api/v0/' + path;
   } else if (useDev === false) {
