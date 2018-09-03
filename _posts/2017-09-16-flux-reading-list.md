@@ -22,5 +22,5 @@ IBDD involves a bit of economics, so here is a refresher or introduction if you 
 
 ## Essential Background Reading
 
-* _The Beginning of Infinity_, David Deutsch, 2011 (BoI). A breathtakingly profound book on philosophy, knowledge, choices, optimism, democracy, aesthetics, AI, physics, and so much more. To fully understand Flux and IBDD BoI is essential.
+* _The Beginning of Infinity_, David Deutsch, 2011 (BoI). A breathtakingly profound book on philosophy, knowledge, choices, optimism, democracy, aesthetics, AI, physics, and so much more. To fully understand Flux and IBDD, reading BoI is essential.
 
