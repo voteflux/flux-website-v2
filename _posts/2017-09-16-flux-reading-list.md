@@ -20,7 +20,7 @@ IBDD involves a bit of economics, so here is a refresher or introduction if you 
 * [The Case for Flux](https://www.youtube.com/watch?v=Zq25UXc_ONg) - (1hr 10m, YouTube video)
 * [IBDD as an Embodiment of Popper's Criterion](http://xk.io/2017/05/27/ibdd-and-poppers-criterion/) - (~7000 words, Blog Post)
 
-## Background Reading
+## Essential Background Reading
 
-* _The Beginning of Infinity_, David Deutsch, 2011. A breathtakingly profound book on philosophy, knowledge, choices, optimism, democracy, aesthetics, AI, physics, and so much more.
+* _The Beginning of Infinity_, David Deutsch, 2011 (BoI). A breathtakingly profound book on philosophy, knowledge, choices, optimism, democracy, aesthetics, AI, physics, and so much more. To fully understand Flux and IBDD BoI is essential.
 
