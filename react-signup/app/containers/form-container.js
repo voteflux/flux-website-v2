@@ -20,6 +20,7 @@ const FormContainer = React.createClass({
       serverErrorMsg: false,
       serverSuccessMsg: false,
       showSubmissionModal: false,
+      showMultiPartyFAQ: false,
       loading: {
         'street': false,
         'suburb': false,
@@ -28,6 +29,7 @@ const FormContainer = React.createClass({
       streets: ['Choose Suburb...'],
       postcode: '0000',
       country: 'au',
+      other_party_membership: false,
     };
   },
   submit(data) {
@@ -91,6 +93,12 @@ const FormContainer = React.createClass({
   },
   closeModal() {
     this.setState({ showSubmissionModal: false });
+  },
+  closeMultiPartyFAQ() {
+    this.setState({ showMultiPartyFAQ: false })
+  },
+  openMultiPartyFAQ() {
+    this.setState({ showMultiPartyFAQ: true })
   },
 
   checkPC(evt) {
@@ -431,7 +439,16 @@ const FormContainer = React.createClass({
             value={false}
           />
 
-
+          <div className="flex flex-justify">
+            <MyInput
+              inputClass="input"
+              type="checkbox"
+              name="other_party_membership"
+              title={"I am a member of another political party "}
+              value={false}
+            />
+            <small className="line-height-1 flex flex-end"><a className="ml1 mt1" onClick={this.openMultiPartyFAQ}>(it's okay!)</a></small>
+          </div>
 
            <div className="buttons flex items-center mt4 mb3">
              <div>
@@ -445,7 +462,7 @@ const FormContainer = React.createClass({
               </div>}
 
              <Modal
-              isOpen={this.state.showSubmissionModal}
+              isOpen={this.state.showSubmissionModal || this.state.showMultiPartyFAQ}
               contentLabel="Processing Registration"
               onRequestClose={this.closeModal}
               style={{
@@ -457,7 +474,13 @@ const FormContainer = React.createClass({
                 }
               }}
              >
-               {this.state.isLoading
+               {this.state.showMultiPartyFAQ
+                ?
+                <div className="ml2 line-height-3 mt1">
+                  <iframe class="ma2" frameBorder="0" style={{width: '100%', height: '70vh'}} src="/about/faq/#can-i-still-sign-up-if-i-m-a-member-of-another-political-party" />
+                  <button className="btn btn-primary mx-auto h2" onClick={this.closeMultiPartyFAQ}>Close</button>
+                </div>
+                : this.state.isLoading
                 ?
                 <div className="ml2 line-height-3 flex col-6 mt1">
                   <p className='h0 center-xy inline'>Registering...</p>
