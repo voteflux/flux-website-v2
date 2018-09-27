@@ -477,11 +477,12 @@ const FormContainer = React.createClass({
                {this.state.showMultiPartyFAQ
                 ?
                 <div className="ml2 line-height-3 flex flex-justify flex-column mt1 mx-auto flex-center">
+                  {/* keep this in sync with FAQ on the same matter */}
                   <p>
-                    Yes! There's no law preventing you from being a member of multiple parties. The AEC is specific in their criterion for registration: "at least 500 members who are on the Commonwealth electoral roll and who are not also relied upon by another party for registration purposes." Some other states have stricter criteria.
+                    It's often okay to be a member of multiple parties, and there's no law preventing you. Federally, the AEC is specific in their membership eligibility criterion for non-parliamentary parties: "at least 500 members who are on the Commonwealth electoral roll and who are not also relied upon by another party for registration purposes." Some other states have stricter criteria (such as Victoria) which prevent us using anyone who is a member of another party as a supporting member for our registration.
                   </p>
                   <p>
-                    That said, we do ask you let us know if you're a member of another party so you we can exclude you from certain registration proceedures or membership audits.
+                    That said, we do ask you let us know if you're a member of another party so you we can exclude you from certain registration procedures or membership audits.
                   </p>
                   <button className="btn btn-primary mx-auto h2" onClick={this.closeMultiPartyFAQ}>Close</button>
                 </div>
