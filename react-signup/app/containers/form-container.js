@@ -476,8 +476,13 @@ const FormContainer = React.createClass({
              >
                {this.state.showMultiPartyFAQ
                 ?
-                <div className="ml2 line-height-3 mt1">
-                  <iframe class="ma2" frameBorder="0" style={{width: '100%', height: '70vh'}} src="/about/faq/#can-i-still-sign-up-if-i-m-a-member-of-another-political-party" />
+                <div className="ml2 line-height-3 flex flex-justify flex-column mt1 mx-auto flex-center">
+                  <p>
+                    Yes! There's no law preventing you from being a member of multiple parties. The AEC is specific in their criterion for registration: "at least 500 members who are on the Commonwealth electoral roll and who are not also relied upon by another party for registration purposes." Some other states have stricter criteria.
+                  </p>
+                  <p>
+                    That said, we do ask you let us know if you're a member of another party so you we can exclude you from certain registration proceedures or membership audits.
+                  </p>
                   <button className="btn btn-primary mx-auto h2" onClick={this.closeMultiPartyFAQ}>Close</button>
                 </div>
                 : this.state.isLoading
