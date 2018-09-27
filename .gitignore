@@ -1,3 +1,5 @@
+.idea
+elm-stuff
 node_modules
 elm_stuff
 _site/*
@@ -14,3 +16,5 @@ js/reactSignup.js
 js/bundle-*
 signup/
 temp.elm.js
+css/main.bundle.css
+

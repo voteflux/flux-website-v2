@@ -14,7 +14,7 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
   flux.growthDays = [];  // note: set later on to trigger redraw
   flux.nameTempVar = "Dashboard";
   flux.averageMonthlyGrowth = 0;
-  flux.getinfo = {n_members_state: {}, n_members_validated_state: {}, validation_queue_state: {}};
+  flux.getinfo = {n_members_state: {}, n_members_validated_state: {}, n_members_not_valid_state: {}, validation_queue_state: {}};
 
   $scope.queueData = {email_queue_length: 0, sms_queue_length: 0}
 

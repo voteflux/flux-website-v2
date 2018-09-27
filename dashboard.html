@@ -23,7 +23,7 @@ nav-title: Dashboard
       <div class="mx-auto max-width-3" ng-controller='GraphsController as flux'>
         <div class="">
 
-          <div class="h-font light lg-col-10 mid-gray sm-pr4 mx" style="max-width: 600px;">
+          <div class="h-font light mid-gray mx" style="">
 
             <h1 ng-show="false" class="h0">Loading... Please be patient.</h1>
             <h1>Live Flux Stats</h1>
@@ -79,17 +79,27 @@ nav-title: Dashboard
               <table>
                 <tr>
                   <th class="p2">State</th>
-                  <th class="p2">Members</th>
-                  <th class="p2">Valid Members</th>
-                  <th class="p2">Members Awaiting Validation</th>
+                  <th class="p2"># Members</th>
+                  <th class="p2"># w/ Valid Details</th>
+                  <th class="p2"># w/out Valid Details
+                  <th class="p2"># Awaiting Validation<sup>*</sup></th>
                 </tr>
                 <tr ng-repeat="(state, blah) in flux.getinfo.n_members_state">
                   <td>{{ 'state' | angular }}</td>
                   <td>{{ 'flux.getinfo.n_members_state[state]' | angular }}</td>
                   <td>{{ 'flux.getinfo.n_members_validated_state[state]' | angular }}</td>
+                  <td>{{ 'flux.getinfo.n_members_not_valid_state[state] || 0' | angular }}</td>
                   <td>{{ 'flux.getinfo.validation_queue_state[state]' | angular}}</td>
                 </tr>
               </table>
+              <small>
+                <ul>
+                  <li>Members are only counted if the self-report as on the Electoral Roll</li>
+                  <li>#: roughly translates as "Number of Members"</li>
+                  <li>*: Includes members with valid details that have not been re-validated in the last 90 days.</li>
+                  <li>**: Not yet implemented</li>
+                </ul>
+              </small>
             </div>
 
             <hr>
