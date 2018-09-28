@@ -32,7 +32,7 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
     if (flux.debug) {
       return "http://localhost:5000/api/v0/" + path;
     } else if (getParam && getParam('useDev')) {
-      return "http://flux-api-dev.herokuapp.com/" + path;
+      return "https://flux-api-dev.herokuapp.com/" + path;
     }
     return "https://api.voteflux.org/api/v0/" + path;
   };
