@@ -55,8 +55,8 @@ module.exports = {
     donationWidget: [localElmSrc + 'DonationWidget/index.js'],
     donationLog: [localElmSrc + 'DonationLog/index.js'],
     main: ['./_sass/main.scss'],
-    memberUI: [localElmSrc + 'Flux/MemberUI/index.ts'],
-    fluxScripts: [localElmSrc + 'Flux/MemberUI/scripts.ts'],
+    // memberUI: [localElmSrc + 'Flux/MemberUI/index.ts'],
+    // fluxScripts: [localElmSrc + 'Flux/MemberUI/scripts.ts'],
     graphs: ['./js/graphs-ng.js'],
   },
   output: {

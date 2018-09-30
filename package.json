@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "elm-mk-do-not-use": "elm-make elmSrc/DonationWidget/Main.elm --output js/elm/donationWidget.js",
-    "flux": "bundle exec jekyll 'clean' && BUILD_DEV=true parallelshell 'bundle exec jekyll build --watch --config _config.yml' 'webpack -w' 'webpack-dev-server --open'",
+    "dev": "bundle exec jekyll 'clean' && BUILD_DEV=true parallelshell 'bundle exec jekyll build --watch --config _config.yml' 'webpack -w' 'webpack-dev-server --open'",
+    "flux": "npm run dev",
     "flux-no-react-deprecated": "bundle exec jekyll serve --watch --config _config.yml",
     "deploy-stage": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build && gulp 'deploy' && exit",
     "build": "bundle install && bundle exec jekyll clean && webpack -p && bundle exec jekyll build",

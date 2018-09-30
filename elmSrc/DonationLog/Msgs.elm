@@ -6,3 +6,4 @@ import RemoteData exposing (WebData)
 
 type Msg
     = UpdateDonationLog (WebData DonationResp)
+    | SetPage Int

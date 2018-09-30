@@ -38,74 +38,108 @@ export const processDonationGraphs = function (data) {
 
   console.log('Donation Log: ', donationLog);
 
-
-  const donationDataTotal = {
+  const stdScatter = {
     x: [], y: [], type: 'scatter',
     mode: 'markers', marker: {size: 10}
-  };
-  const donationDataCumulative = {x: [], y: [], type: 'scatter'};
-  const donationDataByJuriObj = {};
-  const donationDataCumulativeStateObj = {};
+  }
+  const stdCumulative = {x: [], y: [], type: 'scatter', mode: 'lines+markers', marker: {size: 6, symbol: "diamond-open"}}
+
+  const donationsAll = R.clone(stdScatter)
+  const donationsFY = R.clone(stdScatter)
+  const donationsCumulativeAll = R.clone(stdCumulative)
+  const donationsCumulativeFY = R.clone(stdCumulative)
+  const donationsByStateAll = {};
+  const donationsByStateCumulativeAll = {};
+  const donationsByStateFY = {}
+  const donationsByStateCumulativeFY = {}
+
+
+  const ensureKeyOrClone = (obj, branch, toClone) => {
+    if (obj[branch] === undefined)
+      obj[branch] = R.clone(toClone)
+  }
 
 
   R.map(d => {
-    pushCoords(d, donationDataTotal, isThisFY);
-    if (donationDataByJuriObj[d.branch] === undefined) {
-      donationDataByJuriObj[d.branch] = R.clone({
-        x: [], y: [], type: 'scatter',
-        mode: 'markers', marker: {size: 10}
-      });
-    }
-    if (donationDataCumulativeStateObj[d.branch] === undefined) {
-      donationDataCumulativeStateObj[d.branch] = R.clone({x: [], y: [], type: 'scatter'});
-    }
-    pushCoords(d, donationDataByJuriObj[d.branch], isThisFY);
-    pushCoordsCumulative(d, donationDataCumulativeStateObj[d.branch])
+    pushCoords(d, donationsAll);
+    pushCoords(d, donationsFY, isThisFY);
+
+    ensureKeyOrClone(donationsByStateAll, d.branch, stdScatter)
+    ensureKeyOrClone(donationsByStateFY, d.branch, stdScatter)
+    pushCoords(d, donationsByStateAll[d.branch]);
+    pushCoords(d, donationsByStateFY[d.branch], isThisFY);
+
+    ensureKeyOrClone(donationsByStateCumulativeFY, d.branch, stdCumulative)
+    ensureKeyOrClone(donationsByStateCumulativeAll, d.branch, stdCumulative)
+    pushCoordsCumulative(d, donationsByStateCumulativeAll[d.branch])
+    pushCoordsCumulative(d, donationsByStateCumulativeFY[d.branch], isThisFY)
   }, donationLog);
 
 
   let lastY = 0;
   R.map(([x, y]) => {
     let next = lastY + y;
-    donationDataCumulative.x.push(x);
-    donationDataCumulative.y.push(next);
+    donationsCumulativeAll.x.push(x);
+    donationsCumulativeAll.y.push(next);
     lastY = next;
-  }, R.zip(donationDataTotal.x, donationDataTotal.y));
+  }, R.zip(donationsAll.x, donationsAll.y));
+
+  lastY = 0;
+  R.map(([x, y]) => {
+    let next = lastY + y;
+    donationsCumulativeFY.x.push(x);
+    donationsCumulativeFY.y.push(next);
+    lastY = next;
+  }, R.zip(donationsFY.x, donationsFY.y));
 
 
-  const donationDataCumulativeState = [];
-  const donationDataByJuri = [];
+  const dataDonationsByStateCumulativeAll = [];
+  const dataDonationsByStateCumulativeFY = [];
+  const dataDonationsByStateAll = [];
+  const dataDonationsByStateFY = [];
   const prepJuriData = (dataObj, dataList) => R.mapObjIndexed((v, k, obj) => dataList.push({...v, name: k}), dataObj);
-  prepJuriData(donationDataCumulativeStateObj, donationDataCumulativeState);
-  prepJuriData(donationDataByJuriObj, donationDataByJuri);
+  prepJuriData(donationsByStateCumulativeAll, dataDonationsByStateCumulativeAll);
+  prepJuriData(donationsByStateCumulativeFY, dataDonationsByStateCumulativeFY);
+  prepJuriData(donationsByStateAll, dataDonationsByStateAll);
+  prepJuriData(donationsByStateFY, dataDonationsByStateFY);
 
 
-  console.log('DATA -> Donations sigma by state', donationDataCumulativeState);
-  console.log('DATA -> Donations Cumulative:', donationDataCumulative);
-  console.log('DATA -> Donations By Juri:', donationDataByJuri);
-  console.log('DATA -> Donations Total:', donationDataTotal);
+  console.log('DATA -> Donations sigma by state', dataDonationsByStateCumulativeAll);
+  console.log('DATA -> Donations Cumulative:', donationsCumulativeAll);
+  console.log('DATA -> Donations By Juri:', dataDonationsByStateAll);
 
-
-  Plotly.newPlot('donationGraphCumulativeDiv', [donationDataCumulative], {
-    title: "Cumulative Donations",
+  Plotly.newPlot('donationGraphCumulativeFY', [donationsCumulativeFY], {
+    title: "Cumulative Donations (this FY)",
     yaxis: {'rangemode': 'tozero', title: '$ AUD'},
     xaxis: {title: 'Date'}
   });
 
-  Plotly.newPlot('donationGraphCumulativeStateDiv', donationDataCumulativeState, {
-    title: "Cumulative Donations by Branch",
+  Plotly.newPlot('donationGraphCumulativeStateFY', dataDonationsByStateCumulativeFY, {
+    title: "Cumulative Donations by Branch (this FY)",
     yaxis: {'rangemode': 'tozero', title: '$ AUD'},
     xaxis: {title: 'Date'}
   });
 
-  Plotly.newPlot('donationGraphTotalDiv', [donationDataTotal], {
-    title: "Donations this FY Total",
+  Plotly.newPlot('donationGraphByStateFY', dataDonationsByStateFY, {
+    title: "Donations by Branch (this FY)",
     yaxis: {'rangemode': 'tozero', 'title': '$ AUD'},
     xaxis: {title: 'Date'}
   })
 
-  Plotly.newPlot('donationGraphByJuriDiv', donationDataByJuri, {
-    title: "Donations this FY by Branch",
+  Plotly.newPlot('donationGraphCumulative', [donationsCumulativeAll], {
+    title: "Cumulative Donations (All)",
+    yaxis: {'rangemode': 'tozero', title: '$ AUD'},
+    xaxis: {title: 'Date'}
+  });
+
+  Plotly.newPlot('donationGraphCumulativeState', dataDonationsByStateCumulativeAll, {
+    title: "Cumulative Donations by Branch (All)",
+    yaxis: {'rangemode': 'tozero', title: '$ AUD'},
+    xaxis: {title: 'Date'}
+  });
+
+  Plotly.newPlot('donationGraphByState', dataDonationsByStateAll, {
+    title: "Donations by Branch (All)",
     yaxis: {'rangemode': 'tozero', 'title': '$ AUD'},
     xaxis: {title: 'Date'}
   })
