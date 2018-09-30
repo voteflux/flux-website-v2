@@ -29,7 +29,15 @@ paypalButtonForm model =
         [ input [ type_ "hidden", name "cmd", value "_s-xclick" ] []
         , input [ type_ "hidden", name "no_shipping", value "2" ] []
         , input [ type_ "hidden", name "hosted_button_id", value "TZXYFG3Q3NJ4U" ] []
-        , input [ type_ "image", src "/img/vendor/btn_donate_LG.gif", name "submit", alt "PayPal – The safer, easier way to pay online!" ] []
+
+        -- , input [ type_ "image", src "/img/vendor/btn_donate_LG.gif", name "submit", alt "PayPal – The safer, easier way to pay online!" ] []
+        , input
+            [ type_ "submit"
+            , class "my1 btn btn-primary"
+            , name "submit"
+            , value <| "Donate to " ++ Juris.toName model.jurisdiction ++ " via PayPal"
+            ]
+            []
         , input [ type_ "hidden", name "on0", value "Branch" ] []
         , input [ type_ "hidden", name "os0", value <| Juris.toString model.jurisdiction ] []
         , input [ type_ "hidden", name "on1", value "Donation Session" ] []
@@ -53,7 +61,13 @@ paypalBtn : Model -> Html Msg
 paypalBtn model =
     div [ id "paypal-button" ]
         [ h1 [] [ text "The easiest way to donate is via PayPal" ]
-        , h3 [] [ text "You ", em [ class "bold" ] [ text "must" ], text " share your address with us for your donation to be accepted." ]
+        , h4 [] <|
+            [ text "You "
+            , em [ class "bold" ] [ text "must" ]
+            , text " share your address with us for your donation to be accepted. "
+            , text "Please ensure you "
+            , em [ class "bold" ] [ text "tick the 'share my mailing address' checkbox." ]
+            ]
         , div [ class "" ]
             [ h3 [ class "inline-block" ] [ text "Choose a branch: " ]
             , paypalBranchSelector model
@@ -61,6 +75,8 @@ paypalBtn model =
             --, p [ class "inline-block px1" ] [ text "Flux Australia" ]
             --, debugInfo model
             ]
+
+        -- , div [ class "flex" ] [ paypalButtonForm model, span [ class "ml1" ] [ text <| " to " ++ Juris.toName model.jurisdiction ] ]
         , paypalButtonForm model
         , paypalCutCalc model
 
