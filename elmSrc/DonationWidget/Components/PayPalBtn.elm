@@ -106,7 +106,7 @@ paypalCutCalc model =
             if ppTotal == 0.0 then
                 0.0
             else
-                ppTotal * 0.029 + 0.3
+                min ppTotal <| ppTotal * 0.029 + 0.3
 
         ppCutProp =
             fmtFloat <| ppCut / ppTotal * 100.0
