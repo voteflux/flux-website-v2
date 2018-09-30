@@ -51,11 +51,30 @@ nav-title: Dashboard
 
             <h3>You can view a log of donations on our <a href="/donate">Donate</a> page.</h3>
 
-            <div id="donationGraphCumulativeDiv" class="col-sm-12 graph-div"></div>
-            <div id="donationGraphCumulativeStateDiv" class="col-sm-12 graph-div"></div>
-            <!-- hide this graph; doesn't show any extra info -->
-            <div id="donationGraphTotalDiv" class="col-sm-12 graph-div hide"></div>
-            <div id="donationGraphByJuriDiv" class="col-sm-12 graph-div"></div>
+            <!-- disclaimer also goes on donate.html verbatim -->
+            <small>
+              <p>
+                <strong>Disclaimer re donation log:</strong> Donations (as of Sept 2018) are made to the Flux Foundation and tagged for use by different branches.
+                In some cases this means a corresponding donation does not appear on party disclosure statements, or appears as part of a bulk donation from the Flux Foundation.
+                That said, depending on jurisdiction such a donation might appear on the Foundation's disclosure statement.
+                Furthermore, it might not appear on any disclosure statement if those funds are used for general things not directly related to the individual branch (e.g. paying our AWS bill).
+                In any case, be aware this donation log is a best-effort attempt at transparency, not a replacement for, substitute for, or even an indication of our official disclosures.
+                No data on this page regarding donations comes with any guarentee of accuracy.
+              </p>
+            </small>
+
+            <h2> Donations This FY </h2>
+
+            <div id="donationGraphByStateFY" class="col-sm-12 graph-div"></div>
+            <div id="donationGraphCumulativeFY" class="col-sm-12 graph-div"></div>
+            <div id="donationGraphCumulativeStateFY" class="col-sm-12 graph-div"></div>
+
+            <h2> All Donations since Sept 2017 </h2>
+
+            <div id="donationGraphByState" class="col-sm-12 graph-div"></div>
+            <div id="donationGraphCumulative" class="col-sm-12 graph-div"></div>
+            <div id="donationGraphCumulativeState" class="col-sm-12 graph-div"></div>
+
 
             <h1 id="membership-tables">Membership Stats (Tables)</h1>
 
@@ -88,7 +107,7 @@ nav-title: Dashboard
                   <td>{{ 'state' | angular }}</td>
                   <td>{{ 'flux.getinfo.n_members_state[state]' | angular }}</td>
                   <td>{{ 'flux.getinfo.n_members_validated_state[state]' | angular }}</td>
-                  <td>{{ 'flux.getinfo.n_members_not_valid_state[state] || 0' | angular }}</td>
+                  <td>{{ 'flux.getinfo.n_members_not_valid_state[state] || "**"' | angular }}</td>
                   <td>{{ 'flux.getinfo.validation_queue_state[state]' | angular}}</td>
                 </tr>
               </table>
@@ -97,7 +116,7 @@ nav-title: Dashboard
                   <li>Members are only counted if the self-report as on the Electoral Roll</li>
                   <li>#: roughly translates as "Number of Members"</li>
                   <li>*: Includes members with valid details that have not been re-validated in the last 90 days.</li>
-                  <li>**: Not yet implemented</li>
+                  <li>**: Not yet implemented or no data or 0</li>
                 </ul>
               </small>
             </div>

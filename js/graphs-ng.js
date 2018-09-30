@@ -23,15 +23,17 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
     flux.debug = true;
   }
 
+  flux.__devUseProd = (getParam && getParam('prod'))
+
   flux.handleError = function (error) {
     $log.log('An error occured:');
     $log.log(error);
   };
 
   flux.api = function (path) {
-    if (flux.debug) {
+    if (flux.debug && !flux.__devUseProd) {
       return "http://localhost:5000/api/v0/" + path;
-    } else if (getParam && getParam('useDev')) {
+    } else if (getParam && getParam('useDev') && !flux.__devUseProd) {
       return "https://flux-api-dev.herokuapp.com/" + path;
     }
     return "https://api.voteflux.org/api/v0/" + path;

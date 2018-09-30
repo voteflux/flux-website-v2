@@ -29,5 +29,5 @@ donationDecoder : Decode.Decoder Donation
 donationDecoder =
     decode Donation
         |> required "ts" Decode.int
-        |> required "amount" Decode.string
+        |> required "amount" (Decode.oneOf [ Decode.string, Decode.map toString Decode.float ])
         |> required "branch" Decode.string
