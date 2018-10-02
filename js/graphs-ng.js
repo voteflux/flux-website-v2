@@ -256,7 +256,7 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
       flux.averageMonthlyGrowth = (_.sum(rates) / rates.length).toString().slice(0, 4);
     };
     flux.calcMonthlyGrowth(tss);
-
+w
 
     $http.get(flux_api('api/v1/anon_donation_log')).then(data => {
       try {

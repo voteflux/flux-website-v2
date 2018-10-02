@@ -136,7 +136,6 @@ textarea {
 input[type=checkbox] {
   display : none;
 }
-
 /*to hide the checkbox itself*/
 
 input[type=checkbox] + label:before {
@@ -144,6 +143,11 @@ input[type=checkbox] + label:before {
   font-family : 'Material Icons';
   font-size   : 2rem;
   cursor      : pointer;
+}
+
+input[type=checkbox] + label {
+  user-select : none;
+  cursor: pointer;
 }
 
 input[type=checkbox] + label:before {

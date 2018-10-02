@@ -9,3 +9,4 @@ type Msg
     | SetPaymentIdInit Int
     | UpdateInput String String
     | SetJuri Jurisdiction
+    | QLDCheckbox

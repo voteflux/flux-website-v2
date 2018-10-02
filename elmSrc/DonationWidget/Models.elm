@@ -8,4 +8,5 @@ type alias Model =
     { jurisdiction : Jurisdiction
     , paymentId : Int
     , input : Dict String String
+    , qldCheckbox : Bool
     }

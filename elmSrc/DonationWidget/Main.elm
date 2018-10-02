@@ -15,7 +15,13 @@ import Random
 
 init : Location -> ( Model, Cmd Msg )
 init loc =
-    ( { jurisdiction = AUS, paymentId = 0, input = Dict.empty }, randomCmd )
+    ( { jurisdiction = AUS
+      , paymentId = 0
+      , input = Dict.empty
+      , qldCheckbox = False
+      }
+    , randomCmd
+    )
 
 
 view : Model -> Html Msg

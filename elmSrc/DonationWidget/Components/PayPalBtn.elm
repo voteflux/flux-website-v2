@@ -2,11 +2,11 @@ module DonationWidget.Components.PayPalBtn exposing (..)
 
 import Dict
 import DonationWidget.Models exposing (Model)
-import DonationWidget.Msgs exposing (Msg(SetJuri, UpdateInput))
+import DonationWidget.Msgs exposing (Msg(..))
 import DonationWidget.Views.Utils exposing (fmtFloat, spanText)
 import Flux.Jurisdictions as Juris
 import Html exposing (Html, a, br, div, em, form, h1, h2, h3, h4, img, input, label, option, p, pre, select, span, text)
-import Html.Attributes exposing (action, alt, class, height, id, method, name, src, step, type_, value, width)
+import Html.Attributes exposing (action, alt, class, for, height, href, id, method, name, rel, src, step, target, type_, value, width)
 import Html.Events exposing (onClick, onInput)
 import List exposing (map)
 import Maybe.Extra exposing ((?))
@@ -57,6 +57,36 @@ debugInfo model =
         ]
 
 
+qldDonationChecker : Model -> Html Msg -> Html Msg
+qldDonationChecker model successHtml =
+    let
+        doCheck =
+            model.jurisdiction == Juris.QLD
+
+        checkDone =
+            model.qldCheckbox
+
+        checkHtml =
+            div []
+                [ input [ type_ "checkbox", onClick QLDCheckbox, id "qldCheckbox", name "qldCheckbox" ] []
+                , label [ for "qldCheckbox" ]
+                    [ text "I am not a "
+                    , a [ href "https://www.ecq.qld.gov.au/candidates-and-parties/funding-and-disclosure/prohibited-donors-scheme/fact-sheets", target "_blank", rel "noopener noreferrer" ] [ text "prohibited donor" ]
+                    , text " under Queensland law. ('a property developer or their close associates')"
+                    ]
+                ]
+
+        els =
+            if not doCheck then
+                successHtml
+            else if checkDone then
+                div [] [ checkHtml, successHtml ]
+            else
+                div [] [ checkHtml ]
+    in
+    els
+
+
 paypalBtn : Model -> Html Msg
 paypalBtn model =
     div [ id "paypal-button" ]
@@ -77,7 +107,7 @@ paypalBtn model =
             ]
 
         -- , div [ class "flex" ] [ paypalButtonForm model, span [ class "ml1" ] [ text <| " to " ++ Juris.toName model.jurisdiction ] ]
-        , paypalButtonForm model
+        , qldDonationChecker model <| paypalButtonForm model
         , paypalCutCalc model
 
         -- , p [ class "small" ] [ span [ class "bold" ] [ text "Note: " ], text "currently you're only able to donate to Flux Australia, but we'll have donations to individual branches soon." ]

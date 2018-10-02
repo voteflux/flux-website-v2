@@ -26,6 +26,9 @@ update msg model =
         SetJuri j ->
             ( { model | jurisdiction = j }, Cmd.none )
 
+        QLDCheckbox ->
+            ( { model | qldCheckbox = not model.qldCheckbox }, Cmd.none )
+
 
 randomCmd : Cmd Msg
 randomCmd =
