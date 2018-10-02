@@ -55,6 +55,16 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
   }, flux.handleError);
 
 
+  $http.get(flux_api('api/v1/anon_donation_log')).then(data => {
+    try {
+      // this might fail for some due to using ES6
+      flux.donationLog = processDonationGraphs(data);
+    } catch (err) {
+      console.log('Got error in donation graphs: ', err);
+    }
+  }, flux.handleError);
+
+
   // generate graphs from public stats
   $http.get(flux.api('public_stats')).then(function (data) {
     $log.log("Got public stats ---V ");
@@ -256,17 +266,6 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
       flux.averageMonthlyGrowth = (_.sum(rates) / rates.length).toString().slice(0, 4);
     };
     flux.calcMonthlyGrowth(tss);
-w
-
-    $http.get(flux_api('api/v1/anon_donation_log')).then(data => {
-      try {
-        // this might fail for some due to using ES6
-        flux.donationLog = processDonationGraphs(data);
-      } catch (err) {
-        console.log('Got error in donation graphs: ', err);
-      }
-    }, flux.handleError);
-
 
     $log.log('Init\'d charts');
   }, flux.handleError)
