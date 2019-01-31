@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+      - sudo apt update
+      - sudo apt install -y nodejs tree
+      - npm i
+      - bundle install --path ./.bundle-gems
+  build:
+    commands:
+      - npm run build
+      - aws s3 cp --recursive --acl public-read ./_site s3://flux-party-website/
+      - aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
+  post_build:
+    commands:
+      - tree -L 2 .
+cache:
+  paths:
+    - node_modules
+    - .bundle
+    - .bundle-gems
