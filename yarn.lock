@@ -2269,6 +2269,11 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
+date-fns@^1.30.1:
+  version "1.30.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
+  integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
+
 date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
@@ -2347,6 +2352,13 @@ define-properties@^1.1.2:
 defined@^1.0.0, defined@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/defined/-/defined-1.0.0.tgz#c98d9bcef75674188e110969151199e39b1fa693"
+
+dehumanize-date@^2.5.0:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/dehumanize-date/-/dehumanize-date-2.6.2.tgz#605291465f0f2bafbfc9ba9ff5845927b35075f4"
+  integrity sha512-Fxxt8zwKPTTMq7fLwXPK+QHWaiuTClNAPjCEJnlUolL00JPPus11QAs47l9iL6E3tNIeS9GiVcddqrBjM/z7kw==
+  dependencies:
+    is-leap-year "^0.1.0"
 
 del@^3.0.0:
   version "3.0.0"
@@ -4344,6 +4356,11 @@ is-glob@^3.1.0:
   dependencies:
     is-extglob "^2.1.0"
 
+is-leap-year@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/is-leap-year/-/is-leap-year-0.1.0.tgz#e3ee04508d878c3c68a5012361c5b806d1e0fbeb"
+  integrity sha1-4+4EUI2HjDxopQEjYcW4BtHg++s=
+
 is-my-json-valid@^2.12.4:
   version "2.16.1"
   resolved "https://registry.yarnpkg.com/is-my-json-valid/-/is-my-json-valid-2.16.1.tgz#5a846777e2c2620d1e69104e5d3a03b1f6088f11"
@@ -4981,7 +4998,7 @@ lodash@4.14.2:
   version "4.14.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.14.2.tgz#bbccce6373a400fbfd0a8c67ca42f6d1ef416432"
 
-lodash@^3.10.1, lodash@^3.9.3:
+lodash@^3.10.0, lodash@^3.10.1, lodash@^3.9.3:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
@@ -5318,6 +5335,14 @@ multipipe@^0.1.2:
   resolved "https://registry.yarnpkg.com/multipipe/-/multipipe-0.1.2.tgz#2a8f2ddf70eed564dff2d57f1e1a137d9f05078b"
   dependencies:
     duplexer2 "0.0.2"
+
+n-gramify@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/n-gramify/-/n-gramify-1.0.0.tgz#8114b4bbdaaf70a5043e32503ee560fda1b96e66"
+  integrity sha1-gRS0u9qvcKUEPjJQPuVg/aG5bmY=
+  dependencies:
+    lodash "^3.10.0"
+    split-words "^1.0.0"
 
 nan@^2.3.0, nan@^2.3.2, nan@~2.4.0:
   version "2.4.0"
@@ -5839,6 +5864,14 @@ parse-asn1@^5.0.0:
     create-hash "^1.1.0"
     evp_bytestokey "^1.0.0"
     pbkdf2 "^3.0.3"
+
+parse-dates@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/parse-dates/-/parse-dates-1.0.7.tgz#cf83c0839538adaccbf85805c5575a1ca543413a"
+  integrity sha512-dJ/puxnqg88wdPx87oOEqkZW4V7AXjZ874E29T5TqUWLvVEO3Fa2+G0G0fdTG7ExWIdzlrkzruifYWh5PkoiUA==
+  dependencies:
+    dehumanize-date "^2.5.0"
+    n-gramify "^1.0.0"
 
 parse-filepath@^1.0.1:
   version "1.0.1"
@@ -7306,6 +7339,13 @@ spdy@^3.4.1:
     select-hose "^2.0.0"
     spdy-transport "^2.0.18"
 
+split-words@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/split-words/-/split-words-1.0.2.tgz#bcffef7bfeda88729fec330759c5d1380f8fa9e9"
+  integrity sha1-vP/ve/7aiHKf7DMHWcXROA+Pqek=
+  dependencies:
+    string "^3.3.0"
+
 split2@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/split2/-/split2-0.2.1.tgz#02ddac9adc03ec0bb78c1282ec079ca6e85ae900"
@@ -7443,6 +7483,11 @@ string.prototype.trim@~1.1.2:
     define-properties "^1.1.2"
     es-abstract "^1.5.0"
     function-bind "^1.0.2"
+
+string@^3.3.0:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/string/-/string-3.3.3.tgz#5ea211cd92d228e184294990a6cc97b366a77cb0"
+  integrity sha1-XqIRzZLSKOGEKUmQpsyXs2anfLA=
 
 string_decoder@^0.10.25, string_decoder@~0.10.0, string_decoder@~0.10.x:
   version "0.10.31"

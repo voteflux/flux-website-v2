@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+const moment = require('moment')
 
 const startOfFYGen = () => {
   const now = new Date();
@@ -31,9 +32,10 @@ const pushCoordsCumulative = (d, data, filter = () => true) => {
 
 
 export const processDonationGraphs = function (data) {
+  const isValidDate = d => !isNaN(d.getTime())
   const donationLog = R.pipe(
-    R.reverse,
-    R.map((obj) => ({...obj, ts: new Date(obj.date || tsToDate(obj.ts)), amount: parseFloat(obj.amount)}))
+    R.map((obj) => ({...obj, ts: isValidDate(moment(obj.date).toDate()) ? moment(obj.date).toDate() : tsToDate(obj.ts), amount: parseFloat(obj.amount)})),
+    R.sort((o1, o2) => o1.ts.getTime() - o2.ts.getTime()),
   )(data.data.donations);
 
   console.log('Donation Log: ', donationLog);
