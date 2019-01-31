@@ -5,13 +5,11 @@ phases:
     commands:
       - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
       - export NVM_DIR="$HOME/.nvm"
-      - . $HOME/.nvm/nvm.sh
-      - nvm install 8
-      - npm i
+      - bash -c "source $HOME/.nvm/nvm.sh && nvm install 8 && npm i"
       - bundle install --path ./.bundle-gems
   build:
     commands:
-      - npm run build
+      - bash -c "npm run build"
       - aws s3 cp --recursive --acl public-read ./_site s3://flux-party-website/
       - aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
   post_build:
