@@ -3,9 +3,9 @@ version: 0.2
 phases:
   install:
     commands:
-      - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-      - sudo apt update
-      - sudo apt install -y nodejs tree
+      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+      - . ~/.nvm/nvm.sh
+      - nvm install 8
       - npm i
       - bundle install --path ./.bundle-gems
   build:
@@ -14,8 +14,7 @@ phases:
       - aws s3 cp --recursive --acl public-read ./_site s3://flux-party-website/
       - aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
   post_build:
-    commands:
-      - tree -L 2 .
+    commands: []
 cache:
   paths:
     - node_modules
