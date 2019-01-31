@@ -119,7 +119,7 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
     var timestamp_counter = {};
     var timestamp_counter_for_hours = {};
 
-    _.map(_.range(_n_days_ago, _now + 1000 * 60 * 60, 1000 * 60 * 60), function (ts) {
+    _.map(_.range(_n_days_ago, _now + 24 * 1000 * 60 * 60, 1000 * 60 * 60), function (ts) {
       let ts_date = new Date(ts);
       var y_m_d = toJSONLocal(ts_date);
       timestamp_counter[y_m_d] = 0;
@@ -154,7 +154,7 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
       xaxis: {title: 'Days Ago'}, yaxis: {title: '# Signups'}
     });
     Plotly.newPlot('memberSignupHoursAgo', plotDataSignupsHourly, {
-      'title': 'Members Signups last 7 days, hourly',
+      'title': `Members Signups last ${nDaysForHours} days, hourly`,
       xaxis: {title: 'Signup time'}, yaxis: {title: '# Signups'}
     });
 
