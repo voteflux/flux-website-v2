@@ -2,17 +2,26 @@
 
 ## Dependencies
 
+### Docker
+
+If you have docker installed just run `./dev-docker.sh` - that should get you developing straight away (well, minus the minutes required to build and install deps)
+
+### Manually
+
 We presume your environment is OSX.
 
 * Install `node`, `npm`, `ruby`, `yarn` first
  * macOS: `brew install ruby node npm yarn`
  * ubuntu: `sudo apt install ruby nodejs` (aside: does this include `npm`?)
  * Ubuntu: Note: you'll need to install yarn yourself
-* Install dependencies: `gem install bundle` then `bundle install` then `yarn install`
+ * Fedora: `redhat-rpm-config`
+* Install dependencies: `./dev-install-deps.sh` or if that doesn't work: `gem install bundle` then `bundle install` then `yarn install`
+
+Note: Node v11 doesn't seem to work building for some deps
 
 ## Development
 
-* To run a development copy for everything run `yarn flux`
+* To run a development copy for everything run `./dev-watch-all.sh` or `yarn flux`
 * To simulate a build run `yarn build`
 
 ## Deployment

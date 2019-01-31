@@ -33,7 +33,7 @@ const pushCoordsCumulative = (d, data, filter = () => true) => {
 export const processDonationGraphs = function (data) {
   const donationLog = R.pipe(
     R.reverse,
-    R.map((obj) => ({...obj, ts: tsToDate(obj.ts), amount: parseFloat(obj.amount)}))
+    R.map((obj) => ({...obj, ts: new Date(obj.date || tsToDate(obj.ts)), amount: parseFloat(obj.amount)}))
   )(data.data.donations);
 
   console.log('Donation Log: ', donationLog);
