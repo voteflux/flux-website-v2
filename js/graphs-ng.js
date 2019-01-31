@@ -123,7 +123,7 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
       let ts_date = new Date(ts);
       var y_m_d = toJSONLocal(ts_date);
       timestamp_counter[y_m_d] = 0;
-      if (ts > _7_days_ago)
+      if (ts > _7_days_ago && ts < _now + 1000 * 60 * 60)  // don't count older than 7 days or more recent than an hour
         timestamp_counter_for_hours[y_m_d + '-' + ts_date.getHours().toString()] = 0;
     });  // hourly increments set default.
 
