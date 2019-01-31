@@ -4,7 +4,8 @@ phases:
   install:
     commands:
       - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-      - . ~/.nvm/nvm.sh
+      - export NVM_DIR="$HOME/.nvm"
+      - source $NVM_DIR/nvm.sh
       - nvm install 8
       - npm i
       - bundle install --path ./.bundle-gems
