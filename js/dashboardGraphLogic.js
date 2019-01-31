@@ -124,7 +124,7 @@ export const processDonationGraphs = function (data) {
 
   Plotly.newPlot('donationGraphByStateFY', dataDonationsByStateFY, {
     title: "Donations by Branch (this FY)",
-    yaxis: {'rangemode': 'tozero', 'title': '$ AUD'},
+    yaxis: {'rangemode': 'tozero', 'title': '$ AUD (log)', type: 'log'},
     xaxis: {title: 'Date'}
   })
 
@@ -142,7 +142,7 @@ export const processDonationGraphs = function (data) {
 
   Plotly.newPlot('donationGraphByState', dataDonationsByStateAll, {
     title: "Donations by Branch (All)",
-    yaxis: {'rangemode': 'tozero', 'title': '$ AUD'},
+    yaxis: {'rangemode': 'tozero', 'title': '$ AUD (log)', type: 'log'},
     xaxis: {title: 'Date'}
   })
 
