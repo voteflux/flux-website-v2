@@ -66,3 +66,6 @@ plugins:
 - jekyll-angular
 redirects: true
 strict_front_matter: true
+
+exclude: ['_site', 'node_modules', '.git', '.bundle', '.bundle-gems', 'elm-stuff']
+
