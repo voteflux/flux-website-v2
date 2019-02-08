@@ -31,7 +31,7 @@ const flux_api = function(path, useDev){
   } else if (useLocalDev === true) {
     return 'http://localhost:5000/api/v0/' + path;
   } else if (useDev === true) {
-    return 'https://flux-api-dev.herokuapp.com/api/v0/' + path;
+    return 'https://dev.v1.api.flux.party/api/v0/' + path;
   } else if (useDev === false) {
     return prodServer + '/api/v0/' + path;
   }
