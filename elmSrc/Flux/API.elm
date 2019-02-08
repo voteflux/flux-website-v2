@@ -28,11 +28,11 @@ apiVToString v =
 
 
 apiProdUrl =
-    "https://api.voteflux.org"
+    "https://prod.v1.api.flux.party"
 
 
 apiDevUrl =
-    "https://localhost:3000"
+    "https://dev.v1.api.flux.party"
 
 
 createApiUrl v path =
