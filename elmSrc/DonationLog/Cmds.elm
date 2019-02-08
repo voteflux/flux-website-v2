@@ -14,7 +14,7 @@ getDonations : Cmd Msg
 getDonations =
     let
         url =
-            "https://api.voteflux.org/api/v1/anon_donation_log"
+            "https://prod.v1.api.flux.party/api/v1/anon_donation_log"
     in
     Http.get url donationsDecoder
         |> RemoteData.sendRequest
