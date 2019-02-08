@@ -10,7 +10,7 @@ phases:
   build:
     commands:
       - bash -c "source $HOME/.nvm/nvm.sh && npm run build"
-      - aws s3 cp --recursive --acl public-read ./_site s3://flux-party-website/
+      - aws s3 sync --delete --acl public-read ./_site s3://flux-party-website/
       - aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
   post_build:
     commands: []
