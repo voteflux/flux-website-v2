@@ -66,8 +66,8 @@ fluxAnnounce = (function() {
         link: $("#js-callout-link")
       }
       $.ajax({
-        // url: "http://flux-api-dev.herokuapp.com/api/v0/announcement",
-        url: "https://api.voteflux.org/api/v0/announcement",
+        // url: "http://dev.v1.api.flux.party/api/v0/announcement",
+        url: "https://prod.v1.api.flux.party/api/v0/announcement",
         type: 'GET',
         error: function() {
           console.log('error');
@@ -263,7 +263,7 @@ $(document).ready(function() {
   // get member and volenteer info ajax request
   var getMembers = function() {
     $.ajax({
-      url: "https://api.voteflux.org/api/v0/getinfo",
+      url: "https://prod.v1.api.flux.party/api/v0/getinfo",
       data: {
         format: 'json'
       },
