@@ -23,8 +23,8 @@ This means **they care about some things more than morality**, and thus **must**
 
 One of our recent improvements is **live donation logs**. These are available on our [donation page](/donate) and [dashboard](/dashboard).
 
-There is a caveat and point of improvement here: donations must be received via PayPal and we need complete information to send out the receipt (name, amount, address, etc).
-Donations made via bank transfer, cryptocurrency, or without complete information are shown once we collect this information and enter it into our database.
+There is a caveat and point of improvement here: donations must be received via PayPal and are only published immediately if we have all the information needed to send out the receipt (address is usually the missing part, if any).
+Donations made via bank transfer, cryptocurrency, or without complete information are shown once we collect this information and enter it into our database. *Aside to Electoral Commissions: please create an maintain an API so that we can send you live donation information too, which will help us comply with disclosure requirements.*
 
 When considering who to vote for, at the upcoming NSW elections and beyond, I request you ask yourself: "Is the morality of the Parties I vote for important? Is it important that they act with integrity and in line with their values? Are their values of the sort that would encourage transparency, discussion, error correction, and tolerance? Should I talk to my friends, colleagues, and family about these things? Should we, as a society, consider our moral values above all else? If we sometimes do things for other reasons, doesn't that mean we sometimes do things we do not think are moral? Do my representatives think and say these things? Do they act with an integrity reflecting good values? Do **I** act with the same integrity? How does my vote reflect that?"
 
