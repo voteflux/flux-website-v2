@@ -4,6 +4,8 @@ summary: We consider our transparency a reflection of our morality and values, a
 author: Max Kaye
 layout: about
 date: 2019-03-06 07:00
+redirects:
+  - /transparency/
 ---
 
 *(There is a note to journalists at the conclusion of this article.)*
