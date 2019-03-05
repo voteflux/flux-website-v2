@@ -6,10 +6,10 @@ layout: about
 date: 2019-03-06 08:00
 ---
 
-FOR IMMEDIATE RELEASE
-March 06, 2019
+**FOR IMMEDIATE RELEASE**<br>
+*March 06, 2019*
 
-Flux announces candidates to contest NSW election
+*Flux announces candidates to contest NSW election*<br>
 Social worker, software coder, and bio-hacker among candidates for Flux’s first NSW state election campaign
 
 ----------
