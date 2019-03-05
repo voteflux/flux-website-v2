@@ -4,7 +4,6 @@ summary: Flux announces candidates to contest NSW election
 author: Daithí Ó Gliasáin, Campaigns Lead Link
 layout: about
 date: 2019-03-06 08:00
-
 ---
 
 FOR IMMEDIATE RELEASE
@@ -39,23 +38,25 @@ It was developed by Max Kaye, party deputy leader and lead candidate for NSW Leg
 
 ----------
 
-Legislative Assembly Candidates
-Meow-Ludo Meow-Meow (Willoughby)
-Joanne Cotterill (Dubbo)
+### Legislative Assembly Candidates
+
+* Meow-Ludo Meow-Meow (Willoughby)
+* Joanne Cotterill (Dubbo)
  
-Legislative Council Candidates
-1 Max Kaye
-2 Ben Rushton
-3 Jason Gavriel
-4 Mansour Soltani
-5 Shane Greenup
-6 Kipling Crossing
-7 Ben Ballingall
-8 Jessica Payne
-9 Liam Jarvis
-10 Adam Ross-Hopkins
-11 Thomas Sesselmann
-12 Jesse Hanna
-13 Christopher May
-14 Jordan Dearing
-15 Adriano Guerrera
+### Legislative Council Candidates
+
+1. Max Kaye
+2. Ben Rushton
+3. Jason Gavriel
+4. Mansour Soltani
+5. Shane Greenup
+6. Kipling Crossing
+7. Ben Ballingall
+8. Jessica Payne
+9. Liam Jarvis
+10. Adam Ross-Hopkins
+11. Thomas Sesselmann
+12. Jesse Hanna
+13. Christopher May
+14. Jordan Dearing
+15. Adriano Guerrera
