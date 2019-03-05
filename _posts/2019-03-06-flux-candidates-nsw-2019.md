@@ -30,11 +30,15 @@ Joanne Cotterill, candidate for Dubbo, businesswoman and social worker, chose to
 
 The highly secure Flux app is based on blockchain technology, which resolves key existing issues associated with online voting including incorruptibility, privacy, digital secret ballot, and end-to-end transparency and verification.
 
-It was developed by Max Kaye, party deputy leader and lead candidate for NSW Legislative Council. “As a Flux representative it would be my absolute pleasure to do what no other MLC has done: listen to and be directed by the people and communities legislation affects. To reduce the delays and bureaucracy typical of our legislatures. To act with an integrity our party system does not afford the major parties. And ultimately to use every tool available improving the experience and outcomes of NSW Parliament for every voter. Giving up my personal preference on bills is a small cost for radically improving such an important institution, and unlike every MLC and MLA today, I am more than prepared to accept that,” said Kaye.
+It was developed by Max Kaye, party Deputy Leader and lead candidate for NSW Legislative Council. “As a Flux representative it would be my absolute pleasure to do what no other MLC has done: listen to and be directed by the people and communities legislation affects. To reduce the delays and bureaucracy typical of our legislatures. To act with an integrity our party system does not afford the major parties. And ultimately to use every tool available improving the experience and outcomes of NSW Parliament for every voter. Giving up my personal preference on bills is a small cost for radically improving such an important institution, and unlike every MLC and MLA today, I am more than prepared to accept that,” said Kaye.
 
 “Flux will operate via an app you can access right from your computer or smartphone.”
 
 “Together, in this election we have the opportunity to Flux The System -- bringing the power of parliament to the hands of the people, where it belongs,” concluded Kaye.
+
+----------
+
+Flux is the world's first Blockchain centric political party, the [**most transparent political party in Australia**](/transparency), and Australia's only party to have published a [philosophy white paper](/philosophy-whitepaper).
 
 ----------
 
