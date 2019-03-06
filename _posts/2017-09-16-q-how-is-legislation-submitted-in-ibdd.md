@@ -4,6 +4,8 @@ summary: Max answers how legislation is submitted in IBDD, how we avoid spam, an
 author: Max Kaye
 layout: about
 date: 2017-09-16 10:30
+redirects:
+  - /ibdd/legislation-submission
 ---
 
 As you might know, Flux uses a new system of democracy called Issue Based Direct Democracy (or IBDD). It's a new system that combines economics and politics to make an interesting, new method of *collective decision making*. It's not just a voting system since it needs many different people and issues to work effectively. It's also not super simple to understand fully, but this post should give you a bit of an idea and you'll have a good overview by the end.
