@@ -1,1 +1,1 @@
-yarn flux
+yarn flux || npm run flux

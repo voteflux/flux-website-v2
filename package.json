@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "elm-mk-do-not-use": "elm-make elmSrc/DonationWidget/Main.elm --output js/elm/donationWidget.js",
+    "jekyll": "bundle exec jekyll build --config _config.yml",
     "dev": "bundle exec jekyll 'clean' && BUILD_DEV=true parallelshell 'bundle exec jekyll build --watch --config _config.yml' 'webpack -w' 'webpack-dev-server --open'",
     "flux": "npm run dev",
     "flux-no-react-deprecated": "bundle exec jekyll serve --watch --config _config.yml",
