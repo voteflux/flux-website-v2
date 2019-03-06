@@ -7,7 +7,7 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <meta property="og:image" content="https://voteflux.org/img/share_tile.jpg">
-  <meta property="og:title" content="Flux | Upgrade Democracy">
+  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}Flux | Upgrade Democracy{% endif %}">
   <meta property="og:url" content="https://voteflux.org/">
   <meta property="og:description" content="Flux is a new political party designed to connect Australians directly to Parliament and change politics forever!">
   <meta name="description" content="Flux is a new political party designed to connect Australians directly to Parliament and change politics forever!">
