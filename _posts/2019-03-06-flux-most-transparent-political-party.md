@@ -30,7 +30,7 @@ Donations made via bank transfer, cryptocurrency, or without complete informatio
 
 When considering who to vote for, at the upcoming NSW elections and beyond, I request you ask yourself: "Is the morality of the Parties I vote for important? Is it important that they act with integrity and in line with their values? Are their values of the sort that would encourage transparency, discussion, error correction, and tolerance? Should I talk to my friends, colleagues, and family about these things? Should we, as a society, consider our moral values above all else? If we sometimes do things for other reasons, doesn't that mean we sometimes do things we do not think are moral? Do my representatives think and say these things? Do they act with an integrity reflecting good values? Do **I** act with the same integrity? How does my vote reflect that?"
 
-These are important questions, and if you democracy can be better, aren't these important steps towards that progress?
+These are important questions, and if you think democracy can be better, aren't these important steps towards that progress?
 
 -------------
 
