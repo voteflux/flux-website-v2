@@ -61,6 +61,11 @@ exclude:
   - .git
   - _site
   - '*.sh'
+  - 'Gemfile*'
+  - elm-package.json
+  - package-lock.json
+  - yarn.lock
+  - tsconfig.json
 include:
   - _record_login_param.html
   - _redirects
