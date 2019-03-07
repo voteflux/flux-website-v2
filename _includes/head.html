@@ -1,25 +1,18 @@
+{% capture local_description %}{% if page.summary %}{{ page.summary }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto+Slab:400,300|Roboto:300,400,700,900" rel="stylesheet" type="text/css">
   <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{{ local_description }}">
 
   <meta property="og:image" content="https://voteflux.org/img/share_tile.jpg">
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}Flux | Upgrade Democracy{% endif %}">
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
-  {% if page.title %}
-    <meta property="og:type" content="article">
-  {% else %}
-    <meta property="og:type" content="website">
-  {% endif %}
-  
-  {% if page.url %}
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  {% endif %}
+  <meta property="og:description" content="{{ local_description }}">
+  <meta name="description" content="{{ local_description }}">
+  <meta property="og:type" content="{% if page.title %}article{% else %}website{% endif %}">
+  {% if page.url %}<meta property="og:url" content="{{ site.url }}{{ page.url }}">{% endif %}
   
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">

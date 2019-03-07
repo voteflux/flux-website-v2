@@ -25,10 +25,7 @@ collections:
     title: WA Candidates
     output: true
 email: website@voteflux.org
-description: 'Flux is a new political party designed to connect Australians directly
-  to Parliament and change politics forever!
-
-'
+description: 'Flux is a new political party designed to connect Australians directly to Parliament and change politics forever!'
 baseurl:
 url: https://voteflux.org
 icon_path: img/social-icons/
@@ -49,16 +46,21 @@ markdown: kramdown
 permalink: pretty
 incremental: true
 exclude:
-- node_modules
-- README.md
-- package.json
-- gulpfile.js
-- react-signup
-- to-do
-- signup.html
-- npm-debug.log
-- elm-stuff
-- elmSrc
+  - README.md
+  - package.json
+  - gulpfile.js
+  - node_modules
+  - react-signup
+  - to-do
+  - signup.html
+  - npm-debug.log
+  - elm-stuff
+  - elmSrc
+  - .bundle-gems
+  - .bundle
+  - .git
+  - _site
+  - '*.sh'
 include:
   - _record_login_param.html
   - _redirects
@@ -67,5 +69,4 @@ plugins:
 redirects: true
 strict_front_matter: true
 
-exclude: ['_site', 'node_modules', '.git', '.bundle', '.bundle-gems', 'elm-stuff']
 
