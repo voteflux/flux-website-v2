@@ -8,7 +8,7 @@
   <meta name="description" content="{{ local_description }}">
 
   <meta property="og:image" content="https://voteflux.org/img/share_tile.jpg">
-  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}Flux | Upgrade Democracy{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{{ local_description }}">
   <meta name="description" content="{{ local_description }}">
   <meta property="og:type" content="{% if page.title %}article{% else %}website{% endif %}">
