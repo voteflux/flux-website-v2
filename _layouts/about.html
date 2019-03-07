@@ -30,7 +30,8 @@ header-theme: light
         </div>
 
         <div class="break-word">
-          {{ content }}
+          <!--{{ content }}-->
+          {% include anchor_headings.html html=content beforeHeading=true %}
         </div>
         <div class="mb4">
           {% include components/inline-signup.html %}
