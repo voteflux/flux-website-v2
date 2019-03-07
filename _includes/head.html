@@ -8,10 +8,19 @@
 
   <meta property="og:image" content="https://voteflux.org/img/share_tile.jpg">
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}Flux | Upgrade Democracy{% endif %}">
-  <meta property="og:url" content="https://voteflux.org/">
-  <meta property="og:description" content="Flux is a new political party designed to connect Australians directly to Parliament and change politics forever!">
-  <meta name="description" content="Flux is a new political party designed to connect Australians directly to Parliament and change politics forever!">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+  {% if page.title %}
+    <meta property="og:type" content="article">
+  {% else %}
+    <meta property="og:type" content="website">
+  {% endif %}
+  
+  {% if page.url %}
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {% endif %}
+  
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
