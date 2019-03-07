@@ -8,7 +8,7 @@ redirects:
   - /flux-htvs-nsw-federal-2019
 ---
 
-### Background; Why We're Running This Experiment
+## Background; Why We're Running This Experiment
 
 Two things we value highly are transparency and neutrality. 
 Unfortunately, the nature of elections in Australia don't make these values easier to live by.
@@ -30,22 +30,22 @@ That means interest groups (be they other parties, community groups, clubs, prof
 Once operational, that practically means other parties can use Flux to suggest legislation exactly like individual voters can.
 In light of that, we think we have a way to handle our HTVs that is fair, open, and transparent.
 
-### HTV Details
+## HTV Details
 
 Our HTV cards will be separated into two categories, with a subcategory in each for minor and major parties. 
 (Minor parties being those which commonly don't receive 4% of first-preferences. This threshold is commonly used by electoral commissions to determine eligibility for public funding; if you don't get 4% of the vote, you lose your deposit and get nothing back.)
-The two primary categories will be "Parties which cooperate" and "Parties which refused to cooperate".
+**The two primary categories will be "Parties which cooperate" and "Parties which refused to cooperate".**
 
 With the exception of parties that have been dishonest to us in the past - there's only one, currently - our offer is open to all parties, parliamentary or not.
 
-To qualify for the "cooperative" category, all another party needs to do is put us in the top half of *all* other parties on their HTV card.
+**To qualify for the "cooperative" category, all another party needs to do is put us in the top half of *all* other parties on their HTV card.**
 As the voting system in NSW does not require voters to fill out more than 6 boxes (in the upper house), practically this will mean being on the counterparty's (*haha*) HTV card *at all*.
-(For example, if a party is only including 5 groups on their HTV card, but there are 20 groups, it would mean being included somewhere in that list.)
+(For example, if a party is only including 5 other groups (after themselves) on their HTV card, but there are 20 groups, it would mean being included somewhere in that list, or being added at the end.)
 In the case the other party is doing something similar to us, the condition is simply "like for like"; a mutually favourable position.
 
 In return, Flux will put that party in the "cooperative" category.
 
-Additionally, if we are elected in that election, we will present one bill (of the party's choosing) before the respective legislature.
+**Additionally, for cooperative parties, if we are elected in that election, we will present one bill (of the party's choosing) before the respective legislature.**
 This *does* mean there will be a way for a Flux representative to suggest legislation that does not go through IBDD, but it will only ever be a one-off, and only in the case we're elected.
 
 The HVT cards themselves will be structured as follows, with each category being ordered randomly:
@@ -69,7 +69,7 @@ The instructions to voters will be straight forward:
 
 In the case of the NSW upper house ballot, the criterion for validity is filling out the numbers 1-6, though more than 6 is fine, too.
 
-### Conclusion
+## Conclusion
 
 As a final point, this plan is an experiment. We don't know how it will go, or if it will be effective.
 If we don't try new things, however, then we won't be able to make progress. 
