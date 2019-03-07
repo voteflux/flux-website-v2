@@ -99,7 +99,7 @@ social-media:
             <span class="gray h3 block caps mt1 letter-spacing-1">Membership is free for life</span>
           </div>
           <div class="lg-col-6 md-col-12 light silver align-top md-mt0 mt3 md-pl2">
-            <h2 class="mt0 pt0">Most recent post:</h2>
+            <h2 class="mt0 pt0">Most recent post: <a href="#announcements">(see all)</a></h2>
             {% for post in site.posts limit:1 %}<a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small><br>
               {% if post.summary %}
                 {{post.summary}}
@@ -250,7 +250,7 @@ social-media:
 
 
   <!-- Posts -->
-  <section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
+  <section id="announcements" class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
     <div class="max-width-4 mx-auto relative z2sm-pr4">
       <div class="lg-flex mxn2">
         <div class="lg-col-12 px2">
