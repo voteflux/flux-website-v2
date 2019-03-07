@@ -3,6 +3,7 @@ elm-stuff
 node_modules
 elm_stuff
 _site/*
+_site*
 .sass-cache
 .jekyll-metadata
 npm-debug.log
