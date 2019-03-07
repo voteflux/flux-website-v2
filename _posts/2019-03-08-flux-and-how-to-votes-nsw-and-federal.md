@@ -3,7 +3,7 @@ title: Flux and How-To-Votes (Preferences) for the NSW and Federal Elections
 summary: Flux is in a unique position regarding how-to-votes. This is our newest experiment in handling these negotiations.
 author: Max Kaye
 layout: about
-date: 2019-03-07 16:00
+date: 2019-03-08 08:30
 redirects:
   - /flux-htvs-nsw-federal-2019
 ---
