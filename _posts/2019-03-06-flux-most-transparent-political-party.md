@@ -20,7 +20,7 @@ Building on that, we publish [continuous and up to date metrics and graphs on ou
 We also have raw numbers available via our API at [https://prod.v1.api.flux.party/api/v0/getinfo](https://prod.v1.api.flux.party/api/v0/getinfo) and [https://prod.v1.api.flux.party/api/v0/public_stats](https://prod.v1.api.flux.party/api/v0/public_stats).
 
 We do these things because **our morality compels us**; we cannot be satisfied with ourselves if we were to hide these numbers.
-It is a shame such values **are not taken as serious or important** by the other parties in Australia.
+It is a *shame* such values **are not taken as serious or important** by the major parties in Australia.
 This means **they care about some things more than morality**, and thus **must** *sometimes do things they believe are not moral*.
 
 One of our recent improvements is **live donation logs**. These are available on our [donation page](/donate) and [dashboard](/dashboard).
