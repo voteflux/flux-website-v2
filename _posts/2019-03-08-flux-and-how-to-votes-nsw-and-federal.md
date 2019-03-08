@@ -45,6 +45,8 @@ In the case the other party is doing something similar to us, the condition is s
 
 In return, Flux will put that party in the "cooperative" category.
 
+**Note:** alternatively, if a party does not issue HTVs and they let us know, they'll be placed at the *end* of the list of cooperative minor parties with an footnote mentioning this fact.
+
 **Additionally, for cooperative parties, if we are elected in that election, we will present one bill (of the party's choosing) before the respective legislature.**
 This *does* mean there will be a way for a Flux representative to suggest legislation that does not go through IBDD, but it will only ever be a one-off, and only in the case we're elected.
 
