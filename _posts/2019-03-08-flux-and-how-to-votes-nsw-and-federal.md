@@ -68,9 +68,7 @@ The instructions to voters will be straight forward:
 * If the ballot is not valid yet (i.e. you need to fill in some more boxes):
   * Preference parties you like from the uncooperative minors in any order you choose
   * Preference parties you like from the uncooperative majors in any order you choose 
-* Continue to fill out the ballot however you like until it is valid, and then cast your vote
-
-In the case of the NSW upper house ballot, the criterion for validity is filling out the numbers 1-6, though more than 6 is fine, too.
+* While the ballot is still not valid, continue to fill it out however you like, and then cast your vote
 
 **Deadline for telling Flux if we'll be on your HTV: 12th of March**
 
