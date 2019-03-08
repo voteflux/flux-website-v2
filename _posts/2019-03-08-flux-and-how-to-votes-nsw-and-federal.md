@@ -4,8 +4,9 @@ summary: Flux is in a unique position regarding how-to-votes. This is our newest
 author: Max Kaye
 layout: about
 date: 2019-03-08 08:30
+permalink: /flux-htvs-nsw-federal-2019/
 redirects:
-  - /flux-htvs-nsw-federal-2019
+  - /2019/03/08/flux-and-how-to-votes-nsw-and-federal/
 ---
 
 ## Background; Why We're Running This Experiment
