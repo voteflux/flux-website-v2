@@ -40,8 +40,8 @@ Our HTV cards will be separated into two categories, with a subcategory in each 
 With the exception of parties that have been dishonest to us in the past - there's only one, currently - our offer is open to all parties, parliamentary or not.
 
 **To qualify for the "cooperative" category, all another party needs to do is put us in the top half of *all* other parties on their HTV card.**
-As the voting system in NSW does not require voters to fill out more than 6 boxes (in the upper house), practically this will mean being on the counterparty's (*haha*) HTV card *at all*.
-(For example, if a party is only including 5 other groups (after themselves) on their HTV card, but there are 20 groups, it would mean being included somewhere in that list, or being added at the end.)
+As the voting system in NSW does not require voters to fill out more than 1 box (in the upper house), practically this will often mean being on the counterparty's (*haha*) HTV card *at all*.
+(For example, if a party is including 5 other groups (after themselves) on their HTV card, but there are 20 groups, it would mean being included somewhere in that list, or being added at the end.)
 In the case the other party is doing something similar to us, the condition is simply "like for like"; a mutually favourable position.
 
 In return, Flux will put that party in the "cooperative" category.
@@ -71,6 +71,8 @@ The instructions to voters will be straight forward:
 * Continue to fill out the ballot however you like until it is valid, and then cast your vote
 
 In the case of the NSW upper house ballot, the criterion for validity is filling out the numbers 1-6, though more than 6 is fine, too.
+
+**Deadline for telling Flux if we'll be on your HTV: 12th of March**
 
 ## Conclusion
 
