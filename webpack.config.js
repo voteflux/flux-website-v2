@@ -10,7 +10,7 @@ const devMode = process.env.NODE_ENV === "development"
 
 const extractSass = new ExtractTextPlugin({
   filename: "../css/[name].bundle.css",
-  disable: devMode
+  disable: false
 });
 
 // plugins
