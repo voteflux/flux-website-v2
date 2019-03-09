@@ -192,7 +192,7 @@ a {
 ::-moz-selection { background: $accent-light; color: $black }
 ::selection { background: $accent-light; color:$black }
 
-@media #{$breakpoint-xs} {
+//@media #{$breakpoint-xs} {
   .xs-menu-join-button-contianer {
     position: fixed;
     z-index: $z2;
@@ -207,7 +207,7 @@ a {
     padding: $space-2;
     font-size: $h3;
   }
-}
+//}
 
 .rotate-left { transform: rotate(-2deg); }
 .rotate-right { transform: rotate(3deg); }

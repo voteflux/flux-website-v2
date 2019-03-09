@@ -43,6 +43,8 @@ $space-1: .5rem !default;
 $space-2: 1rem !default;
 $space-3: 2rem !default;
 $space-4: 4rem !default;
+$space-4-5: $space-4 * 1.41 !default;
+$space-5: $space-4 * 2 !default;
 
 // position
 $z1: 1 !default;

@@ -70,6 +70,34 @@
 
 .my4 { margin-top:    $space-4; margin-bottom: $space-4 }
 
+.m4-5  { margin:        $space-4-5 }
+
+.mt4-5 { margin-top:    $space-4-5 }
+
+.mr4-5 { margin-right:  $space-4-5 }
+
+.mb4-5 { margin-bottom: $space-4-5 }
+
+.ml4-5 { margin-left:   $space-4-5 }
+
+.mx4-5 { margin-left:   $space-4-5; margin-right:  $space-4-5 }
+
+.my4-5 { margin-top:    $space-4-5; margin-bottom: $space-4-5 }
+
+.m5  { margin:        $space-5 }
+
+.mt5 { margin-top:    $space-5 }
+
+.mr5 { margin-right:  $space-5 }
+
+.mb5 { margin-bottom: $space-5 }
+
+.ml5 { margin-left:   $space-5 }
+
+.mx5 { margin-left:   $space-5; margin-right:  $space-5 }
+
+.my5 { margin-top:    $space-5; margin-bottom: $space-5 }
+
 .mxn1 { margin-left: -$space-1; margin-right: -$space-1; }
 
 .mxn2 { margin-left: -$space-2; margin-right: -$space-2; }
@@ -78,7 +106,7 @@
 
 .mxn4 { margin-left: -$space-4; margin-right: -$space-4; }
 
-.mt5 { margin-top: ($space-4 * 2)}
+.mxn5 { margin-left: -$space-5; margin-right: -$space-5; }
 
 .ml-auto { margin-left: auto }
 
