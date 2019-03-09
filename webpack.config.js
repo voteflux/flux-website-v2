@@ -4,9 +4,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+
+const devMode = process.env.NODE_ENV === "development"
+
+
 const extractSass = new ExtractTextPlugin({
   filename: "../css/[name].bundle.css",
-  disable: process.env.NODE_ENV === "development"
+  disable: devMode
 });
 
 // plugins
@@ -45,10 +49,12 @@ module.exports = {
   devServer: {
     publicPath: '_site',
     contentBase: path.join(__dirname, "_site"),
+    watchContentBase: true,
     compress: true,
-    port: 9000,
+    port: 9999,
     inline: true,
     hot: true,
+    host: '127.0.0.1',
   },
   entry: {
     reactSignup: ['./react-signup/app/index.js'],
@@ -91,7 +97,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: [{
+          use: [
+          {
             loader: "css-loader",
             options: { url: false }
           }, {

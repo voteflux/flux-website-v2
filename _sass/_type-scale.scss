@@ -1,21 +1,20 @@
+
+$breakpoint-sm: '(min-width: 40em)' !default;
+$breakpoint-md: '(min-width: 52em)' !default;
+$breakpoint-lg: '(min-width: 64em)' !default;
+
+
+
 /* Basscss Type Scale */
 
 .h00 {font-size: $h0 }
-
 .h0 { font-size: $h1 }
-
 .h1 { font-size: $h1 }
-
 .h2 { font-size: $h2 }
-
 .h3 { font-size: $h3 }
-
 .h4 { font-size: $h4 }
-
 .h5 { font-size: $h5 }
-
 .h6 { font-size: $h6 }
-
 
 
 // responsive type
@@ -26,5 +25,38 @@
   .sm-h1 { font-size: $h1 }
   .sm-h2 { font-size: $h2 }
   .sm-h3 { font-size: $h3; }
+  .sm-h4 { font-size: $h4; }
+  .sm-h5 { font-size: $h5; }
+  .sm-h6 { font-size: $h6; }
+
+}
+
+
+// responsive type
+@media #{$breakpoint-md} {
+
+  .h00 {font-size: $h00}
+  .h0 { font-size: $h0 }
+  .md-h1 { font-size: $h1 }
+  .md-h2 { font-size: $h2 }
+  .md-h3 { font-size: $h3; }
+  .md-h4 { font-size: $h4; }
+  .md-h5 { font-size: $h5; }
+  .md-h6 { font-size: $h6; }
+
+}
+
+
+// responsive type
+@media #{$breakpoint-lg} {
+
+  .h00 {font-size: $h00}
+  .h0 { font-size: $h0 }
+  .lg-h1 { font-size: $h1 }
+  .lg-h2 { font-size: $h2 }
+  .lg-h3 { font-size: $h3; }
+  .lg-h4 { font-size: $h4; }
+  .lg-h5 { font-size: $h5; }
+  .lg-h6 { font-size: $h6; }
 
 }
