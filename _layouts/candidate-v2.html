@@ -9,7 +9,7 @@ dark-theme: true
   <div class="bg-near-black height-40vh absolute z1 left-0 top-0 col-12 texture-bg-img">
   </div>
   <div class="mx-auto max-width-3 px2 py3 sm-px4 sm-py4 bg-white relative mt5 z2">
-    <h5 class="h4"><span class="gray">{{page.state}}</span> / <span class="bold">{{page.house}}</span></h5>
+    <h5 class="h4"><span class="gray">{{page.region}}</span> / <span class="bold">{{page.house}}</span></h5>
     {% include components/main-heading.html
       text=page.title
       font-size="h0 line-height-2"
@@ -18,7 +18,7 @@ dark-theme: true
 
       <div class="flex flex-wrap mb3">
         <div class="square-1 overflow-hidden circle overflow-hidden bg-gray mb2 bg-black mr3"
-             style="background: url({{base}}/img/candidates/small/{{page.title | slugify }}.jpg) no-repeat top center; background-size: cover" >
+             style="background: url({{base}}/img/{{page.image}}) no-repeat top center; background-size: cover" >
         </div>
         <div class="flex-auto self-center">
           <hr class="border-bottom light-gray">
