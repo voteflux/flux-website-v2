@@ -9,10 +9,10 @@ collections:
     title: Candidates
     output: true
     permalink: "/candidates/:path/"
-  candidates-nsw:
-    title: NSW Candidates
+  candidates-nsw-2019:
+    title: NSW Candidates 2019
     output: true
-    permalink: "/nsw/candidates/:path/"
+    permalink: "/nsw/candidates/2019/:path/"
   posts:
     title: Posts
     output: true
