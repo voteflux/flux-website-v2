@@ -12,7 +12,7 @@ collections:
   candidates-nsw-2019:
     title: NSW Candidates 2019
     output: true
-    permalink: "/nsw/candidates/2019/:path/"
+    permalink: "/nsw/candidates/2019/:name/"
   posts:
     title: Posts
     output: true
@@ -28,6 +28,12 @@ collections:
   wa-candidates:
     title: WA Candidates
     output: true
+defaults:
+  - scope:
+      path: ""
+      type: "candidates-nsw-2019"
+    values:
+      layout: "candidate-v2"
 email: website@voteflux.org
 description: 'Flux is a new political party designed to connect Australians directly to Parliament and change politics forever!'
 baseurl:
