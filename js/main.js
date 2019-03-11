@@ -317,7 +317,7 @@ $(document).ready(function() {
   function getNswDonations() {
     console.log('getNswDonations')
     $.getJSON({
-      url: "https://cors.io/?https://fundrazr.com/api/campaigns/71SFQa", success: data => {
+      url: "https://prod.v1.api.flux.party/api/v1/fundrazr/fluxpartynsw", success: data => {
         let amtStr = data.campaign.statistics.donationSum;
         let amt = parseFloat(amtStr)
         let nextTarget = nextPowerOf10(amt * 2) / 2
