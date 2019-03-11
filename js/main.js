@@ -386,6 +386,9 @@ $(document).ready(function() {
   var fadeUntil = 150;
   var $fading = $('#js-fading');
   var $document = $(document);
+
+  var $donationBar = $('#donation-bar-section');
+
   var faded = false;
   // var contactHeight = $('#contact').outerHeight()
   // var contactPos = $('#contact').offset().top
@@ -411,7 +414,12 @@ $(document).ready(function() {
       $('.js-flux-text-darktheme').css({ fill: "#fff" });
       $("#js-nav-links").addClass('white');
     }
-    $fading.css('opacity',opacity);
+    $fading.css('opacity', opacity);
+
+    if ($donationBar) {
+      var donationOffset = Math.min(0, offset - $donationBar.height() - 200);
+      $donationBar.css({bottom: donationOffset});
+    }
   }
 
   $(window).bind('scroll', onScrollUpdateMenu);
