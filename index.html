@@ -142,17 +142,36 @@ social-media:
 <!--</section>-->
 
 
-<section class="bg-white py4 px2 md-px3">
-  <div class="max-width-4 mx-auto dark-gray">
-    <div class="md-flex mb3">
-      <div class="md-col-12">
-        <h1 class="h0 bold mb3 line-height-2">
-          <a href="{{ basePath }}/nsw/candidates/2019/">See NSW Candidates</a>
-        </h1>
+<!-- CANDIDATES -->
+{% if site.candidates-nsw-2019 %}
+<section class="bg-near-white dark-gray pt4 pb3 sm-pr4 col-12 overflow-hidden">
+  <div class="max-width-4 mx-auto px2 sm-px3">
+    {% include components/main-heading.html
+      text="Meet the lead candidates for NSW"
+      font-size="h0 line-height-2"
+      font-weight="bold" %}
+    {% include components/hr-muted.html classes="mb3"%}
+      <div class="mb3 mxn2">
+        <div id="js-candidates">
+          {% assign candidates =  site.candidates-nsw-2019 |  where: "lead", true %}
+          {% for candidate in candidates %}
+            {% capture snippet %} {{ candidate.bio | first | truncatewords: 50 }} {% endcapture %}
+            {% include candidates/candidate-card-state.html
+               region=candidate.region
+               house=candidate.house
+               url=candidate.url
+               title=candidate.title
+               image=candidate.image
+               bio=snippet %}
+          {% endfor %}
+        </div>
       </div>
-    </div>
+      <div class="right-align mt2">
+        <a href="{{site.baseurl}}/nsw/candidates/2019" class="h3 border-bottom">See all candidates</a>
+      </div>
   </div>
 </section>
+{% endif %}
 
 
 
