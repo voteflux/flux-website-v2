@@ -314,18 +314,25 @@ $(document).ready(function() {
     return Math.pow(10, Math.ceil(Math.log10(n)))
   }
 
+  function next5kIncrement(n) {
+    return Math.ceil(n/5000)*5000;
+  }
+
+  function setDonationProgressBar(currAmountStr) {
+    let amt = parseFloat(currAmountStr);
+    let nextTarget = next5kIncrement(amt);
+    let pct = Math.round(amt / nextTarget * 100);
+    let msg = "$" + currAmountStr + " of $" + nextTarget + ".00";
+    $("#donation-progress-inner")[0].style['width'] = pct.toString() + "%";
+    $("#donation-status-text").text(msg)
+  }
+
   function getNswDonations() {
     console.log('getNswDonations')
     $.getJSON({
       url: "https://prod.v1.api.flux.party/api/v1/fundrazr/fluxpartynsw", success: data => {
         let amtStr = data.campaign.statistics.donationSum;
-        let amt = parseFloat(amtStr)
-        let nextTarget = nextPowerOf10(amt * 2) / 2
-        let pct = Math.round(amt / nextTarget * 100)
-        let msg = "$" + amtStr + " of $" + nextTarget + ".00"
-        console.log(msg, data)
-        $("#donation-progress-inner")[0].style['width'] = pct.toString() + "%"
-        $("#donation-status-text").text(msg)
+        setDonationProgressBar(amtStr)
       }
     })
   }
