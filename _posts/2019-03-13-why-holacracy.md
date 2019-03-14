@@ -8,20 +8,18 @@ date: 2019-03-14 08:30
 
 Flux is a volunteer-lead, resource-constrained, distributed organisation. These characteristics require that we think and operate in ways which might not fit standard expectations about how organisations are run. Classic organisational models often struggle to deal with cases that do not fit the standard centralised company model (where people are together in the same location for extended times every day), and Flux was experiencing those types of issues. To progress and move the organisation forward, we recognised that we should consider some non-conventional models and assess if that might address our issues. Holacracy is the starting point on that journey.
 
-When I came in to the Flux National Steering Committee/SteerCo (all the way back in early 2018) there were a few common complaints throughout the organisation. These complaints are pretty common to volunteer orgs and startups (with one very particular to Flux), and the common themes were: 
+When I came in to the Flux National SteerCo (Steering Committee), all the way back in early 2018, there were a few common complaints throughout the organisation. These complaints are pretty common to volunteer orgs and startups (with one very particular to Flux), and the common themes were: 
 
 * __Decision-making bottlenecks:__ over-reliance on ‘leaders’ to make a decision that could feasibly be made by the person doing the work
 * __Role Confusion:__ people coming into the organisation and unsure about how they fit in or what works needs doing 
 * __Duplication of Work:__ projects frequently being started or even been taken to completion when the work has already been done elsewhere 
-* __Lack of a self-management philosophy:__ confusion regarding how we get work done in a way that allows us to organise around issues in a way that is broadly compatible with our philosophical alignment with IBDD
+* __Lack of a self-management philosophy:__ confusion regarding how we get work done in a way that allows us to organise around issues in a way that is broadly compatible with our philosophical alignment with IBDD (Issue Based Direct Democracy)
 
-This led to a series of questions that myself and another SteerCo member embarked on, specifically;
+This led to a series of questions that myself and another SteerCo member embarked on, specifically:
 
-“What is the best way to organise a decentralised movement?” 
-
-“How can we give clarity, direction and purpose to incoming members as a volunteer organisation?” 
-
-“How can we provide the transparency and accountability needed to pull off a feat like making IBDD a reality?” 
+- “What is the best way to organise a decentralised movement?”
+- “How can we give clarity, direction and purpose to incoming members as a volunteer organisation?” 
+- “How can we provide the transparency and accountability needed to pull off a feat like making IBDD a reality?” 
 
 We investigated various self-management systems and decision-making frameworks, and finally settled on Holacracy as the best way of organising (for now). While other options seemed workable (Sociocracy, Sociocracy 3.0, Loomio etc), Holacracy had a [proven track record with helping ambitious organisations navigate complex environments](http://structureprocess.com/holacracy-cases/). It also had a way of [measuring progress](https://blog.thoughtfulorg.com/holacracy-crafting-good-metrics-for-your-circle-4893a8e3554c) and [firm accountability mechanisms](https://blog.holacracy.org/differentiating-role-and-soul-fe8cf5d53cc1) to help us get clarity and accountability as to how the hell we go about replacing the current method of political organisation. 
 
