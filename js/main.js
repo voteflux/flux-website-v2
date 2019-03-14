@@ -172,7 +172,7 @@ $(document).ready(function() {
       dots: true,
       responsive: [
         {
-          breakpoint: 2000,
+          breakpoint: 5000,
           settings: {
             autoplay: true,
             autoplaySpeed: 4000,
@@ -182,7 +182,7 @@ $(document).ready(function() {
           }
         },
         {
-          breakpoint: 1024,
+          breakpoint: 1250,
           settings: {
             autoplay: true,
             autoplaySpeed: 4000,
@@ -198,7 +198,7 @@ $(document).ready(function() {
             autoplaySpeed: 4000,
             speed: 1000,
             slidesToShow: 1,
-            slidesToScroll: 2
+            slidesToScroll: 1
           }
         },
         {
