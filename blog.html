@@ -9,7 +9,7 @@ dark-theme: true
 <div class="bg-near-black texture-bg-img height-30vh py4">
 	<div class="max-width-4 mx-auto px2 sm-px3 pt5">
 	  {% include components/main-heading.html
-	    text="Lorem ipsum dolor sit amet"
+	    text="Announcements"
 	    font-size="h0"
 	    font-weight="bold"
 	    line="true"
@@ -17,32 +17,33 @@ dark-theme: true
 	</div>
 </div>
 
-
-
-	<!--<ul>
-		{% for post in site.posts %}
-			<li>
-				<a">{{ post.title }}</a>
-			</li>
-		{% endfor %}
-	</ul>-->
+<div class="bg-alternating flex flex-wrap">	
 	{% for post in site.posts %}
-		<article class="py4 bg-black light-gray inline-block col-6 left">
+		<article class="py4 bg-black light-gray inline-block lg-col-6 col-12">
 			<a href="{{ post.url }}" class="max-width-4 mx-auto px2 md-px3">
-				<div class="lg-flex mxn2">
+				<div class="flex mxn2">
 					<div class="lg-col-12 px2 lg-px3 ">
-						<h2 class="mb0 h0 line-height-2 bold  white line-height-2">{{ post.title }}</h2>
-						<p class="h-font h3 sm-h2 light silver mb3">Excerpt here</p>
+						<p class="h-font h3 sm-h2 light silver">
+							<small>{{ post.date | date: "%Y-%m-%d" }}</small>
+						</p>
+						<h2 class="mb0 h1 line-height-2 bold  white line-height-2">{{ post.title }}</h2>
+						<div class="h-font h3 sm-h2 light silver mb3">
+							<p>
+								{% if post.summary %}
+			                      {{post.summary}}
+			                    {% else %}
+			                      {{post.excerpt}}
+			                    {% endif %}
+							</p>
+						</div>
 					</div>
-
-					<div class="lg-col-8 px2 lg-px3">
-
+					<div class="col-8 px2 lg-px3">
 					</div>
 				</div>
 			</a>
 		</article>
 	{% endfor %}
-
+</div>
 
 {% include footer.html %}
 
