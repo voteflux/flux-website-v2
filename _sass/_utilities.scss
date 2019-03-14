@@ -86,12 +86,30 @@ a {
 
 .texture-bg-img {
   background: url('../img/texture.png') no-repeat bottom center;
-  background-size: contain;
+  background-size: cover;
 }
 
 .texture-1-bg-img {
   background: url('../img/texture-1.png') no-repeat bottom center;
   background-size: contain;
+}
+
+.bg-alternating > article:nth-child(odd) {
+    background-color:$black
+}
+.bg-alternating > article:nth-child(even) {
+    background-color:$dark-gray
+}
+
+@media #{$breakpoint-lg} {
+  .bg-alternating > article:nth-child(4n+1),
+  .bg-alternating > article:nth-child(4n+4) {
+      background-color:$black
+  }
+  .bg-alternating > article:nth-child(4n+2),
+  .bg-alternating > article:nth-child(4n+3) {
+      background-color:$near-black
+  }
 }
 
 .social-icon-width { width: 3rem }
