@@ -13,7 +13,7 @@ When I came in to the Flux National Steering Committee/SteerCo (all the way back
 * __Decision-making bottlenecks:__ over-reliance on ‘leaders’ to make a decision that could feasibly be made by the person doing the work
 * __Role Confusion:__ people coming into the organisation and unsure about how they fit in or what works needs doing 
 * __Duplication of Work:__ projects frequently being started or even been taken to completion when the work has already been done elsewhere 
-* __Lack of coherence with Self-Management philosophy:__ confusion regarding how we get work done in a way that allows us to organise around issues in a way that is broadly compatible with our philosophical alignment with IBDD
+* __Lack of a self-management philosophy:__ confusion regarding how we get work done in a way that allows us to organise around issues in a way that is broadly compatible with our philosophical alignment with IBDD
 
 This led to a series of questions that myself and another SteerCo member embarked on, specifically;
 
@@ -23,12 +23,12 @@ This led to a series of questions that myself and another SteerCo member embarke
 
 “How can we provide the transparency and accountability needed to pull off a feat like making IBDD a reality?” 
 
-We investigated various self-management systems and decision-making frameworks, and finally settled on Holacracy as the best way of organising (for now). While other options seemed workable (Sociocracy, Sociocracy 3.0, Loomio etc), Holacracy had a [proven track record with helping ambitious organisations navigate complex environments](http://structureprocess.com/holacracy-cases/). It also had a way of measuring progress and firm accountability mechanisms to help us get clarity and accountability as to how the hell we go about replacing the current method of political organisation. 
+We investigated various self-management systems and decision-making frameworks, and finally settled on Holacracy as the best way of organising (for now). While other options seemed workable (Sociocracy, Sociocracy 3.0, Loomio etc), Holacracy had a [proven track record with helping ambitious organisations navigate complex environments](http://structureprocess.com/holacracy-cases/). It also had a way of [measuring progress](https://blog.thoughtfulorg.com/holacracy-crafting-good-metrics-for-your-circle-4893a8e3554c) and [firm accountability mechanisms](https://blog.holacracy.org/differentiating-role-and-soul-fe8cf5d53cc1) to help us get clarity and accountability as to how the hell we go about replacing the current method of political organisation. 
 
 ![Flux Holocratic Model](/img/posts/flux-holacracy.png)
 Flux According to Holacracy (Current at mid-March 2019)
 
-There is a deeper, more interesting problem that Flux is yet to solve: how to structure the Executive arm of government under IBDD? This is an as-yet unanswered question, but our experience with Holacracy might provide us with some really valuable insights around how to orient around a citizen mandate and direct resources accordingly. If IBDD is concerned with the ‘why’ of governance, then Holacracy has a very firm answer to the ‘how’ of governance. 
+There is a deeper, more interesting problem that Flux is yet to solve: how to structure the Executive arm of government under IBDD? This is an as-yet unanswered question, but our experience with Holacracy might provide us with some really valuable insights around how to orient around a citizen mandate and direct resources accordingly. If IBDD is concerned with the _‘why’_ of governance, then Holacracy has a very firm answer to the _‘how’_ of governance. 
 
 __That all sounds great, but how is it going so far?__
 
@@ -42,9 +42,9 @@ But something else is happening as well. The emerging consensus is that:
 * The amount of work actually getting done vs. time spent talking about what might/should/could get done has dramatically tilted towards efficiency
 * Those who step up are empowered to do so 
 
-Our experience with Holacracy is just beginning, but so far it shows huge potential and congruence with Issues Based Direct Democracy in terms of answering how we execute on all our great ideas. 
+Our experience with Holacracy is just beginning, but so far it shows huge potential and congruence with Issue Based Direct Democracy in terms of answering how we execute on all our great ideas. 
 
-If you’d like to get involved, sign up or update your [member details here](https://app.flux.party).
+If you’d like to get involved, [sign up](https://www.voteflux.org/signup/) or update your [member details here](https://app.flux.party).
 
 ![Rhys Profile](/img/posts/rhys.jpg)
 
