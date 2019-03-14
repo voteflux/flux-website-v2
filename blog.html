@@ -6,7 +6,7 @@ dark-theme: true
 ---
 
 {% include navbar.html %}
-<div class="bg-near-black texture-bg-img height-30vh py4">
+<header class="bg-near-black texture-bg-img height-30vh py4">
 	<div class="max-width-4 mx-auto px2 sm-px3 pt5">
 	  {% include components/main-heading.html
 	    text="Announcements"
@@ -15,35 +15,36 @@ dark-theme: true
 	    line="true"
 	    classes="white" %}
 	</div>
-</div>
+</header>
 
-<div class="bg-alternating flex flex-wrap">	
-	{% for post in site.posts %}
-		<article class="py4 bg-black light-gray inline-block lg-col-6 col-12">
-			<a href="{{ post.url }}" class="max-width-4 mx-auto px2 md-px3">
-				<div class="flex mxn2">
-					<div class="lg-col-12 px2 lg-px3 ">
-						<p class="h-font h3 sm-h2 light silver">
-							<small>{{ post.date | date: "%Y-%m-%d" }}</small>
-						</p>
-						<h2 class="mb0 h1 line-height-2 bold  white line-height-2">{{ post.title }}</h2>
-						<div class="h-font h3 sm-h2 light silver mb3">
-							<p>
-								{% if post.summary %}
-			                      {{post.summary}}
-			                    {% else %}
-			                      {{post.excerpt}}
-			                    {% endif %}
+<section class="bg-black mid-gray">
+	<div class="bg-alternating flex flex-wrap max-width-4 mx-auto">	
+		{% for post in site.posts %}
+			<article class="py4 bg-black light-gray inline-block lg-col-6 col-12">
+				<a href="{{ post.url }}" class="max-width-4 mx-auto px2 md-px3">
+					<div class="flex">
+						<div class="lg-col-12 px2 lg-px3 ">
+							<p class="h-font h3 sm-h2 light silver">
+								<small>{{ post.date | date: "%Y-%m-%d" }}</small>
 							</p>
+							<h2 class="mb0 h1 line-height-2 bold  white line-height-2">{{ post.title }}</h2>
+							<div class="h-font h3 sm-h2 light silver mb3">
+								<p>
+									{% if post.summary %}
+				                      {{post.summary}}
+				                    {% else %}
+				                      {{post.excerpt}}
+				                    {% endif %}
+								</p>
+							</div>
 						</div>
+						
 					</div>
-					<div class="col-8 px2 lg-px3">
-					</div>
-				</div>
-			</a>
-		</article>
-	{% endfor %}
-</div>
+				</a>
+			</article>
+		{% endfor %}
+	</div>
+</section>
 
 {% include footer.html %}
 
