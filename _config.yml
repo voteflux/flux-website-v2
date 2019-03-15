@@ -50,6 +50,8 @@ social-media:
   url: https://facebook.com/voteflux.org
 - name: discord
   url: https://discord.io/FluxParty
+- name: slack
+  url: https://voteflux.org/slack
 - name: twitter
   url: https://twitter.com/voteflux
 - name: reddit
