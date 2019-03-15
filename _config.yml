@@ -48,6 +48,8 @@ countdown: true
 social-media:
 - name: facebook
   url: https://facebook.com/voteflux.org
+- name: discord
+  url: https://discord.io/FluxParty
 - name: twitter
   url: https://twitter.com/voteflux
 - name: reddit

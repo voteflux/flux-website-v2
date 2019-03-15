@@ -22,7 +22,7 @@ type Jurisdiction
 
 
 
--- [TS] I don't think there is anyway to iteratte over Union Types
+-- [TS] I don't think there is anyway to iterate over Union Types
 -- See https://stackoverflow.com/questions/38132338/is-it-possible-to-iterate-over-union-type-in-elm
 -- And https://groups.google.com/forum/#!topic/elm-discuss/lwBoQC8X5QI
 
@@ -32,7 +32,8 @@ ausJuris =
     [ ( AUS, "/AUS", "Flux Australia" )
     , ( NSW, "/AUS/NSW", "Flux NSW" )
     , ( VIC, "/AUS/VIC", "Flux VIC" )
-    , ( QLD, "/AUS/QLD", "Flux QLD" )
+    -- comment out QLD for the moment while we figure out disclosure stuff
+    --, ( QLD, "/AUS/QLD", "Flux QLD" )
     , ( TAS, "/AUS/TAS", "Flux TAS" )
     , ( ACT, "/AUS/ACT", "Flux ACT" )
     , ( NT, "/AUS/NT", "Flux NT" )
