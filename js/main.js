@@ -402,6 +402,7 @@ $(document).ready(function() {
     //  console.log(contactPos, contactHeight)
   var onScrollUpdateMenu = function(){
     var offset = $document.scrollTop()
+    var startScrollingInPx = 25;
     var opacity = 0
     faded = false
     if ( offset >= fadeStart && offset <= fadeUntil ) {
@@ -424,7 +425,7 @@ $(document).ready(function() {
     $fading.css('opacity', opacity);
 
     if ($donationBar) {
-      var donationOffset = Math.min(0, offset - $donationBar.height() - 200);
+      var donationOffset = Math.min(0, offset - $donationBar.height() - startScrollingInPx);
       $donationBar.css({bottom: donationOffset});
     }
   }
