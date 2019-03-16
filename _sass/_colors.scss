@@ -11,9 +11,9 @@
 .white { color: $white; }
 .accent { color: $accent; }
 .accent-muted { color: rgba($accent, 0.5); }
-.accent-secondary: { color: $accent-sec; }
-.accent-sec: { color: $accent-sec; }
-.accent-2: { color: $accent-sec; }
+.accent-secondary { color: $accent-sec; }
+.accent-sec { color: $accent-sec; }
+.accent-2 { color: $accent-sec; }
 .error {color: $error}
 .success-color { color: $success }
 
@@ -39,9 +39,9 @@
 .bg-accent-dark { background-color: $accent-dark}
 // .bg-warning { background-color: red;}
 // .bg-success { background-color: green; }
-.bg-accent-secondary: { background-color: $accent-sec; }
-.bg-accent-sec: { background-color: $accent-sec; }
-.bg-accent-2: { background-color: $accent-sec; }
+.bg-accent-secondary { background-color: $accent-sec; }
+.bg-accent-sec { background-color: $accent-sec; }
+.bg-accent-2 { background-color: $accent-sec; }
 
 .accent-light { color: lighten($accent, 40%)}
 // border colors
@@ -51,6 +51,9 @@
 .border-muted { border-color: rgba(255,255,255, 0.1); }
 .border-accent { border-color: $accent; }
 .border-accent-muted { border-color: $accent-muted; }
+.border-accent-secondary { border-color: $accent-sec; }
+.border-accent-sec { border-color: $accent-sec; }
+.border-accent-2 { border-color: $accent-sec; }
 // .border-warning { border-color: red;}
 // .border-success { border-color: green; }
 .border-near-white { border-color: $near-white}
