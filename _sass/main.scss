@@ -89,6 +89,7 @@ $accent:        #E3580D !default; //#ff4500 !default; //#F36407 #27DCC9 // #ff99
 $accent-muted:  rgba($accent, .3);
 $accent-light:  lighten($accent, 30%) !default;
 $accent-dark:   darken($accent, 40%) !default;
+$accent-secondary: #249da9 !default;
 $error: #ff2f5b !default;
 $info: #05bcff !default;
 $success: #00da6c !default;
