@@ -1,5 +1,5 @@
 ---
-title: Why Holcracy?
+title: Why Holacracy?
 summary: Flux is a volunteer-lead, resource-constrained, distributed organisation. These characteristics require that we think and operate in ways which might not fit standard expectations about how organisations are run.
 author: Rhys Jaconley
 layout: about
