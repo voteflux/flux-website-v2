@@ -12,11 +12,11 @@ redirects:
 ## Background; Why We're Running This Experiment
 
 Two things we value highly are transparency and neutrality. 
-Unfortunately, the nature of elections in Australia don't make these values easier to live by.
-Typically, parties will negotiate positions on each others' how-to-vote cards (the bits of paper thrust at you by myriad parties as you head in to the polling station telling you which order to vote in).
-By that nature, negotiations are often secretive, and heavily based on a quid pro quo type arrangement.
+Unfortunately, the nature of elections in Australia doesn't make these values easier to live by.
+Typically, parties will negotiate positions on each others' how-to-vote cards (the bits of paper thrust at you by myriad parties as you head into the polling station telling you which order to vote in).
+By that nature, negotiations are often secretive and heavily based on a quid pro quo type arrangement.
 
-One common tactic parties use is to refuse adding other parties to their how-to-votes (HTVs) without public support or endorsement of core policies.
+One common tactic parties use is to refuse to add other parties to their how-to-votes (HTVs) without public support or endorsement of core policies.
 The problem we face is that we can't agree to such terms, or even offer them to other parties.
 
 Additionally, if we were to list other parties *in order* on our HTVs we would go against our neutrality.
@@ -46,7 +46,7 @@ In the case the other party is doing something similar to us, the condition is s
 
 In return, Flux will put that party in the "cooperative" category.
 
-**Note:** alternatively, if a party does not issue HTVs and they let us know, they'll be placed at the *end* of the list of cooperative minor parties with an footnote mentioning this fact.
+**Note:** alternatively, if a party does not issue HTVs and they let us know, they'll be placed at the *end* of the list of cooperative minor parties with a footnote mentioning this fact.
 
 **Additionally, for cooperative parties, if we are elected in that election, we will present one bill (of the party's choosing) before the respective legislature.**
 This *does* mean there will be a way for a Flux representative to suggest legislation that does not go through IBDD, but it will only ever be a one-off, and only in the case we're elected.
