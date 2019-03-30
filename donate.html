@@ -22,6 +22,26 @@ redirects:
 <section class="bg-light-gray mid-gray py4 sm-pr4">
   <div class="max-width-4 mx-auto px2 md-px3">
 
+    <form action="https://prod.v1.api.flux.party/api/v2/submit_stripe" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_WkrKtOUbvF2S85UDdvkHS5tV"
+        data-amount="999"
+        data-name="Flux"
+        data-description="Donation"
+        data-locale="auto"
+        data-currency="aud"
+        data-zip-code="true"
+        data-billing-address="true"
+        data-label="Donate with Card"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+      >
+      </script>
+    </form>
+
+    <!-- fbq('track', 'Donate', {value: 0.00, currency: 'AUD'}); -->
+    <!-- ga('send', {hitType: 'event', eventCategory: 'donation', eventAction: 'donated'}); -->
+
     <!-- elm donation widget -->
     <span class="anchor" id="paypal"></span>
     <div id="donationWidgetElm"></div>
