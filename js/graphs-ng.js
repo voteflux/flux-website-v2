@@ -3,6 +3,12 @@ import {processDonationGraphs} from "./dashboardGraphLogic";
 
 var fluxApp = angular.module('fluxApp', []);
 
+
+function product(xs) {
+  return _.reduce(xs, _.multiply, 1)
+}
+
+
 // NOTE: This is just for dashboard.html; and is separate to the FluxController in members.html and membership-ng.js, etc
 fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http', function ($scope, $log, $rootScope, $http) {
   $rootScope._ = _;
@@ -259,10 +265,12 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
         var _rate = members_per_month[_i] / cumulative[months[_i - 1]] * 100;
         flux.monthlyGrowth.push({
           name: months[_i],
-          rate: (_rate).toString().slice(0, 5)
+          rate: (_rate).toString().slice(0, 5),
+          nMembers: cumulative[months[_i]]
         });
         rates.push(_rate);
       });
+      flux.gmMonthlyGrowth = (Math.pow(product(rates), 1/rates.length)).toString().slice(0, 4);
       flux.averageMonthlyGrowth = (_.sum(rates) / rates.length).toString().slice(0, 4);
     };
     flux.calcMonthlyGrowth(tss);

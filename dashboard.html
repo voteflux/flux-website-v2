@@ -127,13 +127,16 @@ nav-order: 40
                 <tr>
                   <th>Month</th>
                   <th>Growth %</th>
+                  <th>Members (end of mo)</th>
                 </tr>
                 <tr ng-repeat="month in flux.monthlyGrowth track by $index">
                   <td>{{'month.name' | angular}}</td>
                   <td>{{'month.rate' | angular}}%</td>
+                  <td>{{'month.nMembers' | angular}}</td>
                 </tr>
               </table>
               <h4>Average monthly growth: {{ 'flux.averageMonthlyGrowth' | angular }}%</h4>
+              <h4>Geometric mean monthly growth: {{ 'flux.gmMonthlyGrowth' | angular }}%</h4>
             </div>
 
             <div id="member-state-breakdown" class="py3">
