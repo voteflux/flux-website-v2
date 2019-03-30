@@ -6,7 +6,7 @@ dark-theme: true
 tag-section: flux election calendar
 tag-topic: election calendar
 nav-title: Election Calendar
-elections:
+past-elections:
 - title: Aus Federal Elections
   date: 2016-07-02 00:00:00 Z
   link: http://www.aec.gov.au/
@@ -54,10 +54,90 @@ elections:
   link: https://www.vec.vic.gov.au/
 - title: NSW State Elections
   date: 2019-01-01 00:00:00 Z
-  link: http://www.elections.nsw.gov.au/
+link: http://www.elections.nsw.gov.au/
+elections:
+- title: Aus Federal
+  date: 2019-05-18
+  party: Flux Australia
+  links: []
+- title: WA Local Gov
+  date: 2019-10-19
+  party: Flux WA
+  links:
+  - name: Elections WA Local Gov
+    url: https://www.elections.wa.gov.au/elections/local
 - title: QLD Local Elections
   date: 2020-01-01 00:00:00 Z
-  link: 
+  links: []
+  party: Flux QLD
+- title: TAS LC (Huon, Rosevears)
+  date: 2020 First Satruday in May
+  party: Unregistered
+  links:
+  - name: TEC LC Elections
+    url: https://tec.tas.gov.au/Legislative_Council_Elections/index.html
+- title: NT Legislative Assembly
+  date: 2020-08-22
+  links:
+    - name: Wiki NT Legislative Assembly
+      url: https://en.wikipedia.org/wiki/Northern_Territory_Legislative_Assembly
+    - name: Elections NT Rego Guide + Party Info
+      url: https://ntec.nt.gov.au/Candidates-and-political-parties/Forms-and-handbooks
+  party: Unregistered
+- title: VIC Local Elections
+  date: 2020-10-01
+  links:
+    - name: VEC Local council elections
+      url: https://www.vec.vic.gov.au/Voting/LocalCouncilElections.html
+  party: Unregistered
+- title: ACT Legislative Assembly
+  date: 2020-10-17
+  links:
+    - name: Elections ACT 2020 Election
+      url: https://www.elections.act.gov.au/elections_and_voting/2020_legislative_assembly_election
+  party: Flux ACT
+- title: QLD State
+  date: 2020-10-31
+  party: Flux QLD
+  links:
+  - name: Wiki Qld State Election 2020
+    url: https://en.wikipedia.org/wiki/2020_Queensland_state_election
+- title: WA State
+  date: 2021-03-13
+  party: Flux WA
+  links:
+  - name: Elections WA State
+    url: https://www.elections.wa.gov.au/elections/state
+- title: SA Election
+  date: 2022-03-19
+  party: Unregistered
+  links:
+  - name: Wiki SA Election 2022
+    url: https://en.wikipedia.org/wiki/2022_South_Australian_state_election
+- title: TAS House of Assembly
+  date: 2022-??-??
+  party: Unregistered
+  links:
+  - name: TEC House of Assembly Elections
+    url: https://tec.tas.gov.au/House_of_Assembly_Elections/index.html
+- title: VIC State Elections
+  date: 2022-11-26
+  links:
+  - name: VEC State elections
+    url: https://www.vec.vic.gov.au/Voting/StateElections.html
+  party: Unregistered
+- title: NSW Local Gov
+  date: ??
+  links:
+    - name: Elections NSW
+      url: https://elections.nsw.gov.au/Elections
+  party: Flux NSW
+- title: TAS Local Gov
+  date: ??
+  links:
+    - name: TEC
+      url: https://tec.tas.gov.au/Local_Government_Elections/index.html
+  party: Unregistered
 ---
 
 {% include navbar.html %}
@@ -67,8 +147,24 @@ elections:
   <div class="mx-auto max-width-3 px2 sm-px4 pt4 pb3 bg-white relative mt5 z2">
     <section class="">
       <h1>Election Calendar</h1>
-
       {% for election in page.elections %}
+      <div>
+        <h2>{{election.date}}: {{election.title}}</h2>
+          <ul>
+            {% for link in election.links %}
+              <li><a href="{{link.url}}">{{link.name}}</a></li>
+            {% endfor %}
+          </ul>
+          {% if election.party %}
+            Party: {{election.party}}
+          {% endif %}
+        <hr>
+      </div>
+      {% endfor %}
+
+
+      <h1>Past Elections</h1>
+      {% for election in page.past-elections %}
         <div>
           <h2>{{election.date}}: <a href="{{election.link}}">{{election.title}}</a></h2>
         </div>
