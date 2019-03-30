@@ -46,6 +46,10 @@ nav-order: 40
             <div id="membershipChart" class="col-sm-12 graph-div"></div>
             <div id="stateSignupTimes" class="col-sm-12 graph-div"></div>
             <div id="memberDobYearChart" class="col-sm-12 graph-div"></div>
+
+            <div>Members born before 1981: {{ 'flux.before1981Pct' | angular }}%</div>
+            <div>Members born in or after 1981: {{ 'flux.after1981Pct' | angular }}%</div>
+
             <div id="memberStateChart" class="col-sm-12 graph-div"></div>
             <div id="memberSignupDaysAgo" class="col-sm-12 graph-div"></div>
             <div id="memberSignupHoursAgo" class="col-sm-12 graph-div"></div>

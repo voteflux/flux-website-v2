@@ -93,8 +93,13 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
     var year_freq = _.map(years, function (y) {
       return data.data.dob_years[y]
     });
+    var before1981 = _.map(years, function (y) { return parseInt(y) < 1981 ? data.data.dob_years[y] : 0 });
+    var inAfter1981 = _.map(years, function (y) { return parseInt(y) >= 1981 ? data.data.dob_years[y] : 0 });
     var plotData2 = [{x: years, y: year_freq, type: 'bar'}];
     Plotly.newPlot('memberDobYearChart', plotData2, {title: 'Member Years of Birth'});
+
+    flux.before1981Pct = (_.sum(before1981) / data.data.signup_times.length * 100).toString().slice(0, 5)
+    flux.after1981Pct = (_.sum(inAfter1981) / data.data.signup_times.length * 100).toString().slice(0, 5)
 
     // states histogram
     var states = Object.keys(data.data['states']);
