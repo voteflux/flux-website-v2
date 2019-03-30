@@ -33,8 +33,11 @@ nav-order: 40
             <ul>
               <li><a href="#membership">Membership Stats</a></li>
               <li><a href="#donations">Donation Stats</a></li>
+              <li><a href="#donation-log">Donation Log</a></li>
               <li><a href="#membership-tables">Membership Stats (in tables)</a></li>
             </ul>
+
+            <hr>
 
             <h1 id='membership'>Membership</h1>
             <h3 ng-repeat="days in flux.growthDays track by $index">Membership growth over last {{'days' | angular}}
@@ -49,22 +52,32 @@ nav-order: 40
             <div id="memberHourPopularity" class="col-sm-12 graph-div"></div>
             <div id="stateSignupTimes" class="col-sm-12 graph-div"></div>
 
-	    <div id="revocations" class="col-sm-12 graph-div">
-		<img src="https://flux-stats.s3-ap-southeast-2.amazonaws.com/graphs/revocations.svg" />
-	    </div>
+            <div id="revocations" class="col-sm-12 graph-div">
+              <img src="https://flux-stats.s3-ap-southeast-2.amazonaws.com/graphs/revocations.svg"/>
+            </div>
 
-	    <h1 id="donations"><br><br><small><a href="/donate">Donate Now!</a></small><br><br>Donations</h1>
+            <hr>
 
-            <h3>You can view a log of donations on our <a href="/donate">Donate</a> page.</h3>
+            <h1 id="donations"><br><br>
+              <small><a href="/donate">Donate Now!</a></small>
+              <br><br>Donations
+            </h1>
+
+            <h3>You can view a log of donations on our <a href="/donate">Donate</a> page as well as below.</h3>
 
             <!-- disclaimer also goes on donate.html verbatim -->
             <small>
               <p>
-                <strong>Disclaimer re donation log:</strong> Donations (as of Sept 2018) are made to the Flux Foundation and tagged for use by different branches.
-                In some cases this means a corresponding donation does not appear on party disclosure statements, or appears as part of a bulk donation from the Flux Foundation.
-                That said, depending on jurisdiction such a donation might appear on the Foundation's disclosure statement.
-                Furthermore, it might not appear on any disclosure statement if those funds are used for general things not directly related to the individual branch (e.g. paying our AWS bill).
-                In any case, be aware this donation log is a best-effort attempt at transparency, not a replacement for, substitute for, or even an indication of our official disclosures.
+                <strong>Disclaimer re donation log:</strong> Donations (as of Sept 2018) are made to the Flux Foundation
+                and tagged for use by different branches.
+                In some cases this means a corresponding donation does not appear on party disclosure statements, or
+                appears as part of a bulk donation from the Flux Foundation.
+                That said, depending on jurisdiction such a donation might appear on the Foundation's disclosure
+                statement.
+                Furthermore, it might not appear on any disclosure statement if those funds are used for general things
+                not directly related to the individual branch (e.g. paying our AWS bill).
+                In any case, be aware this donation log is a best-effort attempt at transparency, not a replacement for,
+                substitute for, or even an indication of our official disclosures.
                 No data on this page regarding donations comes with any guarantee of accuracy.
               </p>
             </small>
@@ -85,6 +98,26 @@ nav-order: 40
             <div id="donationGraphCumulative" class="col-sm-12 graph-div"></div>
             <div id="donationGraphCumulativeState" class="col-sm-12 graph-div"></div>
 
+
+            <hr>
+
+
+            <h1><span class="anchor" id="donation-log"></span>Donation Log</h1>
+
+            <p>
+              <em>
+                Note: This log shows most, but not all* donations, since Sept 2017. <br>
+                <small><strong>*:</strong> That's only because we haven't implemented all the features in the admin app
+                  yet.
+                </small>
+              </em>
+            </p>
+
+            <div id="donationLogElm"></div>
+            <script src="/js/bundle-donationLog.js"></script>
+
+
+            <hr>
 
             <h1 id="membership-tables">Membership Stats (Tables)</h1>
 
@@ -133,7 +166,7 @@ nav-order: 40
 
             <hr>
 
-            <h2>Backend</h2>
+            <h1>Backend</h1>
 
             <div id="queue-length">
               Email Queue Length: {{ 'queueData.email_queue_length' | angular }} <br>
