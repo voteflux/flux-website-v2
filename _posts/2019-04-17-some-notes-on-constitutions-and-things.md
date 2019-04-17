@@ -9,7 +9,7 @@ date: 2019-04-17
 Our constitutions are stored and managed here: [https://github.com/voteflux/flux/](https://github.com/voteflux/flux/).
 This is the *only* canonical source.
 
-That said, we provide rendered copies via [https://voteflux.org/constitutions/](https://voteflux.org/constitutions/), and you can find up-to-date latest copies in the `_latest` folder.
+That said, we provide rendered copies (docx, epub, html, odt, pdf, rst, and txt) via [https://voteflux.org/constitutions/](https://voteflux.org/constitutions/), and you can find up-to-date latest copies in the `_latest` folder.
 These are regenerated every time a change is made to any document in the `voteflux/flux` repository (think of a repository like a folder) on GitHub.
 If you're technical, you might be interested in the [buildspec.yml](https://github.com/voteflux/flux/blob/master/buildspec.yml) file.
 
