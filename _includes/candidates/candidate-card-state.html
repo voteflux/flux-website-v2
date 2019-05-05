@@ -4,9 +4,15 @@
    {% assign path = './../' %}
 {% endif %}
 
+{% if include.image != "" %}
+  {% assign imgurl = include.title | slugify | prepend: 'candidates/' | append: '.jpg' %}
+{% else %}
+  {% assign imgurl = include.image %}
+{% endif %}
+
 <div class="px2 mb4 sm-col-6 md-col-4">
   <a href="{{include.url}}" class="height-4 overflow-hidden bg-gray mb2 block"
-       style="background: url(/img/{{include.image}}) no-repeat top center; background-size: cover" >
+       style="background: url(/img/{{imgurl}}) no-repeat top center; background-size: cover" >
   </a>
   <h5 class="h4"><span class="gray">{{include.region}}</span> / <span class="bold">{{include.house}}</span></h5>
   <h2 class="sm-h1 bold">{{include.title}}</h2>
