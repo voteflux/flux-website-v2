@@ -13,6 +13,10 @@ collections:
     title: NSW Candidates 2019
     output: true
     permalink: "/nsw/candidates/2019/:name/"
+  candidates-federal-2019:
+    title: Federal Candidates 2019
+    output: true
+    permalink: "/federal/candidates/2019/:name/"
   posts:
     title: Posts
     output: true
@@ -34,6 +38,10 @@ defaults:
       type: "candidates-nsw-2019"
     values:
       layout: "candidate-v2"
+  - scope:
+      type: "candidates-federal-2019"
+    values:
+      layout: "candidate-v2"
 email: website@voteflux.org
 description: 'Flux is a new political party designed to connect Australians directly to Parliament and change politics forever!'
 baseurl:
@@ -44,7 +52,7 @@ base-color: "#0b0b0e"
 meetups: false
 future: true
 candidates: false
-countdown: true
+countdown: false
 social-media:
 - name: facebook
   url: https://facebook.com/voteflux.org
@@ -56,6 +64,8 @@ social-media:
   url: https://twitter.com/voteflux
 - name: reddit
   url: https://www.reddit.com/r/voteflux
+- name: github
+  url: https://github.com/voteflux
 markdown: kramdown
 permalink: pretty
 incremental: true
