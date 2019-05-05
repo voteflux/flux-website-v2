@@ -327,27 +327,26 @@ $(document).ready(function() {
     $("#donation-status-text").text(msg)
   }
 
-  function getNswDonations() {
-    console.log('getNswDonations')
+  function getDonationBannerData() {
+    console.log('getDonationBannerData')
     $.getJSON({
-      url: "https://prod.v1.api.flux.party/api/v1/fundrazr/fluxpartynsw", success: data => {
+      url: "https://prod.v1.api.flux.party/api/v1/fundrazr/current", success: data => {
         let amtStr = data.campaign.statistics.donationSum;
         setDonationProgressBar(amtStr)
       }
     })
   }
 
-
   function allUpdates() {
     getMembers()
-    getNswDonations()
+    getDonationBannerData()
   }
 
 
   var mins = 1
   var interval = 1000 * 60 * mins
   getMembers(); //init
-  getNswDonations()
+  getDonationBannerData()
   setInterval(allUpdates, interval);
 
 
