@@ -64,3 +64,26 @@ https://docs.shopify.com/themes/liquid/tags/control-flow-tags -->
 `bundle exec jekyll serve --watch` to run a dev server for just jekyll stuff.
 
 React is used for the signup form but not for anything else.
+
+## Kip's notes on contributing
+
+MK note: if you need to use `sudo` to run `./dev-docker.sh` you should add yourself to the `docker` group (or google what to do for your OS); typically you shouldn't need sudo for docker, or at least it's good not to run it like that on your dev machine.
+
+* Install git
+* Install Docker
+* Get an IDE (I use Atom)
+* fork the flux-website
+* https://github.com/voteflux/flux-website-v2 - use the fork button
+* clone your copy onto your machine. For me in a terminal it's:
+* git clone https://github.com/KipCrossing/flux-website-v2
+* Read the Readme and run: sudo ./dev-docker.sh
+* Once the flie has run it will tell you the server address. for me it was: http://0.0.0.0:9000/
+* Paste that into your web browser
+* Open the flux-website repo as a project in your IDE
+* Make changes
+* in terminal:
+* git add .
+* git commit -m "Write a commit message"
+* git push
+* Go to your repo on GitHub and make a pull request
+* This will help with the Pull Request https://github.com/voteflux/flux-docs/blob/master/docs/contributing/index.rst
