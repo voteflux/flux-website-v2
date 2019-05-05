@@ -3,6 +3,8 @@ layout: default
 dark-theme: true
 ---
 
+{% if page.image %} {% assign img_url = page.image %} {% else %} {% assign img_url = page.title | slugify | prepend: 'candidates/' | append: '.jpg' %} {% endif %}
+
 {% include base.html %}
 {% include navbar.html %}
 <main class="bg-near-white dark-gray px1">
@@ -18,7 +20,7 @@ dark-theme: true
 
       <div class="flex flex-wrap mb3">
         <div class="square-1 overflow-hidden circle overflow-hidden bg-gray mb2 bg-black mr3"
-             style="background: url({{base}}/img/{{page.image}}) no-repeat top center; background-size: cover" >
+             style="background: url({{base}}/img/{{img_url}}) no-repeat top center; background-size: cover" >
         </div>
         <div class="flex-auto self-center">
           <hr class="border-bottom light-gray">

@@ -4,10 +4,10 @@
    {% assign path = './../' %}
 {% endif %}
 
-{% if include.image != "" %}
-  {% assign imgurl = include.title | slugify | prepend: 'candidates/' | append: '.jpg' %}
+{% if include.image %}
+{% assign imgurl = include.image %}
 {% else %}
-  {% assign imgurl = include.image %}
+{% assign imgurl = include.title | slugify | prepend: 'candidates/' | append: '.jpg' %}
 {% endif %}
 
 <div class="px2 mb4 sm-col-6 md-col-4">

@@ -38,6 +38,10 @@ defaults:
       type: "candidates-nsw-2019"
     values:
       layout: "candidate-v2"
+  - scope:
+      type: "candidates-federal-2019"
+    values:
+      layout: "candidate-v2"
 email: website@voteflux.org
 description: 'Flux is a new political party designed to connect Australians directly to Parliament and change politics forever!'
 baseurl:
