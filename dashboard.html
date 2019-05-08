@@ -30,6 +30,20 @@ nav-order: 40
             <h1 ng-show="false" class="h0">Loading... Please be patient.</h1>
             <h1>Live Flux Stats</h1>
 
+            <h3>Membership Growth</h3>
+            <table>
+              <tr>
+                <th>Over last <strong>N</strong> 24 hr periods</th>
+                <th>Absolute</th>
+                <th>Percentage</th>
+              </tr>
+              <tr ng-repeat="days in flux.growthDays track by $index">
+                <td style="padding: 0">{{ 'days' | angular }}</td>
+                <td style="padding: 0">{{ 'flux.growthAbsolute(days)' | angular }}</td>
+                <td style="padding: 0">{{ '(flux.growthStat(days) * 100).toString().slice(0,4)' | angular }} %</td>
+              </tr>
+            </table>
+
             <ul>
               <li><a href="#membership">Membership Stats</a></li>
               <li><a href="#donations">Donation Stats</a></li>
@@ -58,20 +72,6 @@ nav-order: 40
             <div id="revocations" class="col-sm-12 graph-div">
               <img src="https://flux-stats.s3-ap-southeast-2.amazonaws.com/graphs/revocations.svg"/>
             </div>
-
-            <h3>Growth</h3>
-            <table>
-              <tr>
-                <th>Over last <strong>N</strong> 24 hr periods</th>
-                <th>Absolute</th>
-                <th>Percentage</th>
-              </tr>
-              <tr ng-repeat="days in flux.growthDays track by $index">
-                <td style="padding: 0">{{ 'days' | angular }}</td>
-                <td style="padding: 0">{{ 'flux.growthAbsolute(days)' | angular }}</td>
-                <td style="padding: 0">{{ '(flux.growthStat(days) * 100).toString().slice(0,4)' | angular }} %</td>
-              </tr>
-            </table>
 
             <hr>
 
