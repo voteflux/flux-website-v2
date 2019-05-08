@@ -30,6 +30,17 @@ nav-order: 40
             <h1 ng-show="false" class="h0">Loading... Please be patient.</h1>
             <h1>Live Flux Stats</h1>
 
+            <ul>
+              <li><a href="#membership">Membership Stats</a></li>
+              <li><a href="#donations">Donation Stats</a></li>
+              <li><a href="#donation-log">Donation Log</a></li>
+              <li><a href="#membership-tables">Membership Stats (in tables)</a></li>
+            </ul>
+
+            <hr>
+
+            <h1 id='membership'>Membership</h1>
+
             <h3>Membership Growth</h3>
             <table>
               <tr>
@@ -43,17 +54,6 @@ nav-order: 40
                 <td style="padding: 0">{{ '(flux.growthStat(days) * 100).toString().slice(0,4)' | angular }} %</td>
               </tr>
             </table>
-
-            <ul>
-              <li><a href="#membership">Membership Stats</a></li>
-              <li><a href="#donations">Donation Stats</a></li>
-              <li><a href="#donation-log">Donation Log</a></li>
-              <li><a href="#membership-tables">Membership Stats (in tables)</a></li>
-            </ul>
-
-            <hr>
-
-            <h1 id='membership'>Membership</h1>
 
             <div id="membershipChart" class="col-sm-12 graph-div"></div>
             <div id="memberSignupHoursAgo" class="col-sm-12 graph-div"></div>
