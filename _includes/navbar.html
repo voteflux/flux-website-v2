@@ -2,11 +2,11 @@
 
   <!-- Notification Bar - Remember to add notifcation.css to head.html -->
   <!--<a href="{{site.baseurl}}/2017/09/22/flux-nsw-needs-declaration-forms/" id="notification_link">-->
-    <!--<div id="notification" class="center flex flex-center p1">-->
-      <!--<p class="h3 sm-h2 mx-auto">-->
-        <!--<strong>Live in NSW? We need your help!</strong>-->
-      <!--<p>-->
-    <!--</div>-->
+  <!--<div id="notification" class="center flex flex-center p1">-->
+  <!--<p class="h3 sm-h2 mx-auto">-->
+  <!--<strong>Live in NSW? We need your help!</strong>-->
+  <!--<p>-->
+  <!--</div>-->
   <!--</a>-->
 
   <!-- Nav bar -->
@@ -69,7 +69,7 @@
         </div>
         <div class="xs-hide inline-block mr3 md-mr0">
           {% if include.no-button == nil %}
-          <a href="{{site.baseurl}}/signup" class="js-menu-hide btn btn-primary p1 h5 transition">Join Flux</a>
+          <a href="{{site.baseurl}}/signup/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=nav~{{ page.url | slugify }}" class="js-menu-hide btn btn-primary p1 h5 transition">Join Flux</a>
           {% endif %}
         </div>
         <div class="inline-block mt1 md-hide lg-hide xl-hide">
@@ -111,7 +111,7 @@
               <!-- <a href="{{site.baseurl}}/members" class="btn bg-white accent h3 xs-menu-join-button">Members</a> -->
               <a href="https://app.flux.party/" class="btn bg-white accent h3 xs-menu-join-button sm-menu-join-button">Members</a>
               <br>
-              <a href="{{site.baseurl}}/signup" class="btn btn-primary h3 xs-menu-join-button">Join Flux</a>
+              <a href="{{site.baseurl}}/signup/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=nav-mob~{{ page.url | slugify }}" class="btn btn-primary h3 xs-menu-join-button">Join Flux</a>
             </li>
             {% endif %}
           </ul>

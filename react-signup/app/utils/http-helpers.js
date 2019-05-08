@@ -7,7 +7,7 @@ import FormContainer from '../containers/form-container'
 
 const prodServer = 'https://prod.v1.api.flux.party';
 
-let useDevDefault = (window.location.hostname === 'localhost' || _.includes(location.hostname, "deploy-preview"));
+let useDevDefault = (window.location.hostname === 'localhost' || _.includes(location.hostname, "deploy-preview") || location.port.length >= 4);
 let useLocalDev = (window.location.hostname === '127.0.0.1')
 let useProdOverride = false;
 

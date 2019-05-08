@@ -63,11 +63,11 @@ nav-order: 40
             <hr>
 
             <h1 id="donations"><br><br>
-              <small><a href="/donate">Donate Now!</a></small>
+              <small><a href="/donate/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=d0~{{ page.url | slugify }}">Donate Now!</a></small>
               <br><br>Donations
             </h1>
 
-            <h3>You can view a log of donations on our <a href="/donate">Donate</a> page as well as below.</h3>
+            <h3>You can view a log of donations on our <a href="/donate/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=d1~{{ page.url | slugify }}">Donate</a> page as well as below.</h3>
 
             <!-- disclaimer also goes on donate.html verbatim -->
             <small>
@@ -86,7 +86,7 @@ nav-order: 40
               </p>
             </small>
 
-            <h4 class="center p2"><a href="/donate">Donate Now!</a></h4>
+            <h4 class="center p2"><a href="/donate/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=d2~{{ page.url | slugify }}">Donate Now!</a></h4>
 
             <h2> Donations This FY </h2>
 
@@ -94,7 +94,7 @@ nav-order: 40
             <div id="donationGraphCumulativeFY" class="col-sm-12 graph-div"></div>
             <div id="donationGraphCumulativeStateFY" class="col-sm-12 graph-div"></div>
 
-            <h4 class="center p2"><a href="/donate">Donate Now!</a></h4>
+            <h4 class="center p2"><a href="/donate/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=d3~{{ page.url | slugify }}">Donate Now!</a></h4>
 
             <h2> All Donations since Sept 2017 </h2>
 
@@ -116,6 +116,8 @@ nav-order: 40
                 </small>
               </em>
             </p>
+
+            <h4 class="center"><a class="center btn btn-primary inline-block mx-auto" href="/donate/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=d4~{{ page.url | slugify }}">Donate Now!</a></h4>
 
             <div id="donationLogElm"></div>
             <script src="/js/bundle-donationLog.js"></script>
