@@ -263,7 +263,7 @@ $(document).ready(function() {
   // get member and volenteer info ajax request
   function getMembers() {
     $.ajax({
-      url: "https://prod.v1.api.flux.party/api/v0/getinfo",
+      url: flux_api("api/v0/getinfo") || "https://prod.v1.api.flux.party/api/v0/getinfo",
       data: {
         format: 'json'
       },

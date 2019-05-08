@@ -4,8 +4,17 @@ layout: default
 dark-theme: true
 ---
 
+
 {% include base.html %}
 {% include navbar.html no-button="true" %}
+
+<style>
+  .social-icon {
+    width: 36px;
+    height: 36px;
+  }
+</style>
+
 <main class="bg-near-black near-white py4">
   <div class="mx-auto max-width-3 px2 sm-px3">
     <div class="pt5">
@@ -44,7 +53,7 @@ dark-theme: true
       </div>
 
     <h4 class="sm-h3 h-font line-height-2 pt2">
-      What's next? Check out your <a href="https://members.flux.party">Membership Dashboard</a>
+      What's next? Check out your <a href="https://app.flux.party">Membership Dashboard</a>
     </h4>
 
     <section id="contact" class="py4">
@@ -61,7 +70,7 @@ dark-theme: true
               {% for social in site.social-media %}
                 <hr class="white muted border-bottom m0">
                 <div class="my2 flex">
-                  <img src="{{base}}/img/social-icons/{{social.name}}-with-circle.svg" alt="{{social.name}}" width="36" class="mr2" />
+                  <img src="{{base}}/img/social-icons/{{social.name}}-with-circle.svg" alt="{{social.name}}" class="mr2 social-icon" />
                   <h3 class="bold h-font inline-block hover-show-child"><a href="{{ social.url }}" class="accent accent-on-hover transition-fast">{{ social.name | capitalize }}</a><i class="material-icons icon-adjust muted">call_made</i></h3>
                 </div>
               {% endfor %}
@@ -88,7 +97,7 @@ dark-theme: true
 </main>
 
 <!-- this will set the secret on our other domains by default -->
-<script src="https://members.flux.party/js/common.js"></script>
+<script src="https://app.flux.party/js/common.js"></script>
 
 {% include footer.html %}
 

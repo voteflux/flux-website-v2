@@ -20,21 +20,18 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-62282050-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- Google Analytics end -->
-
-<!-- Lucky Orange -->
-<script type='text/javascript'>
-  window.__lo_site_id = 69601;
-
   (function() {
-    var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
-    wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+    var win = window;
+    var removeUtms = function(){
+      var location = win.location;
+      if (location.search.indexOf('utm_') != -1 && history.replaceState) {
+        history.replaceState({}, '', window.location.toString().replace(/(\&|\?)utm([_a-z0-9=\-~]+)/g, ""));
+      }
+    };
+    ga('send', 'pageview', { 'hitCallback': removeUtms });
   })();
 </script>
-<!-- Lucky Orange end -->
+<!-- Google Analytics end -->
 
 <!-- Facebook start -->
 <div id="fb-root"></div>

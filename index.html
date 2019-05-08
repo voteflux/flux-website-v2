@@ -91,7 +91,7 @@ social-media:
         </p>
         <div class="md-flex">
           <div class="lg-col-6 md-col-12">
-            <a href="{{site.baseurl}}/signup" class="btn btn-primary h2 letter-spacing-1 border-bottom inline-block">
+            <a href="{{site.baseurl}}/signup/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=hero~{{ page.url | slugify }}" class="btn btn-primary h2 letter-spacing-1 border-bottom inline-block">
               {{ page.hero-action }}
             </a>
             <span class="gray h3 block caps mt1 letter-spacing-1">Membership is free for life</span>
@@ -128,7 +128,7 @@ social-media:
       <!--<div class="md-flex flex-end">-->
         <!--<a href="https://fundrazr.com/fluxpartynsw?utm_source=mainsite_banner" class="btn btn-primary col-12 md-col-4 center inline-block">Donate Now (NSW)</a>-->
         <!--<div class="my0 py0 pt1 col-12 md-col-4 align-bottom h2 xs-hide sm-hide" style="text-align: center;">Next Milestone</div>-->
-        <!--<a href="/signup?utm_source=mainsite_banner" class="btn btn-outline col-12 md-col-4 center inline-block xs-hide sm-hide">Join Flux</a>-->
+        <!--<a href="/signup/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=ann-banner~{{ page.url | slugify }}" class="btn btn-outline col-12 md-col-4 center inline-block xs-hide sm-hide">Join Flux</a>-->
       <!--</div>-->
       <!--<div class="rounded mt1 bg-accent-muted white relative" style="min-height: 2rem; height: 2rem" id="donation-progress-outer">-->
         <!--<div class="rounded inline-block absolute top-0 align-middle bg-accent min-h-100"-->
@@ -141,7 +141,6 @@ social-media:
     <!--</div>-->
   <!--</div>-->
 <!--</section>-->
-
 
 <!-- CANDIDATES -->
 {% if site.candidates-federal-2019 %}
@@ -197,7 +196,7 @@ social-media:
           <div class="mb3">
             <a data-sumome-share-id="b6279140-56da-424e-9e95-54d26518c49d"></a>
           </div>
-        <a href="{{site.baseurl}}/signup" class="btn btn-primary h2">
+        <a href="{{site.baseurl}}/signup/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=nutshell~{{ page.url | slugify }}" class="btn btn-primary h2">
           Join Now!
         </a>
       </div>
@@ -361,7 +360,7 @@ social-media:
         </p>
       </div>
       <div class="gray">
-        <a href="{{site.baseurl}}/signup"
+        <a href="{{site.baseurl}}/signup/?utm_source=mainsite&utm_medium=web&utm_campaign={{ page.utm_campaign | default: 'none' }}&utm_content=fed-up~{{ page.url | slugify }}"
            class="h3 sm-h2 link-reset border-bottom inline-block accent">
           {{ page.second-callout-action }}
         </a>
