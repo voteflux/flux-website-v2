@@ -45,9 +45,8 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
     return "https://prod.v1.api.flux.party/api/v0/" + path;
   };
 
-  flux.growthStat = function (d) {
-    return 0;
-  };
+  flux.growthStat = function (d) { return 0; }
+  flux.growthAbsolute = function (d) { return 0; }
 
   $http.get(flux.api('queue_stats')).then(data => {
     $scope.queueData = data.data
@@ -114,8 +113,12 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
     var _now = Date.now();
     var _7_days_ago = _now - (nDaysForHours * 24 * 60 * 60 * 1000);
     var _n_days_ago = _now - (nDays * 24 * 60 * 60 * 1000);
+    var _all_days_ago = (new Date(2015, 3, 1)).getTime()
     var recent_tss = _.filter(data.data['signup_times'], function (timestamp) {
       return timestamp * 1000 > (_now - 1000 * 60 * 60 * 24 * (nDays + 1));
+    });
+    var all_tss = _.filter(data.data['signup_times'], function (timestamp) {
+      return timestamp * 1000 > _all_days_ago;
     });
 
     // http://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
@@ -125,47 +128,66 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
       return local.toJSON().slice(0, 10);
     }
 
-    var timestamp_counter = {};
+    var timestamp_all_counter = {};
+    var timestamp_60day_counter = {};
     var timestamp_counter_for_hours = {};
 
-    _.map(_.range(_n_days_ago, _now + 24 * 1000 * 60 * 60, 1000 * 60 * 60), function (ts) {
+    _.map(_.range(_all_days_ago, _now + 24 * 1000 * 60 * 60, 1000 * 60 * 60), function (ts) {
       let ts_date = new Date(ts);
       var y_m_d = toJSONLocal(ts_date);
-      timestamp_counter[y_m_d] = 0;
+      timestamp_all_counter[y_m_d] = 0
+      if (ts > _n_days_ago) {
+        timestamp_60day_counter[y_m_d] = 0;
+      }
       if (ts > _7_days_ago && ts < _now + 1000 * 60 * 60)  // don't count older than 7 days or more recent than an hour
-        timestamp_counter_for_hours[y_m_d + '-' + ts_date.getHours().toString()] = 0;
+        timestamp_counter_for_hours[y_m_d + ' ' + ts_date.getHours().toString() + ":00"] = 0;
     });  // hourly increments set default.
 
-    _.map(recent_tss, function (ts) {
+    _.map(all_tss, function (ts) {
       let ts_date = new Date(ts * 1000);
       var local_y_m_d = toJSONLocal(ts_date);
-      timestamp_counter[local_y_m_d] += 1;
+      timestamp_all_counter[local_y_m_d] += 1;
+      if (ts * 1000 > _n_days_ago) {
+        timestamp_60day_counter[local_y_m_d] += 1;
+      }
       if (ts * 1000 > _7_days_ago) {
-        timestamp_counter_for_hours[local_y_m_d + '-' + ts_date.getHours().toString()] += 1;
+        timestamp_counter_for_hours[local_y_m_d + ' ' + ts_date.getHours().toString() + ":00"] += 1;
       }
     });
-    var results = timestamp_counter;
-    $log.log(results);
-    var dates4 = Object.keys(results);
+
+    var dates4 = Object.keys(timestamp_60day_counter);
     var datesSignupsHourly = Object.keys(timestamp_counter_for_hours);
+    var datesSignupsDailyLongTerm = Object.keys(timestamp_all_counter);
+    console.log(datesSignupsDailyLongTerm)
+
     dates4.pop();  // account for the one day added when generating recent_tss;
-    var newMembers = _.map(dates4, function (d) {
-      return results[d];
+    var newMembers60Days = _.map(dates4, function (d) {
+      return timestamp_60day_counter[d];
     });
     var hourlySignups = _.map(datesSignupsHourly, function (d) {
       return timestamp_counter_for_hours[d];
     });
-    var plotData4 = [{x: dates4, y: newMembers, type: 'bar'}];
+    var newMembersAll = _.map(datesSignupsDailyLongTerm, function(d){ return timestamp_all_counter[d] })
+
+    var plotData4 = [{x: dates4, y: newMembers60Days, type: 'bar'}];
     var plotDataSignupsHourly = [{type: 'bar', line: {shape: 'spline'}, x: datesSignupsHourly, y: hourlySignups}];
+    var plotDataSingupsDailyLongTerm = [{type: 'bar', x: datesSignupsDailyLongTerm, y: newMembersAll}]
 
     Plotly.newPlot('memberSignupDaysAgo', plotData4, {
       title: 'Member Signup for Last ' + nDays.toString() + ' Days',
       xaxis: {title: 'Days Ago'}, yaxis: {title: '# Signups'}
     });
+
     Plotly.newPlot('memberSignupHoursAgo', plotDataSignupsHourly, {
       'title': `Members Signups last ${nDaysForHours} days, hourly`,
       xaxis: {title: 'Signup time'}, yaxis: {title: '# Signups'}
     });
+
+    /* Plotly.newPlot('memberSingupsDailyLongTerm', plotDataSingupsDailyLongTerm, {
+      title: 'Member Signups by Day',
+      xaxis: {title: 'Days Ago'}, yaxis: {title: '# Signups', rangemode: 'tozero'}
+    }); */
+
 
     // day and hour popularity
     var day_pop = {};
@@ -241,7 +263,20 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
       });
       return Math.round(tss_after.length / tss_before.length * 1000) / 1000;
     };
-    flux.growthDays = [30, 7, 2, 1];
+
+    flux.growthAbsolute = function (d) {
+      var ts_now = Date.now();
+      var ts_ago = new Date(ts_now - (d * 24 * 60 * 60 * 1000));
+      var tss_before = _.filter(tss, function (_ts) {
+        return _ts < ts_ago;
+      });
+      var tss_after = _.filter(tss, function (_ts) {
+        return _ts >= ts_ago;
+      });
+      return tss_after.length;
+    };
+
+    flux.growthDays = [1, 2, 7, 14, 30, 60, 180, 360];
 
 
     // monthly growth

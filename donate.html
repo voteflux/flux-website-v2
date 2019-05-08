@@ -22,25 +22,42 @@ redirects:
 <section class="bg-light-gray mid-gray py4 sm-pr4">
   <div class="max-width-4 mx-auto px2 md-px3">
 
-    <form action="https://prod.v1.api.flux.party/api/v2/submit_stripe" method="POST">
+    {% comment %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      var stripe = Stripe("{% if jekyll.environment == 'development' %}pk_test_PmYsKZNGpB2f0dignwQPEBSN006Xw196Bm{% else %}pk_live_YehKrWPQMK4SA3LZgo7ygT3d00tgq4w0lj{% endif %}")
+      function clickedStripePayment() {
+        console.log('clickedStripePayment')
+        stripe.redirectToCheckout({
+          sessionId: 'asdf'
+        }).then(function(result){
+          $("#stripe-error").text(result.error.message)
+        })
+      }
+    </script>
+
+    <div id="stripe-error"></div>
+
+    <a class="btn btn-primary" onclick="clickedStripePayment()">Donate Now!</a>
+
+    <form action="https://{% if jekyll.environment == 'development' %}dev{% else %}prod{% endif %}.v1.api.flux.party/api/v2/submit_stripe" method="POST">
       <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_WkrKtOUbvF2S85UDdvkHS5tV"
-        data-amount="999"
+        data-key=""
+        data-amount="2500"
         data-name="Flux"
-        data-description="Donation"
+        data-description="Donation to Flux"
         data-locale="auto"
         data-currency="aud"
         data-zip-code="true"
         data-billing-address="true"
         data-label="Donate with Card"
-        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-image="/img/flux-mark.png"
       >
       </script>
     </form>
 
-    <!-- fbq('track', 'Donate', {value: 0.00, currency: 'AUD'}); -->
-    <!-- ga('send', {hitType: 'event', eventCategory: 'donation', eventAction: 'donated'}); -->
+    {% endcomment %}
 
     <!-- elm donation widget -->
     <span class="anchor" id="paypal"></span>
@@ -128,12 +145,7 @@ redirects:
     <!-- disclaimer also goes on dashboard.html verbatim -->
     <small>
       <p>
-        <strong>Disclaimer re donation log:</strong> Donations (as of Sept 2018) are made to the Flux Foundation and tagged for use by different branches.
-        In some cases this means a corresponding donation does not appear on party disclosure statements, or appears as part of a bulk donation from the Flux Foundation.
-        That said, depending on jurisdiction such a donation might appear on the Foundation's disclosure statement.
-        Furthermore, it might not appear on any disclosure statement if those funds are used for general things not directly related to the individual branch (e.g. paying our AWS bill).
-        In any case, be aware this donation log is a best-effort attempt at transparency, not a replacement for, substitute for, or even an indication of our official disclosures.
-        No data on this page regarding donations comes with any guarantee of accuracy.
+        {% include donate/disclaimer.html %}
       </p>
     </small>
 
@@ -142,4 +154,15 @@ redirects:
 
   </div>
 </section>
+
 {% include footer.html %}
+
+<script type="application/javascript">
+  function logDonationPageLoad() {
+    ga('send', 'event', 'donation', 'donation-pageload', { hitValue: 0.0 });
+  }
+
+  window.onload(function(){
+    ga('send', 'event', )
+  })
+</script>
