@@ -15,6 +15,14 @@
     major: true
     type: podcast
   -
+    title: The political party with zero policies
+    url: https://www.abc.net.au/radionational/programs/drive/the-political-party-with-zero-policies/11046810
+    date: "2019-04-25"
+    author: John Barrington
+    publishedIn: ABC Radio National
+    major: true
+    type: radio
+  -
     title: "Australia to Make Blockchain Voting App a Global Democratic Movement"
     url: "http://cointelegraph.com/news/australia-to-make-blockchain-voting-app-a-global-democratic-movement"
     date: "2016-06-30"
