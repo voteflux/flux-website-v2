@@ -7,6 +7,14 @@
     major: false
     type: "video"
   -
+    title: "Flux: Issue Based Direct Democracy w/Ben Ballingall"
+    url: "https://anchor.fm/brassmonkey/episodes/The-Brass-Monkey-Pod---Ep--12---Flux-Issue-Based-Direct-Democracy-wBen-Ballingall-e3tr87/a-aea7q2"
+    date: "2019-05-03"
+    author: Brass Monkey
+    publishedIn: The Brass Monkey Pod
+    major: true
+    type: podcast
+  -
     title: "Australia to Make Blockchain Voting App a Global Democratic Movement"
     url: "http://cointelegraph.com/news/australia-to-make-blockchain-voting-app-a-global-democratic-movement"
     date: "2016-06-30"
