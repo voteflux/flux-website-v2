@@ -16,7 +16,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 RUN echo "tcp	6	TCP	# transmission control protocol" > /etc/protocols
 
 RUN useradd -ms /bin/bash newuser
-RUN mkdir /target && chown newuser /target
+RUN mkdir /target
 USER newuser
 
 VOLUME /target
@@ -24,4 +24,4 @@ WORKDIR /target
 EXPOSE 9000
 
 RUN id
-CMD bash -c 'set -x && bundle install --path ./.bundle-gems && yarn install && yarn flux'
+CMD bash -c 'echo current directory: && pwd && set -x && ls -alh && bundle install --path ./.bundle-gems && yarn install && yarn flux'
