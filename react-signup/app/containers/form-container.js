@@ -57,7 +57,11 @@ const FormContainer = React.createClass({
           console.error("Error saving secret:", e)
           localStorage.setItem('s', response.body.s)
         }
-        saveMemberSecretOnFluxDomains();
+        try {
+          saveMemberSecretOnFluxDomains();
+        } catch (e) {
+          console.error("Error saving secret on domains:", e)
+        }
 
         this.setState({
           isLoading: false,
@@ -67,9 +71,14 @@ const FormContainer = React.createClass({
           window.location.assign(redirectUrl)
         }, 1500);
 
-        ga('send', {hitType: 'event', eventCategory: 'Membership Form', eventAction: 'Submission'});
-        fbq('track', 'Complete Registration');
-        fbq('track', 'NewMember');  // a different pixel thing to the above, keep both.
+        try {
+          ga('send', {hitType: 'event', eventCategory: 'Membership Form', eventAction: 'Submission'});
+          fbq('track', 'Complete Registration');
+          fbq('track', 'NewMember');  // a different pixel thing to the above, keep both.
+          gtag_report_singup_submission();
+        } catch (e) {
+          console.log("Some analytics error:", e)
+        }
 
       } else if (response.status === 409) {
         console.log('Duplicate email detected');

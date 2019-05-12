@@ -1,4 +1,4 @@
-# docker build -f ./_docker-dev/Dockerfile -t flux-website-docker-dev:latest .
+docker build -f ./_docker-dev/Dockerfile -t flux-website-docker-dev:latest .
 
 export NODE_ENV="development"
 _PWD=$(wslpath -w $PWD || echo $PWD)

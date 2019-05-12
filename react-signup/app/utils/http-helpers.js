@@ -40,7 +40,7 @@ const flux_api = function(path, useDev){
 
 var HttpHelpers = {
   getMembers: function () {
-    return axios.get( prodServer + "/api/v0/getinfo" )
+    return axios.get( flux_api("getinfo") )
       .then(function (response) {
         return response.data
       })
