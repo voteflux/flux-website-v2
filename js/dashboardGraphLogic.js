@@ -30,6 +30,12 @@ const pushCoordsCumulative = (d, data, filter = () => true) => {
   pushCoords({...d, amount: last + d.amount}, data, filter);
 }
 
+//
+// const pushCoordsWeekly = (d, data, filter = () => true) => {
+//   const week = d.ts % 604800 || 0;
+//   pushCoordsCumulative({...d, ts: week}, data, filter)
+// }
+
 
 export const processDonationGraphs = function (data) {
   const isValidDate = d => !isNaN(d.getTime())
@@ -54,6 +60,7 @@ export const processDonationGraphs = function (data) {
   const donationsByStateCumulativeAll = {};
   const donationsByStateFY = {}
   const donationsByStateCumulativeFY = {}
+  const donationsByWeek = {}
 
 
   const ensureKeyOrClone = (obj, branch, toClone) => {
@@ -75,6 +82,8 @@ export const processDonationGraphs = function (data) {
     ensureKeyOrClone(donationsByStateCumulativeAll, d.branch, stdCumulative)
     pushCoordsCumulative(d, donationsByStateCumulativeAll[d.branch])
     pushCoordsCumulative(d, donationsByStateCumulativeFY[d.branch], isThisFY)
+
+    // pushCoordsWeekly(d, donationsByWeek, isThisFY)
   }, donationLog);
 
 
@@ -145,6 +154,12 @@ export const processDonationGraphs = function (data) {
     yaxis: {'rangemode': 'tozero', 'title': '$ AUD (log)', type: 'log'},
     xaxis: {title: 'Date'}
   })
+
+  // Plotly.newPlot('donationGraphWeekly', donationsByWeek, {
+  //   title: "Donations by Week",
+  //   yaxis: {'rangemode': 'tozero', 'title': '$ AUD'},
+  //   xaxis: {title: 'Week of'}
+  // })
 
   return donationLog;
 }
