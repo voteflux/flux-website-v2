@@ -10,9 +10,14 @@ const prodServer = 'https://prod.v1.api.flux.party';
 let useDevDefault = (window.location.hostname === 'localhost' || _.includes(location.hostname, "deploy-preview") || location.port.length >= 4);
 let useLocalDev = (window.location.hostname === '127.0.0.1')
 let useProdOverride = false;
+let forceDev = false;
 
 try {
     useProdOverride = window.location.search.includes("useProd")
+} catch (e) {}
+
+try {
+    forceDev = window.location.search.includes("useDev")
 } catch (e) {}
 
 if (useProdOverride) {
@@ -30,7 +35,7 @@ const flux_api = function(path, useDev){
     return flux_api(path, useDevDefault);
   } else if (useLocalDev === true) {
     return 'http://localhost:5000/api/v0/' + path;
-  } else if (useDev === true) {
+  } else if (useDev === true || forceDev) {
     return 'https://dev.v1.api.flux.party/api/v0/' + path;
   } else if (useDev === false) {
     return prodServer + '/api/v0/' + path;
