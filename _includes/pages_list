@@ -2,7 +2,7 @@
 {% for node in all_pages %}
   {% if group == null or group == node.group %}
     {% assign slug_url = page.url | slugify %}
-    {% assign the_url = node.url | append: "?utm_source=mainsite&utm_medium=web&utm_campaign=" | append: campaign | append: "&utm_content=nav~" | append: slug_url %}
+    {% assign the_url = node.url | append: "?utm_content=nav~" | append: slug_url %}
 
     {% if include.mobile == true %}
 
