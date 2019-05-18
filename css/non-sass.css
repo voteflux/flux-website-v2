@@ -76,3 +76,14 @@
   height: 370px;
   max-width: 600px;
 }
+
+
+
+.ab-test-default {
+
+}
+
+.ab-test-hide {
+  display: none;
+}
+

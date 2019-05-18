@@ -31,7 +31,10 @@
 .bg-white { background-color: $white; }
 .bg-white { background-color: $white; }
 .bg-accent { background-color: $accent; }
+
 .bg-accent-muted { background-color: $accent-muted}
+.bg-dark { background-color: $bg-dark}
+
 .bg-accent-light { background-color: lighten($accent, 10%)}
 .bg-accent-dark { background-color: $accent-dark}
 // .bg-warning { background-color: red;}

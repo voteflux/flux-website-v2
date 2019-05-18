@@ -1,0 +1,102 @@
+{% comment %}
+USING GOOGLE OPTIMIZE - GA INTEGRATION NOT DONE
+{% endcomment %}
+
+
+
+{% capture t_id_pre %}ab-test-{{ include.ab_id }}{% endcapture %}
+{% capture js_name %}{{ t_id_pre | slugify | remove: '-' }}{% endcapture %}
+
+<div id="{{ t_id_pre }}-test1" class="ab-test-hide">
+  {{ include.test1 }}
+</div>
+
+{% if include.test2 %}
+<div id="{{ t_id_pre }}-test2" class="ab-test-hide">
+  {{ include.test2 }}
+</div>
+{% endif %}
+
+{% if include.test3 %}
+<div id="{{ t_id_pre }}-test3" class="ab-test-hide">
+  {{ include.test3 }}
+</div>
+{% endif %}
+
+{% if include.test4 %}
+<div id="{{ t_id_pre }}-test4" class="ab-test-hide">
+  {{ include.test4 }}
+</div>
+{% endif %}
+
+{% if include.test5 %}
+<div id="{{ t_id_pre }}-test5" class="ab-test-hide">
+  {{ include.test5 }}
+</div>
+{% endif %}
+
+<script type="application/javascript">
+  var lastTestKey{{ js_name }} = "{{ t_id_pre }}-existing"
+
+  function abTestWipe_{{ js_name }}(){
+    localStorage.removeItem(lastTestKey{{ js_name }})
+  }
+
+
+  (function (){
+    var ltk = lastTestKey{{ js_name }};
+    var ltkDate = ltk + "-date"
+    var lastTest = localStorage.getItem(ltk)
+    var lastTestDateStr = localStorage.getItem(ltkDate)
+
+    console.log("lastTest {{ t_id_pre }}", lastTest)
+
+    if (lastTestDateStr) {
+      var lastTestDate = new Date(lastTestDateStr)
+    } else {
+      var lastTestDate = null
+    }
+
+    var currDate = new Date()
+
+    var clHide = "ab-test-hide"
+    var clShow = "ab-test-show"
+    var clDefault = "ab-test-default"
+
+    var testIdPrefix = "{{ t_id_pre }}-";
+    var tests = [
+      {% if include.test1 %}'test1',{% endif %}
+      {% if include.test2 %}'test2',{% endif %}
+      {% if include.test3 %}'test3',{% endif %}
+      {% if include.test4 %}'test4',{% endif %}
+      {% if include.test5 %}'test5',{% endif %}
+    ]
+
+    function hideTest(el_id) {
+      var el = document.getElementById(el_id)
+      el.classList.add(clHide);
+      el.classList.remove(clShow)
+    }
+    function showTest(el_id) {
+      var el = document.getElementById(el_id)
+      el.classList.remove(clHide);
+      el.classList.add(clShow)
+    }
+
+    if (!(lastTest && lastTestDate && currDate - lastTestDate < 86400 * 1000 ) || true) {
+      var _nTests = tests.length;
+      var _rand = Math.random() * _nTests;
+
+      console.log(_nTests, _rand)
+
+      lastTest = testIdPrefix + "test" + (Math.ceil(_rand)).toString()
+      lastTestDate = currDate
+      localStorage.setItem(ltk, lastTest)
+      localStorage.setItem(ltkDate, lastTestDate.toISOString())
+
+      console.log("set {{ t_id_pre }}", lastTest)
+    }
+
+    showTest(lastTest)
+  })();
+</script>
