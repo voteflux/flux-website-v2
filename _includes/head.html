@@ -90,13 +90,17 @@
 
 <!-- ManyChat -->
   <script>
-    function addManyChatToHead(){
-      var head= document.getElementsByTagName('head')[0];
-      var script= document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://widget.manychat.com/1607946359418757.js';
-      script.async = 'async'
-      head.appendChild(script);
+    var _ADDED_MANYCHAT = false
+    function addManyChatToHead() {
+      if (!_ADDED_MANYCHAT) {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://widget.manychat.com/1607946359418757.js';
+        script.async = 'async'
+        head.appendChild(script);
+        _ADDED_MANYCHAT = true;
+      }
     }
   </script>
 
