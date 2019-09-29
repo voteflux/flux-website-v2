@@ -16,11 +16,11 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 RUN echo "tcp	6	TCP	# transmission control protocol" > /etc/protocols
 
 RUN useradd -ms /bin/bash newuser
-RUN mkdir /target
+# RUN mkdir /target && chown newuser /target
 USER newuser
 
-VOLUME /target
-WORKDIR /target
+#WORKDIR /target
+#VOLUME /target
 EXPOSE 9000
 
 RUN id
