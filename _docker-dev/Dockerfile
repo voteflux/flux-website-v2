@@ -24,4 +24,5 @@ USER newuser
 EXPOSE 9000
 
 RUN id
-CMD bash -c 'echo current directory: && pwd && set -x && ls -alh && bundle install --path ./.bundle-gems && yarn install && yarn flux'
+#CMD bash -c 'echo current directory: && pwd && set -x && ls -alh && bundle install --path ./.bundle-gems && yarn install && yarn flux'
+#ENTRYPOINT npm
