@@ -7,13 +7,19 @@ set -x
 
 docker build -f ./_docker-dev/Dockerfile -t flux-website-docker-dev:latest .
 
+EXTRA_ARGS=""
+
+if [ -t 1 ]; then
+  EXTRA_ARGS="-ti"
+fi
+
 export NODE_ENV="development"
 # don't need this with wsl2
 #_PWD=$(wslpath -w $PWD 2>/dev/null || echo $PWD)
 _PWD=$PWD
 _MNT="$_PWD:/target"
 echo "mounting: $_MNT"
-docker run -ti -p 9000:9000 --rm \
+docker run -p 9000:9000 --rm $EXTRA_ARGS \
   --mount "type=bind,src=$_PWD,dst=/src" \
   -w /src \
   --env NODE_ENV=$NODE_ENV \
