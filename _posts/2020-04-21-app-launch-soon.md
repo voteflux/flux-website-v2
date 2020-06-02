@@ -1,6 +1,6 @@
 ---
 title: App launch imminent – get ready for Australia's digital democratic revolution
-summary: Voteflux is excited to announce the first version of its app 'DigiPol&#58; Australia's Digital Democracy' will be launching soon.
+summary: Voteflux: is excited to announce the first version of its app 'DigiPol&#58; Australia's Digital Democracy' will be launching soon.
 author: Ben Ballingall
 layout: about
 date: 2020-04-21 15:00
