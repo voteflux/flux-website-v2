@@ -8,7 +8,6 @@ set -x
 docker build -f ./_docker-dev/Dockerfile -t flux-website-docker-dev:latest .
 
 EXTRA_ARGS=""
-
 if [ -t 1 ]; then
   EXTRA_ARGS="-ti"
 fi
