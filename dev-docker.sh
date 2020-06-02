@@ -12,9 +12,12 @@ if [ -t 1 ]; then
   EXTRA_ARGS="-ti"
 fi
 
+PORTS=""
+export NODE_ENV=""
 case $ACTION in
   flux)
     export NODE_ENV="development"
+    PORTS="-p 9000:9000"
     ;;
   build)
     export NODE_ENV="production"
@@ -28,7 +31,7 @@ esac
 _PWD=$PWD
 _MNT="$_PWD:/target"
 echo "mounting: $_MNT"
-docker run -p 9000:9000 --rm $EXTRA_ARGS \
+docker run --rm $PORTS $EXTRA_ARGS \
   --mount "type=bind,src=$_PWD,dst=/src" \
   -w /src \
   --env NODE_ENV=$NODE_ENV \
