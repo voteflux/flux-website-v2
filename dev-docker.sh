@@ -13,9 +13,19 @@ if [ -t 1 ]; then
   EXTRA_ARGS="-ti"
 fi
 
-export NODE_ENV="development"
+case $ACTION in
+  flux)
+    export NODE_ENV="development"
+    ;;
+  build)
+    export NODE_ENV="production"
+    ;;
+  *) ;;
+esac
+
 # don't need this with wsl2
 #_PWD=$(wslpath -w $PWD 2>/dev/null || echo $PWD)
+
 _PWD=$PWD
 _MNT="$_PWD:/target"
 echo "mounting: $_MNT"
