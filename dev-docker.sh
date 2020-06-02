@@ -33,7 +33,7 @@ docker run -p 9000:9000 --rm $EXTRA_ARGS \
   --mount "type=bind,src=$_PWD,dst=/src" \
   -w /src \
   --env NODE_ENV=$NODE_ENV \
-  flux-website-docker-dev:latest npm run docker-dev -- ${ACTION:-flux}
+  flux-website-docker-dev:latest npm run --silent docker-dev -- ${ACTION:-flux}
 
 # --network host \
 # -v "$_MNT" -w /target \
