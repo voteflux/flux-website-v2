@@ -23,8 +23,8 @@ USER newuser
 #VOLUME /target
 EXPOSE 9000
 
-COPY package.json
-COPY package-lock.json
+COPY package.json .
+COPY package-lock.json .
 
 RUN npm ci
 
