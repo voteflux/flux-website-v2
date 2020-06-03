@@ -15,6 +15,11 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 
 RUN echo "tcp	6	TCP	# transmission control protocol" > /etc/protocols
 
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm ci
+
 RUN useradd -ms /bin/bash newuser
 # RUN mkdir /target && chown newuser /target
 USER newuser
@@ -22,11 +27,6 @@ USER newuser
 #WORKDIR /target
 #VOLUME /target
 EXPOSE 9000
-
-COPY package.json .
-COPY package-lock.json .
-
-RUN npm ci
 
 #CMD bash -c 'echo current directory: && pwd && set -x && ls -alh && bundle install --path ./.bundle-gems && yarn install && yarn flux'
 #ENTRYPOINT npm
