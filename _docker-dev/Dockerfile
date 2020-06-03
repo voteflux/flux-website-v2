@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y curl tree
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
 RUN apt-get update && apt-get install -y nodejs
 RUN apt-get install -y gcc g++ make
 RUN apt-get install -y ruby
@@ -9,9 +9,9 @@ RUN gem install bundler -v 1.16.1
 
 RUN apt-get install -y ruby-dev
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update && apt-get install -y yarn
+#RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+#    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+#    apt-get update && apt-get install -y yarn
 
 RUN echo "tcp	6	TCP	# transmission control protocol" > /etc/protocols
 
