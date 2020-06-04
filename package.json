@@ -26,6 +26,9 @@
   "author": "David Factor, Max Kaye",
   "license": "",
   "devDependencies": {},
+  "unusedDeps": {
+    "bufferutil": "1"
+  },
   "dependencies": {
     "@types/node": "^8.0.28",
     "ace-css": "^1.1.0",
@@ -43,7 +46,6 @@
     "basscss-forms": "^1.0.0",
     "basscss-sass": "^4.0.0",
     "browser-sync": "2.9.0",
-    "bufferutil": "1",
     "concurrently": "^2.0.0",
     "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.28.7",
