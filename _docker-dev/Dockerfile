@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y curl tree
-RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get update && apt-get install -y nodejs
 RUN apt-get install -y gcc g++ make
 RUN apt-get install -y ruby
@@ -17,7 +17,10 @@ RUN echo "tcp	6	TCP	# transmission control protocol" > /etc/protocols
 
 COPY package.json .
 COPY package-lock.json .
+COPY Gemfile .
+COPY Gemfile.lock .
 
+RUN bundle install
 RUN npm ci
 
 RUN useradd -ms /bin/bash newuser
