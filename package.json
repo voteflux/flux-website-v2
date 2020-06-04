@@ -46,6 +46,7 @@
     "basscss-forms": "^1.0.0",
     "basscss-sass": "^4.0.0",
     "browser-sync": "2.9.0",
+    "bufferutil": "^4.0.1",
     "concurrently": "^2.0.0",
     "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.28.7",
