@@ -15,17 +15,23 @@ RUN apt-get install -y ruby-dev
 
 RUN echo "tcp	6	TCP	# transmission control protocol" > /etc/protocols
 
+RUN adduser --shell /bin/bash --home /home/user user
+RUN mkdir /src && chown -R user:user /src
+USER user
+
+WORKDIR /src
+# This doesn't work if we mount a dir over the top -- probably would get messy if we try too much down that path
 COPY package.json .
 COPY package-lock.json .
 COPY Gemfile .
 COPY Gemfile.lock .
 
-RUN bundle install
+RUN bundle install --path ./.bundle-gems
 RUN npm ci
 
-RUN useradd -ms /bin/bash newuser
-# RUN mkdir /target && chown newuser /target
-USER newuser
+VOLUME /src/node_modules
+VOLUME /src/.bundle
+VOLUME /src/.bundle-gems
 
 #WORKDIR /target
 #VOLUME /target
