@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# npm command to run
-ACTION="$1"
+# npm command to run; 'flux' is the dev command, it's a legacy thing.
+ACTION="${1:-flux}"
 
 set -x
 set -e
@@ -38,7 +38,7 @@ docker run --rm $PORTS $EXTRA_ARGS \
   --mount "type=bind,src=$_PWD,dst=/src" \
   -w /src \
   --env NODE_ENV=$NODE_ENV \
-  flux-website-docker-dev:latest bash -c "npm ci && npm install webpack-cli && npm run ${ACTION:-flux}"
+  flux-website-docker-dev:latest bash -c "npm run --silent $ACTION || (npm ci && npm run $ACTION)"
   #flux-website-docker-dev:latest npm run --silent install-then -- ${ACTION:-flux}
 
 exit 0

@@ -20,13 +20,17 @@ RUN mkdir /src && chown -R user:user /src
 USER user
 
 WORKDIR /src
-# This doesn't work if we mount a dir over the top -- probably would get messy if we try too much down that path
-COPY package.json .
-COPY package-lock.json .
+
+# ~This doesn't work if we mount a dir over the top -- probably would get messy if we try too much down that path~
+# Sorta seems to work atm...
+
+# Do gem stuff first because those deps change less frequently.
 COPY Gemfile .
 COPY Gemfile.lock .
-
 RUN bundle install --path ./.bundle-gems
+
+COPY package.json .
+COPY package-lock.json .
 RUN npm ci
 
 VOLUME /src/node_modules
