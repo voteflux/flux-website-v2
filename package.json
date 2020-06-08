@@ -11,10 +11,10 @@
     "pyserve": "cd _site && python3 -m http.server 9000 -b 127.0.0.1",
     "dev": "bundle exec jekyll 'clean' && BUILD_DEV=true parallelshell 'bundle exec jekyll serve --force_polling --livereload --host 0.0.0.0 --port 9000 --watch --config _config.yml' 'webpack -w -p'",
     "flux": "npm run dev",
-    "docker-dev": "bundle install --path ./.bundle-gems && npm i && npm run --silent",
+    "install-then": "bundle install --path ./.bundle-gems && npm ci && npm run --silent",
     "flux-no-react-deprecated": "bundle exec jekyll serve --watch --config _config.yml",
     "deploy-stage": "jekyll clean && gulp 'sass' | exit 0 && cd 'react-signup/' && webpack -p && cd '../' && jekyll build && gulp 'deploy' && exit",
-    "build": "bundle install && bundle exec jekyll clean && webpack -p && echo '--JEKYLL-BUILD--' && bundle exec jekyll build",
+    "build": "bundle exec jekyll clean && webpack -p && echo '--JEKYLL-BUILD--' && bundle exec jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "memberui": "parallelshell 'elm-live --host=localhost --port=8755 -- elmSrc/Flux/MemberUI/Main.elm --output=temp.elm.js --debug' 'bash -c \"sleep 1.5 && open http://localhost:8755/elmSrc/Flux/MemberUI/index.html\"'"
   },
@@ -26,6 +26,9 @@
   "author": "David Factor, Max Kaye",
   "license": "",
   "devDependencies": {},
+  "unusedDeps": {
+    "bufferutil": "1"
+  },
   "dependencies": {
     "@types/node": "^8.0.28",
     "ace-css": "^1.1.0",
@@ -43,7 +46,7 @@
     "basscss-forms": "^1.0.0",
     "basscss-sass": "^4.0.0",
     "browser-sync": "2.9.0",
-    "bufferutil": "1",
+    "bufferutil": "^4.0.1",
     "concurrently": "^2.0.0",
     "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.28.7",
@@ -82,6 +85,7 @@
     "ts-loader": "^2.3.7",
     "typescript": "^2.5.2",
     "webpack": "^3.5.6",
+    "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^2.7.1",
     "webpack-stream": "^4.0.0",
     "ws": "1.1.4"
