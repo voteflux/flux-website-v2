@@ -69,7 +69,7 @@
     "gulp-server-livereload": "^1.9.2",
     "html-webpack-plugin": "^2.24.0",
     "jquery-touch-events": "^1.0.3",
-    "lodash": "^4.17.2",
+    "lodash": "^4.17.13",
     "lodash.throttle": "^4.0.1",
     "moment": "^2.13.0",
     "node-sass": "^4.5.3",
