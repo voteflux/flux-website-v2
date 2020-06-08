@@ -34,7 +34,7 @@
     "ace-css": "^1.1.0",
     "and": "^0.0.0",
     "autoprefixer": "^6.3.6",
-    "axios": "^0.15.2",
+    "axios": "^0.18.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
