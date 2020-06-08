@@ -1,5 +1,7 @@
 # Instructions
 
+If a build fails you can check logs at: <https://voteflux.org/build-logs/>
+
 ## Dependencies
 
 ### Docker
@@ -17,7 +19,7 @@ We presume your environment is OSX.
  * Fedora: `redhat-rpm-config`
 * Install dependencies: `./dev-install-deps.sh` or if that doesn't work: `gem install bundle` then `bundle install` then `yarn install`
 
-Note: Node v11 doesn't seem to work building for some deps
+Note: Node v11 doesn't seem to work buiding for some deps
 
 ## Development
 
