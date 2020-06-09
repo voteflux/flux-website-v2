@@ -16,7 +16,7 @@ RUN apt-get install -y ruby-dev
 RUN echo "tcp	6	TCP	# transmission control protocol" > /etc/protocols
 
 RUN adduser --shell /bin/bash --home /home/user user
-RUN mkdir /src && chown -R user:user /src
+RUN mkdir -p /src && chown -R user:user /src
 USER user
 
 WORKDIR /src
