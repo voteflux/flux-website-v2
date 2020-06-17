@@ -13,7 +13,7 @@ This is for the **legislative council** (the big ballot paper).
 
 ## How To Vote - Flux (Column I)
 
-First, find **Flux** in the middle (columng I, just to the left of Labor in column J and the Lib/Nats in column K).
+First, find **Flux** in the middle (column I, just to the left of Labor in column J and the Lib/Nats in column K).
 
 ### Put the number **1** in the box for Flux, above the line.
 

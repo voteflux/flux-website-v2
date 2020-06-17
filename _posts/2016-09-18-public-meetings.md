@@ -9,7 +9,7 @@ This post explains how to watch or get involved in The Flux Party's public meeti
 
 # Watch
 
-If you’d just like to watch the meeting, you can find a live stream on our Youtube channel at [https://www.youtube.com/c/FluxParty](https://www.youtube.com/c/FluxParty).
+If you’d just like to watch the meeting, you can find a live stream on our YouTube channel at [https://www.youtube.com/c/FluxParty](https://www.youtube.com/c/FluxParty).
 
 # Participate
 
@@ -27,8 +27,8 @@ Minutes and action items etc, will be collated using a slack channel for conveni
 
 If you’d like to raise something at the meeting,  you’ll need a well prepared message to post in #livestream-motion. Any motion raised here will need 2 ‘thumbs up’ from other members (3 including the posters) in order for it to be discussed at the meeting.
 
-If there's external documentation it should be linked, and any sizable body of text has to be provided in advance so everyone has a chance to prepare.
-Such text can be posted in #livestream-prep, and anything posted at least 24hrs before a meeting can be cited in the meeting.
+If there's external documentation it should be linked, and any sizeable body of text has to be provided in advance so everyone has a chance to prepare.
+Such text can be posted in #livestream-prep, and anything posted at least 24 hours before a meeting can be cited in the meeting.
 
 # Who Participates
 
