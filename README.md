@@ -23,15 +23,19 @@ Note: Node v11 doesn't seem to work building for some deps
 
 ## Development
 
-* To run a development copy for everything run `./dev-watch-all.sh` or `yarn flux`
-* To simulate a build run `yarn build`
+* To run a development copy for everything run `./dev-watch-all.sh` or `npm run flux`
+* To simulate a build run `npm run build`
+
+### Spellcheck
+
+To run the interactive spellchecker: `npm run spellcheck`.
+By default it runs in interactive mode with suggestions.
+Run `npm run spellcheck -- -x` to disable suggestions, which is much faster.
 
 ## Deployment
 
 * Deployments automatically happen via the `master` branch.
 * All merges require a PR.
-
-
 
 <!-- 1. run npm install
 2. To start dev environment run: $ `npm run flux`
@@ -57,15 +61,13 @@ https://docs.shopify.com/themes/liquid/tags/control-flow-tags -->
 
 #### Hints and Tips
 
-`brew install ruby` for ruby
-
-`gem install bundle` for bundle
-
-`bundle install` to install dependencies
-
-`bundle exec jekyll serve --watch` to run a dev server for just jekyll stuff.
-
-React is used for the sign-up form but not for anything else.
+* macOS: `brew install ruby` for ruby
+* `gem install bundle` for bundle
+* `bundle install` to install jekyll dependencies
+* `bundle exec jekyll serve --watch` to run a dev server for just jekyll stuff.
+* `./dev-docker.sh` to run jekyll and webpack in a docker container
+* React is used for the sign-up form but not for anything else.
+* Some widgets are written in Elm
 
 ## Kip's notes on contributing
 
