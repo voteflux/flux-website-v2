@@ -14,7 +14,7 @@ These are regenerated every time a change is made to any document in the `votefl
 If you're technical, you might be interested in the [buildspec.yml](https://github.com/voteflux/flux/blob/master/buildspec.yml) file.
 
 The copies of our constitutions in the constitutions folder above include the dates they were last edited.
-If you'd like to view the constitutions on github as they appeared at a particular date, you can use a URL like this: `https://github.com/voteflux/flux/tree/master@{2019-02-01}`.
+If you'd like to view the constitutions on GitHub as they appeared at a particular date, you can use a URL like this: `https://github.com/voteflux/flux/tree/master@{2019-02-01}`.
 This will (in this case) show you our constitutions as they appeared on the 1st of February 2019.
 
 You can also compare between arbitrary dates using a URL like this: `https://github.com/voteflux/flux/compare/master@{2019-01-01}...master@{2019-03-31}`.

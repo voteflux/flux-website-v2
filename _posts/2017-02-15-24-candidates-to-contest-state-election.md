@@ -5,7 +5,7 @@ layout: about
 author: Nathan Spataro
 ---
 
-# Sitting Councillor, Financial Advisor, School Teacher and an Accountant among candidates for Flux's first WA state election campaign
+# Sitting Councillor, Financial Adviser, School Teacher and an Accountant among candidates for Flux's first WA state election campaign
 
 **_15 February 2017 (PERTH)_** – The Flux Party formally announced their candidates for the 2017 WA State Election at an event on the stairs of State Parliament, with party state secretary Pieter Lottering discussing the party's 'strong prospects' of taking home upper house seats on March 11.
 

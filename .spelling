@@ -1,0 +1,181 @@
+# markdown-spellcheck spelling configuration file
+# Format - lines beginning # are comments
+# global dictionary is at the start, file overrides afterwards
+# one word per line, to define a file override use ' - filename'
+# where filename is relative to this configuration file
+livestreams
+backend
+frontend
+AngularJS
+FluxParty
+ExO
+Spataro
+CEOs
+decentralized
+aging
+organizations
+artifact
+AGMs
+preselection
+Pieter
+Lottering
+Brownbill
+Erinn
+Stanfield
+Armadale
+Cockburn
+blockchain
+Geraldton
+councilor
+Thornlie
+Darlington
+Pilbara
+Mandurah
+Dawesville
+Bunbury
+Redfearn
+Kai
+Taaffe
+Albery
+D'Cunha
+Merriman
+Ballingall
+Pomeroy
+Daithi
+Gleeson
+Radley
+Liam
+voteflux.org
+Deutschian
+fallibilism
+Popperian
+Deutsch's
+Dawkinsian
+incentivised
+Balinski
+whitepaper
+Deutsch
+BoI
+democ
+LTs
+MPs
+www.austlii.edu.au
+SMSs
+flux.party
+pre-paid
+livestream
+Willoughby
+Dubbo
+Meow-Ludo
+Meow-Meow
+Cotterill
+centric
+Rushton
+Gavriel
+Mansour
+Soltani
+Greenup
+Sesselmann
+Dearing
+Adriano
+Guerrera
+foundational
+cryptocurrency
+HTVs
+counterparty's
+haha
+i.e.
+Holacracy
+SteerCo
+orgs
+Rhys
+Jaconley
+Labor
+Nats
+docx
+epub
+html
+pdf
+txt
+buildspec.yml
+EOIs
+analytics
+VoteFlux
+Duston
+Seb
+Daithí
+ó
+Gliasáin
+SecureVote's
+DigiPol
+macOS
+repo
+www.elections.wa.gov.au
+webpack
+ - _posts/2016-09-18-party-meeting-2016-09-19.md
+https
+ - _posts/2016-09-18-public-meetings.md
+www.youtube.com
+livestream-chat
+livestream-motion
+livestream-prep
+ - _posts/2016-10-18-is-exo-one-an-associated-entity.md
+s287
+ - _posts/2016-11-17-Vic-Meeting-Agenda-Nov-23.md
+_See
+application_
+actioning
+ - _posts/2017-02-03-establishing-qld-steerco.md
+_Party
+_
+_A
+_makes
+_notifies
+_gives
+_Registered
+ - _posts/2017-02-15-24-candidates-to-contest-state-election.md
+goo.gl
+q6iZk6
+ - _posts/2017-05-26-an-overview-of-flux-and-ibdd.md
+Democ
+boaty
+mcboatface
+ - _posts/2017-09-16-flux-reading-list.md
+7x
+1hr
+10m
+ - _posts/2017-09-16-q-how-is-legislation-submitted-in-ibdd.md
+s170
+http
+cgi-bin
+viewdoc
+au
+legis
+cth
+consol_act
+cea1918233
+s170.html
+ - _posts/2017-09-22-flux-nsw-needs-declaration-forms.md
+_blank
+ - _posts/2019-01-11-flux-agm-2018.md
+10am
+ - _posts/2019-03-13-why-holacracy.md
+Sociocracy
+Loomio
+bioregional
+ - _posts/2019-04-17-some-notes-on-constitutions-and-things.md
+odt
+rst
+ - donate-thankyou.md
+href
+mailto
+ - elm-stuff/packages/cuducos/elm-format-number/6.0.1/README.md
+lang.org
+ - elm-stuff/packages/debois/elm-dom/1.2.3/README.md
+VirtualDom
+ - README.md
+deps
+v11
+dev
+jekyll
+sudo

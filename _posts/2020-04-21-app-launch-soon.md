@@ -8,7 +8,7 @@ date: 2020-04-21 15:00
 
 We are happy to announce we will be launching the first version of our app in the coming months!
 
-With the recent work put in by our small team of development volunteers and the backing of Securevote's [blockchain voting technology](https://secure.vote/), we're really looking forward to launching an alpha version of DigiPol: Australia's Digital Democracy.
+With the recent work put in by our small team of development volunteers and the backing of SecureVote's [blockchain voting technology](https://secure.vote/), we're really looking forward to launching an alpha version of DigiPol: Australia's Digital Democracy.
 
 This is something that could really affect how people participate in Australian politics with real [issue-based direct democracy](https://voteflux.org/about/vision-and-purpose/) inside government — even before a Flux member is elected.
 

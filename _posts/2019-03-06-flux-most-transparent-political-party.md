@@ -16,7 +16,7 @@ Like all people and organisations, we're fallible, so taking our values seriousl
 Receiving (and *requesting*) that criticism is part of our methods of *error correction*, a concept foundational to the best ideas on morality I know of. (See *Beginning of Infinity*, Chapter 9 and 10)
 
 I've wanted to continuously improve our transparency since starting Flux. For example: we have always been transparent about membership numbers (I'm not aware of another Australian party that does this).
-Building on that, we publish [continuous and up to date metrics and graphs on our dashboard](/dashboard). These cover things like member years of birth, **membership revocations over time**, signup numbers for the last 7 days and 60 days, and member distribution by state.
+Building on that, we publish [continuous and up to date metrics and graphs on our dashboard](/dashboard). These cover things like member years of birth, **membership revocations over time**, sign-up numbers for the last 7 days and 60 days, and member distribution by state.
 We also have raw numbers available via our API at [https://prod.v1.api.flux.party/api/v0/getinfo](https://prod.v1.api.flux.party/api/v0/getinfo) and [https://prod.v1.api.flux.party/api/v0/public_stats](https://prod.v1.api.flux.party/api/v0/public_stats).
 
 We do these things because **our morality compels us**; we cannot be satisfied with ourselves if we were to hide these numbers.

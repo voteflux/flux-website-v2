@@ -14,24 +14,28 @@ We presume your environment is OSX.
 
 * Install `node`, `npm`, `ruby`, `yarn` first
  * macOS: `brew install ruby node npm yarn`
- * ubuntu: `sudo apt install ruby nodejs` (aside: does this include `npm`?)
+ * Ubuntu: `sudo apt install ruby nodejs` (aside: does this include `npm`?)
  * Ubuntu: Note: you'll need to install yarn yourself
  * Fedora: `redhat-rpm-config`
 * Install dependencies: `./dev-install-deps.sh` or if that doesn't work: `gem install bundle` then `bundle install` then `yarn install`
 
-Note: Node v11 doesn't seem to work buiding for some deps
+Note: Node v11 doesn't seem to work building for some deps
 
 ## Development
 
-* To run a development copy for everything run `./dev-watch-all.sh` or `yarn flux`
-* To simulate a build run `yarn build`
+* To run a development copy for everything run `./dev-watch-all.sh` or `npm run flux`
+* To simulate a build run `npm run build`
+
+### Spellcheck
+
+To run the interactive spellchecker: `npm run spellcheck`.
+By default it runs in interactive mode with suggestions.
+Run `npm run spellcheck -- -x` to disable suggestions, which is much faster.
 
 ## Deployment
 
 * Deployments automatically happen via the `master` branch.
 * All merges require a PR.
-
-
 
 <!-- 1. run npm install
 2. To start dev environment run: $ `npm run flux`
@@ -57,15 +61,13 @@ https://docs.shopify.com/themes/liquid/tags/control-flow-tags -->
 
 #### Hints and Tips
 
-`brew install ruby` for ruby
-
-`gem install bundle` for bundle
-
-`bundle install` to install dependencies
-
-`bundle exec jekyll serve --watch` to run a dev server for just jekyll stuff.
-
-React is used for the signup form but not for anything else.
+* macOS: `brew install ruby` for ruby
+* `gem install bundle` for bundle
+* `bundle install` to install jekyll dependencies
+* `bundle exec jekyll serve --watch` to run a dev server for just jekyll stuff.
+* `./dev-docker.sh` to run jekyll and webpack in a docker container
+* React is used for the sign-up form but not for anything else.
+* Some widgets are written in Elm
 
 ## Kip's notes on contributing
 
@@ -78,8 +80,8 @@ MK note: if you need to use `sudo` to run `./dev-docker.sh` you should add yours
 * https://github.com/voteflux/flux-website-v2 - use the fork button
 * clone your copy onto your machine. For me in a terminal it's:
 * git clone https://github.com/KipCrossing/flux-website-v2
-* Read the Readme and run: sudo ./dev-docker.sh
-* Once the flie has run it will tell you the server address. for me it was: http://0.0.0.0:9000/
+* Read the README and run: sudo ./dev-docker.sh
+* Once the file has run it will tell you the server address. for me it was: http://0.0.0.0:9000/
 * Paste that into your web browser
 * Open the flux-website repo as a project in your IDE
 * Make changes

@@ -50,11 +50,11 @@ All our candidate nominations fees are self-funded by the candidates and support
 
 ## Our Endorsed Candidates
 
-Our seven endorsed candidates have taken on the task of representing Flux, IBDD and the promise to Upgrade Democracy during the campaign to elect the members of the 46th Australian Parliament. They will carry this task on after the campaign is long over as teh mission of Flux is only getting started.
+Our seven endorsed candidates have taken on the task of representing Flux, IBDD and the promise to Upgrade Democracy during the campaign to elect the members of the 46th Australian Parliament. They will carry this task on after the campaign is long over as the mission of Flux is only getting started.
 
 Running candidates in elections is a key priority for us, as it allows us to share our ideas and philosophy with people at a time when people are questioning the nature of day-to-day politics. We are giving people the opportunity to express their intention for a better system, to choose representatives who will serve the will and needs of modern Australian voters. 
 
-Our goal for this election is “To position Flux as an increasingly viable option for mainstream Austraian voters”. Help us achieve that goal by sharing with your friends, talking with your colleagues and making a tax-deductible donation. 
+Our goal for this election is “To position Flux as an increasingly viable option for mainstream Australian voters”. Help us achieve that goal by sharing with your friends, talking with your colleagues and making a tax-deductible donation. 
 
 We’re all in this together and we can only do it with your help, via donations, volunteering with the organisation and standing as candidates.
 
