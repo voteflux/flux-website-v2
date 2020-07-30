@@ -11,6 +11,8 @@ const _ = require('lodash');
 const redirectUrl = (window.location.href.split("/\?", 2)[0] + '/step2').replace("//step2", "/step2");
 const randomEmail = Math.random().toString(36).substr(2,10);
 
+
+
 const FormContainer = React.createClass({
   getInitialState() {
     return {
@@ -461,7 +463,9 @@ const FormContainer = React.createClass({
 
            <div className="buttons flex items-center mt4 mb3">
              <div>
-              <button type="submit" className="h3 btn btn-primary" disabled={!this.state.canSubmit}>Submit <i className="material-icons ">chevron_right</i></button>
+              <button className="h3 btn btn-primary g-recaptcha" data-sitekey="6LfIUrgZAAAAAKgk0qHACeb8jx_Fjz8Y5YW8Nqf7" data-callback="recaptchaSubmit" data-action="submit" disabled={!this.state.canSubmit}>
+                Submit <i className="material-icons ">chevron_right</i>
+              </button>
              </div>
             {!this.state.canSubmit
               &&

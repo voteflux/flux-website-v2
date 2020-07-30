@@ -9,7 +9,9 @@
     "jekyll": "bundle exec jekyll build --config _config.yml",
     "jekyll-forever": "while [ 1 ]; do bundle exec jekyll build --config _config.yml; done",
     "pyserve": "cd _site && python3 -m http.server 9000 -b 127.0.0.1",
-    "dev": "bundle exec jekyll 'clean' && BUILD_DEV=true parallelshell 'bundle exec jekyll serve --force_polling --livereload --host 0.0.0.0 --port 9000 --watch --config _config.yml' 'webpack -w -p'",
+    "dev": "bundle exec jekyll 'clean' && BUILD_DEV=true run-p dev:jekyll dev:webpack",
+    "dev:jekyll": "bundle exec jekyll serve --force_polling --livereload --host vm-dev-177 --port 9000 --watch --config _config.yml",
+    "dev:webpack": "webpack -w -p",
     "flux": "npm run dev",
     "install-then": "bundle install --path ./.bundle-gems && npm ci && npm run --silent",
     "flux-no-react-deprecated": "bundle exec jekyll serve --watch --config _config.yml",
@@ -31,6 +33,9 @@
   },
   "unusedDeps": {
     "bufferutil": "1"
+  },
+  "engines": {
+    "node": "10"
   },
   "dependencies": {
     "@types/node": "^8.0.28",
@@ -76,7 +81,7 @@
     "lodash.throttle": "^4.0.1",
     "moment": "^2.13.0",
     "node-sass": "^4.5.3",
-    "parallelshell": "3.0.2",
+    "npm-run-all": "^4.1.5",
     "parse-dates": "^1.0.7",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",

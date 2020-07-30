@@ -330,7 +330,7 @@ $(document).ready(function() {
   function getDonationBannerData() {
     console.log('getDonationBannerData')
     $.getJSON({
-      url: "https://prod.v1.api.flux.party/api/v1/fundrazr/current", success: data => {
+      url: flux_api("api/v1/fundrazr/current") || "https://prod.v1.api.flux.party/api/v1/fundrazr/current", success: data => {
         let amtStr = data.campaign.statistics.donationSum;
         setDonationProgressBar(amtStr)
       }
