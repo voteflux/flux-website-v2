@@ -69,7 +69,7 @@ const config = {
     main: ['./_sass/main.scss'],
     // memberUI: [localElmSrc + 'Flux/MemberUI/index.ts'],
     // fluxScripts: [localElmSrc + 'Flux/MemberUI/scripts.ts'],
-    graphs: ['./js/graphs-ng.js'],
+    graphs: ['./src/web/graphs-ng.js'],
   },
   output: {
     path: __dirname + "/js",

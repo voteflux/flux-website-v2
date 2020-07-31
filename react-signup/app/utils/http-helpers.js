@@ -31,6 +31,10 @@ if (useDevDefault) {
 }
 
 const flux_api = function(path, useDev){
+  if (__DEV__ && __DEV_HOSTNAME__) {
+    return [__DEV_HOSTNAME__, path].join(__DEV_HOSTNAME__[__DEV_HOSTNAME__.length - 1] === "/" ? "" : "/");
+  }
+  
   if (useDev === undefined) {
     return flux_api(path, useDevDefault);
   } else if (useLocalDev === true) {

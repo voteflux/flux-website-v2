@@ -190,7 +190,7 @@ const FormContainer = createReactClass({
             name="onAECRoll"
             title="I am on the Australian Electoral Roll."
             validationError=""
-            value={false}
+            value={__DEV__ ? true : false}
             />
         </div>
 
@@ -439,7 +439,7 @@ const FormContainer = createReactClass({
             type="checkbox"
             name="volunteer"
             title="I'm interested in volunteering"
-            value={false}
+            value={__DEV__ ? true : false}
           />
 
           <MyInput
@@ -447,7 +447,7 @@ const FormContainer = createReactClass({
             type="checkbox"
             name="do_not_email_updates"
             title="I wish to OPT OUT of membership updates"
-            value={false}
+            value={__DEV__ ? true : false}
           />
 
           <div className="flex flex-justify">
@@ -455,7 +455,7 @@ const FormContainer = createReactClass({
               inputClass="input"
               type="checkbox"
               name="other_party_membership"
-              title={"I am a member of another political party "}
+              title={"I am a member of another political party"}
               value={false}
             />
             <small className="line-height-1 flex flex-end"><a className="ml1 mt1" onClick={this.openMultiPartyFAQ}>(it's okay!)</a></small>

@@ -58,6 +58,9 @@ function flux_api(path) {
   if (path.slice(0, 3) !== 'api') {
     path = 'api/v0/' + path;
   }
+  if (__DEV__ && __DEV_HOSTNAME__) {
+    return [__DEV_HOSTNAME__, path].join(__DEV_HOSTNAME__[__DEV_HOSTNAME__.length - 1] === "/" ? "" : "/");
+  }
   if ((window.location.hostname === "flux-api-dev.herokuapp.com" && !getParam('prod')) || getParam('useDev') || location.port.length >= 4) {
     return "https://dev.v1.api.flux.party/" + path;
   }

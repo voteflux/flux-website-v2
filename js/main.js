@@ -52,46 +52,6 @@ fluxAnnounce = (function() {
       $('#js-announcement-content').removeClass('hide');
       $('#js-announcement-loading').addClass('hide');
     },
-    getAnnouncement: function() {
-      var $modal = {
-        wrapper: $("#js-modal"),
-        heading: $("#js-modal-heading"),
-        body: $("#js-modal-body"),
-        link: $("#js-modal-link")
-      };
-      var $announcement = {
-        wrapper: $("#js-announcement-home"),
-        heading: $("#js-callout-heading"),
-        body: $("#js-callout-body"),
-        link: $("#js-callout-link")
-      }
-      $.ajax({
-        // url: "http://dev.v1.api.flux.party/api/v0/announcement",
-        url: "https://prod.v1.api.flux.party/api/v0/announcement",
-        type: 'GET',
-        error: function() {
-          console.log('error');
-          setTimeout( function() {
-            this.getAnnouncement();
-          }, 1000);
-        },
-        success: function(response) {
-
-          if (Boolean($modal.wrapper)) {
-            $modal.heading.html(response.heading);
-            $modal.body.html(response.body);
-            $modal.link.prop("href", response.link)
-          }
-          if (Boolean($announcement.wrapper)) {
-            $announcement.heading.html(response.heading);
-            $announcement.body.html(response.body);
-            $announcement.link.prop("href", response.link)
-          }
-          fluxAnnounce.showModalContent();
-          fluxAnnounce.showAnnouncementContent();
-        }
-      });
-    }
   }
 }());
 
@@ -116,47 +76,6 @@ $(document).ready(function() {
     setRefLocalStorage('wa-landing-page + maybe r:' + document.referrer);
   }
   console.log("Local storage ref: " + getRefLocalStorage());
-
-  // if(referrer === undefined){
-  //     utmSource = checkReferrer.getParam('utm_source');
-  //     utmCampaign = checkReferrer.getParam('utm_campaign');
-  //     if(utmSource != undefined && utmCampaign != undefined){
-  //         referrer = utmSource + "-" + utmCampaign;
-  //     }
-  // }
-
-  //
-  // // countdown
-  // if( $('#clock').length ) {
-  //   var countdownTo = new Date((1465948800) * 1000);  // June 15th 10am
-  //   var now = new Date();
-  //
-  //   var countdownOver = function (event) {
-  //     fluxAnnounce.getAnnouncement();
-  //     fluxAnnounce.showSection();
-  //     fluxAnnounce.removeCounter();
-  //   };
-  //   var countdownFinished = function(event){
-  //     countdownOver(event);
-  //     fluxAnnounce.showModal();
-  //   };
-  //
-  //   if (countdownTo > now) {
-  //     $('#clock').countdown(countdownTo, function (event) {
-  //       $(this).html(event.strftime(
-  //         '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%d</h3> <h6 class="m0 muted">Day%!D</h6> </div>'
-  //         + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%H</h3> <h6 class="m0 muted">Hour%!H</h6> </div>'
-  //         + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%M</h3> <h6 class="m0 muted">Minute%!M</h6> </div>'
-  //         + '<div class="inline-block pl1"> <h3 class="sm-h2 m0 bold">%S</h3> <h6 class="m0 muted">Second%!S</h6> </div>' + '</div>'));
-  //     })
-  //       .on('finish.countdown', countdownFinished);
-  //   } else {
-  //     countdownOver();
-  //   }
-  //
-  //   var countDownHeight = $("#countdown-wrapper").outerHeight(true);
-  //   $('footer').css({'margin-bottom': countDownHeight + 'px'})
-  // }
 
   // candidates slider
   if ( $('#js-candidates').length != 0 ) {
