@@ -1,6 +1,7 @@
 import React from 'react'
 import Formsy from 'formsy-react'
 import Modal from 'react-modal';
+import createReactClass from 'create-react-class';
 import MyInput from '../components/my-input'
 import MySelect from '../components/my-select'
 import MyTextarea from '../components/my-textarea'
@@ -11,9 +12,7 @@ const _ = require('lodash');
 const redirectUrl = (window.location.href.split("/\?", 2)[0] + '/step2').replace("//step2", "/step2");
 const randomEmail = Math.random().toString(36).substr(2,10);
 
-
-
-const FormContainer = React.createClass({
+const FormContainer = createReactClass({
   getInitialState() {
     return {
       canSubmit: false,
@@ -82,16 +81,16 @@ const FormContainer = React.createClass({
           console.log("Some analytics error:", e)
         }
 
-      } else if (response.status === 409) {
-        console.log('Duplicate email detected');
+      } else if (response.status >= 400 && response.status < 500) {
+        console.log(`Error: ${response.response.text}`);
         this.setState({
           isLoading: false,
-          serverErrorMsg: "Error. Email already exists. Please update details instead of re-registering."
+          serverErrorMsg: `Error: ${response.response.text}`,
         });
       } else {
         this.setState({
           isLoading: false,
-          serverErrorMsg: "Server error, " + response.statusText ? response.statusText : null
+          serverErrorMsg: `Server error: ${response.response.statusText} - ${response.response.text}`
         });
       }
     }.bind(this))
@@ -171,7 +170,7 @@ const FormContainer = React.createClass({
 
   render() {
     return (
-      <Formsy.Form
+      <Formsy
         onSubmit={this.submit}
         onValid={this.enableButton}
         onInvalid={this.disableButton}
@@ -190,8 +189,9 @@ const FormContainer = React.createClass({
             type="checkbox"
             name="onAECRoll"
             title="I am on the Australian Electoral Roll."
-            validationError="First name is required"
-            value={false} />
+            validationError=""
+            value={false}
+            />
         </div>
 
         <div className="px2 pb4">
@@ -394,7 +394,7 @@ const FormContainer = React.createClass({
             type="email"
             pattern="[^ @]*@[^ @]*"
             value={__DEV__ ? randomEmail + "@xk.io" : ""}
-            validations="isEmail"
+            // validations="isEmail"
             validationError="This is not a valid email"
             autocomplete="email"
             required />
@@ -463,8 +463,14 @@ const FormContainer = React.createClass({
 
            <div className="buttons flex items-center mt4 mb3">
              <div>
-              <button className="h3 btn btn-primary g-recaptcha" data-sitekey="6LfIUrgZAAAAAKgk0qHACeb8jx_Fjz8Y5YW8Nqf7" data-callback="recaptchaSubmit" data-action="submit" disabled={!this.state.canSubmit}>
-                Submit <i className="material-icons ">chevron_right</i>
+              <button type="submit" className="h3 btn btn-primary"
+                disabled={!this.state.canSubmit}>
+                  Submit <i className="material-icons ">chevron_right</i>
+              </button>
+              <button className="h3 btn btn-primary g-recaptcha" 
+                data-sitekey="6LfIUrgZAAAAAKgk0qHACeb8jx_Fjz8Y5YW8Nqf7" data-callback="recaptchaSubmit" data-action="submit"
+                disabled={!this.state.canSubmit}>
+                  Submit (recaptcha) <i className="material-icons ">chevron_right</i>
               </button>
              </div>
             {!this.state.canSubmit
@@ -532,7 +538,7 @@ const FormContainer = React.createClass({
           </p>
         </div>
 
-      </Formsy.Form>
+      </Formsy>
     );
   }
 });

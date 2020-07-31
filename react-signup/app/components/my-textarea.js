@@ -1,19 +1,19 @@
 import React from 'react'
-import Formsy from 'formsy-react'
+import { withFormsy } from 'formsy-react'
+import createReactClass from 'create-react-class';
 
-const MyTextarea = React.createClass({
-  mixins: [Formsy.Mixin],
+const MyTextarea = createReactClass({
   changeValue(event) {
-    this.setValue(event.currentTarget.value);
+    this.props.setValue(event.currentTarget.value);
   },
   render() {
-    const className = 'form-group' + ' ' + (this.props.className || ' ') + (this.showRequired() ? 'required' : this.showError() ? 'error' : this.isPristine() ? " " : "success");
-    const errorMessage = this.getErrorMessage();
+    const className = 'form-group' + ' ' + (this.props.className || ' ') + (this.showRequired ? 'required' : this.showError ? 'error' : this.isPristine ? " " : "success");
+    const errorMessage = this.props.errorMessage;
     return (
       <div className={ className + " " + "mb1 relative"}>
         <label htmlFor={this.props.name} className="gray inline-block mb0">{this.props.title}</label>
         <h5 className="h5 line-height-2 muted mt0 inline-block">{this.props.subtext}</h5>
-        { this.showRequired() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
+        { this.showRequired && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
         <textarea
           rows={this.props.rows}
           id={this.props.name}
@@ -21,7 +21,7 @@ const MyTextarea = React.createClass({
           type={this.props.type || 'text'}
           name={this.props.name}
           onChange={this.changeValue}
-          value={this.getValue()}
+          value={this.props.value}
           autoComplete={this.props.autocomplete}
           placeholder={this.props.placeholder}
           ref={this.props.inputRef}
@@ -36,4 +36,4 @@ const MyTextarea = React.createClass({
   }
 });
 
-export default MyTextarea;
+export default withFormsy(MyTextarea);

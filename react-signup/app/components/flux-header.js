@@ -1,6 +1,7 @@
 import React from 'react';
+import createReactClass from 'create-react-class';
 
-const FluxHeader = React.createClass({
+const FluxHeader = createReactClass({
   render: function() {
     return (
       <header className="bg-near-black light-silver shadow px2 sm-px3 py3 relative">

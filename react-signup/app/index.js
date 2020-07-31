@@ -4,9 +4,11 @@ import ReactDOM from 'react-dom'
 import FluxHeader from './components/flux-header'
 import HttpHelpers from './utils/http-helpers'
 import FormContainer from './containers/form-container'
+import createReactClass from 'create-react-class'
 
+console.log(JSON.stringify(process.env.NODE_ENV))
 
-const App = React.createClass({
+const App = createReactClass({
   getInitialState: function() {
     return {
       isLoading: true,
@@ -14,10 +16,8 @@ const App = React.createClass({
       checkReferrer: false,
     }
   },
-  componentWillMount() {
-    this.checkReferrer();
-  },
   componentDidMount: function() {
+    this.checkReferrer();
     HttpHelpers.getMembers()
     .then( function (d) {
       this.setState({
