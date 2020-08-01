@@ -91,3 +91,8 @@ MK note: if you need to use `sudo` to run `./dev-docker.sh` you should add yours
 * git push
 * Go to your repo on GitHub and make a pull request
 * This will help with the Pull Request https://github.com/voteflux/flux-docs/blob/master/docs/contributing/index.rst
+
+## CICD Notes
+
+* Changes to bundler/ruby (maybe node stuff too) might break the build process due to docker volumes. Removing the volumes on the docker host seems to fix.
+* If CICD stuff doesn't happen then things are broken, please contact @XertroV
