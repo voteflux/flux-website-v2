@@ -29,7 +29,7 @@ const definePlugin = new webpack.DefinePlugin({
   // __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false')),
   'process.env.NODE_ENV': process.env.NODE_ENV ? JSON.stringify(process.env.NODE_ENV) : '"production"',
   __DEV_HOSTNAME__: devMode ? `"${process.env.DEV_HOSTNAME || "http://vm-dev-177:52100"}"` : null,
-  __RECAPTCHA_SITE_KEY__: JSON.stringify(process.env.RECAPTCHA_SITE_KEY) || "6LfIUrgZAAAAAKgk0qHACeb8jx_Fjz8Y5YW8Nqf7",
+  __RECAPTCHA_SITE_KEY__: JSON.stringify(process.env.RECAPTCHA_SITE_KEY) || '"6LfIUrgZAAAAAKgk0qHACeb8jx_Fjz8Y5YW8Nqf7"',
 });
 
 const reactOutputPath = path.join(__dirname, "signup");
