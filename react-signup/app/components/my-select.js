@@ -9,7 +9,15 @@ const MySelect = createReactClass({
       this.props.onChange(event);
   },
   render() {
-    const className = 'form-group relative' + ' ' + (this.props.className || ' ') + ' ' + ( this.showRequired ? 'required' : this.showError ? 'error' : this.isPristine ? " " : "success");
+    const className = _.join(
+      [ 'form-group'
+      , 'mb0'
+      , (this.props.className || ' ')
+      , (this.props.showRequired ? 'required' : 
+          this.props.showError ? 'error' :
+            this.props.isPristine ? " " : "success"),
+      , (this.props.showRequired && !this.props.isPristine) ? 'error' : ""
+      ], ' ');
 
     const errorMessage = this.props.errorMessage;
     const options = this.props.options.map((option, i) => {
@@ -17,7 +25,8 @@ const MySelect = createReactClass({
         return (<option key={option.title + option.value} value={option.value}
                         disabled={option.value === '' && true}>{option.title}</option>)
       } else {
-        return (<option key={option} value={option} disabled={option === '' && true}>
+        const _v = (option.includes('...') || option === "Unknown Suburb") ? null : options;
+        return (<option key={option} value={_v} disabled={option === '' && true}>
           {option}
         </option>)
       }
@@ -36,9 +45,9 @@ const MySelect = createReactClass({
           value={this.props.value} >
             {options}
         </select>
-
-        { errorMessage && <h5 className='line-height-2 inline-block mt0 validation-error'>{errorMessage}</h5> }
-
+        <div className="relative error-msg-height">
+          { errorMessage && <h5 className='absolute top-0 left-0 line-height-2 inline-block mt0 validation-error'>{errorMessage}</h5> }
+        </div>
       </div>
     );
   }

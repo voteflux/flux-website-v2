@@ -318,6 +318,11 @@ const FormContainer = createReactClass({
               validationErrors={{
                 isRequired: 'Street address required'
               }}
+              validations={{
+                notDefault: function(values, value){
+                  return !_.includes(value, '...') ? true : "Must choose a street";
+                }
+              }}
               options={this.state.streets}
               required />
           </div>

@@ -14,13 +14,14 @@ const MyInput = createReactClass({
       this.props.onChange(event);
   },
   componentDidMount(){
-    if (this.props.value !== undefined) {
+    if (this.props.value !== undefined && this.props.value !== "") {
       this.props.setValue(this.props.value);
     }
   },
   render() {
     const className = _.join(
       [ 'form-group'
+      , 'mb0'
       , (this.props.className || ' ')
       , (this.props.showRequired ? 'required' : 
           this.props.showError ? 'error' :
@@ -35,7 +36,7 @@ const MyInput = createReactClass({
         { this.props.showRequired && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
         <input
           id={this.props.name}
-          className={this.props.inputClass + ' ' + 'mb0'}
+          className={this.props.inputClass}
           type={this.props.type || 'text'}
           name={this.props.name}          
           onChange={this.changeValue}
