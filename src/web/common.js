@@ -1,6 +1,6 @@
 var _hn = window.location.hostname
 
-function isDefinitelyProduction() {
+export function isDefinitelyProduction() {
     return _hn === "members.flux.party" ||
         _hn === "app.flux.party" ||
         _hn === "admin.flux.party" ||
@@ -8,7 +8,7 @@ function isDefinitelyProduction() {
         _hn === "staging.admin.flux.party"
 }
 
-function isStaging() {
+export function isStaging() {
     return _hn === "staging.app.flux.party" ||
     _hn === "staging.admin.flux.party"
 }
@@ -29,14 +29,14 @@ function extractUrlEncodedVar(toSearch, key) {
 
 
 // http://stackoverflow.com/questions/5448545/how-to-retrieve-get-parameters-from-javascript
-function getParam(key) {
+export function getParam(key) {
     return extractUrlEncodedVar(location.search, key)
 }
-function hashParam(key) {
+export function hashParam(key) {
     return extractUrlEncodedVar(location.hash, key)
 }
 
-function isEnv(envStr) {
+export function isEnv(envStr) {
     return getParam("env") === envStr
 }
 
@@ -53,7 +53,7 @@ var __DEBUG_ENV__ = !isEnv("prod") && (isEnv("debug") || __DEBUG_DOMAIN__)
 console.log ({__PROD_ENV__, __DEV_ENV__, __DEBUG_ENV__})
 
 
-function getAuthToken() {
+export function getAuthToken() {
     var getParamS = getParam('s');
     var lsS = localStorage.getItem('s');
     var hashS = hashParam('s');
@@ -67,7 +67,7 @@ function getAuthToken() {
     return undefined;
 }
 
-function saveFluxSecret(s) {
+export function saveFluxSecret(s) {
     localStorage.setItem('s', s);
 }
 
@@ -93,7 +93,7 @@ function sendSToUrlAsHashParam(url, s) {
 }
 
 
-function sendSToAllFluxDomains(s) {
+export function sendSToAllFluxDomains(s) {
     sendSToUrlAsHashParam("https://voteflux.org/_record_login_param.html", s)
     sendSToUrlAsHashParam("https://flux.party/_record_login_param.html", s)
     sendSToUrlAsHashParam("https://members.flux.party/_record_login_param.html", s)
@@ -149,7 +149,7 @@ export function flux_api(path, useDebug){
 };
 
 
-function handle_output_model_decorator(host_obj, field_name){
+export function handle_output_model_decorator(host_obj, field_name){
     var r = function(data){
         host_obj[field_name] = JSON.stringify(data);
         console.log('Got some data!', data);
@@ -157,14 +157,14 @@ function handle_output_model_decorator(host_obj, field_name){
     return r;
 }
 
-function jsonDumps(obj){
+export function jsonDumps(obj){
     return JSON.stringify(obj);
 }
 
-function roundUnsafe(value, decimals) {
+export function roundUnsafe(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 
-function tsToDate(ts) {
+export function tsToDate(ts) {
   return new Date(1000 * ts);
 }

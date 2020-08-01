@@ -1,10 +1,12 @@
 require('es6-promise/auto');
 import React from 'react'
 import ReactDOM from 'react-dom'
+import createReactClass from 'create-react-class'
+import { loadReCaptcha } from 'react-recaptcha-v3'
+
 import FluxHeader from './components/flux-header'
 import HttpHelpers from './utils/http-helpers'
 import FormContainer from './containers/form-container'
-import createReactClass from 'create-react-class'
 
 console.log(JSON.stringify(process.env.NODE_ENV))
 
@@ -18,13 +20,8 @@ const App = createReactClass({
   },
   componentDidMount: function() {
     this.checkReferrer();
-    HttpHelpers.getMembers()
-    .then( function (d) {
-      this.setState({
-        isLoading: false,
-        memberCount: d
-      });
-    }.bind(this))
+    HttpHelpers.getMembers().then((d => this.setState({ isLoading: false, memberCount: d })).bind(this));
+    loadReCaptcha(__RECAPTCHA_SITE_KEY__);
   },
   getParam: function(val) {
     // http://stackoverflow.com/questions/5448545/how-to-retrieve-get-parameters-from-javascript

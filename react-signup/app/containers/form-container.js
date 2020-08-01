@@ -9,10 +9,18 @@ import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
 const _ = require('lodash');
 
+import { ReCaptcha } from 'react-recaptcha-v3';
+
+import { saveFluxSecret } from "../../../src/web/common";
+
+
 const redirectUrl = (window.location.href.split("/\?", 2)[0] + '/step2').replace("//step2", "/step2");
 const randomEmail = Math.random().toString(36).substr(2,10);
 
 const FormContainer = createReactClass({
+  getRecaptchaKey() {
+    return __RECAPTCHA_SITE_KEY__;
+  },
   getInitialState() {
     return {
       canSubmit: false,
@@ -31,7 +39,19 @@ const FormContainer = createReactClass({
       postcode: '0000',
       country: 'au',
       other_party_membership: false,
+      recaptchaToken: null,
     };
+  },
+  verifyCallback(recaptchaToken) {
+    // console.log(recaptchaToken, "<= recaptcha token")
+    this.setState({ recaptchaToken });
+    // refresh token after 90% of 2 min have expired
+    const refreshMs = 2 * 60 * 1000 * 0.9 | 0;
+    setTimeout(this.refreshRecaptcha, refreshMs);
+  },
+  refreshRecaptcha() {
+    grecaptcha.execute(this.getRecaptchaKey(), {action: 'signup'})
+      .then(this.verifyCallback)
   },
   submit(data) {
     if (data.mnames === undefined) { data.mnames = ""}
@@ -41,6 +61,8 @@ const FormContainer = createReactClass({
     data.address = _.join([data.addr_street_no, data.addr_street, data.addr_suburb, data.addr_postcode, data.addr_country.toUpperCase()], "; ");
     data.name = _.join([data.fname, data.mnames, data.sname], " ");
     data.addr_version = 1.0;
+
+    data.recaptcha_token = this.state.recaptchaToken;
 
     this.setState({isLoading: true, showSubmissionModal: true});
     HttpHelpers.sendForm(data, function(response){
@@ -467,11 +489,17 @@ const FormContainer = createReactClass({
                 disabled={!this.state.canSubmit}>
                   Submit <i className="material-icons ">chevron_right</i>
               </button>
-              <button className="h3 btn btn-primary g-recaptcha" 
+              {/* <button className="h3 btn btn-primary g-recaptcha" 
                 data-sitekey="6LfIUrgZAAAAAKgk0qHACeb8jx_Fjz8Y5YW8Nqf7" data-callback="recaptchaSubmit" data-action="submit"
                 disabled={!this.state.canSubmit}>
                   Submit (recaptcha) <i className="material-icons ">chevron_right</i>
-              </button>
+              </button> */}
+              <ReCaptcha
+                ref={ref => this.recaptcha = ref}
+                sitekey={this.getRecaptchaKey()}
+                action='signup'
+                verifyCallback={this.verifyCallback}
+                />
              </div>
             {!this.state.canSubmit
               &&
