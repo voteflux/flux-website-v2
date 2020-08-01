@@ -8,7 +8,7 @@ import FluxHeader from './components/flux-header'
 import HttpHelpers from './utils/http-helpers'
 import FormContainer from './containers/form-container'
 
-console.log(JSON.stringify(process.env.NODE_ENV))
+// console.log(JSON.stringify(process.env.NODE_ENV))
 
 const App = createReactClass({
   getInitialState: function() {
