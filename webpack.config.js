@@ -25,9 +25,10 @@ const extractSass = new ExtractTextPlugin({
 
 // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
 const definePlugin = new webpack.DefinePlugin({
-  __DEV__: JSON.stringify(process.env.NODE_ENV === "development"),
+  __DEV__: JSON.stringify(devMode),
   // __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false')),
   'process.env.NODE_ENV': process.env.NODE_ENV ? JSON.stringify(process.env.NODE_ENV) : '"production"',
+  __DEV_HOSTNAME__: devMode ? `"${process.env.DEV_HOSTNAME || "http://vm-dev-177:52100"}"` : null,
 });
 
 const reactOutputPath = path.join(__dirname, "signup");
@@ -66,10 +67,13 @@ const config = {
     reactSignup: ['./react-signup/app/index.js'],
     donationWidget: [localElmSrc + 'DonationWidget/index.js'],
     donationLog: [localElmSrc + 'DonationLog/index.js'],
-    main: ['./_sass/main.scss'],
+    mainCss: ['./_sass/main.scss'],
     // memberUI: [localElmSrc + 'Flux/MemberUI/index.ts'],
     // fluxScripts: [localElmSrc + 'Flux/MemberUI/scripts.ts'],
+    main: ['./src/web/main.js'],
+    common: ['./src/web/common.js'],
     graphs: ['./src/web/graphs-ng.js'],
+    // donationGraphLogic: ['./src/web/donationGraphLogic.js'],
   },
   output: {
     path: __dirname + "/js",

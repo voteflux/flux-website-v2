@@ -1,11 +1,13 @@
-setRefLocalStorage = function(newVal) {
+import { flux_api } from './common';
+
+const setRefLocalStorage = function(newVal) {
   localStorage.setItem('signup_referral', newVal);
 }
-getRefLocalStorage = function(){
+const getRefLocalStorage = function(){
   return localStorage.getItem('signup_referral');
 }
 
-checkReferrer = (function() {
+const checkReferrer = (function() {
   return {
     addTestParam: function (val) {
       if (location.href.indexOf("?") === -1) {
@@ -30,7 +32,7 @@ checkReferrer = (function() {
   }
 }());
 
-fluxAnnounce = (function() {
+const fluxAnnounce = (function() {
   return {
     closeModal: function () {
       $('#js-modal').fadeOut('fast');

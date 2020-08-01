@@ -394,7 +394,7 @@ const FormContainer = createReactClass({
             type="email"
             pattern="[^ @]*@[^ @]*"
             value={__DEV__ ? randomEmail + "@xk.io" : ""}
-            // validations="isEmail"
+            validations="isEmail"
             validationError="This is not a valid email"
             autocomplete="email"
             required />

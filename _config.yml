@@ -70,6 +70,7 @@ markdown: kramdown
 permalink: pretty
 incremental: true
 exclude:
+  - src
   - README.md
   - package.json
   - gulpfile.js
@@ -97,5 +98,3 @@ plugins:
 - jekyll-angular
 redirects: true
 strict_front_matter: true
-
-

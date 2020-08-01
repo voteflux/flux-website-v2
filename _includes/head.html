@@ -47,14 +47,14 @@
   <!-- link tachyons before other styles; some colliding names -->
   <!--<link rel="stylesheet" href="{{site.baseurl}}/css/tachyons.min.css">-->
 
-  <link rel="stylesheet" href="{{site.baseurl}}/css/main.bundle.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/css/mainCss.bundle.css">
   <!--<link rel="stylesheet" href="{{site.baseurl}}/css/notification.css">-->
   <link rel="stylesheet" href="{{site.baseurl}}/css/non-sass.css">
   {% if page.video %} <link rel="stylesheet" href="{{site.baseurl}}/css/lity.min.css"> {% endif %}
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <script src="{{site.baseurl}}/js/vendor/modernizr-2.8.3.min.js"></script>
   <script src="{{site.baseurl}}/js/vendor/ramda.min.js"></script>
-  <script src="{{site.baseurl}}/js/common.js"></script>
+  <script src="{{site.baseurl}}/js/bundle-common.js"></script>
 
 
   <!-- Facebook Pixel Code -->
@@ -106,7 +106,5 @@
       }
     }
   </script>
-
-  <!--<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0086/0552.js" async="async"></script>-->
 
 </head>
