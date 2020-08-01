@@ -21,3 +21,4 @@ temp.elm.js
 css/*.bundle.css
 .bundle
 .bundle-gems
+.env

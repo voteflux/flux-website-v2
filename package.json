@@ -10,7 +10,7 @@
     "jekyll-forever": "while [ 1 ]; do bundle exec jekyll build --config _config.yml; done",
     "pyserve": "cd _site && python3 -m http.server 9000 -b 127.0.0.1",
     "dev": "bundle exec jekyll 'clean' && BUILD_DEV=true run-p dev:jekyll dev:webpack",
-    "dev:jekyll": "bundle exec jekyll serve --force_polling --livereload --host vm-dev-177 --port 9000 --watch --config _config.yml",
+    "dev:jekyll": "bundle exec jekyll serve --force_polling --livereload --host \"${LOCAL_DEV_HOSTNAME:-0.0.0.0}\" --port 9000 --watch --config _config.yml",
     "dev:webpack": "NODE_ENV=development webpack -w -p -d --env.NODE_ENV=development",
     "flux": "npm run dev",
     "install-then": "bundle install --path ./.bundle-gems && npm ci && npm run --silent",
