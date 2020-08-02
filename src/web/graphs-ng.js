@@ -1,5 +1,6 @@
 import 'babel-polyfill';
 import {processDonationGraphs} from "./dashboardGraphLogic";
+import {getParam, flux_api} from "./common";
 
 var fluxApp = angular.module('fluxApp', []);
 
@@ -37,12 +38,7 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
   };
 
   flux.api = function (path) {
-    if (flux.debug && !flux.__devUseProd) {
-      return "http://localhost:8080/api/v0/" + path;
-    } else if (getParam && getParam('useDev') && !flux.__devUseProd) {
-      return "https://dev.v1.api.flux.party/api/v0/" + path;
-    }
-    return "https://prod.v1.api.flux.party/api/v0/" + path;
+    return flux_api(path);
   };
 
   flux.growthStat = function (d) { return 0; }

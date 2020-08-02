@@ -1,30 +1,47 @@
 import React from 'react'
-import Formsy from 'formsy-react'
+import {withFormsy} from 'formsy-react'
 var _ = require('lodash');
+import createReactClass from 'create-react-class';
 
-const MyInput = React.createClass({
-  mixins: [Formsy.Mixin],
+const MyInput = createReactClass({
   changeValue(event) {
-    this.setValue(event.currentTarget[this.props.type === 'checkbox' ? 'checked' : 'value']);
+    const newValue = event.currentTarget[this.props.type === 'checkbox' ? 'checked' : 'value'];
+    console.log(`MyInput.changeValue -> ${newValue}`)
+    console.log(this.props.setValue)
+    console.log(this.props.onChange)
+    this.props.setValue(newValue);
     if (this.props.onChange)
       this.props.onChange(event);
   },
+  componentDidMount(){
+    if (this.props.value !== undefined && this.props.value !== "") {
+      this.props.setValue(this.props.value);
+    }
+  },
   render() {
-    const className = _.join(['form-group', (this.props.className || ' '), (this.showRequired() ? 'required' : this.showError() ? 'error' : this.isPristine() ? " " : "success")], ' ');
-    const errorMessage = this.getErrorMessage();
+    const className = _.join(
+      [ 'form-group'
+      , 'mb0'
+      , (this.props.className || ' ')
+      , (this.props.showRequired ? 'required' : 
+          this.props.showError ? 'error' :
+            this.props.isPristine ? " " : "success"),
+      , (this.props.showRequired && !this.props.isPristine) ? 'error' : ""
+      ], ' ');
+    const errorMessage = this.props.errorMessage;
     return (
       <div className={ className + " " + "mb1 relative"}>
         { this.props.type != 'checkbox' && <label htmlFor={this.props.name} className="gray block">{this.props.title}</label> }
         { this.props.subtext && <h5 className="h5 line-height-2 muted mt0 inline-block">{this.props.subtext}</h5> }
-        { this.showRequired() && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
+        { this.props.showRequired && <span className="absolute error right-0 top-0 mt3 mr1 h3 h-font bold">*</span> }
         <input
           id={this.props.name}
-          className={this.props.inputClass + ' ' + 'mb0'}
+          className={this.props.inputClass}
           type={this.props.type || 'text'}
-          name={this.props.name}
+          name={this.props.name}          
           onChange={this.changeValue}
-          value={this.getValue()}
-          checked={this.props.type === 'checkbox' && this.getValue() ? 'checked' : null  }
+          value={this.props.value || ''}
+          checked={this.props.value || false}
           autoComplete={this.props.autocomplete}
           placeholder={this.props.placeholder}
           ref={this.props.inputRef}
@@ -41,4 +58,4 @@ const MyInput = React.createClass({
   }
 });
 
-export default MyInput;
+export default withFormsy(MyInput);

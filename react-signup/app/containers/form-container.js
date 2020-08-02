@@ -1,6 +1,7 @@
 import React from 'react'
 import Formsy from 'formsy-react'
 import Modal from 'react-modal';
+import createReactClass from 'create-react-class';
 import MyInput from '../components/my-input'
 import MySelect from '../components/my-select'
 import MyTextarea from '../components/my-textarea'
@@ -8,10 +9,18 @@ import SectionTitle from '../components/section-title'
 import HttpHelpers from '../utils/http-helpers'
 const _ = require('lodash');
 
+import { ReCaptcha } from 'react-recaptcha-v3';
+
+import { saveFluxSecret } from "../../../src/web/common";
+
+
 const redirectUrl = (window.location.href.split("/\?", 2)[0] + '/step2').replace("//step2", "/step2");
 const randomEmail = Math.random().toString(36).substr(2,10);
 
-const FormContainer = React.createClass({
+const FormContainer = createReactClass({
+  getRecaptchaKey() {
+    return __RECAPTCHA_SITE_KEY__;
+  },
   getInitialState() {
     return {
       canSubmit: false,
@@ -30,7 +39,19 @@ const FormContainer = React.createClass({
       postcode: '0000',
       country: 'au',
       other_party_membership: false,
+      recaptchaToken: null,
     };
+  },
+  verifyCallback(recaptchaToken) {
+    // console.log(recaptchaToken, "<= recaptcha token")
+    this.setState({ recaptchaToken });
+    // refresh token after 90% of 2 min have expired
+    const refreshMs = 2 * 60 * 1000 * 0.9 | 0;
+    setTimeout(this.refreshRecaptcha, refreshMs);
+  },
+  refreshRecaptcha() {
+    grecaptcha.execute(this.getRecaptchaKey(), {action: 'signup'})
+      .then(this.verifyCallback)
   },
   submit(data) {
     if (data.mnames === undefined) { data.mnames = ""}
@@ -40,6 +61,8 @@ const FormContainer = React.createClass({
     data.address = _.join([data.addr_street_no, data.addr_street, data.addr_suburb, data.addr_postcode, data.addr_country.toUpperCase()], "; ");
     data.name = _.join([data.fname, data.mnames, data.sname], " ");
     data.addr_version = 1.0;
+
+    data.recaptcha_token = this.state.recaptchaToken;
 
     this.setState({isLoading: true, showSubmissionModal: true});
     HttpHelpers.sendForm(data, function(response){
@@ -80,16 +103,16 @@ const FormContainer = React.createClass({
           console.log("Some analytics error:", e)
         }
 
-      } else if (response.status === 409) {
-        console.log('Duplicate email detected');
+      } else if (response.status >= 400 && response.status < 500) {
+        console.log(`Error: ${response.response.text}`);
         this.setState({
           isLoading: false,
-          serverErrorMsg: "Error. Email already exists. Please update details instead of re-registering."
+          serverErrorMsg: `Error: ${response.response.text}`,
         });
       } else {
         this.setState({
           isLoading: false,
-          serverErrorMsg: "Server error, " + response.statusText ? response.statusText : null
+          serverErrorMsg: `Server error: ${response.response.statusText} - ${response.response.text}`
         });
       }
     }.bind(this))
@@ -169,7 +192,7 @@ const FormContainer = React.createClass({
 
   render() {
     return (
-      <Formsy.Form
+      <Formsy
         onSubmit={this.submit}
         onValid={this.enableButton}
         onInvalid={this.disableButton}
@@ -188,8 +211,9 @@ const FormContainer = React.createClass({
             type="checkbox"
             name="onAECRoll"
             title="I am on the Australian Electoral Roll."
-            validationError="First name is required"
-            value={false} />
+            validationError=""
+            value={__DEV__ ? true : false}
+            />
         </div>
 
         <div className="px2 pb4">
@@ -293,6 +317,11 @@ const FormContainer = React.createClass({
               disabled={this.state.streets[0] == 'Loading...'}
               validationErrors={{
                 isRequired: 'Street address required'
+              }}
+              validations={{
+                notDefault: function(values, value){
+                  return !_.includes(value, '...') ? true : "Must choose a street";
+                }
               }}
               options={this.state.streets}
               required />
@@ -437,7 +466,7 @@ const FormContainer = React.createClass({
             type="checkbox"
             name="volunteer"
             title="I'm interested in volunteering"
-            value={false}
+            value={__DEV__ ? true : false}
           />
 
           <MyInput
@@ -445,7 +474,7 @@ const FormContainer = React.createClass({
             type="checkbox"
             name="do_not_email_updates"
             title="I wish to OPT OUT of membership updates"
-            value={false}
+            value={__DEV__ ? true : false}
           />
 
           <div className="flex flex-justify">
@@ -453,7 +482,7 @@ const FormContainer = React.createClass({
               inputClass="input"
               type="checkbox"
               name="other_party_membership"
-              title={"I am a member of another political party "}
+              title={"I am a member of another political party"}
               value={false}
             />
             <small className="line-height-1 flex flex-end"><a className="ml1 mt1" onClick={this.openMultiPartyFAQ}>(it's okay!)</a></small>
@@ -461,7 +490,21 @@ const FormContainer = React.createClass({
 
            <div className="buttons flex items-center mt4 mb3">
              <div>
-              <button type="submit" className="h3 btn btn-primary" disabled={!this.state.canSubmit}>Submit <i className="material-icons ">chevron_right</i></button>
+              <button type="submit" className="h3 btn btn-primary"
+                disabled={!this.state.canSubmit}>
+                  Submit <i className="material-icons ">chevron_right</i>
+              </button>
+              {/* <button className="h3 btn btn-primary g-recaptcha" 
+                data-sitekey="6LfIUrgZAAAAAKgk0qHACeb8jx_Fjz8Y5YW8Nqf7" data-callback="recaptchaSubmit" data-action="submit"
+                disabled={!this.state.canSubmit}>
+                  Submit (recaptcha) <i className="material-icons ">chevron_right</i>
+              </button> */}
+              <ReCaptcha
+                ref={ref => this.recaptcha = ref}
+                sitekey={this.getRecaptchaKey()}
+                action='signup'
+                verifyCallback={this.verifyCallback}
+                />
              </div>
             {!this.state.canSubmit
               &&
@@ -528,7 +571,7 @@ const FormContainer = React.createClass({
           </p>
         </div>
 
-      </Formsy.Form>
+      </Formsy>
     );
   }
 });

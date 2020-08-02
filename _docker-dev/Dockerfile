@@ -1,11 +1,11 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install -y curl tree
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get update && apt-get install -y nodejs
 RUN apt-get install -y gcc g++ make
 RUN apt-get install -y ruby
-RUN gem install bundler -v 1.16.1
+RUN gem install bundler
 
 RUN apt-get install -y ruby-dev
 
@@ -27,7 +27,8 @@ WORKDIR /src
 # Do gem stuff first because those deps change less frequently.
 COPY Gemfile .
 COPY Gemfile.lock .
-RUN bundle install --path ./.bundle-gems
+RUN bundle config set path './.bundle-gems'
+RUN bundle install
 
 COPY package.json .
 COPY package-lock.json .

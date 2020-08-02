@@ -9,7 +9,6 @@ const devMode = process.env.NODE_ENV === "development"
 
 if (devMode) { console.log(">>> WEBPACK RUNNING IN DEV MODE <<<"); }
 
-
 const extractSass = new ExtractTextPlugin({
   filename: "../css/[name].bundle.css",
   disable: false
@@ -26,9 +25,11 @@ const extractSass = new ExtractTextPlugin({
 
 // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
 const definePlugin = new webpack.DefinePlugin({
-  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false')),
-  __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false')),
-  'process.env': {NODE_ENV: '"production"'}
+  __DEV__: JSON.stringify(devMode),
+  // __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false')),
+  'process.env.NODE_ENV': process.env.NODE_ENV ? JSON.stringify(process.env.NODE_ENV) : '"production"',
+  __DEV_HOSTNAME__: devMode ? `"${process.env.DEV_HOSTNAME || "http://vm-dev-177:52100"}"` : null,
+  __RECAPTCHA_SITE_KEY__: JSON.stringify(process.env.RECAPTCHA_SITE_KEY) || '"6LfIUrgZAAAAAKgk0qHACeb8jx_Fjz8Y5YW8Nqf7"',
 });
 
 const reactOutputPath = path.join(__dirname, "signup");
@@ -51,7 +52,7 @@ const elmLoaders = devMode
 // TODO - WEBPACK (or other) must handle building sass
 
 
-module.exports = {
+const config = {
   // context: path.join(__dirname, 'app'),
   devServer: {
     publicPath: '_site',
@@ -63,14 +64,20 @@ module.exports = {
     hot: true,
     host: '127.0.0.1',
   },
+  externals: {
+    grecaptcha: {}
+  },
   entry: {
     reactSignup: ['./react-signup/app/index.js'],
     donationWidget: [localElmSrc + 'DonationWidget/index.js'],
     donationLog: [localElmSrc + 'DonationLog/index.js'],
-    main: ['./_sass/main.scss'],
+    mainCss: ['./_sass/main.scss'],
     // memberUI: [localElmSrc + 'Flux/MemberUI/index.ts'],
     // fluxScripts: [localElmSrc + 'Flux/MemberUI/scripts.ts'],
-    graphs: ['./js/graphs-ng.js'],
+    main: ['./src/web/main.js'],
+    common: ['./src/web/common.js'],
+    graphs: ['./src/web/graphs-ng.js'],
+    // donationGraphLogic: ['./src/web/donationGraphLogic.js'],
   },
   output: {
     path: __dirname + "/js",
@@ -86,7 +93,7 @@ module.exports = {
         exclude: [/elm-stuff/, /node_modules/],
         use: [{loader: "babel-loader",
           query: {
-            presets:[ 'es2015', 'react', 'stage-2' ]
+            presets:[ 'es2015', 'react', 'stage-2' ],
           }}]
       },
       {
@@ -121,7 +128,15 @@ module.exports = {
   plugins: [
     // HtmlWebpackPluginConfig,
     extractSass,
-    CopyWebpackPluginConfig, // comment this out when in dev-mode
-    definePlugin
-  ]
+    definePlugin,
+    CopyWebpackPluginConfig
+  ],
+  // devtool: devMode ? 'eval-source-map' : false
 };
+
+if (devMode) {  // dev build
+  config.plugins.push(new webpack.SourceMapDevToolPlugin({}))
+} else {  // production build
+}
+
+module.exports = config;
