@@ -13,7 +13,8 @@ phases:
       - export NVM_DIR="$HOME/.nvm"
       - bash -c "source $HOME/.nvm/nvm.sh && echo 'yes' || echo 'no' ; nvm install 10"
       - bash -c "source $HOME/.nvm/nvm.sh && nvm install 10 && npm i"
-      - bundle install --path ./.bundle-gems
+      - bundle config set path './.bundle-gems'
+      - bundle install
   build:
     commands:
       - bash -c "source $HOME/.nvm/nvm.sh && npm run build"
