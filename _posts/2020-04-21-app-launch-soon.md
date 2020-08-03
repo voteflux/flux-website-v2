@@ -37,3 +37,5 @@ Ben Ballingall
 Membership Coordinator
 
 [ben.ballingall@voteflux.org](mailto:ben.ballingall@voteflux.org)
+
+[Become an alpha tester - sign-up form](https://docs.google.com/forms/d/11I0G6ZL5FwPnGAoI6Gt9lbF2gWam6PxXqdZyT10ERZo/edit)
