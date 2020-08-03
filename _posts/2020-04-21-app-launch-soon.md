@@ -31,7 +31,7 @@ For more information on how you can get involved, come and say hi on our [Disco
 
 Are you ready for Australia's digital democratic revolution?
 
-![Ben Profile](img/wa-team/ben-ballingall.jpg)
+![Ben Profile](/img/wa-team/ben-ballingall.jpg)
 
 Ben Ballingall
 Membership Coordinator
