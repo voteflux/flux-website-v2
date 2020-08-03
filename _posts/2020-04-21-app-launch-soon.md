@@ -31,10 +31,10 @@ For more information on how you can get involved, come and say hi on our [Disco
 
 Are you ready for Australia's digital democratic revolution?
 
-![Ben Profile](/img/wa-team/ben-ballingall.jpg)
+*Ben Ballingall* <br>
+*&mdash; Membership Coordinator*
 
-Ben Ballingall
-Membership Coordinator
+<img alt="Ben.B Profile" src="/img/wa-team/ben-ballingall.jpg" width="50%" />
 
 [ben.ballingall@voteflux.org](mailto:ben.ballingall@voteflux.org)
 
