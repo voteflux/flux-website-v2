@@ -1,6 +1,8 @@
 import 'babel-polyfill';
 const moment = require('moment')
 
+import { tsToDate } from './common';
+
 const startOfFYGen = () => {
   const now = new Date();
   const month = now.getMonth();
