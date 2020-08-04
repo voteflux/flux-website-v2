@@ -201,7 +201,7 @@ $(document).ready(function() {
           // "js-member-count-mobile": data.n_members,
           // "js-volunteer-count-mobile": data.n_volunteers
           // WA State Election Countdown - Remove After 11 March 2017
-          "js-waelection-countdown": getDaysTo(new Date('03/11/2017')), // Use US Date Format MM/DD/YYYY
+          "js-waelection-countdown": getDaysTo(new Date('03/13/2020')), // Use US Date Format MM/DD/YYYY
         };
 
         var set_contents = function(e, to_set){
