@@ -128,6 +128,11 @@ export function flux_api(path, useDebug){
         path = 'api/v0/' + path;
     }
 
+    // prod should always take precedence
+    if (__PROD_ENV__ && !useDebug) {
+        return "https://prod.v1.api.flux.party/" + path;
+    }
+
     if (__DEV__ && __DEV_HOSTNAME__) {
       const local_dev_api_endpoint = __DEV_HOSTNAME__;
       const ends_in_slash = local_dev_api_endpoint[local_dev_api_endpoint.length - 1] === "/";
@@ -136,9 +141,6 @@ export function flux_api(path, useDebug){
       return api_full_path;
     }
 
-    if (__PROD_ENV__ && !useDebug) {
-        return "https://prod.v1.api.flux.party/" + path;
-    }
     if(__DEV_ENV__ && !useDebug) {
         return "https://dev.v1.api.flux.party/" + path;
     }
