@@ -172,8 +172,9 @@ social-media:
             font-size="h0 line-height-2"
             font-weight="bold" %}
 
+            {% assign wa_posts = site.wa-posts | sort: date | reverse %}
             <div id="recent-posts-section">
-              {% for post in site.wa-posts limit:1 %}
+              {% for post in wa_posts limit:1 %}
               <div class="post">
                 <h1 class="h1 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h1>
                 <div class="h3 sm-h2 h-font mb4 light letter-spacing-2 line-height-4 silver">
@@ -181,9 +182,9 @@ social-media:
                 </div>
               </div>
               {% endfor %}
-              {% if site.wa-posts.size > 1 %}
+              {% if wa_posts.size > 1 %}
               <h1 class="h1 regular">Older Announcements</h1>
-              {% for post in site.wa-posts offset:1 %}
+              {% for post in wa_posts offset:1 %}
               <h2 class="h2 regular"><a class="underline" href="{{ post.url }}">{{ post.title }}</a> <small>&mdash; {{ post.date | date: "%Y-%m-%d" }}</small></h2>
               {% endfor %}
               {% endif %}
@@ -335,4 +336,3 @@ social-media:
 </section>
 </main>
 {% include footer.html %}
-
