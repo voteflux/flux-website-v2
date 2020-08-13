@@ -274,6 +274,8 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
 
     flux.growthDays = [1, 2, 7, 14, 30, 60, 180, 360];
 
+    const formatNumberExplicitPlus = n =>
+      n > 0 ? `+${n.toString()}` : n.toString();
 
     // monthly growth
     flux.calcMonthlyGrowth = function (tss) {
@@ -291,14 +293,16 @@ fluxApp.controller('GraphsController', ['$scope', '$log', '$rootScope', '$http',
       _.map(_.range(months.length), function (_i) {
         cumulative[months[_i]] = _.sum(_.slice(members_per_month, 0, _i + 1));
       });
-      console.log(cumulative);
-      console.log(members_per_month);
+      // console.log(cumulative);
+      // console.log(members_per_month);
       flux.monthlyGrowth = [];
       var rates = [];
       _.map(_.range(2, months.length), function (_i) {
         var _rate = members_per_month[_i] / cumulative[months[_i - 1]] * 100;
         flux.monthlyGrowth.push({
           name: months[_i],
+          netChange: members_per_month[_i],
+          netChangeStr: formatNumberExplicitPlus(members_per_month[_i]),
           rate: (_rate).toString().slice(0, 5),
           nMembers: cumulative[months[_i]]
         });
