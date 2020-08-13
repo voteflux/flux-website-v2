@@ -7,11 +7,12 @@ dark-theme: true
 redirects:
 - "/flux-wa/"
 home: true
-hero-title: WA - March 2021 <br><small class="smallHero">Vote &#35;1 <span class="smallHeroEmphasis"> Flux #DigitalDemocracy</span></small>
-hero-copy: 'It is time to use philosophy and technology to improve politics. Flux is connecting real people to Parliament using an app DigiPol which functions as a digital parliament in your hand.
-<br><br>
-People can easily find bills and issues they are interested in. And for the ones people really care about, we can show our support or opposition by voting to a secure public ledger.
-'
+hero-title: >
+  WA - March 2021 <br><small class="smallHero">Vote &#35;1 <span class="smallHeroEmphasis"> Flux #DigitalDemocracy</span></small>
+hero-copy: >
+  It is time to use philosophy and technology to improve politics. Flux is connecting real people to Parliament using an app DigiPol which functions as a digital parliament in your hand.
+  <br><br>
+  People can easily find bills and issues they are interested in. And for the ones people really care about, we can show our support or opposition by voting to a secure public ledger.
 hero-action: Become a Member
 second-callout-action: Become a member
 show-meetups: true
@@ -160,7 +161,8 @@ social-media:
 {% endif %}
 
 <!-- ANNOUCEMENTS SECTION -->
-{% if site.wa-posts.size > 0 %}
+{% assign posts = site.posts | where: "state", "WA" %}
+{% if posts.size > 0 %}
 <section class="height-40vh py2 sm-py4 relative bg-dark-gray px2 md-px2">
   <div class="max-width-4 mx-auto relative z2sm-pr4">
     <div class="lg-flex mxn2">
@@ -172,7 +174,7 @@ social-media:
             font-size="h0 line-height-2"
             font-weight="bold" %}
 
-            {% assign wa_posts = site.wa-posts | sort: date | reverse %}
+            {% assign wa_posts = posts | sort: date | reverse %}
             <div id="recent-posts-section">
               {% for post in wa_posts limit:1 %}
               <div class="post">
