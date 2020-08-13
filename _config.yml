@@ -28,7 +28,7 @@ collections:
     output: true
   wa-posts:
     title: Posts
-    output: true
+    output: false
   wa-candidates:
     title: WA Candidates
     output: true
