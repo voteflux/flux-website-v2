@@ -5,6 +5,8 @@ layout: about
 author: Nathan Spataro
 redirects:
   - /wa-posts/2017-02-15-24-candidates-to-contest-state-election/
+  - /wa-posts/2017-02-15-ann-24-candidates-to-contest-state-election/
+state: WA
 ---
 
 ## Sitting Councillor, Financial Adviser, School Teacher and an Accountant among candidates for Flux's first WA state election campaign

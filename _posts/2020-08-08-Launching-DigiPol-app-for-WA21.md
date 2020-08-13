@@ -3,6 +3,9 @@ title: "Flux launching DigiPol app for WA 2021 State Election"
 date: 2020-08-08
 layout: about
 author: Daithí Gleeson
+redirects:
+  - /wa-posts/2020-08-08-Launching-DigiPol-app-for-WA21/
+state: WA
 ---
 
 ## Bringing Digital Democracy to WA 2021
@@ -23,7 +26,7 @@ We believe many people will be interested in the app and the underlying ideas we
 >
 > The origins of Switzerland's modern system of Direct Democracy with formalised opinion polls and frequent referendums lie in the experimental phase of democracy in the 19th century when Switzerland was surrounded by monarchies on the European continent that showed little to none enthusiasm for democracy.
 
-*(Excerpt from <http://direct-democracy.geschichte-schweiz.ch/>)*
+&mdash; Excerpt from <http://direct-democracy.geschichte-schweiz.ch/>
 
 We believe that DigiPol will be another interesting step along the way to explore what  Digital Democracy could offer us in terms of solutions.
 
