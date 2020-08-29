@@ -1,0 +1,30 @@
+version: 0.2
+
+# this buildspec is just so we can get status updates to github
+# it should be like buildspec.yml; but should not do cloudfront stuff
+
+env:
+  variables:
+    JEKYLL_ENV: "production"
+
+phases:
+  install:
+    runtime-versions:
+      ruby: 2.7
+      nodejs: 10
+    commands:
+      - npm i
+      - bundle config set path './.bundle-gems'
+      - bundle install
+  build:
+    commands:
+      - npm run build
+      #- aws s3 sync --delete --acl public-read ./_site s3://flux-party-website/
+      #- aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
+  post_build:
+    commands: []
+cache:
+  paths:
+    - node_modules
+    - .bundle
+    - .bundle-gems

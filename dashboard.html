@@ -137,11 +137,13 @@ nav-order: 40
                 <tr>
                   <th>Month</th>
                   <th>Growth %</th>
+                  <th>Net Change</th>
                   <th>Members (end of mo)</th>
                 </tr>
                 <tr ng-repeat="month in flux.monthlyGrowth track by $index">
                   <td>{{'month.name' | angular}}</td>
                   <td>{{'month.rate' | angular}}%</td>
+                  <td>{{'month.netChangeStr' | angular}}</td>
                   <td>{{'month.nMembers' | angular}}</td>
                 </tr>
               </table>
@@ -205,4 +207,3 @@ nav-order: 40
   </div>
 </div>
 {% include footer.html %}
-

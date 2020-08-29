@@ -23,11 +23,14 @@ const extractSass = new ExtractTextPlugin({
 //   inject: 'body'
 // });
 
+const useDevHostname = process.env.LOCAL_DEV_HOSTNAME || "localhost"
+const useDevPort = process.env.LOCAL_DEV_PORT || "52100"
+
 // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
 const definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(devMode),
   'process.env.NODE_ENV': process.env.NODE_ENV ? JSON.stringify(process.env.NODE_ENV) : '"production"',
-  __DEV_HOSTNAME__: devMode ? `"${process.env.DEV_HOSTNAME || "http://vm-dev-177:52100"}"` : null,
+  __DEV_HOSTNAME__: devMode ? `"http://${useDevHostname}:${useDevPort}"` : null,
   __RECAPTCHA_SITE_KEY__: JSON.stringify(process.env.RECAPTCHA_SITE_KEY) || '"6LfIUrgZAAAAAKgk0qHACeb8jx_Fjz8Y5YW8Nqf7"',
 });
 

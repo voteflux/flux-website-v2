@@ -3,9 +3,13 @@ title: "Flux announces 24 candidates to contest State election"
 date: 2017-02-15
 layout: about
 author: Nathan Spataro
+redirects:
+  - /wa-posts/2017-02-15-24-candidates-to-contest-state-election/
+  - /wa-posts/2017-02-15-ann-24-candidates-to-contest-state-election/
+state: WA
 ---
 
-# Sitting Councillor, Financial Adviser, School Teacher and an Accountant among candidates for Flux's first WA state election campaign
+## Sitting Councillor, Financial Adviser, School Teacher and an Accountant among candidates for Flux's first WA state election campaign
 
 **_15 February 2017 (PERTH)_** – The Flux Party formally announced their candidates for the 2017 WA State Election at an event on the stairs of State Parliament, with party state secretary Pieter Lottering discussing the party's 'strong prospects' of taking home upper house seats on March 11.
 
@@ -41,7 +45,7 @@ Flux is running candidates in all West Australian upper house regions, as well a
 
 Shane Allison, Federal Communications Director, mob. 0402 219 963
 
-**Flux candidates for the 2017 Election**
+### Flux candidates for the 2017 Election
 
 Agricultural 1 - Lewis Freer
 
@@ -93,7 +97,7 @@ Bunbury - Anthony Shannon
 
 ![Flux Candidates](/img/wa-candidates.jpg)
 
-**_About Flux_**
+### About Flux
 
 _The Flux Party was formed in late 2015 as a new concept in democracy with the stated aim of returning democratic power to individual voters. Under the Flux model, elected Flux representatives will vote on legislation before them only as they are directed by a majority vote of Flux participants, using the secure Flux app. Voting on the Flux app will be open to any West Australian who is eligible to vote._
 
@@ -104,4 +108,3 @@ _The Flux Party was founded by technology entrepreneurs Nathan Spataro and Max K
 **Website:** voteflux.org
 
 **Press Kit:** goo.gl/q6iZk6
-
