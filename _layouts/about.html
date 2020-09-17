@@ -4,7 +4,6 @@ header-theme: light
 ---
 
 {% include base.html %}
-{% capture page_url %}https:/{{site.baseurl}}{{page.url}}{% endcapture %}
 {% include navbar.html%}
 <div class="full-bg-img height-30vh">
 </div>
@@ -32,6 +31,7 @@ header-theme: light
         <div class="break-word">
           <!--{{ content }}-->
           {% include anchor_headings.html html=content beforeHeading=true anchorBody='#' %}
+          {% include talkyard-comments.html %}
         </div>
         <div class="mb4">
           {% include components/inline-signup.html %}
