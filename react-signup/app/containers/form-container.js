@@ -97,6 +97,7 @@ const FormContainer = createReactClass({
         try {
           ga('send', {hitType: 'event', eventCategory: 'Membership Form', eventAction: 'Submission'});
           fbq('track', 'Complete Registration');
+          fbq('track', 'CompleteRegistration', {value: '5.00', currency: 'AUD'});
           fbq('track', 'NewMember');  // a different pixel thing to the above, keep both.
           gtag_report_singup_submission();
         } catch (e) {
