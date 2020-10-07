@@ -4,6 +4,7 @@ permalink: "/how-many-political-parties-can-you-be-a-member-of/"
 layout: default
 dark-theme: true
 nav-title: How many political parties can you be a member of?
+---
 
 {% include navbar.html %}
 
@@ -54,7 +55,7 @@ nav-title: How many political parties can you be a member of?
 
 	<p>Any political party without people as members will struggle to achieve its objectives, but the very act of registering a political party has an explicit requirement regarding membership mentioned above.
 
-	<p>To register a party there are a number of qualifying criteria defined in the Electoral Act, with one of the most significant being the submission of a list of 500 members, who are registered electors in the respective jurisdiction. 
+	<p>To register a party there are a number of qualifying criteria defined in the Electoral Act, with one of the most significant being the submission of a list of 500 members, who are registered electors in the respective jurisdiction.
 
 	<p>These lists of members which are submitted to the Electoral Commission must be unique to each registering party. According to the Commonwealth Electoral Act 1918, Section 126, 2A:
 
@@ -89,7 +90,7 @@ nav-title: How many political parties can you be a member of?
 
     <h1>Federal Parties & State Branches</h1>
 
-	<p>The major parties (Liberals, Labor, National, Green) all have a federal party and multiple state “branches” which are separate entities as registered with the AEC.  
+	<p>The major parties (Liberals, Labor, National, Green) all have a federal party and multiple state “branches” which are separate entities as registered with the AEC.
 	<p>https://www.aec.gov.au/Parties_and_Representatives/party_registration/Registered_parties/
 
 	<p>So technically, one party with lots of members can create multiple branches (or separate parties) as long as the membership lists submitted to the respective Electoral Commission does not duplicate the same person across multiple parties.
