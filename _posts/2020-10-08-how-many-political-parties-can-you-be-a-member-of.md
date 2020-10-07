@@ -5,6 +5,7 @@ redirects:
 layout: post
 dark-theme: true
 nav-title: How many political parties can you be a member of?
+date: 2020-10-08 12:00
 ---
 
 # Addressing a common misconception about political party membership
