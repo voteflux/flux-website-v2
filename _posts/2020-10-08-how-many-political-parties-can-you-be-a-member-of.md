@@ -62,16 +62,16 @@ Aside from the process for listing 500 members when registering parties, the oth
 
 ### Scenario A: Person is a member of two parties and not used for membership registration lists - OK as long as it does not violate party constitutions.
 
-![](/img/posts/how-man-pol-parties/party-membership-article-1.png)
+![](/img/posts/how-man-pol-parties/how-many-parties-1.png)
 
 ### Scenario B/C: Person who is a member of two parties and only used for one of the two membership registration lists - OK as long as it does not violate party constitutions.
 
-![](/img/posts/how-man-pol-parties/party-membership-article-2.png)
-![](/img/posts/how-man-pol-parties/party-membership-article-3.png)
+![](/img/posts/how-man-pol-parties/how-many-parties-2.png)
+![](/img/posts/how-man-pol-parties/how-many-parties-3.png)
 
 ### Scenario D: Person is a member of two parties and is used on both membership registration lists - Not OK (violates the Electoral Act).
 
-![](/img/posts/how-man-pol-parties/party-membership-article-4.png)
+![](/img/posts/how-man-pol-parties/how-many-parties-4.png)
 
 # Federal Parties & State Branches
 
