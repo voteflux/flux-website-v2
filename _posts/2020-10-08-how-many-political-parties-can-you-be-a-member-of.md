@@ -1,11 +1,11 @@
 ---
 title: How many political parties can you be a member of?
+permalink: "/how-many-political-parties-can-you-be-a-member-of/"
 redirects:
-- "/how-many-political-parties-can-you-be-a-member-of/"
+- "/2020/10/08/how-many-political-parties-can-you-be-a-member-of/"
 layout: post
 dark-theme: true
-nav-title: How many political parties can you be a member of?
-date: 2020-10-08 12:00
+date: 2020-10-08 10:00
 ---
 
 # Addressing a common misconception about political party membership

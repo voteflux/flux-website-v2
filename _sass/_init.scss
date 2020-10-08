@@ -84,9 +84,20 @@ pre {
 }
 
 blockquote {
-  font-size: $h3;
-  font-style: italic;
+  // font-size: $h3;
+  // font-style: italic;
+  border-left: solid 0.25rem $accent;
   margin-left: 0;
+  margin-right: 0;
+  font-family: 'noto serif', 'serif';
+  background-color: lighten($color: $accent, $amount: 51);
+}
+
+blockquote > p {
+  margin-left: 1em;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
 }
 
 hr {
