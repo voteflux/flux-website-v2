@@ -44,6 +44,8 @@ social-media:
   url: https://twitter.com/voteflux
 - name: reddit
   url: https://www.reddit.com/r/voteflux
+
+show_fundrazr: false
 ---
 
 {% include base.html %}
@@ -121,26 +123,32 @@ social-media:
   </div>
 </section>
 
-<!--&lt;!&ndash; ANNOUNCEMENT SECTION &ndash;&gt;-->
-<!--<section id="js-announcement-home" class="py2 sm-pr4 bg-near-black br0 min-height-05vh fixed right-0 left-0 bottom-0 z3 col-12 border-top">-->
-  <!--<div class="" style="width: 100vw; padding-left: 5vw; padding-right: 5vw">-->
-    <!--<div id="js-announcement-content" class="white">-->
-      <!--<div class="md-flex flex-end">-->
-        <!--<a href="https://fundrazr.com/fluxpartynsw?utm_source=mainsite_banner" class="btn btn-primary col-12 md-col-4 center inline-block">Donate Now (NSW)</a>-->
-        <!--<div class="my0 py0 pt1 col-12 md-col-4 align-bottom h2 xs-hide sm-hide" style="text-align: center;">Next Milestone</div>-->
-        <!--<a href="/signup/?utm_content=ann-banner~{{ page.url | slugify }}" class="btn btn-outline col-12 md-col-4 center inline-block xs-hide sm-hide">Join Flux</a>-->
-      <!--</div>-->
-      <!--<div class="rounded mt1 bg-accent-muted white relative" style="min-height: 2rem; height: 2rem" id="donation-progress-outer">-->
-        <!--<div class="rounded inline-block absolute top-0 align-middle bg-accent min-h-100"-->
-             <!--style="width: 50%; height: 2rem;" id="donation-progress-inner">-->
-        <!--</div>-->
-        <!--<p id='donation-status-text' class="my0 sm-h4 md-h3 lg-h2" style="position: relative; top: 50%; transform: translateY(-50%); text-align: center">-->
-          <!--(loading)-->
-        <!--</p>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</section>-->
+
+<!-- DOCK TO BOTTOM SECTION -->
+<!-- NOTE: You should really use dock_to_bottom.html (see ./_includes/) -->
+{% if page.show_fundrazr %}
+<section id="js-announcement-home" class="py2 sm-pr4 bg-near-black br0 min-height-05vh fixed right-0 left-0 bottom-0 z3 col-12 border-top">
+  <div class="" style="width: 100vw; padding-left: 5vw; padding-right: 5vw">
+    <div id="js-announcement-content" class="white">
+      <div class="md-flex flex-end">
+        <a href="https://fundrazr.com/fluxpartynsw?utm_source=mainsite_banner" class="btn btn-primary col-12 md-col-4 center inline-block">Donate Now (NSW)</a>
+        <div class="my0 py0 pt1 col-12 md-col-4 align-bottom h2 xs-hide sm-hide" style="text-align: center;">Next Milestone</div>
+        <a href="/signup/?utm_content=ann-banner~{{ page.url | slugify }}" class="btn btn-outline col-12 md-col-4 center inline-block xs-hide sm-hide">Join Flux</a>
+      </div>
+      <div class="rounded mt1 bg-accent-muted white relative" style="min-height: 2rem; height: 2rem" id="donation-progress-outer">
+        <div class="rounded inline-block absolute top-0 align-middle bg-accent min-h-100"
+             style="width: 50%; height: 2rem;" id="donation-progress-inner">
+        </div>
+        <p id='donation-status-text' class="my0 sm-h4 md-h3 lg-h2" style="position: relative; top: 50%; transform: translateY(-50%); text-align: center">
+          (loading)
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+<!-- END DOCK -->
+
 
 <!-- CANDIDATES -->
 
