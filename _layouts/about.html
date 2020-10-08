@@ -23,9 +23,17 @@ header-theme: light
             font-size="h0"
             font-weight="bold"
             line="true" %}
-          {% if page.author %}
-            <div class="muted">Author: {{ page.author }}</div>
-          {% endif %}
+            <div class="font-noto-serif">
+              {% if page.author %}
+                <em>Author: {{ page.author }}</em>
+              {% endif %}
+              {% if page.author and page.date %}
+                &mdash;
+              {% endif %}
+              {% if page.date %}
+                {{page.date | date: "%a, %-d %B %Y" }}
+              {% endif %}
+            </div>
         </div>
 
         <div class="break-word">

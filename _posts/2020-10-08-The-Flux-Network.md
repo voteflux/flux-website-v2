@@ -1,13 +1,13 @@
 ---
 title: "The Flux Network"
-date: 2020-10-08
+date: 2020-10-08 13:00
 layout: about
 author: Daithí Gleeson
 ---
 
 ## Connecting issues, parties and voters
 
-> If you want to go fast, go alone. 
+> If you want to go fast, go alone.
 > If you want to go far, go together.
 > - African proverb
 
@@ -50,19 +50,19 @@ One of our objectives is *“To provide the framework and means for minor partie
 
 By helping other parties participate in a political digital democracy, we attract more people to our concepts of participation in democracy, and maximise their impact via our Digital Democracy apps.
 
-We are developing the philosophy, writing the code and building the platforms for the next epoch of democracy. We need other people to bring their opinions on the whole spectrum of social and political issues. 
+We are developing the philosophy, writing the code and building the platforms for the next epoch of democracy. We need other people to bring their opinions on the whole spectrum of social and political issues.
 
 # What’s in this for minor parties and independents?
 
-Simply put, it’s an opportunity for minor parties to bring their issues to a wider audience outside of the scope of an election. For most minor parties, the only time they get to participate in democratic process is during elections. 
+Simply put, it’s an opportunity for minor parties to bring their issues to a wider audience outside of the scope of an election. For most minor parties, the only time they get to participate in democratic process is during elections.
 
-The DigiPol app is a tool to review and vote on legislation before parliament, and to review and vote on issues that are *not yet* before Parliament. 
+The DigiPol app is a tool to review and vote on legislation before parliament, and to review and vote on issues that are *not yet* before Parliament.
 
 This is the beginning of a new way of engaging on political issues, and we want to ensure that other minor parties don’t feel like they have to miss out.
 
 # What does this mean for me as a member of Flux?
 
-We will be announcing some more tangible changes for our members in WA in the coming weeks (relating to the campaign for the WA State election in March 2021), but for most Flux members, this doesn’t change anything. 
+We will be announcing some more tangible changes for our members in WA in the coming weeks (relating to the campaign for the WA State election in March 2021), but for most Flux members, this doesn’t change anything.
 
 It may serve as an opportunity for you to talk to your friends who may care about issues which see them supporting another minor party. You could explain there is a place for them to participate on their issues outside of voting in elections.
 
@@ -74,7 +74,7 @@ No. [Since the beginning](https://voteflux.org/letter-to-parties/), we’ve been
 
 If you are from a minor party and want to discuss more specific details, you can email leadership [at] voteflux.org and we’ll send you more information.
 
-If you are a member of another party, you can join Flux (assuming your party allows it - Link to [How many political parties can you be a member of?](https://www.voteflux.org/how-many-parties-can-you-be-a-member-of). 
+If you are a member of another party, you can join Flux (assuming your party allows it - Link to [How many political parties can you be a member of?](https://www.voteflux.org/how-many-parties-can-you-be-a-member-of).
 
 If you are not a member of another party, you should join Flux. It’s free, easy and you’ll be among the first to get access to DigiPol and any other Flux project. The only thing we’ll ask of you is to verify your membership with the Electoral Commission if they contact you. We will advise you in advance if they ever plan on calling you.
 
@@ -85,4 +85,3 @@ We are opening up the pilot of DigiPol.
 We are launching a new political project for the upcoming WA election (details soon to be announced).
 
 *Note: Our list of the “Major Parties”: Liberal, Labor, National, Green, One Nation, Palmer parties(Palmer parties included in major list due to significance of donations, representing 14% of all donations in last 6 years).*
-
