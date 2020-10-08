@@ -7,3 +7,11 @@
 .align-middle   { vertical-align: middle }
 
 .align-bottom   { vertical-align: bottom }
+
+.middle-center-child {
+    // parent must have position:relative
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
