@@ -6,6 +6,7 @@ redirects:
 layout: post
 dark-theme: true
 date: 2020-10-08 10:00
+summary: Can you be a member of multiple political parties at the same time? Yes.
 ---
 
 # Addressing a common misconception about political party membership
