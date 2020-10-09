@@ -1,15 +1,17 @@
 ---
 title: "The Flux Network"
-date: 2020-10-08 13:00
+subtitle: Connecting issues, parties and voters
+is-hero-like: true
+date: 2020-10-09 13:00
 layout: about
 author: Daithí Gleeson
+redirects:
+- /2020/10/08/The-Flux-Network/
 ---
 
-## Connecting issues, parties and voters
-
-> If you want to go fast, go alone.
-> If you want to go far, go together.
-> - African proverb
+> *If you want to go fast, go alone.<br>
+> If you want to go far, go together.*<br>
+> &mdash; African proverb
 
 There are challenges associated with being a minor party or independent candidate in modern Australian politics. Contesting elections and the general administration of a party are very time and energy intensive activities. Add into this mix, the fact that almost all people involved in minor parties are general volunteers or specialists working pro bono. The effort that is put in by all these people is significant, yet still does not come close to the ability of the major parties to deploy resources - and nowhere is this more obvious than when it comes to contesting elections.
 
@@ -22,7 +24,6 @@ One prevailing idea which has stifled the growth of minor parties, is the notion
 But in short, the answer is “yes as long as all the parties are ok with it”.
 
 It is in this light that we introduce the idea of the Flux Network.
-
 
 # What is the Flux Network?
 

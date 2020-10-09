@@ -8,8 +8,6 @@ redirects:
   - /transparency/
 ---
 
-*(There is a note to journalists at the conclusion of this article.)*
-
 Morality is, by definition, our best ideas on how to live. It is incredibly important.
 At Flux, we care about living and acting with integrity and morality, in all we do.
 Like all people and organisations, we're fallible, so taking our values seriously means that sometimes we'll make mistakes, but also that we're open to the criticism that will help us improve.
