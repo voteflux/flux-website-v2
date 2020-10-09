@@ -24,9 +24,9 @@ This idea is not actually correct.
 A person can be a member of multiple parties at the same time, but there are some minor caveats in regard to support and registration.
 It’s a tangent which we fully explain in the article [“How many political parties can you be a member of?”](/how-many-political-parties-can-you-be-a-member-of/).
 
-But in short, the answer is “yes as long as all the parties are okay with it”.
+But in short, the answer is “as many as you like, provided all the parties are okay with it”.
 
-It is in this light that we introduce the idea of the Flux Network.
+It is in this light that we introduce the idea of The Flux Network.
 
 # What is the Flux Network?
 
