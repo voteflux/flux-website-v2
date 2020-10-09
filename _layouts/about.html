@@ -5,7 +5,7 @@ header-theme: light
 
 {% include base.html %}
 {% include navbar.html%}
-<div class="full-bg-img height-30vh">
+<div class="full-bg-img height-10vh">
 </div>
 <main class="bg-white mid-gray pb4 pt3 sm-pt5 px2 sm-px3">
   <div class="mx-auto max-width-3">
@@ -13,15 +13,26 @@ header-theme: light
         <h4 class=" mt1">
           {% if page.tag-section %}
           <span class="muted"> {{ page.tag-section | upcase }} </span>
-          <span> / </span>
+          {% comment %} <!-- #47 = / --> {% endcomment %}
+          <span> &#47; </span>
           <span class="bold"> {{ page.tag-topic | upcase }} </span>
           {% endif %}
         </h4>
         <div class="sm-mb4 mb3">
+          {% capture heading-font-size %}
+            {% if page.is-hero-like %} h00-5 {%else%} h0 {%endif%}
+          {% endcapture %}
+
+          {% capture subheading-font-size %}
+            {% if page.is-hero-like %} h0-5 {%else%} h1 {%endif%} regular
+          {% endcapture %}
+
           {% include components/main-heading.html
             text=page.title
-            font-size="h0"
+            font-size=heading-font-size
             font-weight="bold"
+            sub-text=page.subtitle
+            sub-font-size=subheading-font-size
             line="true" %}
             <div class="font-noto-serif">
               {% if page.author %}
@@ -37,8 +48,13 @@ header-theme: light
         </div>
 
         <div class="break-word">
-          <!--{{ content }}-->
-          {% include anchor_headings.html html=content beforeHeading=true anchorBody='#' %}
+          {% comment %}<!--{{ content }}-->{% endcomment %}
+          {% comment %} By breaking out page.press-release in this way, it will not be included in page.extract {% endcomment %}
+          {% capture content_w_extra %}
+            {% if page.press-release %}<em><strong>{{ page.press-release }}</strong></em> {% endif %}
+            {{content}}
+          {% endcapture %}
+          {% include anchor_headings.html html=content_w_extra beforeHeading=true anchorBody='#' %}
           {% include talkyard-comments.html %}
         </div>
         <div class="mb4">

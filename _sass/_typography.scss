@@ -8,7 +8,7 @@
 
 .bold    { font-weight: $bold-font-weight /* Fallback value:  bold */ }
 
-.mid { font-weight: 700 }
+.mid { font-weight: $mid-font-weight }
 
 .regular { font-weight: $regular-font-weight }
 

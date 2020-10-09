@@ -2,7 +2,12 @@
   <h2 id={{include.text | slugify }} class="mb0 {% if include.font-size %}{{include.font-size}} {% else %}h1 {% endif %}{% if include.font-weight %}{{include.font-weight}} {% else %} bold {% endif %} {{include.classes}} line-height-2"> {{include.text}}
   </h2>
   {% if include.sub-text %}
-  <h3>{{include.sub-text}}</h3>
+  <h2 class="mt2 line-height-2
+    {% if include.sub-font-size %}{{ include.sub-font-size }} {% else %}h2 {% endif %}
+    {{include.classes}}
+  ">
+    {{include.sub-text}}
+  </h2>
   {% endif %}
   {% if include.line %}
   <div class="mt2">

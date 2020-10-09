@@ -1,0 +1,53 @@
+---
+title: Posts
+permalink: "/posts/"
+layout: default
+dark-theme: true
+---
+
+{% include navbar.html %}
+<header class="bg-near-black texture-bg-img height-30vh py4">
+	<div class="max-width-4 mx-auto px2 sm-px3 pt5">
+	  {% include components/main-heading.html
+	    text=page.title
+	    font-size="h00"
+	    font-weight="light"
+	    line="true"
+	    classes="white" %}
+	</div>
+</header>
+
+<section class="bg-white">
+	<div class="flex flex-wrap max-width-4 mx-auto">
+		{% for post in site.posts %}
+			<article class="py0 inline-block col-12">
+				<a href="{{ post.url }}" class="max-width-12 dark-gray mx-auto px2 md-px3">
+					<div class="flex">
+						<div class="lg-col-12 px2 lg-px3 ">
+							<p class="h-font h3 sm-h2 light">
+								<small>{{ post.date | date: "%Y-%m-%d" }}</small>
+							</p>
+							<h2 class="mb0 h1 line-height-2 bold line-height-2">{{ post.title }}</h2>
+							<div class="h3 sm-h2 light mb3">
+								<p>
+									{% if post.excerpt contains '</a>' %}
+									{{post.excerpt | strip_html}}
+									{% else %}
+									{{post.excerpt}}
+									{% endif %}
+									{% comment %} {% if post.summary %}
+										{{post.summary}}
+									{% else %}
+										{{post.excerpt}}
+									{% endif %} {% endcomment %}
+								</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</article>
+		{% endfor %}
+	</div>
+</section>
+
+{% include footer.html %}

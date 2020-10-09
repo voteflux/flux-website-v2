@@ -7,10 +7,14 @@ $breakpoint-lg: '(min-width: 64em)' !default;
 
 /* Basscss Type Scale */
 
-.h00 {font-size: $h0 }
-.h0 { font-size: $h1 }
+.h00 {font-size: $h00 }
+.h00-5 {font-size: $h00-5}
+.h0 { font-size: $h0 }
+.h0-5 {font-size: $h0-5}
 .h1 { font-size: $h1 }
+.h1-5 {font-size: $h1-5}
 .h2 { font-size: $h2 }
+.h2-5 {font-size: $h2-5}
 .h3 { font-size: $h3 }
 .h4 { font-size: $h4 }
 .h5 { font-size: $h5 }

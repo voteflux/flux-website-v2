@@ -1,15 +1,17 @@
 ---
 title: "The Flux Network"
-date: 2020-10-08 13:00
+subtitle: Connecting issues, parties and voters
+is-hero-like: true
+date: 2020-10-09 13:00
 layout: about
 author: Daithí Gleeson
+redirects:
+- /2020/10/08/The-Flux-Network/
 ---
 
-## Connecting issues, parties and voters
-
-> If you want to go fast, go alone.
-> If you want to go far, go together.
-> - African proverb
+> *If you want to go fast, go alone.<br>
+> If you want to go far, go together.*<br>
+> &mdash; African proverb
 
 There are challenges associated with being a minor party or independent candidate in modern Australian politics. Contesting elections and the general administration of a party are very time and energy intensive activities. Add into this mix, the fact that almost all people involved in minor parties are general volunteers or specialists working pro bono. The effort that is put in by all these people is significant, yet still does not come close to the ability of the major parties to deploy resources - and nowhere is this more obvious than when it comes to contesting elections.
 
@@ -19,14 +21,13 @@ The most significant resource of any minor party (or independent candidate) is t
 
 One prevailing idea which has stifled the growth of minor parties, is the notion that a person can only be a member of one political party at any given time. This idea is not actually correct. A person can be a member of multiple parties at the same time, but there are some minor caveats in regard to support and registration. It’s a tangent which we fully explain in this article [“How many political parties can you be a member of?”](https://www.voteflux.org/how-many-parties-can-you-be-a-member-of).
 
-But in short, the answer is “yes as long as all the parties are ok with it”.
+But in short, the answer is “yes as long as all the parties are okay with it”.
 
 It is in this light that we introduce the idea of the Flux Network.
 
-
 # What is the Flux Network?
 
-The Flux Network is a network of people, multiple political parties, organisations and causes, who practice Digital Democracy via the ecosystem of applications developed and released by The Flux Foundation.
+The Flux Network is a network of people, multiple political parties, organisations, causes and who practice Digital Democracy via the ecosystem of applications developed and released by The Flux Foundation.
 
 The Flux Network is more of a paradigm for some alignment and cooperation, rather than an official association of members and parties, with hard coded obligations and expectations.
 
@@ -40,7 +41,7 @@ Minor parties are often characterised by having a narrow scope of interests in r
 
 To maximise their performance at elections, the party will focus on the single-issue, but their members and supporters will undoubtedly care about other issues beyond the scope of the party’s single objective. The misconceptions mentioned above will often prevent the supporters and members of minor parties from participating in other issues. The only other way to participate on other issues they care about is by assigning a preference to another party on election day.
 
-This situation is suboptimal for all the minor parties as the current conceptions regarding party membership forces segmentation of voters into different groups, who otherwise may be strongly aligned on a wide variety of issues. Using NSW 2019 State election as an example, how many people in Keep Sydney Open would support Voluntary Euthanesia, and vice versa?
+This situation is suboptimal for all the minor parties as the current conceptions regarding party membership forces segmentation of voters into different groups, who otherwise may be strongly aligned on a wide variety of issues. Using NSW 2019 State election as an example, how many people in Keep Sydney Open would support Voluntary Euthanasia, and vice versa?
 
 The Flux Network is intended as a place for the supporters of minor parties and independents to come together to leverage the power of their numbers which have been limited due to fragmentation into different parties.
 

@@ -1,5 +1,6 @@
 ---
 title: How many political parties can you be a member of?
+subtitle: Addressing a common misconception about political party membership
 permalink: "/how-many-political-parties-can-you-be-a-member-of/"
 redirects:
 - "/2020/10/08/how-many-political-parties-can-you-be-a-member-of/"
@@ -10,9 +11,7 @@ summary: Can you be a member of multiple political parties at the same time? Yes
 author: Daithí Gleeson
 ---
 
-# Addressing a common misconception about political party membership
-
-The answer is “As many as you like, and it mostly depends on the rules and processes of the parties.”
+In short: you can join as many as you like, but it will practically depend on the rules and processes of the parties.
 
 When someone signs up as a member of a political party, they are usually asked the following question “Are you a member of another political party?”.
 

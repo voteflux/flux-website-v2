@@ -2,11 +2,17 @@
 
 // typography
 $font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, sans-serif !default;
+// this is not the heading font, but whatever. It's used in a bunch of places but I don't like it much. -MK
 $heading-font: 'Roboto Slab' !default;
+$serif-font: 'Noto Serif' !default;
 $h00: 8rem !default;
+$h00-5: 5.66rem !default;  // sqrt(8*4);
 $h0: 4rem !default;
+$h0-5: 2.83rem !default;  // sqrt(4*2);
 $h1: 2rem !default;
+$h1-5: 1.73rem !default;  // sqrt(2*1.5);
 $h2: 1.5rem !default;
+$h2-5: 1.37rem !default;  // sqrt(1.5*1.25);
 $h3: 1.25rem !default;
 $h4: 1rem !default;
 $h5: .875rem !default;
@@ -23,6 +29,7 @@ $caps-letter-spacing: .2em !default;
 $light-font-weight: 300 !default;
 $mid-light-font-weight: 300 !default;
 $regular-font-weight: 400 !default;
+$mid-font-weight: 600 !default;
 $bold-font-weight: 900 !default;
 
 // layout
