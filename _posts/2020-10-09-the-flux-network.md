@@ -27,7 +27,7 @@ It is in this light that we introduce the idea of the Flux Network.
 
 # What is the Flux Network?
 
-The Flux Network is a network of people, multiple political parties, organisations, causes and who practice Digital Democracy via the ecosystem of applications developed and released by The Flux Foundation.
+The Flux Network is a network of people, multiple political parties, organisations and causes, who practice Digital Democracy via the ecosystem of applications developed and released by The Flux Foundation.
 
 The Flux Network is more of a paradigm for some alignment and cooperation, rather than an official association of members and parties, with hard coded obligations and expectations.
 
