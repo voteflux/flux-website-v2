@@ -19,7 +19,10 @@ The major parties have donor networks which grant resources on a scale which min
 
 The most significant resource of any minor party (or independent candidate) is their members or supporters. However, this resource is often underutilised for various reasons.
 
-One prevailing idea which has stifled the growth of minor parties, is the notion that a person can only be a member of one political party at any given time. This idea is not actually correct. A person can be a member of multiple parties at the same time, but there are some minor caveats in regard to support and registration. It’s a tangent which we fully explain in this article [“How many political parties can you be a member of?”](https://www.voteflux.org/how-many-parties-can-you-be-a-member-of).
+One prevailing idea which has stifled the growth of minor parties, is the notion that a person can only be a member of one political party at any given time.
+This idea is not actually correct.
+A person can be a member of multiple parties at the same time, but there are some minor caveats in regard to support and registration.
+It’s a tangent which we fully explain in the article [“How many political parties can you be a member of?”](/how-many-political-parties-can-you-be-a-member-of/).
 
 But in short, the answer is “yes as long as all the parties are okay with it”.
 
