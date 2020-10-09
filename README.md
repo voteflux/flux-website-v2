@@ -1,5 +1,7 @@
 # Instructions
 
+![build-badge](https://codebuild.ap-southeast-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiYWhaVlREY1dqWGdkYU9QQ0I2Q0R2Z3BkRXRQdlB3L2RBSE15MWxFZXdrUnp4Z2NrUi8rRlJ4b2FoMU12SklLZlhoQkd1ZjFBZ2M0WjhLNzV5SXhMUlJZPSIsIml2UGFyYW1ldGVyU3BlYyI6IjRGeHVLNXhUcEJtT2JKaEoiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
 If a build fails you can check logs at: <https://voteflux.org/build-logs/>
 
 ## Dependencies
