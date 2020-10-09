@@ -97,5 +97,5 @@ plugins:
 redirects: true
 strict_front_matter: true
 
-talkyard_server_url: https://voteflux.talkyard.net
+talkyard_server_url: https://forum.voteflux.org
 talkyard_script_url: https://c1.ty-cdn.net/-/talkyard-comments.min.js
