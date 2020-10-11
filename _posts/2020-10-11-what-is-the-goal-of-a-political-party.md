@@ -3,7 +3,6 @@ title: What is the goal of a political party?
 author: Max Kaye
 date: 2020-10-11
 layout: post
-published: false
 ---
 
 In general, Australian political parties are groups with members that are registered with the relevant Electoral Commission. These groups are allowed to run candidates under a unified banner in elections managed by that Electoral Commission. Parties aren't necessarily incorporated. Parties are made up of members, at least some of whom must be voters in the relevant elections.
