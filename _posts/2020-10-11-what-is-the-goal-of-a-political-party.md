@@ -19,7 +19,7 @@ The main goals a political party is **uniquely** suited to meet, are:
 
 Both of these involve the interim step of winning elections.
 
-Parties can help meet other goals too, though they're not uniquely suited to these goals. For example, creating a political party can help meet a personal goal of contributing to something meaningful, or the goal of amplifying particular points of view in the media and other discussions. These are *background goals*. Satisfying background goals is not a decisive reasons for doing something.
+Parties can help meet other goals too, though they're not uniquely suited to such goals. For example, creating a political party can help meet a personal goal of contributing to something meaningful, or the goal of amplifying particular points of view in the media and other discussions. These are *background goals*. Satisfying background goals is not a decisive reason for doing something.
 
 The purpose of a political party must be **decisive** in meeting particular goals. Those goals are not able to be met in ways other than the creation of a party. The main advantage of a political party in elections, compared to independents, is the privileged treatment with regards to naming and positioning on a ballot paper. It's significantly easier for a candidate of a political party to be elected.
 
