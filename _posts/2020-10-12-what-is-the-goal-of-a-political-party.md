@@ -3,6 +3,7 @@ title: What is the goal of a political party?
 author: Max Kaye
 date: 2020-10-12
 layout: about
+published: false
 ---
 
 Creating a political party takes time, energy, and resources like money. Parties aren't cheap to create and they're some effort to maintain. It doesn't make sense to start or continue a party if the political party doesn't contribute to some goal, or of that goal can be met more effectively in other ways.
