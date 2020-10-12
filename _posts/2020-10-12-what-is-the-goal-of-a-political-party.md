@@ -5,7 +5,7 @@ date: 2020-10-12
 layout: about
 ---
 
-Creating a political party takes time, energy, and resources like money. They aren't cheap to create and are some effort to maintain. It doesn't make sense to start or continue a party if the political party doesn't contribute to some goal.
+Creating a political party takes time, energy, and resources like money. Parties aren't cheap to create and they're some effort to maintain. It doesn't make sense to start or continue a party if the political party doesn't contribute to some goal, or of that goal can be met more effectively in other ways.
 
 In general, Australian political parties are groups with members that are registered with the relevant Electoral Commission. These groups are allowed to run candidates under a unified banner in elections managed by that Electoral Commission. Parties aren't necessarily incorporated. Parties are made up of members, at least some of whom must be voters in the relevant elections.
 
