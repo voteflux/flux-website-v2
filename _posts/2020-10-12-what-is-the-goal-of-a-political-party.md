@@ -1,7 +1,7 @@
 ---
 title: What is the goal of a political party?
 author: Max Kaye
-date: 2020-10-11
+date: 2020-10-12
 layout: post
 ---
 
