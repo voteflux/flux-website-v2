@@ -5,9 +5,9 @@ date: 2020-10-12
 layout: about
 ---
 
-In general, Australian political parties are groups with members that are registered with the relevant Electoral Commission. These groups are allowed to run candidates under a unified banner in elections managed by that Electoral Commission. Parties aren't necessarily incorporated. Parties are made up of members, at least some of whom must be voters in the relevant elections.
-
 Creating a political party takes time, energy, and resources like money. They aren't cheap to create and are some effort to maintain. It doesn't make sense to start or continue a party if the political party doesn't contribute to some goal.
+
+In general, Australian political parties are groups with members that are registered with the relevant Electoral Commission. These groups are allowed to run candidates under a unified banner in elections managed by that Electoral Commission. Parties aren't necessarily incorporated. Parties are made up of members, at least some of whom must be voters in the relevant elections.
 
 It's fair to say a party can help achieve multiple goals. When a party is multi-purpose, like this, the goals don't change. There aren't that many common goals parties help achieve, either. Some of the goals a political party might satisfy can be better satisfied by other types of organisations. For example: if you had the goal to increase medical research for some disease, you could register a political party around that issue, or you could register a not-for-profit company. Why would you want to go the political party route instead of another option? It doesn't make sense to register a political party if some other type of organisation would be better. It only makes sense if you're taking advantage of the things political parties are *uniquely* suited to address.
 
