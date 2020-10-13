@@ -1,0 +1,32 @@
+<!-- Recent Posts -->
+<section class="bg-white py4 px2 md-px3">
+    <div class="max-width-4 mx-auto dark-gray">
+        <div class="md-flex mb3">
+            <div class="md-col-12">
+                <h1 class="h0 bold mb3 line-height-2">
+                    Recent Posts
+                </h1>
+                {% for post in site.posts | limit:5 %}
+                <div class="">
+                    <!-- this size just happens to line up with the date quite nicely - pure chance -->
+                    <span class="border-bottom px4 mt2 inline-block border-thin muted accent"></span>
+                    <h2 class="mt0"><em>{{post.date | date: "%Y-%m-%d"}} &mdash;</em> <a
+                            href="{{post.url}}">{{ post.title }}</a></h2>
+                    <p>
+                        {{ post.excerpt }}
+                        {% comment %} {% if post.summary %} {{ post.summary }} {% else %} {{post.excerpt}} {% endif %}
+                        {% endcomment %}
+                    </p>
+                </div>
+                {% endfor %}
+
+                <div class="right">
+                    <a href="{{baseurl}}/posts/" class="h1 regular pr4 pl3 pt3 pb2 block">
+                        See All Posts 🡺
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="md-hide mb3">&nbsp;</div>
+</section>
