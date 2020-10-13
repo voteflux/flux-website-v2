@@ -197,9 +197,14 @@ $(document).ready(function() {
     return [days, hours, minutes, seconds];
   }
 
+  function padNumber2Digits(num) {
+    const numStr = num.toString();
+    return numStr.length < 2 ? `0${numStr}` : numStr;
+  }
+
   function getCountdownStrTo(endDate) {
     const [days, hours, minutes, seconds] = getCountdownTo(endDate);
-    return `${days} days, ${hours}:${minutes}:${seconds}`;
+    return `${days} days, ${padNumber2Digits(hours)}:${padNumber2Digits(minutes)}:${padNumber2Digits(seconds)}`;
   }
 
   function setElContents(e, to_set) {
