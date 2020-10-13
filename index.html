@@ -128,45 +128,7 @@ show_fundrazr: false
   </div>
 </section>
 
-<!-- Recent Posts -->
-<section class="bg-white py4 px2 md-px3">
-  <div class="max-width-4 mx-auto dark-gray">
-    <div class="md-flex mb3">
-      <div class="md-col-12">
-        <h1 class="h0 bold mb3 line-height-2">
-          Recent Posts
-        </h1>
-        {% for post in site.posts | limit:5 %}
-        <div class="">
-          <!-- this size just happens to line up with the date quite nicely -->
-          <span class="border-bottom px4 mt2 inline-block border-thin muted accent"></span>
-          <h2 class="mt0"><em>{{post.date | date: "%Y-%m-%d"}} &mdash;</em> <a href="{{post.url}}">{{ post.title }}</a></h2>
-          <p>
-            {{ post.excerpt }}
-            {% comment %} {% if post.summary %} {{ post.summary }} {% else %} {{post.excerpt}} {% endif %} {% endcomment %}
-          </p>
-        </div>
-        {% endfor %}
-
-        <div class="right">
-          <a href="{{baseurl}}/posts/" class="h1 regular pr4 pl3 pt3 pb2 block">
-            See All Posts 🡺
-          </a>
-        </div>
-
-        {% comment %} <p class="h3 sm-h2 light h-font mb4 gray letter-spacing-2 line-height-4">
-          Flux's philosophy whitepaper <em>Redefining Democracy</em> has now been published, and we'd like to invite you to read it.
-        </p>
-        <p class="h4 sm-h2 light h-font mb4 gray letter-spacing-2 line-height-4"><strong>Abstract:</strong> This paper identifies fundamental flaws in our current democratic systems and explains that while they were useful previously, no longer serve their purpose and need to be replaced. We will explain how authority in democracy acts as a restriction on political progress, and describe a new model of democracy which removes authority from decision making, allowing a new era of political prosperity.</p>
-        <a href="{{ site.baseurl }}/pdf/Redefining Democracy - Kaye & Spataro 1.0.2.pdf"
-           class="h3 sm-h2 border-bottom accent inline-block">
-          Read Redefining Democracy
-        </a> {% endcomment %}
-      </div>
-    </div>
-  </div>
-</section>
-
+{% include recent_posts.html %}
 
 <!-- DOCK TO BOTTOM SECTION -->
 <!-- NOTE: You should really use dock_to_bottom.html (see ./_includes/) -->

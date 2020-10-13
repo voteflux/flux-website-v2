@@ -117,6 +117,7 @@ social-media:
   </div>
 </section>
 
+
 {% if page.video %}
 <!-- VIDEO SECTION -->
 <section class="py4 bg-black light-gray px2 md-px3">
@@ -157,6 +158,9 @@ social-media:
 </section>
 {% endif %}
 
+{% include recent_posts.html %}
+
+{% comment %}
 <!-- ANNOUCEMENTS SECTION -->
 {% assign posts = site.posts | where: "state", "WA" %}
 {% if posts.size > 0 %}
@@ -195,10 +199,11 @@ social-media:
   </div>
 </section>
 {% endif %}
+{% endcomment %}
 
 
 <!-- EVENTS SECTION -->
-{% if page.meetups.size > 0 %}
+{% if page.meetups.size > 0 and false %}
 <section id="upcoming-meetups" class="full-bg-img height-40vh py2 sm-py4">
   <div class="max-width-4 mx-auto clearfix sm-px2 md-px3">
     <div class="bg-near-black light-gray px2 py4 sm-p4 sm-col-right sm-col-12 md-col-9 mt4">
@@ -250,12 +255,13 @@ social-media:
             font-weight="bold" %}
 
             <div class="sm-flex flex-wrap mxn2">
-              {% for candidate in site.wa-team %}
+              {% assign team = site.wa-team | sort: "priority" %}
+              {% for candidate in team %}
                 {% include candidates/team-card.html
                    position=candidate.position
                    email=candidate.email
                    image=candidate.image
-                   title=candidate.title   %}
+                   title=candidate.title %}
               {% endfor %}
             </div>
           </div>
@@ -267,7 +273,8 @@ social-media:
 
 
 <!-- CANDIDATES SECTION -->
-{% if site.candidates %}
+<!-- disable until we update for 2021 -->
+{% if site.candidates and false %}
 <section class="bg-near-white dark-gray pt4 pb3 sm-pr4 col-12 overflow-hidden">
   <div class="max-width-4 mx-auto px2 sm-px3">
     {% include components/main-heading.html
