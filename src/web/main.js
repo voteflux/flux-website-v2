@@ -251,7 +251,11 @@ $(document).ready(function() {
           // "js-volunteer-count-mobile": data.n_volunteers
           // comment out waelection-countdown here b/c we handle it differently (not based on API call)
           // "js-waelection-countdown": getDaysTo(WA_ELECTION_DATE),
-          "js-wamember-remaining": () => 1100 - data.n_members_validated_state.wa,
+          "js-wamember-remaining": () => {
+            const min = 25;
+            const needed = 1100 - data.n_members_validated_state.wa;
+            return needed < min ? min : needed;
+           },
         };
 
         var set_contents = function(e, to_set){
