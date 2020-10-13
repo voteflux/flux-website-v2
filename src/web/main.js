@@ -1,5 +1,9 @@
 import { flux_api } from './common';
 
+
+const WA_ELECTION_DATE = new Date("03/13/2021"); // Use US Date Format MM/DD/YYYY
+
+
 const setRefLocalStorage = function(newVal) {
   localStorage.setItem('signup_referral', newVal);
 }
@@ -58,7 +62,6 @@ const fluxAnnounce = (function() {
 }());
 
 $(document).ready(function() {
-
   // close ANNOUNCEMENT modal
   $('#js-modal-close').on('click', function() {
     fluxAnnounce.closeModal();
@@ -180,9 +183,50 @@ $(document).ready(function() {
     return Math.ceil(distance / 86400000); // 86400000 ms in 1 day
   }
 
+  function getCountdownTo(endDate) {
+    var today = new Date();
+    var distance = endDate - today;
+    if (distance < 0) return 0;
+    const days = Math.floor(distance / 86400000); // 86400000 ms in 1 day
+    distance -= days * 86400000;
+    const hours = Math.floor(distance / 3600000); // 3600000 ms in 1 hour
+    distance -= hours * 3600000;
+    const minutes = Math.floor(distance / 60000); // 60000 ms in 1 minute
+    distance -= minutes * 60000;
+    const seconds = Math.floor(distance / 1000); // 1000 ms in 1 second
+    return [days, hours, minutes, seconds];
+  }
+
+  function getCountdownStrTo(endDate) {
+    const [days, hours, minutes, seconds] = getCountdownTo(endDate);
+    return `${days} days, ${hours}:${minutes}:${seconds}`;
+  }
+
+  function setElContents(e, to_set) {
+    // console.log(e);
+    if (!!e.innerHTML) {
+      // console.log("Setting", e, "to", to_set);
+      e.innerHTML = to_set;
+    }
+  };
+
+  function updateWaTimer(){
+    const countdownStr = getCountdownStrTo(WA_ELECTION_DATE);
+    // console.log(`countdownStr: ${countdownStr}`);
+    const updateClass = "js-waelection-countdown";
+    const els = document.getElementsByClassName(updateClass);
+    if (els.length > 0){
+      for (var el in els){
+        setElContents(els[el], countdownStr);
+      }
+      setTimeout(updateWaTimer, 1000);
+    }
+  }
+  updateWaTimer();
 
   // get member and volenteer info ajax request
   function getMembers() {
+
     $.ajax({
       url: flux_api("api/v0/getinfo") || "https://prod.v1.api.flux.party/api/v0/getinfo",
       data: {
@@ -200,8 +244,8 @@ $(document).ready(function() {
           // TS: No need to differentiate between mobile and non-mobile here for now
           // "js-member-count-mobile": data.n_members,
           // "js-volunteer-count-mobile": data.n_volunteers
-          // WA State Election Countdown - Remove After 11 March 2017
-          "js-waelection-countdown": getDaysTo(new Date('03/13/2021')), // Use US Date Format MM/DD/YYYY
+          // comment out waelection-countdown here b/c we handle it differently (not based on API call)
+          // "js-waelection-countdown": getDaysTo(WA_ELECTION_DATE),
         };
 
         var set_contents = function(e, to_set){
