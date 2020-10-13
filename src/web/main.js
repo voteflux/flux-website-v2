@@ -246,6 +246,7 @@ $(document).ready(function() {
           // "js-volunteer-count-mobile": data.n_volunteers
           // comment out waelection-countdown here b/c we handle it differently (not based on API call)
           // "js-waelection-countdown": getDaysTo(WA_ELECTION_DATE),
+          "js-wamember-remaining": () => 1100 - data.n_members_validated_state.wa,
         };
 
         var set_contents = function(e, to_set){
@@ -256,20 +257,11 @@ $(document).ready(function() {
         };
 
         _.map(classValueMap, function(val, className){
-          _.map(document.getElementsByClassName(className), function(elem){
-            set_contents(elem, val);
+          _.map(document.getElementsByClassName(className), function(el){
+            var _val = typeof val === "function" ? val() : val;
+            set_contents(el, _val);
           });
         });
-        //for (var key in classValueMap) {
-        //  var value = classValueMap[key];
-        //  var ref = document.getElementsByClassName(key);
-        //  // Some pages have more than one member counter
-        //  for (var i = 0, len = ref.length; i < len; i++) {
-        //    var element = ref[i];
-        //    set_contents(element, value);
-        //  }
-        //}
-
       },
       type: 'GET'
     });
