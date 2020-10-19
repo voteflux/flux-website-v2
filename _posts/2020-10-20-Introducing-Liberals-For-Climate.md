@@ -1,12 +1,9 @@
 ---
-title: "Introducing Liberals For Climate"
+title: Introducing Liberals For Climate
 subtitle: A starting point for The Flux Network
-is-hero-like: true
 date: 2020-10-20 13:00
 layout: about
 author: Daithí Gleeson
-redirects:
-- /2020/10/20/Introducing-Liberals-For-Climate/
 ---
 
 # Overview

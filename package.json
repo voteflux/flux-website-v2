@@ -19,7 +19,7 @@
     "build": "bundle exec jekyll clean && webpack -p && echo '--JEKYLL-BUILD--' && bundle exec jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "memberui": "parallelshell 'elm-live --host=localhost --port=8755 -- elmSrc/Flux/MemberUI/Main.elm --output=temp.elm.js --debug' 'bash -c \"sleep 1.5 && open http://localhost:8755/elmSrc/Flux/MemberUI/index.html\"'",
-    "spellcheck": "mdspell -n -a --en-au '**/*.md' '!elm-stuff/**/*.md' '!node_modules/**/*.md'"
+    "spellcheck": "mdspell -n -a -x --en-au '**/*.md' '!elm-stuff/**/*.md' '!node_modules/**/*.md'"
   },
   "babel": {
     "presets": [
