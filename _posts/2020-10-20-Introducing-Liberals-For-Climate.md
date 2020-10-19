@@ -64,7 +64,7 @@ In order to meet the WAEC timetable, the party registration list must be submitt
 
 # How?
 
-This post is the first public announcement. It will be supplemented with a social media advertising campaign which will drive traffic to the [LiberalsForClimate.org](https://www.liberalsforclimate.org) for people to register.
+This post is the first public announcement. It will be supplemented with a social media advertising campaign which will drive traffic to [LiberalsForClimate.org](https://www.liberalsforclimate.org) for people to register.
 
 We also expect/hope this idea to attract some attention via word-of-mouth or people tagging others in posts. We encourage all our members to support us by telling friends, family, colleagues, etc and donating to help us with all this. 
 
