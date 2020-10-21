@@ -40,7 +40,6 @@ LFC is a comment on the problems created by the dynamics of the political duopol
 
 While it may draw accusations of “taking sides”, or being a cynical act, we believe it is a defensible position to register a party “Liberals For Climate” to highlight this matter while also using it as a vehicle assisting our own electoral strategies.
 
-
 # Why?
 
 Quite simply, doing this will increase our chances of getting a candidate elected in the upcoming WA election.
@@ -61,7 +60,7 @@ In order to meet the WAEC timetable, the party registration list must be submitt
 
 # How?
 
-This post is the first public announcement. It will be supplemented with a social media advertising campaign which will drive traffic to the [LiberalsForClimate.org](https://www.liberalsforclimate.org) for people to register.
+This post is the first public announcement. It will be supplemented with a social media advertising campaign which will drive traffic to [LiberalsForClimate.org](https://www.liberalsforclimate.org) for people to register.
 
 We also expect/hope this idea to attract some attention via word-of-mouth or people tagging others in posts. We encourage all our members to support us by telling friends, family, colleagues, etc and donating to help us with all this. 
 
