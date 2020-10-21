@@ -6,9 +6,9 @@ layout: about
 author: Daithí Gleeson
 ---
 
-# Overview
-
 Flux is registering a new political party in Western Australia called “Liberals For Climate - The Flux Network”. 
+
+# Overview
 
 Liberals For Climate is an election experiment, and a statement on the dysfunction of the general political landscape. 
 
