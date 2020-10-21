@@ -6,7 +6,7 @@ layout: about
 author: Daithí Gleeson
 ---
 
-Flux is registering a new political party in Western Australia called “Liberals For Climate - The Flux Network”. 
+Flux is registering a new political party in Western Australia called "Liberals For Climate - The Flux Network".
 
 # Overview
 
