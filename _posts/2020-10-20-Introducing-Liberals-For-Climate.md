@@ -1,12 +1,9 @@
 ---
-title: "Introducing Liberals For Climate"
+title: Introducing Liberals For Climate
 subtitle: A starting point for The Flux Network
-is-hero-like: true
 date: 2020-10-20 13:00
 layout: about
 author: Daithí Gleeson
-redirects:
-- /2020/10/20/Introducing-Liberals-For-Climate/
 ---
 
 # Overview
@@ -42,7 +39,6 @@ It’s not a controversial idea to suggest that there are people who vote for th
 LFC is a comment on the problems created by the dynamics of the political duopoly, and the ideological battle lines which get drawn between the major parties. One of Flux’s core objectives is to ensure that issues are examined on their merits, and not bundled as ideological colours to be flown as flags at election time.
 
 While it may draw accusations of “taking sides”, or being a cynical act, we believe it is a defensible position to register a party “Liberals For Climate” to highlight this matter while also using it as a vehicle assisting our own electoral strategies.
-
 
 # Why?
 
