@@ -5,6 +5,7 @@ permalink: "/how-many-political-parties-can-you-be-a-member-of/"
 redirects:
 - "/2020/10/08/how-many-political-parties-can-you-be-a-member-of/"
 - "/how-many-parties-can-you-be-a-member-of"
+- "/how-many-political-parties-can-you-be-a-member-of/
 layout: post
 dark-theme: true
 date: 2020-10-08 10:00
