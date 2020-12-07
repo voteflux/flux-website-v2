@@ -74,7 +74,7 @@ Registering as a member of LFC is free. The only requirement is that you provide
 
 Yes. The [Electoral Act](https://www.legislation.wa.gov.au/legislation/statutes.nsf/main_mrtitle_290_homepage.html) is explicit on what things are allowed and not allowed.
 
-We have spoken with the WAEC of our intentions and they have informally advised us that there are no issues with our intentions or processes as described.
+We have spoken with the WAEC of our intentions and they acknowledged that our application would be subject to the relevant legislative processes.
 
 ## Is this ethical?
 
