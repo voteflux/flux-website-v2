@@ -4,6 +4,8 @@ subtitle: Why choose this name?
 date: 2021-01-28 13:00
 layout: about
 author: Daithí Gleeson
+summary: >
+  We are changing the name of the Western Australian party to Liberals For Climate - The Flux Network.
 ---
 
 We are changing the name of the Western Australian party to Liberals For Climate - The Flux Network.
