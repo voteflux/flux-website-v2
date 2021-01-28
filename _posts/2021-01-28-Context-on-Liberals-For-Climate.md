@@ -24,7 +24,8 @@ The word “liberal” has been distorted in recent times. It now means differen
 Democracy is a fundamental pillar which ensures that liberal values are able to find expression in society. Without democratic processes, the rights of citizens can not be guaranteed. This claim can be assessed by looking at countries which do not enshrine democratic processes, and rely on the benevolence of a monarchy or military dictatorship.
 
 > The only freedom which deserves the name, is that of pursuing our own good in our own way, so long as we do not attempt to deprive others of theirs, or impede their efforts to obtain it.
-> &mdash;  John Stuart Mill, On Liberty
+
+&mdash;  John Stuart Mill, On Liberty
 
 The challenge with having an open liberal society presents when we try to find ways to make everyone happy (or at least make as many people as possible happy while minimising the impact on those who are not happy). We’ve come to understand that it is an almost impossible task (see [Arrow’s Impossibility Theorem](https://plato.stanford.edu/entries/arrows-theorem/) for context), but nonetheless we will continue to seek ways to create better democratic outcomes.
 
