@@ -4,8 +4,7 @@ subtitle: Why choose this name?
 date: 2021-01-28 13:00
 layout: about
 author: Daithí Gleeson
-summary: >
-  We are changing the name of the Western Australian party to Liberals For Climate - The Flux Network.
+summary: We are changing the name of the Western Australian party to Liberals For Climate - The Flux Network.
 ---
 
 We are changing the name of the Western Australian party to Liberals For Climate - The Flux Network.
@@ -15,7 +14,7 @@ We are doing this because:
 * It is a political statement which draws attention due to one of the most contentious topics of our time - the politics of climate issues; and
 * It speaks to people feeling unrepresented by the policy decisions of the major parties.
 
-## Why “Liberals” For Climate?
+## Why "Liberals" For Climate?
 
 The word “liberal” has been distorted in recent times. It now means different things to different people depending on the context. However to most people, the most universal interpretation of being a liberal means living a life aligned to core principles of liberty and equality.
 
@@ -43,7 +42,7 @@ If people expect better political outcomes, they must accept the responsibility 
 
 Being an informed citizen who participates in civic life should be an aspirational standard we set for ourselves and those who will follow in our footsteps. To make the aspiration a tangible reality, we must make it easier for people to meaningfully participate in our democratic processes. That has been our mission since the beginning and will continue to be so.
 
-## Why Liberals “For Climate”?
+## Why Liberals "For Climate"?
 
 We have chosen Liberals For Climate as it draws attention to a contentious topic - the politics of climate issues. Constructive debate and tangible action on climate issues have been stifled in recent years as major political parties have allowed climate issues to be treated as matters of political ideology rather than matters of science, economics and our shared humanity.
 
