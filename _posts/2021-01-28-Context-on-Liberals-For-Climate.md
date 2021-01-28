@@ -15,7 +15,7 @@ We are doing this because:
 * It is a political statement which draws attention due to one of the most contentious topics of our time - the politics of climate issues; and
 * It speaks to people feeling unrepresented by the policy decisions of the major parties.
 
-# Why “Liberals” For Climate?
+## Why “Liberals” For Climate?
 
 The word “liberal” has been distorted in recent times. It now means different things to different people depending on the context. However to most people, the most universal interpretation of being a liberal means living a life aligned to core principles of liberty and equality.
 
@@ -42,7 +42,7 @@ If people expect better political outcomes, they must accept the responsibility 
 
 Being an informed citizen who participates in civic life should be an aspirational standard we set for ourselves and those who will follow in our footsteps. To make the aspiration a tangible reality, we must make it easier for people to meaningfully participate in our democratic processes. That has been our mission since the beginning and will continue to be so.
 
-# Why Liberals “For Climate”?
+## Why Liberals “For Climate”?
 
 We have chosen Liberals For Climate as it draws attention to a contentious topic - the politics of climate issues. Constructive debate and tangible action on climate issues have been stifled in recent years as major political parties have allowed climate issues to be treated as matters of political ideology rather than matters of science, economics and our shared humanity.
 
@@ -50,7 +50,7 @@ There are various factors which have contributed to the dysfunction regarding cl
 * The influence of ideology in how major parties make decisions; and
 * The influence of donations in shaping major party policy.
 
-## The influence of idealogy
+### The influence of idealogy
 
 Parties, and people, with beliefs built on ideology will often exhibit tendencies which make them more prone to error. In order to defend their beliefs, they are likely to seek out information which supports their view and reject information which opposes it. This is certainly not a good method to discover the truth about our shared reality.
 
@@ -60,7 +60,7 @@ Addressing climate issues (and all other complex issues) requires that we always
 
 In this way, we are Liberals “For Climate” and we are Liberals “For Everything Important” too.
 
-## The influence of donations
+### The influence of donations
 
 Donations are one of the most egregious and corrupting influences in politics. There are [verifiable records](https://transparency.aec.gov.au/) of the large amounts of money that have been donated by individuals and corporations to major political parties. There are likely many more significantly large donations that will remain hidden from public knowledge.
 
@@ -70,7 +70,7 @@ The corrupting influence of political donations has become very apparent to peop
 
 It is time for citizens to step forward and participate in shaping the policies which will influence our lives - this includes matters pertaining to climate issues.
 
-# What is the process for changing the party name?
+## What is the process for changing the party name?
 
 It requires an application to amend the official Register of Political Parties maintained by the Western Australian Electoral Commission (WAEC).
 
@@ -78,7 +78,7 @@ We communicated our intentions to the Electoral Commissioner and submitted the a
 
 It’s also worth pointing out that this change only applies to the Western Australian party. The federal party and NSW party are not included in this particular initiative.
 
-# In closing
+## In closing
 
 This name change is an opportunity.
 
