@@ -7,6 +7,7 @@ author: Daithí Gleeson
 ---
 
 We are changing the name of the Western Australian party to Liberals For Climate - The Flux Network.
+
 We are doing this because:
 * It is a political statement which draws attention due to one of the most contentious topics of our time - the politics of climate issues; and
 * It speaks to people feeling unrepresented by the policy decisions of the major parties.
