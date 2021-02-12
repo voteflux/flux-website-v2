@@ -53,9 +53,9 @@ The following candidates have chosen to appear as on the ballot as independents 
 
 **_About Flux_**
 
-_Liberals For Climate - The Flux Network is the registered name for WA branch of the Flux organisation. _
+Liberals For Climate - The Flux Network is the registered name for WA branch of the Flux organisation.
 
-_The Flux Party was formed in late 2015 as a new concept in democracy with the stated aim of returning democratic power to individual voters. Under the Flux model, elected Flux representatives will vote on legislation before them only as they are directed by a majority vote of Flux participants, using the secure Flux app. Voting on the Flux app will be open to any West Australian who is eligible to vote._
+The Flux Party was formed in late 2015 as a new concept in democracy with the stated aim of returning democratic power to individual voters. Under the Flux model, elected Flux representatives will vote on legislation before them only as they are directed by a majority vote of Flux participants, using the secure Flux app. Voting on the Flux app will be open to any West Australian who is eligible to vote.
 
 **Email:** media.wa@voteflux.org
 
