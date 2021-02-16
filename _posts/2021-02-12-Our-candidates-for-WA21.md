@@ -60,4 +60,3 @@ The Flux Party was formed in late 2015 as a new concept in democracy with the st
 **Email:** media.wa@voteflux.org
 
 **Website:** voteflux.org / liberalsforclimate.org
-
