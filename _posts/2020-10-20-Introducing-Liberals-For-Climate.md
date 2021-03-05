@@ -8,6 +8,8 @@ author: Daithí Gleeson
 
 Flux is registering a new political party in Western Australia called "Liberals For Climate - The Flux Network".
 
+Visit [LiberalsForClimate.org](https://liberalsforclimate.org/)
+
 UPDATE (7 December 2020): We have submitted an application to the Western Australian Electoral Commission (WAEC) to rename the existing Flux party in WA to "Liberals For Climate - The Flux Network". This process superceeds the details below involving registering a new party. The WAEC will process the application and inform us of the outcome in January 2021.
 
 # Overview
