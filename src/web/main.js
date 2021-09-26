@@ -215,19 +215,19 @@ $(document).ready(function() {
     }
   };
 
-  function updateWaTimer(){
-    const countdownStr = getCountdownStrTo(WA_ELECTION_DATE);
-    // console.log(`countdownStr: ${countdownStr}`);
-    const updateClass = "js-waelection-countdown";
-    const els = document.getElementsByClassName(updateClass);
-    if (els.length > 0){
-      for (var el in els){
-        setElContents(els[el], countdownStr);
-      }
-      setTimeout(updateWaTimer, 1000);
-    }
-  }
-  updateWaTimer();
+  // function updateWaTimer(){
+  //   const countdownStr = getCountdownStrTo(WA_ELECTION_DATE);
+  //   // console.log(`countdownStr: ${countdownStr}`);
+  //   const updateClass = "js-waelection-countdown";
+  //   const els = document.getElementsByClassName(updateClass);
+  //   if (els.length > 0){
+  //     for (var el in els){
+  //       setElContents(els[el], countdownStr);
+  //     }
+  //     setTimeout(updateWaTimer, 1000);
+  //   }
+  // }
+  // updateWaTimer();
 
   // get member and volenteer info ajax request
   function getMembers() {
