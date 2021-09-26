@@ -1,11 +1,15 @@
 ---
-title: Flux Reading List
+title: Australian Democracy Is Outdated | The Direct Democracy Reading List
 summary: A list of things to read or watch if you'd like to know more about Flux and IBDD
 author: Max Kaye
 layout: about
 date: 2017-09-16 10:00
 permalink: /reading-list/
 ---
+
+## Are you wondering who to vote for in the next Australian federal election? 
+
+Brush up on Australian democracy with the Flux Reading List and find out why we need to Flux the system!
 
 ## Economics
 
