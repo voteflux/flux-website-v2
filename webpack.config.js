@@ -46,9 +46,9 @@ const localElmSrc = './elmSrc/';
 const elmSource = __dirname + '/elmSrc/';
 
 
-const elmLoaders = devMode
-  ? [{loader: 'elm-hot-loader'}, {loader: 'elm-webpack-loader'}]
-  : [{loader: 'elm-webpack-loader'}];
+//const elmLoaders = devMode
+//  ? [{loader: 'elm-hot-loader'}, {loader: 'elm-webpack-loader'}]
+//  : [{loader: 'elm-webpack-loader'}];
 
 
 // TODO - WEBPACK (or other) must handle building sass
@@ -71,8 +71,8 @@ const config = {
   },
   entry: {
     reactSignup: ['./react-signup/app/index.js'],
-    donationWidget: [localElmSrc + 'DonationWidget/index.js'],
-    donationLog: [localElmSrc + 'DonationLog/index.js'],
+    //donationWidget: [localElmSrc + 'DonationWidget/index.js'],
+    //donationLog: [localElmSrc + 'DonationLog/index.js'],
     mainCss: ['./_sass/main.scss'],
     // memberUI: [localElmSrc + 'Flux/MemberUI/index.ts'],
     // fluxScripts: [localElmSrc + 'Flux/MemberUI/scripts.ts'],
@@ -98,11 +98,11 @@ const config = {
             presets:[ 'es2015', 'react', 'stage-2' ],
           }}]
       },
-      {
-        test: /\.elm$/,
-        exclude: [/elm-stuff/, /node_modules/, /_site/],
-        use: elmLoaders
-      },
+      //{
+      //  test: /\.elm$/,
+      //  exclude: [/elm-stuff/, /node_modules/, /_site/],
+      //  use: elmLoaders
+      //},
       {
         test: /\.tsx?$/,
         exclude: [/_site/],
