@@ -42,7 +42,7 @@
     "ace-css": "^1.1.0",
     "and": "0.0.3",
     "autoprefixer": "^6.3.6",
-    "axios": "^0.18.1",
+    "axios": "^0.21.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
