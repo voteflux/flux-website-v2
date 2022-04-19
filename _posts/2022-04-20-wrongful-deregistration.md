@@ -129,16 +129,16 @@ To be honest, the AEC would probably disregard this unless it comes from a profe
 
 ## Supporting Links / Citations
 
-\[1\]: AEC Notice of Intention to Deregister (2022-01-13) https://xertrov.github.io/aec-membership-test-simulator/docs/BDLPN0-aec-flux-jan-13_unencrypted.pdf
+\[1\]: AEC Notice of Intention to Deregister (2022-01-13) <https://xertrov.github.io/aec-membership-test-simulator/docs/BDLPN0-aec-flux-jan-13_unencrypted.pdf>
 
-\[2\]: Flux's Response to the AEC (2022-02-13) https://xertrov.github.io/aec-membership-test-simulator/docs/Response-to-AEC-rego-20220213.pdf
+\[2\]: Flux's Response to the AEC (2022-02-13) <https://xertrov.github.io/aec-membership-test-simulator/docs/Response-to-AEC-rego-20220213.pdf>
 
-\[3\]: "AEC Party Membership Test Methodology is Rigged! A Statistical Analysis of AEC Methodology and Graphs (of PMFs)" https://xertrov.github.io/aec-membership-test-simulator/
+\[3\]: "AEC Party Membership Test Methodology is Rigged! A Statistical Analysis of AEC Methodology and Graphs (of PMFs)" <https://xertrov.github.io/aec-membership-test-simulator/>
 
-\[4\]: AEC Statement of Reasons WRT Flux Deregistration (2022-03-24) https://web.archive.org/web/20220326093243/https://www.aec.gov.au/Parties_and_Representatives/Party_Registration/Deregistered_parties/files/statement-of-reasons-voteflux-org-upgrade-democracy-s137-deregistration.pdf
+\[4\]: AEC Statement of Reasons WRT Flux Deregistration (2022-03-24) <https://web.archive.org/web/20220326093243/https://www.aec.gov.au/Parties_and_Representatives/Party_Registration/Deregistered_parties/files/statement-of-reasons-voteflux-org-upgrade-democracy-s137-deregistration.pdf>
 
-\[5\]: AEC Review of Decision to Deregister SUPA (2021-12-15) -- The quote is from point 8 on page 3 https://web.archive.org/web/20220320030110/https://www.aec.gov.au/Parties_and_Representatives/Party_Registration/Registration_Decisions/2021/notice-of-decision-with-reasons-SUPA.pdf
+\[5\]: AEC Review of Decision to Deregister SUPA (2021-12-15) -- The quote is from point 8 on page 3 <https://web.archive.org/web/20220320030110/https://www.aec.gov.au/Parties_and_Representatives/Party_Registration/Registration_Decisions/2021/notice-of-decision-with-reasons-SUPA.pdf>
 
-\[6\]: Max's submission to the Commission to review [4]: https://xertrov.github.io/aec-membership-test-simulator/request-review-flux-deregistration
+\[6\]: Max's submission to the Commission to review [4]: <https://xertrov.github.io/aec-membership-test-simulator/request-review-flux-deregistration>
 
-\[10\]: Ideas for FOIs that might assist in uncovering AEC wrongdoing: https://github.com/XertroV/aec-membership-test-simulator/blob/b076029bd6e34f474dfdbffcad5e6bf0485d04a0/README.md?plain=1#L94
+\[10\]: Ideas for FOIs that might assist in uncovering AEC wrongdoing: <https://github.com/XertroV/aec-membership-test-simulator/blob/b076029bd6e34f474dfdbffcad5e6bf0485d04a0/README.md?plain=1#L94>
