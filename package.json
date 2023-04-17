@@ -53,7 +53,7 @@
     "basscss-color-forms": "^3.0.2",
     "basscss-forms": "^1.0.0",
     "basscss-sass": "^4.0.0",
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.29.1",
     "bufferutil": "^4.0.1",
     "concurrently": "^2.0.0",
     "copy-webpack-plugin": "^4.0.0",
